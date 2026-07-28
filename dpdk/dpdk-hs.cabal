@@ -1,0 +1,37 @@
+cabal-version:      3.4
+name:               dpdk-hs
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Dmitry Kovalev
+maintainer:         Dmitry Kovalev
+category:           Development
+build-type:         Simple
+synopsis:           DPDK Haskell bindings
+
+library
+  hs-source-dirs:  lib
+  exposed-modules:
+    , Generated.DPDK
+    , Generated.DPDK.FunPtr
+    , Generated.DPDK.Safe
+    , Generated.DPDK.Unsafe
+  autogen-modules:
+  ghc-options: -Wall -Wunused-packages
+  pkgconfig-depends: libdpdk
+  build-depends:
+    , base >=4.7 && <5
+    , c-expr-runtime
+    , hs-bindgen-runtime
+  default-language: GHC2021
+
+executable dpdk-forwarder
+  main-is: forwarder.hs
+  hs-source-dirs: apps
+  other-modules:
+  autogen-modules:
+  ghc-options: -Wall -Wunused-packages
+  build-depends:
+    , base >=4.7 && <5
+    , dpdk-hs
+  default-language: GHC2021
