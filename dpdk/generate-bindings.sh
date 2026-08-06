@@ -14,18 +14,15 @@ module_flags=(
 # We only generate bindings for a sub-set of all parsed/reified declarations.
 # These flags configure the selection step.
 select_flags=(
-    # `dpdk.h` itself does not define any declarations, but only includes
-    # `dpdk/dpdk.h`. Tell `hs-bindgen` to also select bindings from other
-    # headers matching Pearl-compatible regular expression ".*pcap\.h.*".
-    # --select-by-header-path dpdk.h
     # Select transitive dependencies.
     --enable-program-slicing
     # De-select deprecated declarations.
     --select-except-deprecated
-    # Manually de-select some declarations. These declarations are only
-    # available when `libpcap` is built with "remote capture" enabled, which is
-    # not the case by default in Nixpkgs.
-    --select-except-by-decl-name 'rte_eal'
+    # Manually de-select some declarations.
+    --select-except-by-decl-name 'rte_eal_get_baseaddr'
+    --select-except-by-decl-name 'rte_eal_driver_path_count'
+    --select-except-by-decl-name 'rte_eal_driver_path_next'
+    
 )
 
 # Increase the verbosity of `hs-bindgen` to learn something about its internals.

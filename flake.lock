@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785233449,
-        "narHash": "sha256-/y5YhIBGZeUCrC1GINeLhBTim0OEvO7TgCt9KDF72kE=",
+        "lastModified": 1785941216,
+        "narHash": "sha256-UuunZzHRbMjkdXgf5FQbielq0t6QgQAB5UasyNW3pI4=",
         "owner": "well-typed",
         "repo": "hs-bindgen",
-        "rev": "96ab111bd74e7d5c762657899647e83e48e36646",
+        "rev": "1c5eb9f3a045a04efb6a2e27416d3423b601bc7f",
         "type": "github"
       },
       "original": {

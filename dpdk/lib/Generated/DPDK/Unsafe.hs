@@ -2,7 +2,12 @@
 {-# OPTIONS_HADDOCK prune #-}
 
 module Generated.DPDK.Unsafe
-    ( Generated.DPDK.Unsafe.rte_mp_disable
+    ( Generated.DPDK.Unsafe.rte_eal_process_type
+    , Generated.DPDK.Unsafe.rte_eal_iopl_init
+    , Generated.DPDK.Unsafe.rte_eal_init
+    , Generated.DPDK.Unsafe.rte_eal_cleanup
+    , Generated.DPDK.Unsafe.rte_eal_primary_proc_alive
+    , Generated.DPDK.Unsafe.rte_mp_disable
     , Generated.DPDK.Unsafe.rte_mp_action_register
     , Generated.DPDK.Unsafe.rte_mp_action_unregister
     , Generated.DPDK.Unsafe.rte_mp_sendmsg
@@ -10,11 +15,20 @@ module Generated.DPDK.Unsafe
     , Generated.DPDK.Unsafe.rte_mp_request_async
     , Generated.DPDK.Unsafe.rte_mp_reply
     , Generated.DPDK.Unsafe.rte_set_application_usage_hook
+    , Generated.DPDK.Unsafe.rte_eal_has_hugepages
+    , Generated.DPDK.Unsafe.rte_eal_has_pci
+    , Generated.DPDK.Unsafe.rte_eal_create_uio_dev
+    , Generated.DPDK.Unsafe.rte_eal_vfio_intr_mode
+    , Generated.DPDK.Unsafe.rte_eal_vfio_get_vf_token
     , Generated.DPDK.Unsafe.rte_sys_gettid
     , Generated.DPDK.Unsafe.rte_gettid
+    , Generated.DPDK.Unsafe.rte_eal_iova_mode
+    , Generated.DPDK.Unsafe.rte_eal_mbuf_user_pool_ops
+    , Generated.DPDK.Unsafe.rte_eal_get_runtime_dir
     )
   where
 
+import qualified HsBindgen.Runtime.IsArray as IsA
 import qualified HsBindgen.Runtime.PtrConst as PtrConst
 import qualified HsBindgen.Runtime.Support as BG
 import qualified HsBindgen.Runtime.Support.CAPI
@@ -22,6 +36,31 @@ import Generated.DPDK
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
   [ "#include <rte_eal.h>"
+  , "enum rte_proc_type_t hs_bindgen_8e697213fff38c4f (void)"
+  , "{"
+  , "  return (rte_eal_process_type)();"
+  , "}"
+  , "signed int hs_bindgen_ef53f01cbdd868c8 (void)"
+  , "{"
+  , "  return (rte_eal_iopl_init)();"
+  , "}"
+  , "signed int hs_bindgen_0d47aa9ee8102a66 ("
+  , "  signed int arg1,"
+  , "  char **arg2"
+  , ")"
+  , "{"
+  , "  return (rte_eal_init)(arg1, arg2);"
+  , "}"
+  , "signed int hs_bindgen_3431e9c1a9dcdcd9 (void)"
+  , "{"
+  , "  return (rte_eal_cleanup)();"
+  , "}"
+  , "signed int hs_bindgen_b2f6aa597a8e8563 ("
+  , "  char const *arg1"
+  , ")"
+  , "{"
+  , "  return (rte_eal_primary_proc_alive)(arg1);"
+  , "}"
   , "_Bool hs_bindgen_60e91f394f22e25a (void)"
   , "{"
   , "  return (rte_mp_disable)();"
@@ -74,6 +113,28 @@ $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unli
   , "{"
   , "  return (rte_set_application_usage_hook)(arg1);"
   , "}"
+  , "signed int hs_bindgen_76a2e2ec13aea63e (void)"
+  , "{"
+  , "  return (rte_eal_has_hugepages)();"
+  , "}"
+  , "signed int hs_bindgen_ffae780f9bd198b1 (void)"
+  , "{"
+  , "  return (rte_eal_has_pci)();"
+  , "}"
+  , "signed int hs_bindgen_565728ab005b06bf (void)"
+  , "{"
+  , "  return (rte_eal_create_uio_dev)();"
+  , "}"
+  , "enum rte_intr_mode hs_bindgen_e2885aecf91836c5 (void)"
+  , "{"
+  , "  return (rte_eal_vfio_intr_mode)();"
+  , "}"
+  , "void hs_bindgen_379605a7c79794a4 ("
+  , "  unsigned char *arg1"
+  , ")"
+  , "{"
+  , "  (rte_eal_vfio_get_vf_token)(arg1);"
+  , "}"
   , "signed int hs_bindgen_9c9a1ebc74a8f443 (void)"
   , "{"
   , "  return (rte_sys_gettid)();"
@@ -82,7 +143,211 @@ $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unli
   , "{"
   , "  return (rte_gettid)();"
   , "}"
+  , "enum rte_iova_mode hs_bindgen_5f28dc5cd2d61fee (void)"
+  , "{"
+  , "  return (rte_eal_iova_mode)();"
+  , "}"
+  , "char const *hs_bindgen_bc8fbd86df6345d2 (void)"
+  , "{"
+  , "  return (rte_eal_mbuf_user_pool_ops)();"
+  , "}"
+  , "char const *hs_bindgen_bc6c1b903fbd5758 (void)"
+  , "{"
+  , "  return (rte_eal_get_runtime_dir)();"
+  , "}"
   ]))
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_process_type@
+foreign import ccall unsafe "hs_bindgen_8e697213fff38c4f" hs_bindgen_8e697213fff38c4f_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_process_type@
+hs_bindgen_8e697213fff38c4f :: IO Rte_proc_type_t
+hs_bindgen_8e697213fff38c4f =
+  BG.fromFFIType hs_bindgen_8e697213fff38c4f_base
+
+{-| Get the process type in a multi-process setup
+
+    __Returns:__ The process type
+
+    __C declaration:__ @rte_eal_process_type@
+
+    __defined at:__ @rte_eal.h 48:22@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_process_type :: IO Rte_proc_type_t
+rte_eal_process_type = hs_bindgen_8e697213fff38c4f
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iopl_init@
+foreign import ccall unsafe "hs_bindgen_ef53f01cbdd868c8" hs_bindgen_ef53f01cbdd868c8_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iopl_init@
+hs_bindgen_ef53f01cbdd868c8 :: IO BG.CInt
+hs_bindgen_ef53f01cbdd868c8 =
+  BG.fromFFIType hs_bindgen_ef53f01cbdd868c8_base
+
+{-| Request iopl privilege for all RPL.
+
+    This function should be called by pmds which need access to ioports.
+
+    __Returns:__
+
+    * On success, returns 0.
+
+    * On failure, returns -1.
+
+    __C declaration:__ @rte_eal_iopl_init@
+
+    __defined at:__ @rte_eal.h 59:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_iopl_init :: IO BG.CInt
+rte_eal_iopl_init = hs_bindgen_ef53f01cbdd868c8
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_init@
+foreign import ccall unsafe "hs_bindgen_0d47aa9ee8102a66" hs_bindgen_0d47aa9ee8102a66_base ::
+     BG.Int32
+  -> BG.Ptr BG.Void
+  -> IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_init@
+hs_bindgen_0d47aa9ee8102a66 ::
+     BG.CInt
+  -> BG.Ptr (BG.Ptr BG.CChar)
+  -> IO BG.CInt
+hs_bindgen_0d47aa9ee8102a66 =
+  BG.fromFFIType hs_bindgen_0d47aa9ee8102a66_base
+
+{-| Initialize the Environment Abstraction Layer (EAL).
+
+    This function is to be executed on the MAIN lcore only, as soon as possible in the application's main() function. It puts the WORKER lcores in the WAIT state.
+
+    Error codes returned via rte_errno: EACCES indicates a permissions issue.
+
+    [__@argc@__]: A non-negative value. If it is greater than 0, the array members for argv[0] through argv[argc] (non-inclusive) shall contain pointers to strings.
+
+    [__@argv@__]: An array of strings. The contents of the array, as well as the strings which are pointed to by the array, may be modified by this function. The program name pointer argv[0] is copied into the last parsed argv so that argv[0] is still the same after deducing the parsed arguments.
+
+    __Returns:__
+
+    * On success, the number of parsed arguments, which is greater or equal to zero. After the call to @rte_eal_init()@ , all arguments argv[x] with x < ret may have been modified by this function call and should not be further interpreted by the application. The EAL does not take any ownership of the memory used for either the argv array, or its members.
+
+    * On failure, -1 and rte_errno is set to a value indicating the cause for failure. In some instances, the application will need to be restarted as part of clearing the issue.
+
+    EAGAIN indicates either a bus or system resource was not available, setup may be attempted again.
+
+    EALREADY indicates that the rte_eal_init function has already been called, and cannot be called again.
+
+    EFAULT indicates the tailq configuration name was not found in memory configuration.
+
+    EINVAL indicates invalid parameters were passed as argv/argc.
+
+    ENOMEM indicates failure likely caused by an out-of-memory condition.
+
+    ENODEV indicates memory setup issues.
+
+    ENOTSUP indicates that the EAL cannot initialize on this system.
+
+    EPROTO indicates that the PCI bus is either not present, or is not readable by the eal.
+
+    ENOEXEC indicates that a service core failed to launch successfully.
+
+    __C declaration:__ @rte_eal_init@
+
+    __defined at:__ @rte_eal.h 113:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_init ::
+     BG.CInt
+     {- ^
+
+          [__@argc@__]: A non-negative value. If it is greater than 0, the array members for argv[0] through argv[argc] (non-inclusive) shall contain pointers to strings.
+
+          __C declaration:__ @argc@
+     -}
+  -> BG.Ptr (BG.Ptr BG.CChar)
+     {- ^
+
+          [__@argv@__]: An array of strings. The contents of the array, as well as the strings which are pointed to by the array, may be modified by this function. The program name pointer argv[0] is copied into the last parsed argv so that argv[0] is still the same after deducing the parsed arguments.
+
+          __C declaration:__ @argv@
+     -}
+  -> IO BG.CInt
+rte_eal_init = hs_bindgen_0d47aa9ee8102a66
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_cleanup@
+foreign import ccall unsafe "hs_bindgen_3431e9c1a9dcdcd9" hs_bindgen_3431e9c1a9dcdcd9_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_cleanup@
+hs_bindgen_3431e9c1a9dcdcd9 :: IO BG.CInt
+hs_bindgen_3431e9c1a9dcdcd9 =
+  BG.fromFFIType hs_bindgen_3431e9c1a9dcdcd9_base
+
+{-| Clean up the Environment Abstraction Layer (EAL)
+
+    This function must be called to release any internal resources that EAL has allocated during @rte_eal_init()@ . After this call, no DPDK function calls may be made. It is expected that common usage of this function is to call it just before terminating the process.
+
+    __Returns:__
+
+    * 0 Successfully released all internal EAL resources.
+
+    * -EFAULT There was an error in releasing all resources.
+
+    __C declaration:__ @rte_eal_cleanup@
+
+    __defined at:__ @rte_eal.h 127:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_cleanup :: IO BG.CInt
+rte_eal_cleanup = hs_bindgen_3431e9c1a9dcdcd9
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_primary_proc_alive@
+foreign import ccall unsafe "hs_bindgen_b2f6aa597a8e8563" hs_bindgen_b2f6aa597a8e8563_base ::
+     BG.Ptr BG.Void
+  -> IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_primary_proc_alive@
+hs_bindgen_b2f6aa597a8e8563 ::
+     PtrConst.PtrConst BG.CChar
+  -> IO BG.CInt
+hs_bindgen_b2f6aa597a8e8563 =
+  BG.fromFFIType hs_bindgen_b2f6aa597a8e8563_base
+
+{-| Check if a primary process is currently alive
+
+    This function returns true when a primary process is currently active.
+
+    [__@config_file_path@__]: The config_file_path argument provided should point at the location that the primary process will create its config file. If NULL, the default config file path is used.
+
+    __Returns:__
+
+    * If alive, returns 1.
+
+    * If dead, returns 0.
+
+    __C declaration:__ @rte_eal_primary_proc_alive@
+
+    __defined at:__ @rte_eal.h 144:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_primary_proc_alive ::
+     PtrConst.PtrConst BG.CChar
+     {- ^
+
+          [__@config_file_path@__]: The config_file_path argument provided should point at the location that the primary process will create its config file. If NULL, the default config file path is used.
+
+          __C declaration:__ @config_file_path@
+     -}
+  -> IO BG.CInt
+rte_eal_primary_proc_alive =
+  hs_bindgen_b2f6aa597a8e8563
 
 -- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_disable@
 foreign import ccall unsafe "hs_bindgen_60e91f394f22e25a" hs_bindgen_60e91f394f22e25a_base ::
@@ -477,6 +742,128 @@ rte_set_application_usage_hook ::
 rte_set_application_usage_hook =
   hs_bindgen_34fa298e401df047
 
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_hugepages@
+foreign import ccall unsafe "hs_bindgen_76a2e2ec13aea63e" hs_bindgen_76a2e2ec13aea63e_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_hugepages@
+hs_bindgen_76a2e2ec13aea63e :: IO BG.CInt
+hs_bindgen_76a2e2ec13aea63e =
+  BG.fromFFIType hs_bindgen_76a2e2ec13aea63e_base
+
+{-| Whether EAL is using huge pages (disabled by no-huge option). The no-huge mode is not compatible with all drivers or features.
+
+    __Returns:__ Nonzero if hugepages are enabled.
+
+    __C declaration:__ @rte_eal_has_hugepages@
+
+    __defined at:__ @rte_eal.h 384:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_has_hugepages :: IO BG.CInt
+rte_eal_has_hugepages = hs_bindgen_76a2e2ec13aea63e
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_pci@
+foreign import ccall unsafe "hs_bindgen_ffae780f9bd198b1" hs_bindgen_ffae780f9bd198b1_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_pci@
+hs_bindgen_ffae780f9bd198b1 :: IO BG.CInt
+hs_bindgen_ffae780f9bd198b1 =
+  BG.fromFFIType hs_bindgen_ffae780f9bd198b1_base
+
+{-| Whether EAL is using PCI bus. Disabled by no-pci option.
+
+    __Returns:__ Nonzero if the PCI bus is enabled.
+
+    __C declaration:__ @rte_eal_has_pci@
+
+    __defined at:__ @rte_eal.h 393:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_has_pci :: IO BG.CInt
+rte_eal_has_pci = hs_bindgen_ffae780f9bd198b1
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_create_uio_dev@
+foreign import ccall unsafe "hs_bindgen_565728ab005b06bf" hs_bindgen_565728ab005b06bf_base ::
+     IO BG.Int32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_create_uio_dev@
+hs_bindgen_565728ab005b06bf :: IO BG.CInt
+hs_bindgen_565728ab005b06bf =
+  BG.fromFFIType hs_bindgen_565728ab005b06bf_base
+
+{-| Whether the EAL was asked to create UIO device.
+
+    __Returns:__ Nonzero if true.
+
+    __C declaration:__ @rte_eal_create_uio_dev@
+
+    __defined at:__ @rte_eal.h 401:5@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_create_uio_dev :: IO BG.CInt
+rte_eal_create_uio_dev = hs_bindgen_565728ab005b06bf
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_intr_mode@
+foreign import ccall unsafe "hs_bindgen_e2885aecf91836c5" hs_bindgen_e2885aecf91836c5_base ::
+     IO BG.Word32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_intr_mode@
+hs_bindgen_e2885aecf91836c5 :: IO Rte_intr_mode
+hs_bindgen_e2885aecf91836c5 =
+  BG.fromFFIType hs_bindgen_e2885aecf91836c5_base
+
+{-| The user-configured vfio interrupt mode.
+
+    __Returns:__ Interrupt mode configured with the command line, RTE_INTR_MODE_NONE by default.
+
+    __C declaration:__ @rte_eal_vfio_intr_mode@
+
+    __defined at:__ @rte_eal.h 410:20@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_vfio_intr_mode :: IO Rte_intr_mode
+rte_eal_vfio_intr_mode = hs_bindgen_e2885aecf91836c5
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_get_vf_token@
+foreign import ccall unsafe "hs_bindgen_379605a7c79794a4" hs_bindgen_379605a7c79794a4_base ::
+     BG.Ptr BG.Void
+  -> IO ()
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_get_vf_token@
+hs_bindgen_379605a7c79794a4 ::
+     BG.Ptr (IsA.Elem Rte_uuid_t)
+  -> IO ()
+hs_bindgen_379605a7c79794a4 =
+  BG.fromFFIType hs_bindgen_379605a7c79794a4_base
+
+{-| Copy the user-configured vfio VF token.
+
+    [__@vf_token@__]: vfio VF token configured with the command line is copied into this parameter, zero uuid by default.
+
+    __C declaration:__ @rte_eal_vfio_get_vf_token@
+
+    __defined at:__ @rte_eal.h 419:6@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_vfio_get_vf_token ::
+     BG.Ptr (IsA.Elem Rte_uuid_t)
+     {- ^
+
+          [__@vf_token@__]: vfio VF token configured with the command line is copied into this parameter, zero uuid by default.
+
+          __C declaration:__ @vf_token@
+     -}
+  -> IO ()
+rte_eal_vfio_get_vf_token =
+  hs_bindgen_379605a7c79794a4
+
 -- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_sys_gettid@
 foreign import ccall unsafe "hs_bindgen_9c9a1ebc74a8f443" hs_bindgen_9c9a1ebc74a8f443_base ::
      IO BG.Int32
@@ -520,3 +907,70 @@ hs_bindgen_fcb333818809c3db =
 -}
 rte_gettid :: IO BG.CInt
 rte_gettid = hs_bindgen_fcb333818809c3db
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iova_mode@
+foreign import ccall unsafe "hs_bindgen_5f28dc5cd2d61fee" hs_bindgen_5f28dc5cd2d61fee_base ::
+     IO BG.Word32
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iova_mode@
+hs_bindgen_5f28dc5cd2d61fee :: IO Rte_iova_mode
+hs_bindgen_5f28dc5cd2d61fee =
+  BG.fromFFIType hs_bindgen_5f28dc5cd2d61fee_base
+
+{-| Get the iova mode
+
+    __Returns:__ enum @rte_iova_mode@ value.
+
+    __C declaration:__ @rte_eal_iova_mode@
+
+    __defined at:__ @rte_eal.h 474:20@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_iova_mode :: IO Rte_iova_mode
+rte_eal_iova_mode = hs_bindgen_5f28dc5cd2d61fee
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_mbuf_user_pool_ops@
+foreign import ccall unsafe "hs_bindgen_bc8fbd86df6345d2" hs_bindgen_bc8fbd86df6345d2_base ::
+     IO (BG.Ptr BG.Void)
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_mbuf_user_pool_ops@
+hs_bindgen_bc8fbd86df6345d2 :: IO (PtrConst.PtrConst BG.CChar)
+hs_bindgen_bc8fbd86df6345d2 =
+  BG.fromFFIType hs_bindgen_bc8fbd86df6345d2_base
+
+{-| Get user provided pool ops name for mbuf
+
+    __Returns:__ returns user provided pool ops name.
+
+    __C declaration:__ @rte_eal_mbuf_user_pool_ops@
+
+    __defined at:__ @rte_eal.h 483:1@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_mbuf_user_pool_ops :: IO (PtrConst.PtrConst BG.CChar)
+rte_eal_mbuf_user_pool_ops =
+  hs_bindgen_bc8fbd86df6345d2
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_get_runtime_dir@
+foreign import ccall unsafe "hs_bindgen_bc6c1b903fbd5758" hs_bindgen_bc6c1b903fbd5758_base ::
+     IO (BG.Ptr BG.Void)
+
+-- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_get_runtime_dir@
+hs_bindgen_bc6c1b903fbd5758 :: IO (PtrConst.PtrConst BG.CChar)
+hs_bindgen_bc6c1b903fbd5758 =
+  BG.fromFFIType hs_bindgen_bc6c1b903fbd5758_base
+
+{-| Get the runtime directory of DPDK
+
+    __Returns:__ The runtime directory path of DPDK
+
+    __C declaration:__ @rte_eal_get_runtime_dir@
+
+    __defined at:__ @rte_eal.h 492:1@
+
+    __exported by:__ @rte_eal.h@
+-}
+rte_eal_get_runtime_dir :: IO (PtrConst.PtrConst BG.CChar)
+rte_eal_get_runtime_dir = hs_bindgen_bc6c1b903fbd5758

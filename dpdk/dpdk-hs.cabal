@@ -35,3 +35,14 @@ executable dpdk-forwarder
     , base >=4.7 && <5
     , dpdk-hs
   default-language: GHC2021
+
+executable dpdk-hello
+  main-is: hello.hs
+  hs-source-dirs: apps
+  other-modules:
+  autogen-modules:
+  ghc-options: -Wall -Wunused-packages
+  build-depends:
+    , base >=4.7 && <5
+    , dpdk-hs
+  default-language: GHC2021
