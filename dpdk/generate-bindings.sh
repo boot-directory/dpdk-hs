@@ -8,7 +8,6 @@ module_flags=(
     --hs-output-dir dpdk/lib
     --create-output-dirs
     --overwrite-files
-    --module Generated.DPDK
 )
 
 # We only generate bindings for a sub-set of all parsed/reified declarations.
@@ -39,4 +38,5 @@ hs-bindgen-cli preprocess \
     "${module_flags[@]}" \
     "${select_flags[@]}" \
     "${debug_flags[@]}" \
+    --module Generated.DPDK.RteEal \
     rte_eal.h

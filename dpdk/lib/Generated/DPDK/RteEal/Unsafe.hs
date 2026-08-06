@@ -1,30 +1,30 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# OPTIONS_HADDOCK prune #-}
 
-module Generated.DPDK.Unsafe
-    ( Generated.DPDK.Unsafe.rte_eal_process_type
-    , Generated.DPDK.Unsafe.rte_eal_iopl_init
-    , Generated.DPDK.Unsafe.rte_eal_init
-    , Generated.DPDK.Unsafe.rte_eal_cleanup
-    , Generated.DPDK.Unsafe.rte_eal_primary_proc_alive
-    , Generated.DPDK.Unsafe.rte_mp_disable
-    , Generated.DPDK.Unsafe.rte_mp_action_register
-    , Generated.DPDK.Unsafe.rte_mp_action_unregister
-    , Generated.DPDK.Unsafe.rte_mp_sendmsg
-    , Generated.DPDK.Unsafe.rte_mp_request_sync
-    , Generated.DPDK.Unsafe.rte_mp_request_async
-    , Generated.DPDK.Unsafe.rte_mp_reply
-    , Generated.DPDK.Unsafe.rte_set_application_usage_hook
-    , Generated.DPDK.Unsafe.rte_eal_has_hugepages
-    , Generated.DPDK.Unsafe.rte_eal_has_pci
-    , Generated.DPDK.Unsafe.rte_eal_create_uio_dev
-    , Generated.DPDK.Unsafe.rte_eal_vfio_intr_mode
-    , Generated.DPDK.Unsafe.rte_eal_vfio_get_vf_token
-    , Generated.DPDK.Unsafe.rte_sys_gettid
-    , Generated.DPDK.Unsafe.rte_gettid
-    , Generated.DPDK.Unsafe.rte_eal_iova_mode
-    , Generated.DPDK.Unsafe.rte_eal_mbuf_user_pool_ops
-    , Generated.DPDK.Unsafe.rte_eal_get_runtime_dir
+module Generated.DPDK.RteEal.Unsafe
+    ( Generated.DPDK.RteEal.Unsafe.rte_eal_process_type
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_iopl_init
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_init
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_cleanup
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_primary_proc_alive
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_disable
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_action_register
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_action_unregister
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_sendmsg
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_request_sync
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_request_async
+    , Generated.DPDK.RteEal.Unsafe.rte_mp_reply
+    , Generated.DPDK.RteEal.Unsafe.rte_set_application_usage_hook
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_has_hugepages
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_has_pci
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_create_uio_dev
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_vfio_intr_mode
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_vfio_get_vf_token
+    , Generated.DPDK.RteEal.Unsafe.rte_sys_gettid
+    , Generated.DPDK.RteEal.Unsafe.rte_gettid
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_iova_mode
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_mbuf_user_pool_ops
+    , Generated.DPDK.RteEal.Unsafe.rte_eal_get_runtime_dir
     )
   where
 
@@ -32,59 +32,59 @@ import qualified HsBindgen.Runtime.IsArray as IsA
 import qualified HsBindgen.Runtime.PtrConst as PtrConst
 import qualified HsBindgen.Runtime.Support as BG
 import qualified HsBindgen.Runtime.Support.CAPI
-import Generated.DPDK
+import Generated.DPDK.RteEal
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
   [ "#include <rte_eal.h>"
-  , "enum rte_proc_type_t hs_bindgen_8e697213fff38c4f (void)"
+  , "enum rte_proc_type_t hs_bindgen_c992d2e8114eb20f (void)"
   , "{"
   , "  return (rte_eal_process_type)();"
   , "}"
-  , "signed int hs_bindgen_ef53f01cbdd868c8 (void)"
+  , "signed int hs_bindgen_433fe8172ac228f5 (void)"
   , "{"
   , "  return (rte_eal_iopl_init)();"
   , "}"
-  , "signed int hs_bindgen_0d47aa9ee8102a66 ("
+  , "signed int hs_bindgen_dda242057fe4403e ("
   , "  signed int arg1,"
   , "  char **arg2"
   , ")"
   , "{"
   , "  return (rte_eal_init)(arg1, arg2);"
   , "}"
-  , "signed int hs_bindgen_3431e9c1a9dcdcd9 (void)"
+  , "signed int hs_bindgen_5c707091d594d44c (void)"
   , "{"
   , "  return (rte_eal_cleanup)();"
   , "}"
-  , "signed int hs_bindgen_b2f6aa597a8e8563 ("
+  , "signed int hs_bindgen_1a814f959df9df64 ("
   , "  char const *arg1"
   , ")"
   , "{"
   , "  return (rte_eal_primary_proc_alive)(arg1);"
   , "}"
-  , "_Bool hs_bindgen_60e91f394f22e25a (void)"
+  , "_Bool hs_bindgen_e335e5f335f1870c (void)"
   , "{"
   , "  return (rte_mp_disable)();"
   , "}"
-  , "signed int hs_bindgen_1e407d7f4543ac9d ("
+  , "signed int hs_bindgen_b74b4ca75879751b ("
   , "  char const *arg1,"
   , "  rte_mp_t arg2"
   , ")"
   , "{"
   , "  return (rte_mp_action_register)(arg1, arg2);"
   , "}"
-  , "void hs_bindgen_2734b70bda522482 ("
+  , "void hs_bindgen_7e7c2be49675e23d ("
   , "  char const *arg1"
   , ")"
   , "{"
   , "  (rte_mp_action_unregister)(arg1);"
   , "}"
-  , "signed int hs_bindgen_9dd9f1340b8c2b18 ("
+  , "signed int hs_bindgen_d7f5f8e5078d01db ("
   , "  struct rte_mp_msg *arg1"
   , ")"
   , "{"
   , "  return (rte_mp_sendmsg)(arg1);"
   , "}"
-  , "signed int hs_bindgen_5c9bf9d0e4c56539 ("
+  , "signed int hs_bindgen_6bcdf66663ac223f ("
   , "  struct rte_mp_msg *arg1,"
   , "  struct rte_mp_reply *arg2,"
   , "  struct timespec const *arg3"
@@ -92,7 +92,7 @@ $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unli
   , "{"
   , "  return (rte_mp_request_sync)(arg1, arg2, arg3);"
   , "}"
-  , "signed int hs_bindgen_9263c1861c819fcd ("
+  , "signed int hs_bindgen_e11da469dd6b2d93 ("
   , "  struct rte_mp_msg *arg1,"
   , "  struct timespec const *arg2,"
   , "  rte_mp_async_reply_t arg3"
@@ -100,71 +100,71 @@ $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unli
   , "{"
   , "  return (rte_mp_request_async)(arg1, arg2, arg3);"
   , "}"
-  , "signed int hs_bindgen_b97e18dda0bbed13 ("
+  , "signed int hs_bindgen_1839223f9bcf5118 ("
   , "  struct rte_mp_msg *arg1,"
   , "  char const *arg2"
   , ")"
   , "{"
   , "  return (rte_mp_reply)(arg1, arg2);"
   , "}"
-  , "rte_usage_hook_t hs_bindgen_34fa298e401df047 ("
+  , "rte_usage_hook_t hs_bindgen_f9a1f52d20583062 ("
   , "  rte_usage_hook_t arg1"
   , ")"
   , "{"
   , "  return (rte_set_application_usage_hook)(arg1);"
   , "}"
-  , "signed int hs_bindgen_76a2e2ec13aea63e (void)"
+  , "signed int hs_bindgen_1cd842420a58c9b4 (void)"
   , "{"
   , "  return (rte_eal_has_hugepages)();"
   , "}"
-  , "signed int hs_bindgen_ffae780f9bd198b1 (void)"
+  , "signed int hs_bindgen_18d0ae2be924867e (void)"
   , "{"
   , "  return (rte_eal_has_pci)();"
   , "}"
-  , "signed int hs_bindgen_565728ab005b06bf (void)"
+  , "signed int hs_bindgen_ea000b30da7f9c66 (void)"
   , "{"
   , "  return (rte_eal_create_uio_dev)();"
   , "}"
-  , "enum rte_intr_mode hs_bindgen_e2885aecf91836c5 (void)"
+  , "enum rte_intr_mode hs_bindgen_120a6bd081343f8b (void)"
   , "{"
   , "  return (rte_eal_vfio_intr_mode)();"
   , "}"
-  , "void hs_bindgen_379605a7c79794a4 ("
+  , "void hs_bindgen_780b76c2487ab7ef ("
   , "  unsigned char *arg1"
   , ")"
   , "{"
   , "  (rte_eal_vfio_get_vf_token)(arg1);"
   , "}"
-  , "signed int hs_bindgen_9c9a1ebc74a8f443 (void)"
+  , "signed int hs_bindgen_708ba703b6e63db8 (void)"
   , "{"
   , "  return (rte_sys_gettid)();"
   , "}"
-  , "signed int hs_bindgen_fcb333818809c3db (void)"
+  , "signed int hs_bindgen_2b34294194a6f632 (void)"
   , "{"
   , "  return (rte_gettid)();"
   , "}"
-  , "enum rte_iova_mode hs_bindgen_5f28dc5cd2d61fee (void)"
+  , "enum rte_iova_mode hs_bindgen_1a0b61d5e4d044f4 (void)"
   , "{"
   , "  return (rte_eal_iova_mode)();"
   , "}"
-  , "char const *hs_bindgen_bc8fbd86df6345d2 (void)"
+  , "char const *hs_bindgen_d1b38ef93f731120 (void)"
   , "{"
   , "  return (rte_eal_mbuf_user_pool_ops)();"
   , "}"
-  , "char const *hs_bindgen_bc6c1b903fbd5758 (void)"
+  , "char const *hs_bindgen_064657bff74b8475 (void)"
   , "{"
   , "  return (rte_eal_get_runtime_dir)();"
   , "}"
   ]))
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_process_type@
-foreign import ccall unsafe "hs_bindgen_8e697213fff38c4f" hs_bindgen_8e697213fff38c4f_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_process_type@
+foreign import ccall unsafe "hs_bindgen_c992d2e8114eb20f" hs_bindgen_c992d2e8114eb20f_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_process_type@
-hs_bindgen_8e697213fff38c4f :: IO Rte_proc_type_t
-hs_bindgen_8e697213fff38c4f =
-  BG.fromFFIType hs_bindgen_8e697213fff38c4f_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_process_type@
+hs_bindgen_c992d2e8114eb20f :: IO Rte_proc_type_t
+hs_bindgen_c992d2e8114eb20f =
+  BG.fromFFIType hs_bindgen_c992d2e8114eb20f_base
 
 {-| Get the process type in a multi-process setup
 
@@ -177,16 +177,16 @@ hs_bindgen_8e697213fff38c4f =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_process_type :: IO Rte_proc_type_t
-rte_eal_process_type = hs_bindgen_8e697213fff38c4f
+rte_eal_process_type = hs_bindgen_c992d2e8114eb20f
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iopl_init@
-foreign import ccall unsafe "hs_bindgen_ef53f01cbdd868c8" hs_bindgen_ef53f01cbdd868c8_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_iopl_init@
+foreign import ccall unsafe "hs_bindgen_433fe8172ac228f5" hs_bindgen_433fe8172ac228f5_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iopl_init@
-hs_bindgen_ef53f01cbdd868c8 :: IO BG.CInt
-hs_bindgen_ef53f01cbdd868c8 =
-  BG.fromFFIType hs_bindgen_ef53f01cbdd868c8_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_iopl_init@
+hs_bindgen_433fe8172ac228f5 :: IO BG.CInt
+hs_bindgen_433fe8172ac228f5 =
+  BG.fromFFIType hs_bindgen_433fe8172ac228f5_base
 
 {-| Request iopl privilege for all RPL.
 
@@ -205,21 +205,21 @@ hs_bindgen_ef53f01cbdd868c8 =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_iopl_init :: IO BG.CInt
-rte_eal_iopl_init = hs_bindgen_ef53f01cbdd868c8
+rte_eal_iopl_init = hs_bindgen_433fe8172ac228f5
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_init@
-foreign import ccall unsafe "hs_bindgen_0d47aa9ee8102a66" hs_bindgen_0d47aa9ee8102a66_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_init@
+foreign import ccall unsafe "hs_bindgen_dda242057fe4403e" hs_bindgen_dda242057fe4403e_base ::
      BG.Int32
   -> BG.Ptr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_init@
-hs_bindgen_0d47aa9ee8102a66 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_init@
+hs_bindgen_dda242057fe4403e ::
      BG.CInt
   -> BG.Ptr (BG.Ptr BG.CChar)
   -> IO BG.CInt
-hs_bindgen_0d47aa9ee8102a66 =
-  BG.fromFFIType hs_bindgen_0d47aa9ee8102a66_base
+hs_bindgen_dda242057fe4403e =
+  BG.fromFFIType hs_bindgen_dda242057fe4403e_base
 
 {-| Initialize the Environment Abstraction Layer (EAL).
 
@@ -277,16 +277,16 @@ rte_eal_init ::
           __C declaration:__ @argv@
      -}
   -> IO BG.CInt
-rte_eal_init = hs_bindgen_0d47aa9ee8102a66
+rte_eal_init = hs_bindgen_dda242057fe4403e
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_cleanup@
-foreign import ccall unsafe "hs_bindgen_3431e9c1a9dcdcd9" hs_bindgen_3431e9c1a9dcdcd9_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_cleanup@
+foreign import ccall unsafe "hs_bindgen_5c707091d594d44c" hs_bindgen_5c707091d594d44c_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_cleanup@
-hs_bindgen_3431e9c1a9dcdcd9 :: IO BG.CInt
-hs_bindgen_3431e9c1a9dcdcd9 =
-  BG.fromFFIType hs_bindgen_3431e9c1a9dcdcd9_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_cleanup@
+hs_bindgen_5c707091d594d44c :: IO BG.CInt
+hs_bindgen_5c707091d594d44c =
+  BG.fromFFIType hs_bindgen_5c707091d594d44c_base
 
 {-| Clean up the Environment Abstraction Layer (EAL)
 
@@ -305,19 +305,19 @@ hs_bindgen_3431e9c1a9dcdcd9 =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_cleanup :: IO BG.CInt
-rte_eal_cleanup = hs_bindgen_3431e9c1a9dcdcd9
+rte_eal_cleanup = hs_bindgen_5c707091d594d44c
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_primary_proc_alive@
-foreign import ccall unsafe "hs_bindgen_b2f6aa597a8e8563" hs_bindgen_b2f6aa597a8e8563_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_primary_proc_alive@
+foreign import ccall unsafe "hs_bindgen_1a814f959df9df64" hs_bindgen_1a814f959df9df64_base ::
      BG.Ptr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_primary_proc_alive@
-hs_bindgen_b2f6aa597a8e8563 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_primary_proc_alive@
+hs_bindgen_1a814f959df9df64 ::
      PtrConst.PtrConst BG.CChar
   -> IO BG.CInt
-hs_bindgen_b2f6aa597a8e8563 =
-  BG.fromFFIType hs_bindgen_b2f6aa597a8e8563_base
+hs_bindgen_1a814f959df9df64 =
+  BG.fromFFIType hs_bindgen_1a814f959df9df64_base
 
 {-| Check if a primary process is currently alive
 
@@ -347,16 +347,16 @@ rte_eal_primary_proc_alive ::
      -}
   -> IO BG.CInt
 rte_eal_primary_proc_alive =
-  hs_bindgen_b2f6aa597a8e8563
+  hs_bindgen_1a814f959df9df64
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_disable@
-foreign import ccall unsafe "hs_bindgen_60e91f394f22e25a" hs_bindgen_60e91f394f22e25a_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_disable@
+foreign import ccall unsafe "hs_bindgen_e335e5f335f1870c" hs_bindgen_e335e5f335f1870c_base ::
      IO BG.Word8
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_disable@
-hs_bindgen_60e91f394f22e25a :: IO BG.CBool
-hs_bindgen_60e91f394f22e25a =
-  BG.fromFFIType hs_bindgen_60e91f394f22e25a_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_disable@
+hs_bindgen_e335e5f335f1870c :: IO BG.CBool
+hs_bindgen_e335e5f335f1870c =
+  BG.fromFFIType hs_bindgen_e335e5f335f1870c_base
 
 {-| Disable multiprocess.
 
@@ -375,21 +375,21 @@ hs_bindgen_60e91f394f22e25a =
     __exported by:__ @rte_eal.h@
 -}
 rte_mp_disable :: IO BG.CBool
-rte_mp_disable = hs_bindgen_60e91f394f22e25a
+rte_mp_disable = hs_bindgen_e335e5f335f1870c
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_action_register@
-foreign import ccall unsafe "hs_bindgen_1e407d7f4543ac9d" hs_bindgen_1e407d7f4543ac9d_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_action_register@
+foreign import ccall unsafe "hs_bindgen_b74b4ca75879751b" hs_bindgen_b74b4ca75879751b_base ::
      BG.Ptr BG.Void
   -> BG.FunPtr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_action_register@
-hs_bindgen_1e407d7f4543ac9d ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_action_register@
+hs_bindgen_b74b4ca75879751b ::
      PtrConst.PtrConst BG.CChar
   -> Rte_mp_t
   -> IO BG.CInt
-hs_bindgen_1e407d7f4543ac9d =
-  BG.fromFFIType hs_bindgen_1e407d7f4543ac9d_base
+hs_bindgen_b74b4ca75879751b =
+  BG.fromFFIType hs_bindgen_b74b4ca75879751b_base
 
 {-| Register an action function for primary/secondary communication.
 
@@ -429,19 +429,19 @@ rte_mp_action_register ::
           __C declaration:__ @action@
      -}
   -> IO BG.CInt
-rte_mp_action_register = hs_bindgen_1e407d7f4543ac9d
+rte_mp_action_register = hs_bindgen_b74b4ca75879751b
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_action_unregister@
-foreign import ccall unsafe "hs_bindgen_2734b70bda522482" hs_bindgen_2734b70bda522482_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_action_unregister@
+foreign import ccall unsafe "hs_bindgen_7e7c2be49675e23d" hs_bindgen_7e7c2be49675e23d_base ::
      BG.Ptr BG.Void
   -> IO ()
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_action_unregister@
-hs_bindgen_2734b70bda522482 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_action_unregister@
+hs_bindgen_7e7c2be49675e23d ::
      PtrConst.PtrConst BG.CChar
   -> IO ()
-hs_bindgen_2734b70bda522482 =
-  BG.fromFFIType hs_bindgen_2734b70bda522482_base
+hs_bindgen_7e7c2be49675e23d =
+  BG.fromFFIType hs_bindgen_7e7c2be49675e23d_base
 
 {-| Unregister an action function for primary/secondary communication.
 
@@ -467,19 +467,19 @@ rte_mp_action_unregister ::
      -}
   -> IO ()
 rte_mp_action_unregister =
-  hs_bindgen_2734b70bda522482
+  hs_bindgen_7e7c2be49675e23d
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_sendmsg@
-foreign import ccall unsafe "hs_bindgen_9dd9f1340b8c2b18" hs_bindgen_9dd9f1340b8c2b18_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_sendmsg@
+foreign import ccall unsafe "hs_bindgen_d7f5f8e5078d01db" hs_bindgen_d7f5f8e5078d01db_base ::
      BG.Ptr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_sendmsg@
-hs_bindgen_9dd9f1340b8c2b18 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_sendmsg@
+hs_bindgen_d7f5f8e5078d01db ::
      BG.Ptr Rte_mp_msg
   -> IO BG.CInt
-hs_bindgen_9dd9f1340b8c2b18 =
-  BG.fromFFIType hs_bindgen_9dd9f1340b8c2b18_base
+hs_bindgen_d7f5f8e5078d01db =
+  BG.fromFFIType hs_bindgen_d7f5f8e5078d01db_base
 
 {-| Send a message to the peer process.
 
@@ -508,23 +508,23 @@ rte_mp_sendmsg ::
           __C declaration:__ @msg@
      -}
   -> IO BG.CInt
-rte_mp_sendmsg = hs_bindgen_9dd9f1340b8c2b18
+rte_mp_sendmsg = hs_bindgen_d7f5f8e5078d01db
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_request_sync@
-foreign import ccall unsafe "hs_bindgen_5c9bf9d0e4c56539" hs_bindgen_5c9bf9d0e4c56539_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_request_sync@
+foreign import ccall unsafe "hs_bindgen_6bcdf66663ac223f" hs_bindgen_6bcdf66663ac223f_base ::
      BG.Ptr BG.Void
   -> BG.Ptr BG.Void
   -> BG.Ptr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_request_sync@
-hs_bindgen_5c9bf9d0e4c56539 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_request_sync@
+hs_bindgen_6bcdf66663ac223f ::
      BG.Ptr Rte_mp_msg
   -> BG.Ptr Rte_mp_reply
   -> PtrConst.PtrConst Timespec
   -> IO BG.CInt
-hs_bindgen_5c9bf9d0e4c56539 =
-  BG.fromFFIType hs_bindgen_5c9bf9d0e4c56539_base
+hs_bindgen_6bcdf66663ac223f =
+  BG.fromFFIType hs_bindgen_6bcdf66663ac223f_base
 
 {-| Send a request to the peer process and expect a reply.
 
@@ -577,23 +577,23 @@ rte_mp_request_sync ::
           __C declaration:__ @ts@
      -}
   -> IO BG.CInt
-rte_mp_request_sync = hs_bindgen_5c9bf9d0e4c56539
+rte_mp_request_sync = hs_bindgen_6bcdf66663ac223f
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_request_async@
-foreign import ccall unsafe "hs_bindgen_9263c1861c819fcd" hs_bindgen_9263c1861c819fcd_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_request_async@
+foreign import ccall unsafe "hs_bindgen_e11da469dd6b2d93" hs_bindgen_e11da469dd6b2d93_base ::
      BG.Ptr BG.Void
   -> BG.Ptr BG.Void
   -> BG.FunPtr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_request_async@
-hs_bindgen_9263c1861c819fcd ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_request_async@
+hs_bindgen_e11da469dd6b2d93 ::
      BG.Ptr Rte_mp_msg
   -> PtrConst.PtrConst Timespec
   -> Rte_mp_async_reply_t
   -> IO BG.CInt
-hs_bindgen_9263c1861c819fcd =
-  BG.fromFFIType hs_bindgen_9263c1861c819fcd_base
+hs_bindgen_e11da469dd6b2d93 =
+  BG.fromFFIType hs_bindgen_e11da469dd6b2d93_base
 
 {-| Send a request to the peer process and expect a reply in a separate callback.
 
@@ -642,21 +642,21 @@ rte_mp_request_async ::
           __C declaration:__ @clb@
      -}
   -> IO BG.CInt
-rte_mp_request_async = hs_bindgen_9263c1861c819fcd
+rte_mp_request_async = hs_bindgen_e11da469dd6b2d93
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_reply@
-foreign import ccall unsafe "hs_bindgen_b97e18dda0bbed13" hs_bindgen_b97e18dda0bbed13_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_reply@
+foreign import ccall unsafe "hs_bindgen_1839223f9bcf5118" hs_bindgen_1839223f9bcf5118_base ::
      BG.Ptr BG.Void
   -> BG.Ptr BG.Void
   -> IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_mp_reply@
-hs_bindgen_b97e18dda0bbed13 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_mp_reply@
+hs_bindgen_1839223f9bcf5118 ::
      BG.Ptr Rte_mp_msg
   -> PtrConst.PtrConst BG.CChar
   -> IO BG.CInt
-hs_bindgen_b97e18dda0bbed13 =
-  BG.fromFFIType hs_bindgen_b97e18dda0bbed13_base
+hs_bindgen_1839223f9bcf5118 =
+  BG.fromFFIType hs_bindgen_1839223f9bcf5118_base
 
 {-| Send a reply to the peer process.
 
@@ -696,19 +696,19 @@ rte_mp_reply ::
           __C declaration:__ @peer@
      -}
   -> IO BG.CInt
-rte_mp_reply = hs_bindgen_b97e18dda0bbed13
+rte_mp_reply = hs_bindgen_1839223f9bcf5118
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_set_application_usage_hook@
-foreign import ccall unsafe "hs_bindgen_34fa298e401df047" hs_bindgen_34fa298e401df047_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_set_application_usage_hook@
+foreign import ccall unsafe "hs_bindgen_f9a1f52d20583062" hs_bindgen_f9a1f52d20583062_base ::
      BG.FunPtr BG.Void
   -> IO (BG.FunPtr BG.Void)
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_set_application_usage_hook@
-hs_bindgen_34fa298e401df047 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_set_application_usage_hook@
+hs_bindgen_f9a1f52d20583062 ::
      Rte_usage_hook_t
   -> IO Rte_usage_hook_t
-hs_bindgen_34fa298e401df047 =
-  BG.fromFFIType hs_bindgen_34fa298e401df047_base
+hs_bindgen_f9a1f52d20583062 =
+  BG.fromFFIType hs_bindgen_f9a1f52d20583062_base
 
 {-| Add application usage routine callout from the eal_usage() routine.
 
@@ -740,16 +740,16 @@ rte_set_application_usage_hook ::
      -}
   -> IO Rte_usage_hook_t
 rte_set_application_usage_hook =
-  hs_bindgen_34fa298e401df047
+  hs_bindgen_f9a1f52d20583062
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_hugepages@
-foreign import ccall unsafe "hs_bindgen_76a2e2ec13aea63e" hs_bindgen_76a2e2ec13aea63e_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_has_hugepages@
+foreign import ccall unsafe "hs_bindgen_1cd842420a58c9b4" hs_bindgen_1cd842420a58c9b4_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_hugepages@
-hs_bindgen_76a2e2ec13aea63e :: IO BG.CInt
-hs_bindgen_76a2e2ec13aea63e =
-  BG.fromFFIType hs_bindgen_76a2e2ec13aea63e_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_has_hugepages@
+hs_bindgen_1cd842420a58c9b4 :: IO BG.CInt
+hs_bindgen_1cd842420a58c9b4 =
+  BG.fromFFIType hs_bindgen_1cd842420a58c9b4_base
 
 {-| Whether EAL is using huge pages (disabled by no-huge option). The no-huge mode is not compatible with all drivers or features.
 
@@ -762,16 +762,16 @@ hs_bindgen_76a2e2ec13aea63e =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_has_hugepages :: IO BG.CInt
-rte_eal_has_hugepages = hs_bindgen_76a2e2ec13aea63e
+rte_eal_has_hugepages = hs_bindgen_1cd842420a58c9b4
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_pci@
-foreign import ccall unsafe "hs_bindgen_ffae780f9bd198b1" hs_bindgen_ffae780f9bd198b1_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_has_pci@
+foreign import ccall unsafe "hs_bindgen_18d0ae2be924867e" hs_bindgen_18d0ae2be924867e_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_has_pci@
-hs_bindgen_ffae780f9bd198b1 :: IO BG.CInt
-hs_bindgen_ffae780f9bd198b1 =
-  BG.fromFFIType hs_bindgen_ffae780f9bd198b1_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_has_pci@
+hs_bindgen_18d0ae2be924867e :: IO BG.CInt
+hs_bindgen_18d0ae2be924867e =
+  BG.fromFFIType hs_bindgen_18d0ae2be924867e_base
 
 {-| Whether EAL is using PCI bus. Disabled by no-pci option.
 
@@ -784,16 +784,16 @@ hs_bindgen_ffae780f9bd198b1 =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_has_pci :: IO BG.CInt
-rte_eal_has_pci = hs_bindgen_ffae780f9bd198b1
+rte_eal_has_pci = hs_bindgen_18d0ae2be924867e
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_create_uio_dev@
-foreign import ccall unsafe "hs_bindgen_565728ab005b06bf" hs_bindgen_565728ab005b06bf_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_create_uio_dev@
+foreign import ccall unsafe "hs_bindgen_ea000b30da7f9c66" hs_bindgen_ea000b30da7f9c66_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_create_uio_dev@
-hs_bindgen_565728ab005b06bf :: IO BG.CInt
-hs_bindgen_565728ab005b06bf =
-  BG.fromFFIType hs_bindgen_565728ab005b06bf_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_create_uio_dev@
+hs_bindgen_ea000b30da7f9c66 :: IO BG.CInt
+hs_bindgen_ea000b30da7f9c66 =
+  BG.fromFFIType hs_bindgen_ea000b30da7f9c66_base
 
 {-| Whether the EAL was asked to create UIO device.
 
@@ -806,16 +806,16 @@ hs_bindgen_565728ab005b06bf =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_create_uio_dev :: IO BG.CInt
-rte_eal_create_uio_dev = hs_bindgen_565728ab005b06bf
+rte_eal_create_uio_dev = hs_bindgen_ea000b30da7f9c66
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_intr_mode@
-foreign import ccall unsafe "hs_bindgen_e2885aecf91836c5" hs_bindgen_e2885aecf91836c5_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_vfio_intr_mode@
+foreign import ccall unsafe "hs_bindgen_120a6bd081343f8b" hs_bindgen_120a6bd081343f8b_base ::
      IO BG.Word32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_intr_mode@
-hs_bindgen_e2885aecf91836c5 :: IO Rte_intr_mode
-hs_bindgen_e2885aecf91836c5 =
-  BG.fromFFIType hs_bindgen_e2885aecf91836c5_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_vfio_intr_mode@
+hs_bindgen_120a6bd081343f8b :: IO Rte_intr_mode
+hs_bindgen_120a6bd081343f8b =
+  BG.fromFFIType hs_bindgen_120a6bd081343f8b_base
 
 {-| The user-configured vfio interrupt mode.
 
@@ -828,19 +828,19 @@ hs_bindgen_e2885aecf91836c5 =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_vfio_intr_mode :: IO Rte_intr_mode
-rte_eal_vfio_intr_mode = hs_bindgen_e2885aecf91836c5
+rte_eal_vfio_intr_mode = hs_bindgen_120a6bd081343f8b
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_get_vf_token@
-foreign import ccall unsafe "hs_bindgen_379605a7c79794a4" hs_bindgen_379605a7c79794a4_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_vfio_get_vf_token@
+foreign import ccall unsafe "hs_bindgen_780b76c2487ab7ef" hs_bindgen_780b76c2487ab7ef_base ::
      BG.Ptr BG.Void
   -> IO ()
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_vfio_get_vf_token@
-hs_bindgen_379605a7c79794a4 ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_vfio_get_vf_token@
+hs_bindgen_780b76c2487ab7ef ::
      BG.Ptr (IsA.Elem Rte_uuid_t)
   -> IO ()
-hs_bindgen_379605a7c79794a4 =
-  BG.fromFFIType hs_bindgen_379605a7c79794a4_base
+hs_bindgen_780b76c2487ab7ef =
+  BG.fromFFIType hs_bindgen_780b76c2487ab7ef_base
 
 {-| Copy the user-configured vfio VF token.
 
@@ -862,16 +862,16 @@ rte_eal_vfio_get_vf_token ::
      -}
   -> IO ()
 rte_eal_vfio_get_vf_token =
-  hs_bindgen_379605a7c79794a4
+  hs_bindgen_780b76c2487ab7ef
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_sys_gettid@
-foreign import ccall unsafe "hs_bindgen_9c9a1ebc74a8f443" hs_bindgen_9c9a1ebc74a8f443_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_sys_gettid@
+foreign import ccall unsafe "hs_bindgen_708ba703b6e63db8" hs_bindgen_708ba703b6e63db8_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_sys_gettid@
-hs_bindgen_9c9a1ebc74a8f443 :: IO BG.CInt
-hs_bindgen_9c9a1ebc74a8f443 =
-  BG.fromFFIType hs_bindgen_9c9a1ebc74a8f443_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_sys_gettid@
+hs_bindgen_708ba703b6e63db8 :: IO BG.CInt
+hs_bindgen_708ba703b6e63db8 =
+  BG.fromFFIType hs_bindgen_708ba703b6e63db8_base
 
 {-| A wrap API for syscall gettid.
 
@@ -884,16 +884,16 @@ hs_bindgen_9c9a1ebc74a8f443 =
     __exported by:__ @rte_eal.h@
 -}
 rte_sys_gettid :: IO BG.CInt
-rte_sys_gettid = hs_bindgen_9c9a1ebc74a8f443
+rte_sys_gettid = hs_bindgen_708ba703b6e63db8
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_gettid@
-foreign import ccall unsafe "hs_bindgen_fcb333818809c3db" hs_bindgen_fcb333818809c3db_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_gettid@
+foreign import ccall unsafe "hs_bindgen_2b34294194a6f632" hs_bindgen_2b34294194a6f632_base ::
      IO BG.Int32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_gettid@
-hs_bindgen_fcb333818809c3db :: IO BG.CInt
-hs_bindgen_fcb333818809c3db =
-  BG.fromFFIType hs_bindgen_fcb333818809c3db_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_gettid@
+hs_bindgen_2b34294194a6f632 :: IO BG.CInt
+hs_bindgen_2b34294194a6f632 =
+  BG.fromFFIType hs_bindgen_2b34294194a6f632_base
 
 {-| Get system unique thread id.
 
@@ -906,16 +906,16 @@ hs_bindgen_fcb333818809c3db =
     __exported by:__ @rte_eal.h@
 -}
 rte_gettid :: IO BG.CInt
-rte_gettid = hs_bindgen_fcb333818809c3db
+rte_gettid = hs_bindgen_2b34294194a6f632
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iova_mode@
-foreign import ccall unsafe "hs_bindgen_5f28dc5cd2d61fee" hs_bindgen_5f28dc5cd2d61fee_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_iova_mode@
+foreign import ccall unsafe "hs_bindgen_1a0b61d5e4d044f4" hs_bindgen_1a0b61d5e4d044f4_base ::
      IO BG.Word32
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_iova_mode@
-hs_bindgen_5f28dc5cd2d61fee :: IO Rte_iova_mode
-hs_bindgen_5f28dc5cd2d61fee =
-  BG.fromFFIType hs_bindgen_5f28dc5cd2d61fee_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_iova_mode@
+hs_bindgen_1a0b61d5e4d044f4 :: IO Rte_iova_mode
+hs_bindgen_1a0b61d5e4d044f4 =
+  BG.fromFFIType hs_bindgen_1a0b61d5e4d044f4_base
 
 {-| Get the iova mode
 
@@ -928,16 +928,16 @@ hs_bindgen_5f28dc5cd2d61fee =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_iova_mode :: IO Rte_iova_mode
-rte_eal_iova_mode = hs_bindgen_5f28dc5cd2d61fee
+rte_eal_iova_mode = hs_bindgen_1a0b61d5e4d044f4
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_mbuf_user_pool_ops@
-foreign import ccall unsafe "hs_bindgen_bc8fbd86df6345d2" hs_bindgen_bc8fbd86df6345d2_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_mbuf_user_pool_ops@
+foreign import ccall unsafe "hs_bindgen_d1b38ef93f731120" hs_bindgen_d1b38ef93f731120_base ::
      IO (BG.Ptr BG.Void)
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_mbuf_user_pool_ops@
-hs_bindgen_bc8fbd86df6345d2 :: IO (PtrConst.PtrConst BG.CChar)
-hs_bindgen_bc8fbd86df6345d2 =
-  BG.fromFFIType hs_bindgen_bc8fbd86df6345d2_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_mbuf_user_pool_ops@
+hs_bindgen_d1b38ef93f731120 :: IO (PtrConst.PtrConst BG.CChar)
+hs_bindgen_d1b38ef93f731120 =
+  BG.fromFFIType hs_bindgen_d1b38ef93f731120_base
 
 {-| Get user provided pool ops name for mbuf
 
@@ -951,16 +951,16 @@ hs_bindgen_bc8fbd86df6345d2 =
 -}
 rte_eal_mbuf_user_pool_ops :: IO (PtrConst.PtrConst BG.CChar)
 rte_eal_mbuf_user_pool_ops =
-  hs_bindgen_bc8fbd86df6345d2
+  hs_bindgen_d1b38ef93f731120
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_get_runtime_dir@
-foreign import ccall unsafe "hs_bindgen_bc6c1b903fbd5758" hs_bindgen_bc6c1b903fbd5758_base ::
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_get_runtime_dir@
+foreign import ccall unsafe "hs_bindgen_064657bff74b8475" hs_bindgen_064657bff74b8475_base ::
      IO (BG.Ptr BG.Void)
 
--- __unique:__ @dpdkhs_Generated.DPDK_Unsafe_rte_eal_get_runtime_dir@
-hs_bindgen_bc6c1b903fbd5758 :: IO (PtrConst.PtrConst BG.CChar)
-hs_bindgen_bc6c1b903fbd5758 =
-  BG.fromFFIType hs_bindgen_bc6c1b903fbd5758_base
+-- __unique:__ @dpdkhs_Generated.DPDK.RteEal_Unsafe_rte_eal_get_runtime_dir@
+hs_bindgen_064657bff74b8475 :: IO (PtrConst.PtrConst BG.CChar)
+hs_bindgen_064657bff74b8475 =
+  BG.fromFFIType hs_bindgen_064657bff74b8475_base
 
 {-| Get the runtime directory of DPDK
 
@@ -973,4 +973,4 @@ hs_bindgen_bc6c1b903fbd5758 =
     __exported by:__ @rte_eal.h@
 -}
 rte_eal_get_runtime_dir :: IO (PtrConst.PtrConst BG.CChar)
-rte_eal_get_runtime_dir = hs_bindgen_bc6c1b903fbd5758
+rte_eal_get_runtime_dir = hs_bindgen_064657bff74b8475

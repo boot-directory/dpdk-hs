@@ -12,10 +12,10 @@ synopsis:           DPDK Haskell bindings
 library
   hs-source-dirs:  lib
   exposed-modules:
-    , Generated.DPDK
-    , Generated.DPDK.FunPtr
-    , Generated.DPDK.Safe
-    , Generated.DPDK.Unsafe
+    , Generated.DPDK.RteEal
+    , Generated.DPDK.RteEal.FunPtr
+    , Generated.DPDK.RteEal.Safe
+    , Generated.DPDK.RteEal.Unsafe
   autogen-modules:
   ghc-options: -Wall -Wunused-packages
   pkgconfig-depends: libdpdk

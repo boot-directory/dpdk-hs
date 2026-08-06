@@ -16,37 +16,37 @@
 {-# LANGUAGE UnboxedTuples #-}
 {-# LANGUAGE UndecidableInstances #-}
 
-module Generated.DPDK
-    ( Generated.DPDK.C__Time_t(..)
-    , Generated.DPDK.C__Syscall_slong_t(..)
-    , Generated.DPDK.Timespec(..)
-    , Generated.DPDK.Rte_uuid_t(..)
-    , Generated.DPDK.Rte_intr_mode(..)
-    , pattern Generated.DPDK.RTE_INTR_MODE_NONE
-    , pattern Generated.DPDK.RTE_INTR_MODE_LEGACY
-    , pattern Generated.DPDK.RTE_INTR_MODE_MSI
-    , pattern Generated.DPDK.RTE_INTR_MODE_MSIX
-    , Generated.DPDK.rTE_MAGIC
-    , Generated.DPDK.Rte_proc_type_t(..)
-    , pattern Generated.DPDK.RTE_PROC_AUTO
-    , pattern Generated.DPDK.RTE_PROC_PRIMARY
-    , pattern Generated.DPDK.RTE_PROC_SECONDARY
-    , pattern Generated.DPDK.RTE_PROC_INVALID
-    , Generated.DPDK.rTE_MP_MAX_FD_NUM
-    , Generated.DPDK.rTE_MP_MAX_NAME_LEN
-    , Generated.DPDK.rTE_MP_MAX_PARAM_LEN
-    , Generated.DPDK.Rte_mp_msg(..)
-    , Generated.DPDK.Rte_mp_reply(..)
-    , Generated.DPDK.Rte_mp_t_Aux(..)
-    , Generated.DPDK.Rte_mp_t(..)
-    , Generated.DPDK.Rte_mp_async_reply_t_Aux(..)
-    , Generated.DPDK.Rte_mp_async_reply_t(..)
-    , Generated.DPDK.Rte_usage_hook_t_Aux(..)
-    , Generated.DPDK.Rte_usage_hook_t(..)
-    , Generated.DPDK.Rte_iova_mode(..)
-    , pattern Generated.DPDK.RTE_IOVA_DC
-    , pattern Generated.DPDK.RTE_IOVA_PA
-    , pattern Generated.DPDK.RTE_IOVA_VA
+module Generated.DPDK.RteEal
+    ( Generated.DPDK.RteEal.C__Time_t(..)
+    , Generated.DPDK.RteEal.C__Syscall_slong_t(..)
+    , Generated.DPDK.RteEal.Timespec(..)
+    , Generated.DPDK.RteEal.Rte_uuid_t(..)
+    , Generated.DPDK.RteEal.Rte_intr_mode(..)
+    , pattern Generated.DPDK.RteEal.RTE_INTR_MODE_NONE
+    , pattern Generated.DPDK.RteEal.RTE_INTR_MODE_LEGACY
+    , pattern Generated.DPDK.RteEal.RTE_INTR_MODE_MSI
+    , pattern Generated.DPDK.RteEal.RTE_INTR_MODE_MSIX
+    , Generated.DPDK.RteEal.rTE_MAGIC
+    , Generated.DPDK.RteEal.Rte_proc_type_t(..)
+    , pattern Generated.DPDK.RteEal.RTE_PROC_AUTO
+    , pattern Generated.DPDK.RteEal.RTE_PROC_PRIMARY
+    , pattern Generated.DPDK.RteEal.RTE_PROC_SECONDARY
+    , pattern Generated.DPDK.RteEal.RTE_PROC_INVALID
+    , Generated.DPDK.RteEal.rTE_MP_MAX_FD_NUM
+    , Generated.DPDK.RteEal.rTE_MP_MAX_NAME_LEN
+    , Generated.DPDK.RteEal.rTE_MP_MAX_PARAM_LEN
+    , Generated.DPDK.RteEal.Rte_mp_msg(..)
+    , Generated.DPDK.RteEal.Rte_mp_reply(..)
+    , Generated.DPDK.RteEal.Rte_mp_t_Aux(..)
+    , Generated.DPDK.RteEal.Rte_mp_t(..)
+    , Generated.DPDK.RteEal.Rte_mp_async_reply_t_Aux(..)
+    , Generated.DPDK.RteEal.Rte_mp_async_reply_t(..)
+    , Generated.DPDK.RteEal.Rte_usage_hook_t_Aux(..)
+    , Generated.DPDK.RteEal.Rte_usage_hook_t(..)
+    , Generated.DPDK.RteEal.Rte_iova_mode(..)
+    , pattern Generated.DPDK.RteEal.RTE_IOVA_DC
+    , pattern Generated.DPDK.RteEal.RTE_IOVA_PA
+    , pattern Generated.DPDK.RteEal.RTE_IOVA_VA
     )
   where
 

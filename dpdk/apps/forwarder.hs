@@ -1,6 +1,6 @@
 module Main where
 
-import Generated.DPDK ()
+import Generated.DPDK.RteEal ()
 
 main :: IO ()
 main = do
