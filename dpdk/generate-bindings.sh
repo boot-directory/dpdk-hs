@@ -40,3 +40,10 @@ hs-bindgen-cli preprocess \
     "${debug_flags[@]}" \
     --module Generated.DPDK.RteEal \
     rte_eal.h
+
+C_INCLUDE_PATH="." hs-bindgen-cli preprocess \
+    "${module_flags[@]}" \
+    "${select_flags[@]}" \
+    "${debug_flags[@]}" \
+    --module Generated.DPDK.Broken \
+    rte_mempool.h

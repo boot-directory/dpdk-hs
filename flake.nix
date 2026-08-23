@@ -32,7 +32,6 @@
           packages = {
             dpdk-hs = dpdk-hs;
             inherit (pkgs) hs-bindgen-cli;
-            default = dpdk-hs;
           };
 
           devShells = {
