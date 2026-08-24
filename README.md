@@ -4,6 +4,11 @@ An attempt to generate DPDK bindings for Haskell using [hs-bindgen](https://gith
 
 ## Development
 
+To generate bindings, run the following script:
+```bash
+sh ./dpdk/generate-bindings.sh
+```
+
 To use a local fork of `hs-bindgen`, override the flake input:
 
 ```bash
