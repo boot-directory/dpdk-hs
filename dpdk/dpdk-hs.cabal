@@ -62,6 +62,7 @@ executable dpdk-forwarder
     -rtsopts
   build-depends:
     , base >=4.7 && <5
+    , async
     , dpdk-hs
     , hs-bindgen-runtime
   default-language: GHC2021

@@ -12,7 +12,12 @@
   };
 
   outputs =
-    inputs@{ flake-parts, nixpkgs, hs-bindgen, ... }:
+    inputs@{
+      flake-parts,
+      nixpkgs,
+      hs-bindgen,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       perSystem =
@@ -27,6 +32,25 @@
               libdpdk = pkgs.dpdk;
             }
           );
+          withStatic = package: package.overrideAttrs { dontDisableStatic = true; };
+          staticElfutils = pkgs.elfutils.overrideAttrs (old: {
+            postInstall = (old.postInstall or "") + ''
+              install -m644 lib/libeu.a $out/lib/libeu.a
+              substituteInPlace $dev/lib/pkgconfig/libdw.pc --replace-fail 'Libs.private:' 'Libs.private: -leu'
+            '';
+          });
+          staticLibraries = [
+            (pkgs.gmp.override { withStatic = true; })
+            (withStatic pkgs.libffi)
+            (withStatic pkgs.numactl)
+            (withStatic pkgs.libbsd)
+            (withStatic pkgs.libmd)
+            pkgs.zlib.static
+            (pkgs.zstd.override { enableStatic = true; })
+            (pkgs.bzip2.override { enableStatic = true; })
+            (withStatic pkgs.xz)
+            staticElfutils
+          ];
         in
         {
           packages = {
@@ -37,12 +61,14 @@
           devShells = {
             default = pkgs.haskellPackages.shellFor {
               packages = _: [ dpdk-hs ];
+              buildInputs = staticLibraries;
+              PKG_CONFIG_PATH = pkgs.lib.makeSearchPathOutput "dev" "lib/pkgconfig" staticLibraries;
+              NIX_LDFLAGS = "-L${pkgs.glibc}/lib -L${pkgs.glibc.static}/lib";
               nativeBuildInputs = [
                 # Haskell toolchain.
                 pkgs.cabal-install
                 pkgs.ghc
                 pkgs.haskell-language-server
-                
 
                 # `hs-bindgen` client.
                 pkgs.hs-bindgen-cli
