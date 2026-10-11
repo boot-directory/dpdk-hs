@@ -23,7 +23,11 @@ import System.Environment (getArgs, getProgName)
 
 main :: IO ()
 main = do
-  ealInit
+  progName <- getProgName
+  cliArgs <- getArgs
+  let args = progName : cliArgs
+
+  ealInit args
 
   mempool <- initMempool
 
@@ -115,11 +119,6 @@ initPort port rte_mempool = do
     let mac =  intercalate ":" .  map (\w8 -> showHex w8 "") $ toList addr_bytes
     putStrLn $ "Port: " <> show port <> ". Mac: " <> mac
 
-  -- _ <- do
-  --   retval <- rte_eth_promiscuous_enable port
-  --   when (retval /= 0) $
-  --     fail $ "Failed to enable promisc for port: " <> show port
-
   pure ()
 
 initMempool :: IO (Ptr Rte_mempool)
@@ -137,12 +136,8 @@ initMempool = do
   pure mbuf_pool
 
 
-ealInit :: IO ()
-ealInit = do
-  progName <- getProgName
-  cliArgs <- getArgs
-  let args = progName : cliArgs
-
+ealInit :: [String] -> IO ()
+ealInit args = do
   withCStringArray args $ \argv -> do
     ret <- rte_eal_init (fromIntegral (length args)) argv
     when (ret < 0) $
