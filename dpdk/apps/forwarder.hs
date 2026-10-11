@@ -4,6 +4,7 @@
 module Main where
 
 import Control.Monad (when, forM, void)
+import Control.Concurrent.Async (withAsyncOn, waitBoth)
 import Foreign (Ptr, free, nullPtr, withArray, Word16, alloca, allocaArray, advancePtr)
 import Foreign.C (CChar, CUInt, newCString)
 import Foreign.C.ConstPtr (ConstPtr (..))
@@ -18,11 +19,26 @@ import HsBindgen.Runtime.Marshal (readRaw)
 import Generated.DPDK.Rte_ether (Rte_ether_addr(..))
 import Numeric (showHex)
 import Data.List (intercalate)
-import Control.Concurrent (forkOn)
+import System.Environment (getArgs, getProgName)
+import Control.Concurrent (getNumCapabilities)
 
 main :: IO ()
 main = do
-  ealInit
+  progName <- getProgName
+  cliArgs <- getArgs
+
+  let
+    args =
+      case cliArgs of
+        [] -> [
+            "--no-huge",
+            "-m=1024",
+            "--vdev=virtio_user0,iface=port-in,queue_size=1024,path=/dev/vhost-net",
+            "--vdev=virtio_user1,iface=port-ex,queue_size=1024,path=/dev/vhost-net"
+          ]
+        nonEmptyArgs -> nonEmptyArgs
+
+  ealInit (progName : args)
 
   mempool <- initMempool
 
@@ -35,11 +51,18 @@ main = do
       initPort port mempool
       pure port
 
+
   void case ports of
     [port1, port2] -> do
-      void . forkOn 1 $ startForwarder port1 port2
-      void . forkOn 2 $ startForwarder port2 port1
-      pure ()
+      -- Threads to cores pinning
+      cores <- getNumCapabilities
+      let core1 = cores - 2
+          core2 = cores - 1
+      putStrLn $ "Core1: " <> show core1 <> ". Core2: " <> show core2
+
+      withAsyncOn core1 (startForwarder port1 port2) $ \forward ->
+        withAsyncOn core2 (startForwarder port2 port1) $ \backward ->
+          waitBoth forward backward
     _ -> error "Impossible"
 
 
@@ -53,7 +76,10 @@ startForwarder rxPort txPort = do
   allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) (doForwarding rxPort txPort)
 
 burst_size :: Word16
-burst_size = 32
+burst_size = 256
+
+descriptor_count :: Word16
+descriptor_count = 256
 
 doForwarding :: Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
 doForwarding rxPort txPort mbufs = waitPackets
@@ -88,12 +114,12 @@ initPort port rte_mempool = do
       fail $ "rte_eth_dev initialization failed with code: " <> show retval
 
   _ <- do
-    retval <- rte_eth_rx_queue_setup port 0 128 0 (ConstPtr nullPtr) rte_mempool
+    retval <- rte_eth_rx_queue_setup port 0 descriptor_count 0 (ConstPtr nullPtr) rte_mempool
     when (retval < 0) $ do
       fail $ "Failed to initialize rx_queue with code" <> show retval
 
   _ <- do
-    retval <- rte_eth_tx_queue_setup port 0 128 0 (ConstPtr nullPtr)
+    retval <- rte_eth_tx_queue_setup port 0 descriptor_count 0 (ConstPtr nullPtr)
     when (retval < 0) $ do
       fail $ "Failed to initialize tx_queue with code" <> show retval
 
@@ -110,11 +136,6 @@ initPort port rte_mempool = do
     Rte_ether_addr{addr_bytes} <- readRaw rte_ether_addr_ptr
     let mac =  intercalate ":" .  map (\w8 -> showHex w8 "") $ toList addr_bytes
     putStrLn $ "Port: " <> show port <> ". Mac: " <> mac
-
-  _ <- do
-    retval <- rte_eth_promiscuous_enable port
-    when (retval /= 0) $
-      fail $ "Failed to enable promisc for port: " <> show port
 
   pure ()
 
@@ -133,16 +154,8 @@ initMempool = do
   pure mbuf_pool
 
 
-ealInit :: IO ()
-ealInit = do
-  let args = [
-          "dpdk-hs",
-          "--no-huge",
-          "-m=1024",
-          "--vdev=net_tap0,iface=rx0",
-          "--vdev=net_tap1,iface=tx0"
-        ]
-
+ealInit :: [String] -> IO ()
+ealInit args = do
   withCStringArray args $ \argv -> do
     ret <- rte_eal_init (fromIntegral (length args)) argv
     when (ret < 0) $

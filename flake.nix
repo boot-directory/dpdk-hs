@@ -12,7 +12,12 @@
   };
 
   outputs =
-    inputs@{ flake-parts, nixpkgs, hs-bindgen, ... }:
+    inputs@{
+      flake-parts,
+      nixpkgs,
+      hs-bindgen,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       perSystem =
@@ -42,7 +47,6 @@
                 pkgs.cabal-install
                 pkgs.ghc
                 pkgs.haskell-language-server
-                
 
                 # `hs-bindgen` client.
                 pkgs.hs-bindgen-cli

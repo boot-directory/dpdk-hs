@@ -60,8 +60,10 @@ executable dpdk-forwarder
     -Wall -Wunused-packages
     -threaded
     -rtsopts
+    -with-rtsopts "-N -qa"
   build-depends:
     , base >=4.7 && <5
+    , async
     , dpdk-hs
     , hs-bindgen-runtime
   default-language: GHC2021
@@ -72,7 +74,7 @@ executable dpdk-hello
   ghc-options:
     -Wall -Wunused-packages
     -threaded
-    -rtsopts -with-rtsopts "-N3 -qa"
+    -rtsopts
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs
