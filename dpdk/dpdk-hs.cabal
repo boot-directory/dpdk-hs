@@ -12,13 +12,41 @@ synopsis:           DPDK Haskell bindings
 library
   hs-source-dirs:  lib
   exposed-modules:
-    , Generated.DPDK.RteEal
-    , Generated.DPDK.RteEal.FunPtr
-    , Generated.DPDK.RteEal.Safe
-    , Generated.DPDK.RteEal.Unsafe
+
+    , Generated.DPDK.Generic.Rte_byteorder
+    , Generated.DPDK.Rte_cman
+    , Generated.DPDK.Rte_dev_info
+    , Generated.DPDK.Rte_devargs
+    , Generated.DPDK.Rte_ether
+    , Generated.DPDK.Generic.Rte_spinlock
+    , Generated.DPDK.Rte_common
+    , Generated.DPDK.Rte_mbuf_core
+    , Generated.DPDK.Rte_memzone
+    , Generated.DPDK.Rte_pci_dev_feature_defs
+    , Generated.DPDK.Rte_ring
+    , Generated.DPDK.Rte_uuid
+    , Generated.DPDK.Rte_eal
+    , Generated.DPDK.Rte_eal.FunPtr
+    , Generated.DPDK.Rte_eal.Safe
+    , Generated.DPDK.Rte_eal.Unsafe
+    , Generated.DPDK.Rte_ethdev
+    , Generated.DPDK.Rte_ethdev.FunPtr
+    , Generated.DPDK.Rte_ethdev.Safe
+    , Generated.DPDK.Rte_ethdev.Unsafe
+    , Generated.DPDK.Rte_mbuf
+    , Generated.DPDK.Rte_mbuf.FunPtr
+    , Generated.DPDK.Rte_mbuf.Safe
+    , Generated.DPDK.Rte_mbuf.Unsafe
+    , Generated.DPDK.Rte_mempool
+    , Generated.DPDK.Rte_mempool.FunPtr
+    , Generated.DPDK.Rte_mempool.Global
+    , Generated.DPDK.Rte_mempool.Safe
+    , Generated.DPDK.Rte_mempool.Unsafe
+
   autogen-modules:
-  ghc-options: -Wall -Wunused-packages
+  ghc-options: -Wall -Wunused-packages -optc-mssse3
   pkgconfig-depends: libdpdk
+  include-dirs: ./dpdk-c/
   build-depends:
     , base >=4.7 && <5
     , c-expr-runtime
@@ -28,20 +56,18 @@ library
 executable dpdk-forwarder
   main-is: forwarder.hs
   hs-source-dirs: apps
-  other-modules:
-  autogen-modules:
-  ghc-options: -Wall -Wunused-packages
+  ghc-options: -Wall -Wunused-packages -rtsopts -threaded -optc-mssse3
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs
+    , hs-bindgen-runtime
   default-language: GHC2021
 
 executable dpdk-hello
   main-is: hello.hs
   hs-source-dirs: apps
-  other-modules:
-  autogen-modules:
-  ghc-options: -Wall -Wunused-packages
+  ghc-options: -Wall -Wunused-packages -optc-mssse3 -threaded -rtsopts "-N3 -qa"
+
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs

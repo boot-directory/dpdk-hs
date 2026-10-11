@@ -5,7 +5,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     hs-bindgen = {
-      url = "github:well-typed/hs-bindgen";
+      url = "github:well-typed/hs-bindgen?ref=bolt12/742";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
@@ -50,6 +50,8 @@
                 # Connect `hs-bindgen` to the Clang toolchain and `dpdk`.
                 pkgs.hsBindgenHook
                 pkgs.clang
+
+                pkgs.iperf
               ];
             };
           };

@@ -3,8 +3,8 @@ module Main where
 import Control.Monad
 import Foreign
 import Foreign.C
-import Generated.DPDK.RteEal ()
-import Generated.DPDK.RteEal.Unsafe
+import Generated.DPDK.Rte_eal ()
+import Generated.DPDK.Rte_eal.Unsafe
 
 withCStringArray :: [String] -> (Ptr (Ptr CChar) -> IO a) -> IO a
 withCStringArray xs f =

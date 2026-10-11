@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+LIB_DPDK_DIR=$(pkg-config --variable=includedir libdpdk)
+
 # Command line flags affecting module generation.
 module_flags=(
     # C has a global namespace. Providing a unique ID ensures the C wrappers
@@ -21,7 +23,9 @@ select_flags=(
     --select-except-by-decl-name 'rte_eal_get_baseaddr'
     --select-except-by-decl-name 'rte_eal_driver_path_count'
     --select-except-by-decl-name 'rte_eal_driver_path_next'
-    
+    --select-except-by-decl-name 'rte_mempool_event_callback_register'
+    --select-except-by-decl-name 'rte_mempool_event_callback_unregister'
+    --omit-field-prefixes
 )
 
 # Increase the verbosity of `hs-bindgen` to learn something about its internals.
@@ -38,12 +42,8 @@ hs-bindgen-cli preprocess \
     "${module_flags[@]}" \
     "${select_flags[@]}" \
     "${debug_flags[@]}" \
-    --module Generated.DPDK.RteEal \
-    rte_eal.h
-
-C_INCLUDE_PATH="." hs-bindgen-cli preprocess \
-    "${module_flags[@]}" \
-    "${select_flags[@]}" \
-    "${debug_flags[@]}" \
-    --module Generated.DPDK.Broken \
-    rte_mempool.h
+    -I "$LIB_DPDK_DIR" \
+    -I "dpdk/dpdk-c/" \
+    --library "$LIB_DPDK_DIR" \
+    --module Generated.DPDK \
+    dpdk.h
