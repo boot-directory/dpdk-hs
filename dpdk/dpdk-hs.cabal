@@ -56,7 +56,10 @@ library
 executable dpdk-forwarder
   main-is: forwarder.hs
   hs-source-dirs: apps
-  ghc-options: -Wall -Wunused-packages -rtsopts -threaded -optc-mssse3
+  ghc-options:
+    -Wall -Wunused-packages
+    -threaded
+    -rtsopts
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs
@@ -66,8 +69,10 @@ executable dpdk-forwarder
 executable dpdk-hello
   main-is: hello.hs
   hs-source-dirs: apps
-  ghc-options: -Wall -Wunused-packages -optc-mssse3 -threaded -rtsopts "-N3 -qa"
-
+  ghc-options:
+    -Wall -Wunused-packages
+    -threaded
+    -rtsopts -with-rtsopts "-N3 -qa"
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs
