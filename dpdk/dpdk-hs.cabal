@@ -45,6 +45,7 @@ library
 
   autogen-modules:
   ghc-options: -Wall -Wunused-packages -optc-mssse3
+    -O2
   pkgconfig-depends: libdpdk
   include-dirs: ./dpdk-c/
   build-depends:
@@ -60,6 +61,8 @@ executable dpdk-forwarder
     -Wall -Wunused-packages
     -threaded
     -rtsopts
+    -with-rtsopts "-N -qa"
+    -O2
   build-depends:
     , base >=4.7 && <5
     , async
@@ -73,7 +76,7 @@ executable dpdk-hello
   ghc-options:
     -Wall -Wunused-packages
     -threaded
-    -rtsopts -with-rtsopts "-N3 -qa"
+    -rtsopts
   build-depends:
     , base >=4.7 && <5
     , dpdk-hs

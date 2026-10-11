@@ -20,6 +20,7 @@ import Generated.DPDK.Rte_ether (Rte_ether_addr(..))
 import Numeric (showHex)
 import Data.List (intercalate)
 import System.Environment (getArgs, getProgName)
+import Control.Concurrent (getNumCapabilities)
 
 main :: IO ()
 main = do
@@ -30,14 +31,14 @@ main = do
     args =
       case cliArgs of
         [] -> [
-            "-no-huge",
+            "--no-huge",
             "-m=1024",
             "--vdev=virtio_user0,iface=port-in,queue_size=1024,path=/dev/vhost-net",
             "--vdev=virtio_user1,iface=port-ex,queue_size=1024,path=/dev/vhost-net"
           ]
-        nonEmptyArgs -> progName : nonEmptyArgs
+        nonEmptyArgs -> nonEmptyArgs
 
-  ealInit args
+  ealInit (progName : args)
 
   mempool <- initMempool
 
@@ -50,10 +51,17 @@ main = do
       initPort port mempool
       pure port
 
+
   void case ports of
-    [port1, port2] ->
-      withAsyncOn 10 (startForwarder port1 port2) $ \forward ->
-        withAsyncOn 11 (startForwarder port2 port1) $ \backward ->
+    [port1, port2] -> do
+      -- Threads to cores pinning
+      cores <- getNumCapabilities
+      let core1 = cores - 2
+          core2 = cores - 1
+      putStrLn $ "Core1: " <> show core1 <> ". Core2: " <> show core2
+
+      withAsyncOn core1 (startForwarder port1 port2) $ \forward ->
+        withAsyncOn core2 (startForwarder port2 port1) $ \backward ->
           waitBoth forward backward
     _ -> error "Impossible"
 
