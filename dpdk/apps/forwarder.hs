@@ -25,7 +25,17 @@ main :: IO ()
 main = do
   progName <- getProgName
   cliArgs <- getArgs
-  let args = progName : cliArgs
+
+  let
+    args =
+      case cliArgs of
+        [] -> [
+            "-no-huge",
+            "-m=1024",
+            "--vdev=virtio_user0,iface=port-in,queue_size=1024,path=/dev/vhost-net",
+            "--vdev=virtio_user1,iface=port-ex,queue_size=1024,path=/dev/vhost-net"
+          ]
+        nonEmptyArgs -> progName : nonEmptyArgs
 
   ealInit args
 
