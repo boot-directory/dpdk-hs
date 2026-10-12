@@ -66,6 +66,7 @@ executable dpdk-forwarder
     , async
     , dpdk-hs
     , hs-bindgen-runtime
+    , optparse-applicative
   default-language: GHC2021
 
 executable dpdk-hello

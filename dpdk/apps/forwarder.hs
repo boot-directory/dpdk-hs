@@ -143,6 +143,11 @@ parseCliArgs cores args =
 -- * Core
 --------------------------------------------------------------------------------
 
+startForwarder :: Word16 -> Word16 -> Word16 -> IO ()
+startForwarder port1 port2 queue =
+  allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) $
+    doForwarding port1 port2 queue
+
 data Worker = Worker
   { workerCapability :: Int
   , workerPort1 :: Word16
@@ -156,11 +161,6 @@ withForwarders (config:rest) workers =
   withAsyncOn config.workerCapability
     (startForwarder config.workerPort1 config.workerPort2 config.workerQueue) $ \worker ->
       withForwarders rest (worker:workers)
-
-startForwarder :: Word16 -> Word16 -> Word16 -> IO ()
-startForwarder port1 port2 queue =
-  allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) $
-    doForwarding port1 port2 queue
 
 burst_size :: Word16
 burst_size = 256
