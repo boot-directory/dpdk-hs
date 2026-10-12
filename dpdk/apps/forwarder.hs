@@ -1,132 +1,246 @@
 {-# LANGUAGE BlockArguments #-}
+{-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE OverloadedRecordDot #-}
 {-# LANGUAGE DataKinds #-}
+{-# LANGUAGE PatternSynonyms #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 module Main where
 
-import Control.Monad (when, forM, void)
-import Control.Concurrent.Async (withAsyncOn, waitBoth)
-import Foreign (Ptr, free, nullPtr, withArray, Word16, alloca, allocaArray, advancePtr)
-import Foreign.C (CChar, CUInt, newCString)
+import Data.Bits ((.&.), (.|.), bit)
+import Control.Monad (when, forM, forM_, void)
+import Control.Concurrent.Async (Async, withAsyncOn, waitAnyCancel)
+import Foreign (Ptr, Storable, free, nullPtr, withArray, alloca, allocaArray, advancePtr, sizeOf)
+import Foreign.C (CChar, CInt, CUInt, newCString)
 import Foreign.C.ConstPtr (ConstPtr (..))
+import Foreign.Marshal.Utils (fillBytes)
 import Generated.DPDK.Rte_eal ()
 import Generated.DPDK.Rte_eal.Unsafe (rte_eal_init)
+import Generated.DPDK.Rte_ethdev (Rte_eth_conf(..), Rte_eth_conf_rx_adv_conf(..),
+  Rte_eth_dev_info(..), Rte_eth_rss_conf(..), Rte_eth_rxmode(..),
+  pattern RTE_ETH_HASH_FUNCTION_DEFAULT, pattern RTE_ETH_MQ_RX_NONE,
+  pattern RTE_ETH_MQ_RX_RSS)
 import Generated.DPDK.Rte_ethdev.Unsafe
 import Generated.DPDK.Rte_mbuf.Unsafe (rte_pktmbuf_pool_create, rte_pktmbuf_free_bulk)
 import Generated.DPDK.Rte_mbuf_core (rTE_MBUF_DEFAULT_BUF_SIZE, Rte_mbuf)
 import Generated.DPDK.Rte_mempool (Rte_mempool)
 import HsBindgen.Runtime.ConstantArray (toList)
-import HsBindgen.Runtime.Marshal (readRaw)
+import HsBindgen.Runtime.Marshal (readRaw, writeRaw)
 import Generated.DPDK.Rte_ether (Rte_ether_addr(..))
 import Numeric (showHex)
-import Data.List (intercalate)
+import Data.List (intercalate, isPrefixOf, nub, partition, stripPrefix)
+import Data.Word (Word16, Word64)
 import System.Environment (getArgs, getProgName)
+import System.IO (hPutStrLn, stderr)
 import Control.Concurrent (getNumCapabilities)
+import Text.Read (readMaybe)
 
 main :: IO ()
 main = do
   progName <- getProgName
   cliArgs <- getArgs
+  maxCores <- getNumCapabilities
+  (selectedCapabilities, ealArgs) <- either fail pure (parseCliArgs maxCores cliArgs)
 
   let
     args =
-      case cliArgs of
+      case ealArgs of
         [] -> [
             "--no-huge",
             "-m=1024",
-            "--vdev=virtio_user0,iface=port-in,queue_size=1024,path=/dev/vhost-net",
-            "--vdev=virtio_user1,iface=port-ex,queue_size=1024,path=/dev/vhost-net"
+            "--vdev=virtio_user0,iface=port-in,queues=2,queue_size=1024,path=/dev/vhost-net",
+            "--vdev=virtio_user1,iface=port-ex,queues=2,queue_size=1024,path=/dev/vhost-net"
           ]
         nonEmptyArgs -> nonEmptyArgs
 
   ealInit (progName : args)
 
-  mempool <- initMempool
-
   ports_cnt <- rte_eth_dev_count_avail
   when (ports_cnt /= 2) $
     fail $ "Expected 2 ports, but got: " <> show ports_cnt
-  
-  ports <-
-    forM [0 .. ports_cnt - 1] \port -> do
-      initPort port mempool
-      pure port
 
+  let port1 = 0
+      port2 = 1
+  info1 <- getPortInfo port1
+  info2 <- getPortInfo port2
 
-  void case ports of
-    [port1, port2] -> do
-      -- Threads to cores pinning
-      cores <- getNumCapabilities
-      let core1 = cores - 2
-          core2 = cores - 1
-      putStrLn $ "Core1: " <> show core1 <> ". Core2: " <> show core2
+  let maxQueues = minimum [
+        info1.max_rx_queues, info1.max_tx_queues,
+        info2.max_rx_queues, info2.max_tx_queues]
+  capabilities <- either fail pure (chooseCapabilities maxCores maxQueues selectedCapabilities)
 
-      withAsyncOn core1 (startForwarder port1 port2) $ \forward ->
-        withAsyncOn core2 (startForwarder port2 port1) $ \backward ->
-          waitBoth forward backward
-    _ -> error "Impossible"
+  let queueCount = fromIntegral (length capabilities) :: Word16
+      queueCapabilities = zip [0 :: Word16 ..] capabilities
+      rssHf1 = rssForPort queueCount info1
+      rssHf2 = rssForPort queueCount info2
+  putStrLn $ "Queues per port: " <> show queueCount
+  forM_ [(port1, rssHf1), (port2, rssHf2)] $ \(port, rssHf) ->
+    putStrLn $ "Port " <> show port <> " RSS " <>
+      if rssHf == 0 then "disabled" else "enabled"
+  forM_ queueCapabilities $ \(queue, core) ->
+    putStrLn $ "Queue " <> show queue <> " on RTS capability " <> show core
 
+  poolSocket <- max 0 <$> rte_eth_dev_socket_id port1
+  mempools <- forM (map fst queueCapabilities) (initMempool poolSocket)
+  initPort port1 mempools queueCount rssHf1
+  initPort port2 mempools queueCount rssHf2
+
+  let workers =
+        [ Worker
+            { workerCapability = core
+            , workerPort1 = port1
+            , workerPort2 = port2
+            , workerQueue = queue }
+        | (queue, core) <- queueCapabilities ]
+  withForwarders workers []
+
+chooseCapabilities :: Int -> Word16 -> Maybe [Int] -> Either String [Int]
+chooseCapabilities cores queueLimit selection
+  | queueLimit < 1 = Left "Both ports require at least one RX and TX queue"
+  | otherwise = case selection of
+      Nothing ->
+        let count = min cores (fromIntegral queueLimit)
+        in Right [cores - count .. cores - 1]
+      Just requested
+        | length requested <= fromIntegral queueLimit -> Right requested
+        | otherwise -> Left $
+            "Selected " <> show (length requested) <> " capabilities, but the ports support at most " <>
+              show queueLimit <> " queue pairs"
+
+parseCliArgs :: Int -> [String] -> Either String (Maybe [Int], [String])
+parseCliArgs cores args =
+  case partition (isPrefixOf option) args of
+    ([], ealArgs) -> Right (Nothing, ealArgs)
+    ([arg], ealArgs) -> do
+      value <- maybe (Left invalid) Right (stripPrefix (option <> "=") arg)
+      selected <- concat <$> traverse parseRange (splitCommas value)
+      if length selected == length (nub selected)
+        then Right (Just selected, ealArgs)
+        else Left invalid
+    _ -> Left invalid
+  where
+  option = "--capabilities"
+  invalid = "Invalid arguments"
+
+  parseRange entry =
+    case break (== '-') entry of
+      (first, []) -> (:[]) <$> parseIndex first
+      (first, _:lastIndex) -> do
+        start <- parseIndex first
+        end <- parseIndex lastIndex
+        if start <= end then Right [start .. end] else Left invalid
+
+  parseIndex entry =
+    case readMaybe entry of
+      Just index | index >= 0 && index < cores -> Right index
+      _ -> Left invalid
+
+  splitCommas value =
+    case break (== ',') value of
+      (group, []) -> [group]
+      (group, _:rest) -> group : splitCommas rest
 
 --------------------------------------------------------------------------------
 -- * Core
 --------------------------------------------------------------------------------
 
+data Worker = Worker
+  { workerCapability :: Int
+  , workerPort1 :: Word16
+  , workerPort2 :: Word16
+  , workerQueue :: Word16
+  }
 
-startForwarder :: Word16 -> Word16 -> IO ()
-startForwarder rxPort txPort = do
-  allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) (doForwarding rxPort txPort)
+withForwarders :: [Worker] -> [Async ()] -> IO ()
+withForwarders [] workers = void $ waitAnyCancel workers
+withForwarders (config:rest) workers =
+  withAsyncOn config.workerCapability
+    (startForwarder config.workerPort1 config.workerPort2 config.workerQueue) $ \worker ->
+      withForwarders rest (worker:workers)
+
+startForwarder :: Word16 -> Word16 -> Word16 -> IO ()
+startForwarder port1 port2 queue =
+  allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) $
+    doForwarding port1 port2 queue
 
 burst_size :: Word16
 burst_size = 256
 
 descriptor_count :: Word16
-descriptor_count = 256
+descriptor_count = 4096
 
-doForwarding :: Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
-doForwarding rxPort txPort mbufs = waitPackets
+doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
+doForwarding !port1 !port2 !queue !mbufs = forwardLoop
   where
-  waitPackets :: IO ()
-  waitPackets = do
-    nb_rx <- rte_eth_rx_burst rxPort 0 mbufs burst_size
-    if nb_rx == 0
-    then do waitPackets
-    else sendPackets nb_rx
-    
-  sendPackets :: Word16 -> IO ()
-  sendPackets nb_rx = do
-    nb_tx <- rte_eth_tx_burst txPort 0 mbufs nb_rx
-    when (nb_tx < nb_rx) do
-      rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
-    waitPackets
+  forwardLoop :: IO ()
+  forwardLoop = do
+    forwardOnce port1 port2
+    forwardOnce port2 port1
+    forwardLoop
 
-initPort :: Word16 -> Ptr Rte_mempool -> IO ()
-initPort port rte_mempool = do
+  forwardOnce :: Word16 -> Word16 -> IO ()
+  forwardOnce rxPort txPort = do
+    nb_rx <- rte_eth_rx_burst rxPort queue mbufs burst_size
+    when (nb_rx > 0) $ do
+      nb_tx <- rte_eth_tx_burst txPort queue mbufs nb_rx
+      when (nb_tx < nb_rx) $
+        rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
+
+-- RTE_ETH_RSS_IPV4|RTE_ETH_RSS_FRAG_IPV4|RTE_ETH_RSS_NONFRAG_IPV4_OTHER|RTE_ETH_RSS_IPV6|RTE_ETH_RSS_FRAG_IPV6|RTE_ETH_RSS_NONFRAG_IPV6_OTHER
+rssHashFunc :: Word64
+rssHashFunc = foldr ((.|.) . bit) 0 [2, 3, 7, 8, 9, 13]
+
+rssForPort :: Word16 -> Rte_eth_dev_info -> Word64
+rssForPort queueCount info
+  | queueCount > 1 && info.flow_type_rss_offloads .&. rssHashFunc == rssHashFunc = rssHashFunc
+  | otherwise = 0
+
+getPortInfo :: Word16 -> IO Rte_eth_dev_info
+getPortInfo port = do
   isValid <- rte_eth_dev_is_valid_port port
-  when (isValid == 0) $ fail "Invalid port"
+  when (isValid == 0) $ fail $ "Invalid port " <> show port
 
   alloca $ \dev_info -> do
     retval <- rte_eth_dev_info_get port dev_info
     when (retval /= 0) $
       fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
+    readRaw dev_info
 
-  alloca \port_config -> do
-    retval <- rte_eth_dev_configure port 1 1 (ConstPtr port_config)
+initPort :: Word16 -> [Ptr Rte_mempool] -> Word16 -> Word64 -> IO ()
+initPort port mempools queueCount rssHf = do
+  socket <- fromIntegral . max 0 <$> rte_eth_dev_socket_id port
+  withZeroed $ \port_config -> do
+    emptyConfig <- readRaw port_config
+    let rxMode = emptyConfig.rxmode
+        rxAdvConf = emptyConfig.rx_adv_conf
+        rssConf = rxAdvConf.rss_conf
+        portConf = emptyConfig
+          { rxmode = rxMode { mq_mode = if rssHf == 0 then RTE_ETH_MQ_RX_NONE else RTE_ETH_MQ_RX_RSS }
+          , rx_adv_conf = rxAdvConf
+              { rss_conf = rssConf
+                  { rss_hf = rssHf
+                  , algorithm = RTE_ETH_HASH_FUNCTION_DEFAULT } } }
+    writeRaw port_config portConf
+    retval <- rte_eth_dev_configure port queueCount queueCount (ConstPtr port_config)
     when (retval /= 0) $
-      fail $ "rte_eth_dev initialization failed with code: " <> show retval
+      fail $ "Port " <> show port <> " configuration failed with code: " <> show retval
 
-  _ <- do
-    retval <- rte_eth_rx_queue_setup port 0 descriptor_count 0 (ConstPtr nullPtr) rte_mempool
+  forM_ (zip [0 .. queueCount - 1] mempools) $ \(queue, rte_mempool) -> do
+    retval <- rte_eth_rx_queue_setup port queue descriptor_count socket (ConstPtr nullPtr) rte_mempool
     when (retval < 0) $ do
-      fail $ "Failed to initialize rx_queue with code" <> show retval
+      fail $ "Failed to initialize RX queue " <> show queue <> " on port " <> show port <> ": " <> show retval
 
-  _ <- do
-    retval <- rte_eth_tx_queue_setup port 0 descriptor_count 0 (ConstPtr nullPtr)
+  forM_ [0 .. queueCount - 1] $ \queue -> do
+    retval <- rte_eth_tx_queue_setup port queue descriptor_count socket (ConstPtr nullPtr)
     when (retval < 0) $ do
-      fail $ "Failed to initialize tx_queue with code" <> show retval
+      fail $ "Failed to initialize TX queue " <> show queue <> " on port " <> show port <> ": " <> show retval
 
-  _ <- do
-    retval <- rte_eth_dev_start port
-    when (retval < 0) $ do
-      fail $ "Failed to start port with num: " <> show port
+  startResult <- rte_eth_dev_start port
+  when (startResult < 0) $
+    fail $ "Failed to start port " <> show port <> ": " <> show startResult
+
+  promiscResult <- rte_eth_promiscuous_enable port
+  when (promiscResult < 0) $
+    hPutStrLn stderr $ "Warning: failed to enable promiscuous mode on port " <> show port <> ": " <> show promiscResult
 
   alloca \rte_ether_addr_ptr -> do
     retval <- rte_eth_macaddr_get port rte_ether_addr_ptr
@@ -139,17 +253,17 @@ initPort port rte_mempool = do
 
   pure ()
 
-initMempool :: IO (Ptr Rte_mempool)
-initMempool = do
-  name <- ConstPtr <$> newCString "MBUF_POOL"
+initMempool :: CInt -> Word16 -> IO (Ptr Rte_mempool)
+initMempool socket queue = do
+  name <- ConstPtr <$> newCString ("MBUF_POOL_" <> show queue)
   mbuf_pool <-
     rte_pktmbuf_pool_create
       name
-      (num_mbufs * 2)
+      num_mbufs
       mbuf_cache_size
       0
       (fromIntegral rTE_MBUF_DEFAULT_BUF_SIZE)
-      0
+      socket
   when (mbuf_pool == nullPtr) $ fail "Cannot create mbuf pool"
   pure mbuf_pool
 
@@ -165,16 +279,22 @@ ealInit args = do
 -- * Constants
 --------------------------------------------------------------------------------
 
+-- Two RX and two TX rings share pool + room for rearming and caches.
 num_mbufs :: CUInt
-num_mbufs = 8191
+num_mbufs = 4 * fromIntegral descriptor_count + 4096
 
 mbuf_cache_size :: CUInt
-mbuf_cache_size = 0
+mbuf_cache_size = 128
 
 
 --------------------------------------------------------------------------------
 -- * Helpers
 --------------------------------------------------------------------------------
+
+withZeroed :: forall a b. Storable a => (Ptr a -> IO b) -> IO b
+withZeroed action = alloca $ \ptr -> do
+  fillBytes ptr 0 (sizeOf (undefined :: a))
+  action ptr
 
 withCStringArray :: [String] -> (Ptr (Ptr CChar) -> IO a) -> IO a
 withCStringArray xs f =
