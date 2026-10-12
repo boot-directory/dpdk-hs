@@ -106,39 +106,6 @@ chooseCapabilities cores queueLimit selection
             "Selected " <> show (length requested) <> " capabilities, but the ports support at most " <>
               show queueLimit <> " queue pairs"
 
-parseCliArgs :: Int -> [String] -> Either String (Maybe [Int], [String])
-parseCliArgs cores args =
-  case partition (isPrefixOf option) args of
-    ([], ealArgs) -> Right (Nothing, ealArgs)
-    ([arg], ealArgs) -> do
-      value <- maybe (Left invalid) Right (stripPrefix (option <> "=") arg)
-      selected <- concat <$> traverse parseRange (splitCommas value)
-      if length selected == length (nub selected)
-        then Right (Just selected, ealArgs)
-        else Left invalid
-    _ -> Left invalid
-  where
-  option = "--capabilities"
-  invalid = "Invalid arguments"
-
-  parseRange entry =
-    case break (== '-') entry of
-      (first, []) -> (:[]) <$> parseIndex first
-      (first, _:lastIndex) -> do
-        start <- parseIndex first
-        end <- parseIndex lastIndex
-        if start <= end then Right [start .. end] else Left invalid
-
-  parseIndex entry =
-    case readMaybe entry of
-      Just index | index >= 0 && index < cores -> Right index
-      _ -> Left invalid
-
-  splitCommas value =
-    case break (== ',') value of
-      (group, []) -> [group]
-      (group, _:rest) -> group : splitCommas rest
-
 --------------------------------------------------------------------------------
 -- * Core
 --------------------------------------------------------------------------------
@@ -303,3 +270,41 @@ withCStringArray xs f =
       r <- f argv
       mapM_ free cstrs
       pure r
+
+--------------------------------------------------------------------------------
+-- * CLI parser
+--------------------------------------------------------------------------------
+
+parseCliArgs :: Int -> [String] -> Either String (Maybe [Int], [String])
+parseCliArgs cores args =
+  case partition (isPrefixOf option) args of
+    ([], ealArgs) -> Right (Nothing, ealArgs)
+    ([arg], ealArgs) -> do
+      value <- maybe (Left invalid) Right (stripPrefix (option <> "=") arg)
+      selected <- concat <$> traverse parseRange (splitCommas value)
+      if length selected == length (nub selected)
+        then Right (Just selected, ealArgs)
+        else Left invalid
+    _ -> Left invalid
+  where
+  option = "--capabilities"
+  invalid = "Invalid arguments"
+
+  parseRange entry =
+    case break (== '-') entry of
+      (first, []) -> (:[]) <$> parseIndex first
+      (first, _:lastIndex) -> do
+        start <- parseIndex first
+        end <- parseIndex lastIndex
+        if start <= end then Right [start .. end] else Left invalid
+
+  parseIndex entry =
+    case readMaybe entry of
+      Just index | index >= 0 && index < cores -> Right index
+      _ -> Left invalid
+
+  splitCommas value =
+    case break (== ',') value of
+      (group, []) -> [group]
+      (group, _:rest) -> group : splitCommas rest
+
