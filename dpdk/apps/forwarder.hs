@@ -135,23 +135,6 @@ burst_size = 256
 descriptor_count :: Word16
 descriptor_count = 4096
 
-doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
-doForwarding !port1 !port2 !queue !mbufs = forwardLoop
-  where
-  forwardLoop :: IO ()
-  forwardLoop = do
-    forwardOnce port1 port2
-    forwardOnce port2 port1
-    forwardLoop
-
-  forwardOnce :: Word16 -> Word16 -> IO ()
-  forwardOnce rxPort txPort = do
-    nb_rx <- rte_eth_rx_burst rxPort queue mbufs burst_size
-    when (nb_rx > 0) $ do
-      nb_tx <- rte_eth_tx_burst txPort queue mbufs nb_rx
-      when (nb_tx < nb_rx) $
-        rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
-
 -- RTE_ETH_RSS_IPV4|RTE_ETH_RSS_FRAG_IPV4|RTE_ETH_RSS_NONFRAG_IPV4_OTHER|RTE_ETH_RSS_IPV6|RTE_ETH_RSS_FRAG_IPV6|RTE_ETH_RSS_NONFRAG_IPV6_OTHER
 rssHashFunc :: Word64
 rssHashFunc = foldr ((.|.) . bit) 0 [2, 3, 7, 8, 9, 13]
@@ -171,6 +154,23 @@ getPortInfo port = do
     when (retval /= 0) $
       fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
     readRaw dev_info
+
+doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
+doForwarding !port1 !port2 !queue !mbufs = forwardLoop
+  where
+  forwardLoop :: IO ()
+  forwardLoop = do
+    forwardOnce port1 port2
+    forwardOnce port2 port1
+    forwardLoop
+
+  forwardOnce :: Word16 -> Word16 -> IO ()
+  forwardOnce rxPort txPort = do
+    nb_rx <- rte_eth_rx_burst rxPort queue mbufs burst_size
+    when (nb_rx > 0) $ do
+      nb_tx <- rte_eth_tx_burst txPort queue mbufs nb_rx
+      when (nb_tx < nb_rx) $
+        rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
 
 initPort :: Word16 -> [Ptr Rte_mempool] -> Word16 -> Word64 -> IO ()
 initPort port mempools queueCount rssHf = do
