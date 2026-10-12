@@ -155,23 +155,6 @@ getPortInfo port = do
       fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
     readRaw dev_info
 
-doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
-doForwarding !port1 !port2 !queue !mbufs = forwardLoop
-  where
-  forwardLoop :: IO ()
-  forwardLoop = do
-    forwardOnce port1 port2
-    forwardOnce port2 port1
-    forwardLoop
-
-  forwardOnce :: Word16 -> Word16 -> IO ()
-  forwardOnce rxPort txPort = do
-    nb_rx <- rte_eth_rx_burst rxPort queue mbufs burst_size
-    when (nb_rx > 0) $ do
-      nb_tx <- rte_eth_tx_burst txPort queue mbufs nb_rx
-      when (nb_tx < nb_rx) $
-        rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
-
 initPort :: Word16 -> [Ptr Rte_mempool] -> Word16 -> Word64 -> IO ()
 initPort port mempools queueCount rssHf = do
   socket <- fromIntegral . max 0 <$> rte_eth_dev_socket_id port
@@ -219,6 +202,23 @@ initPort port mempools queueCount rssHf = do
     putStrLn $ "Port: " <> show port <> ". Mac: " <> mac
 
   pure ()
+
+doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
+doForwarding !port1 !port2 !queue !mbufs = forwardLoop
+  where
+  forwardLoop :: IO ()
+  forwardLoop = do
+    forwardOnce port1 port2
+    forwardOnce port2 port1
+    forwardLoop
+
+  forwardOnce :: Word16 -> Word16 -> IO ()
+  forwardOnce rxPort txPort = do
+    nb_rx <- rte_eth_rx_burst rxPort queue mbufs burst_size
+    when (nb_rx > 0) $ do
+      nb_tx <- rte_eth_tx_burst txPort queue mbufs nb_rx
+      when (nb_tx < nb_rx) $
+        rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
 
 initMempool :: CInt -> Word16 -> IO (Ptr Rte_mempool)
 initMempool socket queue = do
