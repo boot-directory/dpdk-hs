@@ -106,6 +106,15 @@ chooseCapabilities cores queueLimit selection
             "Selected " <> show (length requested) <> " capabilities, but the ports support at most " <>
               show queueLimit <> " queue pairs"
 
+-- RTE_ETH_RSS_IPV4|RTE_ETH_RSS_FRAG_IPV4|RTE_ETH_RSS_NONFRAG_IPV4_OTHER|RTE_ETH_RSS_IPV6|RTE_ETH_RSS_FRAG_IPV6|RTE_ETH_RSS_NONFRAG_IPV6_OTHER
+rssHashFunc :: Word64
+rssHashFunc = foldr ((.|.) . bit) 0 [2, 3, 7, 8, 9, 13]
+
+rssForPort :: Word16 -> Rte_eth_dev_info -> Word64
+rssForPort queueCount info
+  | queueCount > 1 && info.flow_type_rss_offloads .&. rssHashFunc == rssHashFunc = rssHashFunc
+  | otherwise = 0
+
 --------------------------------------------------------------------------------
 -- * Core
 --------------------------------------------------------------------------------
@@ -134,15 +143,6 @@ burst_size = 256
 
 descriptor_count :: Word16
 descriptor_count = 4096
-
--- RTE_ETH_RSS_IPV4|RTE_ETH_RSS_FRAG_IPV4|RTE_ETH_RSS_NONFRAG_IPV4_OTHER|RTE_ETH_RSS_IPV6|RTE_ETH_RSS_FRAG_IPV6|RTE_ETH_RSS_NONFRAG_IPV6_OTHER
-rssHashFunc :: Word64
-rssHashFunc = foldr ((.|.) . bit) 0 [2, 3, 7, 8, 9, 13]
-
-rssForPort :: Word16 -> Rte_eth_dev_info -> Word64
-rssForPort queueCount info
-  | queueCount > 1 && info.flow_type_rss_offloads .&. rssHashFunc == rssHashFunc = rssHashFunc
-  | otherwise = 0
 
 getPortInfo :: Word16 -> IO Rte_eth_dev_info
 getPortInfo port = do
