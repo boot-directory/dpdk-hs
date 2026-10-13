@@ -9,8 +9,8 @@ module Main where
 import Data.Bits ((.&.), (.|.), bit)
 import Control.Monad (when, forM, forM_, void)
 import Control.Concurrent.Async (Async, withAsyncOn, waitAnyCancel)
-import Foreign (Ptr, Storable, free, nullPtr, withArray, alloca, allocaArray, advancePtr, sizeOf)
-import Foreign.C (CChar, CInt, CUInt, newCString)
+import Foreign (Ptr, Storable, free, nullPtr, withArray, alloca, allocaArray, advancePtr, sizeOf, withMany)
+import Foreign.C (CChar, CInt, CUInt, newCString, withCString)
 import Foreign.C.ConstPtr (ConstPtr (..))
 import Foreign.Marshal.Utils (fillBytes)
 import Generated.DPDK.Rte_eal ()
@@ -189,9 +189,10 @@ initPort mempools queueCount portInfo = do
     when (retval < 0) $ do
       fail $ "Failed to initialize TX queue " <> show queue <> " on port " <> show port <> ": " <> show retval
 
-  startResult <- rte_eth_dev_start port
-  when (startResult < 0) $
-    fail $ "Failed to start port " <> show port <> ": " <> show startResult
+  _ <- do
+    retval <- rte_eth_dev_start port
+    when (retval < 0) $
+      fail $ "Failed to start port " <> show port <> ": " <> show retval
 
   promiscResult <- rte_eth_promiscuous_enable port
   when (promiscResult < 0) $
@@ -225,10 +226,11 @@ initMempool socket queue = do
 
 ealInit :: [String] -> IO ()
 ealInit args = do
-  withCStringArray args $ \argv -> do
-    ret <- rte_eal_init (fromIntegral (length args)) argv
-    when (ret < 0) $
-      fail "rte_eal_init failed"
+  withMany withCString args $ \cstrs ->
+    withArray cstrs $ \argv -> do
+      ret <- rte_eal_init (fromIntegral (length args)) argv
+      when (ret < 0) $
+        fail "rte_eal_init failed"
 
 data Worker = Worker
   { workerCapability :: Int
@@ -282,14 +284,6 @@ withZeroed :: forall a b. Storable a => (Ptr a -> IO b) -> IO b
 withZeroed action = alloca $ \ptr -> do
   fillBytes ptr 0 (sizeOf (undefined :: a))
   action ptr
-
-withCStringArray :: [String] -> (Ptr (Ptr CChar) -> IO a) -> IO a
-withCStringArray xs f =
-  mapM newCString xs >>= \cstrs ->
-    withArray cstrs $ \argv -> do
-      r <- f argv
-      mapM_ free cstrs
-      pure r
 
 --------------------------------------------------------------------------------
 -- * CLI parser
