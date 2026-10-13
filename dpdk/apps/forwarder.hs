@@ -9,8 +9,8 @@ module Main where
 import Data.Bits ((.&.), (.|.), bit)
 import Control.Monad (when, forM, forM_, void)
 import Control.Concurrent.Async (Async, withAsyncOn, waitAnyCancel)
-import Foreign (Ptr, Storable, free, nullPtr, withArray, alloca, allocaArray, advancePtr, sizeOf, withMany)
-import Foreign.C (CChar, CInt, CUInt, newCString, withCString)
+import Foreign (Ptr, Storable, nullPtr, withArray, alloca, allocaArray, advancePtr, sizeOf, withMany)
+import Foreign.C (CInt, CUInt, newCString, withCString)
 import Foreign.C.ConstPtr (ConstPtr (..))
 import Foreign.Marshal.Utils (fillBytes)
 import Generated.DPDK.Rte_eal ()
@@ -77,8 +77,8 @@ main = do
 
   poolSocket <- max 0 <$> rte_eth_dev_socket_id info1.port
   mempools <- forM queues (initMempool poolSocket)
-  initPort  mempools queueCount info1
-  initPort mempools queueCount info2
+  initPort queueCount mempools info1
+  initPort queueCount mempools info2
 
   let workers =
         [ Worker
@@ -158,8 +158,8 @@ doForwarding !port1 !port2 !queue !mbufs = forwardLoop
       when (nb_tx < nb_rx) $
         rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
 
-initPort :: [Ptr Rte_mempool] -> Word16 -> PortInfo -> IO ()
-initPort mempools queueCount portInfo = do
+initPort :: Word16 -> [Ptr Rte_mempool] -> PortInfo -> IO ()
+initPort queueCount mempools portInfo = do
   let rssHf = portInfo.rssHf
       port = portInfo.port
   socket <- fromIntegral . max 0 <$> rte_eth_dev_socket_id port
