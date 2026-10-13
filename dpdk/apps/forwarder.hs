@@ -39,6 +39,7 @@ main = do
   progName <- getProgName
   cliArgs <- getArgs
   maxCores <- getNumCapabilities
+  putStrLn $ "Capablities: " <> show maxCores
   (selectedCapabilities, ealArgs) <- either fail pure (parseCliArgs maxCores cliArgs)
 
   let
@@ -57,63 +58,73 @@ main = do
   ports_cnt <- rte_eth_dev_count_avail
   when (ports_cnt /= 2) $
     fail $ "Expected 2 ports, but got: " <> show ports_cnt
-
-  let port1 = 0
-      port2 = 1
-  info1 <- getPortInfo port1
-  info2 <- getPortInfo port2
-
-  let maxQueues = minimum [
-        info1.max_rx_queues, info1.max_tx_queues,
-        info2.max_rx_queues, info2.max_tx_queues]
-  capabilities <- either fail pure (chooseCapabilities maxCores maxQueues selectedCapabilities)
+  info1WoRss <- getPortInfo 0
+  info2WoRss <- getPortInfo 1
+  capabilities <- chooseCapabilities [info1WoRss, info2WoRss] selectedCapabilities
 
   let queueCount = fromIntegral (length capabilities) :: Word16
-      queueCapabilities = zip [0 :: Word16 ..] capabilities
-      rssHf1 = rssForPort queueCount info1
-      rssHf2 = rssForPort queueCount info2
   putStrLn $ "Queues per port: " <> show queueCount
-  forM_ [(port1, rssHf1), (port2, rssHf2)] $ \(port, rssHf) ->
-    putStrLn $ "Port " <> show port <> " RSS " <>
-      if rssHf == 0 then "disabled" else "enabled"
+
+  let enableRss = queueCount > 1
+  info1 <- setRssForPort enableRss info1WoRss
+  info2 <- setRssForPort enableRss info2WoRss
+      
+  let queueCapabilities = zip [0 :: Word16 ..] capabilities
+      queues = map fst queueCapabilities
+
   forM_ queueCapabilities $ \(queue, core) ->
     putStrLn $ "Queue " <> show queue <> " on RTS capability " <> show core
 
-  poolSocket <- max 0 <$> rte_eth_dev_socket_id port1
-  mempools <- forM (map fst queueCapabilities) (initMempool poolSocket)
-  initPort port1 mempools queueCount rssHf1
-  initPort port2 mempools queueCount rssHf2
+  poolSocket <- max 0 <$> rte_eth_dev_socket_id info1.port
+  mempools <- forM queues (initMempool poolSocket)
+  initPort  mempools queueCount info1
+  initPort mempools queueCount info2
 
   let workers =
         [ Worker
             { workerCapability = core
-            , workerPort1 = port1
-            , workerPort2 = port2
+            , workerPort1 = info1.port
+            , workerPort2 = info2.port
             , workerQueue = queue }
         | (queue, core) <- queueCapabilities ]
   withForwarders workers []
 
-chooseCapabilities :: Int -> Word16 -> Maybe [Int] -> Either String [Int]
-chooseCapabilities cores queueLimit selection
-  | queueLimit < 1 = Left "Both ports require at least one RX and TX queue"
-  | otherwise = case selection of
-      Nothing ->
-        let count = min cores (fromIntegral queueLimit)
-        in Right [cores - count .. cores - 1]
-      Just requested
-        | length requested <= fromIntegral queueLimit -> Right requested
-        | otherwise -> Left $
-            "Selected " <> show (length requested) <> " capabilities, but the ports support at most " <>
-              show queueLimit <> " queue pairs"
+chooseCapabilities :: [PortInfo] -> Maybe [Int] -> IO [Int]
+chooseCapabilities portInfos selection = do
+  cores <- getNumCapabilities
+  let queueLimit = maxQueues portInfos
+  when (queueLimit < 1) do
+    fail "Both ports require at least one RX and TX queue"
+  case selection of
+    Nothing ->
+      let count = min cores queueLimit
+      in pure [cores - count .. cores - 1]
+    Just requested
+      | length requested <= queueLimit -> pure requested
+      | otherwise -> fail $
+          "Selected " <> show (length requested) <> " capabilities, but the ports support at most " <>
+            show queueLimit <> " queue pairs"
+
+maxQueues :: [PortInfo] -> Int
+maxQueues portInfos = fromIntegral . minimum $ map minPortQueues portInfos
+  where
+  minPortQueues devI = min devI.info.max_rx_queues devI.info.max_tx_queues
 
 -- RTE_ETH_RSS_IPV4|RTE_ETH_RSS_FRAG_IPV4|RTE_ETH_RSS_NONFRAG_IPV4_OTHER|RTE_ETH_RSS_IPV6|RTE_ETH_RSS_FRAG_IPV6|RTE_ETH_RSS_NONFRAG_IPV6_OTHER
 rssHashFunc :: Word64
 rssHashFunc = foldr ((.|.) . bit) 0 [2, 3, 7, 8, 9, 13]
 
-rssForPort :: Word16 -> Rte_eth_dev_info -> Word64
-rssForPort queueCount info
-  | queueCount > 1 && info.flow_type_rss_offloads .&. rssHashFunc == rssHashFunc = rssHashFunc
-  | otherwise = 0
+setRssForPort :: Bool -> PortInfo -> IO PortInfo
+setRssForPort enableRss portWoRss = do
+  putStrLn $ "Port " <> show portWoRss.port <> " RSS " <> status
+  pure portInfo
+  where
+  status = if portWoRss.rssHf == 0 then "disabled" else "enabled"
+  portInfo =
+    if enableRss && portWoRss.info.flow_type_rss_offloads .&. rssHashFunc == rssHashFunc
+    then portWoRss{rssHf = rssHashFunc}
+    else portWoRss{rssHf = 0}
+
 
 --------------------------------------------------------------------------------
 -- * Core
@@ -144,7 +155,13 @@ burst_size = 256
 descriptor_count :: Word16
 descriptor_count = 4096
 
-getPortInfo :: Word16 -> IO Rte_eth_dev_info
+data PortInfo = MkPortInfo {
+  info :: Rte_eth_dev_info,
+  port :: Word16,
+  rssHf :: Word64
+}
+
+getPortInfo :: Word16 -> IO PortInfo
 getPortInfo port = do
   isValid <- rte_eth_dev_is_valid_port port
   when (isValid == 0) $ fail $ "Invalid port " <> show port
@@ -153,7 +170,8 @@ getPortInfo port = do
     retval <- rte_eth_dev_info_get port dev_info
     when (retval /= 0) $
       fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
-    readRaw dev_info
+    info <- readRaw dev_info
+    pure MkPortInfo{info, port, rssHf = 0}
 
 doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
 doForwarding !port1 !port2 !queue !mbufs = forwardLoop
@@ -172,8 +190,10 @@ doForwarding !port1 !port2 !queue !mbufs = forwardLoop
       when (nb_tx < nb_rx) $
         rte_pktmbuf_free_bulk (advancePtr mbufs (fromIntegral nb_tx)) (fromIntegral $ nb_rx - nb_tx)
 
-initPort :: Word16 -> [Ptr Rte_mempool] -> Word16 -> Word64 -> IO ()
-initPort port mempools queueCount rssHf = do
+initPort :: [Ptr Rte_mempool] -> Word16 -> PortInfo -> IO ()
+initPort mempools queueCount portInfo = do
+  let rssHf = portInfo.rssHf
+      port = portInfo.port
   socket <- fromIntegral . max 0 <$> rte_eth_dev_socket_id port
   withZeroed $ \port_config -> do
     emptyConfig <- readRaw port_config
@@ -290,6 +310,7 @@ parseCliArgs cores args =
   option = "--capabilities"
   invalid = "Invalid arguments"
 
+  parseRange :: String -> Either String [Int]
   parseRange entry =
     case break (== '-') entry of
       (first, []) -> (:[]) <$> parseIndex first
@@ -298,13 +319,14 @@ parseCliArgs cores args =
         end <- parseIndex lastIndex
         if start <= end then Right [start .. end] else Left invalid
 
+  parseIndex :: String -> Either String Int
   parseIndex entry =
     case readMaybe entry of
       Just index | index >= 0 && index < cores -> Right index
       _ -> Left invalid
 
+  splitCommas :: String -> [String]
   splitCommas value =
     case break (== ',') value of
       (group, []) -> [group]
       (group, _:rest) -> group : splitCommas rest
-
