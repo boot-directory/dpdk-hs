@@ -141,24 +141,6 @@ burst_size = 256
 descriptor_count :: Word16
 descriptor_count = 4096
 
-data PortInfo = MkPortInfo {
-  info :: Rte_eth_dev_info,
-  port :: Word16,
-  rssHf :: Word64
-}
-
-getPortInfo :: Word16 -> IO PortInfo
-getPortInfo port = do
-  isValid <- rte_eth_dev_is_valid_port port
-  when (isValid == 0) $ fail $ "Invalid port " <> show port
-
-  alloca $ \dev_info -> do
-    retval <- rte_eth_dev_info_get port dev_info
-    when (retval /= 0) $
-      fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
-    info <- readRaw dev_info
-    pure MkPortInfo{info, port, rssHf = 0}
-
 doForwarding :: Word16 -> Word16 -> Word16 -> Ptr (Ptr Rte_mbuf) -> IO ()
 doForwarding !port1 !port2 !queue !mbufs = forwardLoop
   where
@@ -261,6 +243,24 @@ withForwarders (config:rest) workers =
   withAsyncOn config.workerCapability
     (startForwarder config.workerPort1 config.workerPort2 config.workerQueue) $ \worker ->
       withForwarders rest (worker:workers)
+
+data PortInfo = MkPortInfo {
+  info :: Rte_eth_dev_info,
+  port :: Word16,
+  rssHf :: Word64
+}
+
+getPortInfo :: Word16 -> IO PortInfo
+getPortInfo port = do
+  isValid <- rte_eth_dev_is_valid_port port
+  when (isValid == 0) $ fail $ "Invalid port " <> show port
+
+  alloca $ \dev_info -> do
+    retval <- rte_eth_dev_info_get port dev_info
+    when (retval /= 0) $
+      fail $ "Error during getting device (port " <> show port <> ") info: " <> show retval
+    info <- readRaw dev_info
+    pure MkPortInfo{info, port, rssHf = 0}
 
 --------------------------------------------------------------------------------
 -- * Constants
