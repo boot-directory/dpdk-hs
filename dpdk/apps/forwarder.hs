@@ -135,20 +135,6 @@ startForwarder port1 port2 queue =
   allocaArray @(Ptr Rte_mbuf) (fromIntegral burst_size) $
     doForwarding port1 port2 queue
 
-data Worker = Worker
-  { workerCapability :: Int
-  , workerPort1 :: Word16
-  , workerPort2 :: Word16
-  , workerQueue :: Word16
-  }
-
-withForwarders :: [Worker] -> [Async ()] -> IO ()
-withForwarders [] workers = void $ waitAnyCancel workers
-withForwarders (config:rest) workers =
-  withAsyncOn config.workerCapability
-    (startForwarder config.workerPort1 config.workerPort2 config.workerQueue) $ \worker ->
-      withForwarders rest (worker:workers)
-
 burst_size :: Word16
 burst_size = 256
 
@@ -261,6 +247,20 @@ ealInit args = do
     ret <- rte_eal_init (fromIntegral (length args)) argv
     when (ret < 0) $
       fail "rte_eal_init failed"
+
+data Worker = Worker
+  { workerCapability :: Int
+  , workerPort1 :: Word16
+  , workerPort2 :: Word16
+  , workerQueue :: Word16
+  }
+
+withForwarders :: [Worker] -> [Async ()] -> IO ()
+withForwarders [] workers = void $ waitAnyCancel workers
+withForwarders (config:rest) workers =
+  withAsyncOn config.workerCapability
+    (startForwarder config.workerPort1 config.workerPort2 config.workerQueue) $ \worker ->
+      withForwarders rest (worker:workers)
 
 --------------------------------------------------------------------------------
 -- * Constants
