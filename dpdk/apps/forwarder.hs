@@ -191,7 +191,7 @@ initPort queueCount mempools portInfo = do
 
   _ <- do
     retval <- rte_eth_dev_start port
-    when (retval < 0) $
+    when (retval < 0) $ do
       fail $ "Failed to start port " <> show port <> ": " <> show retval
 
   promiscResult <- rte_eth_promiscuous_enable port
