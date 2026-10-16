@@ -27,11 +27,10 @@
             inherit system;
             overlays = [ hs-bindgen.overlays.default ];
           };
-          dpdk-hs = pkgs.haskell.lib.compose.generateBindings ./dpdk/generate-bindings.sh (
+          dpdk-hs = 
             pkgs.haskellPackages.callCabal2nix "dpdk" ./dpdk/. {
               libdpdk = pkgs.dpdk;
-            }
-          );
+            };
         in
         {
           packages = {
