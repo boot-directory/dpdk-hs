@@ -13,7 +13,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_505f2f6a6042fa8f (void)"
   , "{"
   , "  (rte_pause)();"
@@ -33,7 +35,7 @@ hs_bindgen_505f2f6a6042fa8f =
 
     __defined at:__ @rte_pause.h 16:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_pause :: IO ()
 rte_pause = hs_bindgen_505f2f6a6042fa8f

@@ -16,7 +16,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_byteorder_get_rte_arch_bswap16 */"
   , "__attribute__ ((const))"
   , "uint16_t (*hs_bindgen_f5625dd395bb8b24 (void)) ("
@@ -49,7 +51,7 @@ hs_bindgen_f5625dd395bb8b24 =
 
     __defined at:__ @rte_byteorder.h 27:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_arch_bswap16 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word16 -> IO HsBindgen.Runtime.LibC.Word16)
 rte_arch_bswap16 =
@@ -69,7 +71,7 @@ hs_bindgen_1e1346cd716622a2 =
 
     __defined at:__ @rte_byteorder.h 42:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_arch_bswap32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_arch_bswap32 =

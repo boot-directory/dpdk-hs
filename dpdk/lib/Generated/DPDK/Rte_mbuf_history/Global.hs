@@ -14,7 +14,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mbuf_history_get_rte_mbuf_history_field_offset */"
   , "__attribute__ ((const))"
   , "signed int *hs_bindgen_420b6c712b9820a5 (void)"
@@ -37,7 +39,7 @@ hs_bindgen_420b6c712b9820a5 =
 
     __defined at:__ @rte_mbuf_history.h 77:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_history_field_offset :: BG.Ptr BG.CInt
 rte_mbuf_history_field_offset =

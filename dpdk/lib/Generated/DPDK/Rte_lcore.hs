@@ -53,7 +53,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @stdint.h 118:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 uINT32_MAX :: BG.CUInt
 uINT32_MAX = (4294967295 :: BG.CUInt)
@@ -62,7 +62,7 @@ uINT32_MAX = (4294967295 :: BG.CUInt)
 
     __defined at:__ @rte_lcore.h 26:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 lCORE_ID_ANY :: BG.CUInt
 lCORE_ID_ANY = uINT32_MAX
@@ -71,7 +71,7 @@ lCORE_ID_ANY = uINT32_MAX
 
     __defined at:__ @rte_lcore.h 33:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_role_t = Rte_lcore_role_t
   { unwrap :: BG.CUInt
@@ -172,7 +172,7 @@ instance HasCField.HasCField Rte_lcore_role_t "unwrap" where
 
     __defined at:__ @rte_lcore.h 34:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern ROLE_RTE :: Rte_lcore_role_t
 pattern ROLE_RTE = Rte_lcore_role_t 0
@@ -181,7 +181,7 @@ pattern ROLE_RTE = Rte_lcore_role_t 0
 
     __defined at:__ @rte_lcore.h 35:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern ROLE_OFF :: Rte_lcore_role_t
 pattern ROLE_OFF = Rte_lcore_role_t 1
@@ -190,7 +190,7 @@ pattern ROLE_OFF = Rte_lcore_role_t 1
 
     __defined at:__ @rte_lcore.h 36:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern ROLE_SERVICE :: Rte_lcore_role_t
 pattern ROLE_SERVICE = Rte_lcore_role_t 2
@@ -199,7 +199,7 @@ pattern ROLE_SERVICE = Rte_lcore_role_t 2
 
     __defined at:__ @rte_lcore.h 37:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern ROLE_NON_EAL :: Rte_lcore_role_t
 pattern ROLE_NON_EAL = Rte_lcore_role_t 3
@@ -210,7 +210,7 @@ pattern ROLE_NON_EAL = Rte_lcore_role_t 3
 
     __defined at:__ @rte_lcore.h 240:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_init_cb_Aux = Rte_lcore_init_cb_Aux
   { unwrap :: BG.CUInt -> BG.Ptr BG.Void -> IO BG.CInt
@@ -279,7 +279,7 @@ instance HasCField.HasCField Rte_lcore_init_cb_Aux "unwrap" where
 
     __defined at:__ @rte_lcore.h 240:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_init_cb = Rte_lcore_init_cb
   { unwrap :: BG.FunPtr Rte_lcore_init_cb_Aux
@@ -319,7 +319,7 @@ instance HasCField.HasCField Rte_lcore_init_cb "unwrap" where
 
     __defined at:__ @rte_lcore.h 250:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_uninit_cb_Aux = Rte_lcore_uninit_cb_Aux
   { unwrap :: BG.CUInt -> BG.Ptr BG.Void -> IO ()
@@ -388,7 +388,7 @@ instance HasCField.HasCField Rte_lcore_uninit_cb_Aux "unwrap" where
 
     __defined at:__ @rte_lcore.h 250:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_uninit_cb = Rte_lcore_uninit_cb
   { unwrap :: BG.FunPtr Rte_lcore_uninit_cb_Aux
@@ -428,7 +428,7 @@ instance HasCField.HasCField Rte_lcore_uninit_cb "unwrap" where
 
     __defined at:__ @rte_lcore.h 308:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_iterate_cb_Aux = Rte_lcore_iterate_cb_Aux
   { unwrap :: BG.CUInt -> BG.Ptr BG.Void -> IO BG.CInt
@@ -497,7 +497,7 @@ instance HasCField.HasCField Rte_lcore_iterate_cb_Aux "unwrap" where
 
     __defined at:__ @rte_lcore.h 308:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_iterate_cb = Rte_lcore_iterate_cb
   { unwrap :: BG.FunPtr Rte_lcore_iterate_cb_Aux
@@ -535,7 +535,7 @@ instance HasCField.HasCField Rte_lcore_iterate_cb "unwrap" where
 
     __defined at:__ @rte_lcore.h 332:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_lcore_usage = Rte_lcore_usage
   { total_cycles :: HsBindgen.Runtime.LibC.Word64
@@ -543,14 +543,14 @@ data Rte_lcore_usage = Rte_lcore_usage
 
          __defined at:__ @rte_lcore.h 337:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , busy_cycles :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @busy_cycles@
 
          __defined at:__ @rte_lcore.h 342:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -587,7 +587,7 @@ deriving via Struct.IsStructViaReadRaw Rte_lcore_usage instance Struct.IsStruct 
 
     __defined at:__ @rte_lcore.h 337:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "total_cycles" Rte_lcore_usage ty where
@@ -616,7 +616,7 @@ instance HasCField.HasCField Rte_lcore_usage "total_cycles" where
 
     __defined at:__ @rte_lcore.h 342:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "busy_cycles" Rte_lcore_usage ty where
@@ -647,7 +647,7 @@ instance HasCField.HasCField Rte_lcore_usage "busy_cycles" where
 
     __defined at:__ @rte_lcore.h 358:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_usage_cb_Aux = Rte_lcore_usage_cb_Aux
   { unwrap :: BG.CUInt -> BG.Ptr Rte_lcore_usage -> IO BG.CInt
@@ -716,7 +716,7 @@ instance HasCField.HasCField Rte_lcore_usage_cb_Aux "unwrap" where
 
     __defined at:__ @rte_lcore.h 358:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_usage_cb = Rte_lcore_usage_cb
   { unwrap :: BG.FunPtr Rte_lcore_usage_cb_Aux

@@ -149,7 +149,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Show, fmap, pure, type (~))
 
     __defined at:__ @stdint.h 117:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 uINT16_MAX :: BG.CInt
 uINT16_MAX = (65535 :: BG.CInt)
@@ -158,7 +158,7 @@ uINT16_MAX = (65535 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 466:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PKTMBUF_HEADROOM :: BG.CInt
 rTE_PKTMBUF_HEADROOM = (128 :: BG.CInt)
@@ -167,7 +167,7 @@ rTE_PKTMBUF_HEADROOM = (128 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 51:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_VLAN :: BG.CULLong
 rTE_MBUF_F_RX_VLAN =
@@ -177,7 +177,7 @@ rTE_MBUF_F_RX_VLAN =
 
     __defined at:__ @rte_mbuf_core.h 54:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_RSS_HASH :: BG.CULLong
 rTE_MBUF_F_RX_RSS_HASH =
@@ -187,7 +187,7 @@ rTE_MBUF_F_RX_RSS_HASH =
 
     __defined at:__ @rte_mbuf_core.h 57:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_FDIR :: BG.CULLong
 rTE_MBUF_F_RX_FDIR =
@@ -197,7 +197,7 @@ rTE_MBUF_F_RX_FDIR =
 
     __defined at:__ @rte_mbuf_core.h 63:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_IP_CKSUM_BAD :: BG.CULLong
 rTE_MBUF_F_RX_OUTER_IP_CKSUM_BAD =
@@ -207,7 +207,7 @@ rTE_MBUF_F_RX_OUTER_IP_CKSUM_BAD =
 
     __defined at:__ @rte_mbuf_core.h 71:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_VLAN_STRIPPED :: BG.CULLong
 rTE_MBUF_F_RX_VLAN_STRIPPED =
@@ -217,7 +217,7 @@ rTE_MBUF_F_RX_VLAN_STRIPPED =
 
     __defined at:__ @rte_mbuf_core.h 81:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IP_CKSUM_MASK :: BG.CULLong
 rTE_MBUF_F_RX_IP_CKSUM_MASK =
@@ -227,7 +227,7 @@ rTE_MBUF_F_RX_IP_CKSUM_MASK =
 
     __defined at:__ @rte_mbuf_core.h 83:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IP_CKSUM_UNKNOWN :: BG.CInt
 rTE_MBUF_F_RX_IP_CKSUM_UNKNOWN = (0 :: BG.CInt)
@@ -236,7 +236,7 @@ rTE_MBUF_F_RX_IP_CKSUM_UNKNOWN = (0 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 84:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IP_CKSUM_BAD :: BG.CULLong
 rTE_MBUF_F_RX_IP_CKSUM_BAD =
@@ -246,7 +246,7 @@ rTE_MBUF_F_RX_IP_CKSUM_BAD =
 
     __defined at:__ @rte_mbuf_core.h 85:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IP_CKSUM_GOOD :: BG.CULLong
 rTE_MBUF_F_RX_IP_CKSUM_GOOD =
@@ -256,7 +256,7 @@ rTE_MBUF_F_RX_IP_CKSUM_GOOD =
 
     __defined at:__ @rte_mbuf_core.h 86:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IP_CKSUM_NONE :: BG.CULLong
 rTE_MBUF_F_RX_IP_CKSUM_NONE =
@@ -266,7 +266,7 @@ rTE_MBUF_F_RX_IP_CKSUM_NONE =
 
     __defined at:__ @rte_mbuf_core.h 96:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_L4_CKSUM_MASK :: BG.CULLong
 rTE_MBUF_F_RX_L4_CKSUM_MASK =
@@ -276,7 +276,7 @@ rTE_MBUF_F_RX_L4_CKSUM_MASK =
 
     __defined at:__ @rte_mbuf_core.h 98:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_L4_CKSUM_UNKNOWN :: BG.CInt
 rTE_MBUF_F_RX_L4_CKSUM_UNKNOWN = (0 :: BG.CInt)
@@ -285,7 +285,7 @@ rTE_MBUF_F_RX_L4_CKSUM_UNKNOWN = (0 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 99:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_L4_CKSUM_BAD :: BG.CULLong
 rTE_MBUF_F_RX_L4_CKSUM_BAD =
@@ -295,7 +295,7 @@ rTE_MBUF_F_RX_L4_CKSUM_BAD =
 
     __defined at:__ @rte_mbuf_core.h 100:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_L4_CKSUM_GOOD :: BG.CULLong
 rTE_MBUF_F_RX_L4_CKSUM_GOOD =
@@ -305,7 +305,7 @@ rTE_MBUF_F_RX_L4_CKSUM_GOOD =
 
     __defined at:__ @rte_mbuf_core.h 101:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_L4_CKSUM_NONE :: BG.CULLong
 rTE_MBUF_F_RX_L4_CKSUM_NONE =
@@ -315,7 +315,7 @@ rTE_MBUF_F_RX_L4_CKSUM_NONE =
 
     __defined at:__ @rte_mbuf_core.h 104:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IEEE1588_PTP :: BG.CULLong
 rTE_MBUF_F_RX_IEEE1588_PTP =
@@ -325,7 +325,7 @@ rTE_MBUF_F_RX_IEEE1588_PTP =
 
     __defined at:__ @rte_mbuf_core.h 107:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_IEEE1588_TMST :: BG.CULLong
 rTE_MBUF_F_RX_IEEE1588_TMST =
@@ -335,7 +335,7 @@ rTE_MBUF_F_RX_IEEE1588_TMST =
 
     __defined at:__ @rte_mbuf_core.h 110:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_FDIR_ID :: BG.CULLong
 rTE_MBUF_F_RX_FDIR_ID =
@@ -345,7 +345,7 @@ rTE_MBUF_F_RX_FDIR_ID =
 
     __defined at:__ @rte_mbuf_core.h 113:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_FDIR_FLX :: BG.CULLong
 rTE_MBUF_F_RX_FDIR_FLX =
@@ -355,7 +355,7 @@ rTE_MBUF_F_RX_FDIR_FLX =
 
     __defined at:__ @rte_mbuf_core.h 130:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_QINQ_STRIPPED :: BG.CULLong
 rTE_MBUF_F_RX_QINQ_STRIPPED =
@@ -365,7 +365,7 @@ rTE_MBUF_F_RX_QINQ_STRIPPED =
 
     __defined at:__ @rte_mbuf_core.h 137:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_LRO :: BG.CULLong
 rTE_MBUF_F_RX_LRO =
@@ -375,7 +375,7 @@ rTE_MBUF_F_RX_LRO =
 
     __defined at:__ @rte_mbuf_core.h 144:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_SEC_OFFLOAD :: BG.CULLong
 rTE_MBUF_F_RX_SEC_OFFLOAD =
@@ -385,7 +385,7 @@ rTE_MBUF_F_RX_SEC_OFFLOAD =
 
     __defined at:__ @rte_mbuf_core.h 149:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_SEC_OFFLOAD_FAILED :: BG.CULLong
 rTE_MBUF_F_RX_SEC_OFFLOAD_FAILED =
@@ -395,7 +395,7 @@ rTE_MBUF_F_RX_SEC_OFFLOAD_FAILED =
 
     __defined at:__ @rte_mbuf_core.h 159:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_QINQ :: BG.CULLong
 rTE_MBUF_F_RX_QINQ =
@@ -405,7 +405,7 @@ rTE_MBUF_F_RX_QINQ =
 
     __defined at:__ @rte_mbuf_core.h 176:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_MASK :: BG.CULLong
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_MASK =
@@ -415,7 +415,7 @@ rTE_MBUF_F_RX_OUTER_L4_CKSUM_MASK =
 
     __defined at:__ @rte_mbuf_core.h 178:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_UNKNOWN :: BG.CInt
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_UNKNOWN = (0 :: BG.CInt)
@@ -424,7 +424,7 @@ rTE_MBUF_F_RX_OUTER_L4_CKSUM_UNKNOWN = (0 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 179:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_BAD :: BG.CULLong
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_BAD =
@@ -434,7 +434,7 @@ rTE_MBUF_F_RX_OUTER_L4_CKSUM_BAD =
 
     __defined at:__ @rte_mbuf_core.h 180:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_GOOD :: BG.CULLong
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_GOOD =
@@ -444,7 +444,7 @@ rTE_MBUF_F_RX_OUTER_L4_CKSUM_GOOD =
 
     __defined at:__ @rte_mbuf_core.h 181:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_INVALID :: BG.CULLong
 rTE_MBUF_F_RX_OUTER_L4_CKSUM_INVALID =
@@ -454,7 +454,7 @@ rTE_MBUF_F_RX_OUTER_L4_CKSUM_INVALID =
 
     __defined at:__ @rte_mbuf_core.h 189:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_FIRST_FREE :: BG.CULLong
 rTE_MBUF_F_FIRST_FREE =
@@ -464,7 +464,7 @@ rTE_MBUF_F_FIRST_FREE =
 
     __defined at:__ @rte_mbuf_core.h 190:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_LAST_FREE :: BG.CULLong
 rTE_MBUF_F_LAST_FREE =
@@ -474,7 +474,7 @@ rTE_MBUF_F_LAST_FREE =
 
     __defined at:__ @rte_mbuf_core.h 207:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_OUTER_UDP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_OUTER_UDP_CKSUM =
@@ -484,7 +484,7 @@ rTE_MBUF_F_TX_OUTER_UDP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 214:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_UDP_SEG :: BG.CULLong
 rTE_MBUF_F_TX_UDP_SEG =
@@ -494,7 +494,7 @@ rTE_MBUF_F_TX_UDP_SEG =
 
     __defined at:__ @rte_mbuf_core.h 222:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_SEC_OFFLOAD :: BG.CULLong
 rTE_MBUF_F_TX_SEC_OFFLOAD =
@@ -504,7 +504,7 @@ rTE_MBUF_F_TX_SEC_OFFLOAD =
 
     __defined at:__ @rte_mbuf_core.h 228:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_MACSEC :: BG.CULLong
 rTE_MBUF_F_TX_MACSEC =
@@ -514,7 +514,7 @@ rTE_MBUF_F_TX_MACSEC =
 
     __defined at:__ @rte_mbuf_core.h 239:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_VXLAN :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_VXLAN =
@@ -524,7 +524,7 @@ rTE_MBUF_F_TX_TUNNEL_VXLAN =
 
     __defined at:__ @rte_mbuf_core.h 240:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_GRE :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_GRE =
@@ -534,7 +534,7 @@ rTE_MBUF_F_TX_TUNNEL_GRE =
 
     __defined at:__ @rte_mbuf_core.h 241:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_IPIP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_IPIP =
@@ -544,7 +544,7 @@ rTE_MBUF_F_TX_TUNNEL_IPIP =
 
     __defined at:__ @rte_mbuf_core.h 242:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_GENEVE :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_GENEVE =
@@ -554,7 +554,7 @@ rTE_MBUF_F_TX_TUNNEL_GENEVE =
 
     __defined at:__ @rte_mbuf_core.h 244:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_MPLSINUDP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_MPLSINUDP =
@@ -564,7 +564,7 @@ rTE_MBUF_F_TX_TUNNEL_MPLSINUDP =
 
     __defined at:__ @rte_mbuf_core.h 245:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_VXLAN_GPE :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_VXLAN_GPE =
@@ -574,7 +574,7 @@ rTE_MBUF_F_TX_TUNNEL_VXLAN_GPE =
 
     __defined at:__ @rte_mbuf_core.h 246:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_GTP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_GTP =
@@ -584,7 +584,7 @@ rTE_MBUF_F_TX_TUNNEL_GTP =
 
     __defined at:__ @rte_mbuf_core.h 247:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_ESP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_ESP =
@@ -594,7 +594,7 @@ rTE_MBUF_F_TX_TUNNEL_ESP =
 
     __defined at:__ @rte_mbuf_core.h 259:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_IP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_IP =
@@ -604,7 +604,7 @@ rTE_MBUF_F_TX_TUNNEL_IP =
 
     __defined at:__ @rte_mbuf_core.h 272:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_UDP :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_UDP =
@@ -614,7 +614,7 @@ rTE_MBUF_F_TX_TUNNEL_UDP =
 
     __defined at:__ @rte_mbuf_core.h 274:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TUNNEL_MASK :: BG.CULLong
 rTE_MBUF_F_TX_TUNNEL_MASK =
@@ -624,7 +624,7 @@ rTE_MBUF_F_TX_TUNNEL_MASK =
 
     __defined at:__ @rte_mbuf_core.h 281:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_QINQ :: BG.CULLong
 rTE_MBUF_F_TX_QINQ =
@@ -634,7 +634,7 @@ rTE_MBUF_F_TX_QINQ =
 
     __defined at:__ @rte_mbuf_core.h 292:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TCP_SEG :: BG.CULLong
 rTE_MBUF_F_TX_TCP_SEG =
@@ -644,7 +644,7 @@ rTE_MBUF_F_TX_TCP_SEG =
 
     __defined at:__ @rte_mbuf_core.h 295:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_IEEE1588_TMST :: BG.CULLong
 rTE_MBUF_F_TX_IEEE1588_TMST =
@@ -654,7 +654,7 @@ rTE_MBUF_F_TX_IEEE1588_TMST =
 
     __defined at:__ @rte_mbuf_core.h 308:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_L4_NO_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_L4_NO_CKSUM =
@@ -664,7 +664,7 @@ rTE_MBUF_F_TX_L4_NO_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 311:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_TCP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_TCP_CKSUM =
@@ -674,7 +674,7 @@ rTE_MBUF_F_TX_TCP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 314:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_SCTP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_SCTP_CKSUM =
@@ -684,7 +684,7 @@ rTE_MBUF_F_TX_SCTP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 317:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_UDP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_UDP_CKSUM =
@@ -694,7 +694,7 @@ rTE_MBUF_F_TX_UDP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 320:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_L4_MASK :: BG.CULLong
 rTE_MBUF_F_TX_L4_MASK =
@@ -704,7 +704,7 @@ rTE_MBUF_F_TX_L4_MASK =
 
     __defined at:__ @rte_mbuf_core.h 328:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_IP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_IP_CKSUM =
@@ -714,7 +714,7 @@ rTE_MBUF_F_TX_IP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 336:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_IPV4 :: BG.CULLong
 rTE_MBUF_F_TX_IPV4 =
@@ -724,7 +724,7 @@ rTE_MBUF_F_TX_IPV4 =
 
     __defined at:__ @rte_mbuf_core.h 344:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_IPV6 :: BG.CULLong
 rTE_MBUF_F_TX_IPV6 =
@@ -734,7 +734,7 @@ rTE_MBUF_F_TX_IPV6 =
 
     __defined at:__ @rte_mbuf_core.h 351:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_VLAN :: BG.CULLong
 rTE_MBUF_F_TX_VLAN =
@@ -744,7 +744,7 @@ rTE_MBUF_F_TX_VLAN =
 
     __defined at:__ @rte_mbuf_core.h 359:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_OUTER_IP_CKSUM :: BG.CULLong
 rTE_MBUF_F_TX_OUTER_IP_CKSUM =
@@ -754,7 +754,7 @@ rTE_MBUF_F_TX_OUTER_IP_CKSUM =
 
     __defined at:__ @rte_mbuf_core.h 366:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_OUTER_IPV4 :: BG.CULLong
 rTE_MBUF_F_TX_OUTER_IPV4 =
@@ -764,7 +764,7 @@ rTE_MBUF_F_TX_OUTER_IPV4 =
 
     __defined at:__ @rte_mbuf_core.h 373:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_OUTER_IPV6 :: BG.CULLong
 rTE_MBUF_F_TX_OUTER_IPV6 =
@@ -774,7 +774,7 @@ rTE_MBUF_F_TX_OUTER_IPV6 =
 
     __defined at:__ @rte_mbuf_core.h 379:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_TX_OFFLOAD_MASK :: BG.CULLong
 rTE_MBUF_F_TX_OFFLOAD_MASK =
@@ -784,7 +784,7 @@ rTE_MBUF_F_TX_OFFLOAD_MASK =
 
     __defined at:__ @rte_mbuf_core.h 400:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_EXTERNAL :: BG.CULLong
 rTE_MBUF_F_EXTERNAL =
@@ -794,7 +794,7 @@ rTE_MBUF_F_EXTERNAL =
 
     __defined at:__ @rte_mbuf_core.h 402:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_F_INDIRECT :: BG.CULLong
 rTE_MBUF_F_INDIRECT =
@@ -804,7 +804,7 @@ rTE_MBUF_F_INDIRECT =
 
     __defined at:__ @rte_mbuf_core.h 405:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_PRIV_ALIGN :: BG.CInt
 rTE_MBUF_PRIV_ALIGN = (8 :: BG.CInt)
@@ -813,7 +813,7 @@ rTE_MBUF_PRIV_ALIGN = (8 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 413:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DEFAULT_DATAROOM :: BG.CInt
 rTE_MBUF_DEFAULT_DATAROOM = (2048 :: BG.CInt)
@@ -822,7 +822,7 @@ rTE_MBUF_DEFAULT_DATAROOM = (2048 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_core.h 414:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DEFAULT_BUF_SIZE :: BG.CInt
 rTE_MBUF_DEFAULT_BUF_SIZE =
@@ -832,7 +832,7 @@ rTE_MBUF_DEFAULT_BUF_SIZE =
 
     __defined at:__ @rte_mbuf_core.h 417:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_sched = Rte_mbuf_sched
   { queue_id :: HsBindgen.Runtime.LibC.Word32
@@ -840,28 +840,28 @@ data Rte_mbuf_sched = Rte_mbuf_sched
 
          __defined at:__ @rte_mbuf_core.h 418:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , traffic_class :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @traffic_class@
 
          __defined at:__ @rte_mbuf_core.h 419:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , color :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @color@
 
          __defined at:__ @rte_mbuf_core.h 423:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , reserved :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @reserved@
 
          __defined at:__ @rte_mbuf_core.h 425:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -902,7 +902,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_sched instance Struct.IsStruct R
 
     __defined at:__ @rte_mbuf_core.h 418:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "queue_id" Rte_mbuf_sched ty where
@@ -934,7 +934,7 @@ instance HasCField.HasCField Rte_mbuf_sched "queue_id" where
 
     __defined at:__ @rte_mbuf_core.h 419:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "traffic_class" Rte_mbuf_sched ty where
@@ -967,7 +967,7 @@ instance HasCField.HasCField Rte_mbuf_sched "traffic_class" where
 
     __defined at:__ @rte_mbuf_core.h 423:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "color" Rte_mbuf_sched ty where
@@ -999,7 +999,7 @@ instance HasCField.HasCField Rte_mbuf_sched "color" where
 
     __defined at:__ @rte_mbuf_core.h 425:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "reserved" Rte_mbuf_sched ty where
@@ -1031,7 +1031,7 @@ instance HasCField.HasCField Rte_mbuf_sched "reserved" where
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L2_LEN_BITS :: BG.CUInt
 pattern RTE_MBUF_L2_LEN_BITS = 7
@@ -1040,7 +1040,7 @@ pattern RTE_MBUF_L2_LEN_BITS = 7
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L2_LEN_OFS :: BG.CUInt
 pattern RTE_MBUF_L2_LEN_OFS = 0
@@ -1049,7 +1049,7 @@ pattern RTE_MBUF_L2_LEN_OFS = 0
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L3_LEN_BITS :: BG.CUInt
 pattern RTE_MBUF_L3_LEN_BITS = 9
@@ -1058,7 +1058,7 @@ pattern RTE_MBUF_L3_LEN_BITS = 9
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L3_LEN_OFS :: BG.CUInt
 pattern RTE_MBUF_L3_LEN_OFS = 7
@@ -1067,7 +1067,7 @@ pattern RTE_MBUF_L3_LEN_OFS = 7
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L4_LEN_BITS :: BG.CUInt
 pattern RTE_MBUF_L4_LEN_BITS = 8
@@ -1076,7 +1076,7 @@ pattern RTE_MBUF_L4_LEN_BITS = 8
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_L4_LEN_OFS :: BG.CUInt
 pattern RTE_MBUF_L4_LEN_OFS = 16
@@ -1085,7 +1085,7 @@ pattern RTE_MBUF_L4_LEN_OFS = 16
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_OUTL2_LEN_BITS :: BG.CUInt
 pattern RTE_MBUF_OUTL2_LEN_BITS = 7
@@ -1094,7 +1094,7 @@ pattern RTE_MBUF_OUTL2_LEN_BITS = 7
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_OUTL2_LEN_OFS :: BG.CUInt
 pattern RTE_MBUF_OUTL2_LEN_OFS = 49
@@ -1103,7 +1103,7 @@ pattern RTE_MBUF_OUTL2_LEN_OFS = 49
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_OUTL3_LEN_BITS :: BG.CUInt
 pattern RTE_MBUF_OUTL3_LEN_BITS = 9
@@ -1112,7 +1112,7 @@ pattern RTE_MBUF_OUTL3_LEN_BITS = 9
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_OUTL3_LEN_OFS :: BG.CUInt
 pattern RTE_MBUF_OUTL3_LEN_OFS = 40
@@ -1121,7 +1121,7 @@ pattern RTE_MBUF_OUTL3_LEN_OFS = 40
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_TSO_SEGSZ_BITS :: BG.CUInt
 pattern RTE_MBUF_TSO_SEGSZ_BITS = 16
@@ -1130,7 +1130,7 @@ pattern RTE_MBUF_TSO_SEGSZ_BITS = 16
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_TSO_SEGSZ_OFS :: BG.CUInt
 pattern RTE_MBUF_TSO_SEGSZ_OFS = 24
@@ -1139,7 +1139,7 @@ pattern RTE_MBUF_TSO_SEGSZ_OFS = 24
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_TXOFLD_UNUSED_BITS :: BG.CUInt
 pattern RTE_MBUF_TXOFLD_UNUSED_BITS = 8
@@ -1148,7 +1148,7 @@ pattern RTE_MBUF_TXOFLD_UNUSED_BITS = 8
 
     __defined at:__ @rte_mbuf_core.h 432:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_TXOFLD_UNUSED_OFS :: BG.CUInt
 pattern RTE_MBUF_TXOFLD_UNUSED_OFS = 56
@@ -1157,7 +1157,7 @@ pattern RTE_MBUF_TXOFLD_UNUSED_OFS = 56
 
     __defined at:__ @rte_mbuf_core.h 503:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rearm_data_anon'data_off = Rte_mbuf_anon'rearm_data_anon'data_off
   { data_off :: HsBindgen.Runtime.LibC.Word16
@@ -1165,28 +1165,28 @@ data Rte_mbuf_anon'rearm_data_anon'data_off = Rte_mbuf_anon'rearm_data_anon'data
 
          __defined at:__ @rte_mbuf_core.h 504:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , refcnt :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @refcnt@
 
          __defined at:__ @rte_mbuf_core.h 514:25@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , nb_segs :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @nb_segs@
 
          __defined at:__ @rte_mbuf_core.h 520:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , port :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @port@
 
          __defined at:__ @rte_mbuf_core.h 525:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1227,7 +1227,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rearm_data_anon'data_off in
 
     __defined at:__ @rte_mbuf_core.h 504:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_off" Rte_mbuf_anon'rearm_data_anon'data_off ty where
@@ -1259,7 +1259,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data_anon'data_off "data_off" w
 
     __defined at:__ @rte_mbuf_core.h 514:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refcnt" Rte_mbuf_anon'rearm_data_anon'data_off ty where
@@ -1291,7 +1291,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data_anon'data_off "refcnt" whe
 
     __defined at:__ @rte_mbuf_core.h 520:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_segs" Rte_mbuf_anon'rearm_data_anon'data_off ty where
@@ -1323,7 +1323,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data_anon'data_off "nb_segs" wh
 
     __defined at:__ @rte_mbuf_core.h 525:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "port" Rte_mbuf_anon'rearm_data_anon'data_off ty where
@@ -1355,7 +1355,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data_anon'data_off "port" where
 
     __defined at:__ @rte_mbuf_core.h 500:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rearm_data = Rte_mbuf_anon'rearm_data
   { unwrap :: BG.ByteArray
@@ -1376,7 +1376,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_mbuf_anon'rearm_da
 
     __defined at:__ @rte_mbuf_core.h 501:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "rearm_data" Rte_mbuf_anon'rearm_data ty where
@@ -1387,7 +1387,7 @@ instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 501:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rearm_data" Rte_mbuf_anon'rearm_data ty where
@@ -1413,7 +1413,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "rearm_data" where
 
     __defined at:__ @rte_mbuf_core.h 503:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rearm_data_anon'data_off
          ) => BG.HasField "anon'data_off" Rte_mbuf_anon'rearm_data ty where
@@ -1424,7 +1424,7 @@ instance ( ty ~ Rte_mbuf_anon'rearm_data_anon'data_off
 
     __defined at:__ @rte_mbuf_core.h 503:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rearm_data_anon'data_off
          ) => BG.CompatHasField.HasField "anon'data_off" Rte_mbuf_anon'rearm_data ty where
@@ -1451,7 +1451,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "anon'data_off" where
 
     __defined at:__ @rte_mbuf_core.h 504:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "data_off" Rte_mbuf_anon'rearm_data ty where
@@ -1464,7 +1464,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 504:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_off" Rte_mbuf_anon'rearm_data ty where
@@ -1493,7 +1493,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "data_off" where
 
     __defined at:__ @rte_mbuf_core.h 514:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "refcnt" Rte_mbuf_anon'rearm_data ty where
@@ -1506,7 +1506,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 514:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refcnt" Rte_mbuf_anon'rearm_data ty where
@@ -1535,7 +1535,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "refcnt" where
 
     __defined at:__ @rte_mbuf_core.h 520:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "nb_segs" Rte_mbuf_anon'rearm_data ty where
@@ -1548,7 +1548,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 520:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_segs" Rte_mbuf_anon'rearm_data ty where
@@ -1577,7 +1577,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "nb_segs" where
 
     __defined at:__ @rte_mbuf_core.h 525:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "port" Rte_mbuf_anon'rearm_data ty where
@@ -1590,7 +1590,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 525:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "port" Rte_mbuf_anon'rearm_data ty where
@@ -1619,7 +1619,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rearm_data "port" where
 
     __defined at:__ @rte_mbuf_core.h 559:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type
   { inner_l2_type :: HsBindgen.Runtime.LibC.Word8
@@ -1627,14 +1627,14 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_
 
          __defined at:__ @rte_mbuf_core.h 560:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , inner_l3_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @inner_l3_type@
 
          __defined at:__ @rte_mbuf_core.h 562:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1673,7 +1673,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type ty where
@@ -1704,7 +1704,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type ty where
@@ -1735,7 +1735,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 552:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto
   { unwrap :: BG.ByteArray
@@ -1756,7 +1756,7 @@ deriving via BG.SizedByteArray 1 1 instance Union.IsUnion Rte_mbuf_anon'rx_descr
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1767,7 +1767,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1794,7 +1794,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 559:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type
          ) => BG.HasField "anon'inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1805,7 +1805,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'p
 
     __defined at:__ @rte_mbuf_core.h 559:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto_anon'inner_l2_type
          ) => BG.CompatHasField.HasField "anon'inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1832,7 +1832,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1845,7 +1845,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1875,7 +1875,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1888,7 +1888,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto ty where
@@ -1918,7 +1918,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 547:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type
   { l2_type :: HsBindgen.Runtime.LibC.Word8
@@ -1926,42 +1926,42 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_
 
          __defined at:__ @rte_mbuf_core.h 548:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , l3_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @l3_type@
 
          __defined at:__ @rte_mbuf_core.h 549:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , l4_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @l4_type@
 
          __defined at:__ @rte_mbuf_core.h 550:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , tun_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @tun_type@
 
          __defined at:__ @rte_mbuf_core.h 551:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'inner_esp_next_proto :: Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto
     {- ^ __C declaration:__ @anon\'inner_esp_next_proto@
 
          __defined at:__ @rte_mbuf_core.h 552:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , inner_l4_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @inner_l4_type@
 
          __defined at:__ @rte_mbuf_core.h 566:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -2012,7 +2012,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2048,7 +2048,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2084,7 +2084,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2120,7 +2120,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2156,7 +2156,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 552:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type_anon'inner_esp_next_proto
          ) => BG.CompatHasField.HasField "anon'inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2191,7 +2191,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2204,7 +2204,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2234,7 +2234,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2247,7 +2247,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2277,7 +2277,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2290,7 +2290,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2320,7 +2320,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type ty where
@@ -2357,7 +2357,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'rx_descriptor_fields1_anon'anon
 
     __defined at:__ @rte_mbuf_core.h 544:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type
   { unwrap :: BG.ByteArray
@@ -2378,7 +2378,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_mbuf_anon'rx_descr
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2389,7 +2389,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2416,7 +2416,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 547:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type
          ) => BG.HasField "anon'l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2427,7 +2427,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'p
 
     __defined at:__ @rte_mbuf_core.h 547:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type_anon'l2_type
          ) => BG.CompatHasField.HasField "anon'l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2454,7 +2454,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2467,7 +2467,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2496,7 +2496,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2509,7 +2509,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2538,7 +2538,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2551,7 +2551,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2580,7 +2580,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2593,7 +2593,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2622,7 +2622,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2635,7 +2635,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2665,7 +2665,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2678,7 +2678,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2708,7 +2708,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2721,7 +2721,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2751,7 +2751,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2764,7 +2764,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type ty where
@@ -2794,7 +2794,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 580:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash
   { hash :: HsBindgen.Runtime.LibC.Word16
@@ -2802,14 +2802,14 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fd
 
          __defined at:__ @rte_mbuf_core.h 581:18@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , id :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @id@
 
          __defined at:__ @rte_mbuf_core.h 582:18@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2848,7 +2848,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 581:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash ty where
@@ -2876,7 +2876,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 582:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "id" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash ty where
@@ -2904,7 +2904,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 579:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash
   { unwrap :: BG.ByteArray
@@ -2925,7 +2925,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_mbuf_anon'rx_descr
 
     __defined at:__ @rte_mbuf_core.h 580:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash
          ) => BG.HasField "anon'hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -2936,7 +2936,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 580:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash_anon'hash
          ) => BG.CompatHasField.HasField "anon'hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -2962,7 +2962,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 581:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -2975,7 +2975,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 581:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -3004,7 +3004,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 582:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "id" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -3017,7 +3017,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 582:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "id" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -3046,7 +3046,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 584:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "lo" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -3057,7 +3057,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 584:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "lo" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash ty where
@@ -3083,7 +3083,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 578:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir
   { anon'anon'hash :: Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash
@@ -3091,14 +3091,14 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fd
 
          __defined at:__ @rte_mbuf_core.h 579:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , hi :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @hi@
 
          __defined at:__ @rte_mbuf_core.h 587:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -3137,7 +3137,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 579:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir_anon'anon'hash
          ) => BG.CompatHasField.HasField "anon'anon'hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3166,7 +3166,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 581:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3179,7 +3179,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 581:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3208,7 +3208,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 582:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "id" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3221,7 +3221,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 582:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "id" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3250,7 +3250,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 584:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "lo" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3263,7 +3263,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 584:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "lo" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3292,7 +3292,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 587:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "hi" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir ty where
@@ -3320,7 +3320,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 594:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter
   { reserved1 :: HsBindgen.Runtime.LibC.Word32
@@ -3328,21 +3328,21 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_tx
 
          __defined at:__ @rte_mbuf_core.h 595:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , reserved2 :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @reserved2@
 
          __defined at:__ @rte_mbuf_core.h 596:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , txq :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @txq@
 
          __defined at:__ @rte_mbuf_core.h 597:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -3384,7 +3384,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 595:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "reserved1" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter ty where
@@ -3415,7 +3415,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 596:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "reserved2" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter ty where
@@ -3446,7 +3446,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 597:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "txq" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter ty where
@@ -3477,7 +3477,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 576:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
   { unwrap :: BG.ByteArray
@@ -3498,7 +3498,7 @@ deriving via BG.SizedByteArray 8 4 instance Union.IsUnion Rte_mbuf_anon'rx_descr
 
     __defined at:__ @rte_mbuf_core.h 577:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "rss" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3509,7 +3509,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 577:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rss" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3535,7 +3535,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 591:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir
          ) => BG.HasField "fdir" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3546,7 +3546,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 591:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_fdir
          ) => BG.CompatHasField.HasField "fdir" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3572,7 +3572,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 592:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_sched
          ) => BG.HasField "sched" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3583,7 +3583,7 @@ instance ( ty ~ Rte_mbuf_sched
 
     __defined at:__ @rte_mbuf_core.h 592:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_sched
          ) => BG.CompatHasField.HasField "sched" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3609,7 +3609,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 602:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter
          ) => BG.HasField "txadapter" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3620,7 +3620,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 602:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash_txadapter
          ) => BG.CompatHasField.HasField "txadapter" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3646,7 +3646,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 603:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "usr" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3657,7 +3657,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 603:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "usr" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash ty where
@@ -3683,7 +3683,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 575:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash
   { unwrap :: BG.ByteArray
@@ -3704,7 +3704,7 @@ deriving via BG.SizedByteArray 8 4 instance Union.IsUnion Rte_mbuf_anon'rx_descr
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash ty where
@@ -3715,7 +3715,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash ty where
@@ -3741,7 +3741,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 536:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type = Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type
   { anon'packet_type :: Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type
@@ -3749,49 +3749,49 @@ data Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type = Rte_mbuf_anon'r
 
          __defined at:__ @rte_mbuf_core.h 544:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , pkt_len :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @pkt_len@
 
          __defined at:__ @rte_mbuf_core.h 570:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , data_len :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @data_len@
 
          __defined at:__ @rte_mbuf_core.h 571:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , vlan_tci :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @vlan_tci@
 
          __defined at:__ @rte_mbuf_core.h 573:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'hash :: Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash
     {- ^ __C declaration:__ @anon\'hash@
 
          __defined at:__ @rte_mbuf_core.h 575:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , vlan_tci_outer :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @vlan_tci_outer@
 
          __defined at:__ @rte_mbuf_core.h 609:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , buf_len :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @buf_len@
 
          __defined at:__ @rte_mbuf_core.h 611:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -3845,7 +3845,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'rx_descriptor_fields1_anon'
 
     __defined at:__ @rte_mbuf_core.h 544:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'packet_type
          ) => BG.CompatHasField.HasField "anon'packet_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3881,7 +3881,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3894,7 +3894,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3924,7 +3924,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3937,7 +3937,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3966,7 +3966,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -3979,7 +3979,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4008,7 +4008,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4021,7 +4021,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4050,7 +4050,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4063,7 +4063,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4092,7 +4092,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4105,7 +4105,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4135,7 +4135,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4148,7 +4148,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4178,7 +4178,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4191,7 +4191,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4221,7 +4221,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4234,7 +4234,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4264,7 +4264,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 570:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "pkt_len" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4299,7 +4299,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 571:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_len" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4334,7 +4334,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 573:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4369,7 +4369,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 575:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash
          ) => BG.CompatHasField.HasField "anon'hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4404,7 +4404,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4417,7 +4417,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4446,7 +4446,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 609:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci_outer" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4482,7 +4482,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 611:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "buf_len" Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type ty where
@@ -4517,7 +4517,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packe
 
     __defined at:__ @rte_mbuf_core.h 532:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'rx_descriptor_fields1 = Rte_mbuf_anon'rx_descriptor_fields1
   { unwrap :: BG.ByteArray
@@ -4538,7 +4538,7 @@ deriving via BG.SizedByteArray 24 8 instance Union.IsUnion Rte_mbuf_anon'rx_desc
 
     __defined at:__ @rte_mbuf_core.h 534:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
          ) => BG.HasField "rx_descriptor_fields1" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4549,7 +4549,7 @@ instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
 
     __defined at:__ @rte_mbuf_core.h 534:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "rx_descriptor_fields1" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4576,7 +4576,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "rx_descriptor_
 
     __defined at:__ @rte_mbuf_core.h 536:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type
          ) => BG.HasField "anon'anon'packet_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4587,7 +4587,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type
 
     __defined at:__ @rte_mbuf_core.h 536:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type
          ) => BG.CompatHasField.HasField "anon'anon'packet_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4614,7 +4614,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "anon'anon'pack
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4627,7 +4627,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "packet_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4657,7 +4657,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "packet_type" w
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4670,7 +4670,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l2_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4699,7 +4699,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "l2_type" where
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4712,7 +4712,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l3_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4741,7 +4741,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "l3_type" where
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4754,7 +4754,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l4_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4783,7 +4783,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "l4_type" where
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4796,7 +4796,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tun_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4825,7 +4825,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "tun_type" wher
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4838,7 +4838,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4868,7 +4868,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "inner_esp_next
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4881,7 +4881,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4911,7 +4911,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "inner_l2_type"
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4924,7 +4924,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4954,7 +4954,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "inner_l3_type"
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4967,7 +4967,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l4_type" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -4997,7 +4997,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "inner_l4_type"
 
     __defined at:__ @rte_mbuf_core.h 570:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "pkt_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5010,7 +5010,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 570:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "pkt_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5039,7 +5039,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "pkt_len" where
 
     __defined at:__ @rte_mbuf_core.h 571:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "data_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5052,7 +5052,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 571:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5081,7 +5081,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "data_len" wher
 
     __defined at:__ @rte_mbuf_core.h 573:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "vlan_tci" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5094,7 +5094,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 573:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5123,7 +5123,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "vlan_tci" wher
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5136,7 +5136,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5165,7 +5165,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "hash" where
 
     __defined at:__ @rte_mbuf_core.h 609:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "vlan_tci_outer" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5178,7 +5178,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 609:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci_outer" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5208,7 +5208,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "vlan_tci_outer
 
     __defined at:__ @rte_mbuf_core.h 611:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "buf_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5221,7 +5221,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 611:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "buf_len" Rte_mbuf_anon'rx_descriptor_fields1 ty where
@@ -5250,7 +5250,7 @@ instance HasCField.HasCField Rte_mbuf_anon'rx_descriptor_fields1 "buf_len" where
 
     __defined at:__ @rte_mbuf_core.h 642:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_anon'tx_offload_anon'l2_len = Rte_mbuf_anon'tx_offload_anon'l2_len
   { l2_len :: HsBindgen.Runtime.LibC.Word64
@@ -5258,42 +5258,42 @@ data Rte_mbuf_anon'tx_offload_anon'l2_len = Rte_mbuf_anon'tx_offload_anon'l2_len
 
          __defined at:__ @rte_mbuf_core.h 643:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , l3_len :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @l3_len@
 
          __defined at:__ @rte_mbuf_core.h 647:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , l4_len :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @l4_len@
 
          __defined at:__ @rte_mbuf_core.h 649:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , tso_segsz :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @tso_segsz@
 
          __defined at:__ @rte_mbuf_core.h 651:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , outer_l3_len :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @outer_l3_len@
 
          __defined at:__ @rte_mbuf_core.h 666:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , outer_l2_len :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @outer_l2_len@
 
          __defined at:__ @rte_mbuf_core.h 668:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5344,7 +5344,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_anon'tx_offload_anon'l2_len inst
 
     __defined at:__ @rte_mbuf_core.h 643:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l2_len" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5380,7 +5380,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "l2_len"
 
     __defined at:__ @rte_mbuf_core.h 647:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l3_len" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5416,7 +5416,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "l3_len"
 
     __defined at:__ @rte_mbuf_core.h 649:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l4_len" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5452,7 +5452,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "l4_len"
 
     __defined at:__ @rte_mbuf_core.h 651:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tso_segsz" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5488,7 +5488,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "tso_seg
 
     __defined at:__ @rte_mbuf_core.h 666:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l3_len" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5525,7 +5525,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "outer_l
 
     __defined at:__ @rte_mbuf_core.h 668:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l2_len" Rte_mbuf_anon'tx_offload_anon'l2_len ty where
@@ -5562,7 +5562,7 @@ instance HasCBitfield.HasCBitfield Rte_mbuf_anon'tx_offload_anon'l2_len "outer_l
 
     __defined at:__ @rte_mbuf_core.h 639:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_anon'tx_offload = Rte_mbuf_anon'tx_offload
   { unwrap :: BG.ByteArray
@@ -5583,7 +5583,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_mbuf_anon'tx_offlo
 
     __defined at:__ @rte_mbuf_core.h 640:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "tx_offload" Rte_mbuf_anon'tx_offload ty where
@@ -5594,7 +5594,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 640:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tx_offload" Rte_mbuf_anon'tx_offload ty where
@@ -5620,7 +5620,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "tx_offload" where
 
     __defined at:__ @rte_mbuf_core.h 642:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'tx_offload_anon'l2_len
          ) => BG.HasField "anon'l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5631,7 +5631,7 @@ instance ( ty ~ Rte_mbuf_anon'tx_offload_anon'l2_len
 
     __defined at:__ @rte_mbuf_core.h 642:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'tx_offload_anon'l2_len
          ) => BG.CompatHasField.HasField "anon'l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5658,7 +5658,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "anon'l2_len" where
 
     __defined at:__ @rte_mbuf_core.h 643:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5671,7 +5671,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 643:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5700,7 +5700,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "l2_len" where
 
     __defined at:__ @rte_mbuf_core.h 647:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l3_len" Rte_mbuf_anon'tx_offload ty where
@@ -5713,7 +5713,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 647:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l3_len" Rte_mbuf_anon'tx_offload ty where
@@ -5742,7 +5742,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "l3_len" where
 
     __defined at:__ @rte_mbuf_core.h 649:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l4_len" Rte_mbuf_anon'tx_offload ty where
@@ -5755,7 +5755,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 649:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l4_len" Rte_mbuf_anon'tx_offload ty where
@@ -5784,7 +5784,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "l4_len" where
 
     __defined at:__ @rte_mbuf_core.h 651:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "tso_segsz" Rte_mbuf_anon'tx_offload ty where
@@ -5797,7 +5797,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 651:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tso_segsz" Rte_mbuf_anon'tx_offload ty where
@@ -5826,7 +5826,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "tso_segsz" where
 
     __defined at:__ @rte_mbuf_core.h 666:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "outer_l3_len" Rte_mbuf_anon'tx_offload ty where
@@ -5839,7 +5839,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 666:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l3_len" Rte_mbuf_anon'tx_offload ty where
@@ -5869,7 +5869,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "outer_l3_len" where
 
     __defined at:__ @rte_mbuf_core.h 668:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "outer_l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5882,7 +5882,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 668:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l2_len" Rte_mbuf_anon'tx_offload ty where
@@ -5912,7 +5912,7 @@ instance HasCField.HasCField Rte_mbuf_anon'tx_offload "outer_l2_len" where
 
     __defined at:__ @rte_mbuf_core.h 475:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf = Rte_mbuf
   { buf_addr :: BG.Ptr BG.Void
@@ -5920,84 +5920,84 @@ data Rte_mbuf = Rte_mbuf
 
          __defined at:__ @rte_mbuf_core.h 476:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , buf_iova :: Generated.DPDK.Rte_common.Rte_iova_t
     {- ^ __C declaration:__ @buf_iova@
 
          __defined at:__ @rte_mbuf_core.h 486:41@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'rearm_data :: Rte_mbuf_anon'rearm_data
     {- ^ __C declaration:__ @anon\'rearm_data@
 
          __defined at:__ @rte_mbuf_core.h 500:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , ol_flags :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @ol_flags@
 
          __defined at:__ @rte_mbuf_core.h 529:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'rx_descriptor_fields1 :: Rte_mbuf_anon'rx_descriptor_fields1
     {- ^ __C declaration:__ @anon\'rx_descriptor_fields1@
 
          __defined at:__ @rte_mbuf_core.h 532:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , pool :: BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
     {- ^ __C declaration:__ @pool@
 
          __defined at:__ @rte_mbuf_core.h 615:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , next :: BG.Ptr Rte_mbuf
     {- ^ __C declaration:__ @next@
 
          __defined at:__ @rte_mbuf_core.h 628:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'tx_offload :: Rte_mbuf_anon'tx_offload
     {- ^ __C declaration:__ @anon\'tx_offload@
 
          __defined at:__ @rte_mbuf_core.h 639:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , shinfo :: BG.Ptr Rte_mbuf_ext_shared_info
     {- ^ __C declaration:__ @shinfo@
 
          __defined at:__ @rte_mbuf_core.h 678:35@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , priv_size :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @priv_size@
 
          __defined at:__ @rte_mbuf_core.h 683:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , timesync :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @timesync@
 
          __defined at:__ @rte_mbuf_core.h 686:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , dynfield1 :: CA.ConstantArray 9 HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dynfield1@
 
          __defined at:__ @rte_mbuf_core.h 688:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -6066,7 +6066,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf instance Struct.IsStruct Rte_mbu
 
     __defined at:__ @rte_mbuf_core.h 476:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "buf_addr" Rte_mbuf ty where
@@ -6105,7 +6105,7 @@ instance HasCField.HasCField Rte_mbuf "buf_addr" where
 
     __defined at:__ @rte_mbuf_core.h 486:41@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "buf_iova" Rte_mbuf ty where
@@ -6145,7 +6145,7 @@ instance HasCField.HasCField Rte_mbuf "buf_iova" where
 
     __defined at:__ @rte_mbuf_core.h 500:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rearm_data
          ) => BG.CompatHasField.HasField "anon'rearm_data" Rte_mbuf ty where
@@ -6186,7 +6186,7 @@ instance HasCField.HasCField Rte_mbuf "anon'rearm_data" where
 
     __defined at:__ @rte_mbuf_core.h 501:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "rearm_data" Rte_mbuf ty where
@@ -6199,7 +6199,7 @@ instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 501:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 1 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rearm_data" Rte_mbuf ty where
@@ -6228,7 +6228,7 @@ instance HasCField.HasCField Rte_mbuf "rearm_data" where
 
     __defined at:__ @rte_mbuf_core.h 504:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "data_off" Rte_mbuf ty where
@@ -6241,7 +6241,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 504:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_off" Rte_mbuf ty where
@@ -6270,7 +6270,7 @@ instance HasCField.HasCField Rte_mbuf "data_off" where
 
     __defined at:__ @rte_mbuf_core.h 514:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "refcnt" Rte_mbuf ty where
@@ -6283,7 +6283,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 514:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refcnt" Rte_mbuf ty where
@@ -6312,7 +6312,7 @@ instance HasCField.HasCField Rte_mbuf "refcnt" where
 
     __defined at:__ @rte_mbuf_core.h 520:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "nb_segs" Rte_mbuf ty where
@@ -6325,7 +6325,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 520:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_segs" Rte_mbuf ty where
@@ -6354,7 +6354,7 @@ instance HasCField.HasCField Rte_mbuf "nb_segs" where
 
     __defined at:__ @rte_mbuf_core.h 525:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "port" Rte_mbuf ty where
@@ -6367,7 +6367,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 525:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "port" Rte_mbuf ty where
@@ -6396,7 +6396,7 @@ instance HasCField.HasCField Rte_mbuf "port" where
 
     __defined at:__ @rte_mbuf_core.h 529:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ol_flags" Rte_mbuf ty where
@@ -6436,7 +6436,7 @@ instance HasCField.HasCField Rte_mbuf "ol_flags" where
 
     __defined at:__ @rte_mbuf_core.h 532:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1
          ) => BG.CompatHasField.HasField "anon'rx_descriptor_fields1" Rte_mbuf ty where
@@ -6477,7 +6477,7 @@ instance HasCField.HasCField Rte_mbuf "anon'rx_descriptor_fields1" where
 
     __defined at:__ @rte_mbuf_core.h 534:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
          ) => BG.HasField "rx_descriptor_fields1" Rte_mbuf ty where
@@ -6490,7 +6490,7 @@ instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
 
     __defined at:__ @rte_mbuf_core.h 534:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "rx_descriptor_fields1" Rte_mbuf ty where
@@ -6520,7 +6520,7 @@ instance HasCField.HasCField Rte_mbuf "rx_descriptor_fields1" where
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "packet_type" Rte_mbuf ty where
@@ -6533,7 +6533,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 545:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "packet_type" Rte_mbuf ty where
@@ -6563,7 +6563,7 @@ instance HasCField.HasCField Rte_mbuf "packet_type" where
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l2_type" Rte_mbuf ty where
@@ -6576,7 +6576,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 548:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l2_type" Rte_mbuf ty where
@@ -6605,7 +6605,7 @@ instance HasCField.HasCField Rte_mbuf "l2_type" where
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l3_type" Rte_mbuf ty where
@@ -6618,7 +6618,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 549:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l3_type" Rte_mbuf ty where
@@ -6647,7 +6647,7 @@ instance HasCField.HasCField Rte_mbuf "l3_type" where
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "l4_type" Rte_mbuf ty where
@@ -6660,7 +6660,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 550:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "l4_type" Rte_mbuf ty where
@@ -6689,7 +6689,7 @@ instance HasCField.HasCField Rte_mbuf "l4_type" where
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "tun_type" Rte_mbuf ty where
@@ -6702,7 +6702,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 551:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tun_type" Rte_mbuf ty where
@@ -6731,7 +6731,7 @@ instance HasCField.HasCField Rte_mbuf "tun_type" where
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_esp_next_proto" Rte_mbuf ty where
@@ -6744,7 +6744,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 553:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_esp_next_proto" Rte_mbuf ty where
@@ -6774,7 +6774,7 @@ instance HasCField.HasCField Rte_mbuf "inner_esp_next_proto" where
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l2_type" Rte_mbuf ty where
@@ -6787,7 +6787,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 560:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l2_type" Rte_mbuf ty where
@@ -6817,7 +6817,7 @@ instance HasCField.HasCField Rte_mbuf "inner_l2_type" where
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l3_type" Rte_mbuf ty where
@@ -6830,7 +6830,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 562:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l3_type" Rte_mbuf ty where
@@ -6860,7 +6860,7 @@ instance HasCField.HasCField Rte_mbuf "inner_l3_type" where
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "inner_l4_type" Rte_mbuf ty where
@@ -6873,7 +6873,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_mbuf_core.h 566:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "inner_l4_type" Rte_mbuf ty where
@@ -6903,7 +6903,7 @@ instance HasCField.HasCField Rte_mbuf "inner_l4_type" where
 
     __defined at:__ @rte_mbuf_core.h 570:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "pkt_len" Rte_mbuf ty where
@@ -6916,7 +6916,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_mbuf_core.h 570:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "pkt_len" Rte_mbuf ty where
@@ -6945,7 +6945,7 @@ instance HasCField.HasCField Rte_mbuf "pkt_len" where
 
     __defined at:__ @rte_mbuf_core.h 571:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "data_len" Rte_mbuf ty where
@@ -6958,7 +6958,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 571:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "data_len" Rte_mbuf ty where
@@ -6987,7 +6987,7 @@ instance HasCField.HasCField Rte_mbuf "data_len" where
 
     __defined at:__ @rte_mbuf_core.h 573:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "vlan_tci" Rte_mbuf ty where
@@ -7000,7 +7000,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 573:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci" Rte_mbuf ty where
@@ -7029,7 +7029,7 @@ instance HasCField.HasCField Rte_mbuf "vlan_tci" where
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.HasField "hash" Rte_mbuf ty where
@@ -7042,7 +7042,7 @@ instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'h
 
     __defined at:__ @rte_mbuf_core.h 605:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'rx_descriptor_fields1_anon'anon'packet_type_anon'hash_hash
          ) => BG.CompatHasField.HasField "hash" Rte_mbuf ty where
@@ -7071,7 +7071,7 @@ instance HasCField.HasCField Rte_mbuf "hash" where
 
     __defined at:__ @rte_mbuf_core.h 609:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "vlan_tci_outer" Rte_mbuf ty where
@@ -7084,7 +7084,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 609:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_tci_outer" Rte_mbuf ty where
@@ -7114,7 +7114,7 @@ instance HasCField.HasCField Rte_mbuf "vlan_tci_outer" where
 
     __defined at:__ @rte_mbuf_core.h 611:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "buf_len" Rte_mbuf ty where
@@ -7127,7 +7127,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_mbuf_core.h 611:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "buf_len" Rte_mbuf ty where
@@ -7156,7 +7156,7 @@ instance HasCField.HasCField Rte_mbuf "buf_len" where
 
     __defined at:__ @rte_mbuf_core.h 615:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
          ) => BG.CompatHasField.HasField "pool" Rte_mbuf ty where
@@ -7196,7 +7196,7 @@ instance HasCField.HasCField Rte_mbuf "pool" where
 
     __defined at:__ @rte_mbuf_core.h 628:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mbuf
          ) => BG.CompatHasField.HasField "next" Rte_mbuf ty where
@@ -7235,7 +7235,7 @@ instance HasCField.HasCField Rte_mbuf "next" where
 
     __defined at:__ @rte_mbuf_core.h 639:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_anon'tx_offload
          ) => BG.CompatHasField.HasField "anon'tx_offload" Rte_mbuf ty where
@@ -7276,7 +7276,7 @@ instance HasCField.HasCField Rte_mbuf "anon'tx_offload" where
 
     __defined at:__ @rte_mbuf_core.h 640:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "tx_offload" Rte_mbuf ty where
@@ -7289,7 +7289,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 640:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tx_offload" Rte_mbuf ty where
@@ -7318,7 +7318,7 @@ instance HasCField.HasCField Rte_mbuf "tx_offload" where
 
     __defined at:__ @rte_mbuf_core.h 643:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l2_len" Rte_mbuf ty where
@@ -7331,7 +7331,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 643:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l2_len" Rte_mbuf ty where
@@ -7360,7 +7360,7 @@ instance HasCField.HasCField Rte_mbuf "l2_len" where
 
     __defined at:__ @rte_mbuf_core.h 647:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l3_len" Rte_mbuf ty where
@@ -7373,7 +7373,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 647:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l3_len" Rte_mbuf ty where
@@ -7402,7 +7402,7 @@ instance HasCField.HasCField Rte_mbuf "l3_len" where
 
     __defined at:__ @rte_mbuf_core.h 649:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "l4_len" Rte_mbuf ty where
@@ -7415,7 +7415,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 649:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "l4_len" Rte_mbuf ty where
@@ -7444,7 +7444,7 @@ instance HasCField.HasCField Rte_mbuf "l4_len" where
 
     __defined at:__ @rte_mbuf_core.h 651:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "tso_segsz" Rte_mbuf ty where
@@ -7457,7 +7457,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 651:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tso_segsz" Rte_mbuf ty where
@@ -7486,7 +7486,7 @@ instance HasCField.HasCField Rte_mbuf "tso_segsz" where
 
     __defined at:__ @rte_mbuf_core.h 666:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "outer_l3_len" Rte_mbuf ty where
@@ -7499,7 +7499,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 666:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l3_len" Rte_mbuf ty where
@@ -7529,7 +7529,7 @@ instance HasCField.HasCField Rte_mbuf "outer_l3_len" where
 
     __defined at:__ @rte_mbuf_core.h 668:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "outer_l2_len" Rte_mbuf ty where
@@ -7542,7 +7542,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mbuf_core.h 668:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "outer_l2_len" Rte_mbuf ty where
@@ -7572,7 +7572,7 @@ instance HasCField.HasCField Rte_mbuf "outer_l2_len" where
 
     __defined at:__ @rte_mbuf_core.h 678:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mbuf_ext_shared_info
          ) => BG.CompatHasField.HasField "shinfo" Rte_mbuf ty where
@@ -7612,7 +7612,7 @@ instance HasCField.HasCField Rte_mbuf "shinfo" where
 
     __defined at:__ @rte_mbuf_core.h 683:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "priv_size" Rte_mbuf ty where
@@ -7652,7 +7652,7 @@ instance HasCField.HasCField Rte_mbuf "priv_size" where
 
     __defined at:__ @rte_mbuf_core.h 686:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "timesync" Rte_mbuf ty where
@@ -7692,7 +7692,7 @@ instance HasCField.HasCField Rte_mbuf "timesync" where
 
     __defined at:__ @rte_mbuf_core.h 688:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 9 HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dynfield1" Rte_mbuf ty where
@@ -7734,7 +7734,7 @@ instance HasCField.HasCField Rte_mbuf "dynfield1" where
 
     __defined at:__ @rte_mbuf_core.h 694:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_extbuf_free_callback_t_Aux = Rte_mbuf_extbuf_free_callback_t_Aux
   { unwrap :: BG.Ptr BG.Void -> BG.Ptr BG.Void -> IO ()
@@ -7805,7 +7805,7 @@ instance HasCField.HasCField Rte_mbuf_extbuf_free_callback_t_Aux "unwrap" where
 
     __defined at:__ @rte_mbuf_core.h 694:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_extbuf_free_callback_t = Rte_mbuf_extbuf_free_callback_t
   { unwrap :: BG.FunPtr Rte_mbuf_extbuf_free_callback_t_Aux
@@ -7845,7 +7845,7 @@ instance HasCField.HasCField Rte_mbuf_extbuf_free_callback_t "unwrap" where
 
     __defined at:__ @rte_mbuf_core.h 699:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_ext_shared_info = Rte_mbuf_ext_shared_info
   { free_cb :: Rte_mbuf_extbuf_free_callback_t
@@ -7853,21 +7853,21 @@ data Rte_mbuf_ext_shared_info = Rte_mbuf_ext_shared_info
 
          __defined at:__ @rte_mbuf_core.h 700:34@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , fcb_opaque :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @fcb_opaque@
 
          __defined at:__ @rte_mbuf_core.h 701:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , refcnt :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @refcnt@
 
          __defined at:__ @rte_mbuf_core.h 702:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -7906,7 +7906,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_ext_shared_info instance Struct.
 
     __defined at:__ @rte_mbuf_core.h 700:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mbuf_extbuf_free_callback_t
          ) => BG.CompatHasField.HasField "free_cb" Rte_mbuf_ext_shared_info ty where
@@ -7937,7 +7937,7 @@ instance HasCField.HasCField Rte_mbuf_ext_shared_info "free_cb" where
 
     __defined at:__ @rte_mbuf_core.h 701:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "fcb_opaque" Rte_mbuf_ext_shared_info ty where
@@ -7968,7 +7968,7 @@ instance HasCField.HasCField Rte_mbuf_ext_shared_info "fcb_opaque" where
 
     __defined at:__ @rte_mbuf_core.h 702:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refcnt" Rte_mbuf_ext_shared_info ty where
@@ -7999,7 +7999,7 @@ instance HasCField.HasCField Rte_mbuf_ext_shared_info "refcnt" where
 
     __defined at:__ @rte_mbuf_core.h 706:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_MAX_NB_SEGS :: BG.CInt
 rTE_MBUF_MAX_NB_SEGS = uINT16_MAX
@@ -8008,7 +8008,7 @@ rTE_MBUF_MAX_NB_SEGS = uINT16_MAX
 
     __defined at:__ @rte_mbuf_core.h 774:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_PORT_INVALID :: BG.CInt
 rTE_MBUF_PORT_INVALID = uINT16_MAX
@@ -8017,7 +8017,7 @@ rTE_MBUF_PORT_INVALID = uINT16_MAX
 
     __defined at:__ @rte_mbuf_core.h 776:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mBUF_INVALID_PORT :: BG.CInt
 mBUF_INVALID_PORT = rTE_MBUF_PORT_INVALID

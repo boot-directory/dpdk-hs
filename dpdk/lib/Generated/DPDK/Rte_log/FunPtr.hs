@@ -30,7 +30,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_log_get_rte_openlog_stream */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_c6f51ad0fe80a1b6 (void)) ("
@@ -165,7 +167,7 @@ hs_bindgen_c6f51ad0fe80a1b6 =
 
     __defined at:__ @rte_log.h 89:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_openlog_stream :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO BG.CInt)
 rte_openlog_stream =
@@ -185,7 +187,7 @@ hs_bindgen_ac10cc3374fc3f95 =
 
     __defined at:__ @rte_log.h 98:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_stream :: BG.FunPtr (IO (BG.Ptr HsBindgen.Runtime.LibC.CFile))
 rte_log_get_stream =
@@ -205,7 +207,7 @@ hs_bindgen_b36734b4c4ffab5d =
 
     __defined at:__ @rte_log.h 109:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_global_level :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_log_set_global_level =
@@ -225,7 +227,7 @@ hs_bindgen_55c92b9d738006d2 =
 
     __defined at:__ @rte_log.h 117:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_global_level :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word32)
 rte_log_get_global_level =
@@ -245,7 +247,7 @@ hs_bindgen_3e80835153969a91 =
 
     __defined at:__ @rte_log.h 127:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_level :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_log_get_level =
@@ -265,7 +267,7 @@ hs_bindgen_874686e43a3634c4 =
 
     __defined at:__ @rte_log.h 139:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_can_log :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CBool)
 rte_log_can_log =
@@ -285,7 +287,7 @@ hs_bindgen_4c4eae3d01cd1e8a =
 
     __defined at:__ @rte_log.h 151:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level_pattern :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_log_set_level_pattern =
@@ -305,7 +307,7 @@ hs_bindgen_d3b7f180f7da34db =
 
     __defined at:__ @rte_log.h 163:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level_regexp :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_log_set_level_regexp =
@@ -325,7 +327,7 @@ hs_bindgen_7b29cc5c8f2bc85e =
 
     __defined at:__ @rte_log.h 175:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_log_set_level =
@@ -345,7 +347,7 @@ hs_bindgen_4e67db188305db6c =
 
     __defined at:__ @rte_log.h 189:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_cur_msg_loglevel :: BG.FunPtr (IO BG.CInt)
 rte_log_cur_msg_loglevel =
@@ -365,7 +367,7 @@ hs_bindgen_1163a77ad87dfbb9 =
 
     __defined at:__ @rte_log.h 203:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_cur_msg_logtype :: BG.FunPtr (IO BG.CInt)
 rte_log_cur_msg_logtype =
@@ -385,7 +387,7 @@ hs_bindgen_1015721cbbbe2ba1 =
 
     __defined at:__ @rte_log.h 217:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_register :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> IO BG.CInt)
 rte_log_register =
@@ -405,7 +407,7 @@ hs_bindgen_f19d456d9c135b37 =
 
     __defined at:__ @rte_log.h 235:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_register_type_and_pick_level :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_log_register_type_and_pick_level =
@@ -425,7 +427,7 @@ hs_bindgen_aed9e890453c0e1c =
 
     __defined at:__ @rte_log.h 245:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_list_types :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> PtrConst.PtrConst BG.CChar -> IO ())
 rte_log_list_types =
@@ -445,7 +447,7 @@ hs_bindgen_f5d0160be04947a2 =
 
     __defined at:__ @rte_log.h 255:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_log_dump =

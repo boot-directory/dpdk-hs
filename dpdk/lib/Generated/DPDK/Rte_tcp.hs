@@ -42,7 +42,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_tcp.h 24:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_tcp_hdr = Rte_tcp_hdr
   { src_port :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -50,63 +50,63 @@ data Rte_tcp_hdr = Rte_tcp_hdr
 
          __defined at:__ @rte_tcp.h 25:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_port :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @dst_port@
 
          __defined at:__ @rte_tcp.h 26:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , sent_seq :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @sent_seq@
 
          __defined at:__ @rte_tcp.h 27:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , recv_ack :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @recv_ack@
 
          __defined at:__ @rte_tcp.h 28:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data_off :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @data_off@
 
          __defined at:__ @rte_tcp.h 29:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tcp_flags :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @tcp_flags@
 
          __defined at:__ @rte_tcp.h 30:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_win :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @rx_win@
 
          __defined at:__ @rte_tcp.h 31:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @cksum@
 
          __defined at:__ @rte_tcp.h 32:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tcp_urp :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @tcp_urp@
 
          __defined at:__ @rte_tcp.h 33:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -166,7 +166,7 @@ deriving via Struct.IsStructViaReadRaw Rte_tcp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_tcp.h 25:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "src_port" Rte_tcp_hdr ty where
@@ -203,7 +203,7 @@ instance HasCField.HasCField Rte_tcp_hdr "src_port" where
 
     __defined at:__ @rte_tcp.h 26:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "dst_port" Rte_tcp_hdr ty where
@@ -240,7 +240,7 @@ instance HasCField.HasCField Rte_tcp_hdr "dst_port" where
 
     __defined at:__ @rte_tcp.h 27:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "sent_seq" Rte_tcp_hdr ty where
@@ -277,7 +277,7 @@ instance HasCField.HasCField Rte_tcp_hdr "sent_seq" where
 
     __defined at:__ @rte_tcp.h 28:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "recv_ack" Rte_tcp_hdr ty where
@@ -314,7 +314,7 @@ instance HasCField.HasCField Rte_tcp_hdr "recv_ack" where
 
     __defined at:__ @rte_tcp.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "data_off" Rte_tcp_hdr ty where
@@ -351,7 +351,7 @@ instance HasCField.HasCField Rte_tcp_hdr "data_off" where
 
     __defined at:__ @rte_tcp.h 30:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tcp_flags" Rte_tcp_hdr ty where
@@ -388,7 +388,7 @@ instance HasCField.HasCField Rte_tcp_hdr "tcp_flags" where
 
     __defined at:__ @rte_tcp.h 31:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "rx_win" Rte_tcp_hdr ty where
@@ -425,7 +425,7 @@ instance HasCField.HasCField Rte_tcp_hdr "rx_win" where
 
     __defined at:__ @rte_tcp.h 32:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "cksum" Rte_tcp_hdr ty where
@@ -462,7 +462,7 @@ instance HasCField.HasCField Rte_tcp_hdr "cksum" where
 
     __defined at:__ @rte_tcp.h 33:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "tcp_urp" Rte_tcp_hdr ty where
@@ -499,7 +499,7 @@ instance HasCField.HasCField Rte_tcp_hdr "tcp_urp" where
 
     __defined at:__ @rte_tcp.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_CWR_FLAG :: BG.CInt
 rTE_TCP_CWR_FLAG = (128 :: BG.CInt)
@@ -508,7 +508,7 @@ rTE_TCP_CWR_FLAG = (128 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_ECE_FLAG :: BG.CInt
 rTE_TCP_ECE_FLAG = (64 :: BG.CInt)
@@ -517,7 +517,7 @@ rTE_TCP_ECE_FLAG = (64 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 41:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_URG_FLAG :: BG.CInt
 rTE_TCP_URG_FLAG = (32 :: BG.CInt)
@@ -526,7 +526,7 @@ rTE_TCP_URG_FLAG = (32 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 42:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_ACK_FLAG :: BG.CInt
 rTE_TCP_ACK_FLAG = (16 :: BG.CInt)
@@ -535,7 +535,7 @@ rTE_TCP_ACK_FLAG = (16 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_PSH_FLAG :: BG.CInt
 rTE_TCP_PSH_FLAG = (8 :: BG.CInt)
@@ -544,7 +544,7 @@ rTE_TCP_PSH_FLAG = (8 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 44:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_RST_FLAG :: BG.CInt
 rTE_TCP_RST_FLAG = (4 :: BG.CInt)
@@ -553,7 +553,7 @@ rTE_TCP_RST_FLAG = (4 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 45:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_SYN_FLAG :: BG.CInt
 rTE_TCP_SYN_FLAG = (2 :: BG.CInt)
@@ -562,7 +562,7 @@ rTE_TCP_SYN_FLAG = (2 :: BG.CInt)
 
     __defined at:__ @rte_tcp.h 46:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_TCP_FIN_FLAG :: BG.CInt
 rTE_TCP_FIN_FLAG = (1 :: BG.CInt)

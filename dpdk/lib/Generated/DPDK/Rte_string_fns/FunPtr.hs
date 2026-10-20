@@ -20,7 +20,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_string_fns_get_rte_strsplit */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_3b16139e9fe58cbd (void)) ("
@@ -79,7 +81,7 @@ hs_bindgen_3b16139e9fe58cbd =
 
     __defined at:__ @rte_string_fns.h 52:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strsplit :: BG.FunPtr (BG.Ptr BG.CChar -> BG.CInt -> BG.Ptr (BG.Ptr BG.CChar) -> BG.CInt -> BG.CChar -> IO BG.CInt)
 rte_strsplit =
@@ -99,7 +101,7 @@ hs_bindgen_bdff98cf5764f53c =
 
     __defined at:__ @rte_string_fns.h 61:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strlcpy :: BG.FunPtr (BG.Ptr BG.CChar -> PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> IO HsBindgen.Runtime.LibC.CSize)
 rte_strlcpy =
@@ -119,7 +121,7 @@ hs_bindgen_a87ee1375320cd6e =
 
     __defined at:__ @rte_string_fns.h 72:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strlcat :: BG.FunPtr (BG.Ptr BG.CChar -> PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> IO HsBindgen.Runtime.LibC.CSize)
 rte_strlcat =
@@ -139,7 +141,7 @@ hs_bindgen_68862c097aab7a0c =
 
     __defined at:__ @rte_string_fns.h 126:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strscpy :: BG.FunPtr (BG.Ptr BG.CChar -> PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> IO Generated.DPDK.Rte_ring.Ssize_t)
 rte_strscpy =

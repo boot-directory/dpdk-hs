@@ -14,7 +14,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_spinlock.h 19:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RTM_MAX_RETRIES :: BG.CInt
 rTE_RTM_MAX_RETRIES = (20 :: BG.CInt)
@@ -23,7 +23,7 @@ rTE_RTM_MAX_RETRIES = (20 :: BG.CInt)
 
     __defined at:__ @rte_spinlock.h 20:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_LOCK_BUSY :: BG.CInt
 rTE_XABORT_LOCK_BUSY = (255 :: BG.CInt)

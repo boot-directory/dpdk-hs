@@ -22,7 +22,9 @@ import Generated.DPDK.Generic.Rte_rwlock
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_fdb1cd9101bfa3bc ("
   , "  rte_rwlock_t *arg1"
   , ")"
@@ -90,7 +92,7 @@ hs_bindgen_fdb1cd9101bfa3bc =
 
     __defined at:__ @generic\/rte_rwlock.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_init ::
      BG.Ptr Rte_rwlock_t
@@ -115,7 +117,7 @@ hs_bindgen_d29ad4726a71e780 =
 
     __defined at:__ @generic\/rte_rwlock.h 93:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_lock ::
      BG.Ptr Rte_rwlock_t
@@ -140,7 +142,7 @@ hs_bindgen_abd8ee1a01f483a7 =
 
     __defined at:__ @generic\/rte_rwlock.h 130:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_trylock ::
      BG.Ptr Rte_rwlock_t
@@ -165,7 +167,7 @@ hs_bindgen_439c293c3d29b5d8 =
 
     __defined at:__ @generic\/rte_rwlock.h 163:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_unlock ::
      BG.Ptr Rte_rwlock_t
@@ -190,7 +192,7 @@ hs_bindgen_575911f64fe11e45 =
 
     __defined at:__ @generic\/rte_rwlock.h 181:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_trylock ::
      BG.Ptr Rte_rwlock_t
@@ -216,7 +218,7 @@ hs_bindgen_7a3af6c0d5756780 =
 
     __defined at:__ @generic\/rte_rwlock.h 203:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_lock ::
      BG.Ptr Rte_rwlock_t
@@ -241,7 +243,7 @@ hs_bindgen_edf82d5c96ea76a2 =
 
     __defined at:__ @generic\/rte_rwlock.h 241:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_unlock ::
      BG.Ptr Rte_rwlock_t
@@ -266,7 +268,7 @@ hs_bindgen_f417353088d0b52a =
 
     __defined at:__ @generic\/rte_rwlock.h 257:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_is_locked ::
      BG.Ptr Rte_rwlock_t

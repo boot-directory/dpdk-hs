@@ -22,7 +22,9 @@ import Generated.DPDK.Generic.Rte_power_intrinsics
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_5f4267355cfa7713 ("
   , "  struct rte_power_monitor_cond const *arg1,"
   , "  uint64_t const arg2"
@@ -72,7 +74,7 @@ hs_bindgen_5f4267355cfa7713 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 87:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor ::
      PtrConst.PtrConst Rte_power_monitor_cond
@@ -99,7 +101,7 @@ hs_bindgen_b0d51be55fd3be91 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 103:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor_wakeup ::
      BG.CUInt
@@ -125,7 +127,7 @@ hs_bindgen_86470609cd02a772 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 121:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_pause ::
      HsBindgen.Runtime.LibC.Word64
@@ -156,7 +158,7 @@ hs_bindgen_09023c26a7870dc9 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 151:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor_multi ::
      PtrConst.PtrConst (IsA.Elem (IA.IncompleteArray Rte_power_monitor_cond))

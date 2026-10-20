@@ -25,7 +25,9 @@ import Generated.DPDK.Rte_memzone
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_251cf1d0cd6e8c7f ("
   , "  size_t arg1"
   , ")"
@@ -113,7 +115,7 @@ hs_bindgen_251cf1d0cd6e8c7f =
 
     __defined at:__ @rte_memzone.h 77:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_max_set ::
      HsBindgen.Runtime.LibC.CSize
@@ -134,7 +136,7 @@ hs_bindgen_efa97486e600f7f5 =
 
     __defined at:__ @rte_memzone.h 87:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_max_get :: IO HsBindgen.Runtime.LibC.CSize
 rte_memzone_max_get = hs_bindgen_efa97486e600f7f5
@@ -165,7 +167,7 @@ hs_bindgen_390241739f57657d =
 
     __defined at:__ @rte_memzone.h 146:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve ::
      PtrConst.PtrConst BG.CChar
@@ -208,7 +210,7 @@ hs_bindgen_d994cc1fbed1d689 =
 
     __defined at:__ @rte_memzone.h 211:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve_aligned ::
      PtrConst.PtrConst BG.CChar
@@ -257,7 +259,7 @@ hs_bindgen_974594942054a737 =
 
     __defined at:__ @rte_memzone.h 282:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve_bounded ::
      PtrConst.PtrConst BG.CChar
@@ -293,7 +295,7 @@ hs_bindgen_5d9caa67e4195f3d =
 
     __defined at:__ @rte_memzone.h 295:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_free ::
      PtrConst.PtrConst Rte_memzone
@@ -318,7 +320,7 @@ hs_bindgen_3681290abc22368b =
 
     __defined at:__ @rte_memzone.h 308:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_lookup ::
      PtrConst.PtrConst BG.CChar
@@ -343,7 +345,7 @@ hs_bindgen_3eeb9e061dcb1a96 =
 
     __defined at:__ @rte_memzone.h 316:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -371,7 +373,7 @@ hs_bindgen_d86b2e4e8bfb298d =
 
     __defined at:__ @rte_memzone.h 326:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_walk ::
      BG.FunPtr (PtrConst.PtrConst Rte_memzone -> BG.Ptr BG.Void -> IO ())

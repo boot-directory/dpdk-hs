@@ -58,7 +58,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_icmp.h 24:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_icmp_base_hdr = Rte_icmp_base_hdr
   { type' :: HsBindgen.Runtime.LibC.Word8
@@ -66,21 +66,21 @@ data Rte_icmp_base_hdr = Rte_icmp_base_hdr
 
          __defined at:__ @rte_icmp.h 25:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , code :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @code@
 
          __defined at:__ @rte_icmp.h 26:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , checksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @checksum@
 
          __defined at:__ @rte_icmp.h 27:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -119,7 +119,7 @@ deriving via Struct.IsStructViaReadRaw Rte_icmp_base_hdr instance Struct.IsStruc
 
     __defined at:__ @rte_icmp.h 25:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type'" Rte_icmp_base_hdr ty where
@@ -150,7 +150,7 @@ instance HasCField.HasCField Rte_icmp_base_hdr "type'" where
 
     __defined at:__ @rte_icmp.h 26:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "code" Rte_icmp_base_hdr ty where
@@ -181,7 +181,7 @@ instance HasCField.HasCField Rte_icmp_base_hdr "code" where
 
     __defined at:__ @rte_icmp.h 27:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "checksum" Rte_icmp_base_hdr ty where
@@ -209,7 +209,7 @@ instance HasCField.HasCField Rte_icmp_base_hdr "checksum" where
 
     __defined at:__ @rte_icmp.h 33:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_icmp_echo_hdr = Rte_icmp_echo_hdr
   { base :: Rte_icmp_base_hdr
@@ -217,21 +217,21 @@ data Rte_icmp_echo_hdr = Rte_icmp_echo_hdr
 
          __defined at:__ @rte_icmp.h 34:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , identifier :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @identifier@
 
          __defined at:__ @rte_icmp.h 35:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , sequence :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @sequence@
 
          __defined at:__ @rte_icmp.h 36:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -270,7 +270,7 @@ deriving via Struct.IsStructViaReadRaw Rte_icmp_echo_hdr instance Struct.IsStruc
 
     __defined at:__ @rte_icmp.h 34:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_icmp_base_hdr
          ) => BG.CompatHasField.HasField "base" Rte_icmp_echo_hdr ty where
@@ -301,7 +301,7 @@ instance HasCField.HasCField Rte_icmp_echo_hdr "base" where
 
     __defined at:__ @rte_icmp.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "identifier" Rte_icmp_echo_hdr ty where
@@ -332,7 +332,7 @@ instance HasCField.HasCField Rte_icmp_echo_hdr "identifier" where
 
     __defined at:__ @rte_icmp.h 36:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "sequence" Rte_icmp_echo_hdr ty where
@@ -363,7 +363,7 @@ instance HasCField.HasCField Rte_icmp_echo_hdr "sequence" where
 
     __defined at:__ @rte_icmp.h 44:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_icmp_hdr = Rte_icmp_hdr
   { icmp_type :: HsBindgen.Runtime.LibC.Word8
@@ -371,35 +371,35 @@ data Rte_icmp_hdr = Rte_icmp_hdr
 
          __defined at:__ @rte_icmp.h 45:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , icmp_code :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @icmp_code@
 
          __defined at:__ @rte_icmp.h 46:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , icmp_cksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @icmp_cksum@
 
          __defined at:__ @rte_icmp.h 47:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , icmp_ident :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @icmp_ident@
 
          __defined at:__ @rte_icmp.h 48:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , icmp_seq_nb :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @icmp_seq_nb@
 
          __defined at:__ @rte_icmp.h 49:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -442,7 +442,7 @@ deriving via Struct.IsStructViaReadRaw Rte_icmp_hdr instance Struct.IsStruct Rte
 
     __defined at:__ @rte_icmp.h 45:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "icmp_type" Rte_icmp_hdr ty where
@@ -475,7 +475,7 @@ instance HasCField.HasCField Rte_icmp_hdr "icmp_type" where
 
     __defined at:__ @rte_icmp.h 46:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "icmp_code" Rte_icmp_hdr ty where
@@ -508,7 +508,7 @@ instance HasCField.HasCField Rte_icmp_hdr "icmp_code" where
 
     __defined at:__ @rte_icmp.h 47:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "icmp_cksum" Rte_icmp_hdr ty where
@@ -541,7 +541,7 @@ instance HasCField.HasCField Rte_icmp_hdr "icmp_cksum" where
 
     __defined at:__ @rte_icmp.h 48:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "icmp_ident" Rte_icmp_hdr ty where
@@ -574,7 +574,7 @@ instance HasCField.HasCField Rte_icmp_hdr "icmp_ident" where
 
     __defined at:__ @rte_icmp.h 49:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "icmp_seq_nb" Rte_icmp_hdr ty where
@@ -608,7 +608,7 @@ instance HasCField.HasCField Rte_icmp_hdr "icmp_seq_nb" where
 
     __defined at:__ @rte_icmp.h 53:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_ECHO_REPLY :: BG.CInt
 rTE_ICMP_TYPE_ECHO_REPLY = (0 :: BG.CInt)
@@ -617,7 +617,7 @@ rTE_ICMP_TYPE_ECHO_REPLY = (0 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 56:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_DEST_UNREACHABLE :: BG.CInt
 rTE_ICMP_TYPE_DEST_UNREACHABLE = (3 :: BG.CInt)
@@ -626,7 +626,7 @@ rTE_ICMP_TYPE_DEST_UNREACHABLE = (3 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 57:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_REDIRECT :: BG.CInt
 rTE_ICMP_TYPE_REDIRECT = (5 :: BG.CInt)
@@ -635,7 +635,7 @@ rTE_ICMP_TYPE_REDIRECT = (5 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 58:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_ECHO_REQUEST :: BG.CInt
 rTE_ICMP_TYPE_ECHO_REQUEST = (8 :: BG.CInt)
@@ -644,7 +644,7 @@ rTE_ICMP_TYPE_ECHO_REQUEST = (8 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 61:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_TTL_EXCEEDED :: BG.CInt
 rTE_ICMP_TYPE_TTL_EXCEEDED = (11 :: BG.CInt)
@@ -653,7 +653,7 @@ rTE_ICMP_TYPE_TTL_EXCEEDED = (11 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 62:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_PARAM_PROBLEM :: BG.CInt
 rTE_ICMP_TYPE_PARAM_PROBLEM = (12 :: BG.CInt)
@@ -662,7 +662,7 @@ rTE_ICMP_TYPE_PARAM_PROBLEM = (12 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 63:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_TIMESTAMP_REQUEST :: BG.CInt
 rTE_ICMP_TYPE_TIMESTAMP_REQUEST = (13 :: BG.CInt)
@@ -671,7 +671,7 @@ rTE_ICMP_TYPE_TIMESTAMP_REQUEST = (13 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 64:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_TYPE_TIMESTAMP_REPLY :: BG.CInt
 rTE_ICMP_TYPE_TIMESTAMP_REPLY = (14 :: BG.CInt)
@@ -680,7 +680,7 @@ rTE_ICMP_TYPE_TIMESTAMP_REPLY = (14 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 67:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_NET :: BG.CInt
 rTE_ICMP_CODE_UNREACH_NET = (0 :: BG.CInt)
@@ -689,7 +689,7 @@ rTE_ICMP_CODE_UNREACH_NET = (0 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 68:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_HOST :: BG.CInt
 rTE_ICMP_CODE_UNREACH_HOST = (1 :: BG.CInt)
@@ -698,7 +698,7 @@ rTE_ICMP_CODE_UNREACH_HOST = (1 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 69:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_PROTO :: BG.CInt
 rTE_ICMP_CODE_UNREACH_PROTO = (2 :: BG.CInt)
@@ -707,7 +707,7 @@ rTE_ICMP_CODE_UNREACH_PROTO = (2 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 70:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_PORT :: BG.CInt
 rTE_ICMP_CODE_UNREACH_PORT = (3 :: BG.CInt)
@@ -716,7 +716,7 @@ rTE_ICMP_CODE_UNREACH_PORT = (3 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 71:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_FRAG :: BG.CInt
 rTE_ICMP_CODE_UNREACH_FRAG = (4 :: BG.CInt)
@@ -725,7 +725,7 @@ rTE_ICMP_CODE_UNREACH_FRAG = (4 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 72:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_UNREACH_SRC :: BG.CInt
 rTE_ICMP_CODE_UNREACH_SRC = (5 :: BG.CInt)
@@ -734,7 +734,7 @@ rTE_ICMP_CODE_UNREACH_SRC = (5 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 75:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_TTL_EXCEEDED :: BG.CInt
 rTE_ICMP_CODE_TTL_EXCEEDED = (0 :: BG.CInt)
@@ -743,7 +743,7 @@ rTE_ICMP_CODE_TTL_EXCEEDED = (0 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 76:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_TTL_FRAG :: BG.CInt
 rTE_ICMP_CODE_TTL_FRAG = (1 :: BG.CInt)
@@ -752,7 +752,7 @@ rTE_ICMP_CODE_TTL_FRAG = (1 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 79:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_REDIRECT_NET :: BG.CInt
 rTE_ICMP_CODE_REDIRECT_NET = (0 :: BG.CInt)
@@ -761,7 +761,7 @@ rTE_ICMP_CODE_REDIRECT_NET = (0 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 80:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_REDIRECT_HOST :: BG.CInt
 rTE_ICMP_CODE_REDIRECT_HOST = (1 :: BG.CInt)
@@ -770,7 +770,7 @@ rTE_ICMP_CODE_REDIRECT_HOST = (1 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 81:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_REDIRECT_TOS_NET :: BG.CInt
 rTE_ICMP_CODE_REDIRECT_TOS_NET = (2 :: BG.CInt)
@@ -779,7 +779,7 @@ rTE_ICMP_CODE_REDIRECT_TOS_NET = (2 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 82:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP_CODE_REDIRECT_TOS_HOST :: BG.CInt
 rTE_ICMP_CODE_REDIRECT_TOS_HOST = (3 :: BG.CInt)
@@ -788,7 +788,7 @@ rTE_ICMP_CODE_REDIRECT_TOS_HOST = (3 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 84:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP6_ECHO_REQUEST :: BG.CInt
 rTE_ICMP6_ECHO_REQUEST = (128 :: BG.CInt)
@@ -797,7 +797,7 @@ rTE_ICMP6_ECHO_REQUEST = (128 :: BG.CInt)
 
     __defined at:__ @rte_icmp.h 85:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ICMP6_ECHO_REPLY :: BG.CInt
 rTE_ICMP6_ECHO_REPLY = (129 :: BG.CInt)

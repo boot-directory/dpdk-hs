@@ -32,7 +32,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_udp.h 24:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_udp_hdr = Rte_udp_hdr
   { src_port :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -40,28 +40,28 @@ data Rte_udp_hdr = Rte_udp_hdr
 
          __defined at:__ @rte_udp.h 25:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_port :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @dst_port@
 
          __defined at:__ @rte_udp.h 26:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dgram_len :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @dgram_len@
 
          __defined at:__ @rte_udp.h 27:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dgram_cksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @dgram_cksum@
 
          __defined at:__ @rte_udp.h 28:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -102,7 +102,7 @@ deriving via Struct.IsStructViaReadRaw Rte_udp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_udp.h 25:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "src_port" Rte_udp_hdr ty where
@@ -134,7 +134,7 @@ instance HasCField.HasCField Rte_udp_hdr "src_port" where
 
     __defined at:__ @rte_udp.h 26:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "dst_port" Rte_udp_hdr ty where
@@ -166,7 +166,7 @@ instance HasCField.HasCField Rte_udp_hdr "dst_port" where
 
     __defined at:__ @rte_udp.h 27:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "dgram_len" Rte_udp_hdr ty where
@@ -198,7 +198,7 @@ instance HasCField.HasCField Rte_udp_hdr "dgram_len" where
 
     __defined at:__ @rte_udp.h 28:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "dgram_cksum" Rte_udp_hdr ty where

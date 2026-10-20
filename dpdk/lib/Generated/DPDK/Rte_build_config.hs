@@ -256,7 +256,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_build_config.h 14:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ARCH_X86 :: BG.CInt
 rTE_ARCH_X86 = (1 :: BG.CInt)
@@ -265,7 +265,7 @@ rTE_ARCH_X86 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 16:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ARCH_X86_64 :: BG.CInt
 rTE_ARCH_X86_64 = (1 :: BG.CInt)
@@ -274,7 +274,7 @@ rTE_ARCH_X86_64 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 20:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_ACC :: BG.CInt
 rTE_BASEBAND_ACC = (1 :: BG.CInt)
@@ -283,7 +283,7 @@ rTE_BASEBAND_ACC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 22:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_FPGA_5GNR_FEC :: BG.CInt
 rTE_BASEBAND_FPGA_5GNR_FEC = (1 :: BG.CInt)
@@ -292,7 +292,7 @@ rTE_BASEBAND_FPGA_5GNR_FEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 24:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_FPGA_LTE_FEC :: BG.CInt
 rTE_BASEBAND_FPGA_LTE_FEC = (1 :: BG.CInt)
@@ -301,7 +301,7 @@ rTE_BASEBAND_FPGA_LTE_FEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 26:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_LA12XX :: BG.CInt
 rTE_BASEBAND_LA12XX = (1 :: BG.CInt)
@@ -310,7 +310,7 @@ rTE_BASEBAND_LA12XX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 28:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_NULL :: BG.CInt
 rTE_BASEBAND_NULL = (1 :: BG.CInt)
@@ -319,7 +319,7 @@ rTE_BASEBAND_NULL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 30:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BASEBAND_TURBO_SW :: BG.CInt
 rTE_BASEBAND_TURBO_SW = (1 :: BG.CInt)
@@ -328,7 +328,7 @@ rTE_BASEBAND_TURBO_SW = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 32:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_AUXILIARY :: BG.CInt
 rTE_BUS_AUXILIARY = (1 :: BG.CInt)
@@ -337,7 +337,7 @@ rTE_BUS_AUXILIARY = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_CDX :: BG.CInt
 rTE_BUS_CDX = (1 :: BG.CInt)
@@ -346,7 +346,7 @@ rTE_BUS_CDX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_DPAA :: BG.CInt
 rTE_BUS_DPAA = (1 :: BG.CInt)
@@ -355,7 +355,7 @@ rTE_BUS_DPAA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 38:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_FSLMC :: BG.CInt
 rTE_BUS_FSLMC = (1 :: BG.CInt)
@@ -364,7 +364,7 @@ rTE_BUS_FSLMC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_IFPGA :: BG.CInt
 rTE_BUS_IFPGA = (1 :: BG.CInt)
@@ -373,7 +373,7 @@ rTE_BUS_IFPGA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 42:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_PCI :: BG.CInt
 rTE_BUS_PCI = (1 :: BG.CInt)
@@ -382,7 +382,7 @@ rTE_BUS_PCI = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 44:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_PLATFORM :: BG.CInt
 rTE_BUS_PLATFORM = (1 :: BG.CInt)
@@ -391,7 +391,7 @@ rTE_BUS_PLATFORM = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 46:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_UACCE :: BG.CInt
 rTE_BUS_UACCE = (1 :: BG.CInt)
@@ -400,7 +400,7 @@ rTE_BUS_UACCE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 48:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_VDEV :: BG.CInt
 rTE_BUS_VDEV = (1 :: BG.CInt)
@@ -409,7 +409,7 @@ rTE_BUS_VDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 50:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BUS_VMBUS :: BG.CInt
 rTE_BUS_VMBUS = (1 :: BG.CInt)
@@ -418,7 +418,7 @@ rTE_BUS_VMBUS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_SIZE :: BG.CInt
 rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
@@ -427,7 +427,7 @@ rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 54:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_CNXK :: BG.CInt
 rTE_COMMON_CNXK = (1 :: BG.CInt)
@@ -436,7 +436,7 @@ rTE_COMMON_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 56:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_CPT :: BG.CInt
 rTE_COMMON_CPT = (1 :: BG.CInt)
@@ -445,7 +445,7 @@ rTE_COMMON_CPT = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 58:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_DPAAX :: BG.CInt
 rTE_COMMON_DPAAX = (1 :: BG.CInt)
@@ -454,7 +454,7 @@ rTE_COMMON_DPAAX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 60:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_IONIC :: BG.CInt
 rTE_COMMON_IONIC = (1 :: BG.CInt)
@@ -463,7 +463,7 @@ rTE_COMMON_IONIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 62:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_MLX5 :: BG.CInt
 rTE_COMMON_MLX5 = (1 :: BG.CInt)
@@ -472,7 +472,7 @@ rTE_COMMON_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 64:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_NFP :: BG.CInt
 rTE_COMMON_NFP = (1 :: BG.CInt)
@@ -481,7 +481,7 @@ rTE_COMMON_NFP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 66:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_NITROX :: BG.CInt
 rTE_COMMON_NITROX = (1 :: BG.CInt)
@@ -490,7 +490,7 @@ rTE_COMMON_NITROX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 68:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_OCTEONTX :: BG.CInt
 rTE_COMMON_OCTEONTX = (1 :: BG.CInt)
@@ -499,7 +499,7 @@ rTE_COMMON_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 70:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_QAT :: BG.CInt
 rTE_COMMON_QAT = (1 :: BG.CInt)
@@ -508,7 +508,7 @@ rTE_COMMON_QAT = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 72:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_SFC_EFX :: BG.CInt
 rTE_COMMON_SFC_EFX = (1 :: BG.CInt)
@@ -517,7 +517,7 @@ rTE_COMMON_SFC_EFX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 74:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMMON_ZSDA :: BG.CInt
 rTE_COMMON_ZSDA = (1 :: BG.CInt)
@@ -526,7 +526,7 @@ rTE_COMMON_ZSDA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 78:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMPRESS_MLX5 :: BG.CInt
 rTE_COMPRESS_MLX5 = (1 :: BG.CInt)
@@ -535,7 +535,7 @@ rTE_COMPRESS_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 80:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMPRESS_NITROX :: BG.CInt
 rTE_COMPRESS_NITROX = (1 :: BG.CInt)
@@ -544,7 +544,7 @@ rTE_COMPRESS_NITROX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 82:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMPRESS_OCTEONTX :: BG.CInt
 rTE_COMPRESS_OCTEONTX = (1 :: BG.CInt)
@@ -553,7 +553,7 @@ rTE_COMPRESS_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 84:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_COMPRESS_ZLIB :: BG.CInt
 rTE_COMPRESS_ZLIB = (1 :: BG.CInt)
@@ -562,7 +562,7 @@ rTE_COMPRESS_ZLIB = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 86:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_BCMFS :: BG.CInt
 rTE_CRYPTO_BCMFS = (1 :: BG.CInt)
@@ -571,7 +571,7 @@ rTE_CRYPTO_BCMFS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 88:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_CAAM_JR :: BG.CInt
 rTE_CRYPTO_CAAM_JR = (1 :: BG.CInt)
@@ -580,7 +580,7 @@ rTE_CRYPTO_CAAM_JR = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 90:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_CCP :: BG.CInt
 rTE_CRYPTO_CCP = (1 :: BG.CInt)
@@ -589,7 +589,7 @@ rTE_CRYPTO_CCP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 92:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_CNXK :: BG.CInt
 rTE_CRYPTO_CNXK = (1 :: BG.CInt)
@@ -598,7 +598,7 @@ rTE_CRYPTO_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 94:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_DPAA2_SEC :: BG.CInt
 rTE_CRYPTO_DPAA2_SEC = (1 :: BG.CInt)
@@ -607,7 +607,7 @@ rTE_CRYPTO_DPAA2_SEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 96:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_DPAA_SEC :: BG.CInt
 rTE_CRYPTO_DPAA_SEC = (1 :: BG.CInt)
@@ -616,7 +616,7 @@ rTE_CRYPTO_DPAA_SEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 98:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_IONIC :: BG.CInt
 rTE_CRYPTO_IONIC = (1 :: BG.CInt)
@@ -625,7 +625,7 @@ rTE_CRYPTO_IONIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 100:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_IPSEC_MB :: BG.CInt
 rTE_CRYPTO_IPSEC_MB = (1 :: BG.CInt)
@@ -634,7 +634,7 @@ rTE_CRYPTO_IPSEC_MB = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 102:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_MLX5 :: BG.CInt
 rTE_CRYPTO_MLX5 = (1 :: BG.CInt)
@@ -643,7 +643,7 @@ rTE_CRYPTO_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 104:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_NITROX :: BG.CInt
 rTE_CRYPTO_NITROX = (1 :: BG.CInt)
@@ -652,7 +652,7 @@ rTE_CRYPTO_NITROX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 106:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_NULL :: BG.CInt
 rTE_CRYPTO_NULL = (1 :: BG.CInt)
@@ -661,7 +661,7 @@ rTE_CRYPTO_NULL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 108:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_OCTEONTX :: BG.CInt
 rTE_CRYPTO_OCTEONTX = (1 :: BG.CInt)
@@ -670,7 +670,7 @@ rTE_CRYPTO_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 110:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_OPENSSL :: BG.CInt
 rTE_CRYPTO_OPENSSL = (1 :: BG.CInt)
@@ -679,7 +679,7 @@ rTE_CRYPTO_OPENSSL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 112:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_SCHEDULER :: BG.CInt
 rTE_CRYPTO_SCHEDULER = (1 :: BG.CInt)
@@ -688,7 +688,7 @@ rTE_CRYPTO_SCHEDULER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 114:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CRYPTO_VIRTIO :: BG.CInt
 rTE_CRYPTO_VIRTIO = (1 :: BG.CInt)
@@ -697,7 +697,7 @@ rTE_CRYPTO_VIRTIO = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 116:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_CNXK :: BG.CInt
 rTE_DMA_CNXK = (1 :: BG.CInt)
@@ -706,7 +706,7 @@ rTE_DMA_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 118:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_DPAA :: BG.CInt
 rTE_DMA_DPAA = (1 :: BG.CInt)
@@ -715,7 +715,7 @@ rTE_DMA_DPAA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 120:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_DPAA2 :: BG.CInt
 rTE_DMA_DPAA2 = (1 :: BG.CInt)
@@ -724,7 +724,7 @@ rTE_DMA_DPAA2 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 122:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_HISI_ACC :: BG.CInt
 rTE_DMA_HISI_ACC = (1 :: BG.CInt)
@@ -733,7 +733,7 @@ rTE_DMA_HISI_ACC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 124:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_HISI_PCIEP :: BG.CInt
 rTE_DMA_HISI_PCIEP = (1 :: BG.CInt)
@@ -742,7 +742,7 @@ rTE_DMA_HISI_PCIEP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 126:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_IDXD :: BG.CInt
 rTE_DMA_IDXD = (1 :: BG.CInt)
@@ -751,7 +751,7 @@ rTE_DMA_IDXD = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 128:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_IOAT :: BG.CInt
 rTE_DMA_IOAT = (1 :: BG.CInt)
@@ -760,7 +760,7 @@ rTE_DMA_IOAT = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 130:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_ODM :: BG.CInt
 rTE_DMA_ODM = (1 :: BG.CInt)
@@ -769,7 +769,7 @@ rTE_DMA_ODM = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 132:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DMA_SKELETON :: BG.CInt
 rTE_DMA_SKELETON = (1 :: BG.CInt)
@@ -778,7 +778,7 @@ rTE_DMA_SKELETON = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 134:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_DRIVER_MEMPOOL_BUCKET_SIZE_KB :: BG.CInt
 rTE_DRIVER_MEMPOOL_BUCKET_SIZE_KB = (64 :: BG.CInt)
@@ -787,7 +787,7 @@ rTE_DRIVER_MEMPOOL_BUCKET_SIZE_KB = (64 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 136:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EAL_NUMA_AWARE_HUGEPAGES :: BG.CInt
 rTE_EAL_NUMA_AWARE_HUGEPAGES = (1 :: BG.CInt)
@@ -798,7 +798,7 @@ rTE_EAL_NUMA_AWARE_HUGEPAGES = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 138:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EAL_PMD_PATH :: BG.ByteString
 rTE_EAL_PMD_PATH =
@@ -808,7 +808,7 @@ rTE_EAL_PMD_PATH =
 
     __defined at:__ @rte_build_config.h 144:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ENV_FREEBSD :: BG.CInt
 rTE_ENV_FREEBSD = (0 :: BG.CInt)
@@ -817,7 +817,7 @@ rTE_ENV_FREEBSD = (0 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 146:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ENV_LINUX :: BG.CInt
 rTE_ENV_LINUX = (1 :: BG.CInt)
@@ -826,7 +826,7 @@ rTE_ENV_LINUX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 148:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ENV_WINDOWS :: BG.CInt
 rTE_ENV_WINDOWS = (2 :: BG.CInt)
@@ -835,7 +835,7 @@ rTE_ENV_WINDOWS = (2 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 150:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_CNXK :: BG.CInt
 rTE_EVENT_CNXK = (1 :: BG.CInt)
@@ -844,7 +844,7 @@ rTE_EVENT_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 152:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_DLB2 :: BG.CInt
 rTE_EVENT_DLB2 = (1 :: BG.CInt)
@@ -853,7 +853,7 @@ rTE_EVENT_DLB2 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 154:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_DPAA :: BG.CInt
 rTE_EVENT_DPAA = (1 :: BG.CInt)
@@ -862,7 +862,7 @@ rTE_EVENT_DPAA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 156:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_DPAA2 :: BG.CInt
 rTE_EVENT_DPAA2 = (1 :: BG.CInt)
@@ -871,7 +871,7 @@ rTE_EVENT_DPAA2 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 158:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_DSW :: BG.CInt
 rTE_EVENT_DSW = (1 :: BG.CInt)
@@ -880,7 +880,7 @@ rTE_EVENT_DSW = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 160:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_OCTEONTX :: BG.CInt
 rTE_EVENT_OCTEONTX = (1 :: BG.CInt)
@@ -889,7 +889,7 @@ rTE_EVENT_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 162:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_OPDL :: BG.CInt
 rTE_EVENT_OPDL = (1 :: BG.CInt)
@@ -898,7 +898,7 @@ rTE_EVENT_OPDL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 164:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_SKELETON :: BG.CInt
 rTE_EVENT_SKELETON = (1 :: BG.CInt)
@@ -907,7 +907,7 @@ rTE_EVENT_SKELETON = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 166:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EVENT_SW :: BG.CInt
 rTE_EVENT_SW = (1 :: BG.CInt)
@@ -916,7 +916,7 @@ rTE_EVENT_SW = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 168:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV :: BG.CInt
 rTE_EXEC_ENV = (1 :: BG.CInt)
@@ -925,7 +925,7 @@ rTE_EXEC_ENV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 170:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV_IS_FREEBSD :: BG.CInt
 rTE_EXEC_ENV_IS_FREEBSD = (0 :: BG.CInt)
@@ -934,7 +934,7 @@ rTE_EXEC_ENV_IS_FREEBSD = (0 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 172:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV_IS_LINUX :: BG.CInt
 rTE_EXEC_ENV_IS_LINUX = (1 :: BG.CInt)
@@ -943,7 +943,7 @@ rTE_EXEC_ENV_IS_LINUX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 174:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV_IS_WINDOWS :: BG.CInt
 rTE_EXEC_ENV_IS_WINDOWS = (0 :: BG.CInt)
@@ -952,7 +952,7 @@ rTE_EXEC_ENV_IS_WINDOWS = (0 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 176:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV_LINUX :: BG.CInt
 rTE_EXEC_ENV_LINUX = (1 :: BG.CInt)
@@ -963,7 +963,7 @@ rTE_EXEC_ENV_LINUX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 178:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_EXEC_ENV_NAME :: BG.ByteString
 rTE_EXEC_ENV_NAME =
@@ -973,7 +973,7 @@ rTE_EXEC_ENV_NAME =
 
     __defined at:__ @rte_build_config.h 180:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_HAS_JANSSON :: BG.CInt
 rTE_HAS_JANSSON = (1 :: BG.CInt)
@@ -982,7 +982,7 @@ rTE_HAS_JANSSON = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 182:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_HAS_LIBNUMA :: BG.CInt
 rTE_HAS_LIBNUMA = (1 :: BG.CInt)
@@ -991,7 +991,7 @@ rTE_HAS_LIBNUMA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 184:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_HAS_LIBPCAP :: BG.CInt
 rTE_HAS_LIBPCAP = (1 :: BG.CInt)
@@ -1000,7 +1000,7 @@ rTE_HAS_LIBPCAP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 186:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_HAS_OPENSSL :: BG.CInt
 rTE_HAS_OPENSSL = (1 :: BG.CInt)
@@ -1009,7 +1009,7 @@ rTE_HAS_OPENSSL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 188:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_IOVA_IN_MBUF :: BG.CInt
 rTE_IOVA_IN_MBUF = (1 :: BG.CInt)
@@ -1018,7 +1018,7 @@ rTE_IOVA_IN_MBUF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 192:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIBRTE_BPF_ELF :: BG.CInt
 rTE_LIBRTE_BPF_ELF = (1 :: BG.CInt)
@@ -1027,7 +1027,7 @@ rTE_LIBRTE_BPF_ELF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 196:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIBRTE_VHOST_NUMA :: BG.CInt
 rTE_LIBRTE_VHOST_NUMA = (1 :: BG.CInt)
@@ -1036,7 +1036,7 @@ rTE_LIBRTE_VHOST_NUMA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 200:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_ACL :: BG.CInt
 rTE_LIB_ACL = (1 :: BG.CInt)
@@ -1045,7 +1045,7 @@ rTE_LIB_ACL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 202:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_ARGPARSE :: BG.CInt
 rTE_LIB_ARGPARSE = (1 :: BG.CInt)
@@ -1054,7 +1054,7 @@ rTE_LIB_ARGPARSE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 204:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_BBDEV :: BG.CInt
 rTE_LIB_BBDEV = (1 :: BG.CInt)
@@ -1063,7 +1063,7 @@ rTE_LIB_BBDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 206:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_BITRATESTATS :: BG.CInt
 rTE_LIB_BITRATESTATS = (1 :: BG.CInt)
@@ -1072,7 +1072,7 @@ rTE_LIB_BITRATESTATS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 208:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_BPF :: BG.CInt
 rTE_LIB_BPF = (1 :: BG.CInt)
@@ -1081,7 +1081,7 @@ rTE_LIB_BPF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 210:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_CFGFILE :: BG.CInt
 rTE_LIB_CFGFILE = (1 :: BG.CInt)
@@ -1090,7 +1090,7 @@ rTE_LIB_CFGFILE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 212:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_CMDLINE :: BG.CInt
 rTE_LIB_CMDLINE = (1 :: BG.CInt)
@@ -1099,7 +1099,7 @@ rTE_LIB_CMDLINE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 214:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_COMPRESSDEV :: BG.CInt
 rTE_LIB_COMPRESSDEV = (1 :: BG.CInt)
@@ -1108,7 +1108,7 @@ rTE_LIB_COMPRESSDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 216:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_CRYPTODEV :: BG.CInt
 rTE_LIB_CRYPTODEV = (1 :: BG.CInt)
@@ -1117,7 +1117,7 @@ rTE_LIB_CRYPTODEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 218:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_DISPATCHER :: BG.CInt
 rTE_LIB_DISPATCHER = (1 :: BG.CInt)
@@ -1126,7 +1126,7 @@ rTE_LIB_DISPATCHER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 220:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_DISTRIBUTOR :: BG.CInt
 rTE_LIB_DISTRIBUTOR = (1 :: BG.CInt)
@@ -1135,7 +1135,7 @@ rTE_LIB_DISTRIBUTOR = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 222:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_DMADEV :: BG.CInt
 rTE_LIB_DMADEV = (1 :: BG.CInt)
@@ -1144,7 +1144,7 @@ rTE_LIB_DMADEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 224:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_EAL :: BG.CInt
 rTE_LIB_EAL = (1 :: BG.CInt)
@@ -1153,7 +1153,7 @@ rTE_LIB_EAL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 226:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_EFD :: BG.CInt
 rTE_LIB_EFD = (1 :: BG.CInt)
@@ -1162,7 +1162,7 @@ rTE_LIB_EFD = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 228:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_ETHDEV :: BG.CInt
 rTE_LIB_ETHDEV = (1 :: BG.CInt)
@@ -1171,7 +1171,7 @@ rTE_LIB_ETHDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 230:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_EVENTDEV :: BG.CInt
 rTE_LIB_EVENTDEV = (1 :: BG.CInt)
@@ -1180,7 +1180,7 @@ rTE_LIB_EVENTDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 232:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_FIB :: BG.CInt
 rTE_LIB_FIB = (1 :: BG.CInt)
@@ -1189,7 +1189,7 @@ rTE_LIB_FIB = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 234:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_GPUDEV :: BG.CInt
 rTE_LIB_GPUDEV = (1 :: BG.CInt)
@@ -1198,7 +1198,7 @@ rTE_LIB_GPUDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 236:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_GRAPH :: BG.CInt
 rTE_LIB_GRAPH = (1 :: BG.CInt)
@@ -1207,7 +1207,7 @@ rTE_LIB_GRAPH = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 238:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_GRO :: BG.CInt
 rTE_LIB_GRO = (1 :: BG.CInt)
@@ -1216,7 +1216,7 @@ rTE_LIB_GRO = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 240:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_GSO :: BG.CInt
 rTE_LIB_GSO = (1 :: BG.CInt)
@@ -1225,7 +1225,7 @@ rTE_LIB_GSO = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 242:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_HASH :: BG.CInt
 rTE_LIB_HASH = (1 :: BG.CInt)
@@ -1234,7 +1234,7 @@ rTE_LIB_HASH = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 244:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_IPSEC :: BG.CInt
 rTE_LIB_IPSEC = (1 :: BG.CInt)
@@ -1243,7 +1243,7 @@ rTE_LIB_IPSEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 246:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_IP_FRAG :: BG.CInt
 rTE_LIB_IP_FRAG = (1 :: BG.CInt)
@@ -1252,7 +1252,7 @@ rTE_LIB_IP_FRAG = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 248:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_JOBSTATS :: BG.CInt
 rTE_LIB_JOBSTATS = (1 :: BG.CInt)
@@ -1261,7 +1261,7 @@ rTE_LIB_JOBSTATS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 250:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_KVARGS :: BG.CInt
 rTE_LIB_KVARGS = (1 :: BG.CInt)
@@ -1270,7 +1270,7 @@ rTE_LIB_KVARGS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 252:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_LATENCYSTATS :: BG.CInt
 rTE_LIB_LATENCYSTATS = (1 :: BG.CInt)
@@ -1279,7 +1279,7 @@ rTE_LIB_LATENCYSTATS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 254:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_LOG :: BG.CInt
 rTE_LIB_LOG = (1 :: BG.CInt)
@@ -1288,7 +1288,7 @@ rTE_LIB_LOG = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 256:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_LPM :: BG.CInt
 rTE_LIB_LPM = (1 :: BG.CInt)
@@ -1297,7 +1297,7 @@ rTE_LIB_LPM = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 258:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_MBUF :: BG.CInt
 rTE_LIB_MBUF = (1 :: BG.CInt)
@@ -1306,7 +1306,7 @@ rTE_LIB_MBUF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 260:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_MEMBER :: BG.CInt
 rTE_LIB_MEMBER = (1 :: BG.CInt)
@@ -1315,7 +1315,7 @@ rTE_LIB_MEMBER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 262:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_MEMPOOL :: BG.CInt
 rTE_LIB_MEMPOOL = (1 :: BG.CInt)
@@ -1324,7 +1324,7 @@ rTE_LIB_MEMPOOL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 264:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_METER :: BG.CInt
 rTE_LIB_METER = (1 :: BG.CInt)
@@ -1333,7 +1333,7 @@ rTE_LIB_METER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 266:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_METRICS :: BG.CInt
 rTE_LIB_METRICS = (1 :: BG.CInt)
@@ -1342,7 +1342,7 @@ rTE_LIB_METRICS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 268:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_MLDEV :: BG.CInt
 rTE_LIB_MLDEV = (1 :: BG.CInt)
@@ -1351,7 +1351,7 @@ rTE_LIB_MLDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 270:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_NET :: BG.CInt
 rTE_LIB_NET = (1 :: BG.CInt)
@@ -1360,7 +1360,7 @@ rTE_LIB_NET = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 272:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_NODE :: BG.CInt
 rTE_LIB_NODE = (1 :: BG.CInt)
@@ -1369,7 +1369,7 @@ rTE_LIB_NODE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 274:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PCAPNG :: BG.CInt
 rTE_LIB_PCAPNG = (1 :: BG.CInt)
@@ -1378,7 +1378,7 @@ rTE_LIB_PCAPNG = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 276:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PCI :: BG.CInt
 rTE_LIB_PCI = (1 :: BG.CInt)
@@ -1387,7 +1387,7 @@ rTE_LIB_PCI = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 278:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PDCP :: BG.CInt
 rTE_LIB_PDCP = (1 :: BG.CInt)
@@ -1396,7 +1396,7 @@ rTE_LIB_PDCP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 280:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PDUMP :: BG.CInt
 rTE_LIB_PDUMP = (1 :: BG.CInt)
@@ -1405,7 +1405,7 @@ rTE_LIB_PDUMP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 282:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PIPELINE :: BG.CInt
 rTE_LIB_PIPELINE = (1 :: BG.CInt)
@@ -1414,7 +1414,7 @@ rTE_LIB_PIPELINE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 284:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PMU :: BG.CInt
 rTE_LIB_PMU = (1 :: BG.CInt)
@@ -1423,7 +1423,7 @@ rTE_LIB_PMU = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 286:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PORT :: BG.CInt
 rTE_LIB_PORT = (1 :: BG.CInt)
@@ -1432,7 +1432,7 @@ rTE_LIB_PORT = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 288:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_POWER :: BG.CInt
 rTE_LIB_POWER = (1 :: BG.CInt)
@@ -1441,7 +1441,7 @@ rTE_LIB_POWER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 290:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_PTR_COMPRESS :: BG.CInt
 rTE_LIB_PTR_COMPRESS = (1 :: BG.CInt)
@@ -1450,7 +1450,7 @@ rTE_LIB_PTR_COMPRESS = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 292:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_RAWDEV :: BG.CInt
 rTE_LIB_RAWDEV = (1 :: BG.CInt)
@@ -1459,7 +1459,7 @@ rTE_LIB_RAWDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 294:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_RCU :: BG.CInt
 rTE_LIB_RCU = (1 :: BG.CInt)
@@ -1468,7 +1468,7 @@ rTE_LIB_RCU = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 296:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_REGEXDEV :: BG.CInt
 rTE_LIB_REGEXDEV = (1 :: BG.CInt)
@@ -1477,7 +1477,7 @@ rTE_LIB_REGEXDEV = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 298:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_REORDER :: BG.CInt
 rTE_LIB_REORDER = (1 :: BG.CInt)
@@ -1486,7 +1486,7 @@ rTE_LIB_REORDER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 300:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_RIB :: BG.CInt
 rTE_LIB_RIB = (1 :: BG.CInt)
@@ -1495,7 +1495,7 @@ rTE_LIB_RIB = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 302:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_RING :: BG.CInt
 rTE_LIB_RING = (1 :: BG.CInt)
@@ -1504,7 +1504,7 @@ rTE_LIB_RING = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 304:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_SCHED :: BG.CInt
 rTE_LIB_SCHED = (1 :: BG.CInt)
@@ -1513,7 +1513,7 @@ rTE_LIB_SCHED = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 306:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_SECURITY :: BG.CInt
 rTE_LIB_SECURITY = (1 :: BG.CInt)
@@ -1522,7 +1522,7 @@ rTE_LIB_SECURITY = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 308:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_STACK :: BG.CInt
 rTE_LIB_STACK = (1 :: BG.CInt)
@@ -1531,7 +1531,7 @@ rTE_LIB_STACK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 310:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_TABLE :: BG.CInt
 rTE_LIB_TABLE = (1 :: BG.CInt)
@@ -1540,7 +1540,7 @@ rTE_LIB_TABLE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 312:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_TELEMETRY :: BG.CInt
 rTE_LIB_TELEMETRY = (1 :: BG.CInt)
@@ -1549,7 +1549,7 @@ rTE_LIB_TELEMETRY = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 314:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_TIMER :: BG.CInt
 rTE_LIB_TIMER = (1 :: BG.CInt)
@@ -1558,7 +1558,7 @@ rTE_LIB_TIMER = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 316:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LIB_VHOST :: BG.CInt
 rTE_LIB_VHOST = (1 :: BG.CInt)
@@ -1567,7 +1567,7 @@ rTE_LIB_VHOST = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 320:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_ETHPORTS :: BG.CInt
 rTE_MAX_ETHPORTS = (32 :: BG.CInt)
@@ -1576,7 +1576,7 @@ rTE_MAX_ETHPORTS = (32 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 322:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_LCORE :: BG.CInt
 rTE_MAX_LCORE = (128 :: BG.CInt)
@@ -1585,7 +1585,7 @@ rTE_MAX_LCORE = (128 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 324:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_MEM_MB :: BG.CInt
 rTE_MAX_MEM_MB = (524288 :: BG.CInt)
@@ -1594,7 +1594,7 @@ rTE_MAX_MEM_MB = (524288 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 326:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_NUMA_NODES :: BG.CInt
 rTE_MAX_NUMA_NODES = (32 :: BG.CInt)
@@ -1603,7 +1603,7 @@ rTE_MAX_NUMA_NODES = (32 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 328:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_VFIO_GROUPS :: BG.CInt
 rTE_MAX_VFIO_GROUPS = (64 :: BG.CInt)
@@ -1612,7 +1612,7 @@ rTE_MAX_VFIO_GROUPS = (64 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 332:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_BUCKET :: BG.CInt
 rTE_MEMPOOL_BUCKET = (1 :: BG.CInt)
@@ -1621,7 +1621,7 @@ rTE_MEMPOOL_BUCKET = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 334:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_CNXK :: BG.CInt
 rTE_MEMPOOL_CNXK = (1 :: BG.CInt)
@@ -1630,7 +1630,7 @@ rTE_MEMPOOL_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 336:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_DPAA :: BG.CInt
 rTE_MEMPOOL_DPAA = (1 :: BG.CInt)
@@ -1639,7 +1639,7 @@ rTE_MEMPOOL_DPAA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 338:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_DPAA2 :: BG.CInt
 rTE_MEMPOOL_DPAA2 = (1 :: BG.CInt)
@@ -1648,7 +1648,7 @@ rTE_MEMPOOL_DPAA2 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 340:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_OCTEONTX :: BG.CInt
 rTE_MEMPOOL_OCTEONTX = (1 :: BG.CInt)
@@ -1657,7 +1657,7 @@ rTE_MEMPOOL_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 342:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_RING :: BG.CInt
 rTE_MEMPOOL_RING = (1 :: BG.CInt)
@@ -1666,7 +1666,7 @@ rTE_MEMPOOL_RING = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 344:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_STACK :: BG.CInt
 rTE_MEMPOOL_STACK = (1 :: BG.CInt)
@@ -1675,7 +1675,7 @@ rTE_MEMPOOL_STACK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 346:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ML_CNXK :: BG.CInt
 rTE_ML_CNXK = (1 :: BG.CInt)
@@ -1684,7 +1684,7 @@ rTE_ML_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 348:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_AF_PACKET :: BG.CInt
 rTE_NET_AF_PACKET = (1 :: BG.CInt)
@@ -1693,7 +1693,7 @@ rTE_NET_AF_PACKET = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 350:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ARK :: BG.CInt
 rTE_NET_ARK = (1 :: BG.CInt)
@@ -1702,7 +1702,7 @@ rTE_NET_ARK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 352:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ATLANTIC :: BG.CInt
 rTE_NET_ATLANTIC = (1 :: BG.CInt)
@@ -1711,7 +1711,7 @@ rTE_NET_ATLANTIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 354:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_AVP :: BG.CInt
 rTE_NET_AVP = (1 :: BG.CInt)
@@ -1720,7 +1720,7 @@ rTE_NET_AVP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 356:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_AXGBE :: BG.CInt
 rTE_NET_AXGBE = (1 :: BG.CInt)
@@ -1729,7 +1729,7 @@ rTE_NET_AXGBE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 358:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_BNX2X :: BG.CInt
 rTE_NET_BNX2X = (1 :: BG.CInt)
@@ -1738,7 +1738,7 @@ rTE_NET_BNX2X = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 360:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_BNXT :: BG.CInt
 rTE_NET_BNXT = (1 :: BG.CInt)
@@ -1747,7 +1747,7 @@ rTE_NET_BNXT = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 362:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_BOND :: BG.CInt
 rTE_NET_BOND = (1 :: BG.CInt)
@@ -1756,7 +1756,7 @@ rTE_NET_BOND = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 364:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_CNXK :: BG.CInt
 rTE_NET_CNXK = (1 :: BG.CInt)
@@ -1765,7 +1765,7 @@ rTE_NET_CNXK = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 366:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_CPFL :: BG.CInt
 rTE_NET_CPFL = (1 :: BG.CInt)
@@ -1774,7 +1774,7 @@ rTE_NET_CPFL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 368:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_CXGBE :: BG.CInt
 rTE_NET_CXGBE = (1 :: BG.CInt)
@@ -1783,7 +1783,7 @@ rTE_NET_CXGBE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 370:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_DPAA :: BG.CInt
 rTE_NET_DPAA = (1 :: BG.CInt)
@@ -1792,7 +1792,7 @@ rTE_NET_DPAA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 372:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_DPAA2 :: BG.CInt
 rTE_NET_DPAA2 = (1 :: BG.CInt)
@@ -1801,7 +1801,7 @@ rTE_NET_DPAA2 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 374:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_E1000 :: BG.CInt
 rTE_NET_E1000 = (1 :: BG.CInt)
@@ -1810,7 +1810,7 @@ rTE_NET_E1000 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 376:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ENA :: BG.CInt
 rTE_NET_ENA = (1 :: BG.CInt)
@@ -1819,7 +1819,7 @@ rTE_NET_ENA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 378:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ENETC :: BG.CInt
 rTE_NET_ENETC = (1 :: BG.CInt)
@@ -1828,7 +1828,7 @@ rTE_NET_ENETC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 380:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ENETFEC :: BG.CInt
 rTE_NET_ENETFEC = (1 :: BG.CInt)
@@ -1837,7 +1837,7 @@ rTE_NET_ENETFEC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 382:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ENIC :: BG.CInt
 rTE_NET_ENIC = (1 :: BG.CInt)
@@ -1846,7 +1846,7 @@ rTE_NET_ENIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 384:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_FAILSAFE :: BG.CInt
 rTE_NET_FAILSAFE = (1 :: BG.CInt)
@@ -1855,7 +1855,7 @@ rTE_NET_FAILSAFE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 386:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_FM10K :: BG.CInt
 rTE_NET_FM10K = (1 :: BG.CInt)
@@ -1864,7 +1864,7 @@ rTE_NET_FM10K = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 388:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_GVE :: BG.CInt
 rTE_NET_GVE = (1 :: BG.CInt)
@@ -1873,7 +1873,7 @@ rTE_NET_GVE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 390:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_HINIC :: BG.CInt
 rTE_NET_HINIC = (1 :: BG.CInt)
@@ -1882,7 +1882,7 @@ rTE_NET_HINIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 392:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_HINIC3 :: BG.CInt
 rTE_NET_HINIC3 = (1 :: BG.CInt)
@@ -1891,7 +1891,7 @@ rTE_NET_HINIC3 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 394:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_HNS3 :: BG.CInt
 rTE_NET_HNS3 = (1 :: BG.CInt)
@@ -1900,7 +1900,7 @@ rTE_NET_HNS3 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 396:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_I40E :: BG.CInt
 rTE_NET_I40E = (1 :: BG.CInt)
@@ -1909,7 +1909,7 @@ rTE_NET_I40E = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 398:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_IAVF :: BG.CInt
 rTE_NET_IAVF = (1 :: BG.CInt)
@@ -1918,7 +1918,7 @@ rTE_NET_IAVF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 400:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ICE :: BG.CInt
 rTE_NET_ICE = (1 :: BG.CInt)
@@ -1927,7 +1927,7 @@ rTE_NET_ICE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 402:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_IDPF :: BG.CInt
 rTE_NET_IDPF = (1 :: BG.CInt)
@@ -1936,7 +1936,7 @@ rTE_NET_IDPF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 404:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_IONIC :: BG.CInt
 rTE_NET_IONIC = (1 :: BG.CInt)
@@ -1945,7 +1945,7 @@ rTE_NET_IONIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 406:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_IXGBE :: BG.CInt
 rTE_NET_IXGBE = (1 :: BG.CInt)
@@ -1954,7 +1954,7 @@ rTE_NET_IXGBE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 408:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_MANA :: BG.CInt
 rTE_NET_MANA = (1 :: BG.CInt)
@@ -1963,7 +1963,7 @@ rTE_NET_MANA = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 410:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_MEMIF :: BG.CInt
 rTE_NET_MEMIF = (1 :: BG.CInt)
@@ -1972,7 +1972,7 @@ rTE_NET_MEMIF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 412:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_MLX4 :: BG.CInt
 rTE_NET_MLX4 = (1 :: BG.CInt)
@@ -1981,7 +1981,7 @@ rTE_NET_MLX4 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 414:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_MLX5 :: BG.CInt
 rTE_NET_MLX5 = (1 :: BG.CInt)
@@ -1990,7 +1990,7 @@ rTE_NET_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 416:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NBL :: BG.CInt
 rTE_NET_NBL = (1 :: BG.CInt)
@@ -1999,7 +1999,7 @@ rTE_NET_NBL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 418:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NETVSC :: BG.CInt
 rTE_NET_NETVSC = (1 :: BG.CInt)
@@ -2008,7 +2008,7 @@ rTE_NET_NETVSC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 420:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NFP :: BG.CInt
 rTE_NET_NFP = (1 :: BG.CInt)
@@ -2017,7 +2017,7 @@ rTE_NET_NFP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 422:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NGBE :: BG.CInt
 rTE_NET_NGBE = (1 :: BG.CInt)
@@ -2026,7 +2026,7 @@ rTE_NET_NGBE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 424:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NTNIC :: BG.CInt
 rTE_NET_NTNIC = (1 :: BG.CInt)
@@ -2035,7 +2035,7 @@ rTE_NET_NTNIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 426:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_NULL :: BG.CInt
 rTE_NET_NULL = (1 :: BG.CInt)
@@ -2044,7 +2044,7 @@ rTE_NET_NULL = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 428:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_OCTEONTX :: BG.CInt
 rTE_NET_OCTEONTX = (1 :: BG.CInt)
@@ -2053,7 +2053,7 @@ rTE_NET_OCTEONTX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 430:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_OCTEON_EP :: BG.CInt
 rTE_NET_OCTEON_EP = (1 :: BG.CInt)
@@ -2062,7 +2062,7 @@ rTE_NET_OCTEON_EP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 432:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_PCAP :: BG.CInt
 rTE_NET_PCAP = (1 :: BG.CInt)
@@ -2071,7 +2071,7 @@ rTE_NET_PCAP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 434:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_PFE :: BG.CInt
 rTE_NET_PFE = (1 :: BG.CInt)
@@ -2080,7 +2080,7 @@ rTE_NET_PFE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 436:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_QEDE :: BG.CInt
 rTE_NET_QEDE = (1 :: BG.CInt)
@@ -2089,7 +2089,7 @@ rTE_NET_QEDE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 438:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_R8169 :: BG.CInt
 rTE_NET_R8169 = (1 :: BG.CInt)
@@ -2098,7 +2098,7 @@ rTE_NET_R8169 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 440:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_RING :: BG.CInt
 rTE_NET_RING = (1 :: BG.CInt)
@@ -2107,7 +2107,7 @@ rTE_NET_RING = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 442:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_RNP :: BG.CInt
 rTE_NET_RNP = (1 :: BG.CInt)
@@ -2116,7 +2116,7 @@ rTE_NET_RNP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 444:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_SFC :: BG.CInt
 rTE_NET_SFC = (1 :: BG.CInt)
@@ -2125,7 +2125,7 @@ rTE_NET_SFC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 446:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_SOFTNIC :: BG.CInt
 rTE_NET_SOFTNIC = (1 :: BG.CInt)
@@ -2134,7 +2134,7 @@ rTE_NET_SOFTNIC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 448:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_TAP :: BG.CInt
 rTE_NET_TAP = (1 :: BG.CInt)
@@ -2143,7 +2143,7 @@ rTE_NET_TAP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 450:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_THUNDERX :: BG.CInt
 rTE_NET_THUNDERX = (1 :: BG.CInt)
@@ -2152,7 +2152,7 @@ rTE_NET_THUNDERX = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 452:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_TXGBE :: BG.CInt
 rTE_NET_TXGBE = (1 :: BG.CInt)
@@ -2161,7 +2161,7 @@ rTE_NET_TXGBE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 454:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_VDEV_NETVSC :: BG.CInt
 rTE_NET_VDEV_NETVSC = (1 :: BG.CInt)
@@ -2170,7 +2170,7 @@ rTE_NET_VDEV_NETVSC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 456:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_VHOST :: BG.CInt
 rTE_NET_VHOST = (1 :: BG.CInt)
@@ -2179,7 +2179,7 @@ rTE_NET_VHOST = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 458:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_VIRTIO :: BG.CInt
 rTE_NET_VIRTIO = (1 :: BG.CInt)
@@ -2188,7 +2188,7 @@ rTE_NET_VIRTIO = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 460:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_VMXNET3 :: BG.CInt
 rTE_NET_VMXNET3 = (1 :: BG.CInt)
@@ -2197,7 +2197,7 @@ rTE_NET_VMXNET3 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 462:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_XSC :: BG.CInt
 rTE_NET_XSC = (1 :: BG.CInt)
@@ -2206,7 +2206,7 @@ rTE_NET_XSC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 464:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_NET_ZXDH :: BG.CInt
 rTE_NET_ZXDH = (1 :: BG.CInt)
@@ -2215,7 +2215,7 @@ rTE_NET_ZXDH = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 466:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PKTMBUF_HEADROOM :: BG.CInt
 rTE_PKTMBUF_HEADROOM = (128 :: BG.CInt)
@@ -2224,7 +2224,7 @@ rTE_PKTMBUF_HEADROOM = (128 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 468:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PORT_PCAP :: BG.CInt
 rTE_PORT_PCAP = (1 :: BG.CInt)
@@ -2233,7 +2233,7 @@ rTE_PORT_PCAP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 470:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_ACPI :: BG.CInt
 rTE_POWER_ACPI = (1 :: BG.CInt)
@@ -2242,7 +2242,7 @@ rTE_POWER_ACPI = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 472:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_AMD_PSTATE :: BG.CInt
 rTE_POWER_AMD_PSTATE = (1 :: BG.CInt)
@@ -2251,7 +2251,7 @@ rTE_POWER_AMD_PSTATE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 474:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_CPPC :: BG.CInt
 rTE_POWER_CPPC = (1 :: BG.CInt)
@@ -2260,7 +2260,7 @@ rTE_POWER_CPPC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 476:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_INTEL_PSTATE :: BG.CInt
 rTE_POWER_INTEL_PSTATE = (1 :: BG.CInt)
@@ -2269,7 +2269,7 @@ rTE_POWER_INTEL_PSTATE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 478:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_INTEL_UNCORE :: BG.CInt
 rTE_POWER_INTEL_UNCORE = (1 :: BG.CInt)
@@ -2278,7 +2278,7 @@ rTE_POWER_INTEL_UNCORE = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 480:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_POWER_KVM_VM :: BG.CInt
 rTE_POWER_KVM_VM = (1 :: BG.CInt)
@@ -2287,7 +2287,7 @@ rTE_POWER_KVM_VM = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 482:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_CNXK_BPHY :: BG.CInt
 rTE_RAW_CNXK_BPHY = (1 :: BG.CInt)
@@ -2296,7 +2296,7 @@ rTE_RAW_CNXK_BPHY = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 484:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_CNXK_GPIO :: BG.CInt
 rTE_RAW_CNXK_GPIO = (1 :: BG.CInt)
@@ -2305,7 +2305,7 @@ rTE_RAW_CNXK_GPIO = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 486:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_CNXK_RVU_LF :: BG.CInt
 rTE_RAW_CNXK_RVU_LF = (1 :: BG.CInt)
@@ -2314,7 +2314,7 @@ rTE_RAW_CNXK_RVU_LF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 488:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_DPAA2_CMDIF :: BG.CInt
 rTE_RAW_DPAA2_CMDIF = (1 :: BG.CInt)
@@ -2323,7 +2323,7 @@ rTE_RAW_DPAA2_CMDIF = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 490:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_GDTC :: BG.CInt
 rTE_RAW_GDTC = (1 :: BG.CInt)
@@ -2332,7 +2332,7 @@ rTE_RAW_GDTC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 492:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_NTB :: BG.CInt
 rTE_RAW_NTB = (1 :: BG.CInt)
@@ -2341,7 +2341,7 @@ rTE_RAW_NTB = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 494:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RAW_SKELETON :: BG.CInt
 rTE_RAW_SKELETON = (1 :: BG.CInt)
@@ -2350,7 +2350,7 @@ rTE_RAW_SKELETON = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 496:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_REGEX_CN9K :: BG.CInt
 rTE_REGEX_CN9K = (1 :: BG.CInt)
@@ -2359,7 +2359,7 @@ rTE_REGEX_CN9K = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 498:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_REGEX_MLX5 :: BG.CInt
 rTE_REGEX_MLX5 = (1 :: BG.CInt)
@@ -2368,7 +2368,7 @@ rTE_REGEX_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 500:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_USE_LIBBSD :: BG.CInt
 rTE_USE_LIBBSD = (1 :: BG.CInt)
@@ -2377,7 +2377,7 @@ rTE_USE_LIBBSD = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 502:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VDPA_IFC :: BG.CInt
 rTE_VDPA_IFC = (1 :: BG.CInt)
@@ -2386,7 +2386,7 @@ rTE_VDPA_IFC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 504:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VDPA_MLX5 :: BG.CInt
 rTE_VDPA_MLX5 = (1 :: BG.CInt)
@@ -2395,7 +2395,7 @@ rTE_VDPA_MLX5 = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 506:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VDPA_NFP :: BG.CInt
 rTE_VDPA_NFP = (1 :: BG.CInt)
@@ -2404,7 +2404,7 @@ rTE_VDPA_NFP = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 508:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VDPA_SFC :: BG.CInt
 rTE_VDPA_SFC = (1 :: BG.CInt)
@@ -2413,7 +2413,7 @@ rTE_VDPA_SFC = (1 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 510:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VER_MINOR :: BG.CInt
 rTE_VER_MINOR = (0 :: BG.CInt)
@@ -2422,7 +2422,7 @@ rTE_VER_MINOR = (0 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 512:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VER_MONTH :: BG.CInt
 rTE_VER_MONTH = (3 :: BG.CInt)
@@ -2431,7 +2431,7 @@ rTE_VER_MONTH = (3 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 514:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VER_RELEASE :: BG.CInt
 rTE_VER_RELEASE = (99 :: BG.CInt)
@@ -2442,7 +2442,7 @@ rTE_VER_RELEASE = (99 :: BG.CInt)
 
     __defined at:__ @rte_build_config.h 516:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VER_SUFFIX :: BG.ByteString
 rTE_VER_SUFFIX = BG.pack []
@@ -2451,7 +2451,7 @@ rTE_VER_SUFFIX = BG.pack []
 
     __defined at:__ @rte_build_config.h 518:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_VER_YEAR :: BG.CInt
 rTE_VER_YEAR = (26 :: BG.CInt)

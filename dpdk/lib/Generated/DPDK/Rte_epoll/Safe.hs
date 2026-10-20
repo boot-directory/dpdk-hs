@@ -17,7 +17,9 @@ import Generated.DPDK.Rte_epoll
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_2d82f1ef9d698567 ("
   , "  signed int arg1,"
   , "  struct rte_epoll_event *arg2,"
@@ -73,7 +75,7 @@ hs_bindgen_2d82f1ef9d698567 =
 
     __defined at:__ @rte_epoll.h 68:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_wait ::
      BG.CInt
@@ -113,7 +115,7 @@ hs_bindgen_fb54952d67cd1ede =
 
     __defined at:__ @rte_epoll.h 89:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_wait_interruptible ::
      BG.CInt
@@ -154,7 +156,7 @@ hs_bindgen_c529b06ac3e1167d =
 
     __defined at:__ @rte_epoll.h 110:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_ctl ::
      BG.CInt

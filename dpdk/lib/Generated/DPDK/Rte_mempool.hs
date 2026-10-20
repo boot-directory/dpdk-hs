@@ -113,7 +113,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_build_config.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_SIZE :: BG.CInt
 rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
@@ -122,7 +122,7 @@ rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 59:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_HEADER_COOKIE1 :: BG.CULLong
 rTE_MEMPOOL_HEADER_COOKIE1 =
@@ -132,7 +132,7 @@ rTE_MEMPOOL_HEADER_COOKIE1 =
 
     __defined at:__ @rte_mempool.h 60:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_HEADER_COOKIE2 :: BG.CULLong
 rTE_MEMPOOL_HEADER_COOKIE2 =
@@ -142,7 +142,7 @@ rTE_MEMPOOL_HEADER_COOKIE2 =
 
     __defined at:__ @rte_mempool.h 61:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_TRAILER_COOKIE :: BG.CULLong
 rTE_MEMPOOL_TRAILER_COOKIE =
@@ -152,7 +152,7 @@ rTE_MEMPOOL_TRAILER_COOKIE =
 
     __defined at:__ @rte_mempool.h 90:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_cache = Rte_mempool_cache
   { size :: HsBindgen.Runtime.LibC.Word32
@@ -160,28 +160,28 @@ data Rte_mempool_cache = Rte_mempool_cache
 
          __defined at:__ @rte_mempool.h 91:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flushthresh :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @flushthresh@
 
          __defined at:__ @rte_mempool.h 92:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_mempool.h 93:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , objs :: CA.ConstantArray 1024 (BG.Ptr BG.Void)
     {- ^ __C declaration:__ @objs@
 
          __defined at:__ @rte_mempool.h 113:37@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -222,7 +222,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_cache instance Struct.IsStruc
 
     __defined at:__ @rte_mempool.h 91:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_mempool_cache ty where
@@ -254,7 +254,7 @@ instance HasCField.HasCField Rte_mempool_cache "size" where
 
     __defined at:__ @rte_mempool.h 92:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flushthresh" Rte_mempool_cache ty where
@@ -287,7 +287,7 @@ instance HasCField.HasCField Rte_mempool_cache "flushthresh" where
 
     __defined at:__ @rte_mempool.h 93:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "len" Rte_mempool_cache ty where
@@ -319,7 +319,7 @@ instance HasCField.HasCField Rte_mempool_cache "len" where
 
     __defined at:__ @rte_mempool.h 113:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 1024 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "objs" Rte_mempool_cache ty where
@@ -351,7 +351,7 @@ instance HasCField.HasCField Rte_mempool_cache "objs" where
 
     __defined at:__ @rte_mempool.h 119:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_objsz = Rte_mempool_objsz
   { elt_size :: HsBindgen.Runtime.LibC.Word32
@@ -359,28 +359,28 @@ data Rte_mempool_objsz = Rte_mempool_objsz
 
          __defined at:__ @rte_mempool.h 120:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , header_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @header_size@
 
          __defined at:__ @rte_mempool.h 121:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , trailer_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @trailer_size@
 
          __defined at:__ @rte_mempool.h 122:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , total_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @total_size@
 
          __defined at:__ @rte_mempool.h 123:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -421,7 +421,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_objsz instance Struct.IsStruc
 
     __defined at:__ @rte_mempool.h 120:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "elt_size" Rte_mempool_objsz ty where
@@ -453,7 +453,7 @@ instance HasCField.HasCField Rte_mempool_objsz "elt_size" where
 
     __defined at:__ @rte_mempool.h 121:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "header_size" Rte_mempool_objsz ty where
@@ -486,7 +486,7 @@ instance HasCField.HasCField Rte_mempool_objsz "header_size" where
 
     __defined at:__ @rte_mempool.h 122:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "trailer_size" Rte_mempool_objsz ty where
@@ -519,7 +519,7 @@ instance HasCField.HasCField Rte_mempool_objsz "trailer_size" where
 
     __defined at:__ @rte_mempool.h 123:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "total_size" Rte_mempool_objsz ty where
@@ -553,7 +553,7 @@ instance HasCField.HasCField Rte_mempool_objsz "total_size" where
 
     __defined at:__ @rte_mempool.h 130:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_MZ_PREFIX :: BG.ByteString
 rTE_MEMPOOL_MZ_PREFIX = BG.pack [0x4D, 0x50, 0x5F]
@@ -562,7 +562,7 @@ rTE_MEMPOOL_MZ_PREFIX = BG.pack [0x4D, 0x50, 0x5F]
 
     __defined at:__ @rte_mempool.h 139:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_ALIGN :: BG.CInt
 rTE_MEMPOOL_ALIGN = rTE_CACHE_LINE_SIZE
@@ -571,7 +571,7 @@ rTE_MEMPOOL_ALIGN = rTE_CACHE_LINE_SIZE
 
     __defined at:__ @rte_mempool.h 142:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_ALIGN_MASK :: BG.CInt
 rTE_MEMPOOL_ALIGN_MASK =
@@ -581,7 +581,7 @@ rTE_MEMPOOL_ALIGN_MASK =
 
     __defined at:__ @rte_mempool.h 154:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_objhdr_next = Rte_mempool_objhdr_next
   { stqe_next :: BG.Ptr Rte_mempool_objhdr
@@ -589,7 +589,7 @@ data Rte_mempool_objhdr_next = Rte_mempool_objhdr_next
 
          __defined at:__ @rte_mempool.h 154:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -624,7 +624,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_objhdr_next instance Struct.I
 
     __defined at:__ @rte_mempool.h 154:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool_objhdr
          ) => BG.CompatHasField.HasField "stqe_next" Rte_mempool_objhdr_next ty where
@@ -651,7 +651,7 @@ instance HasCField.HasCField Rte_mempool_objhdr_next "stqe_next" where
 
     __defined at:__ @rte_mempool.h 153:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_objhdr = Rte_mempool_objhdr
   { next :: Rte_mempool_objhdr_next
@@ -659,21 +659,21 @@ data Rte_mempool_objhdr = Rte_mempool_objhdr
 
          __defined at:__ @rte_mempool.h 154:39@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mp :: BG.Ptr Rte_mempool
     {- ^ __C declaration:__ @mp@
 
          __defined at:__ @rte_mempool.h 155:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , iova :: Generated.DPDK.Rte_common.Rte_iova_t
     {- ^ __C declaration:__ @iova@
 
          __defined at:__ @rte_mempool.h 156:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -712,7 +712,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_objhdr instance Struct.IsStru
 
     __defined at:__ @rte_mempool.h 154:39@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_objhdr_next
          ) => BG.CompatHasField.HasField "next" Rte_mempool_objhdr ty where
@@ -740,7 +740,7 @@ instance HasCField.HasCField Rte_mempool_objhdr "next" where
 
     __defined at:__ @rte_mempool.h 155:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool
          ) => BG.CompatHasField.HasField "mp" Rte_mempool_objhdr ty where
@@ -768,7 +768,7 @@ instance HasCField.HasCField Rte_mempool_objhdr "mp" where
 
     __defined at:__ @rte_mempool.h 156:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "iova" Rte_mempool_objhdr ty where
@@ -796,7 +796,7 @@ instance HasCField.HasCField Rte_mempool_objhdr "iova" where
 
     __defined at:__ @rte_mempool.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_objhdr_list = Rte_mempool_objhdr_list
   { stqh_first :: BG.Ptr Rte_mempool_objhdr
@@ -804,14 +804,14 @@ data Rte_mempool_objhdr_list = Rte_mempool_objhdr_list
 
          __defined at:__ @rte_mempool.h 165:1@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , stqh_last :: BG.Ptr (BG.Ptr Rte_mempool_objhdr)
     {- ^ __C declaration:__ @stqh_last@
 
          __defined at:__ @rte_mempool.h 165:1@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -848,7 +848,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_objhdr_list instance Struct.I
 
     __defined at:__ @rte_mempool.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool_objhdr
          ) => BG.CompatHasField.HasField "stqh_first" Rte_mempool_objhdr_list ty where
@@ -876,7 +876,7 @@ instance HasCField.HasCField Rte_mempool_objhdr_list "stqh_first" where
 
     __defined at:__ @rte_mempool.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr (BG.Ptr Rte_mempool_objhdr)
          ) => BG.CompatHasField.HasField "stqh_last" Rte_mempool_objhdr_list ty where
@@ -904,7 +904,7 @@ instance HasCField.HasCField Rte_mempool_objhdr_list "stqh_last" where
 
     __defined at:__ @rte_mempool.h 192:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_memhdr_list = Rte_mempool_memhdr_list
   { stqh_first :: BG.Ptr Rte_mempool_memhdr
@@ -912,14 +912,14 @@ data Rte_mempool_memhdr_list = Rte_mempool_memhdr_list
 
          __defined at:__ @rte_mempool.h 192:1@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , stqh_last :: BG.Ptr (BG.Ptr Rte_mempool_memhdr)
     {- ^ __C declaration:__ @stqh_last@
 
          __defined at:__ @rte_mempool.h 192:1@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -956,7 +956,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_memhdr_list instance Struct.I
 
     __defined at:__ @rte_mempool.h 192:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool_memhdr
          ) => BG.CompatHasField.HasField "stqh_first" Rte_mempool_memhdr_list ty where
@@ -984,7 +984,7 @@ instance HasCField.HasCField Rte_mempool_memhdr_list "stqh_first" where
 
     __defined at:__ @rte_mempool.h 192:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr (BG.Ptr Rte_mempool_memhdr)
          ) => BG.CompatHasField.HasField "stqh_last" Rte_mempool_memhdr_list ty where
@@ -1012,7 +1012,7 @@ instance HasCField.HasCField Rte_mempool_memhdr_list "stqh_last" where
 
     __defined at:__ @rte_mempool.h 197:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_memchunk_free_cb_t = Rte_mempool_memchunk_free_cb_t
   { unwrap :: BG.Ptr Rte_mempool_memhdr -> BG.Ptr BG.Void -> IO ()
@@ -1082,7 +1082,7 @@ instance HasCField.HasCField Rte_mempool_memchunk_free_cb_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 207:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_memhdr_next = Rte_mempool_memhdr_next
   { stqe_next :: BG.Ptr Rte_mempool_memhdr
@@ -1090,7 +1090,7 @@ data Rte_mempool_memhdr_next = Rte_mempool_memhdr_next
 
          __defined at:__ @rte_mempool.h 207:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1125,7 +1125,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_memhdr_next instance Struct.I
 
     __defined at:__ @rte_mempool.h 207:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool_memhdr
          ) => BG.CompatHasField.HasField "stqe_next" Rte_mempool_memhdr_next ty where
@@ -1152,7 +1152,7 @@ instance HasCField.HasCField Rte_mempool_memhdr_next "stqe_next" where
 
     __defined at:__ @rte_mempool.h 206:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_memhdr = Rte_mempool_memhdr
   { next :: Rte_mempool_memhdr_next
@@ -1160,49 +1160,49 @@ data Rte_mempool_memhdr = Rte_mempool_memhdr
 
          __defined at:__ @rte_mempool.h 207:39@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mp :: BG.Ptr Rte_mempool
     {- ^ __C declaration:__ @mp@
 
          __defined at:__ @rte_mempool.h 208:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , addr :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @addr@
 
          __defined at:__ @rte_mempool.h 209:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , iova :: Generated.DPDK.Rte_common.Rte_iova_t
     {- ^ __C declaration:__ @iova@
 
          __defined at:__ @rte_mempool.h 210:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_mempool.h 211:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , free_cb :: BG.FunPtr Rte_mempool_memchunk_free_cb_t
     {- ^ __C declaration:__ @free_cb@
 
          __defined at:__ @rte_mempool.h 212:34@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , opaque :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @opaque@
 
          __defined at:__ @rte_mempool.h 213:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1249,7 +1249,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_memhdr instance Struct.IsStru
 
     __defined at:__ @rte_mempool.h 207:39@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_memhdr_next
          ) => BG.CompatHasField.HasField "next" Rte_mempool_memhdr ty where
@@ -1284,7 +1284,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "next" where
 
     __defined at:__ @rte_mempool.h 208:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool
          ) => BG.CompatHasField.HasField "mp" Rte_mempool_memhdr ty where
@@ -1319,7 +1319,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "mp" where
 
     __defined at:__ @rte_mempool.h 209:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_mempool_memhdr ty where
@@ -1354,7 +1354,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "addr" where
 
     __defined at:__ @rte_mempool.h 210:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "iova" Rte_mempool_memhdr ty where
@@ -1389,7 +1389,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "iova" where
 
     __defined at:__ @rte_mempool.h 211:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "len" Rte_mempool_memhdr ty where
@@ -1424,7 +1424,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "len" where
 
     __defined at:__ @rte_mempool.h 212:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.FunPtr Rte_mempool_memchunk_free_cb_t
          ) => BG.CompatHasField.HasField "free_cb" Rte_mempool_memhdr ty where
@@ -1459,7 +1459,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "free_cb" where
 
     __defined at:__ @rte_mempool.h 213:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "opaque" Rte_mempool_memhdr ty where
@@ -1494,7 +1494,7 @@ instance HasCField.HasCField Rte_mempool_memhdr "opaque" where
 
     __defined at:__ @rte_mempool.h 222:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_info = Rte_mempool_info
   { contig_block_size :: BG.CUInt
@@ -1502,7 +1502,7 @@ data Rte_mempool_info = Rte_mempool_info
 
          __defined at:__ @rte_mempool.h 224:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1537,7 +1537,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_info instance Struct.IsStruct
 
     __defined at:__ @rte_mempool.h 224:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "contig_block_size" Rte_mempool_info ty where
@@ -1565,7 +1565,7 @@ instance HasCField.HasCField Rte_mempool_info "contig_block_size" where
 
     __defined at:__ @rte_mempool.h 232:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_anon'pool_data = Rte_mempool_anon'pool_data
   { unwrap :: BG.ByteArray
@@ -1586,7 +1586,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_mempool_anon'pool_
 
     __defined at:__ @rte_mempool.h 233:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.HasField "pool_data" Rte_mempool_anon'pool_data ty where
@@ -1597,7 +1597,7 @@ instance ( ty ~ BG.Ptr BG.Void
 
     __defined at:__ @rte_mempool.h 233:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "pool_data" Rte_mempool_anon'pool_data ty where
@@ -1623,7 +1623,7 @@ instance HasCField.HasCField Rte_mempool_anon'pool_data "pool_data" where
 
     __defined at:__ @rte_mempool.h 234:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "pool_id" Rte_mempool_anon'pool_data ty where
@@ -1634,7 +1634,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mempool.h 234:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pool_id" Rte_mempool_anon'pool_data ty where
@@ -1660,7 +1660,7 @@ instance HasCField.HasCField Rte_mempool_anon'pool_data "pool_id" where
 
     __defined at:__ @rte_mempool.h 230:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool = Rte_mempool
   { name :: CA.ConstantArray 26 BG.CChar
@@ -1668,126 +1668,126 @@ data Rte_mempool = Rte_mempool
 
          __defined at:__ @rte_mempool.h 231:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'pool_data :: Rte_mempool_anon'pool_data
     {- ^ __C declaration:__ @anon\'pool_data@
 
          __defined at:__ @rte_mempool.h 232:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , pool_config :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @pool_config@
 
          __defined at:__ @rte_mempool.h 236:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mz :: PtrConst.PtrConst Generated.DPDK.Rte_memzone.Rte_memzone
     {- ^ __C declaration:__ @mz@
 
          __defined at:__ @rte_mempool.h 237:28@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: BG.CUInt
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_mempool.h 238:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , socket_id :: BG.CInt
     {- ^ __C declaration:__ @socket_id@
 
          __defined at:__ @rte_mempool.h 239:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @size@
 
          __defined at:__ @rte_mempool.h 240:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , cache_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @cache_size@
 
          __defined at:__ @rte_mempool.h 241:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , elt_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @elt_size@
 
          __defined at:__ @rte_mempool.h 244:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , header_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @header_size@
 
          __defined at:__ @rte_mempool.h 245:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , trailer_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @trailer_size@
 
          __defined at:__ @rte_mempool.h 246:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , private_data_size :: BG.CUInt
     {- ^ __C declaration:__ @private_data_size@
 
          __defined at:__ @rte_mempool.h 248:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , ops_index :: HsBindgen.Runtime.LibC.Int32
     {- ^ __C declaration:__ @ops_index@
 
          __defined at:__ @rte_mempool.h 256:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , local_cache :: BG.Ptr Rte_mempool_cache
     {- ^ __C declaration:__ @local_cache@
 
          __defined at:__ @rte_mempool.h 258:28@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , populated_size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @populated_size@
 
          __defined at:__ @rte_mempool.h 260:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , elt_list :: Rte_mempool_objhdr_list
     {- ^ __C declaration:__ @elt_list@
 
          __defined at:__ @rte_mempool.h 261:33@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , nb_mem_chunks :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @nb_mem_chunks@
 
          __defined at:__ @rte_mempool.h 262:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mem_list :: Rte_mempool_memhdr_list
     {- ^ __C declaration:__ @mem_list@
 
          __defined at:__ @rte_mempool.h 263:33@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1874,7 +1874,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_mempool.h 231:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 26 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_mempool ty where
@@ -1920,7 +1920,7 @@ instance HasCField.HasCField Rte_mempool "name" where
 
     __defined at:__ @rte_mempool.h 232:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_anon'pool_data
          ) => BG.CompatHasField.HasField "anon'pool_data" Rte_mempool ty where
@@ -1967,7 +1967,7 @@ instance HasCField.HasCField Rte_mempool "anon'pool_data" where
 
     __defined at:__ @rte_mempool.h 233:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ BG.Ptr BG.Void) => BG.HasField "pool_data" Rte_mempool ty where
 
@@ -1979,7 +1979,7 @@ instance (ty ~ BG.Ptr BG.Void) => BG.HasField "pool_data" Rte_mempool ty where
 
     __defined at:__ @rte_mempool.h 233:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "pool_data" Rte_mempool ty where
@@ -2008,7 +2008,7 @@ instance HasCField.HasCField Rte_mempool "pool_data" where
 
     __defined at:__ @rte_mempool.h 234:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "pool_id" Rte_mempool ty where
@@ -2021,7 +2021,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_mempool.h 234:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pool_id" Rte_mempool ty where
@@ -2050,7 +2050,7 @@ instance HasCField.HasCField Rte_mempool "pool_id" where
 
     __defined at:__ @rte_mempool.h 236:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "pool_config" Rte_mempool ty where
@@ -2097,7 +2097,7 @@ instance HasCField.HasCField Rte_mempool "pool_config" where
 
     __defined at:__ @rte_mempool.h 237:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ PtrConst.PtrConst Generated.DPDK.Rte_memzone.Rte_memzone
          ) => BG.CompatHasField.HasField "mz" Rte_mempool ty where
@@ -2143,7 +2143,7 @@ instance HasCField.HasCField Rte_mempool "mz" where
 
     __defined at:__ @rte_mempool.h 238:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "flags" Rte_mempool ty where
@@ -2188,7 +2188,7 @@ instance HasCField.HasCField Rte_mempool "flags" where
 
     __defined at:__ @rte_mempool.h 239:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "socket_id" Rte_mempool ty where
@@ -2233,7 +2233,7 @@ instance HasCField.HasCField Rte_mempool "socket_id" where
 
     __defined at:__ @rte_mempool.h 240:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_mempool ty where
@@ -2279,7 +2279,7 @@ instance HasCField.HasCField Rte_mempool "size" where
 
     __defined at:__ @rte_mempool.h 241:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "cache_size" Rte_mempool ty where
@@ -2325,7 +2325,7 @@ instance HasCField.HasCField Rte_mempool "cache_size" where
 
     __defined at:__ @rte_mempool.h 244:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "elt_size" Rte_mempool ty where
@@ -2371,7 +2371,7 @@ instance HasCField.HasCField Rte_mempool "elt_size" where
 
     __defined at:__ @rte_mempool.h 245:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "header_size" Rte_mempool ty where
@@ -2418,7 +2418,7 @@ instance HasCField.HasCField Rte_mempool "header_size" where
 
     __defined at:__ @rte_mempool.h 246:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "trailer_size" Rte_mempool ty where
@@ -2465,7 +2465,7 @@ instance HasCField.HasCField Rte_mempool "trailer_size" where
 
     __defined at:__ @rte_mempool.h 248:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "private_data_size" Rte_mempool ty where
@@ -2512,7 +2512,7 @@ instance HasCField.HasCField Rte_mempool "private_data_size" where
 
     __defined at:__ @rte_mempool.h 256:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int32
          ) => BG.CompatHasField.HasField "ops_index" Rte_mempool ty where
@@ -2558,7 +2558,7 @@ instance HasCField.HasCField Rte_mempool "ops_index" where
 
     __defined at:__ @rte_mempool.h 258:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mempool_cache
          ) => BG.CompatHasField.HasField "local_cache" Rte_mempool ty where
@@ -2605,7 +2605,7 @@ instance HasCField.HasCField Rte_mempool "local_cache" where
 
     __defined at:__ @rte_mempool.h 260:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "populated_size" Rte_mempool ty where
@@ -2652,7 +2652,7 @@ instance HasCField.HasCField Rte_mempool "populated_size" where
 
     __defined at:__ @rte_mempool.h 261:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_objhdr_list
          ) => BG.CompatHasField.HasField "elt_list" Rte_mempool ty where
@@ -2698,7 +2698,7 @@ instance HasCField.HasCField Rte_mempool "elt_list" where
 
     __defined at:__ @rte_mempool.h 262:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "nb_mem_chunks" Rte_mempool ty where
@@ -2745,7 +2745,7 @@ instance HasCField.HasCField Rte_mempool "nb_mem_chunks" where
 
     __defined at:__ @rte_mempool.h 263:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_memhdr_list
          ) => BG.CompatHasField.HasField "mem_list" Rte_mempool ty where
@@ -2791,7 +2791,7 @@ instance HasCField.HasCField Rte_mempool "mem_list" where
 
     __defined at:__ @rte_mempool.h 275:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_NO_SPREAD :: BG.CInt
 rTE_MEMPOOL_F_NO_SPREAD = (1 :: BG.CInt)
@@ -2800,7 +2800,7 @@ rTE_MEMPOOL_F_NO_SPREAD = (1 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 280:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mEMPOOL_F_NO_SPREAD :: BG.CInt
 mEMPOOL_F_NO_SPREAD = rTE_MEMPOOL_F_NO_SPREAD
@@ -2809,7 +2809,7 @@ mEMPOOL_F_NO_SPREAD = rTE_MEMPOOL_F_NO_SPREAD
 
     __defined at:__ @rte_mempool.h 282:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_NO_CACHE_ALIGN :: BG.CInt
 rTE_MEMPOOL_F_NO_CACHE_ALIGN = (2 :: BG.CInt)
@@ -2818,7 +2818,7 @@ rTE_MEMPOOL_F_NO_CACHE_ALIGN = (2 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 287:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mEMPOOL_F_NO_CACHE_ALIGN :: BG.CInt
 mEMPOOL_F_NO_CACHE_ALIGN =
@@ -2828,7 +2828,7 @@ mEMPOOL_F_NO_CACHE_ALIGN =
 
     __defined at:__ @rte_mempool.h 289:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_SP_PUT :: BG.CInt
 rTE_MEMPOOL_F_SP_PUT = (4 :: BG.CInt)
@@ -2837,7 +2837,7 @@ rTE_MEMPOOL_F_SP_PUT = (4 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 294:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mEMPOOL_F_SP_PUT :: BG.CInt
 mEMPOOL_F_SP_PUT = rTE_MEMPOOL_F_SP_PUT
@@ -2846,7 +2846,7 @@ mEMPOOL_F_SP_PUT = rTE_MEMPOOL_F_SP_PUT
 
     __defined at:__ @rte_mempool.h 296:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_SC_GET :: BG.CInt
 rTE_MEMPOOL_F_SC_GET = (8 :: BG.CInt)
@@ -2855,7 +2855,7 @@ rTE_MEMPOOL_F_SC_GET = (8 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 301:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mEMPOOL_F_SC_GET :: BG.CInt
 mEMPOOL_F_SC_GET = rTE_MEMPOOL_F_SC_GET
@@ -2864,7 +2864,7 @@ mEMPOOL_F_SC_GET = rTE_MEMPOOL_F_SC_GET
 
     __defined at:__ @rte_mempool.h 303:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_POOL_CREATED :: BG.CInt
 rTE_MEMPOOL_F_POOL_CREATED = (16 :: BG.CInt)
@@ -2873,7 +2873,7 @@ rTE_MEMPOOL_F_POOL_CREATED = (16 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 305:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_NO_IOVA_CONTIG :: BG.CInt
 rTE_MEMPOOL_F_NO_IOVA_CONTIG = (32 :: BG.CInt)
@@ -2882,7 +2882,7 @@ rTE_MEMPOOL_F_NO_IOVA_CONTIG = (32 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 310:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mEMPOOL_F_NO_IOVA_CONTIG :: BG.CInt
 mEMPOOL_F_NO_IOVA_CONTIG =
@@ -2892,7 +2892,7 @@ mEMPOOL_F_NO_IOVA_CONTIG =
 
     __defined at:__ @rte_mempool.h 312:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_F_NON_IO :: BG.CInt
 rTE_MEMPOOL_F_NON_IO = (64 :: BG.CInt)
@@ -2901,7 +2901,7 @@ rTE_MEMPOOL_F_NON_IO = (64 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 317:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_VALID_USER_FLAGS :: BG.CInt
 rTE_MEMPOOL_VALID_USER_FLAGS =
@@ -2911,7 +2911,7 @@ rTE_MEMPOOL_VALID_USER_FLAGS =
 
     __defined at:__ @rte_mempool.h 399:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_objtlr
 
@@ -2919,7 +2919,7 @@ data Rte_mempool_objtlr
 
     __defined at:__ @rte_mempool.h 458:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_OPS_NAMESIZE :: BG.CInt
 rTE_MEMPOOL_OPS_NAMESIZE = (32 :: BG.CInt)
@@ -2930,7 +2930,7 @@ rTE_MEMPOOL_OPS_NAMESIZE = (32 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 470:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_alloc_t_Aux = Rte_mempool_alloc_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> IO BG.CInt
@@ -2997,7 +2997,7 @@ instance HasCField.HasCField Rte_mempool_alloc_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 470:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_alloc_t = Rte_mempool_alloc_t
   { unwrap :: BG.FunPtr Rte_mempool_alloc_t_Aux
@@ -3037,7 +3037,7 @@ instance HasCField.HasCField Rte_mempool_alloc_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 475:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_free_t_Aux = Rte_mempool_free_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> IO ()
@@ -3104,7 +3104,7 @@ instance HasCField.HasCField Rte_mempool_free_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 475:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_free_t = Rte_mempool_free_t
   { unwrap :: BG.FunPtr Rte_mempool_free_t_Aux
@@ -3144,7 +3144,7 @@ instance HasCField.HasCField Rte_mempool_free_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 483:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_enqueue_t_Aux = Rte_mempool_enqueue_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt
@@ -3215,7 +3215,7 @@ instance HasCField.HasCField Rte_mempool_enqueue_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 483:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_enqueue_t = Rte_mempool_enqueue_t
   { unwrap :: BG.FunPtr Rte_mempool_enqueue_t_Aux
@@ -3255,7 +3255,7 @@ instance HasCField.HasCField Rte_mempool_enqueue_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 492:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_dequeue_t_Aux = Rte_mempool_dequeue_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt
@@ -3326,7 +3326,7 @@ instance HasCField.HasCField Rte_mempool_dequeue_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 492:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_dequeue_t = Rte_mempool_dequeue_t
   { unwrap :: BG.FunPtr Rte_mempool_dequeue_t_Aux
@@ -3366,7 +3366,7 @@ instance HasCField.HasCField Rte_mempool_dequeue_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 498:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_dequeue_contig_blocks_t_Aux = Rte_mempool_dequeue_contig_blocks_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt
@@ -3439,7 +3439,7 @@ instance HasCField.HasCField Rte_mempool_dequeue_contig_blocks_t_Aux "unwrap" wh
 
     __defined at:__ @rte_mempool.h 498:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_dequeue_contig_blocks_t = Rte_mempool_dequeue_contig_blocks_t
   { unwrap :: BG.FunPtr Rte_mempool_dequeue_contig_blocks_t_Aux
@@ -3481,7 +3481,7 @@ instance HasCField.HasCField Rte_mempool_dequeue_contig_blocks_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 504:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_get_count_Aux = Rte_mempool_get_count_Aux
   { unwrap :: PtrConst.PtrConst Rte_mempool -> IO BG.CUInt
@@ -3548,7 +3548,7 @@ instance HasCField.HasCField Rte_mempool_get_count_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 504:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_get_count = Rte_mempool_get_count
   { unwrap :: BG.FunPtr Rte_mempool_get_count_Aux
@@ -3588,7 +3588,7 @@ instance HasCField.HasCField Rte_mempool_get_count "unwrap" where
 
     __defined at:__ @rte_mempool.h 529:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_calc_mem_size_t_Aux = Rte_mempool_calc_mem_size_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_mempool -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> IO Generated.DPDK.Rte_ring.Ssize_t
@@ -3665,7 +3665,7 @@ instance HasCField.HasCField Rte_mempool_calc_mem_size_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 529:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_calc_mem_size_t = Rte_mempool_calc_mem_size_t
   { unwrap :: BG.FunPtr Rte_mempool_calc_mem_size_t_Aux
@@ -3703,7 +3703,7 @@ instance HasCField.HasCField Rte_mempool_calc_mem_size_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 595:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_populate_obj_cb_t = Rte_mempool_populate_obj_cb_t
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> BG.Ptr BG.Void -> Generated.DPDK.Rte_common.Rte_iova_t -> IO ()
@@ -3779,7 +3779,7 @@ instance HasCField.HasCField Rte_mempool_populate_obj_cb_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 626:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_populate_t_Aux = Rte_mempool_populate_t_Aux
   { unwrap :: BG.Ptr Rte_mempool -> BG.CUInt -> BG.Ptr BG.Void -> Generated.DPDK.Rte_common.Rte_iova_t -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_populate_obj_cb_t -> BG.Ptr BG.Void -> IO BG.CInt
@@ -3858,7 +3858,7 @@ instance HasCField.HasCField Rte_mempool_populate_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 626:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_populate_t = Rte_mempool_populate_t
   { unwrap :: BG.FunPtr Rte_mempool_populate_t_Aux
@@ -3896,7 +3896,7 @@ instance HasCField.HasCField Rte_mempool_populate_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 634:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_POPULATE_F_ALIGN_OBJ :: BG.CInt
 rTE_MEMPOOL_POPULATE_F_ALIGN_OBJ = (1 :: BG.CInt)
@@ -3907,7 +3907,7 @@ rTE_MEMPOOL_POPULATE_F_ALIGN_OBJ = (1 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 687:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_get_info_t_Aux = Rte_mempool_get_info_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_mempool -> BG.Ptr Rte_mempool_info -> IO BG.CInt
@@ -3976,7 +3976,7 @@ instance HasCField.HasCField Rte_mempool_get_info_t_Aux "unwrap" where
 
     __defined at:__ @rte_mempool.h 687:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_get_info_t = Rte_mempool_get_info_t
   { unwrap :: BG.FunPtr Rte_mempool_get_info_t_Aux
@@ -4014,7 +4014,7 @@ instance HasCField.HasCField Rte_mempool_get_info_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 692:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_ops = Rte_mempool_ops
   { name :: CA.ConstantArray 32 BG.CChar
@@ -4022,70 +4022,70 @@ data Rte_mempool_ops = Rte_mempool_ops
 
          __defined at:__ @rte_mempool.h 693:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , alloc :: Rte_mempool_alloc_t
     {- ^ __C declaration:__ @alloc@
 
          __defined at:__ @rte_mempool.h 694:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , free :: Rte_mempool_free_t
     {- ^ __C declaration:__ @free@
 
          __defined at:__ @rte_mempool.h 695:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , enqueue :: Rte_mempool_enqueue_t
     {- ^ __C declaration:__ @enqueue@
 
          __defined at:__ @rte_mempool.h 696:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , dequeue :: Rte_mempool_dequeue_t
     {- ^ __C declaration:__ @dequeue@
 
          __defined at:__ @rte_mempool.h 697:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , get_count :: Rte_mempool_get_count
     {- ^ __C declaration:__ @get_count@
 
          __defined at:__ @rte_mempool.h 698:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , calc_mem_size :: Rte_mempool_calc_mem_size_t
     {- ^ __C declaration:__ @calc_mem_size@
 
          __defined at:__ @rte_mempool.h 703:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , populate :: Rte_mempool_populate_t
     {- ^ __C declaration:__ @populate@
 
          __defined at:__ @rte_mempool.h 708:25@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , get_info :: Rte_mempool_get_info_t
     {- ^ __C declaration:__ @get_info@
 
          __defined at:__ @rte_mempool.h 712:25@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , dequeue_contig_blocks :: Rte_mempool_dequeue_contig_blocks_t
     {- ^ __C declaration:__ @dequeue_contig_blocks@
 
          __defined at:__ @rte_mempool.h 716:38@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4148,7 +4148,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_ops instance Struct.IsStruct 
 
     __defined at:__ @rte_mempool.h 693:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 32 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_mempool_ops ty where
@@ -4186,7 +4186,7 @@ instance HasCField.HasCField Rte_mempool_ops "name" where
 
     __defined at:__ @rte_mempool.h 694:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_alloc_t
          ) => BG.CompatHasField.HasField "alloc" Rte_mempool_ops ty where
@@ -4224,7 +4224,7 @@ instance HasCField.HasCField Rte_mempool_ops "alloc" where
 
     __defined at:__ @rte_mempool.h 695:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_free_t
          ) => BG.CompatHasField.HasField "free" Rte_mempool_ops ty where
@@ -4262,7 +4262,7 @@ instance HasCField.HasCField Rte_mempool_ops "free" where
 
     __defined at:__ @rte_mempool.h 696:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_enqueue_t
          ) => BG.CompatHasField.HasField "enqueue" Rte_mempool_ops ty where
@@ -4300,7 +4300,7 @@ instance HasCField.HasCField Rte_mempool_ops "enqueue" where
 
     __defined at:__ @rte_mempool.h 697:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_dequeue_t
          ) => BG.CompatHasField.HasField "dequeue" Rte_mempool_ops ty where
@@ -4338,7 +4338,7 @@ instance HasCField.HasCField Rte_mempool_ops "dequeue" where
 
     __defined at:__ @rte_mempool.h 698:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_get_count
          ) => BG.CompatHasField.HasField "get_count" Rte_mempool_ops ty where
@@ -4376,7 +4376,7 @@ instance HasCField.HasCField Rte_mempool_ops "get_count" where
 
     __defined at:__ @rte_mempool.h 703:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_calc_mem_size_t
          ) => BG.CompatHasField.HasField "calc_mem_size" Rte_mempool_ops ty where
@@ -4415,7 +4415,7 @@ instance HasCField.HasCField Rte_mempool_ops "calc_mem_size" where
 
     __defined at:__ @rte_mempool.h 708:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_populate_t
          ) => BG.CompatHasField.HasField "populate" Rte_mempool_ops ty where
@@ -4453,7 +4453,7 @@ instance HasCField.HasCField Rte_mempool_ops "populate" where
 
     __defined at:__ @rte_mempool.h 712:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_get_info_t
          ) => BG.CompatHasField.HasField "get_info" Rte_mempool_ops ty where
@@ -4491,7 +4491,7 @@ instance HasCField.HasCField Rte_mempool_ops "get_info" where
 
     __defined at:__ @rte_mempool.h 716:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_mempool_dequeue_contig_blocks_t
          ) => BG.CompatHasField.HasField "dequeue_contig_blocks" Rte_mempool_ops ty where
@@ -4530,7 +4530,7 @@ instance HasCField.HasCField Rte_mempool_ops "dequeue_contig_blocks" where
 
     __defined at:__ @rte_mempool.h 719:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMPOOL_MAX_OPS_IDX :: BG.CInt
 rTE_MEMPOOL_MAX_OPS_IDX = (16 :: BG.CInt)
@@ -4539,7 +4539,7 @@ rTE_MEMPOOL_MAX_OPS_IDX = (16 :: BG.CInt)
 
     __defined at:__ @rte_mempool.h 730:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_ops_table = Rte_mempool_ops_table
   { sl :: Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -4547,21 +4547,21 @@ data Rte_mempool_ops_table = Rte_mempool_ops_table
 
          __defined at:__ @rte_mempool.h 731:17@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , num_ops :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @num_ops@
 
          __defined at:__ @rte_mempool.h 732:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , ops :: CA.ConstantArray 16 Rte_mempool_ops
     {- ^ __C declaration:__ @ops@
 
          __defined at:__ @rte_mempool.h 736:25@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4600,7 +4600,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_ops_table instance Struct.IsS
 
     __defined at:__ @rte_mempool.h 731:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
          ) => BG.CompatHasField.HasField "sl" Rte_mempool_ops_table ty where
@@ -4628,7 +4628,7 @@ instance HasCField.HasCField Rte_mempool_ops_table "sl" where
 
     __defined at:__ @rte_mempool.h 732:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "num_ops" Rte_mempool_ops_table ty where
@@ -4656,7 +4656,7 @@ instance HasCField.HasCField Rte_mempool_ops_table "num_ops" where
 
     __defined at:__ @rte_mempool.h 736:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 16 Rte_mempool_ops
          ) => BG.CompatHasField.HasField "ops" Rte_mempool_ops_table ty where
@@ -4684,7 +4684,7 @@ instance HasCField.HasCField Rte_mempool_ops_table "ops" where
 
     __defined at:__ @rte_mempool.h 999:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_obj_cb_t = Rte_mempool_obj_cb_t
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> BG.Ptr BG.Void -> BG.CUInt -> IO ()
@@ -4757,7 +4757,7 @@ instance HasCField.HasCField Rte_mempool_obj_cb_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 1001:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_obj_ctor_t = Rte_mempool_obj_ctor_t
   { unwrap :: Rte_mempool_obj_cb_t
@@ -4788,7 +4788,7 @@ instance HasCField.HasCField Rte_mempool_obj_ctor_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 1008:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_mem_cb_t = Rte_mempool_mem_cb_t
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> BG.Ptr Rte_mempool_memhdr -> BG.CUInt -> IO ()
@@ -4861,7 +4861,7 @@ instance HasCField.HasCField Rte_mempool_mem_cb_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 1018:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_ctor_t = Rte_mempool_ctor_t
   { unwrap :: BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> IO ()
@@ -4930,7 +4930,7 @@ instance HasCField.HasCField Rte_mempool_ctor_t "unwrap" where
 
     __defined at:__ @rte_mempool.h 1909:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mempool_mem_range_info = Rte_mempool_mem_range_info
   { start :: BG.Ptr BG.Void
@@ -4938,21 +4938,21 @@ data Rte_mempool_mem_range_info = Rte_mempool_mem_range_info
 
          __defined at:__ @rte_mempool.h 1911:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , length :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @length@
 
          __defined at:__ @rte_mempool.h 1913:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , is_contiguous :: BG.CBool
     {- ^ __C declaration:__ @is_contiguous@
 
          __defined at:__ @rte_mempool.h 1915:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4991,7 +4991,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mempool_mem_range_info instance Struc
 
     __defined at:__ @rte_mempool.h 1911:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "start" Rte_mempool_mem_range_info ty where
@@ -5022,7 +5022,7 @@ instance HasCField.HasCField Rte_mempool_mem_range_info "start" where
 
     __defined at:__ @rte_mempool.h 1913:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "length" Rte_mempool_mem_range_info ty where
@@ -5053,7 +5053,7 @@ instance HasCField.HasCField Rte_mempool_mem_range_info "length" where
 
     __defined at:__ @rte_mempool.h 1915:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CBool
          ) => BG.CompatHasField.HasField "is_contiguous" Rte_mempool_mem_range_info ty where
@@ -5085,7 +5085,7 @@ instance HasCField.HasCField Rte_mempool_mem_range_info "is_contiguous" where
 
     __defined at:__ @rte_mempool.h 1964:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_event = Rte_mempool_event
   { unwrap :: BG.CUInt
@@ -5184,7 +5184,7 @@ instance HasCField.HasCField Rte_mempool_event "unwrap" where
 
     __defined at:__ @rte_mempool.h 1966:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MEMPOOL_EVENT_READY :: Rte_mempool_event
 pattern RTE_MEMPOOL_EVENT_READY = Rte_mempool_event 0
@@ -5193,7 +5193,7 @@ pattern RTE_MEMPOOL_EVENT_READY = Rte_mempool_event 0
 
     __defined at:__ @rte_mempool.h 1968:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MEMPOOL_EVENT_DESTROY :: Rte_mempool_event
 pattern RTE_MEMPOOL_EVENT_DESTROY = Rte_mempool_event 1
@@ -5202,7 +5202,7 @@ pattern RTE_MEMPOOL_EVENT_DESTROY = Rte_mempool_event 1
 
     __defined at:__ @rte_mempool.h 1980:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mempool_event_callback = Rte_mempool_event_callback
   { unwrap :: Rte_mempool_event -> BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> IO ()

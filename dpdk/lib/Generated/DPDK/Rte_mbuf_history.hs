@@ -52,7 +52,7 @@ import Prelude ((<*>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_mbuf_history.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_HISTORY_BITS :: BG.CInt
 rTE_MBUF_HISTORY_BITS = (4 :: BG.CInt)
@@ -61,7 +61,7 @@ rTE_MBUF_HISTORY_BITS = (4 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_history.h 53:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_history_op = Rte_mbuf_history_op
   { unwrap :: BG.CUInt
@@ -165,7 +165,7 @@ instance HasCField.HasCField Rte_mbuf_history_op "unwrap" where
 
     __defined at:__ @rte_mbuf_history.h 54:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_NEVER :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_NEVER = Rte_mbuf_history_op 0
@@ -174,7 +174,7 @@ pattern RTE_MBUF_HISTORY_OP_NEVER = Rte_mbuf_history_op 0
 
     __defined at:__ @rte_mbuf_history.h 55:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_LIB_FREE :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_LIB_FREE = Rte_mbuf_history_op 1
@@ -183,7 +183,7 @@ pattern RTE_MBUF_HISTORY_OP_LIB_FREE = Rte_mbuf_history_op 1
 
     __defined at:__ @rte_mbuf_history.h 56:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_PMD_FREE :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_PMD_FREE = Rte_mbuf_history_op 2
@@ -192,7 +192,7 @@ pattern RTE_MBUF_HISTORY_OP_PMD_FREE = Rte_mbuf_history_op 2
 
     __defined at:__ @rte_mbuf_history.h 57:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_APP_FREE :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_APP_FREE = Rte_mbuf_history_op 3
@@ -201,7 +201,7 @@ pattern RTE_MBUF_HISTORY_OP_APP_FREE = Rte_mbuf_history_op 3
 
     __defined at:__ @rte_mbuf_history.h 59:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_LIB_ALLOC :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_LIB_ALLOC = Rte_mbuf_history_op 4
@@ -210,7 +210,7 @@ pattern RTE_MBUF_HISTORY_OP_LIB_ALLOC = Rte_mbuf_history_op 4
 
     __defined at:__ @rte_mbuf_history.h 60:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_PMD_ALLOC :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_PMD_ALLOC = Rte_mbuf_history_op 5
@@ -219,7 +219,7 @@ pattern RTE_MBUF_HISTORY_OP_PMD_ALLOC = Rte_mbuf_history_op 5
 
     __defined at:__ @rte_mbuf_history.h 61:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_APP_ALLOC :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_APP_ALLOC = Rte_mbuf_history_op 6
@@ -228,7 +228,7 @@ pattern RTE_MBUF_HISTORY_OP_APP_ALLOC = Rte_mbuf_history_op 6
 
     __defined at:__ @rte_mbuf_history.h 62:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_RX :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_RX = Rte_mbuf_history_op 7
@@ -237,7 +237,7 @@ pattern RTE_MBUF_HISTORY_OP_RX = Rte_mbuf_history_op 7
 
     __defined at:__ @rte_mbuf_history.h 63:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_TX :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_TX = Rte_mbuf_history_op 8
@@ -246,7 +246,7 @@ pattern RTE_MBUF_HISTORY_OP_TX = Rte_mbuf_history_op 8
 
     __defined at:__ @rte_mbuf_history.h 64:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_TX_PREP :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_TX_PREP = Rte_mbuf_history_op 9
@@ -255,7 +255,7 @@ pattern RTE_MBUF_HISTORY_OP_TX_PREP = Rte_mbuf_history_op 9
 
     __defined at:__ @rte_mbuf_history.h 65:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_TX_BUSY :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_TX_BUSY = Rte_mbuf_history_op 10
@@ -264,7 +264,7 @@ pattern RTE_MBUF_HISTORY_OP_TX_BUSY = Rte_mbuf_history_op 10
 
     __defined at:__ @rte_mbuf_history.h 66:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_ENQUEUE :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_ENQUEUE = Rte_mbuf_history_op 11
@@ -273,7 +273,7 @@ pattern RTE_MBUF_HISTORY_OP_ENQUEUE = Rte_mbuf_history_op 11
 
     __defined at:__ @rte_mbuf_history.h 67:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_DEQUEUE :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_DEQUEUE = Rte_mbuf_history_op 12
@@ -282,7 +282,7 @@ pattern RTE_MBUF_HISTORY_OP_DEQUEUE = Rte_mbuf_history_op 12
 
     __defined at:__ @rte_mbuf_history.h 69:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_USR2 :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_USR2 = Rte_mbuf_history_op 14
@@ -291,7 +291,7 @@ pattern RTE_MBUF_HISTORY_OP_USR2 = Rte_mbuf_history_op 14
 
     __defined at:__ @rte_mbuf_history.h 70:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_USR1 :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_USR1 = Rte_mbuf_history_op 15
@@ -300,7 +300,7 @@ pattern RTE_MBUF_HISTORY_OP_USR1 = Rte_mbuf_history_op 15
 
     __defined at:__ @rte_mbuf_history.h 71:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MBUF_HISTORY_OP_MAX :: Rte_mbuf_history_op
 pattern RTE_MBUF_HISTORY_OP_MAX = Rte_mbuf_history_op 16

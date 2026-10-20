@@ -47,7 +47,9 @@ import Generated.DPDK.Rte_devargs
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "char const *hs_bindgen_7c8d22046d77e8a0 ("
   , "  struct rte_driver const *arg1"
   , ")"
@@ -263,7 +265,7 @@ hs_bindgen_7c8d22046d77e8a0 =
 
     __defined at:__ @rte_dev.h 70:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_driver_name ::
      PtrConst.PtrConst Rte_driver
@@ -288,7 +290,7 @@ hs_bindgen_0365438e9f68c274 =
 
     __defined at:__ @rte_dev.h 81:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_bus ::
      PtrConst.PtrConst Rte_device
@@ -313,7 +315,7 @@ hs_bindgen_ab5c5e041f49fb94 =
 
     __defined at:__ @rte_dev.h 92:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_bus_info ::
      PtrConst.PtrConst Rte_device
@@ -338,7 +340,7 @@ hs_bindgen_3b1813d1e778fd94 =
 
     __defined at:__ @rte_dev.h 103:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_devargs ::
      PtrConst.PtrConst Rte_device
@@ -363,7 +365,7 @@ hs_bindgen_e776eb8a85d215d6 =
 
     __defined at:__ @rte_dev.h 114:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_driver ::
      PtrConst.PtrConst Rte_device
@@ -388,7 +390,7 @@ hs_bindgen_32162fbc3ac9b64d =
 
     __defined at:__ @rte_dev.h 125:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_name ::
      PtrConst.PtrConst Rte_device
@@ -413,7 +415,7 @@ hs_bindgen_13ede5dfcf2c3366 =
 
     __defined at:__ @rte_dev.h 136:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_numa_node ::
      PtrConst.PtrConst Rte_device
@@ -438,7 +440,7 @@ hs_bindgen_5a536db114ac6257 =
 
     __defined at:__ @rte_dev.h 152:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_is_probed ::
      PtrConst.PtrConst Rte_device
@@ -469,7 +471,7 @@ hs_bindgen_e52b5c5e21bae9c1 =
 
     __defined at:__ @rte_dev.h 170:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eal_hotplug_add ::
      PtrConst.PtrConst BG.CChar
@@ -498,7 +500,7 @@ hs_bindgen_aca4ff11537601fc =
 
     __defined at:__ @rte_dev.h 184:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_probe ::
      PtrConst.PtrConst BG.CChar
@@ -526,7 +528,7 @@ hs_bindgen_caa32c2c56669ca9 =
 
     __defined at:__ @rte_dev.h 199:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eal_hotplug_remove ::
      PtrConst.PtrConst BG.CChar
@@ -553,7 +555,7 @@ hs_bindgen_7df5e2ec3a91f1bb =
 
     __defined at:__ @rte_dev.h 212:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_remove ::
      BG.Ptr Rte_device
@@ -581,7 +583,7 @@ hs_bindgen_49cc433ebb2469ff =
 
     __defined at:__ @rte_dev.h 303:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_iterator_init ::
      BG.Ptr Rte_dev_iterator
@@ -608,7 +610,7 @@ hs_bindgen_81c45a5741278078 =
 
     __defined at:__ @rte_dev.h 322:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_iterator_next ::
      BG.Ptr Rte_dev_iterator
@@ -639,7 +641,7 @@ hs_bindgen_3900ec1f9dc5986a =
 
     __defined at:__ @rte_dev.h 347:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_event_callback_register ::
      PtrConst.PtrConst BG.CChar
@@ -675,7 +677,7 @@ hs_bindgen_38d8a18eaad48411 =
 
     __defined at:__ @rte_dev.h 368:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_event_callback_unregister ::
      PtrConst.PtrConst BG.CChar
@@ -708,7 +710,7 @@ hs_bindgen_794dc557d240db49 =
 
     __defined at:__ @rte_dev.h 382:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_event_callback_process ::
      PtrConst.PtrConst BG.CChar
@@ -732,7 +734,7 @@ hs_bindgen_9ad0512333d24300 =
 
     __defined at:__ @rte_dev.h 393:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_event_monitor_start :: IO BG.CInt
 rte_dev_event_monitor_start =
@@ -751,7 +753,7 @@ hs_bindgen_19153a8df0e63498 =
 
     __defined at:__ @rte_dev.h 403:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_event_monitor_stop :: IO BG.CInt
 rte_dev_event_monitor_stop =
@@ -770,7 +772,7 @@ hs_bindgen_c3777957753efe57 =
 
     __defined at:__ @rte_dev.h 413:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_hotplug_handle_enable :: IO BG.CInt
 rte_dev_hotplug_handle_enable =
@@ -789,7 +791,7 @@ hs_bindgen_a06904f319dd2f60 =
 
     __defined at:__ @rte_dev.h 423:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_hotplug_handle_disable :: IO BG.CInt
 rte_dev_hotplug_handle_disable =
@@ -821,7 +823,7 @@ hs_bindgen_c12f016452212c27 =
 
     __defined at:__ @rte_dev.h 446:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_dma_map ::
      BG.Ptr Rte_device
@@ -861,7 +863,7 @@ hs_bindgen_6583a127f1fc272a =
 
     __defined at:__ @rte_dev.h 469:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_dev_dma_unmap ::
      BG.Ptr Rte_device
@@ -895,7 +897,7 @@ hs_bindgen_a7cf507da1b5f0d3 =
 
     __defined at:__ @rte_devargs.h 125:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_parse ::
      BG.Ptr Rte_devargs
@@ -922,7 +924,7 @@ hs_bindgen_b75b4a5799e757e8 =
 
     __defined at:__ @rte_devargs.h 172:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_reset ::
      BG.Ptr Rte_devargs
@@ -947,7 +949,7 @@ hs_bindgen_d83127fe8547a18c =
 
     __defined at:__ @rte_devargs.h 187:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_insert ::
      BG.Ptr (BG.Ptr Rte_devargs)
@@ -975,7 +977,7 @@ hs_bindgen_729dc5e868671be0 =
 
     __defined at:__ @rte_devargs.h 202:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_add ::
      Rte_devtype
@@ -1002,7 +1004,7 @@ hs_bindgen_7616a1bbdc4fcd99 =
 
     __defined at:__ @rte_devargs.h 217:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_remove ::
      BG.Ptr Rte_devargs
@@ -1027,7 +1029,7 @@ hs_bindgen_2fc0d488bb937520 =
 
     __defined at:__ @rte_devargs.h 229:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_type_count ::
      Rte_devtype
@@ -1052,7 +1054,7 @@ hs_bindgen_062c1b8ad3a95463 =
 
     __defined at:__ @rte_devargs.h 237:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -1080,7 +1082,7 @@ hs_bindgen_7e1db160fff86b1a =
 
     __defined at:__ @rte_devargs.h 256:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_devargs_next ::
      PtrConst.PtrConst BG.CChar

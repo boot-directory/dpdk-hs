@@ -34,7 +34,7 @@ import Prelude (Bounded, Enum, Eq, Integral, Num, Ord, Read, Real, Show, type (~
 
     __defined at:__ @rte_trace_point.h 38:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_trace_point_t = Rte_trace_point_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -82,7 +82,7 @@ instance HasCField.HasCField Rte_trace_point_t "unwrap" where
 
     __defined at:__ @rte_trace_point.h 170:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __RTE_TRACE_EMIT_STRING_LEN_MAX :: BG.CInt
 __RTE_TRACE_EMIT_STRING_LEN_MAX = (32 :: BG.CInt)
@@ -91,7 +91,7 @@ __RTE_TRACE_EMIT_STRING_LEN_MAX = (32 :: BG.CInt)
 
     __defined at:__ @rte_trace_point.h 175:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_TRACE_BLOB_LEN_MAX :: BG.CInt
 rTE_TRACE_BLOB_LEN_MAX = (64 :: BG.CInt)

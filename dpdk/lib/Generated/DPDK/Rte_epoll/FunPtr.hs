@@ -17,7 +17,9 @@ import Generated.DPDK.Rte_epoll
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_epoll_get_rte_epoll_wait */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_ce12d710f650955e (void)) ("
@@ -67,7 +69,7 @@ hs_bindgen_ce12d710f650955e =
 
     __defined at:__ @rte_epoll.h 68:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_wait :: BG.FunPtr (BG.CInt -> BG.Ptr Rte_epoll_event -> BG.CInt -> BG.CInt -> IO BG.CInt)
 rte_epoll_wait =
@@ -87,7 +89,7 @@ hs_bindgen_66fe823134a7d0ae =
 
     __defined at:__ @rte_epoll.h 89:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_wait_interruptible :: BG.FunPtr (BG.CInt -> BG.Ptr Rte_epoll_event -> BG.CInt -> BG.CInt -> IO BG.CInt)
 rte_epoll_wait_interruptible =
@@ -107,7 +109,7 @@ hs_bindgen_59caf89fc93d4741 =
 
     __defined at:__ @rte_epoll.h 110:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_epoll_ctl :: BG.FunPtr (BG.CInt -> BG.CInt -> BG.CInt -> BG.Ptr Rte_epoll_event -> IO BG.CInt)
 rte_epoll_ctl =

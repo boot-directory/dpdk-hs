@@ -23,7 +23,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mbuf_ptype_get_rte_get_ptype_l2_name */"
   , "__attribute__ ((const))"
   , "char const *(*hs_bindgen_2215561e91f34970 (void)) ("
@@ -106,7 +108,7 @@ hs_bindgen_2215561e91f34970 =
 
     __defined at:__ @rte_mbuf_ptype.h 723:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l2_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_l2_name =
@@ -126,7 +128,7 @@ hs_bindgen_4d7ac87d679ca16b =
 
     __defined at:__ @rte_mbuf_ptype.h 733:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l3_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_l3_name =
@@ -146,7 +148,7 @@ hs_bindgen_b0350d609e7cdc35 =
 
     __defined at:__ @rte_mbuf_ptype.h 743:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l4_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_l4_name =
@@ -166,7 +168,7 @@ hs_bindgen_29678ea5907aceda =
 
     __defined at:__ @rte_mbuf_ptype.h 753:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_tunnel_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_tunnel_name =
@@ -186,7 +188,7 @@ hs_bindgen_653bfce4fcb31fbb =
 
     __defined at:__ @rte_mbuf_ptype.h 763:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l2_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_inner_l2_name =
@@ -206,7 +208,7 @@ hs_bindgen_615570b144bf9c0d =
 
     __defined at:__ @rte_mbuf_ptype.h 773:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l3_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_inner_l3_name =
@@ -226,7 +228,7 @@ hs_bindgen_ebb1ed73239f99ae =
 
     __defined at:__ @rte_mbuf_ptype.h 783:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l4_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO (PtrConst.PtrConst BG.CChar))
 rte_get_ptype_inner_l4_name =
@@ -246,7 +248,7 @@ hs_bindgen_916f4d933691639c =
 
     __defined at:__ @rte_mbuf_ptype.h 798:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_name :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.CChar -> HsBindgen.Runtime.LibC.CSize -> IO BG.CInt)
 rte_get_ptype_name =

@@ -69,7 +69,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_ecpri.h 24:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_REV_UP_TO_20 :: BG.CInt
 rTE_ECPRI_REV_UP_TO_20 = (1 :: BG.CInt)
@@ -78,7 +78,7 @@ rTE_ECPRI_REV_UP_TO_20 = (1 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 32:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_IQ_DATA :: BG.CInt
 rTE_ECPRI_MSG_TYPE_IQ_DATA = (0 :: BG.CInt)
@@ -87,7 +87,7 @@ rTE_ECPRI_MSG_TYPE_IQ_DATA = (0 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 33:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_BIT_SEQ :: BG.CInt
 rTE_ECPRI_MSG_TYPE_BIT_SEQ = (1 :: BG.CInt)
@@ -96,7 +96,7 @@ rTE_ECPRI_MSG_TYPE_BIT_SEQ = (1 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_RTC_CTRL :: BG.CInt
 rTE_ECPRI_MSG_TYPE_RTC_CTRL = (2 :: BG.CInt)
@@ -105,7 +105,7 @@ rTE_ECPRI_MSG_TYPE_RTC_CTRL = (2 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_GEN_DATA :: BG.CInt
 rTE_ECPRI_MSG_TYPE_GEN_DATA = (3 :: BG.CInt)
@@ -114,7 +114,7 @@ rTE_ECPRI_MSG_TYPE_GEN_DATA = (3 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_RM_ACC :: BG.CInt
 rTE_ECPRI_MSG_TYPE_RM_ACC = (4 :: BG.CInt)
@@ -123,7 +123,7 @@ rTE_ECPRI_MSG_TYPE_RM_ACC = (4 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 37:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_DLY_MSR :: BG.CInt
 rTE_ECPRI_MSG_TYPE_DLY_MSR = (5 :: BG.CInt)
@@ -132,7 +132,7 @@ rTE_ECPRI_MSG_TYPE_DLY_MSR = (5 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 38:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_RMT_RST :: BG.CInt
 rTE_ECPRI_MSG_TYPE_RMT_RST = (6 :: BG.CInt)
@@ -141,7 +141,7 @@ rTE_ECPRI_MSG_TYPE_RMT_RST = (6 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_EVT_IND :: BG.CInt
 rTE_ECPRI_MSG_TYPE_EVT_IND = (7 :: BG.CInt)
@@ -150,7 +150,7 @@ rTE_ECPRI_MSG_TYPE_EVT_IND = (7 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_IWF_UP :: BG.CInt
 rTE_ECPRI_MSG_TYPE_IWF_UP = (8 :: BG.CInt)
@@ -159,7 +159,7 @@ rTE_ECPRI_MSG_TYPE_IWF_UP = (8 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 41:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_IWF_OPT :: BG.CInt
 rTE_ECPRI_MSG_TYPE_IWF_OPT = (9 :: BG.CInt)
@@ -168,7 +168,7 @@ rTE_ECPRI_MSG_TYPE_IWF_OPT = (9 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 42:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_IWF_MAP :: BG.CInt
 rTE_ECPRI_MSG_TYPE_IWF_MAP = (10 :: BG.CInt)
@@ -177,7 +177,7 @@ rTE_ECPRI_MSG_TYPE_IWF_MAP = (10 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_MSG_TYPE_IWF_DCTRL :: BG.CInt
 rTE_ECPRI_MSG_TYPE_IWF_DCTRL = (11 :: BG.CInt)
@@ -186,7 +186,7 @@ rTE_ECPRI_MSG_TYPE_IWF_DCTRL = (11 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_FAULT_IND :: BG.CInt
 rTE_ECPRI_EVT_IND_FAULT_IND = (0 :: BG.CInt)
@@ -195,7 +195,7 @@ rTE_ECPRI_EVT_IND_FAULT_IND = (0 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 56:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_FAULT_ACK :: BG.CInt
 rTE_ECPRI_EVT_IND_FAULT_ACK = (1 :: BG.CInt)
@@ -204,7 +204,7 @@ rTE_ECPRI_EVT_IND_FAULT_ACK = (1 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 57:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_NTFY_IND :: BG.CInt
 rTE_ECPRI_EVT_IND_NTFY_IND = (2 :: BG.CInt)
@@ -213,7 +213,7 @@ rTE_ECPRI_EVT_IND_NTFY_IND = (2 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 58:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_SYNC_REQ :: BG.CInt
 rTE_ECPRI_EVT_IND_SYNC_REQ = (3 :: BG.CInt)
@@ -222,7 +222,7 @@ rTE_ECPRI_EVT_IND_SYNC_REQ = (3 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 59:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_SYNC_ACK :: BG.CInt
 rTE_ECPRI_EVT_IND_SYNC_ACK = (4 :: BG.CInt)
@@ -231,7 +231,7 @@ rTE_ECPRI_EVT_IND_SYNC_ACK = (4 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 60:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ECPRI_EVT_IND_SYNC_END :: BG.CInt
 rTE_ECPRI_EVT_IND_SYNC_END = (5 :: BG.CInt)
@@ -240,7 +240,7 @@ rTE_ECPRI_EVT_IND_SYNC_END = (5 :: BG.CInt)
 
     __defined at:__ @rte_ecpri.h 68:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_common_hdr_anon'u32_anon'size = Rte_ecpri_common_hdr_anon'u32_anon'size
   { size :: HsBindgen.Runtime.LibC.Word32
@@ -248,35 +248,35 @@ data Rte_ecpri_common_hdr_anon'u32_anon'size = Rte_ecpri_common_hdr_anon'u32_ano
 
          __defined at:__ @rte_ecpri.h 70:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_ecpri.h 71:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , c :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @c@
 
          __defined at:__ @rte_ecpri.h 72:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @res@
 
          __defined at:__ @rte_ecpri.h 73:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , revision :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @revision@
 
          __defined at:__ @rte_ecpri.h 74:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -319,7 +319,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_common_hdr_anon'u32_anon'size i
 
     __defined at:__ @rte_ecpri.h 70:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_ecpri_common_hdr_anon'u32_anon'size ty where
@@ -354,7 +354,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_common_hdr_anon'u32_anon'size "size
 
     __defined at:__ @rte_ecpri.h 71:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "type'" Rte_ecpri_common_hdr_anon'u32_anon'size ty where
@@ -389,7 +389,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_common_hdr_anon'u32_anon'size "type
 
     __defined at:__ @rte_ecpri.h 72:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "c" Rte_ecpri_common_hdr_anon'u32_anon'size ty where
@@ -424,7 +424,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_common_hdr_anon'u32_anon'size "c" w
 
     __defined at:__ @rte_ecpri.h 73:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res" Rte_ecpri_common_hdr_anon'u32_anon'size ty where
@@ -459,7 +459,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_common_hdr_anon'u32_anon'size "res"
 
     __defined at:__ @rte_ecpri.h 74:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "revision" Rte_ecpri_common_hdr_anon'u32_anon'size ty where
@@ -494,7 +494,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_common_hdr_anon'u32_anon'size "revi
 
     __defined at:__ @rte_ecpri.h 66:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ecpri_common_hdr_anon'u32 = Rte_ecpri_common_hdr_anon'u32
   { unwrap :: BG.ByteArray
@@ -515,7 +515,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_ecpri_common_hdr_a
 
     __defined at:__ @rte_ecpri.h 67:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "u32" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -526,7 +526,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ecpri.h 67:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "u32" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -552,7 +552,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "u32" where
 
     __defined at:__ @rte_ecpri.h 68:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_common_hdr_anon'u32_anon'size
          ) => BG.HasField "anon'size" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -563,7 +563,7 @@ instance ( ty ~ Rte_ecpri_common_hdr_anon'u32_anon'size
 
     __defined at:__ @rte_ecpri.h 68:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_common_hdr_anon'u32_anon'size
          ) => BG.CompatHasField.HasField "anon'size" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -589,7 +589,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "anon'size" where
 
     __defined at:__ @rte_ecpri.h 70:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "size" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -602,7 +602,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 70:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -631,7 +631,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "size" where
 
     __defined at:__ @rte_ecpri.h 71:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "type'" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -644,7 +644,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 71:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "type'" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -673,7 +673,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "type'" where
 
     __defined at:__ @rte_ecpri.h 72:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "c" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -685,7 +685,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 72:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "c" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -714,7 +714,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "c" where
 
     __defined at:__ @rte_ecpri.h 73:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "res" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -727,7 +727,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 73:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -756,7 +756,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "res" where
 
     __defined at:__ @rte_ecpri.h 74:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "revision" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -769,7 +769,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 74:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "revision" Rte_ecpri_common_hdr_anon'u32 ty where
@@ -798,7 +798,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr_anon'u32 "revision" where
 
     __defined at:__ @rte_ecpri.h 65:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_common_hdr = Rte_ecpri_common_hdr
   { anon'u32 :: Rte_ecpri_common_hdr_anon'u32
@@ -806,7 +806,7 @@ data Rte_ecpri_common_hdr = Rte_ecpri_common_hdr
 
          __defined at:__ @rte_ecpri.h 66:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -841,7 +841,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_common_hdr instance Struct.IsSt
 
     __defined at:__ @rte_ecpri.h 66:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_common_hdr_anon'u32
          ) => BG.CompatHasField.HasField "anon'u32" Rte_ecpri_common_hdr ty where
@@ -867,7 +867,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "anon'u32" where
 
     __defined at:__ @rte_ecpri.h 67:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "u32" Rte_ecpri_common_hdr ty where
@@ -880,7 +880,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ecpri.h 67:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "u32" Rte_ecpri_common_hdr ty where
@@ -909,7 +909,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "u32" where
 
     __defined at:__ @rte_ecpri.h 70:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "size" Rte_ecpri_common_hdr ty where
@@ -922,7 +922,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 70:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_ecpri_common_hdr ty where
@@ -951,7 +951,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "size" where
 
     __defined at:__ @rte_ecpri.h 71:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "type'" Rte_ecpri_common_hdr ty where
@@ -964,7 +964,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 71:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "type'" Rte_ecpri_common_hdr ty where
@@ -993,7 +993,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "type'" where
 
     __defined at:__ @rte_ecpri.h 72:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "c" Rte_ecpri_common_hdr ty where
@@ -1005,7 +1005,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 72:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "c" Rte_ecpri_common_hdr ty where
@@ -1034,7 +1034,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "c" where
 
     __defined at:__ @rte_ecpri.h 73:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "res" Rte_ecpri_common_hdr ty where
@@ -1047,7 +1047,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 73:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res" Rte_ecpri_common_hdr ty where
@@ -1076,7 +1076,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "res" where
 
     __defined at:__ @rte_ecpri.h 74:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "revision" Rte_ecpri_common_hdr ty where
@@ -1089,7 +1089,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ecpri.h 74:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "revision" Rte_ecpri_common_hdr ty where
@@ -1118,7 +1118,7 @@ instance HasCField.HasCField Rte_ecpri_common_hdr "revision" where
 
     __defined at:__ @rte_ecpri.h 89:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_iq_data = Rte_ecpri_msg_iq_data
   { pc_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1126,14 +1126,14 @@ data Rte_ecpri_msg_iq_data = Rte_ecpri_msg_iq_data
 
          __defined at:__ @rte_ecpri.h 90:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @seq_id@
 
          __defined at:__ @rte_ecpri.h 91:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1170,7 +1170,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_iq_data instance Struct.IsS
 
     __defined at:__ @rte_ecpri.h 90:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "pc_id" Rte_ecpri_msg_iq_data ty where
@@ -1198,7 +1198,7 @@ instance HasCField.HasCField Rte_ecpri_msg_iq_data "pc_id" where
 
     __defined at:__ @rte_ecpri.h 91:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "seq_id" Rte_ecpri_msg_iq_data ty where
@@ -1226,7 +1226,7 @@ instance HasCField.HasCField Rte_ecpri_msg_iq_data "seq_id" where
 
     __defined at:__ @rte_ecpri.h 97:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_bit_seq = Rte_ecpri_msg_bit_seq
   { pc_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1234,14 +1234,14 @@ data Rte_ecpri_msg_bit_seq = Rte_ecpri_msg_bit_seq
 
          __defined at:__ @rte_ecpri.h 98:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @seq_id@
 
          __defined at:__ @rte_ecpri.h 99:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1278,7 +1278,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_bit_seq instance Struct.IsS
 
     __defined at:__ @rte_ecpri.h 98:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "pc_id" Rte_ecpri_msg_bit_seq ty where
@@ -1306,7 +1306,7 @@ instance HasCField.HasCField Rte_ecpri_msg_bit_seq "pc_id" where
 
     __defined at:__ @rte_ecpri.h 99:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "seq_id" Rte_ecpri_msg_bit_seq ty where
@@ -1334,7 +1334,7 @@ instance HasCField.HasCField Rte_ecpri_msg_bit_seq "seq_id" where
 
     __defined at:__ @rte_ecpri.h 105:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_rtc_ctrl = Rte_ecpri_msg_rtc_ctrl
   { rtc_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1342,14 +1342,14 @@ data Rte_ecpri_msg_rtc_ctrl = Rte_ecpri_msg_rtc_ctrl
 
          __defined at:__ @rte_ecpri.h 106:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @seq_id@
 
          __defined at:__ @rte_ecpri.h 107:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1386,7 +1386,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_rtc_ctrl instance Struct.Is
 
     __defined at:__ @rte_ecpri.h 106:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "rtc_id" Rte_ecpri_msg_rtc_ctrl ty where
@@ -1414,7 +1414,7 @@ instance HasCField.HasCField Rte_ecpri_msg_rtc_ctrl "rtc_id" where
 
     __defined at:__ @rte_ecpri.h 107:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "seq_id" Rte_ecpri_msg_rtc_ctrl ty where
@@ -1442,7 +1442,7 @@ instance HasCField.HasCField Rte_ecpri_msg_rtc_ctrl "seq_id" where
 
     __defined at:__ @rte_ecpri.h 113:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_gen_data = Rte_ecpri_msg_gen_data
   { pc_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
@@ -1450,14 +1450,14 @@ data Rte_ecpri_msg_gen_data = Rte_ecpri_msg_gen_data
 
          __defined at:__ @rte_ecpri.h 114:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @seq_id@
 
          __defined at:__ @rte_ecpri.h 115:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1494,7 +1494,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_gen_data instance Struct.Is
 
     __defined at:__ @rte_ecpri.h 114:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "pc_id" Rte_ecpri_msg_gen_data ty where
@@ -1522,7 +1522,7 @@ instance HasCField.HasCField Rte_ecpri_msg_gen_data "pc_id" where
 
     __defined at:__ @rte_ecpri.h 115:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "seq_id" Rte_ecpri_msg_gen_data ty where
@@ -1550,7 +1550,7 @@ instance HasCField.HasCField Rte_ecpri_msg_gen_data "seq_id" where
 
     __defined at:__ @rte_ecpri.h 121:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_rm_access = Rte_ecpri_msg_rm_access
   { ele_id :: HsBindgen.Runtime.LibC.Word32
@@ -1558,42 +1558,42 @@ data Rte_ecpri_msg_rm_access = Rte_ecpri_msg_rm_access
 
          __defined at:__ @rte_ecpri.h 123:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rr :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @rr@
 
          __defined at:__ @rte_ecpri.h 124:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rw :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @rw@
 
          __defined at:__ @rte_ecpri.h 125:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rma_id :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @rma_id@
 
          __defined at:__ @rte_ecpri.h 126:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , addr :: CA.ConstantArray 6 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @addr@
 
          __defined at:__ @rte_ecpri.h 133:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , length :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @length@
 
          __defined at:__ @rte_ecpri.h 134:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1638,7 +1638,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_rm_access instance Struct.I
 
     __defined at:__ @rte_ecpri.h 123:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ele_id" Rte_ecpri_msg_rm_access ty where
@@ -1674,7 +1674,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_msg_rm_access "ele_id" where
 
     __defined at:__ @rte_ecpri.h 124:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rr" Rte_ecpri_msg_rm_access ty where
@@ -1710,7 +1710,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_msg_rm_access "rr" where
 
     __defined at:__ @rte_ecpri.h 125:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rw" Rte_ecpri_msg_rm_access ty where
@@ -1746,7 +1746,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_msg_rm_access "rw" where
 
     __defined at:__ @rte_ecpri.h 126:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rma_id" Rte_ecpri_msg_rm_access ty where
@@ -1782,7 +1782,7 @@ instance HasCBitfield.HasCBitfield Rte_ecpri_msg_rm_access "rma_id" where
 
     __defined at:__ @rte_ecpri.h 133:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 6 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "addr" Rte_ecpri_msg_rm_access ty where
@@ -1816,7 +1816,7 @@ instance HasCField.HasCField Rte_ecpri_msg_rm_access "addr" where
 
     __defined at:__ @rte_ecpri.h 134:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "length" Rte_ecpri_msg_rm_access ty where
@@ -1850,7 +1850,7 @@ instance HasCField.HasCField Rte_ecpri_msg_rm_access "length" where
 
     __defined at:__ @rte_ecpri.h 140:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_delay_measure = Rte_ecpri_msg_delay_measure
   { msr_id :: HsBindgen.Runtime.LibC.Word8
@@ -1858,14 +1858,14 @@ data Rte_ecpri_msg_delay_measure = Rte_ecpri_msg_delay_measure
 
          __defined at:__ @rte_ecpri.h 141:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , act_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @act_type@
 
          __defined at:__ @rte_ecpri.h 142:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1902,7 +1902,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_delay_measure instance Stru
 
     __defined at:__ @rte_ecpri.h 141:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "msr_id" Rte_ecpri_msg_delay_measure ty where
@@ -1930,7 +1930,7 @@ instance HasCField.HasCField Rte_ecpri_msg_delay_measure "msr_id" where
 
     __defined at:__ @rte_ecpri.h 142:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "act_type" Rte_ecpri_msg_delay_measure ty where
@@ -1958,7 +1958,7 @@ instance HasCField.HasCField Rte_ecpri_msg_delay_measure "act_type" where
 
     __defined at:__ @rte_ecpri.h 148:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_remote_reset = Rte_ecpri_msg_remote_reset
   { rst_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1966,14 +1966,14 @@ data Rte_ecpri_msg_remote_reset = Rte_ecpri_msg_remote_reset
 
          __defined at:__ @rte_ecpri.h 149:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rst_op :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rst_op@
 
          __defined at:__ @rte_ecpri.h 150:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2010,7 +2010,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_remote_reset instance Struc
 
     __defined at:__ @rte_ecpri.h 149:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "rst_id" Rte_ecpri_msg_remote_reset ty where
@@ -2038,7 +2038,7 @@ instance HasCField.HasCField Rte_ecpri_msg_remote_reset "rst_id" where
 
     __defined at:__ @rte_ecpri.h 150:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rst_op" Rte_ecpri_msg_remote_reset ty where
@@ -2066,7 +2066,7 @@ instance HasCField.HasCField Rte_ecpri_msg_remote_reset "rst_op" where
 
     __defined at:__ @rte_ecpri.h 156:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_msg_event_ind = Rte_ecpri_msg_event_ind
   { evt_id :: HsBindgen.Runtime.LibC.Word8
@@ -2074,28 +2074,28 @@ data Rte_ecpri_msg_event_ind = Rte_ecpri_msg_event_ind
 
          __defined at:__ @rte_ecpri.h 157:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , evt_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @evt_type@
 
          __defined at:__ @rte_ecpri.h 158:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @seq@
 
          __defined at:__ @rte_ecpri.h 159:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , number :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @number@
 
          __defined at:__ @rte_ecpri.h 160:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2136,7 +2136,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_msg_event_ind instance Struct.I
 
     __defined at:__ @rte_ecpri.h 157:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "evt_id" Rte_ecpri_msg_event_ind ty where
@@ -2168,7 +2168,7 @@ instance HasCField.HasCField Rte_ecpri_msg_event_ind "evt_id" where
 
     __defined at:__ @rte_ecpri.h 158:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "evt_type" Rte_ecpri_msg_event_ind ty where
@@ -2200,7 +2200,7 @@ instance HasCField.HasCField Rte_ecpri_msg_event_ind "evt_type" where
 
     __defined at:__ @rte_ecpri.h 159:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "seq" Rte_ecpri_msg_event_ind ty where
@@ -2232,7 +2232,7 @@ instance HasCField.HasCField Rte_ecpri_msg_event_ind "seq" where
 
     __defined at:__ @rte_ecpri.h 160:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "number" Rte_ecpri_msg_event_ind ty where
@@ -2264,7 +2264,7 @@ instance HasCField.HasCField Rte_ecpri_msg_event_ind "number" where
 
     __defined at:__ @rte_ecpri.h 168:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ecpri_combined_msg_hdr_anon'type0 = Rte_ecpri_combined_msg_hdr_anon'type0
   { unwrap :: BG.ByteArray
@@ -2285,7 +2285,7 @@ deriving via BG.SizedByteArray 12 4 instance Union.IsUnion Rte_ecpri_combined_ms
 
     __defined at:__ @rte_ecpri.h 169:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_iq_data
          ) => BG.HasField "type0" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2296,7 +2296,7 @@ instance ( ty ~ Rte_ecpri_msg_iq_data
 
     __defined at:__ @rte_ecpri.h 169:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_iq_data
          ) => BG.CompatHasField.HasField "type0" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2322,7 +2322,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type0" where
 
     __defined at:__ @rte_ecpri.h 170:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_bit_seq
          ) => BG.HasField "type1" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2333,7 +2333,7 @@ instance ( ty ~ Rte_ecpri_msg_bit_seq
 
     __defined at:__ @rte_ecpri.h 170:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_bit_seq
          ) => BG.CompatHasField.HasField "type1" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2359,7 +2359,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type1" where
 
     __defined at:__ @rte_ecpri.h 171:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
          ) => BG.HasField "type2" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2370,7 +2370,7 @@ instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
 
     __defined at:__ @rte_ecpri.h 171:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
          ) => BG.CompatHasField.HasField "type2" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2396,7 +2396,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type2" where
 
     __defined at:__ @rte_ecpri.h 172:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_gen_data
          ) => BG.HasField "type3" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2407,7 +2407,7 @@ instance ( ty ~ Rte_ecpri_msg_gen_data
 
     __defined at:__ @rte_ecpri.h 172:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_gen_data
          ) => BG.CompatHasField.HasField "type3" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2433,7 +2433,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type3" where
 
     __defined at:__ @rte_ecpri.h 173:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rm_access
          ) => BG.HasField "type4" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2444,7 +2444,7 @@ instance ( ty ~ Rte_ecpri_msg_rm_access
 
     __defined at:__ @rte_ecpri.h 173:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rm_access
          ) => BG.CompatHasField.HasField "type4" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2470,7 +2470,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type4" where
 
     __defined at:__ @rte_ecpri.h 174:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_delay_measure
          ) => BG.HasField "type5" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2481,7 +2481,7 @@ instance ( ty ~ Rte_ecpri_msg_delay_measure
 
     __defined at:__ @rte_ecpri.h 174:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_delay_measure
          ) => BG.CompatHasField.HasField "type5" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2507,7 +2507,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type5" where
 
     __defined at:__ @rte_ecpri.h 175:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_remote_reset
          ) => BG.HasField "type6" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2518,7 +2518,7 @@ instance ( ty ~ Rte_ecpri_msg_remote_reset
 
     __defined at:__ @rte_ecpri.h 175:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_remote_reset
          ) => BG.CompatHasField.HasField "type6" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2544,7 +2544,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type6" where
 
     __defined at:__ @rte_ecpri.h 176:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_event_ind
          ) => BG.HasField "type7" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2555,7 +2555,7 @@ instance ( ty ~ Rte_ecpri_msg_event_ind
 
     __defined at:__ @rte_ecpri.h 176:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_event_ind
          ) => BG.CompatHasField.HasField "type7" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2581,7 +2581,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "type7" where
 
     __defined at:__ @rte_ecpri.h 177:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "dummy" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2592,7 +2592,7 @@ instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32
 
     __defined at:__ @rte_ecpri.h 177:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "dummy" Rte_ecpri_combined_msg_hdr_anon'type0 ty where
@@ -2618,7 +2618,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr_anon'type0 "dummy" where
 
     __defined at:__ @rte_ecpri.h 166:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ecpri_combined_msg_hdr = Rte_ecpri_combined_msg_hdr
   { common :: Rte_ecpri_common_hdr
@@ -2626,14 +2626,14 @@ data Rte_ecpri_combined_msg_hdr = Rte_ecpri_combined_msg_hdr
 
          __defined at:__ @rte_ecpri.h 167:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'type0 :: Rte_ecpri_combined_msg_hdr_anon'type0
     {- ^ __C declaration:__ @anon\'type0@
 
          __defined at:__ @rte_ecpri.h 168:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -2670,7 +2670,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ecpri_combined_msg_hdr instance Struc
 
     __defined at:__ @rte_ecpri.h 167:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_common_hdr
          ) => BG.CompatHasField.HasField "common" Rte_ecpri_combined_msg_hdr ty where
@@ -2698,7 +2698,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "common" where
 
     __defined at:__ @rte_ecpri.h 168:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_combined_msg_hdr_anon'type0
          ) => BG.CompatHasField.HasField "anon'type0" Rte_ecpri_combined_msg_hdr ty where
@@ -2726,7 +2726,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "anon'type0" where
 
     __defined at:__ @rte_ecpri.h 169:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_iq_data
          ) => BG.HasField "type0" Rte_ecpri_combined_msg_hdr ty where
@@ -2739,7 +2739,7 @@ instance ( ty ~ Rte_ecpri_msg_iq_data
 
     __defined at:__ @rte_ecpri.h 169:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_iq_data
          ) => BG.CompatHasField.HasField "type0" Rte_ecpri_combined_msg_hdr ty where
@@ -2768,7 +2768,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type0" where
 
     __defined at:__ @rte_ecpri.h 170:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_bit_seq
          ) => BG.HasField "type1" Rte_ecpri_combined_msg_hdr ty where
@@ -2781,7 +2781,7 @@ instance ( ty ~ Rte_ecpri_msg_bit_seq
 
     __defined at:__ @rte_ecpri.h 170:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_bit_seq
          ) => BG.CompatHasField.HasField "type1" Rte_ecpri_combined_msg_hdr ty where
@@ -2810,7 +2810,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type1" where
 
     __defined at:__ @rte_ecpri.h 171:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
          ) => BG.HasField "type2" Rte_ecpri_combined_msg_hdr ty where
@@ -2823,7 +2823,7 @@ instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
 
     __defined at:__ @rte_ecpri.h 171:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rtc_ctrl
          ) => BG.CompatHasField.HasField "type2" Rte_ecpri_combined_msg_hdr ty where
@@ -2852,7 +2852,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type2" where
 
     __defined at:__ @rte_ecpri.h 172:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_gen_data
          ) => BG.HasField "type3" Rte_ecpri_combined_msg_hdr ty where
@@ -2865,7 +2865,7 @@ instance ( ty ~ Rte_ecpri_msg_gen_data
 
     __defined at:__ @rte_ecpri.h 172:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_gen_data
          ) => BG.CompatHasField.HasField "type3" Rte_ecpri_combined_msg_hdr ty where
@@ -2894,7 +2894,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type3" where
 
     __defined at:__ @rte_ecpri.h 173:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rm_access
          ) => BG.HasField "type4" Rte_ecpri_combined_msg_hdr ty where
@@ -2907,7 +2907,7 @@ instance ( ty ~ Rte_ecpri_msg_rm_access
 
     __defined at:__ @rte_ecpri.h 173:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_rm_access
          ) => BG.CompatHasField.HasField "type4" Rte_ecpri_combined_msg_hdr ty where
@@ -2936,7 +2936,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type4" where
 
     __defined at:__ @rte_ecpri.h 174:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_delay_measure
          ) => BG.HasField "type5" Rte_ecpri_combined_msg_hdr ty where
@@ -2949,7 +2949,7 @@ instance ( ty ~ Rte_ecpri_msg_delay_measure
 
     __defined at:__ @rte_ecpri.h 174:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_delay_measure
          ) => BG.CompatHasField.HasField "type5" Rte_ecpri_combined_msg_hdr ty where
@@ -2978,7 +2978,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type5" where
 
     __defined at:__ @rte_ecpri.h 175:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_remote_reset
          ) => BG.HasField "type6" Rte_ecpri_combined_msg_hdr ty where
@@ -2991,7 +2991,7 @@ instance ( ty ~ Rte_ecpri_msg_remote_reset
 
     __defined at:__ @rte_ecpri.h 175:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_remote_reset
          ) => BG.CompatHasField.HasField "type6" Rte_ecpri_combined_msg_hdr ty where
@@ -3020,7 +3020,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type6" where
 
     __defined at:__ @rte_ecpri.h 176:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_event_ind
          ) => BG.HasField "type7" Rte_ecpri_combined_msg_hdr ty where
@@ -3033,7 +3033,7 @@ instance ( ty ~ Rte_ecpri_msg_event_ind
 
     __defined at:__ @rte_ecpri.h 176:34@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ecpri_msg_event_ind
          ) => BG.CompatHasField.HasField "type7" Rte_ecpri_combined_msg_hdr ty where
@@ -3062,7 +3062,7 @@ instance HasCField.HasCField Rte_ecpri_combined_msg_hdr "type7" where
 
     __defined at:__ @rte_ecpri.h 177:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "dummy" Rte_ecpri_combined_msg_hdr ty where
@@ -3075,7 +3075,7 @@ instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32
 
     __defined at:__ @rte_ecpri.h 177:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "dummy" Rte_ecpri_combined_msg_hdr ty where

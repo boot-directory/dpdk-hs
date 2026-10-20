@@ -33,33 +33,43 @@ import qualified HsBindgen.Runtime.Support as BG
 import qualified HsBindgen.Runtime.Support.CompatHasField as BG.CompatHasField
 import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
-{-| __C declaration:__ @struct rte_pktmbuf_pool_private@
+{-| Private data in case of pktmbuf pool.
+
+    A structure that contains some pktmbuf_pool-specific data that are appended after the mempool structure (in private data).
+
+    __C declaration:__ @struct rte_pktmbuf_pool_private@
 
     __defined at:__ @rte_mbuf.h 301:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_pktmbuf_pool_private = Rte_pktmbuf_pool_private
   { mbuf_data_room_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @mbuf_data_room_size@
+    {- ^ Size of data space in each mbuf.
+
+         __C declaration:__ @mbuf_data_room_size@
 
          __defined at:__ @rte_mbuf.h 302:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mbuf_priv_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @mbuf_priv_size@
+    {- ^ Size of private area in each mbuf.
+
+         __C declaration:__ @mbuf_priv_size@
 
          __defined at:__ @rte_mbuf.h 303:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @flags@
+    {- ^ reserved for future use.
+
+         __C declaration:__ @flags@
 
          __defined at:__ @rte_mbuf.h 304:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -94,11 +104,13 @@ deriving via Marshal.EquivStorable Rte_pktmbuf_pool_private instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_pktmbuf_pool_private instance Struct.IsStruct Rte_pktmbuf_pool_private
 
-{-| __C declaration:__ @mbuf_data_room_size@
+{-| Size of data space in each mbuf.
+
+    __C declaration:__ @mbuf_data_room_size@
 
     __defined at:__ @rte_mbuf.h 302:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "mbuf_data_room_size" Rte_pktmbuf_pool_private ty where
@@ -126,11 +138,13 @@ instance HasCField.HasCField Rte_pktmbuf_pool_private "mbuf_data_room_size" wher
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @mbuf_priv_size@
+{-| Size of private area in each mbuf.
+
+    __C declaration:__ @mbuf_priv_size@
 
     __defined at:__ @rte_mbuf.h 303:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "mbuf_priv_size" Rte_pktmbuf_pool_private ty where
@@ -158,11 +172,13 @@ instance HasCField.HasCField Rte_pktmbuf_pool_private "mbuf_priv_size" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @flags@
+{-| reserved for future use.
+
+    __C declaration:__ @flags@
 
     __defined at:__ @rte_mbuf.h 304:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flags" Rte_pktmbuf_pool_private ty where
@@ -189,50 +205,62 @@ instance HasCField.HasCField Rte_pktmbuf_pool_private "flags" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @macro RTE_PKTMBUF_POOL_F_PINNED_EXT_BUF@
+{-| When set, pktmbuf mempool will hold only mbufs with pinned external buffer. The external buffer will be attached to the mbuf at the memory pool creation and will never be detached by the mbuf free calls. mbuf should not contain any room for data after the mbuf structure.
+
+    __C declaration:__ @macro RTE_PKTMBUF_POOL_F_PINNED_EXT_BUF@
 
     __defined at:__ @rte_mbuf.h 330:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PKTMBUF_POOL_F_PINNED_EXT_BUF :: BG.CInt
 rTE_PKTMBUF_POOL_F_PINNED_EXT_BUF =
   (C.Expr.HostPlatform.<<) (1 :: BG.CInt) (0 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_pktmbuf_extmem@
+{-| A structure that describes the pinned external buffer segment.
+
+    __C declaration:__ @struct rte_pktmbuf_extmem@
 
     __defined at:__ @rte_mbuf.h 850:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_pktmbuf_extmem = Rte_pktmbuf_extmem
   { buf_ptr :: BG.Ptr BG.Void
-    {- ^ __C declaration:__ @buf_ptr@
+    {- ^ The virtual address of data buffer.
+
+         __C declaration:__ @buf_ptr@
 
          __defined at:__ @rte_mbuf.h 851:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , buf_iova :: Generated.DPDK.Rte_common.Rte_iova_t
-    {- ^ __C declaration:__ @buf_iova@
+    {- ^ The IO address of the data buffer.
+
+         __C declaration:__ @buf_iova@
 
          __defined at:__ @rte_mbuf.h 852:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , buf_len :: HsBindgen.Runtime.LibC.CSize
-    {- ^ __C declaration:__ @buf_len@
+    {- ^ External buffer length in bytes.
+
+         __C declaration:__ @buf_len@
 
          __defined at:__ @rte_mbuf.h 853:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , elt_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @elt_size@
+    {- ^ mbuf element size in bytes.
+
+         __C declaration:__ @elt_size@
 
          __defined at:__ @rte_mbuf.h 854:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -269,11 +297,13 @@ deriving via Marshal.EquivStorable Rte_pktmbuf_extmem instance BG.Storable Rte_p
 
 deriving via Struct.IsStructViaReadRaw Rte_pktmbuf_extmem instance Struct.IsStruct Rte_pktmbuf_extmem
 
-{-| __C declaration:__ @buf_ptr@
+{-| The virtual address of data buffer.
+
+    __C declaration:__ @buf_ptr@
 
     __defined at:__ @rte_mbuf.h 851:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "buf_ptr" Rte_pktmbuf_extmem ty where
@@ -301,11 +331,13 @@ instance HasCField.HasCField Rte_pktmbuf_extmem "buf_ptr" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @buf_iova@
+{-| The IO address of the data buffer.
+
+    __C declaration:__ @buf_iova@
 
     __defined at:__ @rte_mbuf.h 852:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "buf_iova" Rte_pktmbuf_extmem ty where
@@ -333,11 +365,13 @@ instance HasCField.HasCField Rte_pktmbuf_extmem "buf_iova" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @buf_len@
+{-| External buffer length in bytes.
+
+    __C declaration:__ @buf_len@
 
     __defined at:__ @rte_mbuf.h 853:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "buf_len" Rte_pktmbuf_extmem ty where
@@ -365,11 +399,13 @@ instance HasCField.HasCField Rte_pktmbuf_extmem "buf_len" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @elt_size@
+{-| mbuf element size in bytes.
+
+    __C declaration:__ @elt_size@
 
     __defined at:__ @rte_mbuf.h 854:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "elt_size" Rte_pktmbuf_extmem ty where

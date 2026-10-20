@@ -25,7 +25,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_5f825d67c072cdf6 ("
   , "  rte_spinlock_t *arg1"
   , ")"
@@ -109,7 +111,7 @@ hs_bindgen_5f825d67c072cdf6 =
 
     __defined at:__ @rte_spinlock.h 24:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_lock ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -134,7 +136,7 @@ hs_bindgen_6ea349b9ee7dc262 =
 
     __defined at:__ @rte_spinlock.h 45:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_unlock ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -159,7 +161,7 @@ hs_bindgen_cc8537d6280641ee =
 
     __defined at:__ @rte_spinlock.h 57:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_trylock ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -180,7 +182,7 @@ hs_bindgen_53b0fd5afe71e61d =
 
     __defined at:__ @rte_spinlock.h 74:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_tm_supported :: IO BG.CInt
 rte_tm_supported = hs_bindgen_53b0fd5afe71e61d
@@ -202,7 +204,7 @@ hs_bindgen_f67d834cf12f023b =
 
     __defined at:__ @rte_spinlock.h 80:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_try_tm ::
      BG.Ptr BG.CInt
@@ -227,7 +229,7 @@ hs_bindgen_ec8d6feeb5ee6c09 =
 
     __defined at:__ @rte_spinlock.h 125:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_lock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -252,7 +254,7 @@ hs_bindgen_8196a2421a06178c =
 
     __defined at:__ @rte_spinlock.h 135:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_trylock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -277,7 +279,7 @@ hs_bindgen_9cea8e8910805615 =
 
     __defined at:__ @rte_spinlock.h 145:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_unlock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t
@@ -302,7 +304,7 @@ hs_bindgen_5d9154cb6848e105 =
 
     __defined at:__ @rte_spinlock.h 155:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_lock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_recursive_t
@@ -328,7 +330,7 @@ hs_bindgen_26de26e4638dad30 =
 
     __defined at:__ @rte_spinlock.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_unlock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_recursive_t
@@ -354,7 +356,7 @@ hs_bindgen_c353306dc7bded0b =
 
     __defined at:__ @rte_spinlock.h 175:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_trylock_tm ::
      BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_recursive_t

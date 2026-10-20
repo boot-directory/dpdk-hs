@@ -32,7 +32,7 @@ import Prelude (Bounded, Enum, Eq, Integral, Num, Ord, Read, Real, Show, type (~
 
     __defined at:__ @rte_stdatomic.h 119:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_ATOMIC :: forall a0. a0 -> a0
 rTE_ATOMIC = \type'0 -> type'0
@@ -41,7 +41,7 @@ rTE_ATOMIC = \type'0 -> type'0
 
     __defined at:__ @rte_stdatomic.h 126:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memory_order = Rte_memory_order
   { unwrap :: BG.CInt

@@ -35,7 +35,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_fbarray.h 41:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_FBARRAY_NAME_LEN :: BG.CInt
 rTE_FBARRAY_NAME_LEN = (64 :: BG.CInt)
@@ -44,7 +44,7 @@ rTE_FBARRAY_NAME_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_fbarray.h 43:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_fbarray = Rte_fbarray
   { name :: CA.ConstantArray 64 BG.CChar
@@ -52,42 +52,42 @@ data Rte_fbarray = Rte_fbarray
 
          __defined at:__ @rte_fbarray.h 44:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , count :: BG.CUInt
     {- ^ __C declaration:__ @count@
 
          __defined at:__ @rte_fbarray.h 45:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: BG.CUInt
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_fbarray.h 46:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , elt_sz :: BG.CUInt
     {- ^ __C declaration:__ @elt_sz@
 
          __defined at:__ @rte_fbarray.h 47:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , data' :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_fbarray.h 48:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , rwlock :: Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t
     {- ^ __C declaration:__ @rwlock@
 
          __defined at:__ @rte_fbarray.h 49:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -132,7 +132,7 @@ deriving via Struct.IsStructViaReadRaw Rte_fbarray instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_fbarray.h 44:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_fbarray ty where
@@ -166,7 +166,7 @@ instance HasCField.HasCField Rte_fbarray "name" where
 
     __defined at:__ @rte_fbarray.h 45:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "count" Rte_fbarray ty where
@@ -199,7 +199,7 @@ instance HasCField.HasCField Rte_fbarray "count" where
 
     __defined at:__ @rte_fbarray.h 46:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "len" Rte_fbarray ty where
@@ -232,7 +232,7 @@ instance HasCField.HasCField Rte_fbarray "len" where
 
     __defined at:__ @rte_fbarray.h 47:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "elt_sz" Rte_fbarray ty where
@@ -265,7 +265,7 @@ instance HasCField.HasCField Rte_fbarray "elt_sz" where
 
     __defined at:__ @rte_fbarray.h 48:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "data'" Rte_fbarray ty where
@@ -298,7 +298,7 @@ instance HasCField.HasCField Rte_fbarray "data'" where
 
     __defined at:__ @rte_fbarray.h 49:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t
          ) => BG.CompatHasField.HasField "rwlock" Rte_fbarray ty where

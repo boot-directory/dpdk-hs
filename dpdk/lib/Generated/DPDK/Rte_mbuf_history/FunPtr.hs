@@ -18,7 +18,9 @@ import Generated.DPDK.Rte_mbuf_history
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mbuf_history_get_rte_mbuf_history_mark */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_0ea9845f58455905 (void)) ("
@@ -54,7 +56,7 @@ hs_bindgen_0ea9845f58455905 =
 
     __defined at:__ @rte_mbuf_history.h 105:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_history_mark :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf -> Rte_mbuf_history_op -> IO ())
 rte_mbuf_history_mark =
@@ -74,7 +76,7 @@ hs_bindgen_54d19b27c1a5b066 =
 
     __defined at:__ @rte_mbuf_history.h 142:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_history_mark_bulk :: BG.FunPtr (PtrConst.PtrConst (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf) -> BG.CUInt -> Rte_mbuf_history_op -> IO ())
 rte_mbuf_history_mark_bulk =

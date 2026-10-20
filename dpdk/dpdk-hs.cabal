@@ -46,7 +46,6 @@ library
   autogen-modules:
   ghc-options: -Wall -Wunused-packages -optc-mssse3
   pkgconfig-depends: libdpdk
-  include-dirs: ./dpdk-c/
   build-depends:
     , base >=4.7 && <5
     , c-expr-runtime

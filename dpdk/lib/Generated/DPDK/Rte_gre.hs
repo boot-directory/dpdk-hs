@@ -38,7 +38,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_gre.h 26:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gre_hdr = Rte_gre_hdr
   { res2 :: HsBindgen.Runtime.LibC.Word16
@@ -46,56 +46,56 @@ data Rte_gre_hdr = Rte_gre_hdr
 
          __defined at:__ @rte_gre.h 28:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , s :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @s@
 
          __defined at:__ @rte_gre.h 29:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , k :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @k@
 
          __defined at:__ @rte_gre.h 30:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res1 :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @res1@
 
          __defined at:__ @rte_gre.h 31:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , c :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @c@
 
          __defined at:__ @rte_gre.h 32:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ver :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @ver@
 
          __defined at:__ @rte_gre.h 33:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res3 :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @res3@
 
          __defined at:__ @rte_gre.h 34:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @proto@
 
          __defined at:__ @rte_gre.h 44:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -144,7 +144,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gre_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_gre.h 28:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "res2" Rte_gre_hdr ty where
@@ -182,7 +182,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "res2" where
 
     __defined at:__ @rte_gre.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "s" Rte_gre_hdr ty where
@@ -220,7 +220,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "s" where
 
     __defined at:__ @rte_gre.h 30:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "k" Rte_gre_hdr ty where
@@ -258,7 +258,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "k" where
 
     __defined at:__ @rte_gre.h 31:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "res1" Rte_gre_hdr ty where
@@ -296,7 +296,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "res1" where
 
     __defined at:__ @rte_gre.h 32:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "c" Rte_gre_hdr ty where
@@ -334,7 +334,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "c" where
 
     __defined at:__ @rte_gre.h 33:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "ver" Rte_gre_hdr ty where
@@ -372,7 +372,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "ver" where
 
     __defined at:__ @rte_gre.h 34:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "res3" Rte_gre_hdr ty where
@@ -410,7 +410,7 @@ instance HasCBitfield.HasCBitfield Rte_gre_hdr "res3" where
 
     __defined at:__ @rte_gre.h 44:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "proto" Rte_gre_hdr ty where
@@ -446,7 +446,7 @@ instance HasCField.HasCField Rte_gre_hdr "proto" where
 
     __defined at:__ @rte_gre.h 50:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gre_hdr_opt_checksum_rsvd = Rte_gre_hdr_opt_checksum_rsvd
   { checksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -454,14 +454,14 @@ data Rte_gre_hdr_opt_checksum_rsvd = Rte_gre_hdr_opt_checksum_rsvd
 
          __defined at:__ @rte_gre.h 51:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved1 :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @reserved1@
 
          __defined at:__ @rte_gre.h 52:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -498,7 +498,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gre_hdr_opt_checksum_rsvd instance St
 
     __defined at:__ @rte_gre.h 51:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "checksum" Rte_gre_hdr_opt_checksum_rsvd ty where
@@ -526,7 +526,7 @@ instance HasCField.HasCField Rte_gre_hdr_opt_checksum_rsvd "checksum" where
 
     __defined at:__ @rte_gre.h 52:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "reserved1" Rte_gre_hdr_opt_checksum_rsvd ty where
@@ -554,7 +554,7 @@ instance HasCField.HasCField Rte_gre_hdr_opt_checksum_rsvd "reserved1" where
 
     __defined at:__ @rte_gre.h 58:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gre_hdr_opt_key = Rte_gre_hdr_opt_key
   { key :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
@@ -562,7 +562,7 @@ data Rte_gre_hdr_opt_key = Rte_gre_hdr_opt_key
 
          __defined at:__ @rte_gre.h 59:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -597,7 +597,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gre_hdr_opt_key instance Struct.IsStr
 
     __defined at:__ @rte_gre.h 59:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "key" Rte_gre_hdr_opt_key ty where
@@ -623,7 +623,7 @@ instance HasCField.HasCField Rte_gre_hdr_opt_key "key" where
 
     __defined at:__ @rte_gre.h 65:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gre_hdr_opt_sequence = Rte_gre_hdr_opt_sequence
   { sequence :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
@@ -631,7 +631,7 @@ data Rte_gre_hdr_opt_sequence = Rte_gre_hdr_opt_sequence
 
          __defined at:__ @rte_gre.h 66:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -666,7 +666,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gre_hdr_opt_sequence instance Struct.
 
     __defined at:__ @rte_gre.h 66:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "sequence" Rte_gre_hdr_opt_sequence ty where

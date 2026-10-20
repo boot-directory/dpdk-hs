@@ -38,7 +38,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_ib.h 25:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ib_bth = Rte_ib_bth
   { opcode :: HsBindgen.Runtime.LibC.Word8
@@ -46,91 +46,91 @@ data Rte_ib_bth = Rte_ib_bth
 
          __defined at:__ @rte_ib.h 26:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tver :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @tver@
 
          __defined at:__ @rte_ib.h 28:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , padcnt :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @padcnt@
 
          __defined at:__ @rte_ib.h 29:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , m :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @m@
 
          __defined at:__ @rte_ib.h 30:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , se :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @se@
 
          __defined at:__ @rte_ib.h 31:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pkey :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @pkey@
 
          __defined at:__ @rte_ib.h 38:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd0 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd0@
 
          __defined at:__ @rte_ib.h 40:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , b :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @b@
 
          __defined at:__ @rte_ib.h 41:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , f :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @f@
 
          __defined at:__ @rte_ib.h 42:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_qp :: CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @dst_qp@
 
          __defined at:__ @rte_ib.h 48:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd1 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd1@
 
          __defined at:__ @rte_ib.h 50:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , a :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @a@
 
          __defined at:__ @rte_ib.h 51:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , psn :: CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @psn@
 
          __defined at:__ @rte_ib.h 56:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -202,7 +202,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ib_bth instance Struct.IsStruct Rte_i
 
     __defined at:__ @rte_ib.h 26:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "opcode" Rte_ib_bth ty where
@@ -243,7 +243,7 @@ instance HasCField.HasCField Rte_ib_bth "opcode" where
 
     __defined at:__ @rte_ib.h 28:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tver" Rte_ib_bth ty where
@@ -286,7 +286,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "tver" where
 
     __defined at:__ @rte_ib.h 29:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "padcnt" Rte_ib_bth ty where
@@ -329,7 +329,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "padcnt" where
 
     __defined at:__ @rte_ib.h 30:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "m" Rte_ib_bth ty where
@@ -372,7 +372,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "m" where
 
     __defined at:__ @rte_ib.h 31:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "se" Rte_ib_bth ty where
@@ -415,7 +415,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "se" where
 
     __defined at:__ @rte_ib.h 38:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "pkey" Rte_ib_bth ty where
@@ -456,7 +456,7 @@ instance HasCField.HasCField Rte_ib_bth "pkey" where
 
     __defined at:__ @rte_ib.h 40:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_ib_bth ty where
@@ -499,7 +499,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "rsvd0" where
 
     __defined at:__ @rte_ib.h 41:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "b" Rte_ib_bth ty where
@@ -542,7 +542,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "b" where
 
     __defined at:__ @rte_ib.h 42:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "f" Rte_ib_bth ty where
@@ -585,7 +585,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "f" where
 
     __defined at:__ @rte_ib.h 48:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dst_qp" Rte_ib_bth ty where
@@ -626,7 +626,7 @@ instance HasCField.HasCField Rte_ib_bth "dst_qp" where
 
     __defined at:__ @rte_ib.h 50:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_ib_bth ty where
@@ -669,7 +669,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "rsvd1" where
 
     __defined at:__ @rte_ib.h 51:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "a" Rte_ib_bth ty where
@@ -712,7 +712,7 @@ instance HasCBitfield.HasCBitfield Rte_ib_bth "a" where
 
     __defined at:__ @rte_ib.h 56:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "psn" Rte_ib_bth ty where
@@ -753,7 +753,7 @@ instance HasCField.HasCField Rte_ib_bth "psn" where
 
     __defined at:__ @rte_ib.h 60:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ROCEV2_DEFAULT_PORT :: BG.CInt
 rTE_ROCEV2_DEFAULT_PORT = (4791 :: BG.CInt)

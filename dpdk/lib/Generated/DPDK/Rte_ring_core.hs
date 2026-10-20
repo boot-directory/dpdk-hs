@@ -71,7 +71,7 @@ import Prelude ((<*>), (>>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_ring_core.h 37:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_TAILQ_RING_NAME :: BG.ByteString
 rTE_TAILQ_RING_NAME =
@@ -81,7 +81,7 @@ rTE_TAILQ_RING_NAME =
 
     __defined at:__ @rte_ring_core.h 40:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_ring_queue_behavior = Rte_ring_queue_behavior
   { unwrap :: BG.CUInt
@@ -181,7 +181,7 @@ instance HasCField.HasCField Rte_ring_queue_behavior "unwrap" where
 
     __defined at:__ @rte_ring_core.h 42:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_QUEUE_FIXED :: Rte_ring_queue_behavior
 pattern RTE_RING_QUEUE_FIXED = Rte_ring_queue_behavior 0
@@ -190,7 +190,7 @@ pattern RTE_RING_QUEUE_FIXED = Rte_ring_queue_behavior 0
 
     __defined at:__ @rte_ring_core.h 44:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_QUEUE_VARIABLE :: Rte_ring_queue_behavior
 pattern RTE_RING_QUEUE_VARIABLE = Rte_ring_queue_behavior 1
@@ -201,7 +201,7 @@ pattern RTE_RING_QUEUE_VARIABLE = Rte_ring_queue_behavior 1
 
     __defined at:__ @rte_ring_core.h 47:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RING_MZ_PREFIX :: BG.ByteString
 rTE_RING_MZ_PREFIX = BG.pack [0x52, 0x47, 0x5F]
@@ -210,7 +210,7 @@ rTE_RING_MZ_PREFIX = BG.pack [0x52, 0x47, 0x5F]
 
     __defined at:__ @rte_ring_core.h 53:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_ring_sync_type = Rte_ring_sync_type
   { unwrap :: BG.CUInt
@@ -312,7 +312,7 @@ instance HasCField.HasCField Rte_ring_sync_type "unwrap" where
 
     __defined at:__ @rte_ring_core.h 54:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_SYNC_MT :: Rte_ring_sync_type
 pattern RTE_RING_SYNC_MT = Rte_ring_sync_type 0
@@ -321,7 +321,7 @@ pattern RTE_RING_SYNC_MT = Rte_ring_sync_type 0
 
     __defined at:__ @rte_ring_core.h 55:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_SYNC_ST :: Rte_ring_sync_type
 pattern RTE_RING_SYNC_ST = Rte_ring_sync_type 1
@@ -330,7 +330,7 @@ pattern RTE_RING_SYNC_ST = Rte_ring_sync_type 1
 
     __defined at:__ @rte_ring_core.h 56:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_SYNC_MT_RTS :: Rte_ring_sync_type
 pattern RTE_RING_SYNC_MT_RTS = Rte_ring_sync_type 2
@@ -339,7 +339,7 @@ pattern RTE_RING_SYNC_MT_RTS = Rte_ring_sync_type 2
 
     __defined at:__ @rte_ring_core.h 57:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_RING_SYNC_MT_HTS :: Rte_ring_sync_type
 pattern RTE_RING_SYNC_MT_HTS = Rte_ring_sync_type 3
@@ -348,7 +348,7 @@ pattern RTE_RING_SYNC_MT_HTS = Rte_ring_sync_type 3
 
     __defined at:__ @rte_ring_core.h 68:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_ring_headtail_anon'sync_type = Rte_ring_headtail_anon'sync_type
   { unwrap :: BG.ByteArray
@@ -369,7 +369,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_ring_headtail_anon
 
     __defined at:__ @rte_ring_core.h 70:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.HasField "sync_type" Rte_ring_headtail_anon'sync_type ty where
@@ -380,7 +380,7 @@ instance ( ty ~ Rte_ring_sync_type
 
     __defined at:__ @rte_ring_core.h 70:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.CompatHasField.HasField "sync_type" Rte_ring_headtail_anon'sync_type ty where
@@ -406,7 +406,7 @@ instance HasCField.HasCField Rte_ring_headtail_anon'sync_type "sync_type" where
 
     __defined at:__ @rte_ring_core.h 72:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "single" Rte_ring_headtail_anon'sync_type ty where
@@ -417,7 +417,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ring_core.h 72:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "single" Rte_ring_headtail_anon'sync_type ty where
@@ -443,7 +443,7 @@ instance HasCField.HasCField Rte_ring_headtail_anon'sync_type "single" where
 
     __defined at:__ @rte_ring_core.h 65:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_ring_headtail = Rte_ring_headtail
   { head :: HsBindgen.Runtime.LibC.Word32
@@ -451,21 +451,21 @@ data Rte_ring_headtail = Rte_ring_headtail
 
          __defined at:__ @rte_ring_core.h 66:32@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , tail :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @tail@
 
          __defined at:__ @rte_ring_core.h 67:32@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'sync_type :: Rte_ring_headtail_anon'sync_type
     {- ^ __C declaration:__ @anon\'sync_type@
 
          __defined at:__ @rte_ring_core.h 68:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -504,7 +504,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ring_headtail instance Struct.IsStruc
 
     __defined at:__ @rte_ring_core.h 66:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "head" Rte_ring_headtail ty where
@@ -535,7 +535,7 @@ instance HasCField.HasCField Rte_ring_headtail "head" where
 
     __defined at:__ @rte_ring_core.h 67:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "tail" Rte_ring_headtail ty where
@@ -566,7 +566,7 @@ instance HasCField.HasCField Rte_ring_headtail "tail" where
 
     __defined at:__ @rte_ring_core.h 68:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail_anon'sync_type
          ) => BG.CompatHasField.HasField "anon'sync_type" Rte_ring_headtail ty where
@@ -598,7 +598,7 @@ instance HasCField.HasCField Rte_ring_headtail "anon'sync_type" where
 
     __defined at:__ @rte_ring_core.h 70:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.HasField "sync_type" Rte_ring_headtail ty where
@@ -611,7 +611,7 @@ instance ( ty ~ Rte_ring_sync_type
 
     __defined at:__ @rte_ring_core.h 70:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.CompatHasField.HasField "sync_type" Rte_ring_headtail ty where
@@ -640,7 +640,7 @@ instance HasCField.HasCField Rte_ring_headtail "sync_type" where
 
     __defined at:__ @rte_ring_core.h 72:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "single" Rte_ring_headtail ty where
@@ -653,7 +653,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ring_core.h 72:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "single" Rte_ring_headtail ty where
@@ -682,7 +682,7 @@ instance HasCField.HasCField Rte_ring_headtail "single" where
 
     __defined at:__ @rte_ring_core.h 79:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data C__Rte_ring_rts_poscnt_val = C__Rte_ring_rts_poscnt_val
   { cnt :: HsBindgen.Runtime.LibC.Word32
@@ -690,14 +690,14 @@ data C__Rte_ring_rts_poscnt_val = C__Rte_ring_rts_poscnt_val
 
          __defined at:__ @rte_ring_core.h 80:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , pos :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @pos@
 
          __defined at:__ @rte_ring_core.h 81:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -734,7 +734,7 @@ deriving via Struct.IsStructViaReadRaw C__Rte_ring_rts_poscnt_val instance Struc
 
     __defined at:__ @rte_ring_core.h 80:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "cnt" C__Rte_ring_rts_poscnt_val ty where
@@ -762,7 +762,7 @@ instance HasCField.HasCField C__Rte_ring_rts_poscnt_val "cnt" where
 
     __defined at:__ @rte_ring_core.h 81:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "pos" C__Rte_ring_rts_poscnt_val ty where
@@ -790,7 +790,7 @@ instance HasCField.HasCField C__Rte_ring_rts_poscnt_val "pos" where
 
     __defined at:__ @rte_ring_core.h 76:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype C__Rte_ring_rts_poscnt = C__Rte_ring_rts_poscnt
   { unwrap :: BG.ByteArray
@@ -811,7 +811,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion C__Rte_ring_rts_poscnt
 
     __defined at:__ @rte_ring_core.h 78:49@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "raw" C__Rte_ring_rts_poscnt ty where
@@ -822,7 +822,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_ring_core.h 78:49@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "raw" C__Rte_ring_rts_poscnt ty where
@@ -848,7 +848,7 @@ instance HasCField.HasCField C__Rte_ring_rts_poscnt "raw" where
 
     __defined at:__ @rte_ring_core.h 82:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_rts_poscnt_val
          ) => BG.HasField "val" C__Rte_ring_rts_poscnt ty where
@@ -859,7 +859,7 @@ instance ( ty ~ C__Rte_ring_rts_poscnt_val
 
     __defined at:__ @rte_ring_core.h 82:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_rts_poscnt_val
          ) => BG.CompatHasField.HasField "val" C__Rte_ring_rts_poscnt ty where
@@ -885,7 +885,7 @@ instance HasCField.HasCField C__Rte_ring_rts_poscnt "val" where
 
     __defined at:__ @rte_ring_core.h 85:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_ring_rts_headtail = Rte_ring_rts_headtail
   { tail :: C__Rte_ring_rts_poscnt
@@ -893,28 +893,28 @@ data Rte_ring_rts_headtail = Rte_ring_rts_headtail
 
          __defined at:__ @rte_ring_core.h 86:39@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , sync_type :: Rte_ring_sync_type
     {- ^ __C declaration:__ @sync_type@
 
          __defined at:__ @rte_ring_core.h 87:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , htd_max :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @htd_max@
 
          __defined at:__ @rte_ring_core.h 88:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , head :: C__Rte_ring_rts_poscnt
     {- ^ __C declaration:__ @head@
 
          __defined at:__ @rte_ring_core.h 89:39@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -955,7 +955,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ring_rts_headtail instance Struct.IsS
 
     __defined at:__ @rte_ring_core.h 86:39@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_rts_poscnt
          ) => BG.CompatHasField.HasField "tail" Rte_ring_rts_headtail ty where
@@ -987,7 +987,7 @@ instance HasCField.HasCField Rte_ring_rts_headtail "tail" where
 
     __defined at:__ @rte_ring_core.h 87:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.CompatHasField.HasField "sync_type" Rte_ring_rts_headtail ty where
@@ -1019,7 +1019,7 @@ instance HasCField.HasCField Rte_ring_rts_headtail "sync_type" where
 
     __defined at:__ @rte_ring_core.h 88:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "htd_max" Rte_ring_rts_headtail ty where
@@ -1051,7 +1051,7 @@ instance HasCField.HasCField Rte_ring_rts_headtail "htd_max" where
 
     __defined at:__ @rte_ring_core.h 89:39@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_rts_poscnt
          ) => BG.CompatHasField.HasField "head" Rte_ring_rts_headtail ty where
@@ -1083,7 +1083,7 @@ instance HasCField.HasCField Rte_ring_rts_headtail "head" where
 
     __defined at:__ @rte_ring_core.h 95:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data C__Rte_ring_hts_pos_pos = C__Rte_ring_hts_pos_pos
   { head :: HsBindgen.Runtime.LibC.Word32
@@ -1091,14 +1091,14 @@ data C__Rte_ring_hts_pos_pos = C__Rte_ring_hts_pos_pos
 
          __defined at:__ @rte_ring_core.h 96:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , tail :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @tail@
 
          __defined at:__ @rte_ring_core.h 97:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1135,7 +1135,7 @@ deriving via Struct.IsStructViaReadRaw C__Rte_ring_hts_pos_pos instance Struct.I
 
     __defined at:__ @rte_ring_core.h 96:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "head" C__Rte_ring_hts_pos_pos ty where
@@ -1163,7 +1163,7 @@ instance HasCField.HasCField C__Rte_ring_hts_pos_pos "head" where
 
     __defined at:__ @rte_ring_core.h 97:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "tail" C__Rte_ring_hts_pos_pos ty where
@@ -1191,7 +1191,7 @@ instance HasCField.HasCField C__Rte_ring_hts_pos_pos "tail" where
 
     __defined at:__ @rte_ring_core.h 92:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype C__Rte_ring_hts_pos = C__Rte_ring_hts_pos
   { unwrap :: BG.ByteArray
@@ -1212,7 +1212,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion C__Rte_ring_hts_pos
 
     __defined at:__ @rte_ring_core.h 94:49@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "raw" C__Rte_ring_hts_pos ty where
@@ -1223,7 +1223,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_ring_core.h 94:49@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "raw" C__Rte_ring_hts_pos ty where
@@ -1249,7 +1249,7 @@ instance HasCField.HasCField C__Rte_ring_hts_pos "raw" where
 
     __defined at:__ @rte_ring_core.h 98:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_hts_pos_pos
          ) => BG.HasField "pos" C__Rte_ring_hts_pos ty where
@@ -1260,7 +1260,7 @@ instance ( ty ~ C__Rte_ring_hts_pos_pos
 
     __defined at:__ @rte_ring_core.h 98:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_hts_pos_pos
          ) => BG.CompatHasField.HasField "pos" C__Rte_ring_hts_pos ty where
@@ -1286,7 +1286,7 @@ instance HasCField.HasCField C__Rte_ring_hts_pos "pos" where
 
     __defined at:__ @rte_ring_core.h 101:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_ring_hts_headtail = Rte_ring_hts_headtail
   { ht :: C__Rte_ring_hts_pos
@@ -1294,14 +1294,14 @@ data Rte_ring_hts_headtail = Rte_ring_hts_headtail
 
          __defined at:__ @rte_ring_core.h 102:36@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , sync_type :: Rte_ring_sync_type
     {- ^ __C declaration:__ @sync_type@
 
          __defined at:__ @rte_ring_core.h 103:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1338,7 +1338,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ring_hts_headtail instance Struct.IsS
 
     __defined at:__ @rte_ring_core.h 102:36@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Rte_ring_hts_pos
          ) => BG.CompatHasField.HasField "ht" Rte_ring_hts_headtail ty where
@@ -1366,7 +1366,7 @@ instance HasCField.HasCField Rte_ring_hts_headtail "ht" where
 
     __defined at:__ @rte_ring_core.h 103:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_sync_type
          ) => BG.CompatHasField.HasField "sync_type" Rte_ring_hts_headtail ty where
@@ -1394,7 +1394,7 @@ instance HasCField.HasCField Rte_ring_hts_headtail "sync_type" where
 
     __defined at:__ @rte_ring_core.h 129:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_ring_anon'prod = Rte_ring_anon'prod
   { unwrap :: BG.ByteArray
@@ -1415,7 +1415,7 @@ deriving via BG.SizedByteArray 64 64 instance Union.IsUnion Rte_ring_anon'prod
 
     __defined at:__ @rte_ring_core.h 130:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.HasField "prod" Rte_ring_anon'prod ty where
@@ -1426,7 +1426,7 @@ instance ( ty ~ Rte_ring_headtail
 
     __defined at:__ @rte_ring_core.h 130:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.CompatHasField.HasField "prod" Rte_ring_anon'prod ty where
@@ -1452,7 +1452,7 @@ instance HasCField.HasCField Rte_ring_anon'prod "prod" where
 
     __defined at:__ @rte_ring_core.h 131:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.HasField "hts_prod" Rte_ring_anon'prod ty where
@@ -1463,7 +1463,7 @@ instance ( ty ~ Rte_ring_hts_headtail
 
     __defined at:__ @rte_ring_core.h 131:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.CompatHasField.HasField "hts_prod" Rte_ring_anon'prod ty where
@@ -1489,7 +1489,7 @@ instance HasCField.HasCField Rte_ring_anon'prod "hts_prod" where
 
     __defined at:__ @rte_ring_core.h 132:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.HasField "rts_prod" Rte_ring_anon'prod ty where
@@ -1500,7 +1500,7 @@ instance ( ty ~ Rte_ring_rts_headtail
 
     __defined at:__ @rte_ring_core.h 132:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.CompatHasField.HasField "rts_prod" Rte_ring_anon'prod ty where
@@ -1526,7 +1526,7 @@ instance HasCField.HasCField Rte_ring_anon'prod "rts_prod" where
 
     __defined at:__ @rte_ring_core.h 138:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_ring_anon'cons = Rte_ring_anon'cons
   { unwrap :: BG.ByteArray
@@ -1547,7 +1547,7 @@ deriving via BG.SizedByteArray 64 64 instance Union.IsUnion Rte_ring_anon'cons
 
     __defined at:__ @rte_ring_core.h 139:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.HasField "cons" Rte_ring_anon'cons ty where
@@ -1558,7 +1558,7 @@ instance ( ty ~ Rte_ring_headtail
 
     __defined at:__ @rte_ring_core.h 139:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.CompatHasField.HasField "cons" Rte_ring_anon'cons ty where
@@ -1584,7 +1584,7 @@ instance HasCField.HasCField Rte_ring_anon'cons "cons" where
 
     __defined at:__ @rte_ring_core.h 140:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.HasField "hts_cons" Rte_ring_anon'cons ty where
@@ -1595,7 +1595,7 @@ instance ( ty ~ Rte_ring_hts_headtail
 
     __defined at:__ @rte_ring_core.h 140:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.CompatHasField.HasField "hts_cons" Rte_ring_anon'cons ty where
@@ -1621,7 +1621,7 @@ instance HasCField.HasCField Rte_ring_anon'cons "hts_cons" where
 
     __defined at:__ @rte_ring_core.h 141:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.HasField "rts_cons" Rte_ring_anon'cons ty where
@@ -1632,7 +1632,7 @@ instance ( ty ~ Rte_ring_rts_headtail
 
     __defined at:__ @rte_ring_core.h 141:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.CompatHasField.HasField "rts_cons" Rte_ring_anon'cons ty where
@@ -1658,7 +1658,7 @@ instance HasCField.HasCField Rte_ring_anon'cons "rts_cons" where
 
     __defined at:__ @rte_ring_core.h 116:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_ring = Rte_ring
   { name :: CA.ConstantArray 29 BG.CChar
@@ -1666,77 +1666,77 @@ data Rte_ring = Rte_ring
 
          __defined at:__ @rte_ring_core.h 117:36@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: BG.CInt
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_ring_core.h 119:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , memzone :: PtrConst.PtrConst Generated.DPDK.Rte_memzone.Rte_memzone
     {- ^ __C declaration:__ @memzone@
 
          __defined at:__ @rte_ring_core.h 120:28@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , size :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @size@
 
          __defined at:__ @rte_ring_core.h 122:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , mask :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @mask@
 
          __defined at:__ @rte_ring_core.h 123:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , capacity :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @capacity@
 
          __defined at:__ @rte_ring_core.h 124:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , cache_guard_126 :: CA.ConstantArray 64 BG.CChar
     {- ^ __C declaration:__ @cache_guard_126@
 
          __defined at:__ @rte_ring_core.h 126:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'prod :: Rte_ring_anon'prod
     {- ^ __C declaration:__ @anon\'prod@
 
          __defined at:__ @rte_ring_core.h 129:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , cache_guard_135 :: CA.ConstantArray 64 BG.CChar
     {- ^ __C declaration:__ @cache_guard_135@
 
          __defined at:__ @rte_ring_core.h 135:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'cons :: Rte_ring_anon'cons
     {- ^ __C declaration:__ @anon\'cons@
 
          __defined at:__ @rte_ring_core.h 138:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , cache_guard_144 :: CA.ConstantArray 64 BG.CChar
     {- ^ __C declaration:__ @cache_guard_144@
 
          __defined at:__ @rte_ring_core.h 144:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1802,7 +1802,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ring instance Struct.IsStruct Rte_rin
 
     __defined at:__ @rte_ring_core.h 117:36@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 29 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_ring ty where
@@ -1841,7 +1841,7 @@ instance HasCField.HasCField Rte_ring "name" where
 
     __defined at:__ @rte_ring_core.h 119:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ BG.CInt) => BG.CompatHasField.HasField "flags" Rte_ring ty where
 
@@ -1878,7 +1878,7 @@ instance HasCField.HasCField Rte_ring "flags" where
 
     __defined at:__ @rte_ring_core.h 120:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ PtrConst.PtrConst Generated.DPDK.Rte_memzone.Rte_memzone
          ) => BG.CompatHasField.HasField "memzone" Rte_ring ty where
@@ -1917,7 +1917,7 @@ instance HasCField.HasCField Rte_ring "memzone" where
 
     __defined at:__ @rte_ring_core.h 122:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "size" Rte_ring ty where
@@ -1956,7 +1956,7 @@ instance HasCField.HasCField Rte_ring "size" where
 
     __defined at:__ @rte_ring_core.h 123:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mask" Rte_ring ty where
@@ -1995,7 +1995,7 @@ instance HasCField.HasCField Rte_ring "mask" where
 
     __defined at:__ @rte_ring_core.h 124:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "capacity" Rte_ring ty where
@@ -2034,7 +2034,7 @@ instance HasCField.HasCField Rte_ring "capacity" where
 
     __defined at:__ @rte_ring_core.h 126:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "cache_guard_126" Rte_ring ty where
@@ -2074,7 +2074,7 @@ instance HasCField.HasCField Rte_ring "cache_guard_126" where
 
     __defined at:__ @rte_ring_core.h 129:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_anon'prod
          ) => BG.CompatHasField.HasField "anon'prod" Rte_ring ty where
@@ -2113,7 +2113,7 @@ instance HasCField.HasCField Rte_ring "anon'prod" where
 
     __defined at:__ @rte_ring_core.h 130:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ Rte_ring_headtail) => BG.HasField "prod" Rte_ring ty where
 
@@ -2125,7 +2125,7 @@ instance (ty ~ Rte_ring_headtail) => BG.HasField "prod" Rte_ring ty where
 
     __defined at:__ @rte_ring_core.h 130:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.CompatHasField.HasField "prod" Rte_ring ty where
@@ -2153,7 +2153,7 @@ instance HasCField.HasCField Rte_ring "prod" where
 
     __defined at:__ @rte_ring_core.h 131:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.HasField "hts_prod" Rte_ring ty where
@@ -2166,7 +2166,7 @@ instance ( ty ~ Rte_ring_hts_headtail
 
     __defined at:__ @rte_ring_core.h 131:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.CompatHasField.HasField "hts_prod" Rte_ring ty where
@@ -2195,7 +2195,7 @@ instance HasCField.HasCField Rte_ring "hts_prod" where
 
     __defined at:__ @rte_ring_core.h 132:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.HasField "rts_prod" Rte_ring ty where
@@ -2208,7 +2208,7 @@ instance ( ty ~ Rte_ring_rts_headtail
 
     __defined at:__ @rte_ring_core.h 132:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.CompatHasField.HasField "rts_prod" Rte_ring ty where
@@ -2237,7 +2237,7 @@ instance HasCField.HasCField Rte_ring "rts_prod" where
 
     __defined at:__ @rte_ring_core.h 135:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "cache_guard_135" Rte_ring ty where
@@ -2277,7 +2277,7 @@ instance HasCField.HasCField Rte_ring "cache_guard_135" where
 
     __defined at:__ @rte_ring_core.h 138:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_anon'cons
          ) => BG.CompatHasField.HasField "anon'cons" Rte_ring ty where
@@ -2316,7 +2316,7 @@ instance HasCField.HasCField Rte_ring "anon'cons" where
 
     __defined at:__ @rte_ring_core.h 139:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ Rte_ring_headtail) => BG.HasField "cons" Rte_ring ty where
 
@@ -2328,7 +2328,7 @@ instance (ty ~ Rte_ring_headtail) => BG.HasField "cons" Rte_ring ty where
 
     __defined at:__ @rte_ring_core.h 139:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_headtail
          ) => BG.CompatHasField.HasField "cons" Rte_ring ty where
@@ -2356,7 +2356,7 @@ instance HasCField.HasCField Rte_ring "cons" where
 
     __defined at:__ @rte_ring_core.h 140:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.HasField "hts_cons" Rte_ring ty where
@@ -2369,7 +2369,7 @@ instance ( ty ~ Rte_ring_hts_headtail
 
     __defined at:__ @rte_ring_core.h 140:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_hts_headtail
          ) => BG.CompatHasField.HasField "hts_cons" Rte_ring ty where
@@ -2398,7 +2398,7 @@ instance HasCField.HasCField Rte_ring "hts_cons" where
 
     __defined at:__ @rte_ring_core.h 141:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.HasField "rts_cons" Rte_ring ty where
@@ -2411,7 +2411,7 @@ instance ( ty ~ Rte_ring_rts_headtail
 
     __defined at:__ @rte_ring_core.h 141:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_ring_rts_headtail
          ) => BG.CompatHasField.HasField "rts_cons" Rte_ring ty where
@@ -2440,7 +2440,7 @@ instance HasCField.HasCField Rte_ring "rts_cons" where
 
     __defined at:__ @rte_ring_core.h 144:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "cache_guard_144" Rte_ring ty where
@@ -2480,7 +2480,7 @@ instance HasCField.HasCField Rte_ring "cache_guard_144" where
 
     __defined at:__ @rte_ring_core.h 147:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_SP_ENQ :: BG.CInt
 rING_F_SP_ENQ = (1 :: BG.CInt)
@@ -2489,7 +2489,7 @@ rING_F_SP_ENQ = (1 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 148:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_SC_DEQ :: BG.CInt
 rING_F_SC_DEQ = (2 :: BG.CInt)
@@ -2498,7 +2498,7 @@ rING_F_SC_DEQ = (2 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 157:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_EXACT_SZ :: BG.CInt
 rING_F_EXACT_SZ = (4 :: BG.CInt)
@@ -2507,7 +2507,7 @@ rING_F_EXACT_SZ = (4 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 158:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RING_SZ_MASK :: BG.CUInt
 rTE_RING_SZ_MASK = (2147483647 :: BG.CUInt)
@@ -2516,7 +2516,7 @@ rTE_RING_SZ_MASK = (2147483647 :: BG.CUInt)
 
     __defined at:__ @rte_ring_core.h 160:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_MP_RTS_ENQ :: BG.CInt
 rING_F_MP_RTS_ENQ = (8 :: BG.CInt)
@@ -2525,7 +2525,7 @@ rING_F_MP_RTS_ENQ = (8 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 161:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_MC_RTS_DEQ :: BG.CInt
 rING_F_MC_RTS_DEQ = (16 :: BG.CInt)
@@ -2534,7 +2534,7 @@ rING_F_MC_RTS_DEQ = (16 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 163:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_MP_HTS_ENQ :: BG.CInt
 rING_F_MP_HTS_ENQ = (32 :: BG.CInt)
@@ -2543,7 +2543,7 @@ rING_F_MP_HTS_ENQ = (32 :: BG.CInt)
 
     __defined at:__ @rte_ring_core.h 164:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rING_F_MC_HTS_DEQ :: BG.CInt
 rING_F_MC_HTS_DEQ = (64 :: BG.CInt)

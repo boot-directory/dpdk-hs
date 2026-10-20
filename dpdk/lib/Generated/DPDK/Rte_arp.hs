@@ -43,7 +43,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_arp.h 24:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_arp_ipv4 = Rte_arp_ipv4
   { arp_sha :: Generated.DPDK.Rte_ether.Rte_ether_addr
@@ -51,28 +51,28 @@ data Rte_arp_ipv4 = Rte_arp_ipv4
 
          __defined at:__ @rte_arp.h 25:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_sip :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @arp_sip@
 
          __defined at:__ @rte_arp.h 26:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_tha :: Generated.DPDK.Rte_ether.Rte_ether_addr
     {- ^ __C declaration:__ @arp_tha@
 
          __defined at:__ @rte_arp.h 27:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_tip :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @arp_tip@
 
          __defined at:__ @rte_arp.h 28:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -113,7 +113,7 @@ deriving via Struct.IsStructViaReadRaw Rte_arp_ipv4 instance Struct.IsStruct Rte
 
     __defined at:__ @rte_arp.h 25:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_ether.Rte_ether_addr
          ) => BG.CompatHasField.HasField "arp_sha" Rte_arp_ipv4 ty where
@@ -145,7 +145,7 @@ instance HasCField.HasCField Rte_arp_ipv4 "arp_sha" where
 
     __defined at:__ @rte_arp.h 26:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "arp_sip" Rte_arp_ipv4 ty where
@@ -177,7 +177,7 @@ instance HasCField.HasCField Rte_arp_ipv4 "arp_sip" where
 
     __defined at:__ @rte_arp.h 27:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_ether.Rte_ether_addr
          ) => BG.CompatHasField.HasField "arp_tha" Rte_arp_ipv4 ty where
@@ -209,7 +209,7 @@ instance HasCField.HasCField Rte_arp_ipv4 "arp_tha" where
 
     __defined at:__ @rte_arp.h 28:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "arp_tip" Rte_arp_ipv4 ty where
@@ -241,7 +241,7 @@ instance HasCField.HasCField Rte_arp_ipv4 "arp_tip" where
 
     __defined at:__ @rte_arp.h 34:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_arp_hdr = Rte_arp_hdr
   { arp_hardware :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -249,42 +249,42 @@ data Rte_arp_hdr = Rte_arp_hdr
 
          __defined at:__ @rte_arp.h 35:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_protocol :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @arp_protocol@
 
          __defined at:__ @rte_arp.h 38:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_hlen :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @arp_hlen@
 
          __defined at:__ @rte_arp.h 39:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_plen :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @arp_plen@
 
          __defined at:__ @rte_arp.h 40:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_opcode :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @arp_opcode@
 
          __defined at:__ @rte_arp.h 41:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , arp_data :: Rte_arp_ipv4
     {- ^ __C declaration:__ @arp_data@
 
          __defined at:__ @rte_arp.h 49:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -335,7 +335,7 @@ deriving via Struct.IsStructViaReadRaw Rte_arp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_arp.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "arp_hardware" Rte_arp_hdr ty where
@@ -370,7 +370,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_hardware" where
 
     __defined at:__ @rte_arp.h 38:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "arp_protocol" Rte_arp_hdr ty where
@@ -405,7 +405,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_protocol" where
 
     __defined at:__ @rte_arp.h 39:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "arp_hlen" Rte_arp_hdr ty where
@@ -439,7 +439,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_hlen" where
 
     __defined at:__ @rte_arp.h 40:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "arp_plen" Rte_arp_hdr ty where
@@ -473,7 +473,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_plen" where
 
     __defined at:__ @rte_arp.h 41:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "arp_opcode" Rte_arp_hdr ty where
@@ -507,7 +507,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_opcode" where
 
     __defined at:__ @rte_arp.h 49:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_arp_ipv4
          ) => BG.CompatHasField.HasField "arp_data" Rte_arp_hdr ty where
@@ -540,7 +540,7 @@ instance HasCField.HasCField Rte_arp_hdr "arp_data" where
 
     __defined at:__ @rte_arp.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_HRD_ETHER :: BG.CInt
 rTE_ARP_HRD_ETHER = (1 :: BG.CInt)
@@ -549,7 +549,7 @@ rTE_ARP_HRD_ETHER = (1 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 42:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_REQUEST :: BG.CInt
 rTE_ARP_OP_REQUEST = (1 :: BG.CInt)
@@ -558,7 +558,7 @@ rTE_ARP_OP_REQUEST = (1 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_REPLY :: BG.CInt
 rTE_ARP_OP_REPLY = (2 :: BG.CInt)
@@ -567,7 +567,7 @@ rTE_ARP_OP_REPLY = (2 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 44:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_REVREQUEST :: BG.CInt
 rTE_ARP_OP_REVREQUEST = (3 :: BG.CInt)
@@ -576,7 +576,7 @@ rTE_ARP_OP_REVREQUEST = (3 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 45:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_REVREPLY :: BG.CInt
 rTE_ARP_OP_REVREPLY = (4 :: BG.CInt)
@@ -585,7 +585,7 @@ rTE_ARP_OP_REVREPLY = (4 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 46:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_INVREQUEST :: BG.CInt
 rTE_ARP_OP_INVREQUEST = (8 :: BG.CInt)
@@ -594,7 +594,7 @@ rTE_ARP_OP_INVREQUEST = (8 :: BG.CInt)
 
     __defined at:__ @rte_arp.h 47:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ARP_OP_INVREPLY :: BG.CInt
 rTE_ARP_OP_INVREPLY = (9 :: BG.CInt)

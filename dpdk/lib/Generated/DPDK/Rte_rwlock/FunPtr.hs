@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_rwlock_get_rte_rwlock_read_lock_tm */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_8ed5f417e3e9bd57 (void)) ("
@@ -67,7 +69,7 @@ hs_bindgen_8ed5f417e3e9bd57 =
 
     __defined at:__ @rte_rwlock.h 16:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_lock_tm :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t -> IO ())
 rte_rwlock_read_lock_tm =
@@ -87,7 +89,7 @@ hs_bindgen_759493d7d508f003 =
 
     __defined at:__ @rte_rwlock.h 25:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_unlock_tm :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t -> IO ())
 rte_rwlock_read_unlock_tm =
@@ -107,7 +109,7 @@ hs_bindgen_70d81cbabe4d180e =
 
     __defined at:__ @rte_rwlock.h 35:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_lock_tm :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t -> IO ())
 rte_rwlock_write_lock_tm =
@@ -127,7 +129,7 @@ hs_bindgen_9517d55cd73aa4eb =
 
     __defined at:__ @rte_rwlock.h 44:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_unlock_tm :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t -> IO ())
 rte_rwlock_write_unlock_tm =

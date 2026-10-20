@@ -41,7 +41,7 @@ import Prelude ((<*>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_launch.h 21:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_lcore_state_t = Rte_lcore_state_t
   { unwrap :: BG.CUInt
@@ -138,7 +138,7 @@ instance HasCField.HasCField Rte_lcore_state_t "unwrap" where
 
     __defined at:__ @rte_launch.h 22:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern WAIT :: Rte_lcore_state_t
 pattern WAIT = Rte_lcore_state_t 0
@@ -147,7 +147,7 @@ pattern WAIT = Rte_lcore_state_t 0
 
     __defined at:__ @rte_launch.h 24:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RUNNING :: Rte_lcore_state_t
 pattern RUNNING = Rte_lcore_state_t 1
@@ -156,7 +156,7 @@ pattern RUNNING = Rte_lcore_state_t 1
 
     __defined at:__ @rte_launch.h 31:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Lcore_function_t = Lcore_function_t
   { unwrap :: BG.Ptr BG.Void -> IO BG.CInt
@@ -223,7 +223,7 @@ instance HasCField.HasCField Lcore_function_t "unwrap" where
 
     __defined at:__ @rte_launch.h 73:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_rmt_call_main_t = Rte_rmt_call_main_t
   { unwrap :: BG.CUInt
@@ -321,7 +321,7 @@ instance HasCField.HasCField Rte_rmt_call_main_t "unwrap" where
 
     __defined at:__ @rte_launch.h 74:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern SKIP_MAIN :: Rte_rmt_call_main_t
 pattern SKIP_MAIN = Rte_rmt_call_main_t 0
@@ -330,7 +330,7 @@ pattern SKIP_MAIN = Rte_rmt_call_main_t 0
 
     __defined at:__ @rte_launch.h 75:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern CALL_MAIN :: Rte_rmt_call_main_t
 pattern CALL_MAIN = Rte_rmt_call_main_t 1

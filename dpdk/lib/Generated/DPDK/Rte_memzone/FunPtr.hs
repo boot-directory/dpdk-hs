@@ -25,7 +25,9 @@ import Generated.DPDK.Rte_memzone
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_memzone_get_rte_memzone_max_set */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_c2b42c2ee6a6efa5 (void)) ("
@@ -128,7 +130,7 @@ hs_bindgen_c2b42c2ee6a6efa5 =
 
     __defined at:__ @rte_memzone.h 77:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_max_set :: BG.FunPtr (HsBindgen.Runtime.LibC.CSize -> IO BG.CInt)
 rte_memzone_max_set =
@@ -148,7 +150,7 @@ hs_bindgen_1286b60d7104b638 =
 
     __defined at:__ @rte_memzone.h 87:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_max_get :: BG.FunPtr (IO HsBindgen.Runtime.LibC.CSize)
 rte_memzone_max_get =
@@ -168,7 +170,7 @@ hs_bindgen_aa63a33f50e6b3e7 =
 
     __defined at:__ @rte_memzone.h 146:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> BG.CInt -> BG.CUInt -> IO (PtrConst.PtrConst Rte_memzone))
 rte_memzone_reserve =
@@ -188,7 +190,7 @@ hs_bindgen_eca5c62859c0d564 =
 
     __defined at:__ @rte_memzone.h 211:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve_aligned :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> BG.CInt -> BG.CUInt -> BG.CUInt -> IO (PtrConst.PtrConst Rte_memzone))
 rte_memzone_reserve_aligned =
@@ -208,7 +210,7 @@ hs_bindgen_bb35639720bac34d =
 
     __defined at:__ @rte_memzone.h 282:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_reserve_bounded :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> HsBindgen.Runtime.LibC.CSize -> BG.CInt -> BG.CUInt -> BG.CUInt -> BG.CUInt -> IO (PtrConst.PtrConst Rte_memzone))
 rte_memzone_reserve_bounded =
@@ -228,7 +230,7 @@ hs_bindgen_4961df5450cfba0c =
 
     __defined at:__ @rte_memzone.h 295:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_free :: BG.FunPtr (PtrConst.PtrConst Rte_memzone -> IO BG.CInt)
 rte_memzone_free =
@@ -248,7 +250,7 @@ hs_bindgen_8d617d27d99c0035 =
 
     __defined at:__ @rte_memzone.h 308:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_lookup :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> IO (PtrConst.PtrConst Rte_memzone))
 rte_memzone_lookup =
@@ -268,7 +270,7 @@ hs_bindgen_8261d2ef4a890dad =
 
     __defined at:__ @rte_memzone.h 316:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_memzone_dump =
@@ -288,7 +290,7 @@ hs_bindgen_7cd19141ac39fa72 =
 
     __defined at:__ @rte_memzone.h 326:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memzone_walk :: BG.FunPtr (BG.FunPtr (PtrConst.PtrConst Rte_memzone -> BG.Ptr BG.Void -> IO ()) -> BG.Ptr BG.Void -> IO ())
 rte_memzone_walk =

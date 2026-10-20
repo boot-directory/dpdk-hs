@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_73ba13ced3afb3ab ("
   , "  uint64_t arg1"
   , ")"
@@ -58,7 +60,7 @@ hs_bindgen_73ba13ced3afb3ab =
 
     __defined at:__ @rte_random.h 35:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_srand ::
      HsBindgen.Runtime.LibC.Word64
@@ -79,7 +81,7 @@ hs_bindgen_5d56c53d0cf36a6a =
 
     __defined at:__ @rte_random.h 50:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_rand :: IO HsBindgen.Runtime.LibC.Word64
 rte_rand = hs_bindgen_5d56c53d0cf36a6a
@@ -101,7 +103,7 @@ hs_bindgen_22b5a809c27912ba =
 
     __defined at:__ @rte_random.h 68:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_rand_max ::
      HsBindgen.Runtime.LibC.Word64
@@ -122,7 +124,7 @@ hs_bindgen_ecce42b7f7701bbb =
 
     __defined at:__ @rte_random.h 85:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_drand :: IO BG.CDouble
 rte_drand = hs_bindgen_ecce42b7f7701bbb

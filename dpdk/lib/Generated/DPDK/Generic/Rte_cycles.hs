@@ -40,7 +40,7 @@ import Prelude ((<*>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @generic\/rte_cycles.h 23:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mS_PER_S :: BG.CInt
 mS_PER_S = (1000 :: BG.CInt)
@@ -49,7 +49,7 @@ mS_PER_S = (1000 :: BG.CInt)
 
     __defined at:__ @generic\/rte_cycles.h 24:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 uS_PER_S :: BG.CInt
 uS_PER_S = (1000000 :: BG.CInt)
@@ -58,7 +58,7 @@ uS_PER_S = (1000000 :: BG.CInt)
 
     __defined at:__ @generic\/rte_cycles.h 25:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 nS_PER_S :: BG.CInt
 nS_PER_S = (1000000000 :: BG.CInt)
@@ -67,7 +67,7 @@ nS_PER_S = (1000000000 :: BG.CInt)
 
     __defined at:__ @generic\/rte_cycles.h 27:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Timer_source = Timer_source
   { unwrap :: BG.CUInt
@@ -164,7 +164,7 @@ instance HasCField.HasCField Timer_source "unwrap" where
 
     __defined at:__ @generic\/rte_cycles.h 28:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern EAL_TIMER_TSC :: Timer_source
 pattern EAL_TIMER_TSC = Timer_source 0
@@ -173,7 +173,7 @@ pattern EAL_TIMER_TSC = Timer_source 0
 
     __defined at:__ @generic\/rte_cycles.h 29:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern EAL_TIMER_HPET :: Timer_source
 pattern EAL_TIMER_HPET = Timer_source 1

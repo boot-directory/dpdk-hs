@@ -40,7 +40,7 @@ import Prelude (Bounded, Enum, Eq, Integral, Num, Ord, Read, Real, Show, type (~
 
     __defined at:__ @generic\/rte_byteorder.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BIG_ENDIAN :: BG.CInt
 rTE_BIG_ENDIAN = (1 :: BG.CInt)
@@ -49,7 +49,7 @@ rTE_BIG_ENDIAN = (1 :: BG.CInt)
 
     __defined at:__ @generic\/rte_byteorder.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_LITTLE_ENDIAN :: BG.CInt
 rTE_LITTLE_ENDIAN = (2 :: BG.CInt)
@@ -58,7 +58,7 @@ rTE_LITTLE_ENDIAN = (2 :: BG.CInt)
 
     __defined at:__ @generic\/rte_byteorder.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_BYTE_ORDER :: BG.CInt
 rTE_BYTE_ORDER = rTE_LITTLE_ENDIAN
@@ -67,7 +67,7 @@ rTE_BYTE_ORDER = rTE_LITTLE_ENDIAN
 
     __defined at:__ @generic\/rte_byteorder.h 116:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_be16_t = Rte_be16_t
   { unwrap :: HsBindgen.Runtime.LibC.Word16
@@ -115,7 +115,7 @@ instance HasCField.HasCField Rte_be16_t "unwrap" where
 
     __defined at:__ @generic\/rte_byteorder.h 117:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_be32_t = Rte_be32_t
   { unwrap :: HsBindgen.Runtime.LibC.Word32
@@ -163,7 +163,7 @@ instance HasCField.HasCField Rte_be32_t "unwrap" where
 
     __defined at:__ @generic\/rte_byteorder.h 118:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_be64_t = Rte_be64_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -211,7 +211,7 @@ instance HasCField.HasCField Rte_be64_t "unwrap" where
 
     __defined at:__ @generic\/rte_byteorder.h 119:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_le16_t = Rte_le16_t
   { unwrap :: HsBindgen.Runtime.LibC.Word16
@@ -259,7 +259,7 @@ instance HasCField.HasCField Rte_le16_t "unwrap" where
 
     __defined at:__ @generic\/rte_byteorder.h 120:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_le32_t = Rte_le32_t
   { unwrap :: HsBindgen.Runtime.LibC.Word32
@@ -307,7 +307,7 @@ instance HasCField.HasCField Rte_le32_t "unwrap" where
 
     __defined at:__ @generic\/rte_byteorder.h 121:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_le64_t = Rte_le64_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64

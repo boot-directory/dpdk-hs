@@ -23,7 +23,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ethdev_trace_fp_get___rte_ethdev_trace_rx_burst_empty */"
   , "__attribute__ ((const))"
   , "rte_trace_point_t *hs_bindgen_1b1da35e5ed0e54a (void)"
@@ -94,7 +96,7 @@ hs_bindgen_1b1da35e5ed0e54a =
 
     __defined at:__ @rte_ethdev_trace_fp.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ethdev_trace_rx_burst_empty :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_ethdev_trace_rx_burst_empty =
@@ -114,7 +116,7 @@ hs_bindgen_44dd4971a98d21e1 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 29:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ethdev_trace_rx_burst_nonempty :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_ethdev_trace_rx_burst_nonempty =
@@ -134,7 +136,7 @@ hs_bindgen_34f0344306e5de01 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 39:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ethdev_trace_tx_burst :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_ethdev_trace_tx_burst =
@@ -154,7 +156,7 @@ hs_bindgen_2d8247927f73d853 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 49:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_call_rx_callbacks_empty :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_call_rx_callbacks_empty =
@@ -174,7 +176,7 @@ hs_bindgen_05eecd95c515fa45 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 59:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_call_rx_callbacks_nonempty :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_call_rx_callbacks_nonempty =
@@ -194,7 +196,7 @@ hs_bindgen_95ea43a209573a9d =
 
     __defined at:__ @rte_ethdev_trace_fp.h 70:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_call_tx_callbacks :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_call_tx_callbacks =
@@ -214,7 +216,7 @@ hs_bindgen_eae6e7ace480a379 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 80:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_tx_buffer_drop_callback :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_tx_buffer_drop_callback =
@@ -234,7 +236,7 @@ hs_bindgen_8ddb0e925ae8694b =
 
     __defined at:__ @rte_ethdev_trace_fp.h 87:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_tx_buffer_count_callback :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_tx_buffer_count_callback =
@@ -254,7 +256,7 @@ hs_bindgen_60f0677c7ef29d71 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 95:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_eth_trace_tx_queue_count :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_eth_trace_tx_queue_count =

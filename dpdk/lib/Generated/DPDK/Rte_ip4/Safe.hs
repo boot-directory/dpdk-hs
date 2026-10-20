@@ -26,7 +26,9 @@ import Generated.DPDK.Rte_ip4
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint8_t hs_bindgen_23bd1d5218c5374c ("
   , "  struct rte_ipv4_hdr const *arg1"
   , ")"
@@ -110,7 +112,7 @@ hs_bindgen_23bd1d5218c5374c =
 
     __defined at:__ @rte_ip4.h 140:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_hdr_len ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -135,7 +137,7 @@ hs_bindgen_062a1881da8f71b1 =
 
     __defined at:__ @rte_ip4.h 157:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_cksum ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -163,7 +165,7 @@ hs_bindgen_164341751636a29b =
 
     __defined at:__ @rte_ip4.h 218:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_phdr_cksum ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -193,7 +195,7 @@ hs_bindgen_8a47c92c5bc43970 =
 
     __defined at:__ @rte_ip4.h 248:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv4_udptcp_cksum ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -223,7 +225,7 @@ hs_bindgen_92402a23fb22ef7d =
 
     __defined at:__ @rte_ip4.h 282:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -256,7 +258,7 @@ hs_bindgen_9427a9efa36f8c3b =
 
     __defined at:__ @rte_ip4.h 303:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv4_udptcp_cksum_mbuf ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -292,7 +294,7 @@ hs_bindgen_9151283fd169c542 =
 
     __defined at:__ @rte_ip4.h 339:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_mbuf ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -325,7 +327,7 @@ hs_bindgen_6dbcdf75a1b97135 =
 
     __defined at:__ @rte_ip4.h 371:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_verify ::
      PtrConst.PtrConst Rte_ipv4_hdr
@@ -359,7 +361,7 @@ hs_bindgen_d311f467f6f13ea3 =
 
     __defined at:__ @rte_ip4.h 398:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_mbuf_verify ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf

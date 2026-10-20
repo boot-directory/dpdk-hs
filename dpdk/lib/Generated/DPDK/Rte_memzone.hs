@@ -50,7 +50,7 @@ import Prelude ((<*>), (>>), IO, Int, fmap, pure, type (~))
 
     __defined at:__ @rte_memzone.h 33:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_2MB :: BG.CInt
 rTE_MEMZONE_2MB = (1 :: BG.CInt)
@@ -59,7 +59,7 @@ rTE_MEMZONE_2MB = (1 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_1GB :: BG.CInt
 rTE_MEMZONE_1GB = (2 :: BG.CInt)
@@ -68,7 +68,7 @@ rTE_MEMZONE_1GB = (2 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_16MB :: BG.CInt
 rTE_MEMZONE_16MB = (256 :: BG.CInt)
@@ -77,7 +77,7 @@ rTE_MEMZONE_16MB = (256 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_16GB :: BG.CInt
 rTE_MEMZONE_16GB = (512 :: BG.CInt)
@@ -86,7 +86,7 @@ rTE_MEMZONE_16GB = (512 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 37:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_256KB :: BG.CInt
 rTE_MEMZONE_256KB = (65536 :: BG.CInt)
@@ -95,7 +95,7 @@ rTE_MEMZONE_256KB = (65536 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 38:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_256MB :: BG.CInt
 rTE_MEMZONE_256MB = (131072 :: BG.CInt)
@@ -104,7 +104,7 @@ rTE_MEMZONE_256MB = (131072 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_512MB :: BG.CInt
 rTE_MEMZONE_512MB = (262144 :: BG.CInt)
@@ -113,7 +113,7 @@ rTE_MEMZONE_512MB = (262144 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_4GB :: BG.CInt
 rTE_MEMZONE_4GB = (524288 :: BG.CInt)
@@ -122,7 +122,7 @@ rTE_MEMZONE_4GB = (524288 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 41:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_SIZE_HINT_ONLY :: BG.CInt
 rTE_MEMZONE_SIZE_HINT_ONLY = (4 :: BG.CInt)
@@ -131,7 +131,7 @@ rTE_MEMZONE_SIZE_HINT_ONLY = (4 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 42:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_IOVA_CONTIG :: BG.CInt
 rTE_MEMZONE_IOVA_CONTIG = (1048576 :: BG.CInt)
@@ -140,7 +140,7 @@ rTE_MEMZONE_IOVA_CONTIG = (1048576 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 50:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEMZONE_NAMESIZE :: BG.CInt
 rTE_MEMZONE_NAMESIZE = (32 :: BG.CInt)
@@ -149,7 +149,7 @@ rTE_MEMZONE_NAMESIZE = (32 :: BG.CInt)
 
     __defined at:__ @rte_memzone.h 54:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memzone_anon'addr = Rte_memzone_anon'addr
   { unwrap :: BG.ByteArray
@@ -170,7 +170,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_memzone_anon'addr
 
     __defined at:__ @rte_memzone.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.HasField "addr" Rte_memzone_anon'addr ty where
@@ -181,7 +181,7 @@ instance ( ty ~ BG.Ptr BG.Void
 
     __defined at:__ @rte_memzone.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_memzone_anon'addr ty where
@@ -207,7 +207,7 @@ instance HasCField.HasCField Rte_memzone_anon'addr "addr" where
 
     __defined at:__ @rte_memzone.h 56:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memzone_anon'addr ty where
@@ -218,7 +218,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memzone.h 56:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memzone_anon'addr ty where
@@ -244,7 +244,7 @@ instance HasCField.HasCField Rte_memzone_anon'addr "addr_64" where
 
     __defined at:__ @rte_memzone.h 48:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_memzone = Rte_memzone
   { name :: CA.ConstantArray 32 BG.CChar
@@ -252,49 +252,49 @@ data Rte_memzone = Rte_memzone
 
          __defined at:__ @rte_memzone.h 51:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , iova :: Generated.DPDK.Rte_common.Rte_iova_t
     {- ^ __C declaration:__ @iova@
 
          __defined at:__ @rte_memzone.h 53:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'addr :: Rte_memzone_anon'addr
     {- ^ __C declaration:__ @anon\'addr@
 
          __defined at:__ @rte_memzone.h 54:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_memzone.h 58:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , hugepage_sz :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @hugepage_sz@
 
          __defined at:__ @rte_memzone.h 60:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , socket_id :: HsBindgen.Runtime.LibC.Int32
     {- ^ __C declaration:__ @socket_id@
 
          __defined at:__ @rte_memzone.h 62:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_memzone.h 64:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -341,7 +341,7 @@ deriving via Struct.IsStructViaReadRaw Rte_memzone instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_memzone.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 32 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_memzone ty where
@@ -376,7 +376,7 @@ instance HasCField.HasCField Rte_memzone "name" where
 
     __defined at:__ @rte_memzone.h 53:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "iova" Rte_memzone ty where
@@ -411,7 +411,7 @@ instance HasCField.HasCField Rte_memzone "iova" where
 
     __defined at:__ @rte_memzone.h 54:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_memzone_anon'addr
          ) => BG.CompatHasField.HasField "anon'addr" Rte_memzone ty where
@@ -446,7 +446,7 @@ instance HasCField.HasCField Rte_memzone "anon'addr" where
 
     __defined at:__ @rte_memzone.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ BG.Ptr BG.Void) => BG.HasField "addr" Rte_memzone ty where
 
@@ -458,7 +458,7 @@ instance (ty ~ BG.Ptr BG.Void) => BG.HasField "addr" Rte_memzone ty where
 
     __defined at:__ @rte_memzone.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_memzone ty where
@@ -486,7 +486,7 @@ instance HasCField.HasCField Rte_memzone "addr" where
 
     __defined at:__ @rte_memzone.h 56:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memzone ty where
@@ -499,7 +499,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memzone.h 56:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memzone ty where
@@ -528,7 +528,7 @@ instance HasCField.HasCField Rte_memzone "addr_64" where
 
     __defined at:__ @rte_memzone.h 58:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "len" Rte_memzone ty where
@@ -563,7 +563,7 @@ instance HasCField.HasCField Rte_memzone "len" where
 
     __defined at:__ @rte_memzone.h 60:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "hugepage_sz" Rte_memzone ty where
@@ -599,7 +599,7 @@ instance HasCField.HasCField Rte_memzone "hugepage_sz" where
 
     __defined at:__ @rte_memzone.h 62:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int32
          ) => BG.CompatHasField.HasField "socket_id" Rte_memzone ty where
@@ -634,7 +634,7 @@ instance HasCField.HasCField Rte_memzone "socket_id" where
 
     __defined at:__ @rte_memzone.h 64:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flags" Rte_memzone ty where

@@ -22,7 +22,9 @@ import Generated.DPDK.Rte_uuid
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_uuid_get_rte_uuid_is_null */"
   , "__attribute__ ((const))"
   , "_Bool (*hs_bindgen_662dae46c0141346 (void)) ("
@@ -84,7 +86,7 @@ hs_bindgen_662dae46c0141346 =
 
     __defined at:__ @rte_uuid.h 51:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_is_null :: BG.FunPtr (PtrConst.PtrConst (IsA.Elem Rte_uuid_t) -> IO BG.CBool)
 rte_uuid_is_null =
@@ -104,7 +106,7 @@ hs_bindgen_8e5472755329300d =
 
     __defined at:__ @rte_uuid.h 61:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_copy :: BG.FunPtr (BG.Ptr (IsA.Elem Rte_uuid_t) -> PtrConst.PtrConst (IsA.Elem Rte_uuid_t) -> IO ())
 rte_uuid_copy =
@@ -124,7 +126,7 @@ hs_bindgen_d78edd7c17254eec =
 
     __defined at:__ @rte_uuid.h 77:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_compare :: BG.FunPtr (PtrConst.PtrConst (IsA.Elem Rte_uuid_t) -> PtrConst.PtrConst (IsA.Elem Rte_uuid_t) -> IO BG.CInt)
 rte_uuid_compare =
@@ -144,7 +146,7 @@ hs_bindgen_27de9d27e569b27b =
 
     __defined at:__ @rte_uuid.h 89:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_parse :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> BG.Ptr (IsA.Elem Rte_uuid_t) -> IO BG.CInt)
 rte_uuid_parse =
@@ -164,7 +166,7 @@ hs_bindgen_49e821a59de94320 =
 
     __defined at:__ @rte_uuid.h 101:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_unparse :: BG.FunPtr (PtrConst.PtrConst (IsA.Elem Rte_uuid_t) -> BG.Ptr BG.CChar -> HsBindgen.Runtime.LibC.CSize -> IO ())
 rte_uuid_unparse =

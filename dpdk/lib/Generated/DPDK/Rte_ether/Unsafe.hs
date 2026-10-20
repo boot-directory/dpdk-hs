@@ -31,7 +31,9 @@ import Generated.DPDK.Rte_ether
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_309df1b65e131e74 ("
   , "  struct rte_ether_addr const *arg1,"
   , "  struct rte_ether_addr const *arg2"
@@ -143,7 +145,7 @@ hs_bindgen_309df1b65e131e74 =
 
     __defined at:__ @rte_ether.h 102:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_same_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -170,7 +172,7 @@ hs_bindgen_31f519cad2b85e8c =
 
     __defined at:__ @rte_ether.h 121:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_zero_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -195,7 +197,7 @@ hs_bindgen_121d88bc87c73dc0 =
 
     __defined at:__ @rte_ether.h 138:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_unicast_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -221,7 +223,7 @@ hs_bindgen_c9c7ca528b487a6f =
 
     __defined at:__ @rte_ether.h 153:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_multicast_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -247,7 +249,7 @@ hs_bindgen_efe94309ca5cf8f5 =
 
     __defined at:__ @rte_ether.h 168:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_broadcast_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -273,7 +275,7 @@ hs_bindgen_269c2a4780f4b3a3 =
 
     __defined at:__ @rte_ether.h 185:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_universal_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -299,7 +301,7 @@ hs_bindgen_da7e2aab25d206f2 =
 
     __defined at:__ @rte_ether.h 200:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_local_admin_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -325,7 +327,7 @@ hs_bindgen_2b80ecbe5f9bd55c =
 
     __defined at:__ @rte_ether.h 216:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_is_valid_assigned_ether_addr ::
      PtrConst.PtrConst Rte_ether_addr
@@ -351,7 +353,7 @@ hs_bindgen_edb370195ae5c87b =
 
     __defined at:__ @rte_ether.h 228:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_random_addr ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -379,7 +381,7 @@ hs_bindgen_8a1f084a6ddf232a =
 
     __defined at:__ @rte_ether.h 239:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ether_addr_copy ::
      PtrConst.PtrConst Rte_ether_addr
@@ -412,7 +414,7 @@ hs_bindgen_943cd492d25c3316 =
 
     __defined at:__ @rte_ether.h 271:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ether_format_addr ::
      BG.Ptr BG.CChar
@@ -444,7 +446,7 @@ hs_bindgen_545fae03ff7295a9 =
 
     __defined at:__ @rte_ether.h 294:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ether_unformat_addr ::
      PtrConst.PtrConst BG.CChar
@@ -471,7 +473,7 @@ hs_bindgen_029029dda45a417a =
 
     __defined at:__ @rte_ether.h 361:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_vlan_strip ::
      BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -496,7 +498,7 @@ hs_bindgen_3baae90c7c68e14c =
 
     __defined at:__ @rte_ether.h 393:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_vlan_insert ::
      BG.Ptr (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf)

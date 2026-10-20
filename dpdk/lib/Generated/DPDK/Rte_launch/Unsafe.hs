@@ -19,7 +19,9 @@ import Generated.DPDK.Rte_launch
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_bf863f10125e0f44 ("
   , "  lcore_function_t *arg1,"
   , "  void *arg2,"
@@ -77,7 +79,7 @@ hs_bindgen_bf863f10125e0f44 =
 
     __defined at:__ @rte_launch.h 67:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_remote_launch ::
      BG.FunPtr Lcore_function_t
@@ -112,7 +114,7 @@ hs_bindgen_984b8e5c2dd5636c =
 
     __defined at:__ @rte_launch.h 99:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_mp_remote_launch ::
      BG.FunPtr Lcore_function_t
@@ -142,7 +144,7 @@ hs_bindgen_0f9a8caec12d1106 =
 
     __defined at:__ @rte_launch.h 112:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_get_lcore_state ::
      BG.CUInt
@@ -167,7 +169,7 @@ hs_bindgen_41d94921a7b625e7 =
 
     __defined at:__ @rte_launch.h 130:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_wait_lcore ::
      BG.CUInt
@@ -188,7 +190,7 @@ hs_bindgen_c7eed703f4992e84 =
 
     __defined at:__ @rte_launch.h 142:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_mp_wait_lcore :: IO ()
 rte_eal_mp_wait_lcore = hs_bindgen_c7eed703f4992e84

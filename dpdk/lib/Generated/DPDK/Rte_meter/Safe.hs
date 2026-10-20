@@ -27,7 +27,9 @@ import Generated.DPDK.Rte_meter
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_83769b74ca653ca6 ("
   , "  struct rte_meter_srtcm_profile *arg1,"
   , "  struct rte_meter_srtcm_params *arg2"
@@ -149,7 +151,7 @@ hs_bindgen_83769b74ca653ca6 =
 
     __defined at:__ @rte_meter.h 109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_profile_config ::
      BG.Ptr Rte_meter_srtcm_profile
@@ -180,7 +182,7 @@ hs_bindgen_5f04c520c21232a1 =
 
     __defined at:__ @rte_meter.h 123:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_profile_config ::
      BG.Ptr Rte_meter_trtcm_profile
@@ -211,7 +213,7 @@ hs_bindgen_ff1729847d038f0b =
 
     __defined at:__ @rte_meter.h 136:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_profile_config ::
      BG.Ptr Rte_meter_trtcm_rfc4115_profile
@@ -242,7 +244,7 @@ hs_bindgen_1981a7d33ac3b9de =
 
     __defined at:__ @rte_meter.h 151:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_config ::
      BG.Ptr Rte_meter_srtcm
@@ -272,7 +274,7 @@ hs_bindgen_ec46a9020cc48951 =
 
     __defined at:__ @rte_meter.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_config ::
      BG.Ptr Rte_meter_trtcm
@@ -302,7 +304,7 @@ hs_bindgen_2d9abd392489139d =
 
     __defined at:__ @rte_meter.h 179:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_config ::
      BG.Ptr Rte_meter_trtcm_rfc4115
@@ -339,7 +341,7 @@ hs_bindgen_bb17238660e0fc81 =
 
     __defined at:__ @rte_meter.h 396:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_color_blind_check ::
      BG.Ptr Rte_meter_srtcm
@@ -383,7 +385,7 @@ hs_bindgen_d0d1ceb4784b7493 =
 
     __defined at:__ @rte_meter.h 437:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_color_aware_check ::
      BG.Ptr Rte_meter_srtcm
@@ -426,7 +428,7 @@ hs_bindgen_74d07c3a600fafa7 =
 
     __defined at:__ @rte_meter.h 479:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_color_blind_check ::
      BG.Ptr Rte_meter_trtcm
@@ -470,7 +472,7 @@ hs_bindgen_1de238aabecf2c90 =
 
     __defined at:__ @rte_meter.h 521:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_color_aware_check ::
      BG.Ptr Rte_meter_trtcm
@@ -513,7 +515,7 @@ hs_bindgen_b2e1b6ffade36cdc =
 
     __defined at:__ @rte_meter.h 564:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_color_blind_check ::
      BG.Ptr Rte_meter_trtcm_rfc4115
@@ -557,7 +559,7 @@ hs_bindgen_b2a7e442b5a5ee00 =
 
     __defined at:__ @rte_meter.h 607:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_color_aware_check ::
      BG.Ptr Rte_meter_trtcm_rfc4115

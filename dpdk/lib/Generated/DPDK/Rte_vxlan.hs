@@ -62,7 +62,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_vxlan.h 20:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_DEFAULT_PORT :: BG.CInt
 rTE_VXLAN_DEFAULT_PORT = (4789 :: BG.CInt)
@@ -71,7 +71,7 @@ rTE_VXLAN_DEFAULT_PORT = (4789 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 22:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_DEFAULT_PORT :: BG.CInt
 rTE_VXLAN_GPE_DEFAULT_PORT = (4790 :: BG.CInt)
@@ -80,7 +80,7 @@ rTE_VXLAN_GPE_DEFAULT_PORT = (4790 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 36:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o
   { flag_o :: HsBindgen.Runtime.LibC.Word8
@@ -88,49 +88,49 @@ data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o = Rte_vx
 
          __defined at:__ @rte_vxlan.h 46:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_b :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_b@
 
          __defined at:__ @rte_vxlan.h 47:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_p :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_p@
 
          __defined at:__ @rte_vxlan.h 48:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_i :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_i@
 
          __defined at:__ @rte_vxlan.h 49:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_ver :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_ver@
 
          __defined at:__ @rte_vxlan.h 50:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_rsvd :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_rsvd@
 
          __defined at:__ @rte_vxlan.h 51:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_g :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_g@
 
          __defined at:__ @rte_vxlan.h 52:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -184,7 +184,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr_anon'vx_flags_anon'anon'fla
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -221,7 +221,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -258,7 +258,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -295,7 +295,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -332,7 +332,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -369,7 +369,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -406,7 +406,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o ty where
@@ -443,7 +443,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 34:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags
   { unwrap :: BG.ByteArray
@@ -464,7 +464,7 @@ deriving via BG.SizedByteArray 1 1 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -475,7 +475,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -501,7 +501,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 36:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o
          ) => BG.HasField "anon'flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -512,7 +512,7 @@ instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag
 
     __defined at:__ @rte_vxlan.h 36:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags_anon'flag_o
          ) => BG.CompatHasField.HasField "anon'flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -539,7 +539,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -552,7 +552,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -581,7 +581,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -594,7 +594,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -623,7 +623,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -636,7 +636,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -665,7 +665,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -678,7 +678,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -707,7 +707,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -720,7 +720,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -749,7 +749,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -762,7 +762,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -791,7 +791,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -804,7 +804,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags ty where
@@ -833,7 +833,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'fl
 
     __defined at:__ @rte_vxlan.h 74:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe
   { rsvd0_gpe :: HsBindgen.Runtime.LibC.Word8
@@ -841,14 +841,14 @@ data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon
 
          __defined at:__ @rte_vxlan.h 75:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @proto@
 
          __defined at:__ @rte_vxlan.h 76:16@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -887,7 +887,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr_anon'vx_flags_anon'anon'fla
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe ty where
@@ -915,7 +915,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe ty where
@@ -943,7 +943,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 72:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id
   { unwrap :: BG.ByteArray
@@ -964,7 +964,7 @@ deriving via BG.SizedByteArray 2 2 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -975,7 +975,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1001,7 +1001,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 74:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe
          ) => BG.HasField "anon'rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1012,7 +1012,7 @@ instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd
 
     __defined at:__ @rte_vxlan.h 74:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id_anon'rsvd0_gpe
          ) => BG.CompatHasField.HasField "anon'rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1039,7 +1039,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1052,7 +1052,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1081,7 +1081,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1094,7 +1094,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id ty where
@@ -1123,7 +1123,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 58:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3
   { rsvd0_gbp3 :: HsBindgen.Runtime.LibC.Word8
@@ -1131,42 +1131,42 @@ data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 = Rt
 
          __defined at:__ @rte_vxlan.h 66:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_a :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_a@
 
          __defined at:__ @rte_vxlan.h 67:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd0_gbp2 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd0_gbp2@
 
          __defined at:__ @rte_vxlan.h 68:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag_d :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag_d@
 
          __defined at:__ @rte_vxlan.h 69:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd0_gbp1 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd0_gbp1@
 
          __defined at:__ @rte_vxlan.h 70:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'policy_id :: Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id
     {- ^ __C declaration:__ @anon\'policy_id@
 
          __defined at:__ @rte_vxlan.h 72:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1217,7 +1217,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr_anon'vx_flags_anon'anon'fla
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1254,7 +1254,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1290,7 +1290,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1327,7 +1327,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1363,7 +1363,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1400,7 +1400,7 @@ instance HasCBitfield.HasCBitfield Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_a
 
     __defined at:__ @rte_vxlan.h 72:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3_anon'policy_id
          ) => BG.CompatHasField.HasField "anon'policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1435,7 +1435,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1448,7 +1448,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1477,7 +1477,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1490,7 +1490,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1519,7 +1519,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1532,7 +1532,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3 ty where
@@ -1561,7 +1561,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 56:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0
   { unwrap :: BG.ByteArray
@@ -1582,7 +1582,7 @@ deriving via BG.SizedByteArray 3 1 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1593,7 +1593,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1619,7 +1619,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 58:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3
          ) => BG.HasField "anon'rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1630,7 +1630,7 @@ instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd
 
     __defined at:__ @rte_vxlan.h 58:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0_anon'rsvd0_gbp3
          ) => BG.CompatHasField.HasField "anon'rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1657,7 +1657,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1670,7 +1670,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1699,7 +1699,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1712,7 +1712,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1741,7 +1741,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1754,7 +1754,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1783,7 +1783,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1796,7 +1796,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1825,7 +1825,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1838,7 +1838,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1867,7 +1867,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1880,7 +1880,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1909,7 +1909,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1922,7 +1922,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1951,7 +1951,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1964,7 +1964,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0 ty where
@@ -1993,7 +1993,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rs
 
     __defined at:__ @rte_vxlan.h 33:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags = Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags
   { anon'flags :: Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags
@@ -2001,14 +2001,14 @@ data Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags = Rte_vxlan_hdr_anon'vx_flags_a
 
          __defined at:__ @rte_vxlan.h 34:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'rsvd0 :: Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0
     {- ^ __C declaration:__ @anon\'rsvd0@
 
          __defined at:__ @rte_vxlan.h 56:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -2045,7 +2045,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr_anon'vx_flags_anon'anon'fla
 
     __defined at:__ @rte_vxlan.h 34:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'flags
          ) => BG.CompatHasField.HasField "anon'flags" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2073,7 +2073,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "anon'f
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2086,7 +2086,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2115,7 +2115,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flags"
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2128,7 +2128,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2157,7 +2157,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_o
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2170,7 +2170,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2199,7 +2199,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_b
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2212,7 +2212,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2241,7 +2241,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_p
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2254,7 +2254,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2283,7 +2283,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_i
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2296,7 +2296,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2325,7 +2325,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_v
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2338,7 +2338,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2367,7 +2367,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_r
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2380,7 +2380,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2409,7 +2409,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_g
 
     __defined at:__ @rte_vxlan.h 56:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags_anon'rsvd0
          ) => BG.CompatHasField.HasField "anon'rsvd0" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2437,7 +2437,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "anon'r
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2450,7 +2450,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2479,7 +2479,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "rsvd0"
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2492,7 +2492,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2521,7 +2521,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "rsvd0_
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2534,7 +2534,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2563,7 +2563,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_a
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2576,7 +2576,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2605,7 +2605,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "rsvd0_
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2618,7 +2618,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2647,7 +2647,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "flag_d
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2660,7 +2660,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2689,7 +2689,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "rsvd0_
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2702,7 +2702,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2731,7 +2731,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "policy
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2744,7 +2744,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2773,7 +2773,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "rsvd0_
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2786,7 +2786,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags ty where
@@ -2815,7 +2815,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags "proto"
 
     __defined at:__ @rte_vxlan.h 31:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_flags = Rte_vxlan_hdr_anon'vx_flags
   { unwrap :: BG.ByteArray
@@ -2836,7 +2836,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 32:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2847,7 +2847,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 32:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2873,7 +2873,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "vx_flags" where
 
     __defined at:__ @rte_vxlan.h 33:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags
          ) => BG.HasField "anon'anon'flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2884,7 +2884,7 @@ instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags
 
     __defined at:__ @rte_vxlan.h 33:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags_anon'anon'flags
          ) => BG.CompatHasField.HasField "anon'anon'flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2911,7 +2911,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "anon'anon'flags" where
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2924,7 +2924,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2953,7 +2953,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flags" where
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2966,7 +2966,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_o" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -2995,7 +2995,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_o" where
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3008,7 +3008,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_b" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3037,7 +3037,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_b" where
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3050,7 +3050,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_p" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3079,7 +3079,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_p" where
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3092,7 +3092,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_i" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3121,7 +3121,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_i" where
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3134,7 +3134,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_ver" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3163,7 +3163,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_ver" where
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3176,7 +3176,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_rsvd" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3205,7 +3205,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_rsvd" where
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3218,7 +3218,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_g" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3247,7 +3247,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_g" where
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3260,7 +3260,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3289,7 +3289,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "rsvd0" where
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3302,7 +3302,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp3" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3331,7 +3331,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "rsvd0_gbp3" where
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3344,7 +3344,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_a" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3373,7 +3373,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_a" where
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3386,7 +3386,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp2" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3415,7 +3415,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "rsvd0_gbp2" where
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3428,7 +3428,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_d" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3457,7 +3457,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "flag_d" where
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3470,7 +3470,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp1" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3499,7 +3499,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "rsvd0_gbp1" where
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3512,7 +3512,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3541,7 +3541,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "policy_id" where
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3554,7 +3554,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3583,7 +3583,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "rsvd0_gpe" where
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3596,7 +3596,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr_anon'vx_flags ty where
@@ -3625,7 +3625,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_flags "proto" where
 
     __defined at:__ @rte_vxlan.h 92:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 = Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1
   { unwrap :: BG.ByteArray
@@ -3646,7 +3646,7 @@ deriving via BG.SizedByteArray 1 1 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 ty where
@@ -3657,7 +3657,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 ty where
@@ -3683,7 +3683,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 "rsvd
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 ty where
@@ -3694,7 +3694,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 ty where
@@ -3720,7 +3720,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1 "last
 
     __defined at:__ @rte_vxlan.h 90:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr_anon'vx_vni_anon'vni = Rte_vxlan_hdr_anon'vx_vni_anon'vni
   { vni :: CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
@@ -3728,14 +3728,14 @@ data Rte_vxlan_hdr_anon'vx_vni_anon'vni = Rte_vxlan_hdr_anon'vx_vni_anon'vni
 
          __defined at:__ @rte_vxlan.h 91:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'rsvd1 :: Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1
     {- ^ __C declaration:__ @anon\'rsvd1@
 
          __defined at:__ @rte_vxlan.h 92:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -3772,7 +3772,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr_anon'vx_vni_anon'vni instan
 
     __defined at:__ @rte_vxlan.h 91:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3800,7 +3800,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni "vni" where
 
     __defined at:__ @rte_vxlan.h 92:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_vni_anon'vni_anon'rsvd1
          ) => BG.CompatHasField.HasField "anon'rsvd1" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3828,7 +3828,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni "anon'rsvd1" whe
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3841,7 +3841,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3870,7 +3870,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni "rsvd1" where
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3883,7 +3883,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni_anon'vni ty where
@@ -3912,7 +3912,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni_anon'vni "last_rsvd" wher
 
     __defined at:__ @rte_vxlan.h 88:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_hdr_anon'vx_vni = Rte_vxlan_hdr_anon'vx_vni
   { unwrap :: BG.ByteArray
@@ -3933,7 +3933,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_vxlan_hdr_anon'vx_
 
     __defined at:__ @rte_vxlan.h 89:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -3944,7 +3944,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 89:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -3970,7 +3970,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni "vx_vni" where
 
     __defined at:__ @rte_vxlan.h 90:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_vni_anon'vni
          ) => BG.HasField "anon'vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -3981,7 +3981,7 @@ instance ( ty ~ Rte_vxlan_hdr_anon'vx_vni_anon'vni
 
     __defined at:__ @rte_vxlan.h 90:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_vni_anon'vni
          ) => BG.CompatHasField.HasField "anon'vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4007,7 +4007,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni "anon'vni" where
 
     __defined at:__ @rte_vxlan.h 91:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4020,7 +4020,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 91:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4049,7 +4049,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni "vni" where
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4062,7 +4062,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4091,7 +4091,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni "rsvd1" where
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4104,7 +4104,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_rsvd" Rte_vxlan_hdr_anon'vx_vni ty where
@@ -4133,7 +4133,7 @@ instance HasCField.HasCField Rte_vxlan_hdr_anon'vx_vni "last_rsvd" where
 
     __defined at:__ @rte_vxlan.h 30:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_hdr = Rte_vxlan_hdr
   { anon'vx_flags :: Rte_vxlan_hdr_anon'vx_flags
@@ -4141,14 +4141,14 @@ data Rte_vxlan_hdr = Rte_vxlan_hdr
 
          __defined at:__ @rte_vxlan.h 31:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'vx_vni :: Rte_vxlan_hdr_anon'vx_vni
     {- ^ __C declaration:__ @anon\'vx_vni@
 
          __defined at:__ @rte_vxlan.h 88:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -4185,7 +4185,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_hdr instance Struct.IsStruct Rt
 
     __defined at:__ @rte_vxlan.h 31:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_flags
          ) => BG.CompatHasField.HasField "anon'vx_flags" Rte_vxlan_hdr ty where
@@ -4214,7 +4214,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "anon'vx_flags" where
 
     __defined at:__ @rte_vxlan.h 32:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_flags" Rte_vxlan_hdr ty where
@@ -4227,7 +4227,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 32:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_flags" Rte_vxlan_hdr ty where
@@ -4256,7 +4256,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "vx_flags" where
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_hdr ty where
@@ -4269,7 +4269,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 35:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_hdr ty where
@@ -4298,7 +4298,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flags" where
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_o" Rte_vxlan_hdr ty where
@@ -4311,7 +4311,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 46:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_o" Rte_vxlan_hdr ty where
@@ -4340,7 +4340,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_o" where
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_b" Rte_vxlan_hdr ty where
@@ -4353,7 +4353,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 47:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_b" Rte_vxlan_hdr ty where
@@ -4382,7 +4382,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_b" where
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_p" Rte_vxlan_hdr ty where
@@ -4395,7 +4395,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 48:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_p" Rte_vxlan_hdr ty where
@@ -4424,7 +4424,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_p" where
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_i" Rte_vxlan_hdr ty where
@@ -4437,7 +4437,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 49:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_i" Rte_vxlan_hdr ty where
@@ -4466,7 +4466,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_i" where
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_ver" Rte_vxlan_hdr ty where
@@ -4479,7 +4479,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 50:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_ver" Rte_vxlan_hdr ty where
@@ -4508,7 +4508,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_ver" where
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_rsvd" Rte_vxlan_hdr ty where
@@ -4521,7 +4521,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 51:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_rsvd" Rte_vxlan_hdr ty where
@@ -4550,7 +4550,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_rsvd" where
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_g" Rte_vxlan_hdr ty where
@@ -4563,7 +4563,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 52:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_g" Rte_vxlan_hdr ty where
@@ -4592,7 +4592,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_g" where
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_hdr ty where
@@ -4605,7 +4605,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_hdr ty where
@@ -4634,7 +4634,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd0" where
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp3" Rte_vxlan_hdr ty where
@@ -4647,7 +4647,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 66:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp3" Rte_vxlan_hdr ty where
@@ -4676,7 +4676,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd0_gbp3" where
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_a" Rte_vxlan_hdr ty where
@@ -4689,7 +4689,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 67:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_a" Rte_vxlan_hdr ty where
@@ -4718,7 +4718,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_a" where
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp2" Rte_vxlan_hdr ty where
@@ -4731,7 +4731,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 68:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp2" Rte_vxlan_hdr ty where
@@ -4760,7 +4760,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd0_gbp2" where
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag_d" Rte_vxlan_hdr ty where
@@ -4773,7 +4773,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 69:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag_d" Rte_vxlan_hdr ty where
@@ -4802,7 +4802,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "flag_d" where
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gbp1" Rte_vxlan_hdr ty where
@@ -4815,7 +4815,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 70:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gbp1" Rte_vxlan_hdr ty where
@@ -4844,7 +4844,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd0_gbp1" where
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "policy_id" Rte_vxlan_hdr ty where
@@ -4857,7 +4857,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
 
     __defined at:__ @rte_vxlan.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "policy_id" Rte_vxlan_hdr ty where
@@ -4886,7 +4886,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "policy_id" where
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0_gpe" Rte_vxlan_hdr ty where
@@ -4899,7 +4899,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 75:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0_gpe" Rte_vxlan_hdr ty where
@@ -4928,7 +4928,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd0_gpe" where
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_hdr ty where
@@ -4941,7 +4941,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 76:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_hdr ty where
@@ -4970,7 +4970,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "proto" where
 
     __defined at:__ @rte_vxlan.h 88:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_hdr_anon'vx_vni
          ) => BG.CompatHasField.HasField "anon'vx_vni" Rte_vxlan_hdr ty where
@@ -4999,7 +4999,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "anon'vx_vni" where
 
     __defined at:__ @rte_vxlan.h 89:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_vni" Rte_vxlan_hdr ty where
@@ -5012,7 +5012,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 89:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_vni" Rte_vxlan_hdr ty where
@@ -5041,7 +5041,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "vx_vni" where
 
     __defined at:__ @rte_vxlan.h 91:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vni" Rte_vxlan_hdr ty where
@@ -5054,7 +5054,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 91:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_hdr ty where
@@ -5083,7 +5083,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "vni" where
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_hdr ty where
@@ -5096,7 +5096,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 93:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_hdr ty where
@@ -5125,7 +5125,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "rsvd1" where
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_rsvd" Rte_vxlan_hdr ty where
@@ -5138,7 +5138,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 94:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_rsvd" Rte_vxlan_hdr ty where
@@ -5167,7 +5167,7 @@ instance HasCField.HasCField Rte_vxlan_hdr "last_rsvd" where
 
     __defined at:__ @rte_vxlan.h 116:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags = Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags
   { vx_flags :: HsBindgen.Runtime.LibC.Word8
@@ -5175,28 +5175,28 @@ data Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags = Rte_vxlan_gpe_hdr_anon
 
          __defined at:__ @rte_vxlan.h 117:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @reserved@
 
          __defined at:__ @rte_vxlan.h 118:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , protocol :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @protocol@
 
          __defined at:__ @rte_vxlan.h 119:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vx_vni :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @vx_vni@
 
          __defined at:__ @rte_vxlan.h 120:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5241,7 +5241,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon
 
     __defined at:__ @rte_vxlan.h 117:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vx_flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags ty where
@@ -5273,7 +5273,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags 
 
     __defined at:__ @rte_vxlan.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "reserved" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags ty where
@@ -5305,7 +5305,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags 
 
     __defined at:__ @rte_vxlan.h 119:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "protocol" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags ty where
@@ -5337,7 +5337,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags 
 
     __defined at:__ @rte_vxlan.h 120:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags ty where
@@ -5369,7 +5369,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags 
 
     __defined at:__ @rte_vxlan.h 122:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags = Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags
   { flags :: HsBindgen.Runtime.LibC.Word8
@@ -5377,35 +5377,35 @@ data Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags = Rte_vxlan_gpe_hdr_anon'an
 
          __defined at:__ @rte_vxlan.h 123:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd0 :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd0@
 
          __defined at:__ @rte_vxlan.h 124:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @proto@
 
          __defined at:__ @rte_vxlan.h 125:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vni :: CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @vni@
 
          __defined at:__ @rte_vxlan.h 126:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd1 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rsvd1@
 
          __defined at:__ @rte_vxlan.h 127:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5453,7 +5453,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon
 
     __defined at:__ @rte_vxlan.h 123:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags ty where
@@ -5486,7 +5486,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags "fl
 
     __defined at:__ @rte_vxlan.h 124:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags ty where
@@ -5519,7 +5519,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags "rs
 
     __defined at:__ @rte_vxlan.h 125:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags ty where
@@ -5552,7 +5552,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags "pr
 
     __defined at:__ @rte_vxlan.h 126:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags ty where
@@ -5585,7 +5585,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags "vn
 
     __defined at:__ @rte_vxlan.h 127:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags ty where
@@ -5618,7 +5618,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags "rs
 
     __defined at:__ @rte_vxlan.h 115:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vxlan_gpe_hdr_anon'anon'vx_flags = Rte_vxlan_gpe_hdr_anon'anon'vx_flags
   { unwrap :: BG.ByteArray
@@ -5639,7 +5639,7 @@ deriving via BG.SizedByteArray 8 4 instance Union.IsUnion Rte_vxlan_gpe_hdr_anon
 
     __defined at:__ @rte_vxlan.h 116:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags
          ) => BG.HasField "anon'vx_flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5650,7 +5650,7 @@ instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags
 
     __defined at:__ @rte_vxlan.h 116:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'vx_flags
          ) => BG.CompatHasField.HasField "anon'vx_flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5677,7 +5677,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "anon'vx_flags
 
     __defined at:__ @rte_vxlan.h 117:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vx_flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5690,7 +5690,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 117:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vx_flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5719,7 +5719,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "vx_flags" whe
 
     __defined at:__ @rte_vxlan.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "reserved" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5732,7 +5732,7 @@ instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "reserved" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5761,7 +5761,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "reserved" whe
 
     __defined at:__ @rte_vxlan.h 119:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "protocol" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5774,7 +5774,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 119:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "protocol" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5803,7 +5803,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "protocol" whe
 
     __defined at:__ @rte_vxlan.h 120:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5816,7 +5816,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 120:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5845,7 +5845,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "vx_vni" where
 
     __defined at:__ @rte_vxlan.h 122:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags
          ) => BG.HasField "anon'flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5856,7 +5856,7 @@ instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags
 
     __defined at:__ @rte_vxlan.h 122:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags_anon'flags
          ) => BG.CompatHasField.HasField "anon'flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5882,7 +5882,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "anon'flags" w
 
     __defined at:__ @rte_vxlan.h 123:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5895,7 +5895,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 123:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5924,7 +5924,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "flags" where
 
     __defined at:__ @rte_vxlan.h 124:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5937,7 +5937,7 @@ instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 124:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5966,7 +5966,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "rsvd0" where
 
     __defined at:__ @rte_vxlan.h 125:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -5979,7 +5979,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 125:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -6008,7 +6008,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "proto" where
 
     __defined at:__ @rte_vxlan.h 126:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -6021,7 +6021,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 126:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -6050,7 +6050,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "vni" where
 
     __defined at:__ @rte_vxlan.h 127:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -6063,7 +6063,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 127:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_gpe_hdr_anon'anon'vx_flags ty where
@@ -6092,7 +6092,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr_anon'anon'vx_flags "rsvd1" where
 
     __defined at:__ @rte_vxlan.h 114:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vxlan_gpe_hdr = Rte_vxlan_gpe_hdr
   { anon'anon'vx_flags :: Rte_vxlan_gpe_hdr_anon'anon'vx_flags
@@ -6100,7 +6100,7 @@ data Rte_vxlan_gpe_hdr = Rte_vxlan_gpe_hdr
 
          __defined at:__ @rte_vxlan.h 115:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -6135,7 +6135,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vxlan_gpe_hdr instance Struct.IsStruc
 
     __defined at:__ @rte_vxlan.h 115:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_vxlan_gpe_hdr_anon'anon'vx_flags
          ) => BG.CompatHasField.HasField "anon'anon'vx_flags" Rte_vxlan_gpe_hdr ty where
@@ -6163,7 +6163,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "anon'anon'vx_flags" where
 
     __defined at:__ @rte_vxlan.h 117:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vx_flags" Rte_vxlan_gpe_hdr ty where
@@ -6176,7 +6176,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 117:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vx_flags" Rte_vxlan_gpe_hdr ty where
@@ -6205,7 +6205,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "vx_flags" where
 
     __defined at:__ @rte_vxlan.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "reserved" Rte_vxlan_gpe_hdr ty where
@@ -6218,7 +6218,7 @@ instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "reserved" Rte_vxlan_gpe_hdr ty where
@@ -6247,7 +6247,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "reserved" where
 
     __defined at:__ @rte_vxlan.h 119:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "protocol" Rte_vxlan_gpe_hdr ty where
@@ -6260,7 +6260,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 119:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "protocol" Rte_vxlan_gpe_hdr ty where
@@ -6289,7 +6289,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "protocol" where
 
     __defined at:__ @rte_vxlan.h 120:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vx_vni" Rte_vxlan_gpe_hdr ty where
@@ -6302,7 +6302,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_vxlan.h 120:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vx_vni" Rte_vxlan_gpe_hdr ty where
@@ -6331,7 +6331,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "vx_vni" where
 
     __defined at:__ @rte_vxlan.h 123:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flags" Rte_vxlan_gpe_hdr ty where
@@ -6344,7 +6344,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 123:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flags" Rte_vxlan_gpe_hdr ty where
@@ -6373,7 +6373,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "flags" where
 
     __defined at:__ @rte_vxlan.h 124:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd0" Rte_vxlan_gpe_hdr ty where
@@ -6386,7 +6386,7 @@ instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 124:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd0" Rte_vxlan_gpe_hdr ty where
@@ -6415,7 +6415,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "rsvd0" where
 
     __defined at:__ @rte_vxlan.h 125:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "proto" Rte_vxlan_gpe_hdr ty where
@@ -6428,7 +6428,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 125:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_vxlan_gpe_hdr ty where
@@ -6457,7 +6457,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "proto" where
 
     __defined at:__ @rte_vxlan.h 126:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "vni" Rte_vxlan_gpe_hdr ty where
@@ -6470,7 +6470,7 @@ instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 126:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 3 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "vni" Rte_vxlan_gpe_hdr ty where
@@ -6499,7 +6499,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "vni" where
 
     __defined at:__ @rte_vxlan.h 127:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd1" Rte_vxlan_gpe_hdr ty where
@@ -6512,7 +6512,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_vxlan.h 127:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd1" Rte_vxlan_gpe_hdr ty where
@@ -6541,7 +6541,7 @@ instance HasCField.HasCField Rte_vxlan_gpe_hdr "rsvd1" where
 
     __defined at:__ @rte_vxlan.h 142:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_IPV4 :: BG.CInt
 rTE_VXLAN_GPE_TYPE_IPV4 = (1 :: BG.CInt)
@@ -6550,7 +6550,7 @@ rTE_VXLAN_GPE_TYPE_IPV4 = (1 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 143:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_IPV6 :: BG.CInt
 rTE_VXLAN_GPE_TYPE_IPV6 = (2 :: BG.CInt)
@@ -6559,7 +6559,7 @@ rTE_VXLAN_GPE_TYPE_IPV6 = (2 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 144:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_ETH :: BG.CInt
 rTE_VXLAN_GPE_TYPE_ETH = (3 :: BG.CInt)
@@ -6568,7 +6568,7 @@ rTE_VXLAN_GPE_TYPE_ETH = (3 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 145:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_NSH :: BG.CInt
 rTE_VXLAN_GPE_TYPE_NSH = (4 :: BG.CInt)
@@ -6577,7 +6577,7 @@ rTE_VXLAN_GPE_TYPE_NSH = (4 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 146:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_MPLS :: BG.CInt
 rTE_VXLAN_GPE_TYPE_MPLS = (5 :: BG.CInt)
@@ -6586,7 +6586,7 @@ rTE_VXLAN_GPE_TYPE_MPLS = (5 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 147:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_GBP :: BG.CInt
 rTE_VXLAN_GPE_TYPE_GBP = (6 :: BG.CInt)
@@ -6595,7 +6595,7 @@ rTE_VXLAN_GPE_TYPE_GBP = (6 :: BG.CInt)
 
     __defined at:__ @rte_vxlan.h 148:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_VXLAN_GPE_TYPE_VBNG :: BG.CInt
 rTE_VXLAN_GPE_TYPE_VBNG = (7 :: BG.CInt)

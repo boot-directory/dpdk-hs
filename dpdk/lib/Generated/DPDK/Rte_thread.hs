@@ -51,7 +51,7 @@ import Prelude ((<*>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_thread.h 27:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_THREAD_NAME_SIZE :: BG.CInt
 rTE_THREAD_NAME_SIZE = (16 :: BG.CInt)
@@ -60,7 +60,7 @@ rTE_THREAD_NAME_SIZE = (16 :: BG.CInt)
 
     __defined at:__ @rte_thread.h 29:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_THREAD_NAME_LEN :: BG.CInt
 rTE_MAX_THREAD_NAME_LEN = rTE_THREAD_NAME_SIZE
@@ -71,7 +71,7 @@ rTE_MAX_THREAD_NAME_LEN = rTE_THREAD_NAME_SIZE
 
     __defined at:__ @rte_thread.h 32:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_THREAD_INTERNAL_PREFIX :: BG.ByteString
 rTE_THREAD_INTERNAL_PREFIX =
@@ -81,7 +81,7 @@ rTE_THREAD_INTERNAL_PREFIX =
 
     __defined at:__ @rte_thread.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_THREAD_INTERNAL_NAME_SIZE :: BG.CInt
 rTE_THREAD_INTERNAL_NAME_SIZE = (11 :: BG.CInt)
@@ -90,7 +90,7 @@ rTE_THREAD_INTERNAL_NAME_SIZE = (11 :: BG.CInt)
 
     __defined at:__ @rte_thread.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_thread_t = Rte_thread_t
   { opaque_id :: HsBindgen.Runtime.LibC.CUIntPtr
@@ -98,7 +98,7 @@ data Rte_thread_t = Rte_thread_t
 
          __defined at:__ @rte_thread.h 40:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -133,7 +133,7 @@ deriving via Struct.IsStructViaReadRaw Rte_thread_t instance Struct.IsStruct Rte
 
     __defined at:__ @rte_thread.h 40:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CUIntPtr
          ) => BG.CompatHasField.HasField "opaque_id" Rte_thread_t ty where
@@ -161,7 +161,7 @@ instance HasCField.HasCField Rte_thread_t "opaque_id" where
 
     __defined at:__ @rte_thread.h 53:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_thread_func_Aux = Rte_thread_func_Aux
   { unwrap :: BG.Ptr BG.Void -> IO HsBindgen.Runtime.LibC.Word32
@@ -228,7 +228,7 @@ instance HasCField.HasCField Rte_thread_func_Aux "unwrap" where
 
     __defined at:__ @rte_thread.h 53:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_thread_func = Rte_thread_func
   { unwrap :: BG.FunPtr Rte_thread_func_Aux
@@ -266,7 +266,7 @@ instance HasCField.HasCField Rte_thread_func "unwrap" where
 
     __defined at:__ @rte_thread.h 58:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_thread_priority = Rte_thread_priority
   { unwrap :: BG.CUInt
@@ -367,7 +367,7 @@ instance HasCField.HasCField Rte_thread_priority "unwrap" where
 
     __defined at:__ @rte_thread.h 59:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_THREAD_PRIORITY_NORMAL :: Rte_thread_priority
 pattern RTE_THREAD_PRIORITY_NORMAL = Rte_thread_priority 0
@@ -376,7 +376,7 @@ pattern RTE_THREAD_PRIORITY_NORMAL = Rte_thread_priority 0
 
     __defined at:__ @rte_thread.h 61:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_THREAD_PRIORITY_REALTIME_CRITICAL :: Rte_thread_priority
 pattern RTE_THREAD_PRIORITY_REALTIME_CRITICAL = Rte_thread_priority 1
@@ -385,7 +385,7 @@ pattern RTE_THREAD_PRIORITY_REALTIME_CRITICAL = Rte_thread_priority 1
 
     __defined at:__ @rte_thread.h 68:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_thread_attr_t = Rte_thread_attr_t
   { priority :: Rte_thread_priority
@@ -393,7 +393,7 @@ data Rte_thread_attr_t = Rte_thread_attr_t
 
          __defined at:__ @rte_thread.h 69:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -428,7 +428,7 @@ deriving via Struct.IsStructViaReadRaw Rte_thread_attr_t instance Struct.IsStruc
 
     __defined at:__ @rte_thread.h 69:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_thread_priority
          ) => BG.CompatHasField.HasField "priority" Rte_thread_attr_t ty where
@@ -454,7 +454,7 @@ instance HasCField.HasCField Rte_thread_attr_t "priority" where
 
     __defined at:__ @rte_thread.h 78:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Eal_tls_key
 
@@ -462,7 +462,7 @@ data Eal_tls_key
 
     __defined at:__ @rte_thread.h 78:29@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_thread_key = Rte_thread_key
   { unwrap :: BG.Ptr Eal_tls_key

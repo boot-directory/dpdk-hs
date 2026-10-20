@@ -30,7 +30,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_8dd08ba75da1fb58 ("
   , "  FILE *arg1"
   , ")"
@@ -138,7 +140,7 @@ hs_bindgen_8dd08ba75da1fb58 =
 
     __defined at:__ @rte_log.h 89:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_openlog_stream ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -159,7 +161,7 @@ hs_bindgen_367d9ffb58242d4e =
 
     __defined at:__ @rte_log.h 98:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_stream :: IO (BG.Ptr HsBindgen.Runtime.LibC.CFile)
 rte_log_get_stream = hs_bindgen_367d9ffb58242d4e
@@ -181,7 +183,7 @@ hs_bindgen_07ec872ee23e7206 =
 
     __defined at:__ @rte_log.h 109:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_global_level ::
      HsBindgen.Runtime.LibC.Word32
@@ -203,7 +205,7 @@ hs_bindgen_66ddcb4e2e1e5e74 =
 
     __defined at:__ @rte_log.h 117:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_global_level :: IO HsBindgen.Runtime.LibC.Word32
 rte_log_get_global_level =
@@ -226,7 +228,7 @@ hs_bindgen_34d3a95543973b19 =
 
     __defined at:__ @rte_log.h 127:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_get_level ::
      HsBindgen.Runtime.LibC.Word32
@@ -254,7 +256,7 @@ hs_bindgen_602f11e32ffdb6c3 =
 
     __defined at:__ @rte_log.h 139:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_can_log ::
      HsBindgen.Runtime.LibC.Word32
@@ -284,7 +286,7 @@ hs_bindgen_3fe9c0d2d248aafc =
 
     __defined at:__ @rte_log.h 151:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level_pattern ::
      PtrConst.PtrConst BG.CChar
@@ -315,7 +317,7 @@ hs_bindgen_15cb7fb4d0c12d3f =
 
     __defined at:__ @rte_log.h 163:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level_regexp ::
      PtrConst.PtrConst BG.CChar
@@ -346,7 +348,7 @@ hs_bindgen_5e84e970262fec07 =
 
     __defined at:__ @rte_log.h 175:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_set_level ::
      HsBindgen.Runtime.LibC.Word32
@@ -369,7 +371,7 @@ hs_bindgen_e384bb882e1671be =
 
     __defined at:__ @rte_log.h 189:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_cur_msg_loglevel :: IO BG.CInt
 rte_log_cur_msg_loglevel =
@@ -388,7 +390,7 @@ hs_bindgen_ba86e187573a9017 =
 
     __defined at:__ @rte_log.h 203:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_cur_msg_logtype :: IO BG.CInt
 rte_log_cur_msg_logtype = hs_bindgen_ba86e187573a9017
@@ -410,7 +412,7 @@ hs_bindgen_5d77a748f477f0f1 =
 
     __defined at:__ @rte_log.h 217:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_register ::
      PtrConst.PtrConst BG.CChar
@@ -438,7 +440,7 @@ hs_bindgen_d410578574fc82a6 =
 
     __defined at:__ @rte_log.h 235:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_register_type_and_pick_level ::
      PtrConst.PtrConst BG.CChar
@@ -469,7 +471,7 @@ hs_bindgen_3f8383123a3fd47d =
 
     __defined at:__ @rte_log.h 245:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_list_types ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -496,7 +498,7 @@ hs_bindgen_2055e50130519348 =
 
     __defined at:__ @rte_log.h 255:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile

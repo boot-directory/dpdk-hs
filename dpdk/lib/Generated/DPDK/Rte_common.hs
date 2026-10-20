@@ -53,7 +53,7 @@ import Prelude (Bounded, Enum, Eq, Integral, Num, Ord, Read, Real, Show, type (~
 
     __defined at:__ @rte_build_config.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_SIZE :: BG.CInt
 rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
@@ -62,7 +62,7 @@ rTE_CACHE_LINE_SIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_common.h 93:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CC_IS_GNU :: BG.CInt
 rTE_CC_IS_GNU = (0 :: BG.CInt)
@@ -71,7 +71,7 @@ rTE_CC_IS_GNU = (0 :: BG.CInt)
 
     __defined at:__ @rte_common.h 129:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Unaligned_uint64_t = Unaligned_uint64_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -119,7 +119,7 @@ instance HasCField.HasCField Unaligned_uint64_t "unwrap" where
 
     __defined at:__ @rte_common.h 130:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Unaligned_uint32_t = Unaligned_uint32_t
   { unwrap :: HsBindgen.Runtime.LibC.Word32
@@ -167,7 +167,7 @@ instance HasCField.HasCField Unaligned_uint32_t "unwrap" where
 
     __defined at:__ @rte_common.h 131:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Unaligned_uint16_t = Unaligned_uint16_t
   { unwrap :: HsBindgen.Runtime.LibC.Word16
@@ -215,7 +215,7 @@ instance HasCField.HasCField Unaligned_uint16_t "unwrap" where
 
     __defined at:__ @rte_common.h 342:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PRIORITY_LOG :: BG.CInt
 rTE_PRIORITY_LOG = (101 :: BG.CInt)
@@ -224,7 +224,7 @@ rTE_PRIORITY_LOG = (101 :: BG.CInt)
 
     __defined at:__ @rte_common.h 343:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PRIORITY_BUS :: BG.CInt
 rTE_PRIORITY_BUS = (110 :: BG.CInt)
@@ -233,7 +233,7 @@ rTE_PRIORITY_BUS = (110 :: BG.CInt)
 
     __defined at:__ @rte_common.h 344:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PRIORITY_CLASS :: BG.CInt
 rTE_PRIORITY_CLASS = (120 :: BG.CInt)
@@ -242,7 +242,7 @@ rTE_PRIORITY_CLASS = (120 :: BG.CInt)
 
     __defined at:__ @rte_common.h 345:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PRIORITY_LAST :: BG.CInt
 rTE_PRIORITY_LAST = (65535 :: BG.CInt)
@@ -251,7 +251,7 @@ rTE_PRIORITY_LAST = (65535 :: BG.CInt)
 
     __defined at:__ @rte_common.h 721:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_MASK :: BG.CInt
 rTE_CACHE_LINE_MASK =
@@ -261,7 +261,7 @@ rTE_CACHE_LINE_MASK =
 
     __defined at:__ @rte_common.h 728:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_SIZE_LOG2 :: BG.CInt
 rTE_CACHE_LINE_SIZE_LOG2 = (6 :: BG.CInt)
@@ -270,7 +270,7 @@ rTE_CACHE_LINE_SIZE_LOG2 = (6 :: BG.CInt)
 
     __defined at:__ @rte_common.h 736:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_CACHE_LINE_MIN_SIZE :: BG.CInt
 rTE_CACHE_LINE_MIN_SIZE = (64 :: BG.CInt)
@@ -279,7 +279,7 @@ rTE_CACHE_LINE_MIN_SIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_common.h 764:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Phys_addr_t = Phys_addr_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -327,7 +327,7 @@ instance HasCField.HasCField Phys_addr_t "unwrap" where
 
     __defined at:__ @rte_common.h 774:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_iova_t = Rte_iova_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -375,7 +375,7 @@ instance HasCField.HasCField Rte_iova_t "unwrap" where
 
     __defined at:__ @rte_common.h 782:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype RTE_MARKER = RTE_MARKER
   { unwrap :: CA.ConstantArray 0 (BG.Ptr BG.Void)
@@ -413,7 +413,7 @@ instance HasCField.HasCField RTE_MARKER "unwrap" where
 
     __defined at:__ @rte_common.h 784:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype RTE_MARKER8 = RTE_MARKER8
   { unwrap :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
@@ -451,7 +451,7 @@ instance HasCField.HasCField RTE_MARKER8 "unwrap" where
 
     __defined at:__ @rte_common.h 786:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype RTE_MARKER16 = RTE_MARKER16
   { unwrap :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word16
@@ -489,7 +489,7 @@ instance HasCField.HasCField RTE_MARKER16 "unwrap" where
 
     __defined at:__ @rte_common.h 788:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype RTE_MARKER32 = RTE_MARKER32
   { unwrap :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word32
@@ -527,7 +527,7 @@ instance HasCField.HasCField RTE_MARKER32 "unwrap" where
 
     __defined at:__ @rte_common.h 790:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype RTE_MARKER64 = RTE_MARKER64
   { unwrap :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word64

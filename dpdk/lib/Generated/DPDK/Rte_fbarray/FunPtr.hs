@@ -42,7 +42,9 @@ import Generated.DPDK.Rte_fbarray
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_fbarray_get_rte_fbarray_init */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_b9bc7efdc754d061 (void)) ("
@@ -296,7 +298,7 @@ hs_bindgen_b9bc7efdc754d061 =
 
     __defined at:__ @rte_fbarray.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_init :: BG.FunPtr (BG.Ptr Rte_fbarray -> PtrConst.PtrConst BG.CChar -> BG.CUInt -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_init =
@@ -316,7 +318,7 @@ hs_bindgen_1110b5df338e6d93 =
 
     __defined at:__ @rte_fbarray.h 99:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_attach :: BG.FunPtr (BG.Ptr Rte_fbarray -> IO BG.CInt)
 rte_fbarray_attach =
@@ -336,7 +338,7 @@ hs_bindgen_16d387b29339e360 =
 
     __defined at:__ @rte_fbarray.h 120:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_destroy :: BG.FunPtr (BG.Ptr Rte_fbarray -> IO BG.CInt)
 rte_fbarray_destroy =
@@ -356,7 +358,7 @@ hs_bindgen_3db83b57da2f6a18 =
 
     __defined at:__ @rte_fbarray.h 138:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_detach :: BG.FunPtr (BG.Ptr Rte_fbarray -> IO BG.CInt)
 rte_fbarray_detach =
@@ -376,7 +378,7 @@ hs_bindgen_6f1e60c5bc17c82c =
 
     __defined at:__ @rte_fbarray.h 155:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_get :: BG.FunPtr (PtrConst.PtrConst Rte_fbarray -> BG.CUInt -> IO (BG.Ptr BG.Void))
 rte_fbarray_get =
@@ -396,7 +398,7 @@ hs_bindgen_b60fe7f8e639c7bd =
 
     __defined at:__ @rte_fbarray.h 172:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_idx :: BG.FunPtr (PtrConst.PtrConst Rte_fbarray -> PtrConst.PtrConst BG.Void -> IO BG.CInt)
 rte_fbarray_find_idx =
@@ -416,7 +418,7 @@ hs_bindgen_a9b2d9d4730c862f =
 
     __defined at:__ @rte_fbarray.h 189:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_set_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_set_used =
@@ -436,7 +438,7 @@ hs_bindgen_37b88d6490763eb4 =
 
     __defined at:__ @rte_fbarray.h 206:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_set_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_set_free =
@@ -456,7 +458,7 @@ hs_bindgen_4e4c607fba347e2c =
 
     __defined at:__ @rte_fbarray.h 224:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_is_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_is_used =
@@ -476,7 +478,7 @@ hs_bindgen_61bc87fdb35bc9f9 =
 
     __defined at:__ @rte_fbarray.h 241:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_next_free =
@@ -496,7 +498,7 @@ hs_bindgen_b105a1940ddcfae6 =
 
     __defined at:__ @rte_fbarray.h 258:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_next_used =
@@ -516,7 +518,7 @@ hs_bindgen_003fb5c3d2ff02b4 =
 
     __defined at:__ @rte_fbarray.h 278:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_n_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_next_n_free =
@@ -536,7 +538,7 @@ hs_bindgen_7bebe1136c200cb3 =
 
     __defined at:__ @rte_fbarray.h 299:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_n_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_next_n_used =
@@ -556,7 +558,7 @@ hs_bindgen_9d816fe583ed4edc =
 
     __defined at:__ @rte_fbarray.h 317:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_contig_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_contig_free =
@@ -576,7 +578,7 @@ hs_bindgen_226d3d10f1e19b1b =
 
     __defined at:__ @rte_fbarray.h 335:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_contig_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_contig_used =
@@ -596,7 +598,7 @@ hs_bindgen_691c1b0a96cd8f72 =
 
     __defined at:__ @rte_fbarray.h 351:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_prev_free =
@@ -616,7 +618,7 @@ hs_bindgen_eaa4f4dace452b6c =
 
     __defined at:__ @rte_fbarray.h 368:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_prev_used =
@@ -636,7 +638,7 @@ hs_bindgen_4048fc7e34cda065 =
 
     __defined at:__ @rte_fbarray.h 389:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_n_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_prev_n_free =
@@ -656,7 +658,7 @@ hs_bindgen_0f1ac25f0d0c04bf =
 
     __defined at:__ @rte_fbarray.h 411:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_n_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_prev_n_used =
@@ -676,7 +678,7 @@ hs_bindgen_e30bb10bb02e32e6 =
 
     __defined at:__ @rte_fbarray.h 430:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_contig_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_rev_contig_free =
@@ -696,7 +698,7 @@ hs_bindgen_3d25e1385ab09708 =
 
     __defined at:__ @rte_fbarray.h 449:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_contig_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_rev_contig_used =
@@ -716,7 +718,7 @@ hs_bindgen_5544c66eb68e93c3 =
 
     __defined at:__ @rte_fbarray.h 466:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_biggest_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_biggest_free =
@@ -736,7 +738,7 @@ hs_bindgen_923966404d31dbfc =
 
     __defined at:__ @rte_fbarray.h 483:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_biggest_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_biggest_used =
@@ -756,7 +758,7 @@ hs_bindgen_28ac0f61f074d0ad =
 
     __defined at:__ @rte_fbarray.h 501:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_biggest_free :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_rev_biggest_free =
@@ -776,7 +778,7 @@ hs_bindgen_e6ec83598a21c53c =
 
     __defined at:__ @rte_fbarray.h 519:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_biggest_used :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.CUInt -> IO BG.CInt)
 rte_fbarray_find_rev_biggest_used =
@@ -796,7 +798,7 @@ hs_bindgen_a607111564979e23 =
 
     __defined at:__ @rte_fbarray.h 532:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_dump_metadata :: BG.FunPtr (BG.Ptr Rte_fbarray -> BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_fbarray_dump_metadata =

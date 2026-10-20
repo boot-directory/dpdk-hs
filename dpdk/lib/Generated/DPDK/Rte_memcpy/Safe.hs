@@ -24,7 +24,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void *hs_bindgen_9e31e70e6fdd46a1 ("
   , "  void *arg1,"
   , "  void const *arg2,"
@@ -117,7 +119,7 @@ hs_bindgen_9e31e70e6fdd46a1 =
 
     __defined at:__ @rte_memcpy.h 64:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov15_or_less ::
      BG.Ptr BG.Void
@@ -149,7 +151,7 @@ hs_bindgen_950566347d8bdabd =
 
     __defined at:__ @rte_memcpy.h 109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov16 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -179,7 +181,7 @@ hs_bindgen_c338fc30ace24d04 =
 
     __defined at:__ @rte_memcpy.h 122:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov32 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -209,7 +211,7 @@ hs_bindgen_6bffa1eca607228f =
 
     __defined at:__ @rte_memcpy.h 140:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov64 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -239,7 +241,7 @@ hs_bindgen_20718db86be4877f =
 
     __defined at:__ @rte_memcpy.h 158:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov128 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -269,7 +271,7 @@ hs_bindgen_cb2e7beaec14ccb8 =
 
     __defined at:__ @rte_memcpy.h 169:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov256 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word8
@@ -302,7 +304,7 @@ hs_bindgen_68e8353f381317d3 =
 
     __defined at:__ @rte_memcpy.h 577:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy_generic ::
      BG.Ptr BG.Void
@@ -337,7 +339,7 @@ hs_bindgen_a7a34dc71bbe0bfc =
 
     __defined at:__ @rte_memcpy.h 700:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy_aligned ::
      BG.Ptr BG.Void
@@ -372,7 +374,7 @@ hs_bindgen_914d2b76e8414bdc =
 
     __defined at:__ @rte_memcpy.h 752:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy ::
      BG.Ptr BG.Void

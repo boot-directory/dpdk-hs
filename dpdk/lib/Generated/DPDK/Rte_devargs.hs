@@ -71,7 +71,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_dev.h 26:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_bus
 
@@ -79,7 +79,7 @@ data Rte_bus
 
     __defined at:__ @rte_dev.h 28:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_device
 
@@ -87,7 +87,7 @@ data Rte_device
 
     __defined at:__ @rte_dev.h 29:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_driver
 
@@ -95,7 +95,7 @@ data Rte_driver
 
     __defined at:__ @rte_dev.h 34:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_event_type = Rte_dev_event_type
   { unwrap :: BG.CUInt
@@ -196,7 +196,7 @@ instance HasCField.HasCField Rte_dev_event_type "unwrap" where
 
     __defined at:__ @rte_dev.h 35:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEV_EVENT_ADD :: Rte_dev_event_type
 pattern RTE_DEV_EVENT_ADD = Rte_dev_event_type 0
@@ -205,7 +205,7 @@ pattern RTE_DEV_EVENT_ADD = Rte_dev_event_type 0
 
     __defined at:__ @rte_dev.h 36:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEV_EVENT_REMOVE :: Rte_dev_event_type
 pattern RTE_DEV_EVENT_REMOVE = Rte_dev_event_type 1
@@ -214,7 +214,7 @@ pattern RTE_DEV_EVENT_REMOVE = Rte_dev_event_type 1
 
     __defined at:__ @rte_dev.h 37:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEV_EVENT_MAX :: Rte_dev_event_type
 pattern RTE_DEV_EVENT_MAX = Rte_dev_event_type 2
@@ -225,7 +225,7 @@ pattern RTE_DEV_EVENT_MAX = Rte_dev_event_type 2
 
     __defined at:__ @rte_dev.h 40:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_event_cb_fn_Aux = Rte_dev_event_cb_fn_Aux
   { unwrap :: PtrConst.PtrConst BG.CChar -> Rte_dev_event_type -> BG.Ptr BG.Void -> IO ()
@@ -296,7 +296,7 @@ instance HasCField.HasCField Rte_dev_event_cb_fn_Aux "unwrap" where
 
     __defined at:__ @rte_dev.h 40:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_event_cb_fn = Rte_dev_event_cb_fn
   { unwrap :: BG.FunPtr Rte_dev_event_cb_fn_Aux
@@ -334,7 +334,7 @@ instance HasCField.HasCField Rte_dev_event_cb_fn "unwrap" where
 
     __defined at:__ @rte_dev.h 47:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_policy = Rte_dev_policy
   { unwrap :: BG.CUInt
@@ -431,7 +431,7 @@ instance HasCField.HasCField Rte_dev_policy "unwrap" where
 
     __defined at:__ @rte_dev.h 48:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEV_ALLOWED :: Rte_dev_policy
 pattern RTE_DEV_ALLOWED = Rte_dev_policy 0
@@ -440,7 +440,7 @@ pattern RTE_DEV_ALLOWED = Rte_dev_policy 0
 
     __defined at:__ @rte_dev.h 49:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEV_BLOCKED :: Rte_dev_policy
 pattern RTE_DEV_BLOCKED = Rte_dev_policy 1
@@ -449,7 +449,7 @@ pattern RTE_DEV_BLOCKED = Rte_dev_policy 1
 
     __defined at:__ @rte_dev.h 55:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_mem_resource = Rte_mem_resource
   { phys_addr :: HsBindgen.Runtime.LibC.Word64
@@ -457,21 +457,21 @@ data Rte_mem_resource = Rte_mem_resource
 
          __defined at:__ @rte_dev.h 56:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , len :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_dev.h 57:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , addr :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @addr@
 
          __defined at:__ @rte_dev.h 58:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -510,7 +510,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mem_resource instance Struct.IsStruct
 
     __defined at:__ @rte_dev.h 56:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "phys_addr" Rte_mem_resource ty where
@@ -538,7 +538,7 @@ instance HasCField.HasCField Rte_mem_resource "phys_addr" where
 
     __defined at:__ @rte_dev.h 57:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "len" Rte_mem_resource ty where
@@ -569,7 +569,7 @@ instance HasCField.HasCField Rte_mem_resource "len" where
 
     __defined at:__ @rte_dev.h 58:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_mem_resource ty where
@@ -600,7 +600,7 @@ instance HasCField.HasCField Rte_mem_resource "addr" where
 
     __defined at:__ @rte_dev.h 142:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_DEV_NAME_MAX_LEN :: BG.CInt
 rTE_DEV_NAME_MAX_LEN = (64 :: BG.CInt)
@@ -611,7 +611,7 @@ rTE_DEV_NAME_MAX_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_dev.h 233:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_cmp_t_Aux = Rte_dev_cmp_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_device -> PtrConst.PtrConst BG.Void -> IO BG.CInt
@@ -680,7 +680,7 @@ instance HasCField.HasCField Rte_dev_cmp_t_Aux "unwrap" where
 
     __defined at:__ @rte_dev.h 233:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_cmp_t = Rte_dev_cmp_t
   { unwrap :: BG.FunPtr Rte_dev_cmp_t_Aux
@@ -718,7 +718,7 @@ instance HasCField.HasCField Rte_dev_cmp_t "unwrap" where
 
     __defined at:__ @rte_dev.h 240:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_dev_iterator = Rte_dev_iterator
   { dev_str :: PtrConst.PtrConst BG.CChar
@@ -726,49 +726,49 @@ data Rte_dev_iterator = Rte_dev_iterator
 
          __defined at:__ @rte_dev.h 241:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , bus_str :: PtrConst.PtrConst BG.CChar
     {- ^ __C declaration:__ @bus_str@
 
          __defined at:__ @rte_dev.h 242:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cls_str :: PtrConst.PtrConst BG.CChar
     {- ^ __C declaration:__ @cls_str@
 
          __defined at:__ @rte_dev.h 243:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , bus :: BG.Ptr Rte_bus
     {- ^ __C declaration:__ @bus@
 
          __defined at:__ @rte_dev.h 244:18@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cls :: BG.Ptr Rte_class
     {- ^ __C declaration:__ @cls@
 
          __defined at:__ @rte_dev.h 245:20@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , device :: BG.Ptr Rte_device
     {- ^ __C declaration:__ @device@
 
          __defined at:__ @rte_dev.h 246:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , class_device :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @class_device@
 
          __defined at:__ @rte_dev.h 247:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -815,7 +815,7 @@ deriving via Struct.IsStructViaReadRaw Rte_dev_iterator instance Struct.IsStruct
 
     __defined at:__ @rte_dev.h 241:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "dev_str" Rte_dev_iterator ty where
@@ -850,7 +850,7 @@ instance HasCField.HasCField Rte_dev_iterator "dev_str" where
 
     __defined at:__ @rte_dev.h 242:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "bus_str" Rte_dev_iterator ty where
@@ -885,7 +885,7 @@ instance HasCField.HasCField Rte_dev_iterator "bus_str" where
 
     __defined at:__ @rte_dev.h 243:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "cls_str" Rte_dev_iterator ty where
@@ -920,7 +920,7 @@ instance HasCField.HasCField Rte_dev_iterator "cls_str" where
 
     __defined at:__ @rte_dev.h 244:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_bus
          ) => BG.CompatHasField.HasField "bus" Rte_dev_iterator ty where
@@ -955,7 +955,7 @@ instance HasCField.HasCField Rte_dev_iterator "bus" where
 
     __defined at:__ @rte_dev.h 245:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_class
          ) => BG.CompatHasField.HasField "cls" Rte_dev_iterator ty where
@@ -990,7 +990,7 @@ instance HasCField.HasCField Rte_dev_iterator "cls" where
 
     __defined at:__ @rte_dev.h 246:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_device
          ) => BG.CompatHasField.HasField "device" Rte_dev_iterator ty where
@@ -1025,7 +1025,7 @@ instance HasCField.HasCField Rte_dev_iterator "device" where
 
     __defined at:__ @rte_dev.h 247:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "class_device" Rte_dev_iterator ty where
@@ -1061,7 +1061,7 @@ instance HasCField.HasCField Rte_dev_iterator "class_device" where
 
     __defined at:__ @rte_dev.h 245:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_class
 
@@ -1071,7 +1071,7 @@ data Rte_class
 
     __defined at:__ @rte_dev.h 278:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_iterate_t_Aux = Rte_dev_iterate_t_Aux
   { unwrap :: PtrConst.PtrConst BG.Void -> PtrConst.PtrConst BG.CChar -> PtrConst.PtrConst Rte_dev_iterator -> IO (BG.Ptr BG.Void)
@@ -1142,7 +1142,7 @@ instance HasCField.HasCField Rte_dev_iterate_t_Aux "unwrap" where
 
     __defined at:__ @rte_dev.h 278:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_dev_iterate_t = Rte_dev_iterate_t
   { unwrap :: BG.FunPtr Rte_dev_iterate_t_Aux
@@ -1182,7 +1182,7 @@ instance HasCField.HasCField Rte_dev_iterate_t "unwrap" where
 
     __defined at:__ @rte_devargs.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_DEVARGS_KEY_BUS :: BG.ByteString
 rTE_DEVARGS_KEY_BUS = BG.pack [0x62, 0x75, 0x73]
@@ -1193,7 +1193,7 @@ rTE_DEVARGS_KEY_BUS = BG.pack [0x62, 0x75, 0x73]
 
     __defined at:__ @rte_devargs.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_DEVARGS_KEY_CLASS :: BG.ByteString
 rTE_DEVARGS_KEY_CLASS =
@@ -1205,7 +1205,7 @@ rTE_DEVARGS_KEY_CLASS =
 
     __defined at:__ @rte_devargs.h 51:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_DEVARGS_KEY_DRIVER :: BG.ByteString
 rTE_DEVARGS_KEY_DRIVER =
@@ -1215,7 +1215,7 @@ rTE_DEVARGS_KEY_DRIVER =
 
     __defined at:__ @rte_devargs.h 56:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_devtype = Rte_devtype
   { unwrap :: BG.CUInt
@@ -1315,7 +1315,7 @@ instance HasCField.HasCField Rte_devtype "unwrap" where
 
     __defined at:__ @rte_devargs.h 57:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEVTYPE_ALLOWED :: Rte_devtype
 pattern RTE_DEVTYPE_ALLOWED = Rte_devtype 0
@@ -1324,7 +1324,7 @@ pattern RTE_DEVTYPE_ALLOWED = Rte_devtype 0
 
     __defined at:__ @rte_devargs.h 58:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEVTYPE_BLOCKED :: Rte_devtype
 pattern RTE_DEVTYPE_BLOCKED = Rte_devtype 1
@@ -1333,7 +1333,7 @@ pattern RTE_DEVTYPE_BLOCKED = Rte_devtype 1
 
     __defined at:__ @rte_devargs.h 59:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_DEVTYPE_VIRTUAL :: Rte_devtype
 pattern RTE_DEVTYPE_VIRTUAL = Rte_devtype 2
@@ -1342,7 +1342,7 @@ pattern RTE_DEVTYPE_VIRTUAL = Rte_devtype 2
 
     __defined at:__ @rte_devargs.h 74:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_devargs_next = Rte_devargs_next
   { tqe_next :: BG.Ptr Rte_devargs
@@ -1350,14 +1350,14 @@ data Rte_devargs_next = Rte_devargs_next
 
          __defined at:__ @rte_devargs.h 74:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tqe_prev :: BG.Ptr (BG.Ptr Rte_devargs)
     {- ^ __C declaration:__ @tqe_prev@
 
          __defined at:__ @rte_devargs.h 74:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1394,7 +1394,7 @@ deriving via Struct.IsStructViaReadRaw Rte_devargs_next instance Struct.IsStruct
 
     __defined at:__ @rte_devargs.h 74:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_devargs
          ) => BG.CompatHasField.HasField "tqe_next" Rte_devargs_next ty where
@@ -1422,7 +1422,7 @@ instance HasCField.HasCField Rte_devargs_next "tqe_next" where
 
     __defined at:__ @rte_devargs.h 74:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr (BG.Ptr Rte_devargs)
          ) => BG.CompatHasField.HasField "tqe_prev" Rte_devargs_next ty where
@@ -1450,7 +1450,7 @@ instance HasCField.HasCField Rte_devargs_next "tqe_prev" where
 
     __defined at:__ @rte_devargs.h 81:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_devargs_anon'args = Rte_devargs_anon'args
   { unwrap :: BG.ByteArray
@@ -1471,7 +1471,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_devargs_anon'args
 
     __defined at:__ @rte_devargs.h 82:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.HasField "args" Rte_devargs_anon'args ty where
@@ -1482,7 +1482,7 @@ instance ( ty ~ PtrConst.PtrConst BG.CChar
 
     __defined at:__ @rte_devargs.h 82:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "args" Rte_devargs_anon'args ty where
@@ -1508,7 +1508,7 @@ instance HasCField.HasCField Rte_devargs_anon'args "args" where
 
     __defined at:__ @rte_devargs.h 83:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.HasField "drv_str" Rte_devargs_anon'args ty where
@@ -1519,7 +1519,7 @@ instance ( ty ~ PtrConst.PtrConst BG.CChar
 
     __defined at:__ @rte_devargs.h 83:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "drv_str" Rte_devargs_anon'args ty where
@@ -1545,7 +1545,7 @@ instance HasCField.HasCField Rte_devargs_anon'args "drv_str" where
 
     __defined at:__ @rte_devargs.h 72:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_devargs = Rte_devargs
   { next :: Rte_devargs_next
@@ -1553,70 +1553,70 @@ data Rte_devargs = Rte_devargs
 
          __defined at:__ @rte_devargs.h 74:31@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: Rte_devtype
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_devargs.h 76:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , policy :: Rte_dev_policy
     {- ^ __C declaration:__ @policy@
 
          __defined at:__ @rte_devargs.h 78:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , name :: CA.ConstantArray 64 BG.CChar
     {- ^ __C declaration:__ @name@
 
          __defined at:__ @rte_devargs.h 80:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'args :: Rte_devargs_anon'args
     {- ^ __C declaration:__ @anon\'args@
 
          __defined at:__ @rte_devargs.h 81:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , bus :: BG.Ptr Rte_bus
     {- ^ __C declaration:__ @bus@
 
          __defined at:__ @rte_devargs.h 85:18@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cls :: BG.Ptr Rte_class
     {- ^ __C declaration:__ @cls@
 
          __defined at:__ @rte_devargs.h 86:20@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , bus_str :: PtrConst.PtrConst BG.CChar
     {- ^ __C declaration:__ @bus_str@
 
          __defined at:__ @rte_devargs.h 87:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cls_str :: PtrConst.PtrConst BG.CChar
     {- ^ __C declaration:__ @cls_str@
 
          __defined at:__ @rte_devargs.h 88:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data' :: BG.Ptr BG.CChar
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_devargs.h 89:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1679,7 +1679,7 @@ deriving via Struct.IsStructViaReadRaw Rte_devargs instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_devargs.h 74:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_devargs_next
          ) => BG.CompatHasField.HasField "next" Rte_devargs ty where
@@ -1716,7 +1716,7 @@ instance HasCField.HasCField Rte_devargs "next" where
 
     __defined at:__ @rte_devargs.h 76:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_devtype
          ) => BG.CompatHasField.HasField "type'" Rte_devargs ty where
@@ -1753,7 +1753,7 @@ instance HasCField.HasCField Rte_devargs "type'" where
 
     __defined at:__ @rte_devargs.h 78:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_dev_policy
          ) => BG.CompatHasField.HasField "policy" Rte_devargs ty where
@@ -1790,7 +1790,7 @@ instance HasCField.HasCField Rte_devargs "policy" where
 
     __defined at:__ @rte_devargs.h 80:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_devargs ty where
@@ -1828,7 +1828,7 @@ instance HasCField.HasCField Rte_devargs "name" where
 
     __defined at:__ @rte_devargs.h 81:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_devargs_anon'args
          ) => BG.CompatHasField.HasField "anon'args" Rte_devargs ty where
@@ -1866,7 +1866,7 @@ instance HasCField.HasCField Rte_devargs "anon'args" where
 
     __defined at:__ @rte_devargs.h 82:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.HasField "args" Rte_devargs ty where
@@ -1879,7 +1879,7 @@ instance ( ty ~ PtrConst.PtrConst BG.CChar
 
     __defined at:__ @rte_devargs.h 82:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "args" Rte_devargs ty where
@@ -1908,7 +1908,7 @@ instance HasCField.HasCField Rte_devargs "args" where
 
     __defined at:__ @rte_devargs.h 83:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.HasField "drv_str" Rte_devargs ty where
@@ -1921,7 +1921,7 @@ instance ( ty ~ PtrConst.PtrConst BG.CChar
 
     __defined at:__ @rte_devargs.h 83:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "drv_str" Rte_devargs ty where
@@ -1950,7 +1950,7 @@ instance HasCField.HasCField Rte_devargs "drv_str" where
 
     __defined at:__ @rte_devargs.h 85:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_bus
          ) => BG.CompatHasField.HasField "bus" Rte_devargs ty where
@@ -1987,7 +1987,7 @@ instance HasCField.HasCField Rte_devargs "bus" where
 
     __defined at:__ @rte_devargs.h 86:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_class
          ) => BG.CompatHasField.HasField "cls" Rte_devargs ty where
@@ -2024,7 +2024,7 @@ instance HasCField.HasCField Rte_devargs "cls" where
 
     __defined at:__ @rte_devargs.h 87:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "bus_str" Rte_devargs ty where
@@ -2062,7 +2062,7 @@ instance HasCField.HasCField Rte_devargs "bus_str" where
 
     __defined at:__ @rte_devargs.h 88:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "cls_str" Rte_devargs ty where
@@ -2100,7 +2100,7 @@ instance HasCField.HasCField Rte_devargs "cls_str" where
 
     __defined at:__ @rte_devargs.h 89:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.CChar
          ) => BG.CompatHasField.HasField "data'" Rte_devargs ty where

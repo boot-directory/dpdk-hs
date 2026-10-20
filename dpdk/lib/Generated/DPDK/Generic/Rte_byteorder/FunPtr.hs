@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_byteorder_get_rte_constant_bswap16 */"
   , "__attribute__ ((const))"
   , "uint16_t (*hs_bindgen_1aba4ce97a3fa6bf (void)) ("
@@ -58,7 +60,7 @@ hs_bindgen_1aba4ce97a3fa6bf =
 
     __defined at:__ @generic\/rte_byteorder.h 130:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap16 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word16 -> IO HsBindgen.Runtime.LibC.Word16)
 rte_constant_bswap16 =
@@ -78,7 +80,7 @@ hs_bindgen_88dd9e8c9a58686f =
 
     __defined at:__ @generic\/rte_byteorder.h 142:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_constant_bswap32 =
@@ -98,7 +100,7 @@ hs_bindgen_20fc45aa96c02742 =
 
     __defined at:__ @generic\/rte_byteorder.h 154:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_constant_bswap64 =

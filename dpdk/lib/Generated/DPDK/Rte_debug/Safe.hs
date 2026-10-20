@@ -13,7 +13,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_d14b12f9d7f06a3b (void)"
   , "{"
   , "  (rte_dump_stack)();"
@@ -33,7 +35,7 @@ hs_bindgen_d14b12f9d7f06a3b =
 
     __defined at:__ @rte_debug.h 27:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_dump_stack :: IO ()
 rte_dump_stack = hs_bindgen_d14b12f9d7f06a3b

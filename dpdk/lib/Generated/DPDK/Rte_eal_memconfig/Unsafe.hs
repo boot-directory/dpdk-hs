@@ -35,7 +35,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "rte_rwlock_t *hs_bindgen_bb1b86fe281616ba (void)"
   , "{"
   , "  return (rte_mcfg_mem_get_lock)();"
@@ -131,7 +133,7 @@ hs_bindgen_bb1b86fe281616ba =
 
     __defined at:__ @rte_eal_memconfig.h 28:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mem_get_lock :: IO (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t)
 rte_mcfg_mem_get_lock = hs_bindgen_bb1b86fe281616ba
@@ -149,7 +151,7 @@ hs_bindgen_918459281fc8f537 =
 
     __defined at:__ @rte_eal_memconfig.h 32:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_tailq_get_lock :: IO (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t)
 rte_mcfg_tailq_get_lock = hs_bindgen_918459281fc8f537
@@ -167,7 +169,7 @@ hs_bindgen_2a00d30ae3d4281e =
 
     __defined at:__ @rte_eal_memconfig.h 36:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mempool_get_lock :: IO (BG.Ptr Generated.DPDK.Generic.Rte_rwlock.Rte_rwlock_t)
 rte_mcfg_mempool_get_lock =
@@ -186,7 +188,7 @@ hs_bindgen_03643f521ae9f8d4 =
 
     __defined at:__ @rte_eal_memconfig.h 40:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_timer_get_lock :: IO (BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t)
 rte_mcfg_timer_get_lock = hs_bindgen_03643f521ae9f8d4
@@ -204,7 +206,7 @@ hs_bindgen_d8d2c6eaf6421dd1 =
 
     __defined at:__ @rte_eal_memconfig.h 44:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_ethdev_get_lock :: IO (BG.Ptr Generated.DPDK.Generic.Rte_spinlock.Rte_spinlock_t)
 rte_mcfg_ethdev_get_lock =
@@ -223,7 +225,7 @@ hs_bindgen_32d284fd3b0a3b59 =
 
     __defined at:__ @rte_eal_memconfig.h 50:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mem_read_lock :: IO ()
 rte_mcfg_mem_read_lock = hs_bindgen_32d284fd3b0a3b59
@@ -241,7 +243,7 @@ hs_bindgen_4ecae85be649eb4c =
 
     __defined at:__ @rte_eal_memconfig.h 57:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mem_read_unlock :: IO ()
 rte_mcfg_mem_read_unlock =
@@ -260,7 +262,7 @@ hs_bindgen_8ce550a0f1078d6f =
 
     __defined at:__ @rte_eal_memconfig.h 64:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mem_write_lock :: IO ()
 rte_mcfg_mem_write_lock = hs_bindgen_8ce550a0f1078d6f
@@ -278,7 +280,7 @@ hs_bindgen_5f91f289470a276c =
 
     __defined at:__ @rte_eal_memconfig.h 71:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mem_write_unlock :: IO ()
 rte_mcfg_mem_write_unlock =
@@ -297,7 +299,7 @@ hs_bindgen_3a1d334930ded849 =
 
     __defined at:__ @rte_eal_memconfig.h 78:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_tailq_read_lock :: IO ()
 rte_mcfg_tailq_read_lock =
@@ -316,7 +318,7 @@ hs_bindgen_59705a737c818fc8 =
 
     __defined at:__ @rte_eal_memconfig.h 85:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_tailq_read_unlock :: IO ()
 rte_mcfg_tailq_read_unlock =
@@ -335,7 +337,7 @@ hs_bindgen_5ea001d8da0967f9 =
 
     __defined at:__ @rte_eal_memconfig.h 92:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_tailq_write_lock :: IO ()
 rte_mcfg_tailq_write_lock =
@@ -354,7 +356,7 @@ hs_bindgen_80627ae5f23eeed7 =
 
     __defined at:__ @rte_eal_memconfig.h 99:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_tailq_write_unlock :: IO ()
 rte_mcfg_tailq_write_unlock =
@@ -373,7 +375,7 @@ hs_bindgen_96ed8aba311433ee =
 
     __defined at:__ @rte_eal_memconfig.h 106:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mempool_read_lock :: IO ()
 rte_mcfg_mempool_read_lock =
@@ -392,7 +394,7 @@ hs_bindgen_4eb803fd11306707 =
 
     __defined at:__ @rte_eal_memconfig.h 113:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mempool_read_unlock :: IO ()
 rte_mcfg_mempool_read_unlock =
@@ -411,7 +413,7 @@ hs_bindgen_54f342fad0458d5d =
 
     __defined at:__ @rte_eal_memconfig.h 120:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mempool_write_lock :: IO ()
 rte_mcfg_mempool_write_lock =
@@ -430,7 +432,7 @@ hs_bindgen_dd4f19f37d290abf =
 
     __defined at:__ @rte_eal_memconfig.h 127:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_mempool_write_unlock :: IO ()
 rte_mcfg_mempool_write_unlock =
@@ -449,7 +451,7 @@ hs_bindgen_5083b86f864c31e7 =
 
     __defined at:__ @rte_eal_memconfig.h 134:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_timer_lock :: IO ()
 rte_mcfg_timer_lock = hs_bindgen_5083b86f864c31e7
@@ -467,7 +469,7 @@ hs_bindgen_0962dd44b278bbd7 =
 
     __defined at:__ @rte_eal_memconfig.h 141:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_timer_unlock :: IO ()
 rte_mcfg_timer_unlock = hs_bindgen_0962dd44b278bbd7
@@ -485,7 +487,7 @@ hs_bindgen_2d3a5f9ab80232ec =
 
     __defined at:__ @rte_eal_memconfig.h 149:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mcfg_get_single_file_segments :: IO BG.CBool
 rte_mcfg_get_single_file_segments =

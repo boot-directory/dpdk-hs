@@ -46,7 +46,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_epoll.h 22:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_INTR_EVENT_ADD :: BG.CULong
 rTE_INTR_EVENT_ADD = (1 :: BG.CULong)
@@ -55,7 +55,7 @@ rTE_INTR_EVENT_ADD = (1 :: BG.CULong)
 
     __defined at:__ @rte_epoll.h 23:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_INTR_EVENT_DEL :: BG.CULong
 rTE_INTR_EVENT_DEL = (2 :: BG.CULong)
@@ -66,7 +66,7 @@ rTE_INTR_EVENT_DEL = (2 :: BG.CULong)
 
     __defined at:__ @rte_epoll.h 25:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_event_cb_t_Aux = Rte_intr_event_cb_t_Aux
   { unwrap :: BG.CInt -> BG.Ptr BG.Void -> IO ()
@@ -135,7 +135,7 @@ instance HasCField.HasCField Rte_intr_event_cb_t_Aux "unwrap" where
 
     __defined at:__ @rte_epoll.h 25:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_event_cb_t = Rte_intr_event_cb_t
   { unwrap :: BG.FunPtr Rte_intr_event_cb_t_Aux
@@ -173,7 +173,7 @@ instance HasCField.HasCField Rte_intr_event_cb_t "unwrap" where
 
     __defined at:__ @rte_epoll.h 27:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_epoll_data = Rte_epoll_data
   { event :: HsBindgen.Runtime.LibC.Word32
@@ -181,28 +181,28 @@ data Rte_epoll_data = Rte_epoll_data
 
          __defined at:__ @rte_epoll.h 28:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data' :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_epoll.h 29:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cb_fun :: Rte_intr_event_cb_t
     {- ^ __C declaration:__ @cb_fun@
 
          __defined at:__ @rte_epoll.h 30:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cb_arg :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @cb_arg@
 
          __defined at:__ @rte_epoll.h 31:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -243,7 +243,7 @@ deriving via Struct.IsStructViaReadRaw Rte_epoll_data instance Struct.IsStruct R
 
     __defined at:__ @rte_epoll.h 28:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "event" Rte_epoll_data ty where
@@ -275,7 +275,7 @@ instance HasCField.HasCField Rte_epoll_data "event" where
 
     __defined at:__ @rte_epoll.h 29:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "data'" Rte_epoll_data ty where
@@ -307,7 +307,7 @@ instance HasCField.HasCField Rte_epoll_data "data'" where
 
     __defined at:__ @rte_epoll.h 30:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_intr_event_cb_t
          ) => BG.CompatHasField.HasField "cb_fun" Rte_epoll_data ty where
@@ -339,7 +339,7 @@ instance HasCField.HasCField Rte_epoll_data "cb_fun" where
 
     __defined at:__ @rte_epoll.h 31:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "cb_arg" Rte_epoll_data ty where
@@ -371,7 +371,7 @@ instance HasCField.HasCField Rte_epoll_data "cb_arg" where
 
     __defined at:__ @rte_epoll.h 34:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_EPOLL_EXEC :: BG.CUInt
 pattern RTE_EPOLL_EXEC = 2
@@ -380,7 +380,7 @@ pattern RTE_EPOLL_EXEC = 2
 
     __defined at:__ @rte_epoll.h 34:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_EPOLL_INVALID :: BG.CUInt
 pattern RTE_EPOLL_INVALID = 0
@@ -389,7 +389,7 @@ pattern RTE_EPOLL_INVALID = 0
 
     __defined at:__ @rte_epoll.h 34:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_EPOLL_VALID :: BG.CUInt
 pattern RTE_EPOLL_VALID = 1
@@ -398,7 +398,7 @@ pattern RTE_EPOLL_VALID = 1
 
     __defined at:__ @rte_epoll.h 41:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_epoll_event = Rte_epoll_event
   { status :: HsBindgen.Runtime.LibC.Word32
@@ -406,28 +406,28 @@ data Rte_epoll_event = Rte_epoll_event
 
          __defined at:__ @rte_epoll.h 42:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , fd :: BG.CInt
     {- ^ __C declaration:__ @fd@
 
          __defined at:__ @rte_epoll.h 43:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , epfd :: BG.CInt
     {- ^ __C declaration:__ @epfd@
 
          __defined at:__ @rte_epoll.h 44:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , epdata :: Rte_epoll_data
     {- ^ __C declaration:__ @epdata@
 
          __defined at:__ @rte_epoll.h 45:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -468,7 +468,7 @@ deriving via Struct.IsStructViaReadRaw Rte_epoll_event instance Struct.IsStruct 
 
     __defined at:__ @rte_epoll.h 42:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "status" Rte_epoll_event ty where
@@ -500,7 +500,7 @@ instance HasCField.HasCField Rte_epoll_event "status" where
 
     __defined at:__ @rte_epoll.h 43:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "fd" Rte_epoll_event ty where
@@ -531,7 +531,7 @@ instance HasCField.HasCField Rte_epoll_event "fd" where
 
     __defined at:__ @rte_epoll.h 44:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "epfd" Rte_epoll_event ty where
@@ -562,7 +562,7 @@ instance HasCField.HasCField Rte_epoll_event "epfd" where
 
     __defined at:__ @rte_epoll.h 45:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_epoll_data
          ) => BG.CompatHasField.HasField "epdata" Rte_epoll_event ty where
@@ -594,7 +594,7 @@ instance HasCField.HasCField Rte_epoll_event "epdata" where
 
     __defined at:__ @rte_epoll.h 48:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_EPOLL_PER_THREAD :: BG.CInt
 rTE_EPOLL_PER_THREAD =

@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_31f970d26a0859fc ("
   , "  void const *const arg1,"
   , "  unsigned int const arg2"
@@ -53,7 +55,7 @@ hs_bindgen_31f970d26a0859fc =
 
     __defined at:__ @rte_common.h 698:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_is_aligned ::
      PtrConst.PtrConst BG.Void
@@ -80,7 +82,7 @@ hs_bindgen_38c122aaca5aad20 =
 
     __defined at:__ @rte_common.h 952:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_str_to_size ::
      PtrConst.PtrConst BG.CChar

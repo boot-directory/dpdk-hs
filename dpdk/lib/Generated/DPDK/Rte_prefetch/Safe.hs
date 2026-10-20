@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_270fac00494b37c1 ("
   , "  void const *arg1"
   , ")"
@@ -62,7 +64,7 @@ hs_bindgen_270fac00494b37c1 =
 
     __defined at:__ @rte_prefetch.h 20:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_prefetch0 ::
      PtrConst.PtrConst BG.Void
@@ -87,7 +89,7 @@ hs_bindgen_0d5635db4a49130d =
 
     __defined at:__ @rte_prefetch.h 29:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_prefetch1 ::
      PtrConst.PtrConst BG.Void
@@ -112,7 +114,7 @@ hs_bindgen_d30f6736a5f80c3a =
 
     __defined at:__ @rte_prefetch.h 38:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_prefetch2 ::
      PtrConst.PtrConst BG.Void
@@ -137,7 +139,7 @@ hs_bindgen_ff64757194cd605d =
 
     __defined at:__ @rte_prefetch.h 47:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_prefetch_non_temporal ::
      PtrConst.PtrConst BG.Void

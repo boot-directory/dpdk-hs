@@ -49,7 +49,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_dev_info.h 10:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_REG_NAME_SIZE :: BG.CInt
 rTE_ETH_REG_NAME_SIZE = (64 :: BG.CInt)
@@ -58,7 +58,7 @@ rTE_ETH_REG_NAME_SIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 11:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_reg_name = Rte_eth_reg_name
   { name :: CA.ConstantArray 64 BG.CChar
@@ -66,7 +66,7 @@ data Rte_eth_reg_name = Rte_eth_reg_name
 
          __defined at:__ @rte_dev_info.h 12:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -101,7 +101,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_reg_name instance Struct.IsStruct
 
     __defined at:__ @rte_dev_info.h 12:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_eth_reg_name ty where
@@ -127,7 +127,7 @@ instance HasCField.HasCField Rte_eth_reg_name "name" where
 
     __defined at:__ @rte_dev_info.h 18:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_dev_reg_info = Rte_dev_reg_info
   { data' :: BG.Ptr BG.Void
@@ -135,49 +135,49 @@ data Rte_dev_reg_info = Rte_dev_reg_info
 
          __defined at:__ @rte_dev_info.h 19:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offset :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @offset@
 
          __defined at:__ @rte_dev_info.h 20:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , length :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @length@
 
          __defined at:__ @rte_dev_info.h 21:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , width :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @width@
 
          __defined at:__ @rte_dev_info.h 22:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , version :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @version@
 
          __defined at:__ @rte_dev_info.h 23:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , filter :: PtrConst.PtrConst BG.CChar
     {- ^ __C declaration:__ @filter@
 
          __defined at:__ @rte_dev_info.h 28:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , names :: BG.Ptr Rte_eth_reg_name
     {- ^ __C declaration:__ @names@
 
          __defined at:__ @rte_dev_info.h 29:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -224,7 +224,7 @@ deriving via Struct.IsStructViaReadRaw Rte_dev_reg_info instance Struct.IsStruct
 
     __defined at:__ @rte_dev_info.h 19:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "data'" Rte_dev_reg_info ty where
@@ -259,7 +259,7 @@ instance HasCField.HasCField Rte_dev_reg_info "data'" where
 
     __defined at:__ @rte_dev_info.h 20:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "offset" Rte_dev_reg_info ty where
@@ -294,7 +294,7 @@ instance HasCField.HasCField Rte_dev_reg_info "offset" where
 
     __defined at:__ @rte_dev_info.h 21:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "length" Rte_dev_reg_info ty where
@@ -329,7 +329,7 @@ instance HasCField.HasCField Rte_dev_reg_info "length" where
 
     __defined at:__ @rte_dev_info.h 22:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "width" Rte_dev_reg_info ty where
@@ -364,7 +364,7 @@ instance HasCField.HasCField Rte_dev_reg_info "width" where
 
     __defined at:__ @rte_dev_info.h 23:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "version" Rte_dev_reg_info ty where
@@ -399,7 +399,7 @@ instance HasCField.HasCField Rte_dev_reg_info "version" where
 
     __defined at:__ @rte_dev_info.h 28:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "filter" Rte_dev_reg_info ty where
@@ -434,7 +434,7 @@ instance HasCField.HasCField Rte_dev_reg_info "filter" where
 
     __defined at:__ @rte_dev_info.h 29:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_eth_reg_name
          ) => BG.CompatHasField.HasField "names" Rte_dev_reg_info ty where
@@ -469,7 +469,7 @@ instance HasCField.HasCField Rte_dev_reg_info "names" where
 
     __defined at:__ @rte_dev_info.h 35:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_dev_eeprom_info = Rte_dev_eeprom_info
   { data' :: BG.Ptr BG.Void
@@ -477,28 +477,28 @@ data Rte_dev_eeprom_info = Rte_dev_eeprom_info
 
          __defined at:__ @rte_dev_info.h 36:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offset :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @offset@
 
          __defined at:__ @rte_dev_info.h 37:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , length :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @length@
 
          __defined at:__ @rte_dev_info.h 38:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , magic :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @magic@
 
          __defined at:__ @rte_dev_info.h 39:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -539,7 +539,7 @@ deriving via Struct.IsStructViaReadRaw Rte_dev_eeprom_info instance Struct.IsStr
 
     __defined at:__ @rte_dev_info.h 36:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "data'" Rte_dev_eeprom_info ty where
@@ -571,7 +571,7 @@ instance HasCField.HasCField Rte_dev_eeprom_info "data'" where
 
     __defined at:__ @rte_dev_info.h 37:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "offset" Rte_dev_eeprom_info ty where
@@ -603,7 +603,7 @@ instance HasCField.HasCField Rte_dev_eeprom_info "offset" where
 
     __defined at:__ @rte_dev_info.h 38:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "length" Rte_dev_eeprom_info ty where
@@ -635,7 +635,7 @@ instance HasCField.HasCField Rte_dev_eeprom_info "length" where
 
     __defined at:__ @rte_dev_info.h 39:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "magic" Rte_dev_eeprom_info ty where
@@ -667,7 +667,7 @@ instance HasCField.HasCField Rte_dev_eeprom_info "magic" where
 
     __defined at:__ @rte_dev_info.h 45:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_module_info = Rte_eth_dev_module_info
   { type' :: HsBindgen.Runtime.LibC.Word32
@@ -675,14 +675,14 @@ data Rte_eth_dev_module_info = Rte_eth_dev_module_info
 
          __defined at:__ @rte_dev_info.h 46:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , eeprom_len :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @eeprom_len@
 
          __defined at:__ @rte_dev_info.h 47:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -719,7 +719,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_dev_module_info instance Struct.I
 
     __defined at:__ @rte_dev_info.h 46:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "type'" Rte_eth_dev_module_info ty where
@@ -747,7 +747,7 @@ instance HasCField.HasCField Rte_eth_dev_module_info "type'" where
 
     __defined at:__ @rte_dev_info.h 47:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "eeprom_len" Rte_eth_dev_module_info ty where
@@ -775,7 +775,7 @@ instance HasCField.HasCField Rte_eth_dev_module_info "eeprom_len" where
 
     __defined at:__ @rte_dev_info.h 51:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8079 :: BG.CInt
 rTE_ETH_MODULE_SFF_8079 = (1 :: BG.CInt)
@@ -784,7 +784,7 @@ rTE_ETH_MODULE_SFF_8079 = (1 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8079_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8079_LEN = (256 :: BG.CInt)
@@ -793,7 +793,7 @@ rTE_ETH_MODULE_SFF_8079_LEN = (256 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 53:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8472 :: BG.CInt
 rTE_ETH_MODULE_SFF_8472 = (2 :: BG.CInt)
@@ -802,7 +802,7 @@ rTE_ETH_MODULE_SFF_8472 = (2 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 54:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8472_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8472_LEN = (512 :: BG.CInt)
@@ -811,7 +811,7 @@ rTE_ETH_MODULE_SFF_8472_LEN = (512 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8636 :: BG.CInt
 rTE_ETH_MODULE_SFF_8636 = (3 :: BG.CInt)
@@ -820,7 +820,7 @@ rTE_ETH_MODULE_SFF_8636 = (3 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 56:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8636_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8636_LEN = (256 :: BG.CInt)
@@ -829,7 +829,7 @@ rTE_ETH_MODULE_SFF_8636_LEN = (256 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 57:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8636_MAX_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8636_MAX_LEN = (640 :: BG.CInt)
@@ -838,7 +838,7 @@ rTE_ETH_MODULE_SFF_8636_MAX_LEN = (640 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 58:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8436 :: BG.CInt
 rTE_ETH_MODULE_SFF_8436 = (4 :: BG.CInt)
@@ -847,7 +847,7 @@ rTE_ETH_MODULE_SFF_8436 = (4 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 59:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8436_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8436_LEN = (256 :: BG.CInt)
@@ -856,7 +856,7 @@ rTE_ETH_MODULE_SFF_8436_LEN = (256 :: BG.CInt)
 
     __defined at:__ @rte_dev_info.h 60:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MODULE_SFF_8436_MAX_LEN :: BG.CInt
 rTE_ETH_MODULE_SFF_8436_MAX_LEN = (640 :: BG.CInt)

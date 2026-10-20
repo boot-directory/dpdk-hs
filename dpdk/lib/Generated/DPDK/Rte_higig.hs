@@ -40,7 +40,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_higig.h 23:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_higig2_frc = Rte_higig2_frc
   { ksop :: HsBindgen.Runtime.LibC.Word32
@@ -48,84 +48,84 @@ data Rte_higig2_frc = Rte_higig2_frc
 
          __defined at:__ @rte_higig.h 25:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @tc@
 
          __defined at:__ @rte_higig.h 26:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mcst :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @mcst@
 
          __defined at:__ @rte_higig.h 27:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , resv :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @resv@
 
          __defined at:__ @rte_higig.h 28:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_modid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dst_modid@
 
          __defined at:__ @rte_higig.h 29:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_pid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dst_pid@
 
          __defined at:__ @rte_higig.h 30:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , src_modid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @src_modid@
 
          __defined at:__ @rte_higig.h 31:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , src_pid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @src_pid@
 
          __defined at:__ @rte_higig.h 32:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , lbid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @lbid@
 
          __defined at:__ @rte_higig.h 33:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ppd_type :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @ppd_type@
 
          __defined at:__ @rte_higig.h 34:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , resv1 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @resv1@
 
          __defined at:__ @rte_higig.h 35:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dp :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dp@
 
          __defined at:__ @rte_higig.h 36:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -194,7 +194,7 @@ deriving via Struct.IsStructViaReadRaw Rte_higig2_frc instance Struct.IsStruct R
 
     __defined at:__ @rte_higig.h 25:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ksop" Rte_higig2_frc ty where
@@ -236,7 +236,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "ksop" where
 
     __defined at:__ @rte_higig.h 26:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "tc" Rte_higig2_frc ty where
@@ -278,7 +278,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "tc" where
 
     __defined at:__ @rte_higig.h 27:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mcst" Rte_higig2_frc ty where
@@ -320,7 +320,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "mcst" where
 
     __defined at:__ @rte_higig.h 28:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "resv" Rte_higig2_frc ty where
@@ -362,7 +362,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "resv" where
 
     __defined at:__ @rte_higig.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dst_modid" Rte_higig2_frc ty where
@@ -404,7 +404,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "dst_modid" where
 
     __defined at:__ @rte_higig.h 30:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dst_pid" Rte_higig2_frc ty where
@@ -446,7 +446,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "dst_pid" where
 
     __defined at:__ @rte_higig.h 31:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "src_modid" Rte_higig2_frc ty where
@@ -488,7 +488,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "src_modid" where
 
     __defined at:__ @rte_higig.h 32:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "src_pid" Rte_higig2_frc ty where
@@ -530,7 +530,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "src_pid" where
 
     __defined at:__ @rte_higig.h 33:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "lbid" Rte_higig2_frc ty where
@@ -572,7 +572,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "lbid" where
 
     __defined at:__ @rte_higig.h 34:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ppd_type" Rte_higig2_frc ty where
@@ -614,7 +614,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "ppd_type" where
 
     __defined at:__ @rte_higig.h 35:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "resv1" Rte_higig2_frc ty where
@@ -656,7 +656,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "resv1" where
 
     __defined at:__ @rte_higig.h 36:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dp" Rte_higig2_frc ty where
@@ -698,7 +698,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_frc "dp" where
 
     __defined at:__ @rte_higig.h 58:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_higig2_ppt_type0 = Rte_higig2_ppt_type0
   { mirror :: HsBindgen.Runtime.LibC.Word32
@@ -706,140 +706,140 @@ data Rte_higig2_ppt_type0 = Rte_higig2_ppt_type0
 
          __defined at:__ @rte_higig.h 60:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mirror_done :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @mirror_done@
 
          __defined at:__ @rte_higig.h 61:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mirror_only :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @mirror_only@
 
          __defined at:__ @rte_higig.h 62:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ingress_tagged :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @ingress_tagged@
 
          __defined at:__ @rte_higig.h 63:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_tgid :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dst_tgid@
 
          __defined at:__ @rte_higig.h 64:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_t :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @dst_t@
 
          __defined at:__ @rte_higig.h 65:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vc_label2 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @vc_label2@
 
          __defined at:__ @rte_higig.h 66:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , label_present :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @label_present@
 
          __defined at:__ @rte_higig.h 67:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , l3 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @l3@
 
          __defined at:__ @rte_higig.h 68:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @res@
 
          __defined at:__ @rte_higig.h 69:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vc_label1 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @vc_label1@
 
          __defined at:__ @rte_higig.h 70:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vc_label0 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @vc_label0@
 
          __defined at:__ @rte_higig.h 71:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vid_high :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @vid_high@
 
          __defined at:__ @rte_higig.h 72:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vid_low :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @vid_low@
 
          __defined at:__ @rte_higig.h 73:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , opc :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @opc@
 
          __defined at:__ @rte_higig.h 74:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res1 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @res1@
 
          __defined at:__ @rte_higig.h 75:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , srce_t :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @srce_t@
 
          __defined at:__ @rte_higig.h 76:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pf :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @pf@
 
          __defined at:__ @rte_higig.h 77:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res2 :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @res2@
 
          __defined at:__ @rte_higig.h 78:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hdr_ext_length :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @hdr_ext_length@
 
          __defined at:__ @rte_higig.h 79:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -932,7 +932,7 @@ deriving via Struct.IsStructViaReadRaw Rte_higig2_ppt_type0 instance Struct.IsSt
 
     __defined at:__ @rte_higig.h 60:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mirror" Rte_higig2_ppt_type0 ty where
@@ -982,7 +982,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "mirror" where
 
     __defined at:__ @rte_higig.h 61:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mirror_done" Rte_higig2_ppt_type0 ty where
@@ -1033,7 +1033,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "mirror_done" where
 
     __defined at:__ @rte_higig.h 62:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mirror_only" Rte_higig2_ppt_type0 ty where
@@ -1084,7 +1084,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "mirror_only" where
 
     __defined at:__ @rte_higig.h 63:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ingress_tagged" Rte_higig2_ppt_type0 ty where
@@ -1135,7 +1135,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "ingress_tagged" where
 
     __defined at:__ @rte_higig.h 64:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dst_tgid" Rte_higig2_ppt_type0 ty where
@@ -1185,7 +1185,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "dst_tgid" where
 
     __defined at:__ @rte_higig.h 65:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dst_t" Rte_higig2_ppt_type0 ty where
@@ -1235,7 +1235,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "dst_t" where
 
     __defined at:__ @rte_higig.h 66:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "vc_label2" Rte_higig2_ppt_type0 ty where
@@ -1285,7 +1285,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "vc_label2" where
 
     __defined at:__ @rte_higig.h 67:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "label_present" Rte_higig2_ppt_type0 ty where
@@ -1336,7 +1336,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "label_present" where
 
     __defined at:__ @rte_higig.h 68:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "l3" Rte_higig2_ppt_type0 ty where
@@ -1386,7 +1386,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "l3" where
 
     __defined at:__ @rte_higig.h 69:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res" Rte_higig2_ppt_type0 ty where
@@ -1436,7 +1436,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "res" where
 
     __defined at:__ @rte_higig.h 70:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "vc_label1" Rte_higig2_ppt_type0 ty where
@@ -1486,7 +1486,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "vc_label1" where
 
     __defined at:__ @rte_higig.h 71:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "vc_label0" Rte_higig2_ppt_type0 ty where
@@ -1536,7 +1536,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "vc_label0" where
 
     __defined at:__ @rte_higig.h 72:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "vid_high" Rte_higig2_ppt_type0 ty where
@@ -1586,7 +1586,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "vid_high" where
 
     __defined at:__ @rte_higig.h 73:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "vid_low" Rte_higig2_ppt_type0 ty where
@@ -1636,7 +1636,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "vid_low" where
 
     __defined at:__ @rte_higig.h 74:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "opc" Rte_higig2_ppt_type0 ty where
@@ -1686,7 +1686,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "opc" where
 
     __defined at:__ @rte_higig.h 75:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res1" Rte_higig2_ppt_type0 ty where
@@ -1736,7 +1736,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "res1" where
 
     __defined at:__ @rte_higig.h 76:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "srce_t" Rte_higig2_ppt_type0 ty where
@@ -1786,7 +1786,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "srce_t" where
 
     __defined at:__ @rte_higig.h 77:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "pf" Rte_higig2_ppt_type0 ty where
@@ -1836,7 +1836,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "pf" where
 
     __defined at:__ @rte_higig.h 78:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "res2" Rte_higig2_ppt_type0 ty where
@@ -1886,7 +1886,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "res2" where
 
     __defined at:__ @rte_higig.h 79:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "hdr_ext_length" Rte_higig2_ppt_type0 ty where
@@ -1937,7 +1937,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type0 "hdr_ext_length" where
 
     __defined at:__ @rte_higig.h 110:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_higig2_ppt_type1 = Rte_higig2_ppt_type1
   { classification :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1945,63 +1945,63 @@ data Rte_higig2_ppt_type1 = Rte_higig2_ppt_type1
 
          __defined at:__ @rte_higig.h 111:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , resv :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @resv@
 
          __defined at:__ @rte_higig.h 112:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vid :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @vid@
 
          __defined at:__ @rte_higig.h 113:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , opcode :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @opcode@
 
          __defined at:__ @rte_higig.h 115:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , resv1 :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @resv1@
 
          __defined at:__ @rte_higig.h 116:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , src_t :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @src_t@
 
          __defined at:__ @rte_higig.h 117:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pfm :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @pfm@
 
          __defined at:__ @rte_higig.h 118:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , resv2 :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @resv2@
 
          __defined at:__ @rte_higig.h 119:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hdr_ext_len :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @hdr_ext_len@
 
          __defined at:__ @rte_higig.h 120:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2061,7 +2061,7 @@ deriving via Struct.IsStructViaReadRaw Rte_higig2_ppt_type1 instance Struct.IsSt
 
     __defined at:__ @rte_higig.h 111:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "classification" Rte_higig2_ppt_type1 ty where
@@ -2099,7 +2099,7 @@ instance HasCField.HasCField Rte_higig2_ppt_type1 "classification" where
 
     __defined at:__ @rte_higig.h 112:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "resv" Rte_higig2_ppt_type1 ty where
@@ -2136,7 +2136,7 @@ instance HasCField.HasCField Rte_higig2_ppt_type1 "resv" where
 
     __defined at:__ @rte_higig.h 113:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "vid" Rte_higig2_ppt_type1 ty where
@@ -2173,7 +2173,7 @@ instance HasCField.HasCField Rte_higig2_ppt_type1 "vid" where
 
     __defined at:__ @rte_higig.h 115:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "opcode" Rte_higig2_ppt_type1 ty where
@@ -2212,7 +2212,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "opcode" where
 
     __defined at:__ @rte_higig.h 116:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "resv1" Rte_higig2_ppt_type1 ty where
@@ -2251,7 +2251,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "resv1" where
 
     __defined at:__ @rte_higig.h 117:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "src_t" Rte_higig2_ppt_type1 ty where
@@ -2290,7 +2290,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "src_t" where
 
     __defined at:__ @rte_higig.h 118:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "pfm" Rte_higig2_ppt_type1 ty where
@@ -2329,7 +2329,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "pfm" where
 
     __defined at:__ @rte_higig.h 119:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "resv2" Rte_higig2_ppt_type1 ty where
@@ -2368,7 +2368,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "resv2" where
 
     __defined at:__ @rte_higig.h 120:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "hdr_ext_len" Rte_higig2_ppt_type1 ty where
@@ -2408,7 +2408,7 @@ instance HasCBitfield.HasCBitfield Rte_higig2_ppt_type1 "hdr_ext_len" where
 
     __defined at:__ @rte_higig.h 137:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_higig2_hdr_anon'ppt0 = Rte_higig2_hdr_anon'ppt0
   { unwrap :: BG.ByteArray
@@ -2429,7 +2429,7 @@ deriving via BG.SizedByteArray 8 4 instance Union.IsUnion Rte_higig2_hdr_anon'pp
 
     __defined at:__ @rte_higig.h 138:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type0
          ) => BG.HasField "ppt0" Rte_higig2_hdr_anon'ppt0 ty where
@@ -2440,7 +2440,7 @@ instance ( ty ~ Rte_higig2_ppt_type0
 
     __defined at:__ @rte_higig.h 138:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type0
          ) => BG.CompatHasField.HasField "ppt0" Rte_higig2_hdr_anon'ppt0 ty where
@@ -2466,7 +2466,7 @@ instance HasCField.HasCField Rte_higig2_hdr_anon'ppt0 "ppt0" where
 
     __defined at:__ @rte_higig.h 139:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type1
          ) => BG.HasField "ppt1" Rte_higig2_hdr_anon'ppt0 ty where
@@ -2477,7 +2477,7 @@ instance ( ty ~ Rte_higig2_ppt_type1
 
     __defined at:__ @rte_higig.h 139:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type1
          ) => BG.CompatHasField.HasField "ppt1" Rte_higig2_hdr_anon'ppt0 ty where
@@ -2503,7 +2503,7 @@ instance HasCField.HasCField Rte_higig2_hdr_anon'ppt0 "ppt1" where
 
     __defined at:__ @rte_higig.h 135:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_higig2_hdr = Rte_higig2_hdr
   { fcr :: Rte_higig2_frc
@@ -2511,14 +2511,14 @@ data Rte_higig2_hdr = Rte_higig2_hdr
 
          __defined at:__ @rte_higig.h 136:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'ppt0 :: Rte_higig2_hdr_anon'ppt0
     {- ^ __C declaration:__ @anon\'ppt0@
 
          __defined at:__ @rte_higig.h 137:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -2555,7 +2555,7 @@ deriving via Struct.IsStructViaReadRaw Rte_higig2_hdr instance Struct.IsStruct R
 
     __defined at:__ @rte_higig.h 136:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_frc
          ) => BG.CompatHasField.HasField "fcr" Rte_higig2_hdr ty where
@@ -2582,7 +2582,7 @@ instance HasCField.HasCField Rte_higig2_hdr "fcr" where
 
     __defined at:__ @rte_higig.h 137:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_hdr_anon'ppt0
          ) => BG.CompatHasField.HasField "anon'ppt0" Rte_higig2_hdr ty where
@@ -2610,7 +2610,7 @@ instance HasCField.HasCField Rte_higig2_hdr "anon'ppt0" where
 
     __defined at:__ @rte_higig.h 138:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type0
          ) => BG.HasField "ppt0" Rte_higig2_hdr ty where
@@ -2623,7 +2623,7 @@ instance ( ty ~ Rte_higig2_ppt_type0
 
     __defined at:__ @rte_higig.h 138:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type0
          ) => BG.CompatHasField.HasField "ppt0" Rte_higig2_hdr ty where
@@ -2652,7 +2652,7 @@ instance HasCField.HasCField Rte_higig2_hdr "ppt0" where
 
     __defined at:__ @rte_higig.h 139:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type1
          ) => BG.HasField "ppt1" Rte_higig2_hdr ty where
@@ -2665,7 +2665,7 @@ instance ( ty ~ Rte_higig2_ppt_type1
 
     __defined at:__ @rte_higig.h 139:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_higig2_ppt_type1
          ) => BG.CompatHasField.HasField "ppt1" Rte_higig2_hdr ty where

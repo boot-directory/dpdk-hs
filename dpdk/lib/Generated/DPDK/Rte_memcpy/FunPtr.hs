@@ -24,7 +24,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_memcpy_get_rte_mov15_or_less */"
   , "__attribute__ ((const))"
   , "void *(*hs_bindgen_54f8057ff8310a73 (void)) ("
@@ -126,7 +128,7 @@ hs_bindgen_54f8057ff8310a73 =
 
     __defined at:__ @rte_memcpy.h 64:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov15_or_less :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.CSize -> IO (BG.Ptr BG.Void))
 rte_mov15_or_less =
@@ -146,7 +148,7 @@ hs_bindgen_794d5d08c83d450d =
 
     __defined at:__ @rte_memcpy.h 109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov16 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word8 -> PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8 -> IO ())
 rte_mov16 =
@@ -166,7 +168,7 @@ hs_bindgen_74d64318a9c20b1a =
 
     __defined at:__ @rte_memcpy.h 122:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov32 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word8 -> PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8 -> IO ())
 rte_mov32 =
@@ -186,7 +188,7 @@ hs_bindgen_b4dbb3c43fbfcff1 =
 
     __defined at:__ @rte_memcpy.h 140:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov64 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word8 -> PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8 -> IO ())
 rte_mov64 =
@@ -206,7 +208,7 @@ hs_bindgen_5fbcab9910ada49d =
 
     __defined at:__ @rte_memcpy.h 158:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov128 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word8 -> PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8 -> IO ())
 rte_mov128 =
@@ -226,7 +228,7 @@ hs_bindgen_02b3525f32f5000e =
 
     __defined at:__ @rte_memcpy.h 169:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mov256 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word8 -> PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8 -> IO ())
 rte_mov256 =
@@ -246,7 +248,7 @@ hs_bindgen_893a2590cca462ad =
 
     __defined at:__ @rte_memcpy.h 577:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy_generic :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.CSize -> IO (BG.Ptr BG.Void))
 rte_memcpy_generic =
@@ -266,7 +268,7 @@ hs_bindgen_4324eb506b3ff6ad =
 
     __defined at:__ @rte_memcpy.h 700:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy_aligned :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.CSize -> IO (BG.Ptr BG.Void))
 rte_memcpy_aligned =
@@ -286,7 +288,7 @@ hs_bindgen_dfaaddd15ec7eaed =
 
     __defined at:__ @rte_memcpy.h 752:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memcpy :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.CSize -> IO (BG.Ptr BG.Void))
 rte_memcpy =

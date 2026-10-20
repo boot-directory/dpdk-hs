@@ -19,7 +19,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_ab3474e47ad5f4e1 ("
   , "  struct rte_ring_headtail *arg1,"
   , "  uint32_t arg2,"
@@ -75,7 +77,7 @@ hs_bindgen_ab3474e47ad5f4e1 =
 
     __defined at:__ @rte_ring_generic_pvt.h 25:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_update_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail
@@ -132,7 +134,7 @@ hs_bindgen_2a2d93dbdaacfb7d =
 
     __defined at:__ @rte_ring_generic_pvt.h 71:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_headtail_move_head ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail

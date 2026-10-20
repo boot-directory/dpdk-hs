@@ -36,7 +36,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_f1a174cc973d90ff (void)"
   , "{"
   , "  (_mm_lfence)();"
@@ -164,7 +166,7 @@ hs_bindgen_f1a174cc973d90ff =
 
     __defined at:__ @emmintrin.h 4129:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 _mm_lfence :: IO ()
 _mm_lfence = hs_bindgen_f1a174cc973d90ff
@@ -182,7 +184,7 @@ hs_bindgen_46ab53bf688ed05c =
 
     __defined at:__ @emmintrin.h 4140:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 _mm_mfence :: IO ()
 _mm_mfence = hs_bindgen_46ab53bf688ed05c
@@ -200,7 +202,7 @@ hs_bindgen_4b732baf00ad40a6 =
 
     __defined at:__ @xmmintrin.h 2283:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 _mm_sfence :: IO ()
 _mm_sfence = hs_bindgen_4b732baf00ad40a6
@@ -218,7 +220,7 @@ hs_bindgen_c155676f8f1da29b =
 
     __defined at:__ @rte_atomic.h 67:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_smp_mb :: IO ()
 rte_smp_mb = hs_bindgen_c155676f8f1da29b
@@ -240,7 +242,7 @@ hs_bindgen_e27801fd933c998b =
 
     __defined at:__ @rte_atomic.h 94:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic_thread_fence ::
      Generated.DPDK.Rte_stdatomic.Rte_memory_order
@@ -271,7 +273,7 @@ hs_bindgen_fcba1eb748f3497f =
 
     __defined at:__ @rte_atomic.h 116:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_cmpset ::
      BG.Ptr HsBindgen.Runtime.LibC.Word16
@@ -303,7 +305,7 @@ hs_bindgen_8f46a1cd2c833cee =
 
     __defined at:__ @rte_atomic.h 134:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_exchange ::
      BG.Ptr HsBindgen.Runtime.LibC.Word16
@@ -330,7 +332,7 @@ hs_bindgen_c42f3366b1e8cc43 =
 
     __defined at:__ @rte_atomic.h 145:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_test_and_set ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic16_t
@@ -356,7 +358,7 @@ hs_bindgen_8813a2d32f5a6c07 =
 
     __defined at:__ @rte_atomic.h 151:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_inc ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic16_t
@@ -381,7 +383,7 @@ hs_bindgen_551781688eed9afd =
 
     __defined at:__ @rte_atomic.h 162:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_dec ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic16_t
@@ -406,7 +408,7 @@ hs_bindgen_9fae5c7a9019808f =
 
     __defined at:__ @rte_atomic.h 172:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_inc_and_test ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic16_t
@@ -432,7 +434,7 @@ hs_bindgen_de2a59dee702bbad =
 
     __defined at:__ @rte_atomic.h 186:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_dec_and_test ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic16_t
@@ -464,7 +466,7 @@ hs_bindgen_1870ac3ab739029a =
 
     __defined at:__ @rte_atomic.h 202:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_cmpset ::
      BG.Ptr HsBindgen.Runtime.LibC.Word32
@@ -496,7 +498,7 @@ hs_bindgen_a5afcaec2d1d5547 =
 
     __defined at:__ @rte_atomic.h 220:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_exchange ::
      BG.Ptr HsBindgen.Runtime.LibC.Word32
@@ -523,7 +525,7 @@ hs_bindgen_4dc488d87063630f =
 
     __defined at:__ @rte_atomic.h 231:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_test_and_set ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic32_t
@@ -549,7 +551,7 @@ hs_bindgen_c267dd965c7da804 =
 
     __defined at:__ @rte_atomic.h 237:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_inc ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic32_t
@@ -574,7 +576,7 @@ hs_bindgen_3187a3847db0dfd0 =
 
     __defined at:__ @rte_atomic.h 248:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_dec ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic32_t
@@ -599,7 +601,7 @@ hs_bindgen_1c21349a88c0fe73 =
 
     __defined at:__ @rte_atomic.h 258:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_inc_and_test ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic32_t
@@ -625,7 +627,7 @@ hs_bindgen_83dd777ff895ebd5 =
 
     __defined at:__ @rte_atomic.h 272:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_dec_and_test ::
      BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic32_t

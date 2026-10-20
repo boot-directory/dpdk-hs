@@ -63,7 +63,7 @@ import Prelude ((<*>), (>>), Bounded, Enum, Eq, IO, Int, Integral, Num, Ord, Rea
 
     __defined at:__ @bits\/types.h 160:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype C__Time_t = C__Time_t
   { unwrap :: BG.CLong
@@ -110,7 +110,7 @@ instance HasCField.HasCField C__Time_t "unwrap" where
 
     __defined at:__ @bits\/types.h 197:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype C__Syscall_slong_t = C__Syscall_slong_t
   { unwrap :: BG.CLong
@@ -158,7 +158,7 @@ instance HasCField.HasCField C__Syscall_slong_t "unwrap" where
 
     __defined at:__ @bits\/types\/struct_timespec.h 11:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Timespec = Timespec
   { tv_sec :: C__Time_t
@@ -166,14 +166,14 @@ data Timespec = Timespec
 
          __defined at:__ @bits\/types\/struct_timespec.h 16:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , tv_nsec :: C__Syscall_slong_t
     {- ^ __C declaration:__ @tv_nsec@
 
          __defined at:__ @bits\/types\/struct_timespec.h 21:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -210,7 +210,7 @@ deriving via Struct.IsStructViaReadRaw Timespec instance Struct.IsStruct Timespe
 
     __defined at:__ @bits\/types\/struct_timespec.h 16:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Time_t
          ) => BG.CompatHasField.HasField "tv_sec" Timespec ty where
@@ -237,7 +237,7 @@ instance HasCField.HasCField Timespec "tv_sec" where
 
     __defined at:__ @bits\/types\/struct_timespec.h 21:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ C__Syscall_slong_t
          ) => BG.CompatHasField.HasField "tv_nsec" Timespec ty where
@@ -261,20 +261,24 @@ instance HasCField.HasCField Timespec "tv_nsec" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @macro RTE_MAGIC@
+{-| Magic number written by the main partition when ready.
+
+    __C declaration:__ @macro RTE_MAGIC@
 
     __defined at:__ @rte_eal.h 29:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAGIC :: BG.CInt
 rTE_MAGIC = (19820526 :: BG.CInt)
 
-{-| __C declaration:__ @enum rte_proc_type_t@
+{-| The type of process in a linux, multi-process setup
+
+    __C declaration:__ @enum rte_proc_type_t@
 
     __defined at:__ @rte_eal.h 34:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_proc_type_t = Rte_proc_type_t
   { unwrap :: BG.CInt
@@ -375,7 +379,7 @@ instance HasCField.HasCField Rte_proc_type_t "unwrap" where
 
     __defined at:__ @rte_eal.h 35:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_PROC_AUTO :: Rte_proc_type_t
 pattern RTE_PROC_AUTO = Rte_proc_type_t (-1)
@@ -384,7 +388,7 @@ pattern RTE_PROC_AUTO = Rte_proc_type_t (-1)
 
     __defined at:__ @rte_eal.h 36:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_PROC_PRIMARY :: Rte_proc_type_t
 pattern RTE_PROC_PRIMARY = Rte_proc_type_t 0
@@ -393,7 +397,7 @@ pattern RTE_PROC_PRIMARY = Rte_proc_type_t 0
 
     __defined at:__ @rte_eal.h 37:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_PROC_SECONDARY :: Rte_proc_type_t
 pattern RTE_PROC_SECONDARY = Rte_proc_type_t 1
@@ -402,7 +406,7 @@ pattern RTE_PROC_SECONDARY = Rte_proc_type_t 1
 
     __defined at:__ @rte_eal.h 39:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_PROC_INVALID :: Rte_proc_type_t
 pattern RTE_PROC_INVALID = Rte_proc_type_t 2
@@ -411,7 +415,7 @@ pattern RTE_PROC_INVALID = Rte_proc_type_t 2
 
     __defined at:__ @rte_eal.h 159:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MP_MAX_FD_NUM :: BG.CInt
 rTE_MP_MAX_FD_NUM = (253 :: BG.CInt)
@@ -420,7 +424,7 @@ rTE_MP_MAX_FD_NUM = (253 :: BG.CInt)
 
     __defined at:__ @rte_eal.h 160:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MP_MAX_NAME_LEN :: BG.CInt
 rTE_MP_MAX_NAME_LEN = (64 :: BG.CInt)
@@ -429,7 +433,7 @@ rTE_MP_MAX_NAME_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_eal.h 161:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MP_MAX_PARAM_LEN :: BG.CInt
 rTE_MP_MAX_PARAM_LEN = (256 :: BG.CInt)
@@ -438,7 +442,7 @@ rTE_MP_MAX_PARAM_LEN = (256 :: BG.CInt)
 
     __defined at:__ @rte_eal.h 162:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mp_msg = Rte_mp_msg
   { name :: CA.ConstantArray 64 BG.CChar
@@ -446,35 +450,35 @@ data Rte_mp_msg = Rte_mp_msg
 
          __defined at:__ @rte_eal.h 163:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len_param :: BG.CInt
     {- ^ __C declaration:__ @len_param@
 
          __defined at:__ @rte_eal.h 164:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , num_fds :: BG.CInt
     {- ^ __C declaration:__ @num_fds@
 
          __defined at:__ @rte_eal.h 165:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , param :: CA.ConstantArray 256 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @param@
 
          __defined at:__ @rte_eal.h 166:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , fds :: CA.ConstantArray 253 BG.CInt
     {- ^ __C declaration:__ @fds@
 
          __defined at:__ @rte_eal.h 167:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -517,7 +521,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mp_msg instance Struct.IsStruct Rte_m
 
     __defined at:__ @rte_eal.h 163:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_mp_msg ty where
@@ -550,7 +554,7 @@ instance HasCField.HasCField Rte_mp_msg "name" where
 
     __defined at:__ @rte_eal.h 164:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "len_param" Rte_mp_msg ty where
@@ -582,7 +586,7 @@ instance HasCField.HasCField Rte_mp_msg "len_param" where
 
     __defined at:__ @rte_eal.h 165:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "num_fds" Rte_mp_msg ty where
@@ -614,7 +618,7 @@ instance HasCField.HasCField Rte_mp_msg "num_fds" where
 
     __defined at:__ @rte_eal.h 166:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 256 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "param" Rte_mp_msg ty where
@@ -647,7 +651,7 @@ instance HasCField.HasCField Rte_mp_msg "param" where
 
     __defined at:__ @rte_eal.h 167:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 253 BG.CInt
          ) => BG.CompatHasField.HasField "fds" Rte_mp_msg ty where
@@ -676,11 +680,27 @@ instance HasCField.HasCField Rte_mp_msg "fds" where
 
   offset# = \_ -> \_ -> 328
 
-{-| __C declaration:__ @struct rte_mp_reply@
+{-| Send a reply to the peer process.
+
+    This function will send a reply message in response to a request message received previously.
+
+    __Note:__ When handling IPC request callbacks, the reply must be sent even in cases of error handling. Simply returning success or failure will /not/ send a response to the requestor. Implementation of error signalling mechanism is up to the application.
+
+    [__@msg@__]: The msg argument contains the customized message.
+
+    [__@peer@__]: The peer argument is the pointer to the peer socket path.
+
+    __Returns:__
+
+    * On success, return 0.
+
+    * On failure, return -1, and the reason will be stored in rte_errno.
+
+    __C declaration:__ @struct rte_mp_reply@
 
     __defined at:__ @rte_eal.h 170:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mp_reply = Rte_mp_reply
   { nb_sent :: BG.CInt
@@ -688,21 +708,21 @@ data Rte_mp_reply = Rte_mp_reply
 
          __defined at:__ @rte_eal.h 171:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , nb_received :: BG.CInt
     {- ^ __C declaration:__ @nb_received@
 
          __defined at:__ @rte_eal.h 172:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , msgs :: BG.Ptr Rte_mp_msg
     {- ^ __C declaration:__ @msgs@
 
          __defined at:__ @rte_eal.h 173:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -741,7 +761,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mp_reply instance Struct.IsStruct Rte
 
     __defined at:__ @rte_eal.h 171:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "nb_sent" Rte_mp_reply ty where
@@ -771,7 +791,7 @@ instance HasCField.HasCField Rte_mp_reply "nb_sent" where
 
     __defined at:__ @rte_eal.h 172:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "nb_received" Rte_mp_reply ty where
@@ -802,7 +822,7 @@ instance HasCField.HasCField Rte_mp_reply "nb_received" where
 
     __defined at:__ @rte_eal.h 173:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr Rte_mp_msg
          ) => BG.CompatHasField.HasField "msgs" Rte_mp_reply ty where
@@ -835,7 +855,7 @@ instance HasCField.HasCField Rte_mp_reply "msgs" where
 
     __defined at:__ @rte_eal.h 189:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mp_t_Aux = Rte_mp_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_mp_msg -> PtrConst.PtrConst BG.Void -> IO BG.CInt
@@ -900,11 +920,19 @@ instance HasCField.HasCField Rte_mp_t_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_mp_t@
+{-| Action function typedef used by other components.
+
+    As we create socket channel for primary/secondary communication, use this function typedef to register action for coming messages.
+
+    __Note:__ When handling IPC request callbacks, the reply must be sent even in cases of error handling. Simply returning success or failure will /not/ send a response to the requestor. Implementation of error signalling mechanism is up to the application.
+
+    __Note:__ No memory allocations should take place inside the callback.
+
+    __C declaration:__ @rte_mp_t@
 
     __defined at:__ @rte_eal.h 189:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mp_t = Rte_mp_t
   { unwrap :: BG.FunPtr Rte_mp_t_Aux
@@ -944,7 +972,7 @@ instance HasCField.HasCField Rte_mp_t "unwrap" where
 
     __defined at:__ @rte_eal.h 205:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mp_async_reply_t_Aux = Rte_mp_async_reply_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_mp_msg -> PtrConst.PtrConst Rte_mp_reply -> IO BG.CInt
@@ -1009,11 +1037,19 @@ instance HasCField.HasCField Rte_mp_async_reply_t_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_mp_async_reply_t@
+{-| Asynchronous reply function typedef used by other components.
+
+    As we create socket channel for primary/secondary communication, use this function typedef to register action for coming responses to asynchronous requests.
+
+    __Note:__ When handling IPC request callbacks, the reply must be sent even in cases of error handling. Simply returning success or failure will /not/ send a response to the requestor. Implementation of error signalling mechanism is up to the application.
+
+    __Note:__ No memory allocations should take place inside the callback.
+
+    __C declaration:__ @rte_mp_async_reply_t@
 
     __defined at:__ @rte_eal.h 205:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mp_async_reply_t = Rte_mp_async_reply_t
   { unwrap :: BG.FunPtr Rte_mp_async_reply_t_Aux
@@ -1053,7 +1089,7 @@ instance HasCField.HasCField Rte_mp_async_reply_t "unwrap" where
 
     __defined at:__ @rte_eal.h 351:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_usage_hook_t_Aux = Rte_usage_hook_t_Aux
   { unwrap :: PtrConst.PtrConst BG.CChar -> IO ()
@@ -1116,11 +1152,15 @@ instance HasCField.HasCField Rte_usage_hook_t_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_usage_hook_t@
+{-| Usage function typedef used by the application usage function.
+
+    Use this function typedef to define and call @rte_set_application_usage_hook()@ routine.
+
+    __C declaration:__ @rte_usage_hook_t@
 
     __defined at:__ @rte_eal.h 351:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_usage_hook_t = Rte_usage_hook_t
   { unwrap :: BG.FunPtr Rte_usage_hook_t_Aux
@@ -1154,11 +1194,15 @@ instance HasCField.HasCField Rte_usage_hook_t "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @enum rte_iova_mode@
+{-| IOVA mapping mode.
+
+    IOVA mapping mode is iommu programming mode of a device. That device (for example: IOMMU backed DMA device) based on @rte_iova_mode@ will generate physical or virtual address.
+
+    __C declaration:__ @enum rte_iova_mode@
 
     __defined at:__ @rte_eal.h 462:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_iova_mode = Rte_iova_mode
   { unwrap :: BG.CUInt
@@ -1258,7 +1302,7 @@ instance HasCField.HasCField Rte_iova_mode "unwrap" where
 
     __defined at:__ @rte_eal.h 463:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_IOVA_DC :: Rte_iova_mode
 pattern RTE_IOVA_DC = Rte_iova_mode 0
@@ -1267,7 +1311,7 @@ pattern RTE_IOVA_DC = Rte_iova_mode 0
 
     __defined at:__ @rte_eal.h 464:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_IOVA_PA :: Rte_iova_mode
 pattern RTE_IOVA_PA = Rte_iova_mode 1
@@ -1276,7 +1320,7 @@ pattern RTE_IOVA_PA = Rte_iova_mode 1
 
     __defined at:__ @rte_eal.h 465:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_IOVA_VA :: Rte_iova_mode
 pattern RTE_IOVA_VA = Rte_iova_mode 2

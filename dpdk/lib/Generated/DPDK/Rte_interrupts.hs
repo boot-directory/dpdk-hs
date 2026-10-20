@@ -57,7 +57,7 @@ import Prelude ((<*>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_interrupts.h 27:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_intr_handle
 
@@ -65,7 +65,7 @@ data Rte_intr_handle
 
     __defined at:__ @rte_interrupts.h 38:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MAX_RXTX_INTR_VEC_ID :: BG.CInt
 rTE_MAX_RXTX_INTR_VEC_ID = (512 :: BG.CInt)
@@ -74,7 +74,7 @@ rTE_MAX_RXTX_INTR_VEC_ID = (512 :: BG.CInt)
 
     __defined at:__ @rte_interrupts.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_INTR_VEC_ZERO_OFFSET :: BG.CInt
 rTE_INTR_VEC_ZERO_OFFSET = (0 :: BG.CInt)
@@ -83,7 +83,7 @@ rTE_INTR_VEC_ZERO_OFFSET = (0 :: BG.CInt)
 
     __defined at:__ @rte_interrupts.h 40:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_INTR_VEC_RXTX_OFFSET :: BG.CInt
 rTE_INTR_VEC_RXTX_OFFSET = (1 :: BG.CInt)
@@ -92,7 +92,7 @@ rTE_INTR_VEC_RXTX_OFFSET = (1 :: BG.CInt)
 
     __defined at:__ @rte_interrupts.h 51:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_handle_type = Rte_intr_handle_type
   { unwrap :: BG.CUInt
@@ -202,7 +202,7 @@ instance HasCField.HasCField Rte_intr_handle_type "unwrap" where
 
     __defined at:__ @rte_interrupts.h 52:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_UNKNOWN :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_UNKNOWN = Rte_intr_handle_type 0
@@ -211,7 +211,7 @@ pattern RTE_INTR_HANDLE_UNKNOWN = Rte_intr_handle_type 0
 
     __defined at:__ @rte_interrupts.h 53:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_UIO :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_UIO = Rte_intr_handle_type 1
@@ -220,7 +220,7 @@ pattern RTE_INTR_HANDLE_UIO = Rte_intr_handle_type 1
 
     __defined at:__ @rte_interrupts.h 54:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_UIO_INTX :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_UIO_INTX = Rte_intr_handle_type 2
@@ -229,7 +229,7 @@ pattern RTE_INTR_HANDLE_UIO_INTX = Rte_intr_handle_type 2
 
     __defined at:__ @rte_interrupts.h 55:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_VFIO_LEGACY :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_VFIO_LEGACY = Rte_intr_handle_type 3
@@ -238,7 +238,7 @@ pattern RTE_INTR_HANDLE_VFIO_LEGACY = Rte_intr_handle_type 3
 
     __defined at:__ @rte_interrupts.h 56:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_VFIO_MSI :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_VFIO_MSI = Rte_intr_handle_type 4
@@ -247,7 +247,7 @@ pattern RTE_INTR_HANDLE_VFIO_MSI = Rte_intr_handle_type 4
 
     __defined at:__ @rte_interrupts.h 57:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_VFIO_MSIX :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_VFIO_MSIX = Rte_intr_handle_type 5
@@ -256,7 +256,7 @@ pattern RTE_INTR_HANDLE_VFIO_MSIX = Rte_intr_handle_type 5
 
     __defined at:__ @rte_interrupts.h 58:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_ALARM :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_ALARM = Rte_intr_handle_type 6
@@ -265,7 +265,7 @@ pattern RTE_INTR_HANDLE_ALARM = Rte_intr_handle_type 6
 
     __defined at:__ @rte_interrupts.h 59:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_EXT :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_EXT = Rte_intr_handle_type 7
@@ -274,7 +274,7 @@ pattern RTE_INTR_HANDLE_EXT = Rte_intr_handle_type 7
 
     __defined at:__ @rte_interrupts.h 60:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_VDEV :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_VDEV = Rte_intr_handle_type 8
@@ -283,7 +283,7 @@ pattern RTE_INTR_HANDLE_VDEV = Rte_intr_handle_type 8
 
     __defined at:__ @rte_interrupts.h 61:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_DEV_EVENT :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_DEV_EVENT = Rte_intr_handle_type 9
@@ -292,7 +292,7 @@ pattern RTE_INTR_HANDLE_DEV_EVENT = Rte_intr_handle_type 9
 
     __defined at:__ @rte_interrupts.h 62:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_VFIO_REQ :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_VFIO_REQ = Rte_intr_handle_type 10
@@ -301,7 +301,7 @@ pattern RTE_INTR_HANDLE_VFIO_REQ = Rte_intr_handle_type 10
 
     __defined at:__ @rte_interrupts.h 63:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_INTR_HANDLE_MAX :: Rte_intr_handle_type
 pattern RTE_INTR_HANDLE_MAX = Rte_intr_handle_type 11
@@ -312,7 +312,7 @@ pattern RTE_INTR_HANDLE_MAX = Rte_intr_handle_type 11
 
     __defined at:__ @rte_interrupts.h 67:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_callback_fn_Aux = Rte_intr_callback_fn_Aux
   { unwrap :: BG.Ptr BG.Void -> IO ()
@@ -379,7 +379,7 @@ instance HasCField.HasCField Rte_intr_callback_fn_Aux "unwrap" where
 
     __defined at:__ @rte_interrupts.h 67:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_callback_fn = Rte_intr_callback_fn
   { unwrap :: BG.FunPtr Rte_intr_callback_fn_Aux
@@ -419,7 +419,7 @@ instance HasCField.HasCField Rte_intr_callback_fn "unwrap" where
 
     __defined at:__ @rte_interrupts.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_unregister_callback_fn_Aux = Rte_intr_unregister_callback_fn_Aux
   { unwrap :: BG.Ptr Rte_intr_handle -> BG.Ptr BG.Void -> IO ()
@@ -490,7 +490,7 @@ instance HasCField.HasCField Rte_intr_unregister_callback_fn_Aux "unwrap" where
 
     __defined at:__ @rte_interrupts.h 73:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_intr_unregister_callback_fn = Rte_intr_unregister_callback_fn
   { unwrap :: BG.FunPtr Rte_intr_unregister_callback_fn_Aux

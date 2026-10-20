@@ -21,7 +21,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_0c32910888390e9a ("
   , "  char *arg1,"
   , "  signed int arg2,"
@@ -87,7 +89,7 @@ hs_bindgen_0c32910888390e9a =
 
     __defined at:__ @rte_string_fns.h 52:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strsplit ::
      BG.Ptr BG.CChar
@@ -126,7 +128,7 @@ hs_bindgen_973dd703924d0360 =
 
     __defined at:__ @rte_string_fns.h 61:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strlcpy ::
      BG.Ptr BG.CChar
@@ -161,7 +163,7 @@ hs_bindgen_0e0aaa83fc08c110 =
 
     __defined at:__ @rte_string_fns.h 72:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strlcat ::
      BG.Ptr BG.CChar
@@ -196,7 +198,7 @@ hs_bindgen_899393080dbc6ac0 =
 
     __defined at:__ @rte_string_fns.h 126:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_strscpy ::
      BG.Ptr BG.CChar

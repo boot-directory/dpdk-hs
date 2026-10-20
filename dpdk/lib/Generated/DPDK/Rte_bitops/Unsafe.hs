@@ -45,7 +45,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint32_t hs_bindgen_511dd4e5c57c63c0 ("
   , "  unsigned int arg1,"
   , "  uint32_t *arg2"
@@ -266,7 +268,7 @@ hs_bindgen_511dd4e5c57c63c0 =
 
     __defined at:__ @rte_bitops.h 674:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_get32 ::
      BG.CUInt
@@ -296,7 +298,7 @@ hs_bindgen_042cd602189213f2 =
 
     __defined at:__ @rte_bitops.h 691:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_set32 ::
      BG.CUInt
@@ -326,7 +328,7 @@ hs_bindgen_60b635c40c19671f =
 
     __defined at:__ @rte_bitops.h 708:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_clear32 ::
      BG.CUInt
@@ -356,7 +358,7 @@ hs_bindgen_b08adbe715213229 =
 
     __defined at:__ @rte_bitops.h 728:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_set32 ::
      BG.CUInt
@@ -387,7 +389,7 @@ hs_bindgen_903c4e328e452e57 =
 
     __defined at:__ @rte_bitops.h 750:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_clear32 ::
      BG.CUInt
@@ -418,7 +420,7 @@ hs_bindgen_34e5d889bb46c36c =
 
     __defined at:__ @rte_bitops.h 773:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_get64 ::
      BG.CUInt
@@ -448,7 +450,7 @@ hs_bindgen_3cb11b6f8483b87f =
 
     __defined at:__ @rte_bitops.h 790:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_set64 ::
      BG.CUInt
@@ -478,7 +480,7 @@ hs_bindgen_a4a0147d80f0860d =
 
     __defined at:__ @rte_bitops.h 807:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_clear64 ::
      BG.CUInt
@@ -508,7 +510,7 @@ hs_bindgen_f9cbe89e30445eca =
 
     __defined at:__ @rte_bitops.h 827:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_set64 ::
      BG.CUInt
@@ -539,7 +541,7 @@ hs_bindgen_5ac0c2b1436ff5fc =
 
     __defined at:__ @rte_bitops.h 849:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_clear64 ::
      BG.CUInt
@@ -567,7 +569,7 @@ hs_bindgen_52e6d5e7e2cd098d =
 
     __defined at:__ @rte_bitops.h 1020:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_clz32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -592,7 +594,7 @@ hs_bindgen_31082a733b27e4fb =
 
     __defined at:__ @rte_bitops.h 1034:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_clz64 ::
      HsBindgen.Runtime.LibC.Word64
@@ -617,7 +619,7 @@ hs_bindgen_0ed8753e7a6222b2 =
 
     __defined at:__ @rte_bitops.h 1048:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ctz32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -642,7 +644,7 @@ hs_bindgen_1a68a6313cac5bd3 =
 
     __defined at:__ @rte_bitops.h 1062:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ctz64 ::
      HsBindgen.Runtime.LibC.Word64
@@ -667,7 +669,7 @@ hs_bindgen_1619df86421dc422 =
 
     __defined at:__ @rte_bitops.h 1076:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_popcount32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -692,7 +694,7 @@ hs_bindgen_4b8414df405e0733 =
 
     __defined at:__ @rte_bitops.h 1090:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_popcount64 ::
      HsBindgen.Runtime.LibC.Word64
@@ -717,7 +719,7 @@ hs_bindgen_22716bb934f34ab7 =
 
     __defined at:__ @rte_bitops.h 1146:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_combine32ms1b ::
      HsBindgen.Runtime.LibC.Word32
@@ -742,7 +744,7 @@ hs_bindgen_6e4268f6e78f62b9 =
 
     __defined at:__ @rte_bitops.h 1168:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_combine64ms1b ::
      HsBindgen.Runtime.LibC.Word64
@@ -767,7 +769,7 @@ hs_bindgen_6293c18d676c21e5 =
 
     __defined at:__ @rte_bitops.h 1192:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -795,7 +797,7 @@ hs_bindgen_aa6439dcd19896e3 =
 
     __defined at:__ @rte_bitops.h 1212:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf32_safe ::
      HsBindgen.Runtime.LibC.Word32
@@ -822,7 +824,7 @@ hs_bindgen_3649ee38d25346d9 =
 
     __defined at:__ @rte_bitops.h 1233:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf64 ::
      HsBindgen.Runtime.LibC.Word64
@@ -850,7 +852,7 @@ hs_bindgen_b76a9790fd445c81 =
 
     __defined at:__ @rte_bitops.h 1253:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf64_safe ::
      HsBindgen.Runtime.LibC.Word64
@@ -877,7 +879,7 @@ hs_bindgen_ef2881cd73729c1d =
 
     __defined at:__ @rte_bitops.h 1274:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fls_u32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -902,7 +904,7 @@ hs_bindgen_656b8ad63f7ef883 =
 
     __defined at:__ @rte_bitops.h 1292:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fls_u64 ::
      HsBindgen.Runtime.LibC.Word64
@@ -927,7 +929,7 @@ hs_bindgen_4a5e8a7fc64b4bc1 =
 
     __defined at:__ @rte_bitops.h 1311:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_is_power_of_2 ::
      HsBindgen.Runtime.LibC.Word32
@@ -952,7 +954,7 @@ hs_bindgen_72619441a782b408 =
 
     __defined at:__ @rte_bitops.h 1326:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align32pow2 ::
      HsBindgen.Runtime.LibC.Word32
@@ -977,7 +979,7 @@ hs_bindgen_b42f6343cf0f42a9 =
 
     __defined at:__ @rte_bitops.h 1344:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align32prevpow2 ::
      HsBindgen.Runtime.LibC.Word32
@@ -1002,7 +1004,7 @@ hs_bindgen_45ef75cf5a901f7b =
 
     __defined at:__ @rte_bitops.h 1361:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align64pow2 ::
      HsBindgen.Runtime.LibC.Word64
@@ -1027,7 +1029,7 @@ hs_bindgen_6868a8c01bc947fd =
 
     __defined at:__ @rte_bitops.h 1379:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align64prevpow2 ::
      HsBindgen.Runtime.LibC.Word64
@@ -1052,7 +1054,7 @@ hs_bindgen_5b5db98bbee6b0d9 =
 
     __defined at:__ @rte_bitops.h 1398:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log2_u32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -1077,7 +1079,7 @@ hs_bindgen_a24248afcf49e59a =
 
     __defined at:__ @rte_bitops.h 1418:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log2_u64 ::
      HsBindgen.Runtime.LibC.Word64

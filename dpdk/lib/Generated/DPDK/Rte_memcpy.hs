@@ -13,7 +13,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_memcpy.h 480:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 aLIGNMENT_MASK :: BG.CInt
 aLIGNMENT_MASK = (15 :: BG.CInt)

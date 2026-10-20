@@ -36,7 +36,7 @@ import Prelude ((<*>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_trace.h 61:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_trace_mode = Rte_trace_mode
   { unwrap :: BG.CUInt
@@ -135,7 +135,7 @@ instance HasCField.HasCField Rte_trace_mode "unwrap" where
 
     __defined at:__ @rte_trace.h 66:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_TRACE_MODE_OVERWRITE :: Rte_trace_mode
 pattern RTE_TRACE_MODE_OVERWRITE = Rte_trace_mode 0
@@ -144,7 +144,7 @@ pattern RTE_TRACE_MODE_OVERWRITE = Rte_trace_mode 0
 
     __defined at:__ @rte_trace.h 71:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_TRACE_MODE_DISCARD :: Rte_trace_mode
 pattern RTE_TRACE_MODE_DISCARD = Rte_trace_mode 1

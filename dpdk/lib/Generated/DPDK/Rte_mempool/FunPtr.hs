@@ -74,7 +74,9 @@ import Generated.DPDK.Rte_mempool
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mempool_get_rte_mempool_get_header */"
   , "__attribute__ ((const))"
   , "struct rte_mempool_objhdr *(*hs_bindgen_73f27d39437cd38e (void)) ("
@@ -647,7 +649,7 @@ hs_bindgen_73f27d39437cd38e =
 
     __defined at:__ @rte_mempool.h 377:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_header :: BG.FunPtr (BG.Ptr BG.Void -> IO (BG.Ptr Rte_mempool_objhdr))
 rte_mempool_get_header =
@@ -667,7 +669,7 @@ hs_bindgen_95f492dff45946a8 =
 
     __defined at:__ @rte_mempool.h 392:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_from_obj :: BG.FunPtr (BG.Ptr BG.Void -> IO (BG.Ptr Rte_mempool))
 rte_mempool_from_obj =
@@ -687,7 +689,7 @@ hs_bindgen_86b769fb4cd98205 =
 
     __defined at:__ @rte_mempool.h 399:42@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_trailer :: BG.FunPtr (BG.Ptr BG.Void -> IO (BG.Ptr Rte_mempool_objtlr))
 rte_mempool_get_trailer =
@@ -707,7 +709,7 @@ hs_bindgen_6b072f1167e7853c =
 
     __defined at:__ @rte_mempool.h 419:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_check_cookies :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.CInt -> IO ())
 rte_mempool_check_cookies =
@@ -727,7 +729,7 @@ hs_bindgen_299978410e84d677 =
 
     __defined at:__ @rte_mempool.h 444:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_contig_blocks_check_cookies :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.CInt -> IO ())
 rte_mempool_contig_blocks_check_cookies =
@@ -747,7 +749,7 @@ hs_bindgen_c79b1161c3aa9b8a =
 
     __defined at:__ @rte_mempool.h 568:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_op_calc_mem_size_helper :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.CSize -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> IO Generated.DPDK.Rte_ring.Ssize_t)
 rte_mempool_op_calc_mem_size_helper =
@@ -767,7 +769,7 @@ hs_bindgen_d64ddc97e597ccd1 =
 
     __defined at:__ @rte_mempool.h 579:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_op_calc_mem_size_default :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> IO Generated.DPDK.Rte_ring.Ssize_t)
 rte_mempool_op_calc_mem_size_default =
@@ -787,7 +789,7 @@ hs_bindgen_819abf54867b32e8 =
 
     __defined at:__ @rte_mempool.h 668:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_op_populate_helper :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.CUInt -> BG.CUInt -> BG.Ptr BG.Void -> Generated.DPDK.Rte_common.Rte_iova_t -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_populate_obj_cb_t -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_op_populate_helper =
@@ -807,7 +809,7 @@ hs_bindgen_7dac3d82a1c99bf7 =
 
     __defined at:__ @rte_mempool.h 679:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_op_populate_default :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.CUInt -> BG.Ptr BG.Void -> Generated.DPDK.Rte_common.Rte_iova_t -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_populate_obj_cb_t -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_op_populate_default =
@@ -827,7 +829,7 @@ hs_bindgen_025cdc2fa433cd19 =
 
     __defined at:__ @rte_mempool.h 752:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_ops :: BG.FunPtr (BG.CInt -> IO (BG.Ptr Rte_mempool_ops))
 rte_mempool_get_ops =
@@ -847,7 +849,7 @@ hs_bindgen_7f4ae4581b6bf27c =
 
     __defined at:__ @rte_mempool.h 769:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_alloc :: BG.FunPtr (BG.Ptr Rte_mempool -> IO BG.CInt)
 rte_mempool_ops_alloc =
@@ -867,7 +869,7 @@ hs_bindgen_170a1809810f2793 =
 
     __defined at:__ @rte_mempool.h 785:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_dequeue_bulk :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt)
 rte_mempool_ops_dequeue_bulk =
@@ -887,7 +889,7 @@ hs_bindgen_20d0ff7d55ca24f7 =
 
     __defined at:__ @rte_mempool.h 816:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_dequeue_contig_blocks :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt)
 rte_mempool_ops_dequeue_contig_blocks =
@@ -907,7 +909,7 @@ hs_bindgen_595cf9a28df77537 =
 
     __defined at:__ @rte_mempool.h 844:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_enqueue_bulk :: BG.FunPtr (BG.Ptr Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt)
 rte_mempool_ops_enqueue_bulk =
@@ -927,7 +929,7 @@ hs_bindgen_d6b641254c3f5833 =
 
     __defined at:__ @rte_mempool.h 873:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_get_count :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> IO BG.CUInt)
 rte_mempool_ops_get_count =
@@ -947,7 +949,7 @@ hs_bindgen_50dc6971f2cffe92 =
 
     __defined at:__ @rte_mempool.h 894:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_calc_mem_size :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> IO Generated.DPDK.Rte_ring.Ssize_t)
 rte_mempool_ops_calc_mem_size =
@@ -967,7 +969,7 @@ hs_bindgen_33e9efc06f22e934 =
 
     __defined at:__ @rte_mempool.h 921:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_populate :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.CUInt -> BG.Ptr BG.Void -> Generated.DPDK.Rte_common.Rte_iova_t -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_populate_obj_cb_t -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_ops_populate =
@@ -987,7 +989,7 @@ hs_bindgen_cd5c311ca546cffb =
 
     __defined at:__ @rte_mempool.h 938:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_get_info :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> BG.Ptr Rte_mempool_info -> IO BG.CInt)
 rte_mempool_ops_get_info =
@@ -1007,7 +1009,7 @@ hs_bindgen_eb947c557dbc9620 =
 
     __defined at:__ @rte_mempool.h 948:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_free :: BG.FunPtr (BG.Ptr Rte_mempool -> IO ())
 rte_mempool_ops_free =
@@ -1027,7 +1029,7 @@ hs_bindgen_3feda2ca909e4155 =
 
     __defined at:__ @rte_mempool.h 968:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_set_ops_byname :: BG.FunPtr (BG.Ptr Rte_mempool -> PtrConst.PtrConst BG.CChar -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_set_ops_byname =
@@ -1047,7 +1049,7 @@ hs_bindgen_ae0b40d53b228a0f =
 
     __defined at:__ @rte_mempool.h 981:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_register_ops :: BG.FunPtr (PtrConst.PtrConst Rte_mempool_ops -> IO BG.CInt)
 rte_mempool_register_ops =
@@ -1067,7 +1069,7 @@ hs_bindgen_b6c1da6faa29bce9 =
 
     __defined at:__ @rte_mempool.h 1032:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_free :: BG.FunPtr (BG.Ptr Rte_mempool -> IO ())
 rte_mempool_free =
@@ -1087,7 +1089,7 @@ hs_bindgen_b245c0449fd2df9d =
 
     __defined at:__ @rte_mempool.h 1109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_create :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> BG.CUInt -> BG.CUInt -> BG.CUInt -> BG.CUInt -> BG.FunPtr Rte_mempool_ctor_t -> BG.Ptr BG.Void -> BG.FunPtr Rte_mempool_obj_cb_t -> BG.Ptr BG.Void -> BG.CInt -> BG.CUInt -> IO (BG.Ptr Rte_mempool))
 rte_mempool_create =
@@ -1107,7 +1109,7 @@ hs_bindgen_da6763d3148b032e =
 
     __defined at:__ @rte_mempool.h 1149:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_create_empty :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> BG.CUInt -> BG.CUInt -> BG.CUInt -> BG.CUInt -> BG.CInt -> BG.CUInt -> IO (BG.Ptr Rte_mempool))
 rte_mempool_create_empty =
@@ -1127,7 +1129,7 @@ hs_bindgen_e7a936c5610ad3db =
 
     __defined at:__ @rte_mempool.h 1184:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_populate_iova :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr BG.CChar -> Generated.DPDK.Rte_common.Rte_iova_t -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_memchunk_free_cb_t -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_populate_iova =
@@ -1147,7 +1149,7 @@ hs_bindgen_51f461c671134fa7 =
 
     __defined at:__ @rte_mempool.h 1215:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_populate_virt :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr BG.CChar -> HsBindgen.Runtime.LibC.CSize -> HsBindgen.Runtime.LibC.CSize -> BG.FunPtr Rte_mempool_memchunk_free_cb_t -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_mempool_populate_virt =
@@ -1167,7 +1169,7 @@ hs_bindgen_dc6501026dfc42ec =
 
     __defined at:__ @rte_mempool.h 1232:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_populate_default :: BG.FunPtr (BG.Ptr Rte_mempool -> IO BG.CInt)
 rte_mempool_populate_default =
@@ -1187,7 +1189,7 @@ hs_bindgen_fa4dfce1d256ad88 =
 
     __defined at:__ @rte_mempool.h 1247:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_populate_anon :: BG.FunPtr (BG.Ptr Rte_mempool -> IO BG.CInt)
 rte_mempool_populate_anon =
@@ -1207,7 +1209,7 @@ hs_bindgen_8713c2893898d19f =
 
     __defined at:__ @rte_mempool.h 1264:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_obj_iter :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.FunPtr Rte_mempool_obj_cb_t -> BG.Ptr BG.Void -> IO HsBindgen.Runtime.LibC.Word32)
 rte_mempool_obj_iter =
@@ -1227,7 +1229,7 @@ hs_bindgen_f5047a45ee5166e0 =
 
     __defined at:__ @rte_mempool.h 1282:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_mem_iter :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.FunPtr Rte_mempool_mem_cb_t -> BG.Ptr BG.Void -> IO HsBindgen.Runtime.LibC.Word32)
 rte_mempool_mem_iter =
@@ -1247,7 +1249,7 @@ hs_bindgen_a595813d2d3bccce =
 
     __defined at:__ @rte_mempool.h 1293:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> BG.Ptr Rte_mempool -> IO ())
 rte_mempool_dump =
@@ -1267,7 +1269,7 @@ hs_bindgen_01f9f64af040772b =
 
     __defined at:__ @rte_mempool.h 1310:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_cache_create :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> BG.CInt -> IO (BG.Ptr Rte_mempool_cache))
 rte_mempool_cache_create =
@@ -1287,7 +1289,7 @@ hs_bindgen_2107f62e77f7385c =
 
     __defined at:__ @rte_mempool.h 1319:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_cache_free :: BG.FunPtr (BG.Ptr Rte_mempool_cache -> IO ())
 rte_mempool_cache_free =
@@ -1307,7 +1309,7 @@ hs_bindgen_5798a28e1b2a8fb4 =
 
     __defined at:__ @rte_mempool.h 1333:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_default_cache :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.CUInt -> IO (BG.Ptr Rte_mempool_cache))
 rte_mempool_default_cache =
@@ -1327,7 +1329,7 @@ hs_bindgen_4b6a8573dd1976ce =
 
     __defined at:__ @rte_mempool.h 1355:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_cache_flush :: BG.FunPtr (BG.Ptr Rte_mempool_cache -> BG.Ptr Rte_mempool -> IO ())
 rte_mempool_cache_flush =
@@ -1347,7 +1349,7 @@ hs_bindgen_2aef222e695c19e0 =
 
     __defined at:__ @rte_mempool.h 1380:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_do_generic_put :: BG.FunPtr (BG.Ptr Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr Rte_mempool_cache -> IO ())
 rte_mempool_do_generic_put =
@@ -1367,7 +1369,7 @@ hs_bindgen_b1d08efad70172d0 =
 
     __defined at:__ @rte_mempool.h 1445:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_generic_put :: BG.FunPtr (BG.Ptr Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr Rte_mempool_cache -> IO ())
 rte_mempool_generic_put =
@@ -1387,7 +1389,7 @@ hs_bindgen_a8bb2026accf0eae =
 
     __defined at:__ @rte_mempool.h 1468:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_put_bulk :: BG.FunPtr (BG.Ptr Rte_mempool -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> IO ())
 rte_mempool_put_bulk =
@@ -1407,7 +1409,7 @@ hs_bindgen_74947840ca3e4ac2 =
 
     __defined at:__ @rte_mempool.h 1490:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_put :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> IO ())
 rte_mempool_put =
@@ -1427,7 +1429,7 @@ hs_bindgen_06a9b5a2b247cb10 =
 
     __defined at:__ @rte_mempool.h 1510:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_do_generic_get :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr Rte_mempool_cache -> IO BG.CInt)
 rte_mempool_do_generic_get =
@@ -1447,7 +1449,7 @@ hs_bindgen_b2000e375e4e379d =
 
     __defined at:__ @rte_mempool.h 1632:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_generic_get :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr Rte_mempool_cache -> IO BG.CInt)
 rte_mempool_generic_get =
@@ -1467,7 +1469,7 @@ hs_bindgen_c3ec303d17918b3f =
 
     __defined at:__ @rte_mempool.h 1666:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_bulk :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt)
 rte_mempool_get_bulk =
@@ -1487,7 +1489,7 @@ hs_bindgen_804344a5cbb0005b =
 
     __defined at:__ @rte_mempool.h 1695:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> IO BG.CInt)
 rte_mempool_get =
@@ -1507,7 +1509,7 @@ hs_bindgen_b4980a0b01935d32 =
 
     __defined at:__ @rte_mempool.h 1722:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_contig_blocks :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> IO BG.CInt)
 rte_mempool_get_contig_blocks =
@@ -1527,7 +1529,7 @@ hs_bindgen_a7cf314bea3667b5 =
 
     __defined at:__ @rte_mempool.h 1754:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_avail_count :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> IO BG.CUInt)
 rte_mempool_avail_count =
@@ -1547,7 +1549,7 @@ hs_bindgen_dd774d880e002567 =
 
     __defined at:__ @rte_mempool.h 1769:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_in_use_count :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> IO BG.CUInt)
 rte_mempool_in_use_count =
@@ -1567,7 +1569,7 @@ hs_bindgen_c14b8641e2c61a3a =
 
     __defined at:__ @rte_mempool.h 1785:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_full :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> IO BG.CInt)
 rte_mempool_full =
@@ -1587,7 +1589,7 @@ hs_bindgen_32c2b0796066036d =
 
     __defined at:__ @rte_mempool.h 1804:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_empty :: BG.FunPtr (PtrConst.PtrConst Rte_mempool -> IO BG.CInt)
 rte_mempool_empty =
@@ -1607,7 +1609,7 @@ hs_bindgen_74a4e47b170cc172 =
 
     __defined at:__ @rte_mempool.h 1820:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_virt2iova :: BG.FunPtr (PtrConst.PtrConst BG.Void -> IO Generated.DPDK.Rte_common.Rte_iova_t)
 rte_mempool_virt2iova =
@@ -1627,7 +1629,7 @@ hs_bindgen_f6a39b89701b7157 =
 
     __defined at:__ @rte_mempool.h 1838:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_audit :: BG.FunPtr (BG.Ptr Rte_mempool -> IO ())
 rte_mempool_audit =
@@ -1647,7 +1649,7 @@ hs_bindgen_1c03ab6de4cafb6f =
 
     __defined at:__ @rte_mempool.h 1848:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_priv :: BG.FunPtr (BG.Ptr Rte_mempool -> IO (BG.Ptr BG.Void))
 rte_mempool_get_priv =
@@ -1667,7 +1669,7 @@ hs_bindgen_76e026714ea10589 =
 
     __defined at:__ @rte_mempool.h 1860:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_list_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_mempool_list_dump =
@@ -1687,7 +1689,7 @@ hs_bindgen_7b7df4af284571c7 =
 
     __defined at:__ @rte_mempool.h 1873:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_lookup :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> IO (BG.Ptr Rte_mempool))
 rte_mempool_lookup =
@@ -1707,7 +1709,7 @@ hs_bindgen_3b05982a0acf1c41 =
 
     __defined at:__ @rte_mempool.h 1891:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_calc_obj_size :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr Rte_mempool_objsz -> IO HsBindgen.Runtime.LibC.Word32)
 rte_mempool_calc_obj_size =
@@ -1727,7 +1729,7 @@ hs_bindgen_acbe7a9597505ed2 =
 
     __defined at:__ @rte_mempool.h 1902:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_walk :: BG.FunPtr (BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr BG.Void -> IO ()) -> BG.Ptr BG.Void -> IO ())
 rte_mempool_walk =
@@ -1747,7 +1749,7 @@ hs_bindgen_4a0153a6cd19b866 =
 
     __defined at:__ @rte_mempool.h 1958:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_get_page_size :: BG.FunPtr (BG.Ptr Rte_mempool -> BG.Ptr HsBindgen.Runtime.LibC.CSize -> IO BG.CInt)
 rte_mempool_get_page_size =

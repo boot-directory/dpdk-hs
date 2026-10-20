@@ -15,7 +15,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_atomic.h 17:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 mPLOCKED :: BG.ByteString
 mPLOCKED =

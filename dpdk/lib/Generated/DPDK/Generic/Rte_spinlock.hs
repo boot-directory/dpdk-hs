@@ -32,7 +32,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @generic\/rte_spinlock.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_spinlock_t = Rte_spinlock_t
   { locked :: BG.CInt
@@ -40,7 +40,7 @@ data Rte_spinlock_t = Rte_spinlock_t
 
          __defined at:__ @generic\/rte_spinlock.h 36:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -75,7 +75,7 @@ deriving via Struct.IsStructViaReadRaw Rte_spinlock_t instance Struct.IsStruct R
 
     __defined at:__ @generic\/rte_spinlock.h 36:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "locked" Rte_spinlock_t ty where
@@ -100,7 +100,7 @@ instance HasCField.HasCField Rte_spinlock_t "locked" where
 
     __defined at:__ @generic\/rte_spinlock.h 198:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_spinlock_recursive_t = Rte_spinlock_recursive_t
   { sl :: Rte_spinlock_t
@@ -108,21 +108,21 @@ data Rte_spinlock_recursive_t = Rte_spinlock_recursive_t
 
          __defined at:__ @generic\/rte_spinlock.h 199:17@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , user :: BG.CInt
     {- ^ __C declaration:__ @user@
 
          __defined at:__ @generic\/rte_spinlock.h 200:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , count :: BG.CInt
     {- ^ __C declaration:__ @count@
 
          __defined at:__ @generic\/rte_spinlock.h 201:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -161,7 +161,7 @@ deriving via Struct.IsStructViaReadRaw Rte_spinlock_recursive_t instance Struct.
 
     __defined at:__ @generic\/rte_spinlock.h 199:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_spinlock_t
          ) => BG.CompatHasField.HasField "sl" Rte_spinlock_recursive_t ty where
@@ -189,7 +189,7 @@ instance HasCField.HasCField Rte_spinlock_recursive_t "sl" where
 
     __defined at:__ @generic\/rte_spinlock.h 200:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "user" Rte_spinlock_recursive_t ty where
@@ -217,7 +217,7 @@ instance HasCField.HasCField Rte_spinlock_recursive_t "user" where
 
     __defined at:__ @generic\/rte_spinlock.h 201:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "count" Rte_spinlock_recursive_t ty where

@@ -42,7 +42,9 @@ import Generated.DPDK.Rte_ip6
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "_Bool hs_bindgen_a9032d884fc9922f ("
   , "  struct rte_ipv6_addr const *arg1,"
   , "  struct rte_ipv6_addr const *arg2"
@@ -228,7 +230,7 @@ hs_bindgen_a9032d884fc9922f =
 
     __defined at:__ @rte_ip6.h 68:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_eq ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -258,7 +260,7 @@ hs_bindgen_0e47f85e1d6b4568 =
 
     __defined at:__ @rte_ip6.h 84:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_mask ::
      BG.Ptr Rte_ipv6_addr
@@ -291,7 +293,7 @@ hs_bindgen_f4c66601163f4ed5 =
 
     __defined at:__ @rte_ip6.h 109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_eq_prefix ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -320,7 +322,7 @@ hs_bindgen_6e23e3c984fe074a =
 
     __defined at:__ @rte_ip6.h 132:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_mask_depth ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -345,7 +347,7 @@ hs_bindgen_519069f62542018a =
 
     __defined at:__ @rte_ip6.h 244:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_unspec ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -370,7 +372,7 @@ hs_bindgen_a2bcb93d75c45035 =
 
     __defined at:__ @rte_ip6.h 263:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_loopback ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -396,7 +398,7 @@ hs_bindgen_049ff9075640549f =
 
     __defined at:__ @rte_ip6.h 278:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_linklocal ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -422,7 +424,7 @@ hs_bindgen_2ce7bd827d293937 =
 
     __defined at:__ @rte_ip6.h 292:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_sitelocal ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -448,7 +450,7 @@ hs_bindgen_7c3398a20c6b427b =
 
     __defined at:__ @rte_ip6.h 307:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_v4compat ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -474,7 +476,7 @@ hs_bindgen_c3dc040117a8c3a2 =
 
     __defined at:__ @rte_ip6.h 325:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_v4mapped ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -500,7 +502,7 @@ hs_bindgen_f17075872d6315da =
 
     __defined at:__ @rte_ip6.h 340:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_addr_is_mcast ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -525,7 +527,7 @@ hs_bindgen_24fcc161a80edc2b =
 
     __defined at:__ @rte_ip6.h 373:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_mc_scope ::
      PtrConst.PtrConst Rte_ipv6_addr
@@ -553,7 +555,7 @@ hs_bindgen_15c1592d764cdee8 =
 
     __defined at:__ @rte_ip6.h 404:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_llocal_from_ethernet ::
      BG.Ptr Rte_ipv6_addr
@@ -584,7 +586,7 @@ hs_bindgen_79c8ab6b570935b8 =
 
     __defined at:__ @rte_ip6.h 434:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_solnode_from_addr ::
      BG.Ptr Rte_ipv6_addr
@@ -615,7 +617,7 @@ hs_bindgen_fabe06ac33b140d8 =
 
     __defined at:__ @rte_ip6.h 456:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ether_mcast_from_ipv6 ::
      BG.Ptr Generated.DPDK.Rte_ether.Rte_ether_addr
@@ -643,7 +645,7 @@ hs_bindgen_3e39e0e6bbde225c =
 
     __defined at:__ @rte_ip6.h 502:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_check_version ::
      PtrConst.PtrConst Rte_ipv6_hdr
@@ -671,7 +673,7 @@ hs_bindgen_398e80b036bd8567 =
 
     __defined at:__ @rte_ip6.h 561:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_phdr_cksum ::
      PtrConst.PtrConst Rte_ipv6_hdr
@@ -701,7 +703,7 @@ hs_bindgen_6eac4a66b389d1de =
 
     __defined at:__ @rte_ip6.h 586:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv6_udptcp_cksum ::
      PtrConst.PtrConst Rte_ipv6_hdr
@@ -731,7 +733,7 @@ hs_bindgen_32656688f4db03ec =
 
     __defined at:__ @rte_ip6.h 615:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_udptcp_cksum ::
      PtrConst.PtrConst Rte_ipv6_hdr
@@ -764,7 +766,7 @@ hs_bindgen_f0b17e5ace90b7b1 =
 
     __defined at:__ @rte_ip6.h 636:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv6_udptcp_cksum_mbuf ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -800,7 +802,7 @@ hs_bindgen_7c2ae9213d0e945f =
 
     __defined at:__ @rte_ip6.h 672:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_udptcp_cksum_mbuf ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -833,7 +835,7 @@ hs_bindgen_3f1180960754c334 =
 
     __defined at:__ @rte_ip6.h 705:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_udptcp_cksum_verify ::
      PtrConst.PtrConst Rte_ipv6_hdr
@@ -867,7 +869,7 @@ hs_bindgen_938245edd80035d2 =
 
     __defined at:__ @rte_ip6.h 733:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_udptcp_cksum_mbuf_verify ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -903,7 +905,7 @@ hs_bindgen_cf52df59e9e53152 =
 
     __defined at:__ @rte_ip6.h 787:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv6_get_next_ext ::
      PtrConst.PtrConst HsBindgen.Runtime.LibC.Word8

@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_cycles_get_rte_rdtsc */"
   , "__attribute__ ((const))"
   , "uint64_t (*hs_bindgen_c737308277d0f9a2 (void)) (void)"
@@ -52,7 +54,7 @@ hs_bindgen_c737308277d0f9a2 =
 
     __defined at:__ @rte_cycles.h 30:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rdtsc :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_rdtsc =
@@ -72,7 +74,7 @@ hs_bindgen_507b8a0875f233b1 =
 
     __defined at:__ @rte_cycles.h 54:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rdtsc_precise :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_rdtsc_precise =
@@ -92,7 +94,7 @@ hs_bindgen_28ad578579328ec1 =
 
     __defined at:__ @rte_cycles.h 61:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_tsc_cycles :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_get_tsc_cycles =

@@ -23,7 +23,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_d2612b8071fd6cf0 ("
   , "  uint16_t arg1,"
   , "  uint16_t arg2,"
@@ -126,7 +128,7 @@ hs_bindgen_d2612b8071fd6cf0 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ethdev_trace_rx_burst_empty ::
      HsBindgen.Runtime.LibC.Word16
@@ -165,7 +167,7 @@ hs_bindgen_cacd0db19ec52736 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 29:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ethdev_trace_rx_burst_nonempty ::
      HsBindgen.Runtime.LibC.Word16
@@ -206,7 +208,7 @@ hs_bindgen_4f85e5affa1c9091 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 39:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ethdev_trace_tx_burst ::
      HsBindgen.Runtime.LibC.Word16
@@ -247,7 +249,7 @@ hs_bindgen_b2184385c1b89e8a =
 
     __defined at:__ @rte_ethdev_trace_fp.h 49:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_call_rx_callbacks_empty ::
      HsBindgen.Runtime.LibC.Word16
@@ -291,7 +293,7 @@ hs_bindgen_2dc7080e943c47fa =
 
     __defined at:__ @rte_ethdev_trace_fp.h 59:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_call_rx_callbacks_nonempty ::
      HsBindgen.Runtime.LibC.Word16
@@ -334,7 +336,7 @@ hs_bindgen_b8b7cacc3ee92ba9 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 70:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_call_tx_callbacks ::
      HsBindgen.Runtime.LibC.Word16
@@ -369,7 +371,7 @@ hs_bindgen_75a4d02eac5bf067 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 80:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_tx_buffer_drop_callback ::
      BG.Ptr (BG.Ptr BG.Void)
@@ -403,7 +405,7 @@ hs_bindgen_515e4c34d3620b6a =
 
     __defined at:__ @rte_ethdev_trace_fp.h 87:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_tx_buffer_count_callback ::
      BG.Ptr (BG.Ptr BG.Void)
@@ -439,7 +441,7 @@ hs_bindgen_93d726a53dc1ac77 =
 
     __defined at:__ @rte_ethdev_trace_fp.h 95:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_eth_trace_tx_queue_count ::
      HsBindgen.Runtime.LibC.Word16

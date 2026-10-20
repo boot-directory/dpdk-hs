@@ -23,7 +23,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_rtm.h 6:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 _RTE_RTM_H_ :: BG.CInt
 _RTE_RTM_H_ = (1 :: BG.CInt)
@@ -32,7 +32,7 @@ _RTE_RTM_H_ = (1 :: BG.CInt)
 
     __defined at:__ @rte_rtm.h 20:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XBEGIN_STARTED :: BG.CUInt
 rTE_XBEGIN_STARTED =
@@ -42,7 +42,7 @@ rTE_XBEGIN_STARTED =
 
     __defined at:__ @rte_rtm.h 21:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_EXPLICIT :: BG.CInt
 rTE_XABORT_EXPLICIT =
@@ -52,7 +52,7 @@ rTE_XABORT_EXPLICIT =
 
     __defined at:__ @rte_rtm.h 22:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_RETRY :: BG.CInt
 rTE_XABORT_RETRY =
@@ -62,7 +62,7 @@ rTE_XABORT_RETRY =
 
     __defined at:__ @rte_rtm.h 23:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_CONFLICT :: BG.CInt
 rTE_XABORT_CONFLICT =
@@ -72,7 +72,7 @@ rTE_XABORT_CONFLICT =
 
     __defined at:__ @rte_rtm.h 24:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_CAPACITY :: BG.CInt
 rTE_XABORT_CAPACITY =
@@ -82,7 +82,7 @@ rTE_XABORT_CAPACITY =
 
     __defined at:__ @rte_rtm.h 25:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_DEBUG :: BG.CInt
 rTE_XABORT_DEBUG =
@@ -92,7 +92,7 @@ rTE_XABORT_DEBUG =
 
     __defined at:__ @rte_rtm.h 26:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_NESTED :: BG.CInt
 rTE_XABORT_NESTED =
@@ -102,7 +102,7 @@ rTE_XABORT_NESTED =
 
     __defined at:__ @rte_rtm.h 27:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_XABORT_CODE :: forall a0. C.Expr.HostPlatform.Bitwise (C.Expr.HostPlatform.ShiftRes a0) BG.CInt => C.Expr.HostPlatform.Shift a0 BG.CInt => a0 -> C.Expr.HostPlatform.BitsRes (C.Expr.HostPlatform.ShiftRes a0) BG.CInt
 rTE_XABORT_CODE =

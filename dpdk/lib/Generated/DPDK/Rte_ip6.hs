@@ -77,7 +77,7 @@ import Prelude ((<*>), (>>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_ip6.h 43:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_ADDR_SIZE :: BG.CInt
 rTE_IPV6_ADDR_SIZE = (16 :: BG.CInt)
@@ -86,7 +86,7 @@ rTE_IPV6_ADDR_SIZE = (16 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 53:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_addr = Rte_ipv6_addr
   { a :: CA.ConstantArray 16 HsBindgen.Runtime.LibC.Word8
@@ -94,7 +94,7 @@ data Rte_ipv6_addr = Rte_ipv6_addr
 
          __defined at:__ @rte_ip6.h 54:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -129,7 +129,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_addr instance Struct.IsStruct Rt
 
     __defined at:__ @rte_ip6.h 54:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 16 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "a" Rte_ipv6_addr ty where
@@ -156,7 +156,7 @@ instance HasCField.HasCField Rte_ipv6_addr "a" where
 
     __defined at:__ @rte_ip6.h 195:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_ADDR_FMT :: BG.ByteString
 rTE_IPV6_ADDR_FMT =
@@ -166,7 +166,7 @@ rTE_IPV6_ADDR_FMT =
 
     __defined at:__ @rte_ip6.h 348:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ipv6_mc_scope = Rte_ipv6_mc_scope
   { unwrap :: BG.CUInt
@@ -259,7 +259,7 @@ instance HasCField.HasCField Rte_ipv6_mc_scope "unwrap" where
 
     __defined at:__ @rte_ip6.h 350:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_NONE :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_NONE = Rte_ipv6_mc_scope 0
@@ -268,7 +268,7 @@ pattern RTE_IPV6_MC_SCOPE_NONE = Rte_ipv6_mc_scope 0
 
     __defined at:__ @rte_ip6.h 352:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_IFACELOCAL :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_IFACELOCAL = Rte_ipv6_mc_scope 1
@@ -277,7 +277,7 @@ pattern RTE_IPV6_MC_SCOPE_IFACELOCAL = Rte_ipv6_mc_scope 1
 
     __defined at:__ @rte_ip6.h 354:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_LINKLOCAL :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_LINKLOCAL = Rte_ipv6_mc_scope 2
@@ -286,7 +286,7 @@ pattern RTE_IPV6_MC_SCOPE_LINKLOCAL = Rte_ipv6_mc_scope 2
 
     __defined at:__ @rte_ip6.h 356:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_SITELOCAL :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_SITELOCAL = Rte_ipv6_mc_scope 5
@@ -295,7 +295,7 @@ pattern RTE_IPV6_MC_SCOPE_SITELOCAL = Rte_ipv6_mc_scope 5
 
     __defined at:__ @rte_ip6.h 358:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_ORGLOCAL :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_ORGLOCAL = Rte_ipv6_mc_scope 8
@@ -304,7 +304,7 @@ pattern RTE_IPV6_MC_SCOPE_ORGLOCAL = Rte_ipv6_mc_scope 8
 
     __defined at:__ @rte_ip6.h 360:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_IPV6_MC_SCOPE_GLOBAL :: Rte_ipv6_mc_scope
 pattern RTE_IPV6_MC_SCOPE_GLOBAL = Rte_ipv6_mc_scope 14
@@ -313,7 +313,7 @@ pattern RTE_IPV6_MC_SCOPE_GLOBAL = Rte_ipv6_mc_scope 14
 
     __defined at:__ @rte_ip6.h 473:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label = Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label
   { flow_label :: HsBindgen.Runtime.LibC.Word32
@@ -321,28 +321,28 @@ data Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label = Rte_ipv6_hdr_anon'vtc_flow_ano
 
          __defined at:__ @rte_ip6.h 475:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ecn :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @ecn@
 
          __defined at:__ @rte_ip6.h 476:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ds :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @ds@
 
          __defined at:__ @rte_ip6.h 477:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , version :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @version@
 
          __defined at:__ @rte_ip6.h 478:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -383,7 +383,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_hdr_anon'vtc_flow_anon'flow_labe
 
     __defined at:__ @rte_ip6.h 475:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flow_label" Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label ty where
@@ -418,7 +418,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label "f
 
     __defined at:__ @rte_ip6.h 476:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ecn" Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label ty where
@@ -452,7 +452,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label "e
 
     __defined at:__ @rte_ip6.h 477:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ds" Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label ty where
@@ -486,7 +486,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label "d
 
     __defined at:__ @rte_ip6.h 478:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "version" Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label ty where
@@ -520,7 +520,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label "v
 
     __defined at:__ @rte_ip6.h 470:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ipv6_hdr_anon'vtc_flow = Rte_ipv6_hdr_anon'vtc_flow
   { unwrap :: BG.ByteArray
@@ -541,7 +541,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_ipv6_hdr_anon'vtc_
 
     __defined at:__ @rte_ip6.h 471:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vtc_flow" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -552,7 +552,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ip6.h 471:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vtc_flow" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -578,7 +578,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "vtc_flow" where
 
     __defined at:__ @rte_ip6.h 473:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label
          ) => BG.HasField "anon'flow_label" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -589,7 +589,7 @@ instance ( ty ~ Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label
 
     __defined at:__ @rte_ip6.h 473:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_hdr_anon'vtc_flow_anon'flow_label
          ) => BG.CompatHasField.HasField "anon'flow_label" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -616,7 +616,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "anon'flow_label" where
 
     __defined at:__ @rte_ip6.h 475:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "flow_label" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -629,7 +629,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 475:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flow_label" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -658,7 +658,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "flow_label" where
 
     __defined at:__ @rte_ip6.h 476:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "ecn" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -671,7 +671,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 476:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ecn" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -700,7 +700,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "ecn" where
 
     __defined at:__ @rte_ip6.h 477:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "ds" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -713,7 +713,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 477:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ds" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -742,7 +742,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "ds" where
 
     __defined at:__ @rte_ip6.h 478:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "version" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -755,7 +755,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 478:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "version" Rte_ipv6_hdr_anon'vtc_flow ty where
@@ -784,7 +784,7 @@ instance HasCField.HasCField Rte_ipv6_hdr_anon'vtc_flow "version" where
 
     __defined at:__ @rte_ip6.h 469:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_hdr = Rte_ipv6_hdr
   { anon'vtc_flow :: Rte_ipv6_hdr_anon'vtc_flow
@@ -792,42 +792,42 @@ data Rte_ipv6_hdr = Rte_ipv6_hdr
 
          __defined at:__ @rte_ip6.h 470:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , payload_len :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @payload_len@
 
          __defined at:__ @rte_ip6.h 487:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @proto@
 
          __defined at:__ @rte_ip6.h 488:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hop_limits :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @hop_limits@
 
          __defined at:__ @rte_ip6.h 489:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , src_addr :: Rte_ipv6_addr
     {- ^ __C declaration:__ @src_addr@
 
          __defined at:__ @rte_ip6.h 490:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_addr :: Rte_ipv6_addr
     {- ^ __C declaration:__ @dst_addr@
 
          __defined at:__ @rte_ip6.h 491:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -878,7 +878,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_hdr instance Struct.IsStruct Rte
 
     __defined at:__ @rte_ip6.h 470:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_hdr_anon'vtc_flow
          ) => BG.CompatHasField.HasField "anon'vtc_flow" Rte_ipv6_hdr ty where
@@ -913,7 +913,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "anon'vtc_flow" where
 
     __defined at:__ @rte_ip6.h 471:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "vtc_flow" Rte_ipv6_hdr ty where
@@ -926,7 +926,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ip6.h 471:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "vtc_flow" Rte_ipv6_hdr ty where
@@ -955,7 +955,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "vtc_flow" where
 
     __defined at:__ @rte_ip6.h 475:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "flow_label" Rte_ipv6_hdr ty where
@@ -968,7 +968,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 475:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flow_label" Rte_ipv6_hdr ty where
@@ -997,7 +997,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "flow_label" where
 
     __defined at:__ @rte_ip6.h 476:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "ecn" Rte_ipv6_hdr ty where
@@ -1010,7 +1010,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 476:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ecn" Rte_ipv6_hdr ty where
@@ -1039,7 +1039,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "ecn" where
 
     __defined at:__ @rte_ip6.h 477:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "ds" Rte_ipv6_hdr ty where
@@ -1052,7 +1052,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 477:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "ds" Rte_ipv6_hdr ty where
@@ -1081,7 +1081,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "ds" where
 
     __defined at:__ @rte_ip6.h 478:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "version" Rte_ipv6_hdr ty where
@@ -1094,7 +1094,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
 
     __defined at:__ @rte_ip6.h 478:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "version" Rte_ipv6_hdr ty where
@@ -1123,7 +1123,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "version" where
 
     __defined at:__ @rte_ip6.h 487:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "payload_len" Rte_ipv6_hdr ty where
@@ -1158,7 +1158,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "payload_len" where
 
     __defined at:__ @rte_ip6.h 488:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "proto" Rte_ipv6_hdr ty where
@@ -1192,7 +1192,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "proto" where
 
     __defined at:__ @rte_ip6.h 489:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hop_limits" Rte_ipv6_hdr ty where
@@ -1226,7 +1226,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "hop_limits" where
 
     __defined at:__ @rte_ip6.h 490:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_addr
          ) => BG.CompatHasField.HasField "src_addr" Rte_ipv6_hdr ty where
@@ -1260,7 +1260,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "src_addr" where
 
     __defined at:__ @rte_ip6.h 491:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_addr
          ) => BG.CompatHasField.HasField "dst_addr" Rte_ipv6_hdr ty where
@@ -1294,7 +1294,7 @@ instance HasCField.HasCField Rte_ipv6_hdr "dst_addr" where
 
     __defined at:__ @rte_ip6.h 511:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_SRCRT_TYPE_4 :: BG.CInt
 rTE_IPV6_SRCRT_TYPE_4 = (4 :: BG.CInt)
@@ -1303,7 +1303,7 @@ rTE_IPV6_SRCRT_TYPE_4 = (4 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 524:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_routing_ext_anon'flags_anon'last_entry = Rte_ipv6_routing_ext_anon'flags_anon'last_entry
   { last_entry :: HsBindgen.Runtime.LibC.Word8
@@ -1311,21 +1311,21 @@ data Rte_ipv6_routing_ext_anon'flags_anon'last_entry = Rte_ipv6_routing_ext_anon
 
          __defined at:__ @rte_ip6.h 525:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flag :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @flag@
 
          __defined at:__ @rte_ip6.h 526:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tag :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @tag@
 
          __defined at:__ @rte_ip6.h 527:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1364,7 +1364,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_routing_ext_anon'flags_anon'last
 
     __defined at:__ @rte_ip6.h 525:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_entry" Rte_ipv6_routing_ext_anon'flags_anon'last_entry ty where
@@ -1392,7 +1392,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags_anon'last_entry "la
 
     __defined at:__ @rte_ip6.h 526:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag" Rte_ipv6_routing_ext_anon'flags_anon'last_entry ty where
@@ -1423,7 +1423,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags_anon'last_entry "fl
 
     __defined at:__ @rte_ip6.h 527:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "tag" Rte_ipv6_routing_ext_anon'flags_anon'last_entry ty where
@@ -1454,7 +1454,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags_anon'last_entry "ta
 
     __defined at:__ @rte_ip6.h 522:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ipv6_routing_ext_anon'flags = Rte_ipv6_routing_ext_anon'flags
   { unwrap :: BG.ByteArray
@@ -1475,7 +1475,7 @@ deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_ipv6_routing_ext_a
 
     __defined at:__ @rte_ip6.h 523:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "flags" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1486,7 +1486,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ip6.h 523:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "flags" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1512,7 +1512,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags "flags" where
 
     __defined at:__ @rte_ip6.h 524:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_routing_ext_anon'flags_anon'last_entry
          ) => BG.HasField "anon'last_entry" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1523,7 +1523,7 @@ instance ( ty ~ Rte_ipv6_routing_ext_anon'flags_anon'last_entry
 
     __defined at:__ @rte_ip6.h 524:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_routing_ext_anon'flags_anon'last_entry
          ) => BG.CompatHasField.HasField "anon'last_entry" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1550,7 +1550,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags "anon'last_entry" w
 
     __defined at:__ @rte_ip6.h 525:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_entry" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1563,7 +1563,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip6.h 525:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_entry" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1592,7 +1592,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags "last_entry" where
 
     __defined at:__ @rte_ip6.h 526:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1605,7 +1605,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip6.h 526:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1634,7 +1634,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags "flag" where
 
     __defined at:__ @rte_ip6.h 527:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.HasField "tag" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1647,7 +1647,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
 
     __defined at:__ @rte_ip6.h 527:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "tag" Rte_ipv6_routing_ext_anon'flags ty where
@@ -1676,7 +1676,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext_anon'flags "tag" where
 
     __defined at:__ @rte_ip6.h 516:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_routing_ext = Rte_ipv6_routing_ext
   { next_hdr :: HsBindgen.Runtime.LibC.Word8
@@ -1684,35 +1684,35 @@ data Rte_ipv6_routing_ext = Rte_ipv6_routing_ext
 
          __defined at:__ @rte_ip6.h 517:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hdr_len :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @hdr_len@
 
          __defined at:__ @rte_ip6.h 518:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_ip6.h 519:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , segments_left :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @segments_left@
 
          __defined at:__ @rte_ip6.h 520:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'flags :: Rte_ipv6_routing_ext_anon'flags
     {- ^ __C declaration:__ @anon\'flags@
 
          __defined at:__ @rte_ip6.h 522:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1755,7 +1755,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_routing_ext instance Struct.IsSt
 
     __defined at:__ @rte_ip6.h 517:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "next_hdr" Rte_ipv6_routing_ext ty where
@@ -1788,7 +1788,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "next_hdr" where
 
     __defined at:__ @rte_ip6.h 518:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hdr_len" Rte_ipv6_routing_ext ty where
@@ -1821,7 +1821,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "hdr_len" where
 
     __defined at:__ @rte_ip6.h 519:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type'" Rte_ipv6_routing_ext ty where
@@ -1854,7 +1854,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "type'" where
 
     __defined at:__ @rte_ip6.h 520:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "segments_left" Rte_ipv6_routing_ext ty where
@@ -1888,7 +1888,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "segments_left" where
 
     __defined at:__ @rte_ip6.h 522:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv6_routing_ext_anon'flags
          ) => BG.CompatHasField.HasField "anon'flags" Rte_ipv6_routing_ext ty where
@@ -1921,7 +1921,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "anon'flags" where
 
     __defined at:__ @rte_ip6.h 523:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.HasField "flags" Rte_ipv6_routing_ext ty where
@@ -1934,7 +1934,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
 
     __defined at:__ @rte_ip6.h 523:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "flags" Rte_ipv6_routing_ext ty where
@@ -1963,7 +1963,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "flags" where
 
     __defined at:__ @rte_ip6.h 525:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "last_entry" Rte_ipv6_routing_ext ty where
@@ -1976,7 +1976,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip6.h 525:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "last_entry" Rte_ipv6_routing_ext ty where
@@ -2005,7 +2005,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "last_entry" where
 
     __defined at:__ @rte_ip6.h 526:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "flag" Rte_ipv6_routing_ext ty where
@@ -2018,7 +2018,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip6.h 526:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "flag" Rte_ipv6_routing_ext ty where
@@ -2047,7 +2047,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "flag" where
 
     __defined at:__ @rte_ip6.h 527:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.HasField "tag" Rte_ipv6_routing_ext ty where
@@ -2060,7 +2060,7 @@ instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
 
     __defined at:__ @rte_ip6.h 527:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "tag" Rte_ipv6_routing_ext ty where
@@ -2089,7 +2089,7 @@ instance HasCField.HasCField Rte_ipv6_routing_ext "tag" where
 
     __defined at:__ @rte_ip6.h 534:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_FL_SHIFT :: BG.CInt
 rTE_IPV6_HDR_FL_SHIFT = (0 :: BG.CInt)
@@ -2098,7 +2098,7 @@ rTE_IPV6_HDR_FL_SHIFT = (0 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 535:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_TC_SHIFT :: BG.CInt
 rTE_IPV6_HDR_TC_SHIFT = (20 :: BG.CInt)
@@ -2107,7 +2107,7 @@ rTE_IPV6_HDR_TC_SHIFT = (20 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 536:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_FL_MASK :: BG.CUInt
 rTE_IPV6_HDR_FL_MASK =
@@ -2117,7 +2117,7 @@ rTE_IPV6_HDR_FL_MASK =
 
     __defined at:__ @rte_ip6.h 537:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_TC_MASK :: BG.CInt
 rTE_IPV6_HDR_TC_MASK =
@@ -2127,7 +2127,7 @@ rTE_IPV6_HDR_TC_MASK =
 
     __defined at:__ @rte_ip6.h 538:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_DSCP_MASK :: BG.CInt
 rTE_IPV6_HDR_DSCP_MASK =
@@ -2137,7 +2137,7 @@ rTE_IPV6_HDR_DSCP_MASK =
 
     __defined at:__ @rte_ip6.h 539:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_ECN_MASK :: BG.CInt
 rTE_IPV6_HDR_ECN_MASK =
@@ -2147,7 +2147,7 @@ rTE_IPV6_HDR_ECN_MASK =
 
     __defined at:__ @rte_ip6.h 540:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_HDR_ECN_CE :: BG.CInt
 rTE_IPV6_HDR_ECN_CE = rTE_IPV6_HDR_ECN_MASK
@@ -2156,7 +2156,7 @@ rTE_IPV6_HDR_ECN_CE = rTE_IPV6_HDR_ECN_MASK
 
     __defined at:__ @rte_ip6.h 542:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_MIN_MTU :: BG.CInt
 rTE_IPV6_MIN_MTU = (1280 :: BG.CInt)
@@ -2165,7 +2165,7 @@ rTE_IPV6_MIN_MTU = (1280 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 746:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_EHDR_MF_SHIFT :: BG.CInt
 rTE_IPV6_EHDR_MF_SHIFT = (0 :: BG.CInt)
@@ -2174,7 +2174,7 @@ rTE_IPV6_EHDR_MF_SHIFT = (0 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 747:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_EHDR_MF_MASK :: BG.CInt
 rTE_IPV6_EHDR_MF_MASK = (1 :: BG.CInt)
@@ -2183,7 +2183,7 @@ rTE_IPV6_EHDR_MF_MASK = (1 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 748:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_EHDR_FO_SHIFT :: BG.CInt
 rTE_IPV6_EHDR_FO_SHIFT = (3 :: BG.CInt)
@@ -2192,7 +2192,7 @@ rTE_IPV6_EHDR_FO_SHIFT = (3 :: BG.CInt)
 
     __defined at:__ @rte_ip6.h 749:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_EHDR_FO_MASK :: BG.CInt
 rTE_IPV6_EHDR_FO_MASK =
@@ -2202,7 +2202,7 @@ rTE_IPV6_EHDR_FO_MASK =
 
     __defined at:__ @rte_ip6.h 750:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_EHDR_FO_ALIGN :: BG.CInt
 rTE_IPV6_EHDR_FO_ALIGN =
@@ -2212,7 +2212,7 @@ rTE_IPV6_EHDR_FO_ALIGN =
 
     __defined at:__ @rte_ip6.h 752:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_FRAG_USED_MASK :: BG.CInt
 rTE_IPV6_FRAG_USED_MASK =
@@ -2222,7 +2222,7 @@ rTE_IPV6_FRAG_USED_MASK =
 
     __defined at:__ @rte_ip6.h 754:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_GET_MF :: forall a0. C.Expr.HostPlatform.Bitwise a0 BG.CInt => a0 -> C.Expr.HostPlatform.BitsRes a0 BG.CInt
 rTE_IPV6_GET_MF =
@@ -2233,7 +2233,7 @@ rTE_IPV6_GET_MF =
 
     __defined at:__ @rte_ip6.h 755:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_GET_FO :: forall a0. C.Expr.HostPlatform.Shift a0 BG.CInt => a0 -> C.Expr.HostPlatform.ShiftRes a0
 rTE_IPV6_GET_FO =
@@ -2244,7 +2244,7 @@ rTE_IPV6_GET_FO =
 
     __defined at:__ @rte_ip6.h 757:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV6_SET_FRAG_DATA :: forall a0 b1. C.Expr.HostPlatform.Bitwise (C.Expr.HostPlatform.BitsRes a0 BG.CInt) (C.Expr.HostPlatform.BitsRes b1 BG.CInt) => C.Expr.HostPlatform.Bitwise b1 BG.CInt => C.Expr.HostPlatform.Bitwise a0 BG.CInt => a0 -> b1 -> C.Expr.HostPlatform.BitsRes (C.Expr.HostPlatform.BitsRes a0 BG.CInt) (C.Expr.HostPlatform.BitsRes b1 BG.CInt)
 rTE_IPV6_SET_FRAG_DATA =
@@ -2256,7 +2256,7 @@ rTE_IPV6_SET_FRAG_DATA =
 
     __defined at:__ @rte_ip6.h 760:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv6_fragment_ext = Rte_ipv6_fragment_ext
   { next_header :: HsBindgen.Runtime.LibC.Word8
@@ -2264,28 +2264,28 @@ data Rte_ipv6_fragment_ext = Rte_ipv6_fragment_ext
 
          __defined at:__ @rte_ip6.h 761:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @reserved@
 
          __defined at:__ @rte_ip6.h 762:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , frag_data :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @frag_data@
 
          __defined at:__ @rte_ip6.h 763:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @id@
 
          __defined at:__ @rte_ip6.h 764:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2326,7 +2326,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv6_fragment_ext instance Struct.IsS
 
     __defined at:__ @rte_ip6.h 761:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "next_header" Rte_ipv6_fragment_ext ty where
@@ -2359,7 +2359,7 @@ instance HasCField.HasCField Rte_ipv6_fragment_ext "next_header" where
 
     __defined at:__ @rte_ip6.h 762:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "reserved" Rte_ipv6_fragment_ext ty where
@@ -2391,7 +2391,7 @@ instance HasCField.HasCField Rte_ipv6_fragment_ext "reserved" where
 
     __defined at:__ @rte_ip6.h 763:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "frag_data" Rte_ipv6_fragment_ext ty where
@@ -2423,7 +2423,7 @@ instance HasCField.HasCField Rte_ipv6_fragment_ext "frag_data" where
 
     __defined at:__ @rte_ip6.h 764:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "id" Rte_ipv6_fragment_ext ty where

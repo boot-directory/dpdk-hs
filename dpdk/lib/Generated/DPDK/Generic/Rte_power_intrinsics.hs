@@ -41,7 +41,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Show, fmap, pure, type (~))
 
     __defined at:__ @generic\/rte_power_intrinsics.h 25:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_POWER_MONITOR_OPAQUE_SZ :: BG.CInt
 rTE_POWER_MONITOR_OPAQUE_SZ = (4 :: BG.CInt)
@@ -52,7 +52,7 @@ rTE_POWER_MONITOR_OPAQUE_SZ = (4 :: BG.CInt)
 
     __defined at:__ @generic\/rte_power_intrinsics.h 41:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_power_monitor_clb_t_Aux = Rte_power_monitor_clb_t_Aux
   { unwrap :: HsBindgen.Runtime.LibC.Word64 -> PtrConst.PtrConst (IsA.Elem (CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word64)) -> IO BG.CInt
@@ -121,7 +121,7 @@ instance HasCField.HasCField Rte_power_monitor_clb_t_Aux "unwrap" where
 
     __defined at:__ @generic\/rte_power_intrinsics.h 41:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_power_monitor_clb_t = Rte_power_monitor_clb_t
   { unwrap :: BG.FunPtr Rte_power_monitor_clb_t_Aux
@@ -159,7 +159,7 @@ instance HasCField.HasCField Rte_power_monitor_clb_t "unwrap" where
 
     __defined at:__ @generic\/rte_power_intrinsics.h 44:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_power_monitor_cond = Rte_power_monitor_cond
   { addr :: BG.Ptr BG.Void
@@ -167,28 +167,28 @@ data Rte_power_monitor_cond = Rte_power_monitor_cond
 
          __defined at:__ @generic\/rte_power_intrinsics.h 45:17@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , size :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @size@
 
          __defined at:__ @generic\/rte_power_intrinsics.h 46:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , fn :: Rte_power_monitor_clb_t
     {- ^ __C declaration:__ @fn@
 
          __defined at:__ @generic\/rte_power_intrinsics.h 51:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , opaque :: CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @opaque@
 
          __defined at:__ @generic\/rte_power_intrinsics.h 55:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -229,7 +229,7 @@ deriving via Struct.IsStructViaReadRaw Rte_power_monitor_cond instance Struct.Is
 
     __defined at:__ @generic\/rte_power_intrinsics.h 45:17@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_power_monitor_cond ty where
@@ -261,7 +261,7 @@ instance HasCField.HasCField Rte_power_monitor_cond "addr" where
 
     __defined at:__ @generic\/rte_power_intrinsics.h 46:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "size" Rte_power_monitor_cond ty where
@@ -293,7 +293,7 @@ instance HasCField.HasCField Rte_power_monitor_cond "size" where
 
     __defined at:__ @generic\/rte_power_intrinsics.h 51:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_power_monitor_clb_t
          ) => BG.CompatHasField.HasField "fn" Rte_power_monitor_cond ty where
@@ -325,7 +325,7 @@ instance HasCField.HasCField Rte_power_monitor_cond "fn" where
 
     __defined at:__ @generic\/rte_power_intrinsics.h 55:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "opaque" Rte_power_monitor_cond ty where

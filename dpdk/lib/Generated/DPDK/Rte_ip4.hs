@@ -60,7 +60,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @netinet\/ip.h 151:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 iPVERSION :: BG.CInt
 iPVERSION = (4 :: BG.CInt)
@@ -69,7 +69,7 @@ iPVERSION = (4 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 46:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv4_hdr_anon'version_ihl_anon'ihl = Rte_ipv4_hdr_anon'version_ihl_anon'ihl
   { ihl :: HsBindgen.Runtime.LibC.Word8
@@ -77,14 +77,14 @@ data Rte_ipv4_hdr_anon'version_ihl_anon'ihl = Rte_ipv4_hdr_anon'version_ihl_anon
 
          __defined at:__ @rte_ip4.h 48:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , version :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @version@
 
          __defined at:__ @rte_ip4.h 49:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -121,7 +121,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv4_hdr_anon'version_ihl_anon'ihl in
 
     __defined at:__ @rte_ip4.h 48:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ihl" Rte_ipv4_hdr_anon'version_ihl_anon'ihl ty where
@@ -151,7 +151,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv4_hdr_anon'version_ihl_anon'ihl "ihl" 
 
     __defined at:__ @rte_ip4.h 49:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "version" Rte_ipv4_hdr_anon'version_ihl_anon'ihl ty where
@@ -181,7 +181,7 @@ instance HasCBitfield.HasCBitfield Rte_ipv4_hdr_anon'version_ihl_anon'ihl "versi
 
     __defined at:__ @rte_ip4.h 44:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_ipv4_hdr_anon'version_ihl = Rte_ipv4_hdr_anon'version_ihl
   { unwrap :: BG.ByteArray
@@ -202,7 +202,7 @@ deriving via BG.SizedByteArray 1 1 instance Union.IsUnion Rte_ipv4_hdr_anon'vers
 
     __defined at:__ @rte_ip4.h 45:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "version_ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -213,7 +213,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 45:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "version_ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -240,7 +240,7 @@ instance HasCField.HasCField Rte_ipv4_hdr_anon'version_ihl "version_ihl" where
 
     __defined at:__ @rte_ip4.h 46:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv4_hdr_anon'version_ihl_anon'ihl
          ) => BG.HasField "anon'ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -251,7 +251,7 @@ instance ( ty ~ Rte_ipv4_hdr_anon'version_ihl_anon'ihl
 
     __defined at:__ @rte_ip4.h 46:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv4_hdr_anon'version_ihl_anon'ihl
          ) => BG.CompatHasField.HasField "anon'ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -277,7 +277,7 @@ instance HasCField.HasCField Rte_ipv4_hdr_anon'version_ihl "anon'ihl" where
 
     __defined at:__ @rte_ip4.h 48:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -290,7 +290,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 48:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ihl" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -319,7 +319,7 @@ instance HasCField.HasCField Rte_ipv4_hdr_anon'version_ihl "ihl" where
 
     __defined at:__ @rte_ip4.h 49:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "version" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -332,7 +332,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 49:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "version" Rte_ipv4_hdr_anon'version_ihl ty where
@@ -361,7 +361,7 @@ instance HasCField.HasCField Rte_ipv4_hdr_anon'version_ihl "version" where
 
     __defined at:__ @rte_ip4.h 42:44@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ipv4_hdr = Rte_ipv4_hdr
   { anon'version_ihl :: Rte_ipv4_hdr_anon'version_ihl
@@ -369,70 +369,70 @@ data Rte_ipv4_hdr = Rte_ipv4_hdr
 
          __defined at:__ @rte_ip4.h 44:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type_of_service :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @type_of_service@
 
          __defined at:__ @rte_ip4.h 56:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , total_length :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @total_length@
 
          __defined at:__ @rte_ip4.h 57:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , packet_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @packet_id@
 
          __defined at:__ @rte_ip4.h 58:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , fragment_offset :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @fragment_offset@
 
          __defined at:__ @rte_ip4.h 59:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , time_to_live :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @time_to_live@
 
          __defined at:__ @rte_ip4.h 60:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , next_proto_id :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @next_proto_id@
 
          __defined at:__ @rte_ip4.h 61:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hdr_checksum :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @hdr_checksum@
 
          __defined at:__ @rte_ip4.h 62:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , src_addr :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @src_addr@
 
          __defined at:__ @rte_ip4.h 63:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dst_addr :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @dst_addr@
 
          __defined at:__ @rte_ip4.h 64:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -495,7 +495,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ipv4_hdr instance Struct.IsStruct Rte
 
     __defined at:__ @rte_ip4.h 44:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_ipv4_hdr_anon'version_ihl
          ) => BG.CompatHasField.HasField "anon'version_ihl" Rte_ipv4_hdr ty where
@@ -534,7 +534,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "anon'version_ihl" where
 
     __defined at:__ @rte_ip4.h 45:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "version_ihl" Rte_ipv4_hdr ty where
@@ -547,7 +547,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 45:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "version_ihl" Rte_ipv4_hdr ty where
@@ -577,7 +577,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "version_ihl" where
 
     __defined at:__ @rte_ip4.h 48:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "ihl" Rte_ipv4_hdr ty where
@@ -590,7 +590,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 48:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ihl" Rte_ipv4_hdr ty where
@@ -619,7 +619,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "ihl" where
 
     __defined at:__ @rte_ip4.h 49:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "version" Rte_ipv4_hdr ty where
@@ -632,7 +632,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_ip4.h 49:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "version" Rte_ipv4_hdr ty where
@@ -661,7 +661,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "version" where
 
     __defined at:__ @rte_ip4.h 56:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type_of_service" Rte_ipv4_hdr ty where
@@ -700,7 +700,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "type_of_service" where
 
     __defined at:__ @rte_ip4.h 57:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "total_length" Rte_ipv4_hdr ty where
@@ -739,7 +739,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "total_length" where
 
     __defined at:__ @rte_ip4.h 58:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "packet_id" Rte_ipv4_hdr ty where
@@ -777,7 +777,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "packet_id" where
 
     __defined at:__ @rte_ip4.h 59:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "fragment_offset" Rte_ipv4_hdr ty where
@@ -816,7 +816,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "fragment_offset" where
 
     __defined at:__ @rte_ip4.h 60:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "time_to_live" Rte_ipv4_hdr ty where
@@ -855,7 +855,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "time_to_live" where
 
     __defined at:__ @rte_ip4.h 61:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "next_proto_id" Rte_ipv4_hdr ty where
@@ -894,7 +894,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "next_proto_id" where
 
     __defined at:__ @rte_ip4.h 62:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "hdr_checksum" Rte_ipv4_hdr ty where
@@ -933,7 +933,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "hdr_checksum" where
 
     __defined at:__ @rte_ip4.h 63:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "src_addr" Rte_ipv4_hdr ty where
@@ -971,7 +971,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "src_addr" where
 
     __defined at:__ @rte_ip4.h 64:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "dst_addr" Rte_ipv4_hdr ty where
@@ -1009,7 +1009,7 @@ instance HasCField.HasCField Rte_ipv4_hdr "dst_addr" where
 
     __defined at:__ @rte_ip4.h 72:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_MAX_PKT_LEN :: BG.CInt
 rTE_IPV4_MAX_PKT_LEN = (65535 :: BG.CInt)
@@ -1018,7 +1018,7 @@ rTE_IPV4_MAX_PKT_LEN = (65535 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 75:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_IHL_MASK :: BG.CInt
 rTE_IPV4_HDR_IHL_MASK = (15 :: BG.CInt)
@@ -1027,7 +1027,7 @@ rTE_IPV4_HDR_IHL_MASK = (15 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 80:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_IHL_MULTIPLIER :: BG.CInt
 rTE_IPV4_IHL_MULTIPLIER = (4 :: BG.CInt)
@@ -1036,7 +1036,7 @@ rTE_IPV4_IHL_MULTIPLIER = (4 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 83:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_DSCP_MASK :: BG.CInt
 rTE_IPV4_HDR_DSCP_MASK = (252 :: BG.CInt)
@@ -1045,7 +1045,7 @@ rTE_IPV4_HDR_DSCP_MASK = (252 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 84:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_ECN_MASK :: BG.CInt
 rTE_IPV4_HDR_ECN_MASK = (3 :: BG.CInt)
@@ -1054,7 +1054,7 @@ rTE_IPV4_HDR_ECN_MASK = (3 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 85:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_ECN_CE :: BG.CInt
 rTE_IPV4_HDR_ECN_CE = rTE_IPV4_HDR_ECN_MASK
@@ -1063,7 +1063,7 @@ rTE_IPV4_HDR_ECN_CE = rTE_IPV4_HDR_ECN_MASK
 
     __defined at:__ @rte_ip4.h 88:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_DF_SHIFT :: BG.CInt
 rTE_IPV4_HDR_DF_SHIFT = (14 :: BG.CInt)
@@ -1072,7 +1072,7 @@ rTE_IPV4_HDR_DF_SHIFT = (14 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 89:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_MF_SHIFT :: BG.CInt
 rTE_IPV4_HDR_MF_SHIFT = (13 :: BG.CInt)
@@ -1081,7 +1081,7 @@ rTE_IPV4_HDR_MF_SHIFT = (13 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 90:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_FO_SHIFT :: BG.CInt
 rTE_IPV4_HDR_FO_SHIFT = (3 :: BG.CInt)
@@ -1090,7 +1090,7 @@ rTE_IPV4_HDR_FO_SHIFT = (3 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 92:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_DF_FLAG :: BG.CInt
 rTE_IPV4_HDR_DF_FLAG =
@@ -1100,7 +1100,7 @@ rTE_IPV4_HDR_DF_FLAG =
 
     __defined at:__ @rte_ip4.h 93:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_MF_FLAG :: BG.CInt
 rTE_IPV4_HDR_MF_FLAG =
@@ -1110,7 +1110,7 @@ rTE_IPV4_HDR_MF_FLAG =
 
     __defined at:__ @rte_ip4.h 95:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OFFSET_MASK :: BG.CInt
 rTE_IPV4_HDR_OFFSET_MASK =
@@ -1120,7 +1120,7 @@ rTE_IPV4_HDR_OFFSET_MASK =
 
     __defined at:__ @rte_ip4.h 97:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OFFSET_UNITS :: BG.CInt
 rTE_IPV4_HDR_OFFSET_UNITS = (8 :: BG.CInt)
@@ -1129,7 +1129,7 @@ rTE_IPV4_HDR_OFFSET_UNITS = (8 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 100:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OPT_EOL :: BG.CInt
 rTE_IPV4_HDR_OPT_EOL = (0 :: BG.CInt)
@@ -1138,7 +1138,7 @@ rTE_IPV4_HDR_OPT_EOL = (0 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 101:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OPT_NOP :: BG.CInt
 rTE_IPV4_HDR_OPT_NOP = (1 :: BG.CInt)
@@ -1147,7 +1147,7 @@ rTE_IPV4_HDR_OPT_NOP = (1 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 102:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OPT_COPIED :: forall a0. C.Expr.HostPlatform.Bitwise a0 BG.CInt => a0 -> C.Expr.HostPlatform.BitsRes a0 BG.CInt
 rTE_IPV4_HDR_OPT_COPIED =
@@ -1157,7 +1157,7 @@ rTE_IPV4_HDR_OPT_COPIED =
 
     __defined at:__ @rte_ip4.h 103:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_HDR_OPT_MAX_LEN :: BG.CInt
 rTE_IPV4_HDR_OPT_MAX_LEN = (40 :: BG.CInt)
@@ -1166,7 +1166,7 @@ rTE_IPV4_HDR_OPT_MAX_LEN = (40 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 128:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_MIN_IHL :: BG.CInt
 rTE_IPV4_MIN_IHL = (5 :: BG.CInt)
@@ -1175,7 +1175,7 @@ rTE_IPV4_MIN_IHL = (5 :: BG.CInt)
 
     __defined at:__ @rte_ip4.h 129:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_IPV4_VHL_DEF :: BG.CInt
 rTE_IPV4_VHL_DEF =

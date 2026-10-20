@@ -25,7 +25,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mempool_trace_fp_get_rte_mempool_trace_ops_dequeue_bulk */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_a0d06fe538e877ae (void)) ("
@@ -145,7 +147,7 @@ hs_bindgen_a0d06fe538e877ae =
 
     __defined at:__ @rte_mempool_trace_fp.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_dequeue_bulk :: BG.FunPtr (BG.Ptr BG.Void -> BG.Ptr (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_mempool_trace_ops_dequeue_bulk =
@@ -165,7 +167,7 @@ hs_bindgen_019b8cb00976e1dc =
 
     __defined at:__ @rte_mempool_trace_fp.h 29:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_dequeue_contig_blocks :: BG.FunPtr (BG.Ptr BG.Void -> BG.Ptr (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_mempool_trace_ops_dequeue_contig_blocks =
@@ -185,7 +187,7 @@ hs_bindgen_6d0470bb7ae9fbe7 =
 
     __defined at:__ @rte_mempool_trace_fp.h 38:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_enqueue_bulk :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_mempool_trace_ops_enqueue_bulk =
@@ -205,7 +207,7 @@ hs_bindgen_d2b08892506c3b54 =
 
     __defined at:__ @rte_mempool_trace_fp.h 47:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_generic_put :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_generic_put =
@@ -225,7 +227,7 @@ hs_bindgen_049a50babd18206b =
 
     __defined at:__ @rte_mempool_trace_fp.h 57:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_put_bulk :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_put_bulk =
@@ -245,7 +247,7 @@ hs_bindgen_ecb7051ba246c12c =
 
     __defined at:__ @rte_mempool_trace_fp.h 67:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_generic_get :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_generic_get =
@@ -265,7 +267,7 @@ hs_bindgen_1dec296a943d5db8 =
 
     __defined at:__ @rte_mempool_trace_fp.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_get_bulk :: BG.FunPtr (BG.Ptr BG.Void -> BG.Ptr (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_get_bulk =
@@ -285,7 +287,7 @@ hs_bindgen_16c693583def6258 =
 
     __defined at:__ @rte_mempool_trace_fp.h 87:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_get_contig_blocks :: BG.FunPtr (BG.Ptr BG.Void -> BG.Ptr (BG.Ptr BG.Void) -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_mempool_trace_get_contig_blocks =
@@ -305,7 +307,7 @@ hs_bindgen_c221647335b60903 =
 
     __defined at:__ @rte_mempool_trace_fp.h 96:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_default_cache :: BG.FunPtr (BG.Ptr BG.Void -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_default_cache =
@@ -325,7 +327,7 @@ hs_bindgen_3600c84466437faa =
 
     __defined at:__ @rte_mempool_trace_fp.h 105:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_cache_flush :: BG.FunPtr (BG.Ptr BG.Void -> BG.Ptr BG.Void -> IO ())
 rte_mempool_trace_cache_flush =

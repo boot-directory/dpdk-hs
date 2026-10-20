@@ -20,7 +20,9 @@ import Generated.DPDK.Generic.Rte_spinlock
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_spinlock_get_rte_spinlock_init */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_e9544661a7be6249 (void)) ("
@@ -85,7 +87,7 @@ hs_bindgen_e9544661a7be6249 =
 
     __defined at:__ @generic\/rte_spinlock.h 51:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_init :: BG.FunPtr (BG.Ptr Rte_spinlock_t -> IO ())
 rte_spinlock_init =
@@ -105,7 +107,7 @@ hs_bindgen_b96a66efec35ae23 =
 
     __defined at:__ @generic\/rte_spinlock.h 133:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_is_locked :: BG.FunPtr (BG.Ptr Rte_spinlock_t -> IO BG.CInt)
 rte_spinlock_is_locked =
@@ -125,7 +127,7 @@ hs_bindgen_88f18fe30af01963 =
 
     __defined at:__ @generic\/rte_spinlock.h 215:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_init :: BG.FunPtr (BG.Ptr Rte_spinlock_recursive_t -> IO ())
 rte_spinlock_recursive_init =
@@ -145,7 +147,7 @@ hs_bindgen_341578a449b1a73b =
 
     __defined at:__ @generic\/rte_spinlock.h 228:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_lock :: BG.FunPtr (BG.Ptr Rte_spinlock_recursive_t -> IO ())
 rte_spinlock_recursive_lock =
@@ -165,7 +167,7 @@ hs_bindgen_0f7dbc32c5c11f30 =
 
     __defined at:__ @generic\/rte_spinlock.h 245:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_unlock :: BG.FunPtr (BG.Ptr Rte_spinlock_recursive_t -> IO ())
 rte_spinlock_recursive_unlock =
@@ -185,7 +187,7 @@ hs_bindgen_5e2720605f86a462 =
 
     __defined at:__ @generic\/rte_spinlock.h 264:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_trylock :: BG.FunPtr (BG.Ptr Rte_spinlock_recursive_t -> IO BG.CInt)
 rte_spinlock_recursive_trylock =

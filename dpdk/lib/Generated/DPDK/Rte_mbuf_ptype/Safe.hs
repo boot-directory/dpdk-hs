@@ -23,7 +23,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "char const *hs_bindgen_8b3ede0b711f9942 ("
   , "  uint32_t arg1"
   , ")"
@@ -93,7 +95,7 @@ hs_bindgen_8b3ede0b711f9942 =
 
     __defined at:__ @rte_mbuf_ptype.h 723:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l2_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -118,7 +120,7 @@ hs_bindgen_4dc63c21f5bc9178 =
 
     __defined at:__ @rte_mbuf_ptype.h 733:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l3_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -143,7 +145,7 @@ hs_bindgen_4dc7d55153e3892f =
 
     __defined at:__ @rte_mbuf_ptype.h 743:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_l4_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -168,7 +170,7 @@ hs_bindgen_aa980b4b4690a03e =
 
     __defined at:__ @rte_mbuf_ptype.h 753:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_tunnel_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -194,7 +196,7 @@ hs_bindgen_b4cd69dc1bab4a63 =
 
     __defined at:__ @rte_mbuf_ptype.h 763:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l2_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -220,7 +222,7 @@ hs_bindgen_0eeb1d5c2abb5bb8 =
 
     __defined at:__ @rte_mbuf_ptype.h 773:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l3_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -246,7 +248,7 @@ hs_bindgen_1ece320d507b3b3c =
 
     __defined at:__ @rte_mbuf_ptype.h 783:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_inner_l4_name ::
      HsBindgen.Runtime.LibC.Word32
@@ -278,7 +280,7 @@ hs_bindgen_3e0eee7c3b64e579 =
 
     __defined at:__ @rte_mbuf_ptype.h 798:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_ptype_name ::
      HsBindgen.Runtime.LibC.Word32

@@ -20,7 +20,9 @@ import Generated.DPDK.Generic.Rte_spinlock
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_67b86e4e85a43666 ("
   , "  rte_spinlock_t *arg1"
   , ")"
@@ -76,7 +78,7 @@ hs_bindgen_67b86e4e85a43666 =
 
     __defined at:__ @generic\/rte_spinlock.h 51:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_init ::
      BG.Ptr Rte_spinlock_t
@@ -101,7 +103,7 @@ hs_bindgen_eb4259293a012199 =
 
     __defined at:__ @generic\/rte_spinlock.h 133:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_is_locked ::
      BG.Ptr Rte_spinlock_t
@@ -126,7 +128,7 @@ hs_bindgen_309b048fc63ac0d5 =
 
     __defined at:__ @generic\/rte_spinlock.h 215:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_init ::
      BG.Ptr Rte_spinlock_recursive_t
@@ -152,7 +154,7 @@ hs_bindgen_d52e89bd5d7a7595 =
 
     __defined at:__ @generic\/rte_spinlock.h 228:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_lock ::
      BG.Ptr Rte_spinlock_recursive_t
@@ -178,7 +180,7 @@ hs_bindgen_79587cbd990e0de6 =
 
     __defined at:__ @generic\/rte_spinlock.h 245:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_unlock ::
      BG.Ptr Rte_spinlock_recursive_t
@@ -204,7 +206,7 @@ hs_bindgen_bc8931d04e79f2d5 =
 
     __defined at:__ @generic\/rte_spinlock.h 264:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_spinlock_recursive_trylock ::
      BG.Ptr Rte_spinlock_recursive_t

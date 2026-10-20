@@ -19,7 +19,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_3c1ed740bfa2ec56 ("
   , "  uint16_t *arg1,"
   , "  uint16_t arg2,"
@@ -69,7 +71,7 @@ hs_bindgen_3c1ed740bfa2ec56 =
 
     __defined at:__ @generic\/rte_pause.h 84:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_16 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word16
@@ -104,7 +106,7 @@ hs_bindgen_8159561c1bc8eef0 =
 
     __defined at:__ @generic\/rte_pause.h 95:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_32 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word32
@@ -139,7 +141,7 @@ hs_bindgen_519ff9fed14c6236 =
 
     __defined at:__ @generic\/rte_pause.h 106:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_64 ::
      BG.Ptr HsBindgen.Runtime.LibC.Word64

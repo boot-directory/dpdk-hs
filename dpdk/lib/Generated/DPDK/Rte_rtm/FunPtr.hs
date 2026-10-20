@@ -16,7 +16,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_rtm_get_rte_xbegin */"
   , "__attribute__ ((const))"
   , "unsigned int (*hs_bindgen_6e387b7bfc303cae (void)) (void)"
@@ -51,7 +53,7 @@ hs_bindgen_6e387b7bfc303cae =
 
     __defined at:__ @rte_rtm.h 30:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_xbegin :: BG.FunPtr (IO BG.CUInt)
 rte_xbegin =
@@ -71,7 +73,7 @@ hs_bindgen_a0fdfc73a7aed99f =
 
     __defined at:__ @rte_rtm.h 36:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_xend :: BG.FunPtr (IO ())
 rte_xend =
@@ -91,7 +93,7 @@ hs_bindgen_0173c1eddf2705b5 =
 
     __defined at:__ @rte_rtm.h 45:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_xtest :: BG.FunPtr (IO BG.CInt)
 rte_xtest =

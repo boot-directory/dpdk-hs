@@ -25,7 +25,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_3f6de68861509dd8 ("
   , "  struct rte_ring_rts_headtail *arg1"
   , ")"
@@ -113,7 +115,7 @@ hs_bindgen_3f6de68861509dd8 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 25:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_rts_update_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_rts_headtail
@@ -145,7 +147,7 @@ hs_bindgen_98b4cd779318ffb6 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 69:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_rts_head_wait ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring_rts_headtail
@@ -194,7 +196,7 @@ hs_bindgen_8908349141064545 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 110:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_rts_move_head ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_rts_headtail
@@ -244,7 +246,7 @@ hs_bindgen_89bf9242f5e276d7 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 182:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_rts_move_prod_head ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -290,7 +292,7 @@ hs_bindgen_9caedf1afaeec1f8 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 194:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_rts_move_cons_head ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -339,7 +341,7 @@ hs_bindgen_110c2c517ed2398d =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 225:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_rts_enqueue_elem ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -390,7 +392,7 @@ hs_bindgen_c5d6f0ac30125955 =
 
     __defined at:__ @rte_ring_rts_elem_pvt.h 266:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_rts_dequeue_elem ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring

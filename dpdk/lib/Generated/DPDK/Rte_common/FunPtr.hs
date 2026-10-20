@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_common_get_rte_is_aligned */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_8bb5b474b6c3ac95 (void)) ("
@@ -51,7 +53,7 @@ hs_bindgen_8bb5b474b6c3ac95 =
 
     __defined at:__ @rte_common.h 698:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_is_aligned :: BG.FunPtr (PtrConst.PtrConst BG.Void -> BG.CUInt -> IO BG.CInt)
 rte_is_aligned =
@@ -71,7 +73,7 @@ hs_bindgen_b5d13ecae63eee26 =
 
     __defined at:__ @rte_common.h 952:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_str_to_size :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> IO HsBindgen.Runtime.LibC.Word64)
 rte_str_to_size =

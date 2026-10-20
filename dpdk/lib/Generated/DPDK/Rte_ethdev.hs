@@ -368,7 +368,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @stdint.h 117:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 uINT16_MAX :: BG.CInt
 uINT16_MAX = (65535 :: BG.CInt)
@@ -377,7 +377,7 @@ uINT16_MAX = (65535 :: BG.CInt)
 
     __defined at:__ @stdint.h 118:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 uINT32_MAX :: BG.CUInt
 uINT32_MAX = (4294967295 :: BG.CUInt)
@@ -386,7 +386,7 @@ uINT32_MAX = (4294967295 :: BG.CUInt)
 
     __defined at:__ @rte_build_config.h 320:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MAX_ETHPORTS :: BG.CInt
 rTE_MAX_ETHPORTS = (32 :: BG.CInt)
@@ -395,73 +395,93 @@ rTE_MAX_ETHPORTS = (32 :: BG.CInt)
 
     __defined at:__ @rte_dev.h 142:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_DEV_NAME_MAX_LEN :: BG.CInt
 rTE_DEV_NAME_MAX_LEN = (64 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_stats@
+{-|
+
+    A structure used to retrieve statistics for an Ethernet port. Not all statistics fields in struct 'Rte_eth_stats' are supported by any type of network interface card (NIC). If any statistics field is not supported, its value is 0. All byte-related statistics do not include Ethernet FCS regardless of whether these bytes have been delivered to the application (see RTE_ETH_RX_OFFLOAD_KEEP_CRC).
+
+    __C declaration:__ @struct rte_eth_stats@
 
     __defined at:__ @rte_ethdev.h 262:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_stats = Rte_eth_stats
   { ipackets :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @ipackets@
+    {- ^ Total number of successfully received packets.
+
+         __C declaration:__ @ipackets@
 
          __defined at:__ @rte_ethdev.h 263:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , opackets :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @opackets@
+    {- ^ Total number of successfully transmitted packets.
+
+         __C declaration:__ @opackets@
 
          __defined at:__ @rte_ethdev.h 264:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ibytes :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @ibytes@
+    {- ^ Total number of successfully received bytes.
+
+         __C declaration:__ @ibytes@
 
          __defined at:__ @rte_ethdev.h 265:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , obytes :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @obytes@
+    {- ^ Total number of successfully transmitted bytes.
+
+         __C declaration:__ @obytes@
 
          __defined at:__ @rte_ethdev.h 266:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , imissed :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @imissed@
+    {- ^ Total of Rx packets dropped by the HW, because there are no available buffer (i.e. Rx queues are full).
+
+         __C declaration:__ @imissed@
 
          __defined at:__ @rte_ethdev.h 271:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ierrors :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @ierrors@
+    {- ^ Total number of erroneous received packets.
+
+         __C declaration:__ @ierrors@
 
          __defined at:__ @rte_ethdev.h 272:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , oerrors :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @oerrors@
+    {- ^ Total number of failed transmitted packets.
+
+         __C declaration:__ @oerrors@
 
          __defined at:__ @rte_ethdev.h 273:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_nombuf :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @rx_nombuf@
+    {- ^ Total number of Rx mbuf allocation failures.
+
+         __C declaration:__ @rx_nombuf@
 
          __defined at:__ @rte_ethdev.h 274:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -514,11 +534,13 @@ deriving via Marshal.EquivStorable Rte_eth_stats instance BG.Storable Rte_eth_st
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_stats instance Struct.IsStruct Rte_eth_stats
 
-{-| __C declaration:__ @ipackets@
+{-| Total number of successfully received packets.
+
+    __C declaration:__ @ipackets@
 
     __defined at:__ @rte_ethdev.h 263:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ipackets" Rte_eth_stats ty where
@@ -550,11 +572,13 @@ instance HasCField.HasCField Rte_eth_stats "ipackets" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @opackets@
+{-| Total number of successfully transmitted packets.
+
+    __C declaration:__ @opackets@
 
     __defined at:__ @rte_ethdev.h 264:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "opackets" Rte_eth_stats ty where
@@ -586,11 +610,13 @@ instance HasCField.HasCField Rte_eth_stats "opackets" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @ibytes@
+{-| Total number of successfully received bytes.
+
+    __C declaration:__ @ibytes@
 
     __defined at:__ @rte_ethdev.h 265:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ibytes" Rte_eth_stats ty where
@@ -622,11 +648,13 @@ instance HasCField.HasCField Rte_eth_stats "ibytes" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @obytes@
+{-| Total number of successfully transmitted bytes.
+
+    __C declaration:__ @obytes@
 
     __defined at:__ @rte_ethdev.h 266:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "obytes" Rte_eth_stats ty where
@@ -658,11 +686,13 @@ instance HasCField.HasCField Rte_eth_stats "obytes" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @imissed@
+{-| Total of Rx packets dropped by the HW, because there are no available buffer (i.e. Rx queues are full).
+
+    __C declaration:__ @imissed@
 
     __defined at:__ @rte_ethdev.h 271:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "imissed" Rte_eth_stats ty where
@@ -694,11 +724,13 @@ instance HasCField.HasCField Rte_eth_stats "imissed" where
 
   offset# = \_ -> \_ -> 32
 
-{-| __C declaration:__ @ierrors@
+{-| Total number of erroneous received packets.
+
+    __C declaration:__ @ierrors@
 
     __defined at:__ @rte_ethdev.h 272:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ierrors" Rte_eth_stats ty where
@@ -730,11 +762,13 @@ instance HasCField.HasCField Rte_eth_stats "ierrors" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @oerrors@
+{-| Total number of failed transmitted packets.
+
+    __C declaration:__ @oerrors@
 
     __defined at:__ @rte_ethdev.h 273:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "oerrors" Rte_eth_stats ty where
@@ -766,11 +800,13 @@ instance HasCField.HasCField Rte_eth_stats "oerrors" where
 
   offset# = \_ -> \_ -> 48
 
-{-| __C declaration:__ @rx_nombuf@
+{-| Total number of Rx mbuf allocation failures.
+
+    __C declaration:__ @rx_nombuf@
 
     __defined at:__ @rte_ethdev.h 274:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rx_nombuf" Rte_eth_stats ty where
@@ -802,173 +838,211 @@ instance HasCField.HasCField Rte_eth_stats "rx_nombuf" where
 
   offset# = \_ -> \_ -> 56
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_SPEED_AUTONEG@
+{-| Autonegotiate (all speeds)
+
+    __C declaration:__ @macro RTE_ETH_LINK_SPEED_AUTONEG@
 
     __defined at:__ @rte_ethdev.h 280:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_SPEED_AUTONEG :: BG.CInt
 rTE_ETH_LINK_SPEED_AUTONEG = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_NONE@
+{-| Not defined
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_NONE@
 
     __defined at:__ @rte_ethdev.h 304:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_NONE :: BG.CInt
 rTE_ETH_SPEED_NUM_NONE = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_10M@
+{-| 10 Mbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_10M@
 
     __defined at:__ @rte_ethdev.h 305:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_10M :: BG.CInt
 rTE_ETH_SPEED_NUM_10M = (10 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_100M@
+{-| 100 Mbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_100M@
 
     __defined at:__ @rte_ethdev.h 306:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_100M :: BG.CInt
 rTE_ETH_SPEED_NUM_100M = (100 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_1G@
+{-| 1 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_1G@
 
     __defined at:__ @rte_ethdev.h 307:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_1G :: BG.CInt
 rTE_ETH_SPEED_NUM_1G = (1000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_2_5G@
+{-| 2.5 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_2_5G@
 
     __defined at:__ @rte_ethdev.h 308:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_2_5G :: BG.CInt
 rTE_ETH_SPEED_NUM_2_5G = (2500 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_5G@
+{-| 5 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_5G@
 
     __defined at:__ @rte_ethdev.h 309:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_5G :: BG.CInt
 rTE_ETH_SPEED_NUM_5G = (5000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_10G@
+{-| 10 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_10G@
 
     __defined at:__ @rte_ethdev.h 310:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_10G :: BG.CInt
 rTE_ETH_SPEED_NUM_10G = (10000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_20G@
+{-| 20 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_20G@
 
     __defined at:__ @rte_ethdev.h 311:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_20G :: BG.CInt
 rTE_ETH_SPEED_NUM_20G = (20000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_25G@
+{-| 25 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_25G@
 
     __defined at:__ @rte_ethdev.h 312:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_25G :: BG.CInt
 rTE_ETH_SPEED_NUM_25G = (25000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_40G@
+{-| 40 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_40G@
 
     __defined at:__ @rte_ethdev.h 313:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_40G :: BG.CInt
 rTE_ETH_SPEED_NUM_40G = (40000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_50G@
+{-| 50 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_50G@
 
     __defined at:__ @rte_ethdev.h 314:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_50G :: BG.CInt
 rTE_ETH_SPEED_NUM_50G = (50000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_56G@
+{-| 56 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_56G@
 
     __defined at:__ @rte_ethdev.h 315:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_56G :: BG.CInt
 rTE_ETH_SPEED_NUM_56G = (56000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_100G@
+{-| 100 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_100G@
 
     __defined at:__ @rte_ethdev.h 316:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_100G :: BG.CInt
 rTE_ETH_SPEED_NUM_100G = (100000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_200G@
+{-| 200 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_200G@
 
     __defined at:__ @rte_ethdev.h 317:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_200G :: BG.CInt
 rTE_ETH_SPEED_NUM_200G = (200000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_400G@
+{-| 400 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_400G@
 
     __defined at:__ @rte_ethdev.h 318:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_400G :: BG.CInt
 rTE_ETH_SPEED_NUM_400G = (400000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_800G@
+{-| 800 Gbps
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_800G@
 
     __defined at:__ @rte_ethdev.h 319:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_800G :: BG.CInt
 rTE_ETH_SPEED_NUM_800G = (800000 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_SPEED_NUM_UNKNOWN@
+{-| Unknown
+
+    __C declaration:__ @macro RTE_ETH_SPEED_NUM_UNKNOWN@
 
     __defined at:__ @rte_ethdev.h 320:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_SPEED_NUM_UNKNOWN :: BG.CUInt
 rTE_ETH_SPEED_NUM_UNKNOWN = uINT32_MAX
 
-{-| __C declaration:__ @enum rte_eth_link_connector@
+{-| Ethernet port link connector type.
+
+    __C declaration:__ @enum rte_eth_link_connector@
 
     __defined at:__ @rte_ethdev.h 326:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_link_connector = Rte_eth_link_connector
   { unwrap :: BG.CUInt
@@ -1078,236 +1152,288 @@ instance HasCField.HasCField Rte_eth_link_connector "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_NONE@
+{-| None. Default unless driver specifies it
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_NONE@
 
     __defined at:__ @rte_ethdev.h 327:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_NONE :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_NONE = Rte_eth_link_connector 0
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_TP@
+{-| Twisted Pair
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_TP@
 
     __defined at:__ @rte_ethdev.h 328:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_TP :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_TP = Rte_eth_link_connector 1
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_AUI@
+{-| Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_AUI@
 
     __defined at:__ @rte_ethdev.h 329:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_AUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_AUI = Rte_eth_link_connector 2
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_MII@
+{-| Media Independent Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_MII@
 
     __defined at:__ @rte_ethdev.h 330:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_MII :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_MII = Rte_eth_link_connector 3
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_FIBER@
+{-| Optical Fiber Link
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_FIBER@
 
     __defined at:__ @rte_ethdev.h 331:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_FIBER :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_FIBER = Rte_eth_link_connector 4
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_BNC@
+{-| BNC Link type for RF connection
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_BNC@
 
     __defined at:__ @rte_ethdev.h 332:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_BNC :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_BNC = Rte_eth_link_connector 5
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_DAC@
+{-| Direct Attach copper
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_DAC@
 
     __defined at:__ @rte_ethdev.h 333:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_DAC :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_DAC = Rte_eth_link_connector 6
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SGMII@
+{-| Serial Gigabit Media Independent Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SGMII@
 
     __defined at:__ @rte_ethdev.h 334:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SGMII :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SGMII = Rte_eth_link_connector 7
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSGMII@
+{-| Link to multiplex 4 SGMII over one serial link
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSGMII@
 
     __defined at:__ @rte_ethdev.h 335:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSGMII :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSGMII = Rte_eth_link_connector 8
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XFI@
+{-| 10 Gigabit Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XFI@
 
     __defined at:__ @rte_ethdev.h 336:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_XFI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_XFI = Rte_eth_link_connector 9
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFI@
+{-| 10 Gigabit Serial Interface for optical network
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFI@
 
     __defined at:__ @rte_ethdev.h 337:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SFI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SFI = Rte_eth_link_connector 10
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XLAUI@
+{-| 40 Gigabit Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XLAUI@
 
     __defined at:__ @rte_ethdev.h 338:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_XLAUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_XLAUI = Rte_eth_link_connector 11
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_GAUI@
+{-| Gigabit Interface for 50/100/200 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_GAUI@
 
     __defined at:__ @rte_ethdev.h 339:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_GAUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_GAUI = Rte_eth_link_connector 12
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XAUI@
+{-| 10 Gigabit Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_XAUI@
 
     __defined at:__ @rte_ethdev.h 340:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_XAUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_XAUI = Rte_eth_link_connector 13
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_CAUI@
+{-| 100 Gigabit Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_CAUI@
 
     __defined at:__ @rte_ethdev.h 341:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_CAUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_CAUI = Rte_eth_link_connector 14
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_LAUI@
+{-| 50 Gigabit Attachment Unit Interface
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_LAUI@
 
     __defined at:__ @rte_ethdev.h 342:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_LAUI :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_LAUI = Rte_eth_link_connector 15
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP@
+{-| Pluggable module for 1 Gigabit
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP@
 
     __defined at:__ @rte_ethdev.h 343:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SFP :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SFP = Rte_eth_link_connector 16
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP_PLUS@
+{-| Pluggable module for 10 Gigabit
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP_PLUS@
 
     __defined at:__ @rte_ethdev.h 344:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SFP_PLUS :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SFP_PLUS = Rte_eth_link_connector 17
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP28@
+{-| Pluggable module for 25 Gigabit
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP28@
 
     __defined at:__ @rte_ethdev.h 345:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SFP28 :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SFP28 = Rte_eth_link_connector 18
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP_DD@
+{-| Pluggable module for 100 Gigabit
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_SFP_DD@
 
     __defined at:__ @rte_ethdev.h 346:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_SFP_DD :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_SFP_DD = Rte_eth_link_connector 19
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP@
+{-| Module to mutiplex 4 SFP i.e. 4*1=4 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP@
 
     __defined at:__ @rte_ethdev.h 347:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSFP :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSFP = Rte_eth_link_connector 20
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP_PLUS@
+{-| Module to mutiplex 4 SFP_PLUS i.e. 4*10=40 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP_PLUS@
 
     __defined at:__ @rte_ethdev.h 348:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSFP_PLUS :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSFP_PLUS = Rte_eth_link_connector 21
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP28@
+{-| Module to mutiplex 4 SFP28 i.e. 4*25=100 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP28@
 
     __defined at:__ @rte_ethdev.h 349:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSFP28 :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSFP28 = Rte_eth_link_connector 22
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP56@
+{-| Module to mutiplex 4 SFP56 i.e. 4*50=200 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP56@
 
     __defined at:__ @rte_ethdev.h 350:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSFP56 :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSFP56 = Rte_eth_link_connector 23
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP_DD@
+{-| Module to mutiplex 4 SFP_DD i.e. 4*100=400 Gbps
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_QSFP_DD@
 
     __defined at:__ @rte_ethdev.h 351:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_QSFP_DD :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_QSFP_DD = Rte_eth_link_connector 24
 
-{-| __C declaration:__ @RTE_ETH_LINK_CONNECTOR_OTHER@
+{-| non-physical interfaces like virtio, ring etc. It also includes unknown connector types, i.e. physical connectors not yet defined in this list of connector types.
+
+    __C declaration:__ @RTE_ETH_LINK_CONNECTOR_OTHER@
 
     __defined at:__ @rte_ethdev.h 352:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_LINK_CONNECTOR_OTHER :: Rte_eth_link_connector
 pattern RTE_ETH_LINK_CONNECTOR_OTHER = Rte_eth_link_connector 63
@@ -1316,43 +1442,53 @@ pattern RTE_ETH_LINK_CONNECTOR_OTHER = Rte_eth_link_connector 63
 
     __defined at:__ @rte_ethdev.h 366:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_link_anon'val64_anon'link_speed = Rte_eth_link_anon'val64_anon'link_speed
   { link_speed :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @link_speed@
+    {- ^ RTE_ETH_SPEED_NUM_
+
+         __C declaration:__ @link_speed@
 
          __defined at:__ @rte_ethdev.h 367:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , link_duplex :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @link_duplex@
+    {- ^ RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+         __C declaration:__ @link_duplex@
 
          __defined at:__ @rte_ethdev.h 368:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , link_autoneg :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @link_autoneg@
+    {- ^ RTE_ETH_LINK_[AUTONEG/FIXED]
+
+         __C declaration:__ @link_autoneg@
 
          __defined at:__ @rte_ethdev.h 369:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , link_status :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @link_status@
+    {- ^ RTE_ETH_LINK_[DOWN/UP]
+
+         __C declaration:__ @link_status@
 
          __defined at:__ @rte_ethdev.h 370:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , link_connector :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @link_connector@
+    {- ^ RTE_ETH_LINK_CONNECTOR_XXX
+
+         __C declaration:__ @link_connector@
 
          __defined at:__ @rte_ethdev.h 371:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1396,11 +1532,13 @@ deriving via Marshal.EquivStorable Rte_eth_link_anon'val64_anon'link_speed insta
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_link_anon'val64_anon'link_speed instance Struct.IsStruct Rte_eth_link_anon'val64_anon'link_speed
 
-{-| __C declaration:__ @link_speed@
+{-| RTE_ETH_SPEED_NUM_
+
+    __C declaration:__ @link_speed@
 
     __defined at:__ @rte_ethdev.h 367:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "link_speed" Rte_eth_link_anon'val64_anon'link_speed ty where
@@ -1429,11 +1567,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64_anon'link_speed "link_speed
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @link_duplex@
+{-| RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+    __C declaration:__ @link_duplex@
 
     __defined at:__ @rte_ethdev.h 368:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_duplex" Rte_eth_link_anon'val64_anon'link_speed ty where
@@ -1465,11 +1605,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_link_anon'val64_anon'link_speed "link
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @link_autoneg@
+{-| RTE_ETH_LINK_[AUTONEG/FIXED]
+
+    __C declaration:__ @link_autoneg@
 
     __defined at:__ @rte_ethdev.h 369:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_autoneg" Rte_eth_link_anon'val64_anon'link_speed ty where
@@ -1501,11 +1643,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_link_anon'val64_anon'link_speed "link
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @link_status@
+{-| RTE_ETH_LINK_[DOWN/UP]
+
+    __C declaration:__ @link_status@
 
     __defined at:__ @rte_ethdev.h 370:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_status" Rte_eth_link_anon'val64_anon'link_speed ty where
@@ -1537,11 +1681,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_link_anon'val64_anon'link_speed "link
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @link_connector@
+{-| RTE_ETH_LINK_CONNECTOR_XXX
+
+    __C declaration:__ @link_connector@
 
     __defined at:__ @rte_ethdev.h 371:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_connector" Rte_eth_link_anon'val64_anon'link_speed ty where
@@ -1577,7 +1723,7 @@ instance HasCBitfield.HasCBitfield Rte_eth_link_anon'val64_anon'link_speed "link
 
     __defined at:__ @rte_ethdev.h 363:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_link_anon'val64 = Rte_eth_link_anon'val64
   { unwrap :: BG.ByteArray
@@ -1598,7 +1744,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_eth_link_anon'val6
 
     __defined at:__ @rte_ethdev.h 364:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "val64" Rte_eth_link_anon'val64 ty where
@@ -1609,7 +1755,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_ethdev.h 364:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "val64" Rte_eth_link_anon'val64 ty where
@@ -1635,7 +1781,7 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "val64" where
 
     __defined at:__ @rte_ethdev.h 366:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_link_anon'val64_anon'link_speed
          ) => BG.HasField "anon'link_speed" Rte_eth_link_anon'val64 ty where
@@ -1646,7 +1792,7 @@ instance ( ty ~ Rte_eth_link_anon'val64_anon'link_speed
 
     __defined at:__ @rte_ethdev.h 366:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_link_anon'val64_anon'link_speed
          ) => BG.CompatHasField.HasField "anon'link_speed" Rte_eth_link_anon'val64 ty where
@@ -1669,11 +1815,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "anon'link_speed" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @link_speed@
+{-| RTE_ETH_SPEED_NUM_
+
+    __C declaration:__ @link_speed@
 
     __defined at:__ @rte_ethdev.h 367:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "link_speed" Rte_eth_link_anon'val64 ty where
@@ -1682,11 +1830,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
     \x0 ->
       BG.getField @"link_speed" (BG.getField @"anon'link_speed" x0)
 
-{-| __C declaration:__ @link_speed@
+{-| RTE_ETH_SPEED_NUM_
+
+    __C declaration:__ @link_speed@
 
     __defined at:__ @rte_ethdev.h 367:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "link_speed" Rte_eth_link_anon'val64 ty where
@@ -1711,11 +1861,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "link_speed" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @link_duplex@
+{-| RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+    __C declaration:__ @link_duplex@
 
     __defined at:__ @rte_ethdev.h 368:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_duplex" Rte_eth_link_anon'val64 ty where
@@ -1724,11 +1876,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_duplex" (BG.getField @"anon'link_speed" x0)
 
-{-| __C declaration:__ @link_duplex@
+{-| RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+    __C declaration:__ @link_duplex@
 
     __defined at:__ @rte_ethdev.h 368:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_duplex" Rte_eth_link_anon'val64 ty where
@@ -1754,11 +1908,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "link_duplex" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_autoneg@
+{-| RTE_ETH_LINK_[AUTONEG/FIXED]
+
+    __C declaration:__ @link_autoneg@
 
     __defined at:__ @rte_ethdev.h 369:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_autoneg" Rte_eth_link_anon'val64 ty where
@@ -1767,11 +1923,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_autoneg" (BG.getField @"anon'link_speed" x0)
 
-{-| __C declaration:__ @link_autoneg@
+{-| RTE_ETH_LINK_[AUTONEG/FIXED]
+
+    __C declaration:__ @link_autoneg@
 
     __defined at:__ @rte_ethdev.h 369:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_autoneg" Rte_eth_link_anon'val64 ty where
@@ -1797,11 +1955,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "link_autoneg" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_status@
+{-| RTE_ETH_LINK_[DOWN/UP]
+
+    __C declaration:__ @link_status@
 
     __defined at:__ @rte_ethdev.h 370:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_status" Rte_eth_link_anon'val64 ty where
@@ -1810,11 +1970,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_status" (BG.getField @"anon'link_speed" x0)
 
-{-| __C declaration:__ @link_status@
+{-| RTE_ETH_LINK_[DOWN/UP]
+
+    __C declaration:__ @link_status@
 
     __defined at:__ @rte_ethdev.h 370:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_status" Rte_eth_link_anon'val64 ty where
@@ -1840,11 +2002,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "link_status" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_connector@
+{-| RTE_ETH_LINK_CONNECTOR_XXX
+
+    __C declaration:__ @link_connector@
 
     __defined at:__ @rte_ethdev.h 371:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_connector" Rte_eth_link_anon'val64 ty where
@@ -1853,11 +2017,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_connector" (BG.getField @"anon'link_speed" x0)
 
-{-| __C declaration:__ @link_connector@
+{-| RTE_ETH_LINK_CONNECTOR_XXX
+
+    __C declaration:__ @link_connector@
 
     __defined at:__ @rte_ethdev.h 371:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_connector" Rte_eth_link_anon'val64 ty where
@@ -1883,11 +2049,13 @@ instance HasCField.HasCField Rte_eth_link_anon'val64 "link_connector" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @struct rte_eth_link@
+{-| A structure used to retrieve link-level information of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_link@
 
     __defined at:__ @rte_ethdev.h 362:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_link = Rte_eth_link
   { anon'val64 :: Rte_eth_link_anon'val64
@@ -1895,7 +2063,7 @@ data Rte_eth_link = Rte_eth_link
 
          __defined at:__ @rte_ethdev.h 363:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -1930,7 +2098,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_link instance Struct.IsStruct Rte
 
     __defined at:__ @rte_ethdev.h 363:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_link_anon'val64
          ) => BG.CompatHasField.HasField "anon'val64" Rte_eth_link ty where
@@ -1956,7 +2124,7 @@ instance HasCField.HasCField Rte_eth_link "anon'val64" where
 
     __defined at:__ @rte_ethdev.h 364:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "val64" Rte_eth_link ty where
@@ -1969,7 +2137,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_ethdev.h 364:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "val64" Rte_eth_link ty where
@@ -1994,11 +2162,13 @@ instance HasCField.HasCField Rte_eth_link "val64" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @link_speed@
+{-| RTE_ETH_SPEED_NUM_
+
+    __C declaration:__ @link_speed@
 
     __defined at:__ @rte_ethdev.h 367:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.HasField "link_speed" Rte_eth_link ty where
@@ -2007,11 +2177,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word32
     \x0 ->
       BG.getField @"link_speed" (BG.getField @"anon'val64" x0)
 
-{-| __C declaration:__ @link_speed@
+{-| RTE_ETH_SPEED_NUM_
+
+    __C declaration:__ @link_speed@
 
     __defined at:__ @rte_ethdev.h 367:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "link_speed" Rte_eth_link ty where
@@ -2036,11 +2208,13 @@ instance HasCField.HasCField Rte_eth_link "link_speed" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @link_duplex@
+{-| RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+    __C declaration:__ @link_duplex@
 
     __defined at:__ @rte_ethdev.h 368:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_duplex" Rte_eth_link ty where
@@ -2049,11 +2223,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_duplex" (BG.getField @"anon'val64" x0)
 
-{-| __C declaration:__ @link_duplex@
+{-| RTE_ETH_LINK_[HALF/FULL]_DUPLEX
+
+    __C declaration:__ @link_duplex@
 
     __defined at:__ @rte_ethdev.h 368:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_duplex" Rte_eth_link ty where
@@ -2079,11 +2255,13 @@ instance HasCField.HasCField Rte_eth_link "link_duplex" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_autoneg@
+{-| RTE_ETH_LINK_[AUTONEG/FIXED]
+
+    __C declaration:__ @link_autoneg@
 
     __defined at:__ @rte_ethdev.h 369:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_autoneg" Rte_eth_link ty where
@@ -2092,11 +2270,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_autoneg" (BG.getField @"anon'val64" x0)
 
-{-| __C declaration:__ @link_autoneg@
+{-| RTE_ETH_LINK_[AUTONEG/FIXED]
+
+    __C declaration:__ @link_autoneg@
 
     __defined at:__ @rte_ethdev.h 369:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_autoneg" Rte_eth_link ty where
@@ -2122,11 +2302,13 @@ instance HasCField.HasCField Rte_eth_link "link_autoneg" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_status@
+{-| RTE_ETH_LINK_[DOWN/UP]
+
+    __C declaration:__ @link_status@
 
     __defined at:__ @rte_ethdev.h 370:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_status" Rte_eth_link ty where
@@ -2135,11 +2317,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_status" (BG.getField @"anon'val64" x0)
 
-{-| __C declaration:__ @link_status@
+{-| RTE_ETH_LINK_[DOWN/UP]
+
+    __C declaration:__ @link_status@
 
     __defined at:__ @rte_ethdev.h 370:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_status" Rte_eth_link ty where
@@ -2165,11 +2349,13 @@ instance HasCField.HasCField Rte_eth_link "link_status" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @link_connector@
+{-| RTE_ETH_LINK_CONNECTOR_XXX
+
+    __C declaration:__ @link_connector@
 
     __defined at:__ @rte_ethdev.h 371:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "link_connector" Rte_eth_link ty where
@@ -2178,11 +2364,13 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word16
     \x0 ->
       BG.getField @"link_connector" (BG.getField @"anon'val64" x0)
 
-{-| __C declaration:__ @link_connector@
+{-| RTE_ETH_LINK_CONNECTOR_XXX
+
+    __C declaration:__ @link_connector@
 
     __defined at:__ @rte_ethdev.h 371:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "link_connector" Rte_eth_link ty where
@@ -2208,74 +2396,90 @@ instance HasCField.HasCField Rte_eth_link "link_connector" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_HALF_DUPLEX@
+{-| Half-duplex connection (see link_duplex).
+
+    __C declaration:__ @macro RTE_ETH_LINK_HALF_DUPLEX@
 
     __defined at:__ @rte_ethdev.h 379:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_HALF_DUPLEX :: BG.CInt
 rTE_ETH_LINK_HALF_DUPLEX = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_FULL_DUPLEX@
+{-| Full-duplex connection (see link_duplex).
+
+    __C declaration:__ @macro RTE_ETH_LINK_FULL_DUPLEX@
 
     __defined at:__ @rte_ethdev.h 380:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_FULL_DUPLEX :: BG.CInt
 rTE_ETH_LINK_FULL_DUPLEX = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_DOWN@
+{-| Link is down (see link_status).
+
+    __C declaration:__ @macro RTE_ETH_LINK_DOWN@
 
     __defined at:__ @rte_ethdev.h 381:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_DOWN :: BG.CInt
 rTE_ETH_LINK_DOWN = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_UP@
+{-| Link is up (see link_status).
+
+    __C declaration:__ @macro RTE_ETH_LINK_UP@
 
     __defined at:__ @rte_ethdev.h 382:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_UP :: BG.CInt
 rTE_ETH_LINK_UP = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_FIXED@
+{-| No autonegotiation (see link_autoneg).
+
+    __C declaration:__ @macro RTE_ETH_LINK_FIXED@
 
     __defined at:__ @rte_ethdev.h 383:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_FIXED :: BG.CInt
 rTE_ETH_LINK_FIXED = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_AUTONEG@
+{-| Autonegotiated (see link_autoneg).
+
+    __C declaration:__ @macro RTE_ETH_LINK_AUTONEG@
 
     __defined at:__ @rte_ethdev.h 384:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_AUTONEG :: BG.CInt
 rTE_ETH_LINK_AUTONEG = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_LINK_MAX_STR_LEN@
+{-| Max length of default link string.
+
+    __C declaration:__ @macro RTE_ETH_LINK_MAX_STR_LEN@
 
     __defined at:__ @rte_ethdev.h 385:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_LINK_MAX_STR_LEN :: BG.CInt
 rTE_ETH_LINK_MAX_STR_LEN = (40 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_speed_lanes_capa@
+{-| A structure used to get and set lanes capabilities per link speed.
+
+    __C declaration:__ @struct rte_eth_speed_lanes_capa@
 
     __defined at:__ @rte_ethdev.h 392:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_speed_lanes_capa = Rte_eth_speed_lanes_capa
   { speed :: HsBindgen.Runtime.LibC.Word32
@@ -2283,14 +2487,14 @@ data Rte_eth_speed_lanes_capa = Rte_eth_speed_lanes_capa
 
          __defined at:__ @rte_ethdev.h 393:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , capa :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @capa@
 
          __defined at:__ @rte_ethdev.h 394:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2327,7 +2531,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_speed_lanes_capa instance Struct.
 
     __defined at:__ @rte_ethdev.h 393:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "speed" Rte_eth_speed_lanes_capa ty where
@@ -2355,7 +2559,7 @@ instance HasCField.HasCField Rte_eth_speed_lanes_capa "speed" where
 
     __defined at:__ @rte_ethdev.h 394:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "capa" Rte_eth_speed_lanes_capa ty where
@@ -2379,33 +2583,41 @@ instance HasCField.HasCField Rte_eth_speed_lanes_capa "capa" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @struct rte_eth_thresh@
+{-| A structure used to configure the ring threshold registers of an Rx/Tx queue for an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_thresh@
 
     __defined at:__ @rte_ethdev.h 401:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_thresh = Rte_eth_thresh
   { pthresh :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @pthresh@
+    {- ^ Ring prefetch threshold.
+
+         __C declaration:__ @pthresh@
 
          __defined at:__ @rte_ethdev.h 402:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hthresh :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @hthresh@
+    {- ^ Ring host threshold.
+
+         __C declaration:__ @hthresh@
 
          __defined at:__ @rte_ethdev.h 403:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , wthresh :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @wthresh@
+    {- ^ Ring writeback threshold.
+
+         __C declaration:__ @wthresh@
 
          __defined at:__ @rte_ethdev.h 404:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2440,11 +2652,13 @@ deriving via Marshal.EquivStorable Rte_eth_thresh instance BG.Storable Rte_eth_t
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_thresh instance Struct.IsStruct Rte_eth_thresh
 
-{-| __C declaration:__ @pthresh@
+{-| Ring prefetch threshold.
+
+    __C declaration:__ @pthresh@
 
     __defined at:__ @rte_ethdev.h 402:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pthresh" Rte_eth_thresh ty where
@@ -2471,11 +2685,13 @@ instance HasCField.HasCField Rte_eth_thresh "pthresh" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @hthresh@
+{-| Ring host threshold.
+
+    __C declaration:__ @hthresh@
 
     __defined at:__ @rte_ethdev.h 403:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hthresh" Rte_eth_thresh ty where
@@ -2502,11 +2718,13 @@ instance HasCField.HasCField Rte_eth_thresh "hthresh" where
 
   offset# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @wthresh@
+{-| Ring writeback threshold.
+
+    __C declaration:__ @wthresh@
 
     __defined at:__ @rte_ethdev.h 404:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "wthresh" Rte_eth_thresh ty where
@@ -2533,11 +2751,13 @@ instance HasCField.HasCField Rte_eth_thresh "wthresh" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @enum rte_eth_rx_mq_mode@
+{-| A set of values to identify what method is to be used to route packets to multiple queues.
+
+    __C declaration:__ @enum rte_eth_rx_mq_mode@
 
     __defined at:__ @rte_ethdev.h 419:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_rx_mq_mode = Rte_eth_rx_mq_mode
   { unwrap :: BG.CUInt
@@ -2639,83 +2859,101 @@ instance HasCField.HasCField Rte_eth_rx_mq_mode "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_NONE@
+{-| None of DCB, RSS or VMDq mode
+
+    __C declaration:__ @RTE_ETH_MQ_RX_NONE@
 
     __defined at:__ @rte_ethdev.h 421:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_NONE :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_NONE = Rte_eth_rx_mq_mode 0
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_RSS@
+{-| For Rx side, only RSS is on
+
+    __C declaration:__ @RTE_ETH_MQ_RX_RSS@
 
     __defined at:__ @rte_ethdev.h 424:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_RSS :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_RSS = Rte_eth_rx_mq_mode 1
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_DCB@
+{-| For Rx side,only DCB is on.
+
+    __C declaration:__ @RTE_ETH_MQ_RX_DCB@
 
     __defined at:__ @rte_ethdev.h 426:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_DCB :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_DCB = Rte_eth_rx_mq_mode 2
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_DCB_RSS@
+{-| Both DCB and RSS enable
+
+    __C declaration:__ @RTE_ETH_MQ_RX_DCB_RSS@
 
     __defined at:__ @rte_ethdev.h 428:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_DCB_RSS :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_DCB_RSS = Rte_eth_rx_mq_mode 3
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_ONLY@
+{-| Only VMDq, no RSS nor DCB
+
+    __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_ONLY@
 
     __defined at:__ @rte_ethdev.h 431:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_VMDQ_ONLY :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_VMDQ_ONLY = Rte_eth_rx_mq_mode 4
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_RSS@
+{-| RSS mode with VMDq
+
+    __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_RSS@
 
     __defined at:__ @rte_ethdev.h 433:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_VMDQ_RSS :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_VMDQ_RSS = Rte_eth_rx_mq_mode 5
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_DCB@
+{-| Use VMDq+DCB to route traffic to queues
+
+    __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_DCB@
 
     __defined at:__ @rte_ethdev.h 435:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_VMDQ_DCB :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_VMDQ_DCB = Rte_eth_rx_mq_mode 6
 
-{-| __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_DCB_RSS@
+{-| Enable both VMDq and DCB in VMDq
+
+    __C declaration:__ @RTE_ETH_MQ_RX_VMDQ_DCB_RSS@
 
     __defined at:__ @rte_ethdev.h 437:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_RX_VMDQ_DCB_RSS :: Rte_eth_rx_mq_mode
 pattern RTE_ETH_MQ_RX_VMDQ_DCB_RSS = Rte_eth_rx_mq_mode 7
 
-{-| __C declaration:__ @enum rte_eth_tx_mq_mode@
+{-| A set of values to identify what method is to be used to transmit packets using multi-TCs.
+
+    __C declaration:__ @enum rte_eth_tx_mq_mode@
 
     __defined at:__ @rte_ethdev.h 445:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_tx_mq_mode = Rte_eth_tx_mq_mode
   { unwrap :: BG.CUInt
@@ -2813,90 +3051,114 @@ instance HasCField.HasCField Rte_eth_tx_mq_mode "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_MQ_TX_NONE@
+{-| It is in neither DCB nor VT mode.
+
+    __C declaration:__ @RTE_ETH_MQ_TX_NONE@
 
     __defined at:__ @rte_ethdev.h 446:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_TX_NONE :: Rte_eth_tx_mq_mode
 pattern RTE_ETH_MQ_TX_NONE = Rte_eth_tx_mq_mode 0
 
-{-| __C declaration:__ @RTE_ETH_MQ_TX_DCB@
+{-| For Tx side,only DCB is on.
+
+    __C declaration:__ @RTE_ETH_MQ_TX_DCB@
 
     __defined at:__ @rte_ethdev.h 447:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_TX_DCB :: Rte_eth_tx_mq_mode
 pattern RTE_ETH_MQ_TX_DCB = Rte_eth_tx_mq_mode 1
 
-{-| __C declaration:__ @RTE_ETH_MQ_TX_VMDQ_DCB@
+{-| For Tx side,both DCB and VT is on.
+
+    __C declaration:__ @RTE_ETH_MQ_TX_VMDQ_DCB@
 
     __defined at:__ @rte_ethdev.h 448:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_TX_VMDQ_DCB :: Rte_eth_tx_mq_mode
 pattern RTE_ETH_MQ_TX_VMDQ_DCB = Rte_eth_tx_mq_mode 2
 
-{-| __C declaration:__ @RTE_ETH_MQ_TX_VMDQ_ONLY@
+{-| Only VT on, no DCB
+
+    __C declaration:__ @RTE_ETH_MQ_TX_VMDQ_ONLY@
 
     __defined at:__ @rte_ethdev.h 449:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_MQ_TX_VMDQ_ONLY :: Rte_eth_tx_mq_mode
 pattern RTE_ETH_MQ_TX_VMDQ_ONLY = Rte_eth_tx_mq_mode 3
 
-{-| __C declaration:__ @struct rte_eth_rxmode@
+{-| A structure used to configure the Rx features of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_rxmode@
 
     __defined at:__ @rte_ethdev.h 455:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxmode = Rte_eth_rxmode
   { mq_mode :: Rte_eth_rx_mq_mode
-    {- ^ __C declaration:__ @mq_mode@
+    {- ^ The multi-queue packet distribution mode to be used, e.g. RSS.
+
+         __C declaration:__ @mq_mode@
 
          __defined at:__ @rte_ethdev.h 457:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mtu :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @mtu@
+    {- ^ Requested MTU.
+
+         __C declaration:__ @mtu@
 
          __defined at:__ @rte_ethdev.h 458:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_lro_pkt_size :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_lro_pkt_size@
+    {- ^ Maximum allowed size of LRO aggregated packet.
+
+         __C declaration:__ @max_lro_pkt_size@
 
          __defined at:__ @rte_ethdev.h 460:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offloads :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @offloads@
+    {- ^
+
+         Per-port Rx offloads to be set using RTE_ETH_RX_OFFLOAD_* flags. Only offloads set on rx_offload_capa field on 'Rte_eth_dev_info' structure are allowed to be set.
+
+         __C declaration:__ @offloads@
 
          __defined at:__ @rte_ethdev.h 466:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_64s :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @reserved_64s@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_64s@
 
          __defined at:__ @rte_ethdev.h 468:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_ptrs :: CA.ConstantArray 2 (BG.Ptr BG.Void)
-    {- ^ __C declaration:__ @reserved_ptrs@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_ptrs@
 
          __defined at:__ @rte_ethdev.h 469:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2943,11 +3205,13 @@ deriving via Marshal.EquivStorable Rte_eth_rxmode instance BG.Storable Rte_eth_r
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rxmode instance Struct.IsStruct Rte_eth_rxmode
 
-{-| __C declaration:__ @mq_mode@
+{-| The multi-queue packet distribution mode to be used, e.g. RSS.
+
+    __C declaration:__ @mq_mode@
 
     __defined at:__ @rte_ethdev.h 457:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rx_mq_mode
          ) => BG.CompatHasField.HasField "mq_mode" Rte_eth_rxmode ty where
@@ -2977,11 +3241,13 @@ instance HasCField.HasCField Rte_eth_rxmode "mq_mode" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @mtu@
+{-| Requested MTU.
+
+    __C declaration:__ @mtu@
 
     __defined at:__ @rte_ethdev.h 458:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "mtu" Rte_eth_rxmode ty where
@@ -3011,11 +3277,13 @@ instance HasCField.HasCField Rte_eth_rxmode "mtu" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @max_lro_pkt_size@
+{-| Maximum allowed size of LRO aggregated packet.
+
+    __C declaration:__ @max_lro_pkt_size@
 
     __defined at:__ @rte_ethdev.h 460:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_lro_pkt_size" Rte_eth_rxmode ty where
@@ -3046,11 +3314,15 @@ instance HasCField.HasCField Rte_eth_rxmode "max_lro_pkt_size" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @offloads@
+{-|
+
+    Per-port Rx offloads to be set using RTE_ETH_RX_OFFLOAD_* flags. Only offloads set on rx_offload_capa field on 'Rte_eth_dev_info' structure are allowed to be set.
+
+    __C declaration:__ @offloads@
 
     __defined at:__ @rte_ethdev.h 466:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "offloads" Rte_eth_rxmode ty where
@@ -3080,11 +3352,13 @@ instance HasCField.HasCField Rte_eth_rxmode "offloads" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @reserved_64s@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_64s@
 
     __defined at:__ @rte_ethdev.h 468:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "reserved_64s" Rte_eth_rxmode ty where
@@ -3115,11 +3389,13 @@ instance HasCField.HasCField Rte_eth_rxmode "reserved_64s" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @reserved_ptrs@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_ptrs@
 
     __defined at:__ @rte_ethdev.h 469:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "reserved_ptrs" Rte_eth_rxmode ty where
@@ -3150,11 +3426,13 @@ instance HasCField.HasCField Rte_eth_rxmode "reserved_ptrs" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @enum rte_vlan_type@
+{-| VLAN types to indicate if it is for single VLAN, inner VLAN or outer VLAN. Note that single VLAN is treated the same as inner VLAN.
+
+    __C declaration:__ @enum rte_vlan_type@
 
     __defined at:__ @rte_ethdev.h 476:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_vlan_type = Rte_vlan_type
   { unwrap :: BG.CUInt
@@ -3255,25 +3533,29 @@ instance HasCField.HasCField Rte_vlan_type "unwrap" where
 
     __defined at:__ @rte_ethdev.h 477:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_VLAN_TYPE_UNKNOWN :: Rte_vlan_type
 pattern RTE_ETH_VLAN_TYPE_UNKNOWN = Rte_vlan_type 0
 
-{-| __C declaration:__ @RTE_ETH_VLAN_TYPE_INNER@
+{-| Inner VLAN.
+
+    __C declaration:__ @RTE_ETH_VLAN_TYPE_INNER@
 
     __defined at:__ @rte_ethdev.h 478:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_VLAN_TYPE_INNER :: Rte_vlan_type
 pattern RTE_ETH_VLAN_TYPE_INNER = Rte_vlan_type 1
 
-{-| __C declaration:__ @RTE_ETH_VLAN_TYPE_OUTER@
+{-| Single VLAN, or outer VLAN.
+
+    __C declaration:__ @RTE_ETH_VLAN_TYPE_OUTER@
 
     __defined at:__ @rte_ethdev.h 479:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_VLAN_TYPE_OUTER :: Rte_vlan_type
 pattern RTE_ETH_VLAN_TYPE_OUTER = Rte_vlan_type 2
@@ -3282,16 +3564,18 @@ pattern RTE_ETH_VLAN_TYPE_OUTER = Rte_vlan_type 2
 
     __defined at:__ @rte_ethdev.h 480:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_VLAN_TYPE_MAX :: Rte_vlan_type
 pattern RTE_ETH_VLAN_TYPE_MAX = Rte_vlan_type 3
 
-{-| __C declaration:__ @struct rte_vlan_filter_conf@
+{-| A structure used to describe a VLAN filter. If the bit corresponding to a VID is set, such VID is on.
+
+    __C declaration:__ @struct rte_vlan_filter_conf@
 
     __defined at:__ @rte_ethdev.h 487:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_vlan_filter_conf = Rte_vlan_filter_conf
   { ids :: CA.ConstantArray 64 HsBindgen.Runtime.LibC.Word64
@@ -3299,7 +3583,7 @@ data Rte_vlan_filter_conf = Rte_vlan_filter_conf
 
          __defined at:__ @rte_ethdev.h 488:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -3334,7 +3618,7 @@ deriving via Struct.IsStructViaReadRaw Rte_vlan_filter_conf instance Struct.IsSt
 
     __defined at:__ @rte_ethdev.h 488:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ids" Rte_vlan_filter_conf ty where
@@ -3356,11 +3640,13 @@ instance HasCField.HasCField Rte_vlan_filter_conf "ids" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @enum rte_eth_hash_function@
+{-| Hash function types.
+
+    __C declaration:__ @enum rte_eth_hash_function@
 
     __defined at:__ @rte_ethdev.h 494:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_hash_function = Rte_eth_hash_function
   { unwrap :: BG.CUInt
@@ -3460,47 +3746,57 @@ instance HasCField.HasCField Rte_eth_hash_function "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_HASH_FUNCTION_DEFAULT@
+{-| DEFAULT means driver decides which hash algorithm to pick.
+
+    __C declaration:__ @RTE_ETH_HASH_FUNCTION_DEFAULT@
 
     __defined at:__ @rte_ethdev.h 496:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_DEFAULT :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_DEFAULT = Rte_eth_hash_function 0
 
-{-| __C declaration:__ @RTE_ETH_HASH_FUNCTION_TOEPLITZ@
+{-| Toeplitz
+
+    __C declaration:__ @RTE_ETH_HASH_FUNCTION_TOEPLITZ@
 
     __defined at:__ @rte_ethdev.h 497:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_TOEPLITZ :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_TOEPLITZ = Rte_eth_hash_function 1
 
-{-| __C declaration:__ @RTE_ETH_HASH_FUNCTION_SIMPLE_XOR@
+{-| Simple XOR
+
+    __C declaration:__ @RTE_ETH_HASH_FUNCTION_SIMPLE_XOR@
 
     __defined at:__ @rte_ethdev.h 498:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_SIMPLE_XOR :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_SIMPLE_XOR = Rte_eth_hash_function 2
 
-{-| __C declaration:__ @RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ@
+{-| Symmetric Toeplitz: src, dst will be replaced by xor(src, dst). For the case with src/dst only, src or dst address will xor with zero pair.
+
+    __C declaration:__ @RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ@
 
     __defined at:__ @rte_ethdev.h 504:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ = Rte_eth_hash_function 3
 
-{-| __C declaration:__ @RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ_SORT@
+{-| Symmetric Toeplitz: L3 and L4 fields are sorted prior to the hash function. If src_ip > dst_ip, swap src_ip and dst_ip. If src_port > dst_port, swap src_port and dst_port.
+
+    __C declaration:__ @RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ_SORT@
 
     __defined at:__ @rte_ethdev.h 511:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ_SORT :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ_SORT = Rte_eth_hash_function 4
@@ -3509,45 +3805,57 @@ pattern RTE_ETH_HASH_FUNCTION_SYMMETRIC_TOEPLITZ_SORT = Rte_eth_hash_function 4
 
     __defined at:__ @rte_ethdev.h 512:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_HASH_FUNCTION_MAX :: Rte_eth_hash_function
 pattern RTE_ETH_HASH_FUNCTION_MAX = Rte_eth_hash_function 5
 
-{-| __C declaration:__ @struct rte_eth_rss_conf@
+{-| A structure used to configure the Receive Side Scaling (RSS) feature of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_rss_conf@
 
     __defined at:__ @rte_ethdev.h 522:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rss_conf = Rte_eth_rss_conf
   { rss_key :: BG.Ptr HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @rss_key@
+    {- ^ In @rte_eth_dev_rss_hash_conf_get()@ , the /rss_key_len/ should be greater than or equal to the /hash_key_size/ which get from @rte_eth_dev_info_get()@ API. And the /rss_key/ should contain at least /hash_key_size/ bytes. If not meet these requirements, the query result is unreliable even if the operation returns success.
+
+         In @rte_eth_dev_rss_hash_update()@ or @rte_eth_dev_configure()@ , if /rss_key/ is not NULL, the /rss_key_len/ indicates the length of the /rss_key/ in bytes and it should be equal to /hash_key_size/ . If /rss_key/ is NULL, drivers are free to use a random or a default key.
+
+         __C declaration:__ @rss_key@
 
          __defined at:__ @rte_ethdev.h 535:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rss_key_len :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @rss_key_len@
+    {- ^ hash key length in bytes.
+
+         __C declaration:__ @rss_key_len@
 
          __defined at:__ @rte_ethdev.h 536:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rss_hf :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @rss_hf@
+    {- ^ Indicates the type of packets or the specific part of packets to which RSS hashing is to be applied.
+
+         __C declaration:__ @rss_hf@
 
          __defined at:__ @rte_ethdev.h 541:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , algorithm :: Rte_eth_hash_function
-    {- ^ __C declaration:__ @algorithm@
+    {- ^ Hash algorithm.
+
+         __C declaration:__ @algorithm@
 
          __defined at:__ @rte_ethdev.h 542:29@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -3584,11 +3892,15 @@ deriving via Marshal.EquivStorable Rte_eth_rss_conf instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rss_conf instance Struct.IsStruct Rte_eth_rss_conf
 
-{-| __C declaration:__ @rss_key@
+{-| In @rte_eth_dev_rss_hash_conf_get()@ , the /rss_key_len/ should be greater than or equal to the /hash_key_size/ which get from @rte_eth_dev_info_get()@ API. And the /rss_key/ should contain at least /hash_key_size/ bytes. If not meet these requirements, the query result is unreliable even if the operation returns success.
+
+    In @rte_eth_dev_rss_hash_update()@ or @rte_eth_dev_configure()@ , if /rss_key/ is not NULL, the /rss_key_len/ indicates the length of the /rss_key/ in bytes and it should be equal to /hash_key_size/ . If /rss_key/ is NULL, drivers are free to use a random or a default key.
+
+    __C declaration:__ @rss_key@
 
     __defined at:__ @rte_ethdev.h 535:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rss_key" Rte_eth_rss_conf ty where
@@ -3616,11 +3928,13 @@ instance HasCField.HasCField Rte_eth_rss_conf "rss_key" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rss_key_len@
+{-| hash key length in bytes.
+
+    __C declaration:__ @rss_key_len@
 
     __defined at:__ @rte_ethdev.h 536:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rss_key_len" Rte_eth_rss_conf ty where
@@ -3649,11 +3963,13 @@ instance HasCField.HasCField Rte_eth_rss_conf "rss_key_len" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @rss_hf@
+{-| Indicates the type of packets or the specific part of packets to which RSS hashing is to be applied.
+
+    __C declaration:__ @rss_hf@
 
     __defined at:__ @rte_ethdev.h 541:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rss_hf" Rte_eth_rss_conf ty where
@@ -3681,11 +3997,13 @@ instance HasCField.HasCField Rte_eth_rss_conf "rss_hf" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @algorithm@
+{-| Hash algorithm.
+
+    __C declaration:__ @algorithm@
 
     __defined at:__ @rte_ethdev.h 542:29@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_hash_function
          ) => BG.CompatHasField.HasField "algorithm" Rte_eth_rss_conf ty where
@@ -3717,7 +4035,7 @@ instance HasCField.HasCField Rte_eth_rss_conf "algorithm" where
 
     __defined at:__ @rte_ethdev.h 553:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_UNKNOWN :: BG.CInt
 rTE_ETH_FLOW_UNKNOWN = (0 :: BG.CInt)
@@ -3726,7 +4044,7 @@ rTE_ETH_FLOW_UNKNOWN = (0 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 554:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_RAW :: BG.CInt
 rTE_ETH_FLOW_RAW = (1 :: BG.CInt)
@@ -3735,7 +4053,7 @@ rTE_ETH_FLOW_RAW = (1 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 555:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_IPV4 :: BG.CInt
 rTE_ETH_FLOW_IPV4 = (2 :: BG.CInt)
@@ -3744,7 +4062,7 @@ rTE_ETH_FLOW_IPV4 = (2 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 556:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_FRAG_IPV4 :: BG.CInt
 rTE_ETH_FLOW_FRAG_IPV4 = (3 :: BG.CInt)
@@ -3753,7 +4071,7 @@ rTE_ETH_FLOW_FRAG_IPV4 = (3 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 557:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV4_TCP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV4_TCP = (4 :: BG.CInt)
@@ -3762,7 +4080,7 @@ rTE_ETH_FLOW_NONFRAG_IPV4_TCP = (4 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 558:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV4_UDP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV4_UDP = (5 :: BG.CInt)
@@ -3771,7 +4089,7 @@ rTE_ETH_FLOW_NONFRAG_IPV4_UDP = (5 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 559:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV4_SCTP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV4_SCTP = (6 :: BG.CInt)
@@ -3780,7 +4098,7 @@ rTE_ETH_FLOW_NONFRAG_IPV4_SCTP = (6 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 560:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV4_OTHER :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV4_OTHER = (7 :: BG.CInt)
@@ -3789,7 +4107,7 @@ rTE_ETH_FLOW_NONFRAG_IPV4_OTHER = (7 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 561:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_IPV6 :: BG.CInt
 rTE_ETH_FLOW_IPV6 = (8 :: BG.CInt)
@@ -3798,7 +4116,7 @@ rTE_ETH_FLOW_IPV6 = (8 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 562:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_FRAG_IPV6 :: BG.CInt
 rTE_ETH_FLOW_FRAG_IPV6 = (9 :: BG.CInt)
@@ -3807,7 +4125,7 @@ rTE_ETH_FLOW_FRAG_IPV6 = (9 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 563:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV6_TCP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV6_TCP = (10 :: BG.CInt)
@@ -3816,7 +4134,7 @@ rTE_ETH_FLOW_NONFRAG_IPV6_TCP = (10 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 564:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV6_UDP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV6_UDP = (11 :: BG.CInt)
@@ -3825,7 +4143,7 @@ rTE_ETH_FLOW_NONFRAG_IPV6_UDP = (11 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 565:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV6_SCTP :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV6_SCTP = (12 :: BG.CInt)
@@ -3834,7 +4152,7 @@ rTE_ETH_FLOW_NONFRAG_IPV6_SCTP = (12 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 566:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NONFRAG_IPV6_OTHER :: BG.CInt
 rTE_ETH_FLOW_NONFRAG_IPV6_OTHER = (13 :: BG.CInt)
@@ -3843,7 +4161,7 @@ rTE_ETH_FLOW_NONFRAG_IPV6_OTHER = (13 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 567:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_L2_PAYLOAD :: BG.CInt
 rTE_ETH_FLOW_L2_PAYLOAD = (14 :: BG.CInt)
@@ -3852,7 +4170,7 @@ rTE_ETH_FLOW_L2_PAYLOAD = (14 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 568:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_IPV6_EX :: BG.CInt
 rTE_ETH_FLOW_IPV6_EX = (15 :: BG.CInt)
@@ -3861,7 +4179,7 @@ rTE_ETH_FLOW_IPV6_EX = (15 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 569:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_IPV6_TCP_EX :: BG.CInt
 rTE_ETH_FLOW_IPV6_TCP_EX = (16 :: BG.CInt)
@@ -3870,61 +4188,73 @@ rTE_ETH_FLOW_IPV6_TCP_EX = (16 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 570:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_IPV6_UDP_EX :: BG.CInt
 rTE_ETH_FLOW_IPV6_UDP_EX = (17 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_PORT@
+{-| Consider device port number as a flow differentiator
+
+    __C declaration:__ @macro RTE_ETH_FLOW_PORT@
 
     __defined at:__ @rte_ethdev.h 572:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_PORT :: BG.CInt
 rTE_ETH_FLOW_PORT = (18 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_VXLAN@
+{-| VXLAN protocol based flow
+
+    __C declaration:__ @macro RTE_ETH_FLOW_VXLAN@
 
     __defined at:__ @rte_ethdev.h 573:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_VXLAN :: BG.CInt
 rTE_ETH_FLOW_VXLAN = (19 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_GENEVE@
+{-| GENEVE protocol based flow
+
+    __C declaration:__ @macro RTE_ETH_FLOW_GENEVE@
 
     __defined at:__ @rte_ethdev.h 574:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_GENEVE :: BG.CInt
 rTE_ETH_FLOW_GENEVE = (20 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_NVGRE@
+{-| NVGRE protocol based flow
+
+    __C declaration:__ @macro RTE_ETH_FLOW_NVGRE@
 
     __defined at:__ @rte_ethdev.h 575:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_NVGRE :: BG.CInt
 rTE_ETH_FLOW_NVGRE = (21 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_VXLAN_GPE@
+{-| VXLAN-GPE protocol based flow
+
+    __C declaration:__ @macro RTE_ETH_FLOW_VXLAN_GPE@
 
     __defined at:__ @rte_ethdev.h 576:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_VXLAN_GPE :: BG.CInt
 rTE_ETH_FLOW_VXLAN_GPE = (22 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_FLOW_GTPU@
+{-| GTPU protocol based flow
+
+    __C declaration:__ @macro RTE_ETH_FLOW_GTPU@
 
     __defined at:__ @rte_ethdev.h 577:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_GTPU :: BG.CInt
 rTE_ETH_FLOW_GTPU = (23 :: BG.CInt)
@@ -3933,7 +4263,7 @@ rTE_ETH_FLOW_GTPU = (23 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 578:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_FLOW_MAX :: BG.CInt
 rTE_ETH_FLOW_MAX = (24 :: BG.CInt)
@@ -3942,7 +4272,7 @@ rTE_ETH_FLOW_MAX = (24 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 875:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RSS_RETA_SIZE_64 :: BG.CInt
 rTE_ETH_RSS_RETA_SIZE_64 = (64 :: BG.CInt)
@@ -3951,7 +4281,7 @@ rTE_ETH_RSS_RETA_SIZE_64 = (64 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 876:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RSS_RETA_SIZE_128 :: BG.CInt
 rTE_ETH_RSS_RETA_SIZE_128 = (128 :: BG.CInt)
@@ -3960,7 +4290,7 @@ rTE_ETH_RSS_RETA_SIZE_128 = (128 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 877:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RSS_RETA_SIZE_256 :: BG.CInt
 rTE_ETH_RSS_RETA_SIZE_256 = (256 :: BG.CInt)
@@ -3969,7 +4299,7 @@ rTE_ETH_RSS_RETA_SIZE_256 = (256 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 878:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RSS_RETA_SIZE_512 :: BG.CInt
 rTE_ETH_RSS_RETA_SIZE_512 = (512 :: BG.CInt)
@@ -3978,166 +4308,202 @@ rTE_ETH_RSS_RETA_SIZE_512 = (512 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 879:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RETA_GROUP_SIZE :: BG.CInt
 rTE_ETH_RETA_GROUP_SIZE = (64 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VMDQ_MAX_VLAN_FILTERS@
+{-| Maximum nb. of VMDq VLAN filters.
+
+    __C declaration:__ @macro RTE_ETH_VMDQ_MAX_VLAN_FILTERS@
 
     __defined at:__ @rte_ethdev.h 882:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VMDQ_MAX_VLAN_FILTERS :: BG.CInt
 rTE_ETH_VMDQ_MAX_VLAN_FILTERS = (64 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_DCB_NUM_USER_PRIORITIES@
+{-| Maximum nb. of DCB priorities.
+
+    __C declaration:__ @macro RTE_ETH_DCB_NUM_USER_PRIORITIES@
 
     __defined at:__ @rte_ethdev.h 883:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DCB_NUM_USER_PRIORITIES :: BG.CInt
 rTE_ETH_DCB_NUM_USER_PRIORITIES = (8 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VMDQ_DCB_NUM_QUEUES@
+{-| Maximum nb. of VMDq DCB queues.
+
+    __C declaration:__ @macro RTE_ETH_VMDQ_DCB_NUM_QUEUES@
 
     __defined at:__ @rte_ethdev.h 884:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VMDQ_DCB_NUM_QUEUES :: BG.CInt
 rTE_ETH_VMDQ_DCB_NUM_QUEUES = (128 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_DCB_NUM_QUEUES@
+{-| Maximum nb. of DCB queues.
+
+    __C declaration:__ @macro RTE_ETH_DCB_NUM_QUEUES@
 
     __defined at:__ @rte_ethdev.h 885:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DCB_NUM_QUEUES :: BG.CInt
 rTE_ETH_DCB_NUM_QUEUES = (128 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_STRIP_OFFLOAD@
+{-| VLAN Strip On/Off
+
+    __C declaration:__ @macro RTE_ETH_VLAN_STRIP_OFFLOAD@
 
     __defined at:__ @rte_ethdev.h 894:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_STRIP_OFFLOAD :: BG.CInt
 rTE_ETH_VLAN_STRIP_OFFLOAD = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_FILTER_OFFLOAD@
+{-| VLAN Filter On/Off
+
+    __C declaration:__ @macro RTE_ETH_VLAN_FILTER_OFFLOAD@
 
     __defined at:__ @rte_ethdev.h 895:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_FILTER_OFFLOAD :: BG.CInt
 rTE_ETH_VLAN_FILTER_OFFLOAD = (2 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_EXTEND_OFFLOAD@
+{-| VLAN Extend On/Off
+
+    __C declaration:__ @macro RTE_ETH_VLAN_EXTEND_OFFLOAD@
 
     __defined at:__ @rte_ethdev.h 896:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_EXTEND_OFFLOAD :: BG.CInt
 rTE_ETH_VLAN_EXTEND_OFFLOAD = (4 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_QINQ_STRIP_OFFLOAD@
+{-| QINQ Strip On/Off
+
+    __C declaration:__ @macro RTE_ETH_QINQ_STRIP_OFFLOAD@
 
     __defined at:__ @rte_ethdev.h 897:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_QINQ_STRIP_OFFLOAD :: BG.CInt
 rTE_ETH_QINQ_STRIP_OFFLOAD = (8 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_STRIP_MASK@
+{-| VLAN Strip setting mask
+
+    __C declaration:__ @macro RTE_ETH_VLAN_STRIP_MASK@
 
     __defined at:__ @rte_ethdev.h 899:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_STRIP_MASK :: BG.CInt
 rTE_ETH_VLAN_STRIP_MASK = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_FILTER_MASK@
+{-| VLAN Filter setting mask
+
+    __C declaration:__ @macro RTE_ETH_VLAN_FILTER_MASK@
 
     __defined at:__ @rte_ethdev.h 900:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_FILTER_MASK :: BG.CInt
 rTE_ETH_VLAN_FILTER_MASK = (2 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_EXTEND_MASK@
+{-| VLAN Extend setting mask
+
+    __C declaration:__ @macro RTE_ETH_VLAN_EXTEND_MASK@
 
     __defined at:__ @rte_ethdev.h 901:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_EXTEND_MASK :: BG.CInt
 rTE_ETH_VLAN_EXTEND_MASK = (4 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_QINQ_STRIP_MASK@
+{-| QINQ Strip setting mask
+
+    __C declaration:__ @macro RTE_ETH_QINQ_STRIP_MASK@
 
     __defined at:__ @rte_ethdev.h 902:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_QINQ_STRIP_MASK :: BG.CInt
 rTE_ETH_QINQ_STRIP_MASK = (8 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VLAN_ID_MAX@
+{-| VLAN ID is in lower 12 bits
+
+    __C declaration:__ @macro RTE_ETH_VLAN_ID_MAX@
 
     __defined at:__ @rte_ethdev.h 903:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VLAN_ID_MAX :: BG.CInt
 rTE_ETH_VLAN_ID_MAX = (4095 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_NUM_RECEIVE_MAC_ADDR@
+{-| Maximum nb. of receive mac addr.
+
+    __C declaration:__ @macro RTE_ETH_NUM_RECEIVE_MAC_ADDR@
 
     __defined at:__ @rte_ethdev.h 907:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_NUM_RECEIVE_MAC_ADDR :: BG.CInt
 rTE_ETH_NUM_RECEIVE_MAC_ADDR = (128 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_VMDQ_NUM_UC_HASH_ARRAY@
+{-| Maximum nb. of UC hash array.
+
+    __C declaration:__ @macro RTE_ETH_VMDQ_NUM_UC_HASH_ARRAY@
 
     __defined at:__ @rte_ethdev.h 910:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_VMDQ_NUM_UC_HASH_ARRAY :: BG.CInt
 rTE_ETH_VMDQ_NUM_UC_HASH_ARRAY = (128 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_rss_reta_entry64@
+{-| A structure used to configure 64 entries of Redirection Table of the Receive Side Scaling (RSS) feature of an Ethernet port. To configure more than 64 entries supported by hardware, an array of this structure is needed.
+
+    __C declaration:__ @struct rte_eth_rss_reta_entry64@
 
     __defined at:__ @rte_ethdev.h 933:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rss_reta_entry64 = Rte_eth_rss_reta_entry64
   { mask :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @mask@
+    {- ^ Mask bits indicate which entries need to be updated/queried.
+
+         __C declaration:__ @mask@
 
          __defined at:__ @rte_ethdev.h 935:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reta :: CA.ConstantArray 64 HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @reta@
+    {- ^ Group of 64 redirection table entries.
+
+         __C declaration:__ @reta@
 
          __defined at:__ @rte_ethdev.h 937:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4170,11 +4536,13 @@ deriving via Marshal.EquivStorable Rte_eth_rss_reta_entry64 instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rss_reta_entry64 instance Struct.IsStruct Rte_eth_rss_reta_entry64
 
-{-| __C declaration:__ @mask@
+{-| Mask bits indicate which entries need to be updated/queried.
+
+    __C declaration:__ @mask@
 
     __defined at:__ @rte_ethdev.h 935:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "mask" Rte_eth_rss_reta_entry64 ty where
@@ -4198,11 +4566,13 @@ instance HasCField.HasCField Rte_eth_rss_reta_entry64 "mask" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @reta@
+{-| Group of 64 redirection table entries.
+
+    __C declaration:__ @reta@
 
     __defined at:__ @rte_ethdev.h 937:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "reta" Rte_eth_rss_reta_entry64 ty where
@@ -4226,11 +4596,13 @@ instance HasCField.HasCField Rte_eth_rss_reta_entry64 "reta" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @enum rte_eth_nb_tcs@
+{-| This enum indicates the possible number of traffic classes in DCB configurations
+
+    __C declaration:__ @enum rte_eth_nb_tcs@
 
     __defined at:__ @rte_ethdev.h 944:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_nb_tcs = Rte_eth_nb_tcs
   { unwrap :: BG.CUInt
@@ -4313,29 +4685,35 @@ instance HasCField.HasCField Rte_eth_nb_tcs "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_4_TCS@
+{-| 4 TCs with DCB.
+
+    __C declaration:__ @RTE_ETH_4_TCS@
 
     __defined at:__ @rte_ethdev.h 945:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_4_TCS :: Rte_eth_nb_tcs
 pattern RTE_ETH_4_TCS = Rte_eth_nb_tcs 4
 
-{-| __C declaration:__ @RTE_ETH_8_TCS@
+{-| 8 TCs with DCB.
+
+    __C declaration:__ @RTE_ETH_8_TCS@
 
     __defined at:__ @rte_ethdev.h 946:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_8_TCS :: Rte_eth_nb_tcs
 pattern RTE_ETH_8_TCS = Rte_eth_nb_tcs 8
 
-{-| __C declaration:__ @enum rte_eth_nb_pools@
+{-| This enum indicates the possible number of queue pools in VMDq configurations.
+
+    __C declaration:__ @enum rte_eth_nb_pools@
 
     __defined at:__ @rte_ethdev.h 953:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_nb_pools = Rte_eth_nb_pools
   { unwrap :: BG.CUInt
@@ -4422,38 +4800,46 @@ instance HasCField.HasCField Rte_eth_nb_pools "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_8_POOLS@
+{-| 8 VMDq pools.
+
+    __C declaration:__ @RTE_ETH_8_POOLS@
 
     __defined at:__ @rte_ethdev.h 954:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_8_POOLS :: Rte_eth_nb_pools
 pattern RTE_ETH_8_POOLS = Rte_eth_nb_pools 8
 
-{-| __C declaration:__ @RTE_ETH_16_POOLS@
+{-| 16 VMDq pools.
+
+    __C declaration:__ @RTE_ETH_16_POOLS@
 
     __defined at:__ @rte_ethdev.h 955:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_16_POOLS :: Rte_eth_nb_pools
 pattern RTE_ETH_16_POOLS = Rte_eth_nb_pools 16
 
-{-| __C declaration:__ @RTE_ETH_32_POOLS@
+{-| 32 VMDq pools.
+
+    __C declaration:__ @RTE_ETH_32_POOLS@
 
     __defined at:__ @rte_ethdev.h 956:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_32_POOLS :: Rte_eth_nb_pools
 pattern RTE_ETH_32_POOLS = Rte_eth_nb_pools 32
 
-{-| __C declaration:__ @RTE_ETH_64_POOLS@
+{-| 64 VMDq pools.
+
+    __C declaration:__ @RTE_ETH_64_POOLS@
 
     __defined at:__ @rte_ethdev.h 957:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_64_POOLS :: Rte_eth_nb_pools
 pattern RTE_ETH_64_POOLS = Rte_eth_nb_pools 64
@@ -4462,22 +4848,26 @@ pattern RTE_ETH_64_POOLS = Rte_eth_nb_pools 64
 
     __defined at:__ @rte_ethdev.h 961:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_rx_conf = Rte_eth_dcb_rx_conf
   { nb_tcs :: Rte_eth_nb_tcs
-    {- ^ __C declaration:__ @nb_tcs@
+    {- ^ Possible DCB TCs, 4 or 8 TCs
+
+         __C declaration:__ @nb_tcs@
 
          __defined at:__ @rte_ethdev.h 962:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_tc :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @dcb_tc@
+    {- ^ Traffic class each UP mapped to.
+
+         __C declaration:__ @dcb_tc@
 
          __defined at:__ @rte_ethdev.h 964:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4510,11 +4900,13 @@ deriving via Marshal.EquivStorable Rte_eth_dcb_rx_conf instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_rx_conf instance Struct.IsStruct Rte_eth_dcb_rx_conf
 
-{-| __C declaration:__ @nb_tcs@
+{-| Possible DCB TCs, 4 or 8 TCs
+
+    __C declaration:__ @nb_tcs@
 
     __defined at:__ @rte_ethdev.h 962:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_tcs
          ) => BG.CompatHasField.HasField "nb_tcs" Rte_eth_dcb_rx_conf ty where
@@ -4538,11 +4930,13 @@ instance HasCField.HasCField Rte_eth_dcb_rx_conf "nb_tcs" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @dcb_tc@
+{-| Traffic class each UP mapped to.
+
+    __C declaration:__ @dcb_tc@
 
     __defined at:__ @rte_ethdev.h 964:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dcb_tc" Rte_eth_dcb_rx_conf ty where
@@ -4570,22 +4964,26 @@ instance HasCField.HasCField Rte_eth_dcb_rx_conf "dcb_tc" where
 
     __defined at:__ @rte_ethdev.h 967:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_dcb_tx_conf = Rte_eth_vmdq_dcb_tx_conf
   { nb_queue_pools :: Rte_eth_nb_pools
-    {- ^ __C declaration:__ @nb_queue_pools@
+    {- ^ With DCB, 16 or 32 pools.
+
+         __C declaration:__ @nb_queue_pools@
 
          __defined at:__ @rte_ethdev.h 968:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_tc :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @dcb_tc@
+    {- ^ Traffic class each UP mapped to.
+
+         __C declaration:__ @dcb_tc@
 
          __defined at:__ @rte_ethdev.h 970:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4618,11 +5016,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_dcb_tx_conf instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_dcb_tx_conf instance Struct.IsStruct Rte_eth_vmdq_dcb_tx_conf
 
-{-| __C declaration:__ @nb_queue_pools@
+{-| With DCB, 16 or 32 pools.
+
+    __C declaration:__ @nb_queue_pools@
 
     __defined at:__ @rte_ethdev.h 968:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_pools
          ) => BG.CompatHasField.HasField "nb_queue_pools" Rte_eth_vmdq_dcb_tx_conf ty where
@@ -4647,11 +5047,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_tx_conf "nb_queue_pools" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @dcb_tc@
+{-| Traffic class each UP mapped to.
+
+    __C declaration:__ @dcb_tc@
 
     __defined at:__ @rte_ethdev.h 970:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dcb_tc" Rte_eth_vmdq_dcb_tx_conf ty where
@@ -4679,22 +5081,26 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_tx_conf "dcb_tc" where
 
     __defined at:__ @rte_ethdev.h 973:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_tx_conf = Rte_eth_dcb_tx_conf
   { nb_tcs :: Rte_eth_nb_tcs
-    {- ^ __C declaration:__ @nb_tcs@
+    {- ^ Possible DCB TCs, 4 or 8 TCs.
+
+         __C declaration:__ @nb_tcs@
 
          __defined at:__ @rte_ethdev.h 974:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_tc :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @dcb_tc@
+    {- ^ Traffic class each UP mapped to.
+
+         __C declaration:__ @dcb_tc@
 
          __defined at:__ @rte_ethdev.h 976:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4727,11 +5133,13 @@ deriving via Marshal.EquivStorable Rte_eth_dcb_tx_conf instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_tx_conf instance Struct.IsStruct Rte_eth_dcb_tx_conf
 
-{-| __C declaration:__ @nb_tcs@
+{-| Possible DCB TCs, 4 or 8 TCs.
+
+    __C declaration:__ @nb_tcs@
 
     __defined at:__ @rte_ethdev.h 974:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_tcs
          ) => BG.CompatHasField.HasField "nb_tcs" Rte_eth_dcb_tx_conf ty where
@@ -4755,11 +5163,13 @@ instance HasCField.HasCField Rte_eth_dcb_tx_conf "nb_tcs" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @dcb_tc@
+{-| Traffic class each UP mapped to.
+
+    __C declaration:__ @dcb_tc@
 
     __defined at:__ @rte_ethdev.h 976:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dcb_tc" Rte_eth_dcb_tx_conf ty where
@@ -4787,15 +5197,17 @@ instance HasCField.HasCField Rte_eth_dcb_tx_conf "dcb_tc" where
 
     __defined at:__ @rte_ethdev.h 979:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_tx_conf = Rte_eth_vmdq_tx_conf
   { nb_queue_pools :: Rte_eth_nb_pools
-    {- ^ __C declaration:__ @nb_queue_pools@
+    {- ^ VMDq mode, 64 pools.
+
+         __C declaration:__ @nb_queue_pools@
 
          __defined at:__ @rte_ethdev.h 980:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4826,11 +5238,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_tx_conf instance BG.Storable Rte
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_tx_conf instance Struct.IsStruct Rte_eth_vmdq_tx_conf
 
-{-| __C declaration:__ @nb_queue_pools@
+{-| VMDq mode, 64 pools.
+
+    __C declaration:__ @nb_queue_pools@
 
     __defined at:__ @rte_ethdev.h 980:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_pools
          ) => BG.CompatHasField.HasField "nb_queue_pools" Rte_eth_vmdq_tx_conf ty where
@@ -4858,22 +5272,26 @@ instance HasCField.HasCField Rte_eth_vmdq_tx_conf "nb_queue_pools" where
 
     __defined at:__ @rte_ethdev.h 999:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_dcb_conf_pool_map = Rte_eth_vmdq_dcb_conf_pool_map
   { vlan_id :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @vlan_id@
+    {- ^ The VLAN ID of the received frame
+
+         __C declaration:__ @vlan_id@
 
          __defined at:__ @rte_ethdev.h 1000:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pools :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @pools@
+    {- ^ Bitmask of pools for packet Rx
+
+         __C declaration:__ @pools@
 
          __defined at:__ @rte_ethdev.h 1001:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -4906,11 +5324,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_dcb_conf_pool_map instance BG.St
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_dcb_conf_pool_map instance Struct.IsStruct Rte_eth_vmdq_dcb_conf_pool_map
 
-{-| __C declaration:__ @vlan_id@
+{-| The VLAN ID of the received frame
+
+    __C declaration:__ @vlan_id@
 
     __defined at:__ @rte_ethdev.h 1000:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_id" Rte_eth_vmdq_dcb_conf_pool_map ty where
@@ -4934,11 +5354,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf_pool_map "vlan_id" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @pools@
+{-| Bitmask of pools for packet Rx
+
+    __C declaration:__ @pools@
 
     __defined at:__ @rte_ethdev.h 1001:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pools" Rte_eth_vmdq_dcb_conf_pool_map ty where
@@ -4962,54 +5384,72 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf_pool_map "pools" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @struct rte_eth_vmdq_dcb_conf@
+{-| A structure used to configure the VMDq+DCB feature of an Ethernet port.
+
+    Using this feature, packets are routed to a pool of queues, based on the VLAN ID in the VLAN tag, and then to a specific queue within that pool, using the user priority VLAN tag field.
+
+    A default pool may be used, if desired, to route all traffic which does not match the VLAN filter rules.
+
+    __C declaration:__ @struct rte_eth_vmdq_dcb_conf@
 
     __defined at:__ @rte_ethdev.h 994:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_dcb_conf = Rte_eth_vmdq_dcb_conf
   { nb_queue_pools :: Rte_eth_nb_pools
-    {- ^ __C declaration:__ @nb_queue_pools@
+    {- ^ With DCB, 16 or 32 pools
+
+         __C declaration:__ @nb_queue_pools@
 
          __defined at:__ @rte_ethdev.h 995:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , enable_default_pool :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @enable_default_pool@
+    {- ^ If non-zero, use a default pool
+
+         __C declaration:__ @enable_default_pool@
 
          __defined at:__ @rte_ethdev.h 996:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_pool :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @default_pool@
+    {- ^ The default pool, if applicable
+
+         __C declaration:__ @default_pool@
 
          __defined at:__ @rte_ethdev.h 997:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_pool_maps :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @nb_pool_maps@
+    {- ^ We can have up to 64 filters/mappings
+
+         __C declaration:__ @nb_pool_maps@
 
          __defined at:__ @rte_ethdev.h 998:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pool_map :: CA.ConstantArray 64 Rte_eth_vmdq_dcb_conf_pool_map
-    {- ^ __C declaration:__ @pool_map@
+    {- ^ VMDq VLAN pool maps.
+
+         __C declaration:__ @pool_map@
 
          __defined at:__ @rte_ethdev.h 1002:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_tc :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @dcb_tc@
+    {- ^ Selects a queue in a pool
+
+         __C declaration:__ @dcb_tc@
 
          __defined at:__ @rte_ethdev.h 1004:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5056,11 +5496,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_dcb_conf instance BG.Storable Rt
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_dcb_conf instance Struct.IsStruct Rte_eth_vmdq_dcb_conf
 
-{-| __C declaration:__ @nb_queue_pools@
+{-| With DCB, 16 or 32 pools
+
+    __C declaration:__ @nb_queue_pools@
 
     __defined at:__ @rte_ethdev.h 995:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_pools
          ) => BG.CompatHasField.HasField "nb_queue_pools" Rte_eth_vmdq_dcb_conf ty where
@@ -5091,11 +5533,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "nb_queue_pools" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @enable_default_pool@
+{-| If non-zero, use a default pool
+
+    __C declaration:__ @enable_default_pool@
 
     __defined at:__ @rte_ethdev.h 996:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "enable_default_pool" Rte_eth_vmdq_dcb_conf ty where
@@ -5126,11 +5570,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "enable_default_pool" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @default_pool@
+{-| The default pool, if applicable
+
+    __C declaration:__ @default_pool@
 
     __defined at:__ @rte_ethdev.h 997:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "default_pool" Rte_eth_vmdq_dcb_conf ty where
@@ -5161,11 +5607,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "default_pool" where
 
   offset# = \_ -> \_ -> 5
 
-{-| __C declaration:__ @nb_pool_maps@
+{-| We can have up to 64 filters/mappings
+
+    __C declaration:__ @nb_pool_maps@
 
     __defined at:__ @rte_ethdev.h 998:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "nb_pool_maps" Rte_eth_vmdq_dcb_conf ty where
@@ -5196,11 +5644,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "nb_pool_maps" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @pool_map@
+{-| VMDq VLAN pool maps.
+
+    __C declaration:__ @pool_map@
 
     __defined at:__ @rte_ethdev.h 1002:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 Rte_eth_vmdq_dcb_conf_pool_map
          ) => BG.CompatHasField.HasField "pool_map" Rte_eth_vmdq_dcb_conf ty where
@@ -5230,11 +5680,13 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "pool_map" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @dcb_tc@
+{-| Selects a queue in a pool
+
+    __C declaration:__ @dcb_tc@
 
     __defined at:__ @rte_ethdev.h 1004:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dcb_tc" Rte_eth_vmdq_dcb_conf ty where
@@ -5268,22 +5720,26 @@ instance HasCField.HasCField Rte_eth_vmdq_dcb_conf "dcb_tc" where
 
     __defined at:__ @rte_ethdev.h 1032:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_rx_conf_pool_map = Rte_eth_vmdq_rx_conf_pool_map
   { vlan_id :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @vlan_id@
+    {- ^ The VLAN ID of the received frame
+
+         __C declaration:__ @vlan_id@
 
          __defined at:__ @rte_ethdev.h 1033:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pools :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @pools@
+    {- ^ Bitmask of pools for packet Rx
+
+         __C declaration:__ @pools@
 
          __defined at:__ @rte_ethdev.h 1034:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5316,11 +5772,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_rx_conf_pool_map instance BG.Sto
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_rx_conf_pool_map instance Struct.IsStruct Rte_eth_vmdq_rx_conf_pool_map
 
-{-| __C declaration:__ @vlan_id@
+{-| The VLAN ID of the received frame
+
+    __C declaration:__ @vlan_id@
 
     __defined at:__ @rte_ethdev.h 1033:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vlan_id" Rte_eth_vmdq_rx_conf_pool_map ty where
@@ -5344,11 +5802,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf_pool_map "vlan_id" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @pools@
+{-| Bitmask of pools for packet Rx
+
+    __C declaration:__ @pools@
 
     __defined at:__ @rte_ethdev.h 1034:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pools" Rte_eth_vmdq_rx_conf_pool_map ty where
@@ -5372,61 +5832,83 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf_pool_map "pools" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @struct rte_eth_vmdq_rx_conf@
+{-| A structure used to configure the VMDq feature of an Ethernet port when not combined with the DCB feature.
+
+    Using this feature, packets are routed to a pool of queues. By default, the pool selection is based on the MAC address, the VLAN ID in the VLAN tag as specified in the pool_map array. Passing the RTE_ETH_VMDQ_ACCEPT_UNTAG in the rx_mode field allows pool selection using only the MAC address. MAC address to pool mapping is done using the rte_eth_dev_mac_addr_add function, with the pool parameter corresponding to the pool ID.
+
+    Queue selection within the selected pool will be done using RSS when it is enabled or revert to the first queue of the pool if not.
+
+    A default pool may be used, if desired, to route all traffic which does not match the VLAN filter rules or any pool MAC address.
+
+    __C declaration:__ @struct rte_eth_vmdq_rx_conf@
 
     __defined at:__ @rte_ethdev.h 1025:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_vmdq_rx_conf = Rte_eth_vmdq_rx_conf
   { nb_queue_pools :: Rte_eth_nb_pools
-    {- ^ __C declaration:__ @nb_queue_pools@
+    {- ^ VMDq only mode, 8 or 64 pools
+
+         __C declaration:__ @nb_queue_pools@
 
          __defined at:__ @rte_ethdev.h 1026:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , enable_default_pool :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @enable_default_pool@
+    {- ^ If non-zero, use a default pool
+
+         __C declaration:__ @enable_default_pool@
 
          __defined at:__ @rte_ethdev.h 1027:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_pool :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @default_pool@
+    {- ^ The default pool, if applicable
+
+         __C declaration:__ @default_pool@
 
          __defined at:__ @rte_ethdev.h 1028:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , enable_loop_back :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @enable_loop_back@
+    {- ^ Enable VT loop back
+
+         __C declaration:__ @enable_loop_back@
 
          __defined at:__ @rte_ethdev.h 1029:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_pool_maps :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @nb_pool_maps@
+    {- ^ We can have up to 64 filters/mappings
+
+         __C declaration:__ @nb_pool_maps@
 
          __defined at:__ @rte_ethdev.h 1030:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_mode :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @rx_mode@
+    {- ^ Flags from RTE_ETH_VMDQ_ACCEPT_*
+
+         __C declaration:__ @rx_mode@
 
          __defined at:__ @rte_ethdev.h 1031:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pool_map :: CA.ConstantArray 64 Rte_eth_vmdq_rx_conf_pool_map
-    {- ^ __C declaration:__ @pool_map@
+    {- ^ VMDq VLAN pool maps.
+
+         __C declaration:__ @pool_map@
 
          __defined at:__ @rte_ethdev.h 1035:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5476,11 +5958,13 @@ deriving via Marshal.EquivStorable Rte_eth_vmdq_rx_conf instance BG.Storable Rte
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_vmdq_rx_conf instance Struct.IsStruct Rte_eth_vmdq_rx_conf
 
-{-| __C declaration:__ @nb_queue_pools@
+{-| VMDq only mode, 8 or 64 pools
+
+    __C declaration:__ @nb_queue_pools@
 
     __defined at:__ @rte_ethdev.h 1026:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_nb_pools
          ) => BG.CompatHasField.HasField "nb_queue_pools" Rte_eth_vmdq_rx_conf ty where
@@ -5512,11 +5996,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "nb_queue_pools" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @enable_default_pool@
+{-| If non-zero, use a default pool
+
+    __C declaration:__ @enable_default_pool@
 
     __defined at:__ @rte_ethdev.h 1027:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "enable_default_pool" Rte_eth_vmdq_rx_conf ty where
@@ -5548,11 +6034,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "enable_default_pool" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @default_pool@
+{-| The default pool, if applicable
+
+    __C declaration:__ @default_pool@
 
     __defined at:__ @rte_ethdev.h 1028:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "default_pool" Rte_eth_vmdq_rx_conf ty where
@@ -5584,11 +6072,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "default_pool" where
 
   offset# = \_ -> \_ -> 5
 
-{-| __C declaration:__ @enable_loop_back@
+{-| Enable VT loop back
+
+    __C declaration:__ @enable_loop_back@
 
     __defined at:__ @rte_ethdev.h 1029:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "enable_loop_back" Rte_eth_vmdq_rx_conf ty where
@@ -5620,11 +6110,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "enable_loop_back" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @nb_pool_maps@
+{-| We can have up to 64 filters/mappings
+
+    __C declaration:__ @nb_pool_maps@
 
     __defined at:__ @rte_ethdev.h 1030:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "nb_pool_maps" Rte_eth_vmdq_rx_conf ty where
@@ -5656,11 +6148,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "nb_pool_maps" where
 
   offset# = \_ -> \_ -> 7
 
-{-| __C declaration:__ @rx_mode@
+{-| Flags from RTE_ETH_VMDQ_ACCEPT_*
+
+    __C declaration:__ @rx_mode@
 
     __defined at:__ @rte_ethdev.h 1031:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rx_mode" Rte_eth_vmdq_rx_conf ty where
@@ -5691,11 +6185,13 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "rx_mode" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @pool_map@
+{-| VMDq VLAN pool maps.
+
+    __C declaration:__ @pool_map@
 
     __defined at:__ @rte_ethdev.h 1035:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 Rte_eth_vmdq_rx_conf_pool_map
          ) => BG.CompatHasField.HasField "pool_map" Rte_eth_vmdq_rx_conf ty where
@@ -5726,68 +6222,86 @@ instance HasCField.HasCField Rte_eth_vmdq_rx_conf "pool_map" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @struct rte_eth_txmode@
+{-| A structure used to configure the Tx features of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_txmode@
 
     __defined at:__ @rte_ethdev.h 1041:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_txmode = Rte_eth_txmode
   { mq_mode :: Rte_eth_tx_mq_mode
-    {- ^ __C declaration:__ @mq_mode@
+    {- ^ Tx multi-queues mode.
+
+         __C declaration:__ @mq_mode@
 
          __defined at:__ @rte_ethdev.h 1042:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offloads :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @offloads@
+    {- ^
+
+         Per-port Tx offloads to be set using RTE_ETH_TX_OFFLOAD_* flags. Only offloads set on tx_offload_capa field on 'Rte_eth_dev_info' structure are allowed to be set.
+
+         __C declaration:__ @offloads@
 
          __defined at:__ @rte_ethdev.h 1048:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pvid :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @pvid@
 
          __defined at:__ @rte_ethdev.h 1050:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hw_vlan_reject_tagged :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @hw_vlan_reject_tagged@
+    {- ^ If set, reject sending out tagged pkts
+
+         __C declaration:__ @hw_vlan_reject_tagged@
 
          __defined at:__ @rte_ethdev.h 1053:3@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hw_vlan_reject_untagged :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @hw_vlan_reject_untagged@
+    {- ^ If set, reject sending out untagged pkts
+
+         __C declaration:__ @hw_vlan_reject_untagged@
 
          __defined at:__ @rte_ethdev.h 1055:3@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hw_vlan_insert_pvid :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @hw_vlan_insert_pvid@
+    {- ^ If set, enable port based VLAN insertion
+
+         __C declaration:__ @hw_vlan_insert_pvid@
 
          __defined at:__ @rte_ethdev.h 1057:3@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_64s :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @reserved_64s@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_64s@
 
          __defined at:__ @rte_ethdev.h 1059:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_ptrs :: CA.ConstantArray 2 (BG.Ptr BG.Void)
-    {- ^ __C declaration:__ @reserved_ptrs@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_ptrs@
 
          __defined at:__ @rte_ethdev.h 1060:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -5840,11 +6354,13 @@ deriving via Marshal.EquivStorable Rte_eth_txmode instance BG.Storable Rte_eth_t
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_txmode instance Struct.IsStruct Rte_eth_txmode
 
-{-| __C declaration:__ @mq_mode@
+{-| Tx multi-queues mode.
+
+    __C declaration:__ @mq_mode@
 
     __defined at:__ @rte_ethdev.h 1042:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_tx_mq_mode
          ) => BG.CompatHasField.HasField "mq_mode" Rte_eth_txmode ty where
@@ -5876,11 +6392,15 @@ instance HasCField.HasCField Rte_eth_txmode "mq_mode" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @offloads@
+{-|
+
+    Per-port Tx offloads to be set using RTE_ETH_TX_OFFLOAD_* flags. Only offloads set on tx_offload_capa field on 'Rte_eth_dev_info' structure are allowed to be set.
+
+    __C declaration:__ @offloads@
 
     __defined at:__ @rte_ethdev.h 1048:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "offloads" Rte_eth_txmode ty where
@@ -5916,7 +6436,7 @@ instance HasCField.HasCField Rte_eth_txmode "offloads" where
 
     __defined at:__ @rte_ethdev.h 1050:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "pvid" Rte_eth_txmode ty where
@@ -5948,11 +6468,13 @@ instance HasCField.HasCField Rte_eth_txmode "pvid" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @hw_vlan_reject_tagged@
+{-| If set, reject sending out tagged pkts
+
+    __C declaration:__ @hw_vlan_reject_tagged@
 
     __defined at:__ @rte_ethdev.h 1053:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hw_vlan_reject_tagged" Rte_eth_txmode ty where
@@ -5987,11 +6509,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_txmode "hw_vlan_reject_tagged" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @hw_vlan_reject_untagged@
+{-| If set, reject sending out untagged pkts
+
+    __C declaration:__ @hw_vlan_reject_untagged@
 
     __defined at:__ @rte_ethdev.h 1055:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hw_vlan_reject_untagged" Rte_eth_txmode ty where
@@ -6026,11 +6550,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_txmode "hw_vlan_reject_untagged" wher
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @hw_vlan_insert_pvid@
+{-| If set, enable port based VLAN insertion
+
+    __C declaration:__ @hw_vlan_insert_pvid@
 
     __defined at:__ @rte_ethdev.h 1057:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hw_vlan_insert_pvid" Rte_eth_txmode ty where
@@ -6065,11 +6591,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_txmode "hw_vlan_insert_pvid" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @reserved_64s@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_64s@
 
     __defined at:__ @rte_ethdev.h 1059:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "reserved_64s" Rte_eth_txmode ty where
@@ -6102,11 +6630,13 @@ instance HasCField.HasCField Rte_eth_txmode "reserved_64s" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @reserved_ptrs@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_ptrs@
 
     __defined at:__ @rte_ethdev.h 1060:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "reserved_ptrs" Rte_eth_txmode ty where
@@ -6139,40 +6669,82 @@ instance HasCField.HasCField Rte_eth_txmode "reserved_ptrs" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @struct rte_eth_rxseg_split@
+{-| A structure used to configure an Rx packet segment to split.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    If RTE_ETH_RX_OFFLOAD_BUFFER_SPLIT flag is set in offloads field, the PMD will split the received packets into multiple segments according to the specification in the description array:
+
+    * The first network buffer will be allocated from the memory pool, specified in the first array element, the second buffer, from the pool in the second element, and so on.
+
+    * The proto_hdrs in the elements define the split position of received packets.
+
+    * The offsets from the segment description elements specify the data offset from the buffer beginning except the first mbuf. The first segment offset is added with RTE_PKTMBUF_HEADROOM.
+
+    * The lengths in the elements define the maximal data amount being received to each segment. The receiving starts with filling up the first mbuf data buffer up to specified length. If the there are data remaining (packet is longer than buffer in the first mbuf) the following data will be pushed to the next segment up to its own length, and so on.
+
+    * If the length in the segment description element is zero the actual buffer size will be deduced from the appropriate memory pool properties.
+
+    * If there is not enough elements to describe the buffer for entire packet of maximal length the following parameters will be used for the all remaining segments:
+      * pool from the last valid element
+      * the buffer size from this pool
+      * zero offset
+
+    * Length based buffer split:
+      * mp, length, offset should be configured.
+      * The proto_hdr field must be 0.
+
+    * Protocol header based buffer split:
+      * mp, offset, proto_hdr should be configured.
+      * The length field must be 0.
+      * The proto_hdr field in the last segment should be 0.
+
+    * When protocol header split is enabled, NIC may receive packets which do not match all the protocol headers within the Rx segments. At this point, NIC will have two possible split behaviors according to matching results, one is exact match, another is longest match. The split result of NIC must belong to one of them. The exact match means NIC only do split when the packets exactly match all the protocol headers in the segments. Otherwise, the whole packet will be put into the last valid mempool. The longest match means NIC will do split until packets mismatch the protocol header in the segments. The rest will be put into the last valid pool.
+
+    __C declaration:__ @struct rte_eth_rxseg_split@
 
     __defined at:__ @rte_ethdev.h 1123:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxseg_split = Rte_eth_rxseg_split
   { mp :: BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
-    {- ^ __C declaration:__ @mp@
+    {- ^ Memory pool to allocate segment from.
+
+         __C declaration:__ @mp@
 
          __defined at:__ @rte_ethdev.h 1124:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , length :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @length@
+    {- ^ Segment data length, configures split point.
+
+         __C declaration:__ @length@
 
          __defined at:__ @rte_ethdev.h 1125:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offset :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @offset@
+    {- ^ Data offset from beginning of mbuf data buffer.
+
+         __C declaration:__ @offset@
 
          __defined at:__ @rte_ethdev.h 1126:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto_hdr :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @proto_hdr@
+    {- ^ proto_hdr defines a bit mask of the protocol sequence as RTE_PTYPE_*. The last RTE_PTYPE* in the mask indicates the split position.
+
+         If one protocol header is defined to split packets into two segments, for non-tunneling packets, the complete protocol sequence should be defined. For tunneling packets, for simplicity, only the tunnel and inner part of complete protocol sequence is required. If several protocol headers are defined to split packets into multi-segments, the repeated parts of adjacent segments should be omitted.
+
+         __C declaration:__ @proto_hdr@
 
          __defined at:__ @rte_ethdev.h 1138:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -6209,11 +6781,13 @@ deriving via Marshal.EquivStorable Rte_eth_rxseg_split instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rxseg_split instance Struct.IsStruct Rte_eth_rxseg_split
 
-{-| __C declaration:__ @mp@
+{-| Memory pool to allocate segment from.
+
+    __C declaration:__ @mp@
 
     __defined at:__ @rte_ethdev.h 1124:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
          ) => BG.CompatHasField.HasField "mp" Rte_eth_rxseg_split ty where
@@ -6241,11 +6815,13 @@ instance HasCField.HasCField Rte_eth_rxseg_split "mp" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @length@
+{-| Segment data length, configures split point.
+
+    __C declaration:__ @length@
 
     __defined at:__ @rte_ethdev.h 1125:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "length" Rte_eth_rxseg_split ty where
@@ -6273,11 +6849,13 @@ instance HasCField.HasCField Rte_eth_rxseg_split "length" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @offset@
+{-| Data offset from beginning of mbuf data buffer.
+
+    __C declaration:__ @offset@
 
     __defined at:__ @rte_ethdev.h 1126:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "offset" Rte_eth_rxseg_split ty where
@@ -6305,11 +6883,15 @@ instance HasCField.HasCField Rte_eth_rxseg_split "offset" where
 
   offset# = \_ -> \_ -> 10
 
-{-| __C declaration:__ @proto_hdr@
+{-| proto_hdr defines a bit mask of the protocol sequence as RTE_PTYPE_*. The last RTE_PTYPE* in the mask indicates the split position.
+
+    If one protocol header is defined to split packets into two segments, for non-tunneling packets, the complete protocol sequence should be defined. For tunneling packets, for simplicity, only the tunnel and inner part of complete protocol sequence is required. If several protocol headers are defined to split packets into multi-segments, the repeated parts of adjacent segments should be omitted.
+
+    __C declaration:__ @proto_hdr@
 
     __defined at:__ @rte_ethdev.h 1138:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "proto_hdr" Rte_eth_rxseg_split ty where
@@ -6337,11 +6919,15 @@ instance HasCField.HasCField Rte_eth_rxseg_split "proto_hdr" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @union rte_eth_rxseg@
+{-| A common structure used to describe Rx packet segment properties.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @union rte_eth_rxseg@
 
     __defined at:__ @rte_ethdev.h 1147:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_rxseg = Rte_eth_rxseg
   { unwrap :: BG.ByteArray
@@ -6362,7 +6948,7 @@ deriving via BG.SizedByteArray 16 8 instance Union.IsUnion Rte_eth_rxseg
 
     __defined at:__ @rte_ethdev.h 1149:29@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxseg_split
          ) => BG.HasField "split" Rte_eth_rxseg ty where
@@ -6373,7 +6959,7 @@ instance ( ty ~ Rte_eth_rxseg_split
 
     __defined at:__ @rte_ethdev.h 1149:29@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxseg_split
          ) => BG.CompatHasField.HasField "split" Rte_eth_rxseg ty where
@@ -6395,103 +6981,141 @@ instance HasCField.HasCField Rte_eth_rxseg "split" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @struct rte_eth_rxconf@
+{-| A structure used to configure an Rx ring of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_rxconf@
 
     __defined at:__ @rte_ethdev.h 1156:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxconf = Rte_eth_rxconf
   { rx_thresh :: Rte_eth_thresh
-    {- ^ __C declaration:__ @rx_thresh@
+    {- ^ Rx ring threshold registers.
+
+         __C declaration:__ @rx_thresh@
 
          __defined at:__ @rte_ethdev.h 1157:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_free_thresh :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @rx_free_thresh@
+    {- ^ Drives the freeing of Rx descriptors.
+
+         __C declaration:__ @rx_free_thresh@
 
          __defined at:__ @rte_ethdev.h 1158:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_drop_en :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @rx_drop_en@
+    {- ^ Drop packets if no descriptors are available.
+
+         __C declaration:__ @rx_drop_en@
 
          __defined at:__ @rte_ethdev.h 1159:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_deferred_start :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @rx_deferred_start@
+    {- ^ Do not start queue with @rte_eth_dev_start()@ .
+
+         __C declaration:__ @rx_deferred_start@
 
          __defined at:__ @rte_ethdev.h 1160:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_nseg :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @rx_nseg@
+    {- ^ Number of descriptions in rx_seg array.
+
+         __C declaration:__ @rx_nseg@
 
          __defined at:__ @rte_ethdev.h 1161:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , share_group :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @share_group@
+    {- ^ Share group index in Rx domain and switch domain. Non-zero value to enable Rx queue share, zero value disable share. PMD is responsible for Rx queue consistency checks to avoid member port's configuration contradict to each other.
+
+         __C declaration:__ @share_group@
 
          __defined at:__ @rte_ethdev.h 1168:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , share_qid :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @share_qid@
+    {- ^ Shared Rx queue ID in group
+
+         __C declaration:__ @share_qid@
 
          __defined at:__ @rte_ethdev.h 1169:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offloads :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @offloads@
+    {- ^
+
+         Per-queue Rx offloads to be set using RTE_ETH_RX_OFFLOAD_* flags. Only offloads set on rx_queue_offload_capa or rx_offload_capa fields on 'Rte_eth_dev_info' structure are allowed to be set.
+
+         __C declaration:__ @offloads@
 
          __defined at:__ @rte_ethdev.h 1175:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_seg :: BG.Ptr Rte_eth_rxseg
-    {- ^ __C declaration:__ @rx_seg@
+    {- ^ Points to the array of segment descriptions for an entire packet. Array elements are properties for consecutive Rx segments.
+
+         The supported capabilities of receiving segmentation is reported in @rte_eth_dev_info.rx_seg_capa@ field.
+
+         __C declaration:__ @rx_seg@
 
          __defined at:__ @rte_ethdev.h 1183:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_mempools :: BG.Ptr (BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool)
-    {- ^ __C declaration:__ @rx_mempools@
+    {- ^ Array of mempools to allocate Rx buffers from.
+
+         This provides support for multiple mbuf pools per Rx queue. The capability is reported in device info via positive max_rx_mempools.
+
+         It could be useful for more efficient usage of memory when an application creates different mempools to steer the specific size of the packet.
+
+         If many mempools are specified, packets received using Rx burst may belong to any provided mempool. From ethdev user point of view it is undefined how PMD/NIC chooses mempool for a packet.
+
+         If Rx scatter is enabled, a packet may be delivered using a chain of mbufs obtained from single mempool or multiple mempools based on the NIC implementation.
+
+         __C declaration:__ @rx_mempools@
 
          __defined at:__ @rte_ethdev.h 1204:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_nmempool :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @rx_nmempool@
 
          __defined at:__ @rte_ethdev.h 1205:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_64s :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @reserved_64s@
+    {- ^ < Number of Rx mempools Reserved for future fields
+
+         __C declaration:__ @reserved_64s@
 
          __defined at:__ @rte_ethdev.h 1207:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_ptrs :: CA.ConstantArray 2 (BG.Ptr BG.Void)
-    {- ^ __C declaration:__ @reserved_ptrs@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_ptrs@
 
          __defined at:__ @rte_ethdev.h 1208:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -6559,11 +7183,13 @@ deriving via Marshal.EquivStorable Rte_eth_rxconf instance BG.Storable Rte_eth_r
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rxconf instance Struct.IsStruct Rte_eth_rxconf
 
-{-| __C declaration:__ @rx_thresh@
+{-| Rx ring threshold registers.
+
+    __C declaration:__ @rx_thresh@
 
     __defined at:__ @rte_ethdev.h 1157:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_thresh
          ) => BG.CompatHasField.HasField "rx_thresh" Rte_eth_rxconf ty where
@@ -6600,11 +7226,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_thresh" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rx_free_thresh@
+{-| Drives the freeing of Rx descriptors.
+
+    __C declaration:__ @rx_free_thresh@
 
     __defined at:__ @rte_ethdev.h 1158:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_free_thresh" Rte_eth_rxconf ty where
@@ -6642,11 +7270,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_free_thresh" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @rx_drop_en@
+{-| Drop packets if no descriptors are available.
+
+    __C declaration:__ @rx_drop_en@
 
     __defined at:__ @rte_ethdev.h 1159:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rx_drop_en" Rte_eth_rxconf ty where
@@ -6683,11 +7313,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_drop_en" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @rx_deferred_start@
+{-| Do not start queue with @rte_eth_dev_start()@ .
+
+    __C declaration:__ @rx_deferred_start@
 
     __defined at:__ @rte_ethdev.h 1160:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rx_deferred_start" Rte_eth_rxconf ty where
@@ -6725,11 +7357,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_deferred_start" where
 
   offset# = \_ -> \_ -> 7
 
-{-| __C declaration:__ @rx_nseg@
+{-| Number of descriptions in rx_seg array.
+
+    __C declaration:__ @rx_nseg@
 
     __defined at:__ @rte_ethdev.h 1161:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_nseg" Rte_eth_rxconf ty where
@@ -6766,11 +7400,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_nseg" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @share_group@
+{-| Share group index in Rx domain and switch domain. Non-zero value to enable Rx queue share, zero value disable share. PMD is responsible for Rx queue consistency checks to avoid member port's configuration contradict to each other.
+
+    __C declaration:__ @share_group@
 
     __defined at:__ @rte_ethdev.h 1168:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "share_group" Rte_eth_rxconf ty where
@@ -6808,11 +7444,13 @@ instance HasCField.HasCField Rte_eth_rxconf "share_group" where
 
   offset# = \_ -> \_ -> 10
 
-{-| __C declaration:__ @share_qid@
+{-| Shared Rx queue ID in group
+
+    __C declaration:__ @share_qid@
 
     __defined at:__ @rte_ethdev.h 1169:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "share_qid" Rte_eth_rxconf ty where
@@ -6849,11 +7487,15 @@ instance HasCField.HasCField Rte_eth_rxconf "share_qid" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @offloads@
+{-|
+
+    Per-queue Rx offloads to be set using RTE_ETH_RX_OFFLOAD_* flags. Only offloads set on rx_queue_offload_capa or rx_offload_capa fields on 'Rte_eth_dev_info' structure are allowed to be set.
+
+    __C declaration:__ @offloads@
 
     __defined at:__ @rte_ethdev.h 1175:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "offloads" Rte_eth_rxconf ty where
@@ -6890,11 +7532,15 @@ instance HasCField.HasCField Rte_eth_rxconf "offloads" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @rx_seg@
+{-| Points to the array of segment descriptions for an entire packet. Array elements are properties for consecutive Rx segments.
+
+    The supported capabilities of receiving segmentation is reported in @rte_eth_dev_info.rx_seg_capa@ field.
+
+    __C declaration:__ @rx_seg@
 
     __defined at:__ @rte_ethdev.h 1183:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Rte_eth_rxseg
          ) => BG.CompatHasField.HasField "rx_seg" Rte_eth_rxconf ty where
@@ -6931,11 +7577,21 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_seg" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @rx_mempools@
+{-| Array of mempools to allocate Rx buffers from.
+
+    This provides support for multiple mbuf pools per Rx queue. The capability is reported in device info via positive max_rx_mempools.
+
+    It could be useful for more efficient usage of memory when an application creates different mempools to steer the specific size of the packet.
+
+    If many mempools are specified, packets received using Rx burst may belong to any provided mempool. From ethdev user point of view it is undefined how PMD/NIC chooses mempool for a packet.
+
+    If Rx scatter is enabled, a packet may be delivered using a chain of mbufs obtained from single mempool or multiple mempools based on the NIC implementation.
+
+    __C declaration:__ @rx_mempools@
 
     __defined at:__ @rte_ethdev.h 1204:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr (BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool)
          ) => BG.CompatHasField.HasField "rx_mempools" Rte_eth_rxconf ty where
@@ -6977,7 +7633,7 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_mempools" where
 
     __defined at:__ @rte_ethdev.h 1205:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_nmempool" Rte_eth_rxconf ty where
@@ -7015,11 +7671,13 @@ instance HasCField.HasCField Rte_eth_rxconf "rx_nmempool" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @reserved_64s@
+{-| < Number of Rx mempools Reserved for future fields
+
+    __C declaration:__ @reserved_64s@
 
     __defined at:__ @rte_ethdev.h 1207:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "reserved_64s" Rte_eth_rxconf ty where
@@ -7057,11 +7715,13 @@ instance HasCField.HasCField Rte_eth_rxconf "reserved_64s" where
 
   offset# = \_ -> \_ -> 48
 
-{-| __C declaration:__ @reserved_ptrs@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_ptrs@
 
     __defined at:__ @rte_ethdev.h 1208:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "reserved_ptrs" Rte_eth_rxconf ty where
@@ -7099,61 +7759,79 @@ instance HasCField.HasCField Rte_eth_rxconf "reserved_ptrs" where
 
   offset# = \_ -> \_ -> 64
 
-{-| __C declaration:__ @struct rte_eth_txconf@
+{-| A structure used to configure a Tx ring of an Ethernet port.
+
+    __C declaration:__ @struct rte_eth_txconf@
 
     __defined at:__ @rte_ethdev.h 1214:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_txconf = Rte_eth_txconf
   { tx_thresh :: Rte_eth_thresh
-    {- ^ __C declaration:__ @tx_thresh@
+    {- ^ Tx ring threshold registers.
+
+         __C declaration:__ @tx_thresh@
 
          __defined at:__ @rte_ethdev.h 1215:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_rs_thresh :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @tx_rs_thresh@
+    {- ^ Drives the setting of RS bit on TXDs.
+
+         __C declaration:__ @tx_rs_thresh@
 
          __defined at:__ @rte_ethdev.h 1216:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_free_thresh :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @tx_free_thresh@
+    {- ^ Start freeing Tx buffers if there are less free descriptors than this value.
+
+         __C declaration:__ @tx_free_thresh@
 
          __defined at:__ @rte_ethdev.h 1217:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_deferred_start :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @tx_deferred_start@
+    {- ^ Do not start queue with @rte_eth_dev_start()@ .
+
+         __C declaration:__ @tx_deferred_start@
 
          __defined at:__ @rte_ethdev.h 1220:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offloads :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @offloads@
+    {- ^
+
+         Per-queue Tx offloads to be set using RTE_ETH_TX_OFFLOAD_* flags. Only offloads set on tx_queue_offload_capa or tx_offload_capa fields on 'Rte_eth_dev_info' structure are allowed to be set.
+
+         __C declaration:__ @offloads@
 
          __defined at:__ @rte_ethdev.h 1226:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_64s :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @reserved_64s@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_64s@
 
          __defined at:__ @rte_ethdev.h 1228:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_ptrs :: CA.ConstantArray 2 (BG.Ptr BG.Void)
-    {- ^ __C declaration:__ @reserved_ptrs@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_ptrs@
 
          __defined at:__ @rte_ethdev.h 1229:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -7203,11 +7881,13 @@ deriving via Marshal.EquivStorable Rte_eth_txconf instance BG.Storable Rte_eth_t
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_txconf instance Struct.IsStruct Rte_eth_txconf
 
-{-| __C declaration:__ @tx_thresh@
+{-| Tx ring threshold registers.
+
+    __C declaration:__ @tx_thresh@
 
     __defined at:__ @rte_ethdev.h 1215:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_thresh
          ) => BG.CompatHasField.HasField "tx_thresh" Rte_eth_txconf ty where
@@ -7238,11 +7918,13 @@ instance HasCField.HasCField Rte_eth_txconf "tx_thresh" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @tx_rs_thresh@
+{-| Drives the setting of RS bit on TXDs.
+
+    __C declaration:__ @tx_rs_thresh@
 
     __defined at:__ @rte_ethdev.h 1216:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "tx_rs_thresh" Rte_eth_txconf ty where
@@ -7274,11 +7956,13 @@ instance HasCField.HasCField Rte_eth_txconf "tx_rs_thresh" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @tx_free_thresh@
+{-| Start freeing Tx buffers if there are less free descriptors than this value.
+
+    __C declaration:__ @tx_free_thresh@
 
     __defined at:__ @rte_ethdev.h 1217:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "tx_free_thresh" Rte_eth_txconf ty where
@@ -7310,11 +7994,13 @@ instance HasCField.HasCField Rte_eth_txconf "tx_free_thresh" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @tx_deferred_start@
+{-| Do not start queue with @rte_eth_dev_start()@ .
+
+    __C declaration:__ @tx_deferred_start@
 
     __defined at:__ @rte_ethdev.h 1220:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tx_deferred_start" Rte_eth_txconf ty where
@@ -7346,11 +8032,15 @@ instance HasCField.HasCField Rte_eth_txconf "tx_deferred_start" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @offloads@
+{-|
+
+    Per-queue Tx offloads to be set using RTE_ETH_TX_OFFLOAD_* flags. Only offloads set on tx_queue_offload_capa or tx_offload_capa fields on 'Rte_eth_dev_info' structure are allowed to be set.
+
+    __C declaration:__ @offloads@
 
     __defined at:__ @rte_ethdev.h 1226:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "offloads" Rte_eth_txconf ty where
@@ -7381,11 +8071,13 @@ instance HasCField.HasCField Rte_eth_txconf "offloads" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @reserved_64s@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_64s@
 
     __defined at:__ @rte_ethdev.h 1228:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "reserved_64s" Rte_eth_txconf ty where
@@ -7417,11 +8109,13 @@ instance HasCField.HasCField Rte_eth_txconf "reserved_64s" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @reserved_ptrs@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_ptrs@
 
     __defined at:__ @rte_ethdev.h 1229:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "reserved_ptrs" Rte_eth_txconf ty where
@@ -7453,33 +8147,43 @@ instance HasCField.HasCField Rte_eth_txconf "reserved_ptrs" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @struct rte_eth_hairpin_queue_cap@
+{-| A structure used to return the Tx or Rx hairpin queue capabilities.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_hairpin_queue_cap@
 
     __defined at:__ @rte_ethdev.h 1238:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_hairpin_queue_cap = Rte_eth_hairpin_queue_cap
   { locked_device_memory :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @locked_device_memory@
+    {- ^ When set, PMD supports placing descriptors and/or data buffers in dedicated device memory.
+
+         __C declaration:__ @locked_device_memory@
 
          __defined at:__ @rte_ethdev.h 1243:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rte_memory :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @rte_memory@
+    {- ^ When set, PMD supports placing descriptors and/or data buffers in host memory managed by DPDK.
+
+         __C declaration:__ @rte_memory@
 
          __defined at:__ @rte_ethdev.h 1249:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @reserved@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved@
 
          __defined at:__ @rte_ethdev.h 1251:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -7514,11 +8218,13 @@ deriving via Marshal.EquivStorable Rte_eth_hairpin_queue_cap instance BG.Storabl
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_hairpin_queue_cap instance Struct.IsStruct Rte_eth_hairpin_queue_cap
 
-{-| __C declaration:__ @locked_device_memory@
+{-| When set, PMD supports placing descriptors and/or data buffers in dedicated device memory.
+
+    __C declaration:__ @locked_device_memory@
 
     __defined at:__ @rte_ethdev.h 1243:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "locked_device_memory" Rte_eth_hairpin_queue_cap ty where
@@ -7548,11 +8254,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_queue_cap "locked_device_memo
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @rte_memory@
+{-| When set, PMD supports placing descriptors and/or data buffers in host memory managed by DPDK.
+
+    __C declaration:__ @rte_memory@
 
     __defined at:__ @rte_ethdev.h 1249:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rte_memory" Rte_eth_hairpin_queue_cap ty where
@@ -7582,11 +8290,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_queue_cap "rte_memory" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @reserved@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved@
 
     __defined at:__ @rte_ethdev.h 1251:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "reserved" Rte_eth_hairpin_queue_cap ty where
@@ -7615,54 +8325,70 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_queue_cap "reserved" where
 
   bitfieldWidth# = \_ -> \_ -> 30
 
-{-| __C declaration:__ @struct rte_eth_hairpin_cap@
+{-| A structure used to return the hairpin capabilities that are supported.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_hairpin_cap@
 
     __defined at:__ @rte_ethdev.h 1260:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_hairpin_cap = Rte_eth_hairpin_cap
   { max_nb_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_nb_queues@
+    {- ^ The max number of hairpin queues (different bindings).
+
+         __C declaration:__ @max_nb_queues@
 
          __defined at:__ @rte_ethdev.h 1262:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_rx_2_tx :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_rx_2_tx@
+    {- ^ Max number of Rx queues to be connected to one Tx queue.
+
+         __C declaration:__ @max_rx_2_tx@
 
          __defined at:__ @rte_ethdev.h 1264:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_tx_2_rx :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_tx_2_rx@
+    {- ^ Max number of Tx queues to be connected to one Rx queue.
+
+         __C declaration:__ @max_tx_2_rx@
 
          __defined at:__ @rte_ethdev.h 1266:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_nb_desc :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_nb_desc@
+    {- ^ The max num of descriptors.
+
+         __C declaration:__ @max_nb_desc@
 
          __defined at:__ @rte_ethdev.h 1267:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_cap :: Rte_eth_hairpin_queue_cap
-    {- ^ __C declaration:__ @rx_cap@
+    {- ^ Rx hairpin queue capabilities.
+
+         __C declaration:__ @rx_cap@
 
          __defined at:__ @rte_ethdev.h 1268:35@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_cap :: Rte_eth_hairpin_queue_cap
-    {- ^ __C declaration:__ @tx_cap@
+    {- ^ Tx hairpin queue capabilities.
+
+         __C declaration:__ @tx_cap@
 
          __defined at:__ @rte_ethdev.h 1269:35@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -7709,11 +8435,13 @@ deriving via Marshal.EquivStorable Rte_eth_hairpin_cap instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_hairpin_cap instance Struct.IsStruct Rte_eth_hairpin_cap
 
-{-| __C declaration:__ @max_nb_queues@
+{-| The max number of hairpin queues (different bindings).
+
+    __C declaration:__ @max_nb_queues@
 
     __defined at:__ @rte_ethdev.h 1262:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_nb_queues" Rte_eth_hairpin_cap ty where
@@ -7744,11 +8472,13 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "max_nb_queues" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @max_rx_2_tx@
+{-| Max number of Rx queues to be connected to one Tx queue.
+
+    __C declaration:__ @max_rx_2_tx@
 
     __defined at:__ @rte_ethdev.h 1264:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_rx_2_tx" Rte_eth_hairpin_cap ty where
@@ -7779,11 +8509,13 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "max_rx_2_tx" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @max_tx_2_rx@
+{-| Max number of Tx queues to be connected to one Rx queue.
+
+    __C declaration:__ @max_tx_2_rx@
 
     __defined at:__ @rte_ethdev.h 1266:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_tx_2_rx" Rte_eth_hairpin_cap ty where
@@ -7814,11 +8546,13 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "max_tx_2_rx" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @max_nb_desc@
+{-| The max num of descriptors.
+
+    __C declaration:__ @max_nb_desc@
 
     __defined at:__ @rte_ethdev.h 1267:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_nb_desc" Rte_eth_hairpin_cap ty where
@@ -7849,11 +8583,13 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "max_nb_desc" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @rx_cap@
+{-| Rx hairpin queue capabilities.
+
+    __C declaration:__ @rx_cap@
 
     __defined at:__ @rte_ethdev.h 1268:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_hairpin_queue_cap
          ) => BG.CompatHasField.HasField "rx_cap" Rte_eth_hairpin_cap ty where
@@ -7883,11 +8619,13 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "rx_cap" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @tx_cap@
+{-| Tx hairpin queue capabilities.
+
+    __C declaration:__ @tx_cap@
 
     __defined at:__ @rte_ethdev.h 1269:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_hairpin_queue_cap
          ) => BG.CompatHasField.HasField "tx_cap" Rte_eth_hairpin_cap ty where
@@ -7921,31 +8659,39 @@ instance HasCField.HasCField Rte_eth_hairpin_cap "tx_cap" where
 
     __defined at:__ @rte_ethdev.h 1272:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MAX_HAIRPIN_PEERS :: BG.CInt
 rTE_ETH_MAX_HAIRPIN_PEERS = (32 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_hairpin_peer@
+{-| A structure used to hold hairpin peer data.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_hairpin_peer@
 
     __defined at:__ @rte_ethdev.h 1280:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_hairpin_peer = Rte_eth_hairpin_peer
   { port :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @port@
+    {- ^ Peer port.
+
+         __C declaration:__ @port@
 
          __defined at:__ @rte_ethdev.h 1281:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , queue :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @queue@
+    {- ^ Peer queue.
+
+         __C declaration:__ @queue@
 
          __defined at:__ @rte_ethdev.h 1282:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -7978,11 +8724,13 @@ deriving via Marshal.EquivStorable Rte_eth_hairpin_peer instance BG.Storable Rte
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_hairpin_peer instance Struct.IsStruct Rte_eth_hairpin_peer
 
-{-| __C declaration:__ @port@
+{-| Peer port.
+
+    __C declaration:__ @port@
 
     __defined at:__ @rte_ethdev.h 1281:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "port" Rte_eth_hairpin_peer ty where
@@ -8006,11 +8754,13 @@ instance HasCField.HasCField Rte_eth_hairpin_peer "port" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @queue@
+{-| Peer queue.
+
+    __C declaration:__ @queue@
 
     __defined at:__ @rte_ethdev.h 1282:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "queue" Rte_eth_hairpin_peer ty where
@@ -8034,68 +8784,114 @@ instance HasCField.HasCField Rte_eth_hairpin_peer "queue" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @struct rte_eth_hairpin_conf@
+{-| A structure used to configure hairpin binding.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_hairpin_conf@
 
     __defined at:__ @rte_ethdev.h 1291:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_hairpin_conf = Rte_eth_hairpin_conf
   { peer_count :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @peer_count@
+    {- ^ The number of peers.
+
+         __C declaration:__ @peer_count@
 
          __defined at:__ @rte_ethdev.h 1292:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_explicit :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @tx_explicit@
+    {- ^ Explicit Tx flow rule mode. One hairpin pair of queues should have the same attribute.
+
+         * When set, the user should be responsible for inserting the hairpin Tx part flows and removing them.
+
+         * When clear, the PMD will try to handle the Tx part of the flows, e.g., by splitting one flow into two parts.
+
+         __C declaration:__ @tx_explicit@
 
          __defined at:__ @rte_ethdev.h 1303:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , manual_bind :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @manual_bind@
+    {- ^ Manually bind hairpin queues. One hairpin pair of queues should have the same attribute.
+
+         * When set, to enable hairpin, the user should call the hairpin bind function after all the queues are set up properly and the ports are started. Also, the hairpin unbind function should be called accordingly before stopping a port that with hairpin configured.
+
+         * When cleared, the PMD will try to enable the hairpin with the queues configured automatically during port start.
+
+         __C declaration:__ @manual_bind@
 
          __defined at:__ @rte_ethdev.h 1316:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , use_locked_device_memory :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @use_locked_device_memory@
+    {- ^ Use locked device memory as a backing storage.
+
+         * When set, PMD will attempt place descriptors and/or data buffers in dedicated device memory.
+
+         * When cleared, PMD will use default memory type as a backing storage. Please refer to PMD documentation for details.
+
+         API user should check if PMD supports this configuration flag using
+
+         __See:__ 'rte_eth_dev_hairpin_capability_get' .
+
+         __C declaration:__ @use_locked_device_memory@
 
          __defined at:__ @rte_ethdev.h 1329:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , use_rte_memory :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @use_rte_memory@
+    {- ^ Use DPDK memory as backing storage.
+
+         * When set, PMD will attempt place descriptors and/or data buffers in host memory managed by DPDK.
+
+         * When cleared, PMD will use default memory type as a backing storage. Please refer to PMD documentation for details.
+
+         API user should check if PMD supports this configuration flag using
+
+         __See:__ 'rte_eth_dev_hairpin_capability_get' .
+
+         __C declaration:__ @use_rte_memory@
 
          __defined at:__ @rte_ethdev.h 1342:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , force_memory :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @force_memory@
+    {- ^ Force usage of hairpin memory configuration.
+
+         * When set, PMD will attempt to use specified memory settings. If resource allocation fails, then hairpin queue allocation will result in an error.
+
+         * When clear, PMD will attempt to use specified memory settings. If resource allocation fails, then PMD will retry allocation with default configuration.
+
+         __C declaration:__ @force_memory@
 
          __defined at:__ @rte_ethdev.h 1354:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @reserved@
+    {- ^ Reserved bits.
+
+         __C declaration:__ @reserved@
 
          __defined at:__ @rte_ethdev.h 1356:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , peers :: CA.ConstantArray 32 Rte_eth_hairpin_peer
     {- ^ __C declaration:__ @peers@
 
          __defined at:__ @rte_ethdev.h 1358:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -8148,11 +8944,13 @@ deriving via Marshal.EquivStorable Rte_eth_hairpin_conf instance BG.Storable Rte
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_hairpin_conf instance Struct.IsStruct Rte_eth_hairpin_conf
 
-{-| __C declaration:__ @peer_count@
+{-| The number of peers.
+
+    __C declaration:__ @peer_count@
 
     __defined at:__ @rte_ethdev.h 1292:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "peer_count" Rte_eth_hairpin_conf ty where
@@ -8187,11 +8985,17 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "peer_count" where
 
   bitfieldWidth# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @tx_explicit@
+{-| Explicit Tx flow rule mode. One hairpin pair of queues should have the same attribute.
+
+    * When set, the user should be responsible for inserting the hairpin Tx part flows and removing them.
+
+    * When clear, the PMD will try to handle the Tx part of the flows, e.g., by splitting one flow into two parts.
+
+    __C declaration:__ @tx_explicit@
 
     __defined at:__ @rte_ethdev.h 1303:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "tx_explicit" Rte_eth_hairpin_conf ty where
@@ -8226,11 +9030,17 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "tx_explicit" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @manual_bind@
+{-| Manually bind hairpin queues. One hairpin pair of queues should have the same attribute.
+
+    * When set, to enable hairpin, the user should call the hairpin bind function after all the queues are set up properly and the ports are started. Also, the hairpin unbind function should be called accordingly before stopping a port that with hairpin configured.
+
+    * When cleared, the PMD will try to enable the hairpin with the queues configured automatically during port start.
+
+    __C declaration:__ @manual_bind@
 
     __defined at:__ @rte_ethdev.h 1316:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "manual_bind" Rte_eth_hairpin_conf ty where
@@ -8265,11 +9075,21 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "manual_bind" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @use_locked_device_memory@
+{-| Use locked device memory as a backing storage.
+
+    * When set, PMD will attempt place descriptors and/or data buffers in dedicated device memory.
+
+    * When cleared, PMD will use default memory type as a backing storage. Please refer to PMD documentation for details.
+
+    API user should check if PMD supports this configuration flag using
+
+    __See:__ 'rte_eth_dev_hairpin_capability_get' .
+
+    __C declaration:__ @use_locked_device_memory@
 
     __defined at:__ @rte_ethdev.h 1329:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "use_locked_device_memory" Rte_eth_hairpin_conf ty where
@@ -8304,11 +9124,21 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "use_locked_device_memor
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @use_rte_memory@
+{-| Use DPDK memory as backing storage.
+
+    * When set, PMD will attempt place descriptors and/or data buffers in host memory managed by DPDK.
+
+    * When cleared, PMD will use default memory type as a backing storage. Please refer to PMD documentation for details.
+
+    API user should check if PMD supports this configuration flag using
+
+    __See:__ 'rte_eth_dev_hairpin_capability_get' .
+
+    __C declaration:__ @use_rte_memory@
 
     __defined at:__ @rte_ethdev.h 1342:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "use_rte_memory" Rte_eth_hairpin_conf ty where
@@ -8343,11 +9173,17 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "use_rte_memory" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @force_memory@
+{-| Force usage of hairpin memory configuration.
+
+    * When set, PMD will attempt to use specified memory settings. If resource allocation fails, then hairpin queue allocation will result in an error.
+
+    * When clear, PMD will attempt to use specified memory settings. If resource allocation fails, then PMD will retry allocation with default configuration.
+
+    __C declaration:__ @force_memory@
 
     __defined at:__ @rte_ethdev.h 1354:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "force_memory" Rte_eth_hairpin_conf ty where
@@ -8382,11 +9218,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "force_memory" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @reserved@
+{-| Reserved bits.
+
+    __C declaration:__ @reserved@
 
     __defined at:__ @rte_ethdev.h 1356:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "reserved" Rte_eth_hairpin_conf ty where
@@ -8424,7 +9262,7 @@ instance HasCBitfield.HasCBitfield Rte_eth_hairpin_conf "reserved" where
 
     __defined at:__ @rte_ethdev.h 1358:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 32 Rte_eth_hairpin_peer
          ) => BG.CompatHasField.HasField "peers" Rte_eth_hairpin_conf ty where
@@ -8456,47 +9294,69 @@ instance HasCField.HasCField Rte_eth_hairpin_conf "peers" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @struct rte_eth_desc_lim@
+{-| A structure contains information about HW descriptor ring limitations.
+
+    __C declaration:__ @struct rte_eth_desc_lim@
 
     __defined at:__ @rte_ethdev.h 1364:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_desc_lim = Rte_eth_desc_lim
   { nb_max :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_max@
+    {- ^ Max allowed number of descriptors.
+
+         __C declaration:__ @nb_max@
 
          __defined at:__ @rte_ethdev.h 1365:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_min :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_min@
+    {- ^ Min allowed number of descriptors.
+
+         __C declaration:__ @nb_min@
 
          __defined at:__ @rte_ethdev.h 1366:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_align :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_align@
+    {- ^ Number of descriptors should be aligned to.
+
+         __C declaration:__ @nb_align@
 
          __defined at:__ @rte_ethdev.h 1367:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_seg_max :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_seg_max@
+    {- ^ Max allowed number of segments per whole packet.
+
+         * For TSO packet this is the total number of data descriptors allowed by device.
+
+         __See:__ @nb_mtu_seg_max@
+
+         __C declaration:__ @nb_seg_max@
 
          __defined at:__ @rte_ethdev.h 1377:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_mtu_seg_max :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_mtu_seg_max@
+    {- ^ Max number of segments per one MTU.
+
+         * For non-TSO packet, this is the maximum allowed number of segments in a single transmit packet.
+
+         * For TSO packet each segment within the TSO may span up to this value.
+
+         __See:__ @nb_seg_max@
+
+         __C declaration:__ @nb_mtu_seg_max@
 
          __defined at:__ @rte_ethdev.h 1390:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -8535,11 +9395,13 @@ deriving via Marshal.EquivStorable Rte_eth_desc_lim instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_desc_lim instance Struct.IsStruct Rte_eth_desc_lim
 
-{-| __C declaration:__ @nb_max@
+{-| Max allowed number of descriptors.
+
+    __C declaration:__ @nb_max@
 
     __defined at:__ @rte_ethdev.h 1365:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_max" Rte_eth_desc_lim ty where
@@ -8568,11 +9430,13 @@ instance HasCField.HasCField Rte_eth_desc_lim "nb_max" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @nb_min@
+{-| Min allowed number of descriptors.
+
+    __C declaration:__ @nb_min@
 
     __defined at:__ @rte_ethdev.h 1366:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_min" Rte_eth_desc_lim ty where
@@ -8601,11 +9465,13 @@ instance HasCField.HasCField Rte_eth_desc_lim "nb_min" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @nb_align@
+{-| Number of descriptors should be aligned to.
+
+    __C declaration:__ @nb_align@
 
     __defined at:__ @rte_ethdev.h 1367:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_align" Rte_eth_desc_lim ty where
@@ -8634,11 +9500,17 @@ instance HasCField.HasCField Rte_eth_desc_lim "nb_align" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @nb_seg_max@
+{-| Max allowed number of segments per whole packet.
+
+    * For TSO packet this is the total number of data descriptors allowed by device.
+
+    __See:__ @nb_mtu_seg_max@
+
+    __C declaration:__ @nb_seg_max@
 
     __defined at:__ @rte_ethdev.h 1377:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_seg_max" Rte_eth_desc_lim ty where
@@ -8667,11 +9539,19 @@ instance HasCField.HasCField Rte_eth_desc_lim "nb_seg_max" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @nb_mtu_seg_max@
+{-| Max number of segments per one MTU.
+
+    * For non-TSO packet, this is the maximum allowed number of segments in a single transmit packet.
+
+    * For TSO packet each segment within the TSO may span up to this value.
+
+    __See:__ @nb_seg_max@
+
+    __C declaration:__ @nb_mtu_seg_max@
 
     __defined at:__ @rte_ethdev.h 1390:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_mtu_seg_max" Rte_eth_desc_lim ty where
@@ -8701,11 +9581,13 @@ instance HasCField.HasCField Rte_eth_desc_lim "nb_mtu_seg_max" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @enum rte_eth_fc_mode@
+{-| This enum indicates the flow control mode
+
+    __C declaration:__ @enum rte_eth_fc_mode@
 
     __defined at:__ @rte_ethdev.h 1396:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_fc_mode = Rte_eth_fc_mode
   { unwrap :: BG.CUInt
@@ -8802,97 +9684,121 @@ instance HasCField.HasCField Rte_eth_fc_mode "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_FC_NONE@
+{-| Disable flow control.
+
+    __C declaration:__ @RTE_ETH_FC_NONE@
 
     __defined at:__ @rte_ethdev.h 1397:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FC_NONE :: Rte_eth_fc_mode
 pattern RTE_ETH_FC_NONE = Rte_eth_fc_mode 0
 
-{-| __C declaration:__ @RTE_ETH_FC_RX_PAUSE@
+{-| Rx pause frame, enable flowctrl on Tx side.
+
+    __C declaration:__ @RTE_ETH_FC_RX_PAUSE@
 
     __defined at:__ @rte_ethdev.h 1398:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FC_RX_PAUSE :: Rte_eth_fc_mode
 pattern RTE_ETH_FC_RX_PAUSE = Rte_eth_fc_mode 1
 
-{-| __C declaration:__ @RTE_ETH_FC_TX_PAUSE@
+{-| Tx pause frame, enable flowctrl on Rx side.
+
+    __C declaration:__ @RTE_ETH_FC_TX_PAUSE@
 
     __defined at:__ @rte_ethdev.h 1399:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FC_TX_PAUSE :: Rte_eth_fc_mode
 pattern RTE_ETH_FC_TX_PAUSE = Rte_eth_fc_mode 2
 
-{-| __C declaration:__ @RTE_ETH_FC_FULL@
+{-| Enable flow control on both side.
+
+    __C declaration:__ @RTE_ETH_FC_FULL@
 
     __defined at:__ @rte_ethdev.h 1400:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FC_FULL :: Rte_eth_fc_mode
 pattern RTE_ETH_FC_FULL = Rte_eth_fc_mode 3
 
-{-| __C declaration:__ @struct rte_eth_fc_conf@
+{-| A structure used to configure Ethernet flow control parameter. These parameters will be configured into the register of the NIC. Please refer to the corresponding data sheet for proper value.
+
+    __C declaration:__ @struct rte_eth_fc_conf@
 
     __defined at:__ @rte_ethdev.h 1408:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_fc_conf = Rte_eth_fc_conf
   { high_water :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @high_water@
+    {- ^ High threshold value to trigger XOFF
+
+         __C declaration:__ @high_water@
 
          __defined at:__ @rte_ethdev.h 1409:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , low_water :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @low_water@
+    {- ^ Low threshold value to trigger XON
+
+         __C declaration:__ @low_water@
 
          __defined at:__ @rte_ethdev.h 1410:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pause_time :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @pause_time@
+    {- ^ Pause quota in the Pause frame
+
+         __C declaration:__ @pause_time@
 
          __defined at:__ @rte_ethdev.h 1411:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , send_xon :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @send_xon@
+    {- ^ Is XON frame need be sent
+
+         __C declaration:__ @send_xon@
 
          __defined at:__ @rte_ethdev.h 1412:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mode :: Rte_eth_fc_mode
-    {- ^ __C declaration:__ @mode@
+    {- ^ Link flow control mode
+
+         __C declaration:__ @mode@
 
          __defined at:__ @rte_ethdev.h 1413:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mac_ctrl_frame_fwd :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @mac_ctrl_frame_fwd@
+    {- ^ Forward MAC control frames
+
+         __C declaration:__ @mac_ctrl_frame_fwd@
 
          __defined at:__ @rte_ethdev.h 1414:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , autoneg :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @autoneg@
+    {- ^ Use Pause autoneg
+
+         __C declaration:__ @autoneg@
 
          __defined at:__ @rte_ethdev.h 1415:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -8942,11 +9848,13 @@ deriving via Marshal.EquivStorable Rte_eth_fc_conf instance BG.Storable Rte_eth_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_fc_conf instance Struct.IsStruct Rte_eth_fc_conf
 
-{-| __C declaration:__ @high_water@
+{-| High threshold value to trigger XOFF
+
+    __C declaration:__ @high_water@
 
     __defined at:__ @rte_ethdev.h 1409:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "high_water" Rte_eth_fc_conf ty where
@@ -8977,11 +9885,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "high_water" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @low_water@
+{-| Low threshold value to trigger XON
+
+    __C declaration:__ @low_water@
 
     __defined at:__ @rte_ethdev.h 1410:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "low_water" Rte_eth_fc_conf ty where
@@ -9012,11 +9922,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "low_water" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @pause_time@
+{-| Pause quota in the Pause frame
+
+    __C declaration:__ @pause_time@
 
     __defined at:__ @rte_ethdev.h 1411:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "pause_time" Rte_eth_fc_conf ty where
@@ -9047,11 +9959,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "pause_time" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @send_xon@
+{-| Is XON frame need be sent
+
+    __C declaration:__ @send_xon@
 
     __defined at:__ @rte_ethdev.h 1412:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "send_xon" Rte_eth_fc_conf ty where
@@ -9082,11 +9996,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "send_xon" where
 
   offset# = \_ -> \_ -> 10
 
-{-| __C declaration:__ @mode@
+{-| Link flow control mode
+
+    __C declaration:__ @mode@
 
     __defined at:__ @rte_ethdev.h 1413:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_fc_mode
          ) => BG.CompatHasField.HasField "mode" Rte_eth_fc_conf ty where
@@ -9117,11 +10033,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "mode" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @mac_ctrl_frame_fwd@
+{-| Forward MAC control frames
+
+    __C declaration:__ @mac_ctrl_frame_fwd@
 
     __defined at:__ @rte_ethdev.h 1414:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "mac_ctrl_frame_fwd" Rte_eth_fc_conf ty where
@@ -9153,11 +10071,13 @@ instance HasCField.HasCField Rte_eth_fc_conf "mac_ctrl_frame_fwd" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @autoneg@
+{-| Use Pause autoneg
+
+    __C declaration:__ @autoneg@
 
     __defined at:__ @rte_ethdev.h 1415:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "autoneg" Rte_eth_fc_conf ty where
@@ -9188,26 +10108,32 @@ instance HasCField.HasCField Rte_eth_fc_conf "autoneg" where
 
   offset# = \_ -> \_ -> 17
 
-{-| __C declaration:__ @struct rte_eth_pfc_conf@
+{-| A structure used to configure Ethernet priority flow control parameter. These parameters will be configured into the register of the NIC. Please refer to the corresponding data sheet for proper value.
+
+    __C declaration:__ @struct rte_eth_pfc_conf@
 
     __defined at:__ @rte_ethdev.h 1423:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_pfc_conf = Rte_eth_pfc_conf
   { fc :: Rte_eth_fc_conf
-    {- ^ __C declaration:__ @fc@
+    {- ^ General flow control parameter.
+
+         __C declaration:__ @fc@
 
          __defined at:__ @rte_ethdev.h 1424:25@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , priority :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @priority@
+    {- ^ VLAN User Priority.
+
+         __C declaration:__ @priority@
 
          __defined at:__ @rte_ethdev.h 1425:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -9240,11 +10166,13 @@ deriving via Marshal.EquivStorable Rte_eth_pfc_conf instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_pfc_conf instance Struct.IsStruct Rte_eth_pfc_conf
 
-{-| __C declaration:__ @fc@
+{-| General flow control parameter.
+
+    __C declaration:__ @fc@
 
     __defined at:__ @rte_ethdev.h 1424:25@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_fc_conf
          ) => BG.CompatHasField.HasField "fc" Rte_eth_pfc_conf ty where
@@ -9268,11 +10196,13 @@ instance HasCField.HasCField Rte_eth_pfc_conf "fc" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @priority@
+{-| VLAN User Priority.
+
+    __C declaration:__ @priority@
 
     __defined at:__ @rte_ethdev.h 1425:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "priority" Rte_eth_pfc_conf ty where
@@ -9296,26 +10226,34 @@ instance HasCField.HasCField Rte_eth_pfc_conf "priority" where
 
   offset# = \_ -> \_ -> 20
 
-{-| __C declaration:__ @struct rte_eth_pfc_queue_info@
+{-| A structure used to retrieve information of queue based PFC.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_pfc_queue_info@
 
     __defined at:__ @rte_ethdev.h 1434:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_pfc_queue_info = Rte_eth_pfc_queue_info
   { tc_max :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @tc_max@
+    {- ^ Maximum supported traffic class as per PFC (802.1Qbb) specification.
+
+         __C declaration:__ @tc_max@
 
          __defined at:__ @rte_ethdev.h 1438:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mode_capa :: Rte_eth_fc_mode
-    {- ^ __C declaration:__ @mode_capa@
+    {- ^ PFC queue mode capabilities.
+
+         __C declaration:__ @mode_capa@
 
          __defined at:__ @rte_ethdev.h 1440:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -9348,11 +10286,13 @@ deriving via Marshal.EquivStorable Rte_eth_pfc_queue_info instance BG.Storable R
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_pfc_queue_info instance Struct.IsStruct Rte_eth_pfc_queue_info
 
-{-| __C declaration:__ @tc_max@
+{-| Maximum supported traffic class as per PFC (802.1Qbb) specification.
+
+    __C declaration:__ @tc_max@
 
     __defined at:__ @rte_ethdev.h 1438:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tc_max" Rte_eth_pfc_queue_info ty where
@@ -9376,11 +10316,13 @@ instance HasCField.HasCField Rte_eth_pfc_queue_info "tc_max" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @mode_capa@
+{-| PFC queue mode capabilities.
+
+    __C declaration:__ @mode_capa@
 
     __defined at:__ @rte_ethdev.h 1440:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_fc_mode
          ) => BG.CompatHasField.HasField "mode_capa" Rte_eth_pfc_queue_info ty where
@@ -9408,22 +10350,26 @@ instance HasCField.HasCField Rte_eth_pfc_queue_info "mode_capa" where
 
     __defined at:__ @rte_ethdev.h 1463:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_pfc_queue_conf_rx_pause = Rte_eth_pfc_queue_conf_rx_pause
   { tx_qid :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @tx_qid@
+    {- ^ Tx queue ID
+
+         __C declaration:__ @tx_qid@
 
          __defined at:__ @rte_ethdev.h 1464:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @tc@
+    {- ^ Traffic class as per PFC (802.1Qbb) spec. The value must be in the range [0, rte_eth_pfc_queue_info::tx_max - 1]
+
+         __C declaration:__ @tc@
 
          __defined at:__ @rte_ethdev.h 1468:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -9456,11 +10402,13 @@ deriving via Marshal.EquivStorable Rte_eth_pfc_queue_conf_rx_pause instance BG.S
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_pfc_queue_conf_rx_pause instance Struct.IsStruct Rte_eth_pfc_queue_conf_rx_pause
 
-{-| __C declaration:__ @tx_qid@
+{-| Tx queue ID
+
+    __C declaration:__ @tx_qid@
 
     __defined at:__ @rte_ethdev.h 1464:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "tx_qid" Rte_eth_pfc_queue_conf_rx_pause ty where
@@ -9484,11 +10432,13 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf_rx_pause "tx_qid" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @tc@
+{-| Traffic class as per PFC (802.1Qbb) spec. The value must be in the range [0, rte_eth_pfc_queue_info::tx_max - 1]
+
+    __C declaration:__ @tc@
 
     __defined at:__ @rte_ethdev.h 1468:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tc" Rte_eth_pfc_queue_conf_rx_pause ty where
@@ -9516,29 +10466,35 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf_rx_pause "tc" where
 
     __defined at:__ @rte_ethdev.h 1471:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_pfc_queue_conf_tx_pause = Rte_eth_pfc_queue_conf_tx_pause
   { pause_time :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @pause_time@
+    {- ^ Pause quota in the Pause frame
+
+         __C declaration:__ @pause_time@
 
          __defined at:__ @rte_ethdev.h 1472:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_qid :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @rx_qid@
+    {- ^ Rx queue ID
+
+         __C declaration:__ @rx_qid@
 
          __defined at:__ @rte_ethdev.h 1473:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @tc@
+    {- ^ Traffic class as per PFC (802.1Qbb) spec. The value must be in the range [0, rte_eth_pfc_queue_info::tx_max - 1]
+
+         __C declaration:__ @tc@
 
          __defined at:__ @rte_ethdev.h 1477:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -9573,11 +10529,13 @@ deriving via Marshal.EquivStorable Rte_eth_pfc_queue_conf_tx_pause instance BG.S
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_pfc_queue_conf_tx_pause instance Struct.IsStruct Rte_eth_pfc_queue_conf_tx_pause
 
-{-| __C declaration:__ @pause_time@
+{-| Pause quota in the Pause frame
+
+    __C declaration:__ @pause_time@
 
     __defined at:__ @rte_ethdev.h 1472:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "pause_time" Rte_eth_pfc_queue_conf_tx_pause ty where
@@ -9601,11 +10559,13 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf_tx_pause "pause_time" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rx_qid@
+{-| Rx queue ID
+
+    __C declaration:__ @rx_qid@
 
     __defined at:__ @rte_ethdev.h 1473:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_qid" Rte_eth_pfc_queue_conf_tx_pause ty where
@@ -9632,11 +10592,13 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf_tx_pause "rx_qid" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @tc@
+{-| Traffic class as per PFC (802.1Qbb) spec. The value must be in the range [0, rte_eth_pfc_queue_info::tx_max - 1]
+
+    __C declaration:__ @tc@
 
     __defined at:__ @rte_ethdev.h 1477:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tc" Rte_eth_pfc_queue_conf_tx_pause ty where
@@ -9663,33 +10625,43 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf_tx_pause "tc" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @struct rte_eth_pfc_queue_conf@
+{-| A structure used to configure Ethernet priority flow control parameters for ethdev queues.
+
+    __WARNING:__ __EXPERIMENTAL:__ this API may change, or be removed, without prior notice
+
+    @rte_eth_pfc_queue_conf::rx_pause@ structure shall be used to configure given tx_qid with corresponding tc. When ethdev device receives PFC frame with rte_eth_pfc_queue_conf::rx_pause::tc, traffic will be paused on rte_eth_pfc_queue_conf::rx_pause::tx_qid for that tc.
+
+    @rte_eth_pfc_queue_conf::tx_pause@ structure shall be used to configure given rx_qid. When rx_qid is congested, PFC frames are generated with rte_eth_pfc_queue_conf::rx_pause::tc and rte_eth_pfc_queue_conf::rx_pause::pause_time to the peer.
+
+    __C declaration:__ @struct rte_eth_pfc_queue_conf@
 
     __defined at:__ @rte_ethdev.h 1460:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_pfc_queue_conf = Rte_eth_pfc_queue_conf
   { mode :: Rte_eth_fc_mode
-    {- ^ __C declaration:__ @mode@
+    {- ^ Link flow control mode
+
+         __C declaration:__ @mode@
 
          __defined at:__ @rte_ethdev.h 1461:23@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_pause :: Rte_eth_pfc_queue_conf_rx_pause
     {- ^ __C declaration:__ @rx_pause@
 
          __defined at:__ @rte_ethdev.h 1469:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_pause :: Rte_eth_pfc_queue_conf_tx_pause
     {- ^ __C declaration:__ @tx_pause@
 
          __defined at:__ @rte_ethdev.h 1478:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -9724,11 +10696,13 @@ deriving via Marshal.EquivStorable Rte_eth_pfc_queue_conf instance BG.Storable R
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_pfc_queue_conf instance Struct.IsStruct Rte_eth_pfc_queue_conf
 
-{-| __C declaration:__ @mode@
+{-| Link flow control mode
+
+    __C declaration:__ @mode@
 
     __defined at:__ @rte_ethdev.h 1461:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_fc_mode
          ) => BG.CompatHasField.HasField "mode" Rte_eth_pfc_queue_conf ty where
@@ -9759,7 +10733,7 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf "mode" where
 
     __defined at:__ @rte_ethdev.h 1469:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_pfc_queue_conf_rx_pause
          ) => BG.CompatHasField.HasField "rx_pause" Rte_eth_pfc_queue_conf ty where
@@ -9790,7 +10764,7 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf "rx_pause" where
 
     __defined at:__ @rte_ethdev.h 1478:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_pfc_queue_conf_tx_pause
          ) => BG.CompatHasField.HasField "tx_pause" Rte_eth_pfc_queue_conf ty where
@@ -9817,11 +10791,15 @@ instance HasCField.HasCField Rte_eth_pfc_queue_conf "tx_pause" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @enum rte_eth_tunnel_type@
+{-| Tunnel type for device-specific classifier configuration.
+
+    __See:__ 'Rte_eth_udp_tunnel'
+
+    __C declaration:__ @enum rte_eth_tunnel_type@
 
     __defined at:__ @rte_ethdev.h 1485:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_tunnel_type = Rte_eth_tunnel_type
   { unwrap :: BG.CUInt
@@ -9929,7 +10907,7 @@ instance HasCField.HasCField Rte_eth_tunnel_type "unwrap" where
 
     __defined at:__ @rte_ethdev.h 1486:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_NONE :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_NONE = Rte_eth_tunnel_type 0
@@ -9938,7 +10916,7 @@ pattern RTE_ETH_TUNNEL_TYPE_NONE = Rte_eth_tunnel_type 0
 
     __defined at:__ @rte_ethdev.h 1487:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_VXLAN :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_VXLAN = Rte_eth_tunnel_type 1
@@ -9947,7 +10925,7 @@ pattern RTE_ETH_TUNNEL_TYPE_VXLAN = Rte_eth_tunnel_type 1
 
     __defined at:__ @rte_ethdev.h 1488:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_GENEVE :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_GENEVE = Rte_eth_tunnel_type 2
@@ -9956,7 +10934,7 @@ pattern RTE_ETH_TUNNEL_TYPE_GENEVE = Rte_eth_tunnel_type 2
 
     __defined at:__ @rte_ethdev.h 1489:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_TEREDO :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_TEREDO = Rte_eth_tunnel_type 3
@@ -9965,7 +10943,7 @@ pattern RTE_ETH_TUNNEL_TYPE_TEREDO = Rte_eth_tunnel_type 3
 
     __defined at:__ @rte_ethdev.h 1490:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_NVGRE :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_NVGRE = Rte_eth_tunnel_type 4
@@ -9974,7 +10952,7 @@ pattern RTE_ETH_TUNNEL_TYPE_NVGRE = Rte_eth_tunnel_type 4
 
     __defined at:__ @rte_ethdev.h 1491:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_IP_IN_GRE :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_IP_IN_GRE = Rte_eth_tunnel_type 5
@@ -9983,7 +10961,7 @@ pattern RTE_ETH_TUNNEL_TYPE_IP_IN_GRE = Rte_eth_tunnel_type 5
 
     __defined at:__ @rte_ethdev.h 1492:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_L2_TUNNEL_TYPE_E_TAG :: Rte_eth_tunnel_type
 pattern RTE_ETH_L2_TUNNEL_TYPE_E_TAG = Rte_eth_tunnel_type 6
@@ -9992,7 +10970,7 @@ pattern RTE_ETH_L2_TUNNEL_TYPE_E_TAG = Rte_eth_tunnel_type 6
 
     __defined at:__ @rte_ethdev.h 1493:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_VXLAN_GPE :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_VXLAN_GPE = Rte_eth_tunnel_type 7
@@ -10001,7 +10979,7 @@ pattern RTE_ETH_TUNNEL_TYPE_VXLAN_GPE = Rte_eth_tunnel_type 7
 
     __defined at:__ @rte_ethdev.h 1494:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_ECPRI :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_ECPRI = Rte_eth_tunnel_type 8
@@ -10010,31 +10988,43 @@ pattern RTE_ETH_TUNNEL_TYPE_ECPRI = Rte_eth_tunnel_type 8
 
     __defined at:__ @rte_ethdev.h 1495:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_TUNNEL_TYPE_MAX :: Rte_eth_tunnel_type
 pattern RTE_ETH_TUNNEL_TYPE_MAX = Rte_eth_tunnel_type 9
 
-{-| __C declaration:__ @struct rte_eth_udp_tunnel@
+{-| UDP tunneling configuration.
+
+    Used to configure the classifier of a device, associating an UDP port with a type of tunnel.
+
+    Some NICs may need such configuration to properly parse a tunnel with any standard or custom UDP port.
+
+    __C declaration:__ @struct rte_eth_udp_tunnel@
 
     __defined at:__ @rte_ethdev.h 1518:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_udp_tunnel = Rte_eth_udp_tunnel
   { udp_port :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @udp_port@
+    {- ^ UDP port used for the tunnel.
+
+         __C declaration:__ @udp_port@
 
          __defined at:__ @rte_ethdev.h 1519:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , prot_type :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @prot_type@
+    {- ^ Tunnel type.
+
+         __See:__ @rte_eth_tunnel_type@
+
+         __C declaration:__ @prot_type@
 
          __defined at:__ @rte_ethdev.h 1520:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -10067,11 +11057,13 @@ deriving via Marshal.EquivStorable Rte_eth_udp_tunnel instance BG.Storable Rte_e
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_udp_tunnel instance Struct.IsStruct Rte_eth_udp_tunnel
 
-{-| __C declaration:__ @udp_port@
+{-| UDP port used for the tunnel.
+
+    __C declaration:__ @udp_port@
 
     __defined at:__ @rte_ethdev.h 1519:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "udp_port" Rte_eth_udp_tunnel ty where
@@ -10095,11 +11087,15 @@ instance HasCField.HasCField Rte_eth_udp_tunnel "udp_port" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @prot_type@
+{-| Tunnel type.
+
+    __See:__ @rte_eth_tunnel_type@
+
+    __C declaration:__ @prot_type@
 
     __defined at:__ @rte_ethdev.h 1520:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "prot_type" Rte_eth_udp_tunnel ty where
@@ -10123,33 +11119,41 @@ instance HasCField.HasCField Rte_eth_udp_tunnel "prot_type" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @struct rte_eth_intr_conf@
+{-| A structure used to enable/disable specific device interrupts.
+
+    __C declaration:__ @struct rte_eth_intr_conf@
 
     __defined at:__ @rte_ethdev.h 1526:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_intr_conf = Rte_eth_intr_conf
   { lsc :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @lsc@
+    {- ^ enable/disable lsc interrupt. 0 (default) - disable, 1 enable
+
+         __C declaration:__ @lsc@
 
          __defined at:__ @rte_ethdev.h 1528:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rxq :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @rxq@
+    {- ^ enable/disable rxq interrupt. 0 (default) - disable, 1 enable
+
+         __C declaration:__ @rxq@
 
          __defined at:__ @rte_ethdev.h 1530:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rmv :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @rmv@
+    {- ^ enable/disable rmv interrupt. 0 (default) - disable, 1 enable
+
+         __C declaration:__ @rmv@
 
          __defined at:__ @rte_ethdev.h 1532:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -10184,11 +11188,13 @@ deriving via Marshal.EquivStorable Rte_eth_intr_conf instance BG.Storable Rte_et
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_intr_conf instance Struct.IsStruct Rte_eth_intr_conf
 
-{-| __C declaration:__ @lsc@
+{-| enable/disable lsc interrupt. 0 (default) - disable, 1 enable
+
+    __C declaration:__ @lsc@
 
     __defined at:__ @rte_ethdev.h 1528:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "lsc" Rte_eth_intr_conf ty where
@@ -10214,11 +11220,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_intr_conf "lsc" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @rxq@
+{-| enable/disable rxq interrupt. 0 (default) - disable, 1 enable
+
+    __C declaration:__ @rxq@
 
     __defined at:__ @rte_ethdev.h 1530:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rxq" Rte_eth_intr_conf ty where
@@ -10244,11 +11252,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_intr_conf "rxq" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @rmv@
+{-| enable/disable rmv interrupt. 0 (default) - disable, 1 enable
+
+    __C declaration:__ @rmv@
 
     __defined at:__ @rte_ethdev.h 1532:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rmv" Rte_eth_intr_conf ty where
@@ -10278,36 +11288,44 @@ instance HasCBitfield.HasCBitfield Rte_eth_intr_conf "rmv" where
 
     __defined at:__ @rte_ethdev.h 1557:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_conf_rx_adv_conf = Rte_eth_conf_rx_adv_conf
   { rss_conf :: Rte_eth_rss_conf
-    {- ^ __C declaration:__ @rss_conf@
+    {- ^ Port RSS configuration
+
+         __C declaration:__ @rss_conf@
 
          __defined at:__ @rte_ethdev.h 1558:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vmdq_dcb_conf :: Rte_eth_vmdq_dcb_conf
-    {- ^ __C declaration:__ @vmdq_dcb_conf@
+    {- ^ Port VMDq+DCB configuration.
+
+         __C declaration:__ @vmdq_dcb_conf@
 
          __defined at:__ @rte_ethdev.h 1560:32@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_rx_conf :: Rte_eth_dcb_rx_conf
-    {- ^ __C declaration:__ @dcb_rx_conf@
+    {- ^ Port DCB Rx configuration.
+
+         __C declaration:__ @dcb_rx_conf@
 
          __defined at:__ @rte_ethdev.h 1562:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vmdq_rx_conf :: Rte_eth_vmdq_rx_conf
-    {- ^ __C declaration:__ @vmdq_rx_conf@
+    {- ^ Port VMDq Rx configuration.
+
+         __C declaration:__ @vmdq_rx_conf@
 
          __defined at:__ @rte_ethdev.h 1564:31@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -10344,11 +11362,13 @@ deriving via Marshal.EquivStorable Rte_eth_conf_rx_adv_conf instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_conf_rx_adv_conf instance Struct.IsStruct Rte_eth_conf_rx_adv_conf
 
-{-| __C declaration:__ @rss_conf@
+{-| Port RSS configuration
+
+    __C declaration:__ @rss_conf@
 
     __defined at:__ @rte_ethdev.h 1558:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rss_conf
          ) => BG.CompatHasField.HasField "rss_conf" Rte_eth_conf_rx_adv_conf ty where
@@ -10376,11 +11396,13 @@ instance HasCField.HasCField Rte_eth_conf_rx_adv_conf "rss_conf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @vmdq_dcb_conf@
+{-| Port VMDq+DCB configuration.
+
+    __C declaration:__ @vmdq_dcb_conf@
 
     __defined at:__ @rte_ethdev.h 1560:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_dcb_conf
          ) => BG.CompatHasField.HasField "vmdq_dcb_conf" Rte_eth_conf_rx_adv_conf ty where
@@ -10409,11 +11431,13 @@ instance HasCField.HasCField Rte_eth_conf_rx_adv_conf "vmdq_dcb_conf" where
 
   offset# = \_ -> \_ -> 32
 
-{-| __C declaration:__ @dcb_rx_conf@
+{-| Port DCB Rx configuration.
+
+    __C declaration:__ @dcb_rx_conf@
 
     __defined at:__ @rte_ethdev.h 1562:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dcb_rx_conf
          ) => BG.CompatHasField.HasField "dcb_rx_conf" Rte_eth_conf_rx_adv_conf ty where
@@ -10442,11 +11466,13 @@ instance HasCField.HasCField Rte_eth_conf_rx_adv_conf "dcb_rx_conf" where
 
   offset# = \_ -> \_ -> 1072
 
-{-| __C declaration:__ @vmdq_rx_conf@
+{-| Port VMDq Rx configuration.
+
+    __C declaration:__ @vmdq_rx_conf@
 
     __defined at:__ @rte_ethdev.h 1564:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_rx_conf
          ) => BG.CompatHasField.HasField "vmdq_rx_conf" Rte_eth_conf_rx_adv_conf ty where
@@ -10479,7 +11505,7 @@ instance HasCField.HasCField Rte_eth_conf_rx_adv_conf "vmdq_rx_conf" where
 
     __defined at:__ @rte_ethdev.h 1566:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_conf_tx_adv_conf = Rte_eth_conf_tx_adv_conf
   { unwrap :: BG.ByteArray
@@ -10496,22 +11522,26 @@ deriving via Marshal.EquivStorable Rte_eth_conf_tx_adv_conf instance BG.Storable
 
 deriving via BG.SizedByteArray 12 4 instance Union.IsUnion Rte_eth_conf_tx_adv_conf
 
-{-| __C declaration:__ @vmdq_dcb_tx_conf@
+{-| Port VMDq+DCB Tx configuration.
+
+    __C declaration:__ @vmdq_dcb_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1568:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_dcb_tx_conf
          ) => BG.HasField "vmdq_dcb_tx_conf" Rte_eth_conf_tx_adv_conf ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @vmdq_dcb_tx_conf@
+{-| Port VMDq+DCB Tx configuration.
+
+    __C declaration:__ @vmdq_dcb_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1568:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_dcb_tx_conf
          ) => BG.CompatHasField.HasField "vmdq_dcb_tx_conf" Rte_eth_conf_tx_adv_conf ty where
@@ -10534,22 +11564,26 @@ instance HasCField.HasCField Rte_eth_conf_tx_adv_conf "vmdq_dcb_tx_conf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @dcb_tx_conf@
+{-| Port DCB Tx configuration.
+
+    __C declaration:__ @dcb_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1570:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dcb_tx_conf
          ) => BG.HasField "dcb_tx_conf" Rte_eth_conf_tx_adv_conf ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @dcb_tx_conf@
+{-| Port DCB Tx configuration.
+
+    __C declaration:__ @dcb_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1570:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dcb_tx_conf
          ) => BG.CompatHasField.HasField "dcb_tx_conf" Rte_eth_conf_tx_adv_conf ty where
@@ -10572,22 +11606,26 @@ instance HasCField.HasCField Rte_eth_conf_tx_adv_conf "dcb_tx_conf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @vmdq_tx_conf@
+{-| Port VMDq Tx configuration.
+
+    __C declaration:__ @vmdq_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1572:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_tx_conf
          ) => BG.HasField "vmdq_tx_conf" Rte_eth_conf_tx_adv_conf ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @vmdq_tx_conf@
+{-| Port VMDq Tx configuration.
+
+    __C declaration:__ @vmdq_tx_conf@
 
     __defined at:__ @rte_ethdev.h 1572:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_vmdq_tx_conf
          ) => BG.CompatHasField.HasField "vmdq_tx_conf" Rte_eth_conf_tx_adv_conf ty where
@@ -10610,68 +11648,86 @@ instance HasCField.HasCField Rte_eth_conf_tx_adv_conf "vmdq_tx_conf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @struct rte_eth_conf@
+{-| A structure used to configure an Ethernet port. Depending upon the Rx multi-queue mode, extra advanced configuration settings may be needed.
+
+    __C declaration:__ @struct rte_eth_conf@
 
     __defined at:__ @rte_ethdev.h 1542:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_conf = Rte_eth_conf
   { link_speeds :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @link_speeds@
+    {- ^ bitmap of RTE_ETH_LINK_SPEED_XXX of speeds to be used. RTE_ETH_LINK_SPEED_FIXED disables link autonegotiation, and a unique speed shall be set. Otherwise, the bitmap defines the set of speeds to be advertised. If the special value RTE_ETH_LINK_SPEED_AUTONEG (0) is used, all speeds supported are advertised.
+
+         __C declaration:__ @link_speeds@
 
          __defined at:__ @rte_ethdev.h 1543:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rxmode :: Rte_eth_rxmode
-    {- ^ __C declaration:__ @rxmode@
+    {- ^ Port Rx configuration.
+
+         __C declaration:__ @rxmode@
 
          __defined at:__ @rte_ethdev.h 1550:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , txmode :: Rte_eth_txmode
-    {- ^ __C declaration:__ @txmode@
+    {- ^ Port Tx configuration.
+
+         __C declaration:__ @txmode@
 
          __defined at:__ @rte_ethdev.h 1551:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , lpbk_mode :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @lpbk_mode@
+    {- ^ Loopback operation mode. By default the value is 0, meaning the loopback mode is disabled. Read the datasheet of given Ethernet controller for details. The possible values of this field are defined in implementation of each driver.
+
+         __C declaration:__ @lpbk_mode@
 
          __defined at:__ @rte_ethdev.h 1552:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_adv_conf :: Rte_eth_conf_rx_adv_conf
-    {- ^ __C declaration:__ @rx_adv_conf@
+    {- ^ Port Rx filtering configuration.
+
+         __C declaration:__ @rx_adv_conf@
 
          __defined at:__ @rte_ethdev.h 1565:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_adv_conf :: Rte_eth_conf_tx_adv_conf
-    {- ^ __C declaration:__ @tx_adv_conf@
+    {- ^ Port Tx DCB configuration (union).
+
+         __C declaration:__ @tx_adv_conf@
 
          __defined at:__ @rte_ethdev.h 1573:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dcb_capability_en :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @dcb_capability_en@
+    {- ^ Currently,Priority Flow Control(PFC) are supported,if DCB with PFC is needed,and the variable must be set RTE_ETH_DCB_PFC_SUPPORT.
+
+         __C declaration:__ @dcb_capability_en@
 
          __defined at:__ @rte_ethdev.h 1576:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , intr_conf :: Rte_eth_intr_conf
-    {- ^ __C declaration:__ @intr_conf@
+    {- ^ Interrupt mode configuration.
+
+         __C declaration:__ @intr_conf@
 
          __defined at:__ @rte_ethdev.h 1577:27@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -10724,11 +11780,13 @@ deriving via Marshal.EquivStorable Rte_eth_conf instance BG.Storable Rte_eth_con
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_conf instance Struct.IsStruct Rte_eth_conf
 
-{-| __C declaration:__ @link_speeds@
+{-| bitmap of RTE_ETH_LINK_SPEED_XXX of speeds to be used. RTE_ETH_LINK_SPEED_FIXED disables link autonegotiation, and a unique speed shall be set. Otherwise, the bitmap defines the set of speeds to be advertised. If the special value RTE_ETH_LINK_SPEED_AUTONEG (0) is used, all speeds supported are advertised.
+
+    __C declaration:__ @link_speeds@
 
     __defined at:__ @rte_ethdev.h 1543:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "link_speeds" Rte_eth_conf ty where
@@ -10761,11 +11819,13 @@ instance HasCField.HasCField Rte_eth_conf "link_speeds" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rxmode@
+{-| Port Rx configuration.
+
+    __C declaration:__ @rxmode@
 
     __defined at:__ @rte_ethdev.h 1550:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxmode
          ) => BG.CompatHasField.HasField "rxmode" Rte_eth_conf ty where
@@ -10797,11 +11857,13 @@ instance HasCField.HasCField Rte_eth_conf "rxmode" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @txmode@
+{-| Port Tx configuration.
+
+    __C declaration:__ @txmode@
 
     __defined at:__ @rte_ethdev.h 1551:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_txmode
          ) => BG.CompatHasField.HasField "txmode" Rte_eth_conf ty where
@@ -10833,11 +11895,13 @@ instance HasCField.HasCField Rte_eth_conf "txmode" where
 
   offset# = \_ -> \_ -> 64
 
-{-| __C declaration:__ @lpbk_mode@
+{-| Loopback operation mode. By default the value is 0, meaning the loopback mode is disabled. Read the datasheet of given Ethernet controller for details. The possible values of this field are defined in implementation of each driver.
+
+    __C declaration:__ @lpbk_mode@
 
     __defined at:__ @rte_ethdev.h 1552:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "lpbk_mode" Rte_eth_conf ty where
@@ -10869,11 +11933,13 @@ instance HasCField.HasCField Rte_eth_conf "lpbk_mode" where
 
   offset# = \_ -> \_ -> 120
 
-{-| __C declaration:__ @rx_adv_conf@
+{-| Port Rx filtering configuration.
+
+    __C declaration:__ @rx_adv_conf@
 
     __defined at:__ @rte_ethdev.h 1565:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_conf_rx_adv_conf
          ) => BG.CompatHasField.HasField "rx_adv_conf" Rte_eth_conf ty where
@@ -10906,11 +11972,13 @@ instance HasCField.HasCField Rte_eth_conf "rx_adv_conf" where
 
   offset# = \_ -> \_ -> 128
 
-{-| __C declaration:__ @tx_adv_conf@
+{-| Port Tx DCB configuration (union).
+
+    __C declaration:__ @tx_adv_conf@
 
     __defined at:__ @rte_ethdev.h 1573:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_conf_tx_adv_conf
          ) => BG.CompatHasField.HasField "tx_adv_conf" Rte_eth_conf ty where
@@ -10943,11 +12011,13 @@ instance HasCField.HasCField Rte_eth_conf "tx_adv_conf" where
 
   offset# = \_ -> \_ -> 2256
 
-{-| __C declaration:__ @dcb_capability_en@
+{-| Currently,Priority Flow Control(PFC) are supported,if DCB with PFC is needed,and the variable must be set RTE_ETH_DCB_PFC_SUPPORT.
+
+    __C declaration:__ @dcb_capability_en@
 
     __defined at:__ @rte_ethdev.h 1576:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dcb_capability_en" Rte_eth_conf ty where
@@ -10980,11 +12050,13 @@ instance HasCField.HasCField Rte_eth_conf "dcb_capability_en" where
 
   offset# = \_ -> \_ -> 2268
 
-{-| __C declaration:__ @intr_conf@
+{-| Interrupt mode configuration.
+
+    __C declaration:__ @intr_conf@
 
     __defined at:__ @rte_ethdev.h 1577:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_intr_conf
          ) => BG.CompatHasField.HasField "intr_conf" Rte_eth_conf ty where
@@ -11020,7 +12092,7 @@ instance HasCField.HasCField Rte_eth_conf "intr_conf" where
 
     __defined at:__ @rte_ethdev.h 1706:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_FALLBACK_RX_RINGSIZE :: BG.CInt
 rTE_ETH_DEV_FALLBACK_RX_RINGSIZE = (512 :: BG.CInt)
@@ -11029,7 +12101,7 @@ rTE_ETH_DEV_FALLBACK_RX_RINGSIZE = (512 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 1707:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_FALLBACK_TX_RINGSIZE :: BG.CInt
 rTE_ETH_DEV_FALLBACK_TX_RINGSIZE = (512 :: BG.CInt)
@@ -11038,7 +12110,7 @@ rTE_ETH_DEV_FALLBACK_TX_RINGSIZE = (512 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 1708:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_FALLBACK_RX_NBQUEUES :: BG.CInt
 rTE_ETH_DEV_FALLBACK_RX_NBQUEUES = (1 :: BG.CInt)
@@ -11047,38 +12119,46 @@ rTE_ETH_DEV_FALLBACK_RX_NBQUEUES = (1 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 1709:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_FALLBACK_TX_NBQUEUES :: BG.CInt
 rTE_ETH_DEV_FALLBACK_TX_NBQUEUES = (1 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_dev_portconf@
+{-| Preferred Rx/Tx port parameters. There are separate instances of this structure for transmission and reception respectively.
+
+    __C declaration:__ @struct rte_eth_dev_portconf@
 
     __defined at:__ @rte_ethdev.h 1716:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_portconf = Rte_eth_dev_portconf
   { burst_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @burst_size@
+    {- ^ Device-preferred burst size
+
+         __C declaration:__ @burst_size@
 
          __defined at:__ @rte_ethdev.h 1717:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ring_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @ring_size@
+    {- ^ Device-preferred size of queue rings
+
+         __C declaration:__ @ring_size@
 
          __defined at:__ @rte_ethdev.h 1718:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_queues@
+    {- ^ Device-preferred number of queues
+
+         __C declaration:__ @nb_queues@
 
          __defined at:__ @rte_ethdev.h 1719:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -11113,11 +12193,13 @@ deriving via Marshal.EquivStorable Rte_eth_dev_portconf instance BG.Storable Rte
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dev_portconf instance Struct.IsStruct Rte_eth_dev_portconf
 
-{-| __C declaration:__ @burst_size@
+{-| Device-preferred burst size
+
+    __C declaration:__ @burst_size@
 
     __defined at:__ @rte_ethdev.h 1717:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "burst_size" Rte_eth_dev_portconf ty where
@@ -11144,11 +12226,13 @@ instance HasCField.HasCField Rte_eth_dev_portconf "burst_size" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @ring_size@
+{-| Device-preferred size of queue rings
+
+    __C declaration:__ @ring_size@
 
     __defined at:__ @rte_ethdev.h 1718:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "ring_size" Rte_eth_dev_portconf ty where
@@ -11175,11 +12259,13 @@ instance HasCField.HasCField Rte_eth_dev_portconf "ring_size" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @nb_queues@
+{-| Device-preferred number of queues
+
+    __C declaration:__ @nb_queues@
 
     __defined at:__ @rte_ethdev.h 1719:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_queues" Rte_eth_dev_portconf ty where
@@ -11206,49 +12292,61 @@ instance HasCField.HasCField Rte_eth_dev_portconf "nb_queues" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @macro RTE_ETH_DEV_SWITCH_DOMAIN_ID_INVALID@
+{-| Default values for switch domain ID when ethdev does not support switch domain definitions.
+
+    __C declaration:__ @macro RTE_ETH_DEV_SWITCH_DOMAIN_ID_INVALID@
 
     __defined at:__ @rte_ethdev.h 1726:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_SWITCH_DOMAIN_ID_INVALID :: BG.CInt
 rTE_ETH_DEV_SWITCH_DOMAIN_ID_INVALID = uINT16_MAX
 
-{-| __C declaration:__ @struct rte_eth_switch_info@
+{-| Ethernet device associated switch information
+
+    __C declaration:__ @struct rte_eth_switch_info@
 
     __defined at:__ @rte_ethdev.h 1731:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_switch_info = Rte_eth_switch_info
   { name :: PtrConst.PtrConst BG.CChar
-    {- ^ __C declaration:__ @name@
+    {- ^ switch name
+
+         __C declaration:__ @name@
 
          __defined at:__ @rte_ethdev.h 1732:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , domain_id :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @domain_id@
+    {- ^ switch domain ID
+
+         __C declaration:__ @domain_id@
 
          __defined at:__ @rte_ethdev.h 1733:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , port_id :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @port_id@
+    {- ^ Mapping to the devices physical switch port as enumerated from the perspective of the embedded interconnect/switch. For SR-IOV enabled device this may correspond to the VF_ID of each virtual function, but each driver should explicitly define the mapping of switch port identifier to that physical interconnect/switch
+
+         __C declaration:__ @port_id@
 
          __defined at:__ @rte_ethdev.h 1741:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_domain :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @rx_domain@
+    {- ^ Shared Rx queue sub-domain boundary. Only ports in same Rx domain and switch domain can share Rx queue. Valid only if device advertised RTE_ETH_DEV_CAPA_RXQ_SHARE capability.
+
+         __C declaration:__ @rx_domain@
 
          __defined at:__ @rte_ethdev.h 1747:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -11285,11 +12383,13 @@ deriving via Marshal.EquivStorable Rte_eth_switch_info instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_switch_info instance Struct.IsStruct Rte_eth_switch_info
 
-{-| __C declaration:__ @name@
+{-| switch name
+
+    __C declaration:__ @name@
 
     __defined at:__ @rte_ethdev.h 1732:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_eth_switch_info ty where
@@ -11317,11 +12417,13 @@ instance HasCField.HasCField Rte_eth_switch_info "name" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @domain_id@
+{-| switch domain ID
+
+    __C declaration:__ @domain_id@
 
     __defined at:__ @rte_ethdev.h 1733:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "domain_id" Rte_eth_switch_info ty where
@@ -11349,11 +12451,13 @@ instance HasCField.HasCField Rte_eth_switch_info "domain_id" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @port_id@
+{-| Mapping to the devices physical switch port as enumerated from the perspective of the embedded interconnect/switch. For SR-IOV enabled device this may correspond to the VF_ID of each virtual function, but each driver should explicitly define the mapping of switch port identifier to that physical interconnect/switch
+
+    __C declaration:__ @port_id@
 
     __defined at:__ @rte_ethdev.h 1741:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "port_id" Rte_eth_switch_info ty where
@@ -11381,11 +12485,13 @@ instance HasCField.HasCField Rte_eth_switch_info "port_id" where
 
   offset# = \_ -> \_ -> 10
 
-{-| __C declaration:__ @rx_domain@
+{-| Shared Rx queue sub-domain boundary. Only ports in same Rx domain and switch domain can share Rx queue. Valid only if device advertised RTE_ETH_DEV_CAPA_RXQ_SHARE capability.
+
+    __C declaration:__ @rx_domain@
 
     __defined at:__ @rte_ethdev.h 1747:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_domain" Rte_eth_switch_info ty where
@@ -11413,47 +12519,61 @@ instance HasCField.HasCField Rte_eth_switch_info "rx_domain" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @struct rte_eth_rxseg_capa@
+{-| Ethernet device Rx buffer segmentation capabilities.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @struct rte_eth_rxseg_capa@
 
     __defined at:__ @rte_ethdev.h 1756:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxseg_capa = Rte_eth_rxseg_capa
   { multi_pools :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @multi_pools@
+    {- ^ Supports receiving to multiple pools.
+
+         __C declaration:__ @multi_pools@
 
          __defined at:__ @rte_ethdev.h 1758:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offset_allowed :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @offset_allowed@
+    {- ^ Supports buffer offsets.
+
+         __C declaration:__ @offset_allowed@
 
          __defined at:__ @rte_ethdev.h 1759:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , offset_align_log2 :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @offset_align_log2@
+    {- ^ Required offset alignment.
+
+         __C declaration:__ @offset_align_log2@
 
          __defined at:__ @rte_ethdev.h 1760:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_nseg :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_nseg@
+    {- ^ Maximum amount of segments to split.
+
+         __C declaration:__ @max_nseg@
 
          __defined at:__ @rte_ethdev.h 1761:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @reserved@
+    {- ^ Reserved field.
+
+         __C declaration:__ @reserved@
 
          __defined at:__ @rte_ethdev.h 1762:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -11497,11 +12617,13 @@ deriving via Marshal.EquivStorable Rte_eth_rxseg_capa instance BG.Storable Rte_e
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rxseg_capa instance Struct.IsStruct Rte_eth_rxseg_capa
 
-{-| __C declaration:__ @multi_pools@
+{-| Supports receiving to multiple pools.
+
+    __C declaration:__ @multi_pools@
 
     __defined at:__ @rte_ethdev.h 1758:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "multi_pools" Rte_eth_rxseg_capa ty where
@@ -11533,11 +12655,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_rxseg_capa "multi_pools" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @offset_allowed@
+{-| Supports buffer offsets.
+
+    __C declaration:__ @offset_allowed@
 
     __defined at:__ @rte_ethdev.h 1759:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "offset_allowed" Rte_eth_rxseg_capa ty where
@@ -11569,11 +12693,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_rxseg_capa "offset_allowed" where
 
   bitfieldWidth# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @offset_align_log2@
+{-| Required offset alignment.
+
+    __C declaration:__ @offset_align_log2@
 
     __defined at:__ @rte_ethdev.h 1760:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "offset_align_log2" Rte_eth_rxseg_capa ty where
@@ -11605,11 +12731,13 @@ instance HasCBitfield.HasCBitfield Rte_eth_rxseg_capa "offset_align_log2" where
 
   bitfieldWidth# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @max_nseg@
+{-| Maximum amount of segments to split.
+
+    __C declaration:__ @max_nseg@
 
     __defined at:__ @rte_ethdev.h 1761:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_nseg" Rte_eth_rxseg_capa ty where
@@ -11638,11 +12766,13 @@ instance HasCField.HasCField Rte_eth_rxseg_capa "max_nseg" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @reserved@
+{-| Reserved field.
+
+    __C declaration:__ @reserved@
 
     __defined at:__ @rte_ethdev.h 1762:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "reserved" Rte_eth_rxseg_capa ty where
@@ -11671,11 +12801,13 @@ instance HasCField.HasCField Rte_eth_rxseg_capa "reserved" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @enum rte_eth_representor_type@
+{-| Ethernet device information Ethernet device representor port type.
+
+    __C declaration:__ @enum rte_eth_representor_type@
 
     __defined at:__ @rte_ethdev.h 1772:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_representor_type = Rte_eth_representor_type
   { unwrap :: BG.CUInt
@@ -11773,47 +12905,59 @@ instance HasCField.HasCField Rte_eth_representor_type "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_REPRESENTOR_NONE@
+{-| not a representor.
+
+    __C declaration:__ @RTE_ETH_REPRESENTOR_NONE@
 
     __defined at:__ @rte_ethdev.h 1773:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_REPRESENTOR_NONE :: Rte_eth_representor_type
 pattern RTE_ETH_REPRESENTOR_NONE = Rte_eth_representor_type 0
 
-{-| __C declaration:__ @RTE_ETH_REPRESENTOR_VF@
+{-| representor of Virtual Function.
+
+    __C declaration:__ @RTE_ETH_REPRESENTOR_VF@
 
     __defined at:__ @rte_ethdev.h 1774:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_REPRESENTOR_VF :: Rte_eth_representor_type
 pattern RTE_ETH_REPRESENTOR_VF = Rte_eth_representor_type 1
 
-{-| __C declaration:__ @RTE_ETH_REPRESENTOR_SF@
+{-| representor of Sub Function.
+
+    __C declaration:__ @RTE_ETH_REPRESENTOR_SF@
 
     __defined at:__ @rte_ethdev.h 1775:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_REPRESENTOR_SF :: Rte_eth_representor_type
 pattern RTE_ETH_REPRESENTOR_SF = Rte_eth_representor_type 2
 
-{-| __C declaration:__ @RTE_ETH_REPRESENTOR_PF@
+{-| representor of Physical Function.
+
+    __C declaration:__ @RTE_ETH_REPRESENTOR_PF@
 
     __defined at:__ @rte_ethdev.h 1776:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_REPRESENTOR_PF :: Rte_eth_representor_type
 pattern RTE_ETH_REPRESENTOR_PF = Rte_eth_representor_type 3
 
-{-| __C declaration:__ @enum rte_eth_err_handle_mode@
+{-| Ethernet device error handling mode.
+
+    __WARNING:__ __EXPERIMENTAL:__ this enumeration may change without prior notice.
+
+    __C declaration:__ @enum rte_eth_err_handle_mode@
 
     __defined at:__ @rte_ethdev.h 1785:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_err_handle_mode = Rte_eth_err_handle_mode
   { unwrap :: BG.CUInt
@@ -11911,340 +13055,442 @@ instance HasCField.HasCField Rte_eth_err_handle_mode "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_NONE@
+{-| No error handling modes are supported.
+
+    __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_NONE@
 
     __defined at:__ @rte_ethdev.h 1787:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_ERROR_HANDLE_MODE_NONE :: Rte_eth_err_handle_mode
 pattern RTE_ETH_ERROR_HANDLE_MODE_NONE = Rte_eth_err_handle_mode 0
 
-{-| __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_PASSIVE@
+{-| Passive error handling, after the PMD detects that a reset is required, the PMD reports
+
+    __See:__ @RTE_ETH_EVENT_INTR_RESET@ event, and the application invokes
+
+    __See:__ 'rte_eth_dev_reset' to recover the port.
+
+    __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_PASSIVE@
 
     __defined at:__ @rte_ethdev.h 1792:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_ERROR_HANDLE_MODE_PASSIVE :: Rte_eth_err_handle_mode
 pattern RTE_ETH_ERROR_HANDLE_MODE_PASSIVE = Rte_eth_err_handle_mode 1
 
-{-| __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_PROACTIVE@
+{-| Proactive error handling, after the PMD detects that a reset is required, the PMD reports
+
+    __See:__ @RTE_ETH_EVENT_ERR_RECOVERING@ event, do recovery internally, and finally reports the recovery result event (
+
+    __See:__ RTE_ETH_EVENT_RECOVERY_*).
+
+    __C declaration:__ @RTE_ETH_ERROR_HANDLE_MODE_PROACTIVE@
 
     __defined at:__ @rte_ethdev.h 1798:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_ERROR_HANDLE_MODE_PROACTIVE :: Rte_eth_err_handle_mode
 pattern RTE_ETH_ERROR_HANDLE_MODE_PROACTIVE = Rte_eth_err_handle_mode 2
 
-{-| __C declaration:__ @struct rte_eth_dev_info@
+{-| A structure used to retrieve the contextual information of an Ethernet device, such as the controlling driver of the device, etc...
+
+    __C declaration:__ @struct rte_eth_dev_info@
 
     __defined at:__ @rte_ethdev.h 1806:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_info = Rte_eth_dev_info
   { device :: BG.Ptr Generated.DPDK.Rte_devargs.Rte_device
-    {- ^ __C declaration:__ @device@
+    {- ^ Generic device information
+
+         __C declaration:__ @device@
 
          __defined at:__ @rte_ethdev.h 1807:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , driver_name :: PtrConst.PtrConst BG.CChar
-    {- ^ __C declaration:__ @driver_name@
+    {- ^ Device Driver name.
+
+         __C declaration:__ @driver_name@
 
          __defined at:__ @rte_ethdev.h 1808:14@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , if_index :: BG.CUInt
-    {- ^ __C declaration:__ @if_index@
+    {- ^ Index to bound host interface, or 0 if none. Use if_indextoname() to translate into an interface name.
+
+         __C declaration:__ @if_index@
 
          __defined at:__ @rte_ethdev.h 1809:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , min_mtu :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @min_mtu@
+    {- ^ Minimum MTU allowed
+
+         __C declaration:__ @min_mtu@
 
          __defined at:__ @rte_ethdev.h 1811:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_mtu :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_mtu@
+    {- ^ Maximum MTU allowed
+
+         __C declaration:__ @max_mtu@
 
          __defined at:__ @rte_ethdev.h 1812:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dev_flags :: PtrConst.PtrConst HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @dev_flags@
+    {- ^ Device flags
+
+         __C declaration:__ @dev_flags@
 
          __defined at:__ @rte_ethdev.h 1813:18@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , min_rx_bufsize :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @min_rx_bufsize@
+    {- ^ Minimum Rx buffer size per descriptor supported by HW.
+
+         __C declaration:__ @min_rx_bufsize@
 
          __defined at:__ @rte_ethdev.h 1815:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_rx_bufsize :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_rx_bufsize@
+    {- ^ Maximum Rx buffer size per descriptor supported by HW. The value is not enforced, information only to application to optimize mbuf size. Its value is UINT32_MAX when not specified by the driver.
+
+         __C declaration:__ @max_rx_bufsize@
 
          __defined at:__ @rte_ethdev.h 1822:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_rx_pktlen :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_rx_pktlen@
+    {- ^ Maximum configurable length of Rx pkt.
+
+         __C declaration:__ @max_rx_pktlen@
 
          __defined at:__ @rte_ethdev.h 1823:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_lro_pkt_size :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_lro_pkt_size@
+    {- ^ Maximum configurable size of LRO aggregated packet.
+
+         __C declaration:__ @max_lro_pkt_size@
 
          __defined at:__ @rte_ethdev.h 1825:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_rx_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_rx_queues@
+    {- ^ Maximum number of Rx queues.
+
+         __C declaration:__ @max_rx_queues@
 
          __defined at:__ @rte_ethdev.h 1826:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_tx_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_tx_queues@
+    {- ^ Maximum number of Tx queues.
+
+         __C declaration:__ @max_tx_queues@
 
          __defined at:__ @rte_ethdev.h 1827:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_mac_addrs :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_mac_addrs@
+    {- ^ Maximum number of MAC addresses.
+
+         __C declaration:__ @max_mac_addrs@
 
          __defined at:__ @rte_ethdev.h 1828:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_hash_mac_addrs :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @max_hash_mac_addrs@
+    {- ^ Maximum number of hash MAC addresses for MTA and UTA.
+
+         __C declaration:__ @max_hash_mac_addrs@
 
          __defined at:__ @rte_ethdev.h 1830:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_vfs :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_vfs@
+    {- ^ Maximum number of VFs.
+
+         __C declaration:__ @max_vfs@
 
          __defined at:__ @rte_ethdev.h 1831:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_vmdq_pools :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_vmdq_pools@
+    {- ^ Maximum number of VMDq pools.
+
+         __C declaration:__ @max_vmdq_pools@
 
          __defined at:__ @rte_ethdev.h 1832:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_seg_capa :: Rte_eth_rxseg_capa
-    {- ^ __C declaration:__ @rx_seg_capa@
+    {- ^ Segmentation capability.
+
+         __C declaration:__ @rx_seg_capa@
 
          __defined at:__ @rte_ethdev.h 1833:28@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_offload_capa :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @rx_offload_capa@
+    {- ^ All Rx offload capabilities including all per-queue ones
+
+         __C declaration:__ @rx_offload_capa@
 
          __defined at:__ @rte_ethdev.h 1835:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_offload_capa :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @tx_offload_capa@
+    {- ^ All Tx offload capabilities including all per-queue ones
+
+         __C declaration:__ @tx_offload_capa@
 
          __defined at:__ @rte_ethdev.h 1837:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_queue_offload_capa :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @rx_queue_offload_capa@
+    {- ^ Device per-queue Rx offload capabilities.
+
+         __C declaration:__ @rx_queue_offload_capa@
 
          __defined at:__ @rte_ethdev.h 1839:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_queue_offload_capa :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @tx_queue_offload_capa@
+    {- ^ Device per-queue Tx offload capabilities.
+
+         __C declaration:__ @tx_queue_offload_capa@
 
          __defined at:__ @rte_ethdev.h 1841:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reta_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @reta_size@
+    {- ^ Device redirection table size, the total number of entries.
+
+         __C declaration:__ @reta_size@
 
          __defined at:__ @rte_ethdev.h 1843:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , hash_key_size :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @hash_key_size@
+    {- ^ Hash key size in bytes
+
+         __C declaration:__ @hash_key_size@
 
          __defined at:__ @rte_ethdev.h 1844:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rss_algo_capa :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @rss_algo_capa@
 
          __defined at:__ @rte_ethdev.h 1845:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flow_type_rss_offloads :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @flow_type_rss_offloads@
+    {- ^ RSS hash algorithms capabilities Bit mask of RSS offloads, the bit offset also means flow type
+
+         __C declaration:__ @flow_type_rss_offloads@
 
          __defined at:__ @rte_ethdev.h 1847:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_rxconf :: Rte_eth_rxconf
-    {- ^ __C declaration:__ @default_rxconf@
+    {- ^ Default Rx configuration
+
+         __C declaration:__ @default_rxconf@
 
          __defined at:__ @rte_ethdev.h 1848:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_txconf :: Rte_eth_txconf
-    {- ^ __C declaration:__ @default_txconf@
+    {- ^ Default Tx configuration
+
+         __C declaration:__ @default_txconf@
 
          __defined at:__ @rte_ethdev.h 1849:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vmdq_queue_base :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @vmdq_queue_base@
+    {- ^ First queue ID for VMDq pools.
+
+         __C declaration:__ @vmdq_queue_base@
 
          __defined at:__ @rte_ethdev.h 1850:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vmdq_queue_num :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @vmdq_queue_num@
+    {- ^ Queue number for VMDq pools.
+
+         __C declaration:__ @vmdq_queue_num@
 
          __defined at:__ @rte_ethdev.h 1851:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , vmdq_pool_base :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @vmdq_pool_base@
+    {- ^ First ID of VMDq pools.
+
+         __C declaration:__ @vmdq_pool_base@
 
          __defined at:__ @rte_ethdev.h 1852:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_desc_lim :: Rte_eth_desc_lim
-    {- ^ __C declaration:__ @rx_desc_lim@
+    {- ^ Rx descriptors limits
+
+         __C declaration:__ @rx_desc_lim@
 
          __defined at:__ @rte_ethdev.h 1853:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tx_desc_lim :: Rte_eth_desc_lim
-    {- ^ __C declaration:__ @tx_desc_lim@
+    {- ^ Tx descriptors limits
+
+         __C declaration:__ @tx_desc_lim@
 
          __defined at:__ @rte_ethdev.h 1854:26@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , speed_capa :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @speed_capa@
+    {- ^ Supported speeds bitmap (RTE_ETH_LINK_SPEED_).
+
+         __C declaration:__ @speed_capa@
 
          __defined at:__ @rte_ethdev.h 1855:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_rx_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_rx_queues@
+    {- ^ Configured number of Rx/Tx queues Number of Rx queues.
+
+         __C declaration:__ @nb_rx_queues@
 
          __defined at:__ @rte_ethdev.h 1857:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_tx_queues :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_tx_queues@
+    {- ^ Number of Tx queues.
+
+         __C declaration:__ @nb_tx_queues@
 
          __defined at:__ @rte_ethdev.h 1858:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_rx_mempools :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_rx_mempools@
+    {- ^ Maximum number of Rx mempools supported per Rx queue.
+
+         Value greater than 0 means that the driver supports Rx queue mempools specification via rx_conf->rx_mempools.
+
+         __C declaration:__ @max_rx_mempools@
 
          __defined at:__ @rte_ethdev.h 1865:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_rxportconf :: Rte_eth_dev_portconf
-    {- ^ __C declaration:__ @default_rxportconf@
+    {- ^ Rx parameter recommendations
+
+         __C declaration:__ @default_rxportconf@
 
          __defined at:__ @rte_ethdev.h 1867:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , default_txportconf :: Rte_eth_dev_portconf
-    {- ^ __C declaration:__ @default_txportconf@
+    {- ^ Tx parameter recommendations
+
+         __C declaration:__ @default_txportconf@
 
          __defined at:__ @rte_ethdev.h 1869:30@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dev_capa :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @dev_capa@
+    {- ^ Generic device capabilities (RTE_ETH_DEV_CAPA_).
+
+         __C declaration:__ @dev_capa@
 
          __defined at:__ @rte_ethdev.h 1871:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , switch_info :: Rte_eth_switch_info
-    {- ^ __C declaration:__ @switch_info@
+    {- ^ Switching information for ports on a device with a embedded managed interconnect/switch.
+
+         __C declaration:__ @switch_info@
 
          __defined at:__ @rte_ethdev.h 1876:29@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , err_handle_mode :: Rte_eth_err_handle_mode
-    {- ^ __C declaration:__ @err_handle_mode@
+    {- ^ Supported error handling mode.
+
+         __C declaration:__ @err_handle_mode@
 
          __defined at:__ @rte_ethdev.h 1878:31@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_64s :: CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @reserved_64s@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_64s@
 
          __defined at:__ @rte_ethdev.h 1880:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , reserved_ptrs :: CA.ConstantArray 2 (BG.Ptr BG.Void)
-    {- ^ __C declaration:__ @reserved_ptrs@
+    {- ^ Reserved for future fields
+
+         __C declaration:__ @reserved_ptrs@
 
          __defined at:__ @rte_ethdev.h 1881:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -12402,11 +13648,13 @@ deriving via Marshal.EquivStorable Rte_eth_dev_info instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dev_info instance Struct.IsStruct Rte_eth_dev_info
 
-{-| __C declaration:__ @device@
+{-| Generic device information
+
+    __C declaration:__ @device@
 
     __defined at:__ @rte_ethdev.h 1807:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_devargs.Rte_device
          ) => BG.CompatHasField.HasField "device" Rte_eth_dev_info ty where
@@ -12473,11 +13721,13 @@ instance HasCField.HasCField Rte_eth_dev_info "device" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @driver_name@
+{-| Device Driver name.
+
+    __C declaration:__ @driver_name@
 
     __defined at:__ @rte_ethdev.h 1808:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst BG.CChar
          ) => BG.CompatHasField.HasField "driver_name" Rte_eth_dev_info ty where
@@ -12545,11 +13795,13 @@ instance HasCField.HasCField Rte_eth_dev_info "driver_name" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @if_index@
+{-| Index to bound host interface, or 0 if none. Use if_indextoname() to translate into an interface name.
+
+    __C declaration:__ @if_index@
 
     __defined at:__ @rte_ethdev.h 1809:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "if_index" Rte_eth_dev_info ty where
@@ -12616,11 +13868,13 @@ instance HasCField.HasCField Rte_eth_dev_info "if_index" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @min_mtu@
+{-| Minimum MTU allowed
+
+    __C declaration:__ @min_mtu@
 
     __defined at:__ @rte_ethdev.h 1811:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "min_mtu" Rte_eth_dev_info ty where
@@ -12687,11 +13941,13 @@ instance HasCField.HasCField Rte_eth_dev_info "min_mtu" where
 
   offset# = \_ -> \_ -> 20
 
-{-| __C declaration:__ @max_mtu@
+{-| Maximum MTU allowed
+
+    __C declaration:__ @max_mtu@
 
     __defined at:__ @rte_ethdev.h 1812:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_mtu" Rte_eth_dev_info ty where
@@ -12758,11 +14014,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_mtu" where
 
   offset# = \_ -> \_ -> 22
 
-{-| __C declaration:__ @dev_flags@
+{-| Device flags
+
+    __C declaration:__ @dev_flags@
 
     __defined at:__ @rte_ethdev.h 1813:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ PtrConst.PtrConst HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "dev_flags" Rte_eth_dev_info ty where
@@ -12829,11 +14087,13 @@ instance HasCField.HasCField Rte_eth_dev_info "dev_flags" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @min_rx_bufsize@
+{-| Minimum Rx buffer size per descriptor supported by HW.
+
+    __C declaration:__ @min_rx_bufsize@
 
     __defined at:__ @rte_ethdev.h 1815:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "min_rx_bufsize" Rte_eth_dev_info ty where
@@ -12901,11 +14161,13 @@ instance HasCField.HasCField Rte_eth_dev_info "min_rx_bufsize" where
 
   offset# = \_ -> \_ -> 32
 
-{-| __C declaration:__ @max_rx_bufsize@
+{-| Maximum Rx buffer size per descriptor supported by HW. The value is not enforced, information only to application to optimize mbuf size. Its value is UINT32_MAX when not specified by the driver.
+
+    __C declaration:__ @max_rx_bufsize@
 
     __defined at:__ @rte_ethdev.h 1822:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_rx_bufsize" Rte_eth_dev_info ty where
@@ -12973,11 +14235,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_rx_bufsize" where
 
   offset# = \_ -> \_ -> 36
 
-{-| __C declaration:__ @max_rx_pktlen@
+{-| Maximum configurable length of Rx pkt.
+
+    __C declaration:__ @max_rx_pktlen@
 
     __defined at:__ @rte_ethdev.h 1823:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_rx_pktlen" Rte_eth_dev_info ty where
@@ -13045,11 +14309,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_rx_pktlen" where
 
   offset# = \_ -> \_ -> 40
 
-{-| __C declaration:__ @max_lro_pkt_size@
+{-| Maximum configurable size of LRO aggregated packet.
+
+    __C declaration:__ @max_lro_pkt_size@
 
     __defined at:__ @rte_ethdev.h 1825:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_lro_pkt_size" Rte_eth_dev_info ty where
@@ -13117,11 +14383,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_lro_pkt_size" where
 
   offset# = \_ -> \_ -> 44
 
-{-| __C declaration:__ @max_rx_queues@
+{-| Maximum number of Rx queues.
+
+    __C declaration:__ @max_rx_queues@
 
     __defined at:__ @rte_ethdev.h 1826:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_rx_queues" Rte_eth_dev_info ty where
@@ -13189,11 +14457,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_rx_queues" where
 
   offset# = \_ -> \_ -> 48
 
-{-| __C declaration:__ @max_tx_queues@
+{-| Maximum number of Tx queues.
+
+    __C declaration:__ @max_tx_queues@
 
     __defined at:__ @rte_ethdev.h 1827:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_tx_queues" Rte_eth_dev_info ty where
@@ -13261,11 +14531,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_tx_queues" where
 
   offset# = \_ -> \_ -> 50
 
-{-| __C declaration:__ @max_mac_addrs@
+{-| Maximum number of MAC addresses.
+
+    __C declaration:__ @max_mac_addrs@
 
     __defined at:__ @rte_ethdev.h 1828:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_mac_addrs" Rte_eth_dev_info ty where
@@ -13333,11 +14605,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_mac_addrs" where
 
   offset# = \_ -> \_ -> 52
 
-{-| __C declaration:__ @max_hash_mac_addrs@
+{-| Maximum number of hash MAC addresses for MTA and UTA.
+
+    __C declaration:__ @max_hash_mac_addrs@
 
     __defined at:__ @rte_ethdev.h 1830:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "max_hash_mac_addrs" Rte_eth_dev_info ty where
@@ -13405,11 +14679,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_hash_mac_addrs" where
 
   offset# = \_ -> \_ -> 56
 
-{-| __C declaration:__ @max_vfs@
+{-| Maximum number of VFs.
+
+    __C declaration:__ @max_vfs@
 
     __defined at:__ @rte_ethdev.h 1831:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_vfs" Rte_eth_dev_info ty where
@@ -13476,11 +14752,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_vfs" where
 
   offset# = \_ -> \_ -> 60
 
-{-| __C declaration:__ @max_vmdq_pools@
+{-| Maximum number of VMDq pools.
+
+    __C declaration:__ @max_vmdq_pools@
 
     __defined at:__ @rte_ethdev.h 1832:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_vmdq_pools" Rte_eth_dev_info ty where
@@ -13548,11 +14826,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_vmdq_pools" where
 
   offset# = \_ -> \_ -> 62
 
-{-| __C declaration:__ @rx_seg_capa@
+{-| Segmentation capability.
+
+    __C declaration:__ @rx_seg_capa@
 
     __defined at:__ @rte_ethdev.h 1833:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxseg_capa
          ) => BG.CompatHasField.HasField "rx_seg_capa" Rte_eth_dev_info ty where
@@ -13620,11 +14900,13 @@ instance HasCField.HasCField Rte_eth_dev_info "rx_seg_capa" where
 
   offset# = \_ -> \_ -> 64
 
-{-| __C declaration:__ @rx_offload_capa@
+{-| All Rx offload capabilities including all per-queue ones
+
+    __C declaration:__ @rx_offload_capa@
 
     __defined at:__ @rte_ethdev.h 1835:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rx_offload_capa" Rte_eth_dev_info ty where
@@ -13692,11 +14974,13 @@ instance HasCField.HasCField Rte_eth_dev_info "rx_offload_capa" where
 
   offset# = \_ -> \_ -> 72
 
-{-| __C declaration:__ @tx_offload_capa@
+{-| All Tx offload capabilities including all per-queue ones
+
+    __C declaration:__ @tx_offload_capa@
 
     __defined at:__ @rte_ethdev.h 1837:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tx_offload_capa" Rte_eth_dev_info ty where
@@ -13764,11 +15048,13 @@ instance HasCField.HasCField Rte_eth_dev_info "tx_offload_capa" where
 
   offset# = \_ -> \_ -> 80
 
-{-| __C declaration:__ @rx_queue_offload_capa@
+{-| Device per-queue Rx offload capabilities.
+
+    __C declaration:__ @rx_queue_offload_capa@
 
     __defined at:__ @rte_ethdev.h 1839:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "rx_queue_offload_capa" Rte_eth_dev_info ty where
@@ -13836,11 +15122,13 @@ instance HasCField.HasCField Rte_eth_dev_info "rx_queue_offload_capa" where
 
   offset# = \_ -> \_ -> 88
 
-{-| __C declaration:__ @tx_queue_offload_capa@
+{-| Device per-queue Tx offload capabilities.
+
+    __C declaration:__ @tx_queue_offload_capa@
 
     __defined at:__ @rte_ethdev.h 1841:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tx_queue_offload_capa" Rte_eth_dev_info ty where
@@ -13908,11 +15196,13 @@ instance HasCField.HasCField Rte_eth_dev_info "tx_queue_offload_capa" where
 
   offset# = \_ -> \_ -> 96
 
-{-| __C declaration:__ @reta_size@
+{-| Device redirection table size, the total number of entries.
+
+    __C declaration:__ @reta_size@
 
     __defined at:__ @rte_ethdev.h 1843:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "reta_size" Rte_eth_dev_info ty where
@@ -13979,11 +15269,13 @@ instance HasCField.HasCField Rte_eth_dev_info "reta_size" where
 
   offset# = \_ -> \_ -> 104
 
-{-| __C declaration:__ @hash_key_size@
+{-| Hash key size in bytes
+
+    __C declaration:__ @hash_key_size@
 
     __defined at:__ @rte_ethdev.h 1844:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "hash_key_size" Rte_eth_dev_info ty where
@@ -14055,7 +15347,7 @@ instance HasCField.HasCField Rte_eth_dev_info "hash_key_size" where
 
     __defined at:__ @rte_ethdev.h 1845:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "rss_algo_capa" Rte_eth_dev_info ty where
@@ -14123,11 +15415,13 @@ instance HasCField.HasCField Rte_eth_dev_info "rss_algo_capa" where
 
   offset# = \_ -> \_ -> 108
 
-{-| __C declaration:__ @flow_type_rss_offloads@
+{-| RSS hash algorithms capabilities Bit mask of RSS offloads, the bit offset also means flow type
+
+    __C declaration:__ @flow_type_rss_offloads@
 
     __defined at:__ @rte_ethdev.h 1847:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "flow_type_rss_offloads" Rte_eth_dev_info ty where
@@ -14195,11 +15489,13 @@ instance HasCField.HasCField Rte_eth_dev_info "flow_type_rss_offloads" where
 
   offset# = \_ -> \_ -> 112
 
-{-| __C declaration:__ @default_rxconf@
+{-| Default Rx configuration
+
+    __C declaration:__ @default_rxconf@
 
     __defined at:__ @rte_ethdev.h 1848:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxconf
          ) => BG.CompatHasField.HasField "default_rxconf" Rte_eth_dev_info ty where
@@ -14267,11 +15563,13 @@ instance HasCField.HasCField Rte_eth_dev_info "default_rxconf" where
 
   offset# = \_ -> \_ -> 120
 
-{-| __C declaration:__ @default_txconf@
+{-| Default Tx configuration
+
+    __C declaration:__ @default_txconf@
 
     __defined at:__ @rte_ethdev.h 1849:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_txconf
          ) => BG.CompatHasField.HasField "default_txconf" Rte_eth_dev_info ty where
@@ -14339,11 +15637,13 @@ instance HasCField.HasCField Rte_eth_dev_info "default_txconf" where
 
   offset# = \_ -> \_ -> 200
 
-{-| __C declaration:__ @vmdq_queue_base@
+{-| First queue ID for VMDq pools.
+
+    __C declaration:__ @vmdq_queue_base@
 
     __defined at:__ @rte_ethdev.h 1850:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vmdq_queue_base" Rte_eth_dev_info ty where
@@ -14411,11 +15711,13 @@ instance HasCField.HasCField Rte_eth_dev_info "vmdq_queue_base" where
 
   offset# = \_ -> \_ -> 256
 
-{-| __C declaration:__ @vmdq_queue_num@
+{-| Queue number for VMDq pools.
+
+    __C declaration:__ @vmdq_queue_num@
 
     __defined at:__ @rte_ethdev.h 1851:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vmdq_queue_num" Rte_eth_dev_info ty where
@@ -14483,11 +15785,13 @@ instance HasCField.HasCField Rte_eth_dev_info "vmdq_queue_num" where
 
   offset# = \_ -> \_ -> 258
 
-{-| __C declaration:__ @vmdq_pool_base@
+{-| First ID of VMDq pools.
+
+    __C declaration:__ @vmdq_pool_base@
 
     __defined at:__ @rte_ethdev.h 1852:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "vmdq_pool_base" Rte_eth_dev_info ty where
@@ -14555,11 +15859,13 @@ instance HasCField.HasCField Rte_eth_dev_info "vmdq_pool_base" where
 
   offset# = \_ -> \_ -> 260
 
-{-| __C declaration:__ @rx_desc_lim@
+{-| Rx descriptors limits
+
+    __C declaration:__ @rx_desc_lim@
 
     __defined at:__ @rte_ethdev.h 1853:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_desc_lim
          ) => BG.CompatHasField.HasField "rx_desc_lim" Rte_eth_dev_info ty where
@@ -14627,11 +15933,13 @@ instance HasCField.HasCField Rte_eth_dev_info "rx_desc_lim" where
 
   offset# = \_ -> \_ -> 262
 
-{-| __C declaration:__ @tx_desc_lim@
+{-| Tx descriptors limits
+
+    __C declaration:__ @tx_desc_lim@
 
     __defined at:__ @rte_ethdev.h 1854:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_desc_lim
          ) => BG.CompatHasField.HasField "tx_desc_lim" Rte_eth_dev_info ty where
@@ -14699,11 +16007,13 @@ instance HasCField.HasCField Rte_eth_dev_info "tx_desc_lim" where
 
   offset# = \_ -> \_ -> 272
 
-{-| __C declaration:__ @speed_capa@
+{-| Supported speeds bitmap (RTE_ETH_LINK_SPEED_).
+
+    __C declaration:__ @speed_capa@
 
     __defined at:__ @rte_ethdev.h 1855:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "speed_capa" Rte_eth_dev_info ty where
@@ -14770,11 +16080,13 @@ instance HasCField.HasCField Rte_eth_dev_info "speed_capa" where
 
   offset# = \_ -> \_ -> 284
 
-{-| __C declaration:__ @nb_rx_queues@
+{-| Configured number of Rx/Tx queues Number of Rx queues.
+
+    __C declaration:__ @nb_rx_queues@
 
     __defined at:__ @rte_ethdev.h 1857:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_rx_queues" Rte_eth_dev_info ty where
@@ -14842,11 +16154,13 @@ instance HasCField.HasCField Rte_eth_dev_info "nb_rx_queues" where
 
   offset# = \_ -> \_ -> 288
 
-{-| __C declaration:__ @nb_tx_queues@
+{-| Number of Tx queues.
+
+    __C declaration:__ @nb_tx_queues@
 
     __defined at:__ @rte_ethdev.h 1858:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_tx_queues" Rte_eth_dev_info ty where
@@ -14914,11 +16228,15 @@ instance HasCField.HasCField Rte_eth_dev_info "nb_tx_queues" where
 
   offset# = \_ -> \_ -> 290
 
-{-| __C declaration:__ @max_rx_mempools@
+{-| Maximum number of Rx mempools supported per Rx queue.
+
+    Value greater than 0 means that the driver supports Rx queue mempools specification via rx_conf->rx_mempools.
+
+    __C declaration:__ @max_rx_mempools@
 
     __defined at:__ @rte_ethdev.h 1865:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_rx_mempools" Rte_eth_dev_info ty where
@@ -14986,11 +16304,13 @@ instance HasCField.HasCField Rte_eth_dev_info "max_rx_mempools" where
 
   offset# = \_ -> \_ -> 292
 
-{-| __C declaration:__ @default_rxportconf@
+{-| Rx parameter recommendations
+
+    __C declaration:__ @default_rxportconf@
 
     __defined at:__ @rte_ethdev.h 1867:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dev_portconf
          ) => BG.CompatHasField.HasField "default_rxportconf" Rte_eth_dev_info ty where
@@ -15058,11 +16378,13 @@ instance HasCField.HasCField Rte_eth_dev_info "default_rxportconf" where
 
   offset# = \_ -> \_ -> 294
 
-{-| __C declaration:__ @default_txportconf@
+{-| Tx parameter recommendations
+
+    __C declaration:__ @default_txportconf@
 
     __defined at:__ @rte_ethdev.h 1869:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dev_portconf
          ) => BG.CompatHasField.HasField "default_txportconf" Rte_eth_dev_info ty where
@@ -15130,11 +16452,13 @@ instance HasCField.HasCField Rte_eth_dev_info "default_txportconf" where
 
   offset# = \_ -> \_ -> 300
 
-{-| __C declaration:__ @dev_capa@
+{-| Generic device capabilities (RTE_ETH_DEV_CAPA_).
+
+    __C declaration:__ @dev_capa@
 
     __defined at:__ @rte_ethdev.h 1871:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "dev_capa" Rte_eth_dev_info ty where
@@ -15201,11 +16525,13 @@ instance HasCField.HasCField Rte_eth_dev_info "dev_capa" where
 
   offset# = \_ -> \_ -> 312
 
-{-| __C declaration:__ @switch_info@
+{-| Switching information for ports on a device with a embedded managed interconnect/switch.
+
+    __C declaration:__ @switch_info@
 
     __defined at:__ @rte_ethdev.h 1876:29@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_switch_info
          ) => BG.CompatHasField.HasField "switch_info" Rte_eth_dev_info ty where
@@ -15273,11 +16599,13 @@ instance HasCField.HasCField Rte_eth_dev_info "switch_info" where
 
   offset# = \_ -> \_ -> 320
 
-{-| __C declaration:__ @err_handle_mode@
+{-| Supported error handling mode.
+
+    __C declaration:__ @err_handle_mode@
 
     __defined at:__ @rte_ethdev.h 1878:31@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_err_handle_mode
          ) => BG.CompatHasField.HasField "err_handle_mode" Rte_eth_dev_info ty where
@@ -15345,11 +16673,13 @@ instance HasCField.HasCField Rte_eth_dev_info "err_handle_mode" where
 
   offset# = \_ -> \_ -> 336
 
-{-| __C declaration:__ @reserved_64s@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_64s@
 
     __defined at:__ @rte_ethdev.h 1880:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "reserved_64s" Rte_eth_dev_info ty where
@@ -15417,11 +16747,13 @@ instance HasCField.HasCField Rte_eth_dev_info "reserved_64s" where
 
   offset# = \_ -> \_ -> 344
 
-{-| __C declaration:__ @reserved_ptrs@
+{-| Reserved for future fields
+
+    __C declaration:__ @reserved_ptrs@
 
     __defined at:__ @rte_ethdev.h 1881:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 2 (BG.Ptr BG.Void)
          ) => BG.CompatHasField.HasField "reserved_ptrs" Rte_eth_dev_info ty where
@@ -15489,88 +16821,110 @@ instance HasCField.HasCField Rte_eth_dev_info "reserved_ptrs" where
 
   offset# = \_ -> \_ -> 360
 
-{-| __C declaration:__ @macro RTE_ETH_QUEUE_STATE_STOPPED@
+{-| Queue stopped.
+
+    __C declaration:__ @macro RTE_ETH_QUEUE_STATE_STOPPED@
 
     __defined at:__ @rte_ethdev.h 1885:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_QUEUE_STATE_STOPPED :: BG.CInt
 rTE_ETH_QUEUE_STATE_STOPPED = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_QUEUE_STATE_STARTED@
+{-| Queue started.
+
+    __C declaration:__ @macro RTE_ETH_QUEUE_STATE_STARTED@
 
     __defined at:__ @rte_ethdev.h 1886:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_QUEUE_STATE_STARTED :: BG.CInt
 rTE_ETH_QUEUE_STATE_STARTED = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_QUEUE_STATE_HAIRPIN@
+{-| Queue used for hairpin.
+
+    __C declaration:__ @macro RTE_ETH_QUEUE_STATE_HAIRPIN@
 
     __defined at:__ @rte_ethdev.h 1887:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_QUEUE_STATE_HAIRPIN :: BG.CInt
 rTE_ETH_QUEUE_STATE_HAIRPIN = (2 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_rxq_info@
+{-| Ethernet device Rx queue information structure. Used to retrieve information about configured queue.
+
+    __C declaration:__ @struct rte_eth_rxq_info@
 
     __defined at:__ @rte_ethdev.h 1894:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxq_info = Rte_eth_rxq_info
   { mp :: BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
-    {- ^ __C declaration:__ @mp@
+    {- ^ mempool used by that queue.
+
+         __C declaration:__ @mp@
 
          __defined at:__ @rte_ethdev.h 1895:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , conf :: Rte_eth_rxconf
-    {- ^ __C declaration:__ @conf@
+    {- ^ queue config parameters.
+
+         __C declaration:__ @conf@
 
          __defined at:__ @rte_ethdev.h 1896:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , scattered_rx :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @scattered_rx@
+    {- ^ scattered packets Rx supported.
+
+         __C declaration:__ @scattered_rx@
 
          __defined at:__ @rte_ethdev.h 1897:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , queue_state :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @queue_state@
+    {- ^ one of RTE_ETH_QUEUE_STATE_*.
+
+         __C declaration:__ @queue_state@
 
          __defined at:__ @rte_ethdev.h 1898:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_desc :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_desc@
+    {- ^ configured number of RXDs.
+
+         __C declaration:__ @nb_desc@
 
          __defined at:__ @rte_ethdev.h 1899:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rx_buf_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @rx_buf_size@
+    {- ^ hardware receive buffer size.
+
+         __C declaration:__ @rx_buf_size@
 
          __defined at:__ @rte_ethdev.h 1900:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , avail_thresh :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @avail_thresh@
+    {- ^ Available Rx descriptors threshold defined as percentage of Rx queue size. If number of available descriptors is lower, the event RTE_ETH_EVENT_RX_AVAIL_THESH is generated. Value 0 means that the threshold monitoring is disabled.
+
+         __C declaration:__ @avail_thresh@
 
          __defined at:__ @rte_ethdev.h 1907:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -15620,11 +16974,13 @@ deriving via Marshal.EquivStorable Rte_eth_rxq_info instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_rxq_info instance Struct.IsStruct Rte_eth_rxq_info
 
-{-| __C declaration:__ @mp@
+{-| mempool used by that queue.
+
+    __C declaration:__ @mp@
 
     __defined at:__ @rte_ethdev.h 1895:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
          ) => BG.CompatHasField.HasField "mp" Rte_eth_rxq_info ty where
@@ -15655,11 +17011,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "mp" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @conf@
+{-| queue config parameters.
+
+    __C declaration:__ @conf@
 
     __defined at:__ @rte_ethdev.h 1896:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_rxconf
          ) => BG.CompatHasField.HasField "conf" Rte_eth_rxq_info ty where
@@ -15690,11 +17048,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "conf" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @scattered_rx@
+{-| scattered packets Rx supported.
+
+    __C declaration:__ @scattered_rx@
 
     __defined at:__ @rte_ethdev.h 1897:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "scattered_rx" Rte_eth_rxq_info ty where
@@ -15726,11 +17086,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "scattered_rx" where
 
   offset# = \_ -> \_ -> 88
 
-{-| __C declaration:__ @queue_state@
+{-| one of RTE_ETH_QUEUE_STATE_*.
+
+    __C declaration:__ @queue_state@
 
     __defined at:__ @rte_ethdev.h 1898:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "queue_state" Rte_eth_rxq_info ty where
@@ -15762,11 +17124,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "queue_state" where
 
   offset# = \_ -> \_ -> 89
 
-{-| __C declaration:__ @nb_desc@
+{-| configured number of RXDs.
+
+    __C declaration:__ @nb_desc@
 
     __defined at:__ @rte_ethdev.h 1899:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_desc" Rte_eth_rxq_info ty where
@@ -15797,11 +17161,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "nb_desc" where
 
   offset# = \_ -> \_ -> 90
 
-{-| __C declaration:__ @rx_buf_size@
+{-| hardware receive buffer size.
+
+    __C declaration:__ @rx_buf_size@
 
     __defined at:__ @rte_ethdev.h 1900:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_buf_size" Rte_eth_rxq_info ty where
@@ -15833,11 +17199,13 @@ instance HasCField.HasCField Rte_eth_rxq_info "rx_buf_size" where
 
   offset# = \_ -> \_ -> 92
 
-{-| __C declaration:__ @avail_thresh@
+{-| Available Rx descriptors threshold defined as percentage of Rx queue size. If number of available descriptors is lower, the event RTE_ETH_EVENT_RX_AVAIL_THESH is generated. Value 0 means that the threshold monitoring is disabled.
+
+    __C declaration:__ @avail_thresh@
 
     __defined at:__ @rte_ethdev.h 1907:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "avail_thresh" Rte_eth_rxq_info ty where
@@ -15869,33 +17237,41 @@ instance HasCField.HasCField Rte_eth_rxq_info "avail_thresh" where
 
   offset# = \_ -> \_ -> 94
 
-{-| __C declaration:__ @struct rte_eth_txq_info@
+{-| Ethernet device Tx queue information structure. Used to retrieve information about configured queue.
+
+    __C declaration:__ @struct rte_eth_txq_info@
 
     __defined at:__ @rte_ethdev.h 1914:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_txq_info = Rte_eth_txq_info
   { conf :: Rte_eth_txconf
-    {- ^ __C declaration:__ @conf@
+    {- ^ queue config parameters.
+
+         __C declaration:__ @conf@
 
          __defined at:__ @rte_ethdev.h 1915:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_desc :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_desc@
+    {- ^ configured number of TXDs.
+
+         __C declaration:__ @nb_desc@
 
          __defined at:__ @rte_ethdev.h 1916:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , queue_state :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @queue_state@
+    {- ^ one of RTE_ETH_QUEUE_STATE_*.
+
+         __C declaration:__ @queue_state@
 
          __defined at:__ @rte_ethdev.h 1917:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -15930,11 +17306,13 @@ deriving via Marshal.EquivStorable Rte_eth_txq_info instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_txq_info instance Struct.IsStruct Rte_eth_txq_info
 
-{-| __C declaration:__ @conf@
+{-| queue config parameters.
+
+    __C declaration:__ @conf@
 
     __defined at:__ @rte_ethdev.h 1915:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_txconf
          ) => BG.CompatHasField.HasField "conf" Rte_eth_txq_info ty where
@@ -15961,11 +17339,13 @@ instance HasCField.HasCField Rte_eth_txq_info "conf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @nb_desc@
+{-| configured number of TXDs.
+
+    __C declaration:__ @nb_desc@
 
     __defined at:__ @rte_ethdev.h 1916:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_desc" Rte_eth_txq_info ty where
@@ -15992,11 +17372,13 @@ instance HasCField.HasCField Rte_eth_txq_info "nb_desc" where
 
   offset# = \_ -> \_ -> 56
 
-{-| __C declaration:__ @queue_state@
+{-| one of RTE_ETH_QUEUE_STATE_*.
+
+    __C declaration:__ @queue_state@
 
     __defined at:__ @rte_ethdev.h 1917:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "queue_state" Rte_eth_txq_info ty where
@@ -16024,54 +17406,70 @@ instance HasCField.HasCField Rte_eth_txq_info "queue_state" where
 
   offset# = \_ -> \_ -> 58
 
-{-| __C declaration:__ @struct rte_eth_recycle_rxq_info@
+{-| Ethernet device Rx queue information structure for recycling mbufs. Used to retrieve Rx queue information when Tx queue reusing mbufs and moving them into Rx mbuf ring.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @struct rte_eth_recycle_rxq_info@
 
     __defined at:__ @rte_ethdev.h 1928:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_recycle_rxq_info = Rte_eth_recycle_rxq_info
   { mbuf_ring :: BG.Ptr (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf)
-    {- ^ __C declaration:__ @mbuf_ring@
+    {- ^ mbuf ring of Rx queue.
+
+         __C declaration:__ @mbuf_ring@
 
          __defined at:__ @rte_ethdev.h 1929:20@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mp :: BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
-    {- ^ __C declaration:__ @mp@
+    {- ^ mempool of Rx queue.
+
+         __C declaration:__ @mp@
 
          __defined at:__ @rte_ethdev.h 1930:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , refill_head :: BG.Ptr HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @refill_head@
+    {- ^ head of Rx queue refilling mbufs.
+
+         __C declaration:__ @refill_head@
 
          __defined at:__ @rte_ethdev.h 1931:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , receive_tail :: BG.Ptr HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @receive_tail@
+    {- ^ tail of Rx queue receiving pkts.
+
+         __C declaration:__ @receive_tail@
 
          __defined at:__ @rte_ethdev.h 1932:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mbuf_ring_size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @mbuf_ring_size@
+    {- ^ configured number of mbuf ring size.
+
+         __C declaration:__ @mbuf_ring_size@
 
          __defined at:__ @rte_ethdev.h 1933:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , refill_requirement :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @refill_requirement@
+    {- ^ Requirement on mbuf refilling batch size of Rx mbuf ring. For some PMD drivers, the number of Rx mbuf ring refilling mbufs should be aligned with mbuf ring size, in order to simplify ring wrapping around. Value 0 means that PMD drivers have no requirement for this.
+
+         __C declaration:__ @refill_requirement@
 
          __defined at:__ @rte_ethdev.h 1941:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16118,11 +17516,13 @@ deriving via Marshal.EquivStorable Rte_eth_recycle_rxq_info instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_recycle_rxq_info instance Struct.IsStruct Rte_eth_recycle_rxq_info
 
-{-| __C declaration:__ @mbuf_ring@
+{-| mbuf ring of Rx queue.
+
+    __C declaration:__ @mbuf_ring@
 
     __defined at:__ @rte_ethdev.h 1929:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf)
          ) => BG.CompatHasField.HasField "mbuf_ring" Rte_eth_recycle_rxq_info ty where
@@ -16152,11 +17552,13 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "mbuf_ring" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @mp@
+{-| mempool of Rx queue.
+
+    __C declaration:__ @mp@
 
     __defined at:__ @rte_ethdev.h 1930:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool
          ) => BG.CompatHasField.HasField "mp" Rte_eth_recycle_rxq_info ty where
@@ -16186,11 +17588,13 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "mp" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @refill_head@
+{-| head of Rx queue refilling mbufs.
+
+    __C declaration:__ @refill_head@
 
     __defined at:__ @rte_ethdev.h 1931:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refill_head" Rte_eth_recycle_rxq_info ty where
@@ -16221,11 +17625,13 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "refill_head" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @receive_tail@
+{-| tail of Rx queue receiving pkts.
+
+    __C declaration:__ @receive_tail@
 
     __defined at:__ @rte_ethdev.h 1932:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "receive_tail" Rte_eth_recycle_rxq_info ty where
@@ -16256,11 +17662,13 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "receive_tail" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @mbuf_ring_size@
+{-| configured number of mbuf ring size.
+
+    __C declaration:__ @mbuf_ring_size@
 
     __defined at:__ @rte_ethdev.h 1933:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "mbuf_ring_size" Rte_eth_recycle_rxq_info ty where
@@ -16291,11 +17699,13 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "mbuf_ring_size" where
 
   offset# = \_ -> \_ -> 32
 
-{-| __C declaration:__ @refill_requirement@
+{-| Requirement on mbuf refilling batch size of Rx mbuf ring. For some PMD drivers, the number of Rx mbuf ring refilling mbufs should be aligned with mbuf ring size, in order to simplify ring wrapping around. Value 0 means that PMD drivers have no requirement for this.
+
+    __C declaration:__ @refill_requirement@
 
     __defined at:__ @rte_ethdev.h 1941:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "refill_requirement" Rte_eth_recycle_rxq_info ty where
@@ -16326,26 +17736,32 @@ instance HasCField.HasCField Rte_eth_recycle_rxq_info "refill_requirement" where
 
   offset# = \_ -> \_ -> 34
 
-{-| __C declaration:__ @struct rte_eth_burst_mode@
+{-| Ethernet device Rx/Tx queue packet burst mode information structure. Used to retrieve information about packet burst mode setting.
+
+    __C declaration:__ @struct rte_eth_burst_mode@
 
     __defined at:__ @rte_ethdev.h 1957:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_burst_mode = Rte_eth_burst_mode
   { flags :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @flags@
+    {- ^ The ORed values of RTE_ETH_BURST_FLAG_xxx
+
+         __C declaration:__ @flags@
 
          __defined at:__ @rte_ethdev.h 1958:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , info :: CA.ConstantArray 1024 BG.CChar
-    {- ^ __C declaration:__ @info@
+    {- ^ burst mode information
+
+         __C declaration:__ @info@
 
          __defined at:__ @rte_ethdev.h 1961:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16378,11 +17794,13 @@ deriving via Marshal.EquivStorable Rte_eth_burst_mode instance BG.Storable Rte_e
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_burst_mode instance Struct.IsStruct Rte_eth_burst_mode
 
-{-| __C declaration:__ @flags@
+{-| The ORed values of RTE_ETH_BURST_FLAG_xxx
+
+    __C declaration:__ @flags@
 
     __defined at:__ @rte_ethdev.h 1958:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "flags" Rte_eth_burst_mode ty where
@@ -16406,11 +17824,13 @@ instance HasCField.HasCField Rte_eth_burst_mode "flags" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @info@
+{-| burst mode information
+
+    __C declaration:__ @info@
 
     __defined at:__ @rte_ethdev.h 1961:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 1024 BG.CChar
          ) => BG.CompatHasField.HasField "info" Rte_eth_burst_mode ty where
@@ -16434,44 +17854,56 @@ instance HasCField.HasCField Rte_eth_burst_mode "info" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @macro RTE_ETH_BURST_MODE_INFO_SIZE@
+{-| Maximum size for information
+
+    __C declaration:__ @macro RTE_ETH_BURST_MODE_INFO_SIZE@
 
     __defined at:__ @rte_ethdev.h 1960:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_BURST_MODE_INFO_SIZE :: BG.CInt
 rTE_ETH_BURST_MODE_INFO_SIZE = (1024 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_XSTATS_NAME_SIZE@
+{-| Maximum name length for extended statistics counters
+
+    __C declaration:__ @macro RTE_ETH_XSTATS_NAME_SIZE@
 
     __defined at:__ @rte_ethdev.h 1965:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_XSTATS_NAME_SIZE :: BG.CInt
 rTE_ETH_XSTATS_NAME_SIZE = (64 :: BG.CInt)
 
-{-| __C declaration:__ @struct rte_eth_xstat@
+{-| An Ethernet device extended statistic structure
+
+    This structure is used by @rte_eth_xstats_get()@ to provide statistics that are not provided in the generic /'Rte_eth_stats'/ structure. It maps a name ID, corresponding to an index in the array returned by @rte_eth_xstats_get_names()@ , to a statistic value.
+
+    __C declaration:__ @struct rte_eth_xstat@
 
     __defined at:__ @rte_ethdev.h 1976:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_xstat = Rte_eth_xstat
   { id :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @id@
+    {- ^ The index in xstats name array.
+
+         __C declaration:__ @id@
 
          __defined at:__ @rte_ethdev.h 1977:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , value :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @value@
+    {- ^ The statistic counter value.
+
+         __C declaration:__ @value@
 
          __defined at:__ @rte_ethdev.h 1978:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16504,11 +17936,13 @@ deriving via Marshal.EquivStorable Rte_eth_xstat instance BG.Storable Rte_eth_xs
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_xstat instance Struct.IsStruct Rte_eth_xstat
 
-{-| __C declaration:__ @id@
+{-| The index in xstats name array.
+
+    __C declaration:__ @id@
 
     __defined at:__ @rte_ethdev.h 1977:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "id" Rte_eth_xstat ty where
@@ -16532,11 +17966,13 @@ instance HasCField.HasCField Rte_eth_xstat "id" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @value@
+{-| The statistic counter value.
+
+    __C declaration:__ @value@
 
     __defined at:__ @rte_ethdev.h 1978:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "value" Rte_eth_xstat ty where
@@ -16560,19 +17996,33 @@ instance HasCField.HasCField Rte_eth_xstat "value" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @struct rte_eth_xstat_name@
+{-| A name element for extended statistics.
+
+    An array of this structure is returned by @rte_eth_xstats_get_names()@ . It lists the names of extended statistics for a PMD. The /'Rte_eth_xstat'/ structure references these names by their array index.
+
+    The xstats should follow a common naming scheme. Some names are standardized in rte_stats_strings. Examples:
+
+    * rx_missed_errors
+
+    * tx_q3_bytes
+
+    * tx_size_128_to_255_packets
+
+    __C declaration:__ @struct rte_eth_xstat_name@
 
     __defined at:__ @rte_ethdev.h 1995:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_xstat_name = Rte_eth_xstat_name
   { name :: CA.ConstantArray 64 BG.CChar
-    {- ^ __C declaration:__ @name@
+    {- ^ The statistic name.
+
+         __C declaration:__ @name@
 
          __defined at:__ @rte_ethdev.h 1996:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16603,11 +18053,13 @@ deriving via Marshal.EquivStorable Rte_eth_xstat_name instance BG.Storable Rte_e
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_xstat_name instance Struct.IsStruct Rte_eth_xstat_name
 
-{-| __C declaration:__ @name@
+{-| The statistic name.
+
+    __C declaration:__ @name@
 
     __defined at:__ @rte_ethdev.h 1996:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_eth_xstat_name ty where
@@ -16633,7 +18085,7 @@ instance HasCField.HasCField Rte_eth_xstat_name "name" where
 
     __defined at:__ @rte_ethdev.h 1999:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DCB_NUM_TCS :: BG.CInt
 rTE_ETH_DCB_NUM_TCS = (8 :: BG.CInt)
@@ -16642,7 +18094,7 @@ rTE_ETH_DCB_NUM_TCS = (8 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 2000:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MAX_VMDQ_POOL :: BG.CInt
 rTE_ETH_MAX_VMDQ_POOL = (64 :: BG.CInt)
@@ -16651,7 +18103,7 @@ rTE_ETH_MAX_VMDQ_POOL = (64 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 2008:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_tc_queue_mapping_tc_rxq = Rte_eth_dcb_tc_queue_mapping_tc_rxq
   { base :: HsBindgen.Runtime.LibC.Word16
@@ -16659,14 +18111,14 @@ data Rte_eth_dcb_tc_queue_mapping_tc_rxq = Rte_eth_dcb_tc_queue_mapping_tc_rxq
 
          __defined at:__ @rte_ethdev.h 2009:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_queue :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @nb_queue@
 
          __defined at:__ @rte_ethdev.h 2010:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16703,7 +18155,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_tc_queue_mapping_tc_rxq insta
 
     __defined at:__ @rte_ethdev.h 2009:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "base" Rte_eth_dcb_tc_queue_mapping_tc_rxq ty where
@@ -16731,7 +18183,7 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping_tc_rxq "base" where
 
     __defined at:__ @rte_ethdev.h 2010:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_queue" Rte_eth_dcb_tc_queue_mapping_tc_rxq ty where
@@ -16759,7 +18211,7 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping_tc_rxq "nb_queue" wher
 
     __defined at:__ @rte_ethdev.h 2013:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_tc_queue_mapping_tc_txq = Rte_eth_dcb_tc_queue_mapping_tc_txq
   { base :: HsBindgen.Runtime.LibC.Word16
@@ -16767,14 +18219,14 @@ data Rte_eth_dcb_tc_queue_mapping_tc_txq = Rte_eth_dcb_tc_queue_mapping_tc_txq
 
          __defined at:__ @rte_ethdev.h 2014:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_queue :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @nb_queue@
 
          __defined at:__ @rte_ethdev.h 2015:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16811,7 +18263,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_tc_queue_mapping_tc_txq insta
 
     __defined at:__ @rte_ethdev.h 2014:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "base" Rte_eth_dcb_tc_queue_mapping_tc_txq ty where
@@ -16839,7 +18291,7 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping_tc_txq "base" where
 
     __defined at:__ @rte_ethdev.h 2015:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_queue" Rte_eth_dcb_tc_queue_mapping_tc_txq ty where
@@ -16863,26 +18315,32 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping_tc_txq "nb_queue" wher
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @struct rte_eth_dcb_tc_queue_mapping@
+{-| A structure used to get the information of queue and TC mapping on both Tx and Rx paths.
+
+    __C declaration:__ @struct rte_eth_dcb_tc_queue_mapping@
 
     __defined at:__ @rte_ethdev.h 2006:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_tc_queue_mapping = Rte_eth_dcb_tc_queue_mapping
   { tc_rxq :: CA.ConstantArray 64 (CA.ConstantArray 8 Rte_eth_dcb_tc_queue_mapping_tc_rxq)
-    {- ^ __C declaration:__ @tc_rxq@
+    {- ^ Rx queues assigned to tc per Pool
+
+         __C declaration:__ @tc_rxq@
 
          __defined at:__ @rte_ethdev.h 2011:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc_txq :: CA.ConstantArray 64 (CA.ConstantArray 8 Rte_eth_dcb_tc_queue_mapping_tc_txq)
-    {- ^ __C declaration:__ @tc_txq@
+    {- ^ Rx queues assigned to tc per Pool
+
+         __C declaration:__ @tc_txq@
 
          __defined at:__ @rte_ethdev.h 2016:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -16915,11 +18373,13 @@ deriving via Marshal.EquivStorable Rte_eth_dcb_tc_queue_mapping instance BG.Stor
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_tc_queue_mapping instance Struct.IsStruct Rte_eth_dcb_tc_queue_mapping
 
-{-| __C declaration:__ @tc_rxq@
+{-| Rx queues assigned to tc per Pool
+
+    __C declaration:__ @tc_rxq@
 
     __defined at:__ @rte_ethdev.h 2011:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 (CA.ConstantArray 8 Rte_eth_dcb_tc_queue_mapping_tc_rxq)
          ) => BG.CompatHasField.HasField "tc_rxq" Rte_eth_dcb_tc_queue_mapping ty where
@@ -16943,11 +18403,13 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping "tc_rxq" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @tc_txq@
+{-| Rx queues assigned to tc per Pool
+
+    __C declaration:__ @tc_txq@
 
     __defined at:__ @rte_ethdev.h 2016:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 (CA.ConstantArray 8 Rte_eth_dcb_tc_queue_mapping_tc_txq)
          ) => BG.CompatHasField.HasField "tc_txq" Rte_eth_dcb_tc_queue_mapping ty where
@@ -16971,40 +18433,50 @@ instance HasCField.HasCField Rte_eth_dcb_tc_queue_mapping "tc_txq" where
 
   offset# = \_ -> \_ -> 2048
 
-{-| __C declaration:__ @struct rte_eth_dcb_info@
+{-| A structure used to get the information of DCB. It includes TC UP mapping and queue TC mapping.
+
+    __C declaration:__ @struct rte_eth_dcb_info@
 
     __defined at:__ @rte_ethdev.h 2023:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dcb_info = Rte_eth_dcb_info
   { nb_tcs :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @nb_tcs@
+    {- ^ number of TCs
+
+         __C declaration:__ @nb_tcs@
 
          __defined at:__ @rte_ethdev.h 2024:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , prio_tc :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @prio_tc@
+    {- ^ Priority to tc
+
+         __C declaration:__ @prio_tc@
 
          __defined at:__ @rte_ethdev.h 2025:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc_bws :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @tc_bws@
+    {- ^ Tx BW percentage for each TC
+
+         __C declaration:__ @tc_bws@
 
          __defined at:__ @rte_ethdev.h 2026:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc_queue :: Rte_eth_dcb_tc_queue_mapping
-    {- ^ __C declaration:__ @tc_queue@
+    {- ^ Rx queues assigned to tc
+
+         __C declaration:__ @tc_queue@
 
          __defined at:__ @rte_ethdev.h 2028:38@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -17041,11 +18513,13 @@ deriving via Marshal.EquivStorable Rte_eth_dcb_info instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dcb_info instance Struct.IsStruct Rte_eth_dcb_info
 
-{-| __C declaration:__ @nb_tcs@
+{-| number of TCs
+
+    __C declaration:__ @nb_tcs@
 
     __defined at:__ @rte_ethdev.h 2024:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "nb_tcs" Rte_eth_dcb_info ty where
@@ -17073,11 +18547,13 @@ instance HasCField.HasCField Rte_eth_dcb_info "nb_tcs" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @prio_tc@
+{-| Priority to tc
+
+    __C declaration:__ @prio_tc@
 
     __defined at:__ @rte_ethdev.h 2025:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "prio_tc" Rte_eth_dcb_info ty where
@@ -17105,11 +18581,13 @@ instance HasCField.HasCField Rte_eth_dcb_info "prio_tc" where
 
   offset# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @tc_bws@
+{-| Tx BW percentage for each TC
+
+    __C declaration:__ @tc_bws@
 
     __defined at:__ @rte_ethdev.h 2026:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tc_bws" Rte_eth_dcb_info ty where
@@ -17137,11 +18615,13 @@ instance HasCField.HasCField Rte_eth_dcb_info "tc_bws" where
 
   offset# = \_ -> \_ -> 9
 
-{-| __C declaration:__ @tc_queue@
+{-| Rx queues assigned to tc
+
+    __C declaration:__ @tc_queue@
 
     __defined at:__ @rte_ethdev.h 2028:38@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_dcb_tc_queue_mapping
          ) => BG.CompatHasField.HasField "tc_queue" Rte_eth_dcb_info ty where
@@ -17169,11 +18649,13 @@ instance HasCField.HasCField Rte_eth_dcb_info "tc_queue" where
 
   offset# = \_ -> \_ -> 18
 
-{-| __C declaration:__ @enum rte_eth_fec_mode@
+{-| This enum indicates the possible Forward Error Correction (FEC) modes of an ethdev port.
+
+    __C declaration:__ @enum rte_eth_fec_mode@
 
     __defined at:__ @rte_ethdev.h 2035:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_fec_mode = Rte_eth_fec_mode
   { unwrap :: BG.CUInt
@@ -17271,47 +18753,57 @@ instance HasCField.HasCField Rte_eth_fec_mode "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_FEC_NOFEC@
+{-| FEC is off
+
+    __C declaration:__ @RTE_ETH_FEC_NOFEC@
 
     __defined at:__ @rte_ethdev.h 2036:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FEC_NOFEC :: Rte_eth_fec_mode
 pattern RTE_ETH_FEC_NOFEC = Rte_eth_fec_mode 0
 
-{-| __C declaration:__ @RTE_ETH_FEC_AUTO@
+{-| FEC autonegotiation modes
+
+    __C declaration:__ @RTE_ETH_FEC_AUTO@
 
     __defined at:__ @rte_ethdev.h 2037:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FEC_AUTO :: Rte_eth_fec_mode
 pattern RTE_ETH_FEC_AUTO = Rte_eth_fec_mode 1
 
-{-| __C declaration:__ @RTE_ETH_FEC_BASER@
+{-| FEC using common algorithm
+
+    __C declaration:__ @RTE_ETH_FEC_BASER@
 
     __defined at:__ @rte_ethdev.h 2038:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FEC_BASER :: Rte_eth_fec_mode
 pattern RTE_ETH_FEC_BASER = Rte_eth_fec_mode 2
 
-{-| __C declaration:__ @RTE_ETH_FEC_RS@
+{-| FEC using RS algorithm
+
+    __C declaration:__ @RTE_ETH_FEC_RS@
 
     __defined at:__ @rte_ethdev.h 2039:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FEC_RS :: Rte_eth_fec_mode
 pattern RTE_ETH_FEC_RS = Rte_eth_fec_mode 3
 
-{-| __C declaration:__ @RTE_ETH_FEC_LLRS@
+{-| FEC using LLRS algorithm
+
+    __C declaration:__ @RTE_ETH_FEC_LLRS@
 
     __defined at:__ @rte_ethdev.h 2040:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_FEC_LLRS :: Rte_eth_fec_mode
 pattern RTE_ETH_FEC_LLRS = Rte_eth_fec_mode 4
@@ -17320,22 +18812,26 @@ pattern RTE_ETH_FEC_LLRS = Rte_eth_fec_mode 4
 
     __defined at:__ @rte_ethdev.h 2050:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_fec_capa = Rte_eth_fec_capa
   { speed :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @speed@
+    {- ^ Link speed (see RTE_ETH_SPEED_NUM_*)
+
+         __C declaration:__ @speed@
 
          __defined at:__ @rte_ethdev.h 2051:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , capa :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @capa@
+    {- ^ FEC capabilities bitmask
+
+         __C declaration:__ @capa@
 
          __defined at:__ @rte_ethdev.h 2052:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -17368,11 +18864,13 @@ deriving via Marshal.EquivStorable Rte_eth_fec_capa instance BG.Storable Rte_eth
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_fec_capa instance Struct.IsStruct Rte_eth_fec_capa
 
-{-| __C declaration:__ @speed@
+{-| Link speed (see RTE_ETH_SPEED_NUM_*)
+
+    __C declaration:__ @speed@
 
     __defined at:__ @rte_ethdev.h 2051:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "speed" Rte_eth_fec_capa ty where
@@ -17396,11 +18894,13 @@ instance HasCField.HasCField Rte_eth_fec_capa "speed" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @capa@
+{-| FEC capabilities bitmask
+
+    __C declaration:__ @capa@
 
     __defined at:__ @rte_ethdev.h 2052:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "capa" Rte_eth_fec_capa ty where
@@ -17428,7 +18928,7 @@ instance HasCField.HasCField Rte_eth_fec_capa "capa" where
 
     __defined at:__ @rte_ethdev.h 2055:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_ALL :: BG.CInt
 rTE_ETH_ALL = rTE_MAX_ETHPORTS
@@ -17439,7 +18939,7 @@ rTE_ETH_ALL = rTE_MAX_ETHPORTS
 
     __defined at:__ @rte_ethdev.h 2094:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_rx_callback_fn_Aux = Rte_rx_callback_fn_Aux
   { unwrap :: HsBindgen.Runtime.LibC.Word16 -> HsBindgen.Runtime.LibC.Word16 -> BG.Ptr (IsA.Elem (IA.IncompleteArray (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf))) -> HsBindgen.Runtime.LibC.Word16 -> HsBindgen.Runtime.LibC.Word16 -> BG.Ptr BG.Void -> IO HsBindgen.Runtime.LibC.Word16
@@ -17512,11 +19012,29 @@ instance HasCField.HasCField Rte_rx_callback_fn_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_rx_callback_fn@
+{-| Function type used for Rx packet processing packet callbacks.
+
+    The callback function is called on Rx with a burst of packets that have been received on the given port and queue.
+
+    [__@port_id@__]: The Ethernet port on which Rx is being performed.
+
+    [__@queue@__]: The queue on the Ethernet port which is being used to receive the packets.
+
+    [__@pkts@__]: The burst of packets that have just been received.
+
+    [__@nb_pkts@__]: The number of packets in the burst pointed to by "pkts".
+
+    [__@max_pkts@__]: The max number of packets that can be stored in the "pkts" array.
+
+    [__@user_param@__]: The arbitrary user parameter passed in by the application when the callback was originally configured.
+
+    __Returns:__ The number of packets returned to the user.
+
+    __C declaration:__ @rte_rx_callback_fn@
 
     __defined at:__ @rte_ethdev.h 2094:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_rx_callback_fn = Rte_rx_callback_fn
   { unwrap :: BG.FunPtr Rte_rx_callback_fn_Aux
@@ -17556,7 +19074,7 @@ instance HasCField.HasCField Rte_rx_callback_fn "unwrap" where
 
     __defined at:__ @rte_ethdev.h 2118:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_tx_callback_fn_Aux = Rte_tx_callback_fn_Aux
   { unwrap :: HsBindgen.Runtime.LibC.Word16 -> HsBindgen.Runtime.LibC.Word16 -> BG.Ptr (IsA.Elem (IA.IncompleteArray (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf))) -> HsBindgen.Runtime.LibC.Word16 -> BG.Ptr BG.Void -> IO HsBindgen.Runtime.LibC.Word16
@@ -17627,11 +19145,27 @@ instance HasCField.HasCField Rte_tx_callback_fn_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_tx_callback_fn@
+{-| Function type used for Tx packet processing packet callbacks.
+
+    The callback function is called on Tx with a burst of packets immediately before the packets are put onto the hardware queue for transmission.
+
+    [__@port_id@__]: The Ethernet port on which Tx is being performed.
+
+    [__@queue@__]: The queue on the Ethernet port which is being used to transmit the packets.
+
+    [__@pkts@__]: The burst of packets that are about to be transmitted.
+
+    [__@nb_pkts@__]: The number of packets in the burst pointed to by "pkts".
+
+    [__@user_param@__]: The arbitrary user parameter passed in by the application when the callback was originally configured.
+
+    __Returns:__ The number of packets to be written to the NIC.
+
+    __C declaration:__ @rte_tx_callback_fn@
 
     __defined at:__ @rte_ethdev.h 2118:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_tx_callback_fn = Rte_tx_callback_fn
   { unwrap :: BG.FunPtr Rte_tx_callback_fn_Aux
@@ -17665,11 +19199,13 @@ instance HasCField.HasCField Rte_tx_callback_fn "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @enum rte_eth_dev_state@
+{-| Possible states of an ethdev port.
+
+    __C declaration:__ @enum rte_eth_dev_state@
 
     __defined at:__ @rte_ethdev.h 2124:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_dev_state = Rte_eth_dev_state
   { unwrap :: BG.CUInt
@@ -17765,29 +19301,35 @@ instance HasCField.HasCField Rte_eth_dev_state "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_DEV_UNUSED@
+{-| Device is unused before being probed.
+
+    __C declaration:__ @RTE_ETH_DEV_UNUSED@
 
     __defined at:__ @rte_ethdev.h 2126:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_DEV_UNUSED :: Rte_eth_dev_state
 pattern RTE_ETH_DEV_UNUSED = Rte_eth_dev_state 0
 
-{-| __C declaration:__ @RTE_ETH_DEV_ATTACHED@
+{-| Device is attached when allocated in probing.
+
+    __C declaration:__ @RTE_ETH_DEV_ATTACHED@
 
     __defined at:__ @rte_ethdev.h 2128:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_DEV_ATTACHED :: Rte_eth_dev_state
 pattern RTE_ETH_DEV_ATTACHED = Rte_eth_dev_state 1
 
-{-| __C declaration:__ @RTE_ETH_DEV_REMOVED@
+{-| Device is in removed state when plug-out is detected.
+
+    __C declaration:__ @RTE_ETH_DEV_REMOVED@
 
     __defined at:__ @rte_ethdev.h 2130:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_DEV_REMOVED :: Rte_eth_dev_state
 pattern RTE_ETH_DEV_REMOVED = Rte_eth_dev_state 2
@@ -17796,36 +19338,44 @@ pattern RTE_ETH_DEV_REMOVED = Rte_eth_dev_state 2
 
     __defined at:__ @rte_ethdev.h 2133:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_sriov = Rte_eth_dev_sriov
   { active :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @active@
+    {- ^ SRIOV is active with 16, 32 or 64 pools
+
+         __C declaration:__ @active@
 
          __defined at:__ @rte_ethdev.h 2134:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_q_per_pool :: HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @nb_q_per_pool@
+    {- ^ Rx queue number per pool
+
+         __C declaration:__ @nb_q_per_pool@
 
          __defined at:__ @rte_ethdev.h 2135:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , def_vmdq_idx :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @def_vmdq_idx@
+    {- ^ Default pool num used for PF
+
+         __C declaration:__ @def_vmdq_idx@
 
          __defined at:__ @rte_ethdev.h 2136:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , def_pool_q_idx :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @def_pool_q_idx@
+    {- ^ Default pool queue start reg index
+
+         __C declaration:__ @def_pool_q_idx@
 
          __defined at:__ @rte_ethdev.h 2137:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -17862,11 +19412,13 @@ deriving via Marshal.EquivStorable Rte_eth_dev_sriov instance BG.Storable Rte_et
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dev_sriov instance Struct.IsStruct Rte_eth_dev_sriov
 
-{-| __C declaration:__ @active@
+{-| SRIOV is active with 16, 32 or 64 pools
+
+    __C declaration:__ @active@
 
     __defined at:__ @rte_ethdev.h 2134:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "active" Rte_eth_dev_sriov ty where
@@ -17894,11 +19446,13 @@ instance HasCField.HasCField Rte_eth_dev_sriov "active" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @nb_q_per_pool@
+{-| Rx queue number per pool
+
+    __C declaration:__ @nb_q_per_pool@
 
     __defined at:__ @rte_ethdev.h 2135:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "nb_q_per_pool" Rte_eth_dev_sriov ty where
@@ -17927,11 +19481,13 @@ instance HasCField.HasCField Rte_eth_dev_sriov "nb_q_per_pool" where
 
   offset# = \_ -> \_ -> 1
 
-{-| __C declaration:__ @def_vmdq_idx@
+{-| Default pool num used for PF
+
+    __C declaration:__ @def_vmdq_idx@
 
     __defined at:__ @rte_ethdev.h 2136:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "def_vmdq_idx" Rte_eth_dev_sriov ty where
@@ -17960,11 +19516,13 @@ instance HasCField.HasCField Rte_eth_dev_sriov "def_vmdq_idx" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @def_pool_q_idx@
+{-| Default pool queue start reg index
+
+    __C declaration:__ @def_pool_q_idx@
 
     __defined at:__ @rte_ethdev.h 2137:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "def_pool_q_idx" Rte_eth_dev_sriov ty where
@@ -17997,7 +19555,7 @@ instance HasCField.HasCField Rte_eth_dev_sriov "def_pool_q_idx" where
 
     __defined at:__ @rte_ethdev.h 2141:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_NAME_MAX_LEN :: BG.CInt
 rTE_ETH_NAME_MAX_LEN = rTE_DEV_NAME_MAX_LEN
@@ -18006,7 +19564,7 @@ rTE_ETH_NAME_MAX_LEN = rTE_DEV_NAME_MAX_LEN
 
     __defined at:__ @rte_ethdev.h 2143:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_DEV_NO_OWNER :: BG.CInt
 rTE_ETH_DEV_NO_OWNER = (0 :: BG.CInt)
@@ -18015,7 +19573,7 @@ rTE_ETH_DEV_NO_OWNER = (0 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 2145:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_MAX_OWNER_NAME_LEN :: BG.CInt
 rTE_ETH_MAX_OWNER_NAME_LEN = (64 :: BG.CInt)
@@ -18024,22 +19582,26 @@ rTE_ETH_MAX_OWNER_NAME_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_ethdev.h 2147:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_owner = Rte_eth_dev_owner
   { id :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @id@
+    {- ^ The owner unique identifier.
+
+         __C declaration:__ @id@
 
          __defined at:__ @rte_ethdev.h 2148:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , name :: CA.ConstantArray 64 BG.CChar
-    {- ^ __C declaration:__ @name@
+    {- ^ The owner name.
+
+         __C declaration:__ @name@
 
          __defined at:__ @rte_ethdev.h 2149:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -18072,11 +19634,13 @@ deriving via Marshal.EquivStorable Rte_eth_dev_owner instance BG.Storable Rte_et
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_dev_owner instance Struct.IsStruct Rte_eth_dev_owner
 
-{-| __C declaration:__ @id@
+{-| The owner unique identifier.
+
+    __C declaration:__ @id@
 
     __defined at:__ @rte_ethdev.h 2148:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "id" Rte_eth_dev_owner ty where
@@ -18100,11 +19664,13 @@ instance HasCField.HasCField Rte_eth_dev_owner "id" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @name@
+{-| The owner name.
+
+    __C declaration:__ @name@
 
     __defined at:__ @rte_ethdev.h 2149:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_eth_dev_owner ty where
@@ -18134,7 +19700,7 @@ instance HasCField.HasCField Rte_eth_dev_owner "name" where
 
     __defined at:__ @rte_ethdev.h 3909:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Buffer_tx_error_fn_Aux = Buffer_tx_error_fn_Aux
   { unwrap :: BG.Ptr (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf) -> HsBindgen.Runtime.LibC.Word16 -> BG.Ptr BG.Void -> IO ()
@@ -18205,7 +19771,7 @@ instance HasCField.HasCField Buffer_tx_error_fn_Aux "unwrap" where
 
     __defined at:__ @rte_ethdev.h 3909:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Buffer_tx_error_fn = Buffer_tx_error_fn
   { unwrap :: BG.FunPtr Buffer_tx_error_fn_Aux
@@ -18239,11 +19805,13 @@ instance HasCField.HasCField Buffer_tx_error_fn "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @struct rte_eth_dev_tx_buffer@
+{-| Structure used to buffer packets for future Tx Used by APIs rte_eth_tx_buffer and rte_eth_tx_buffer_flush
+
+    __C declaration:__ @struct rte_eth_dev_tx_buffer@
 
     __defined at:__ @rte_ethdev.h 3916:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_dev_tx_buffer_Aux = Rte_eth_dev_tx_buffer
   { error_callback :: Buffer_tx_error_fn
@@ -18251,28 +19819,32 @@ data Rte_eth_dev_tx_buffer_Aux = Rte_eth_dev_tx_buffer
 
          __defined at:__ @rte_ethdev.h 3917:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , error_userdata :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @error_userdata@
 
          __defined at:__ @rte_ethdev.h 3918:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , size :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @size@
+    {- ^ Size of buffer for buffered Tx
+
+         __C declaration:__ @size@
 
          __defined at:__ @rte_ethdev.h 3919:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , length :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @length@
+    {- ^ Number of packets in the array
+
+         __C declaration:__ @length@
 
          __defined at:__ @rte_ethdev.h 3920:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -18313,7 +19885,7 @@ deriving via Struct.IsStructViaReadRaw Rte_eth_dev_tx_buffer_Aux instance Struct
 
     __defined at:__ @rte_ethdev.h 3917:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Buffer_tx_error_fn
          ) => BG.CompatHasField.HasField "error_callback" Rte_eth_dev_tx_buffer_Aux ty where
@@ -18346,7 +19918,7 @@ instance HasCField.HasCField Rte_eth_dev_tx_buffer_Aux "error_callback" where
 
     __defined at:__ @rte_ethdev.h 3918:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "error_userdata" Rte_eth_dev_tx_buffer_Aux ty where
@@ -18375,11 +19947,13 @@ instance HasCField.HasCField Rte_eth_dev_tx_buffer_Aux "error_userdata" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @size@
+{-| Size of buffer for buffered Tx
+
+    __C declaration:__ @size@
 
     __defined at:__ @rte_ethdev.h 3919:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "size" Rte_eth_dev_tx_buffer_Aux ty where
@@ -18407,11 +19981,13 @@ instance HasCField.HasCField Rte_eth_dev_tx_buffer_Aux "size" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @length@
+{-| Number of packets in the array
+
+    __C declaration:__ @length@
 
     __defined at:__ @rte_ethdev.h 3920:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "length" Rte_eth_dev_tx_buffer_Aux ty where
@@ -18443,20 +20019,24 @@ instance FLAM.Offset (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf) Rte_eth_dev_
 
   offset = \_proxy0 -> 24
 
-{-| __C declaration:__ @struct rte_eth_dev_tx_buffer@
+{-| Structure used to buffer packets for future Tx Used by APIs rte_eth_tx_buffer and rte_eth_tx_buffer_flush
+
+    __C declaration:__ @struct rte_eth_dev_tx_buffer@
 
     __defined at:__ @rte_ethdev.h 3916:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 type Rte_eth_dev_tx_buffer =
   FLAM.WithFlam (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf) Rte_eth_dev_tx_buffer_Aux
 
-{-| __C declaration:__ @enum rte_eth_event_macsec_subtype@
+{-| Subtypes for MACsec offload event ( @RTE_ETH_EVENT_MACSEC@ ) raised by Ethernet device.
+
+    __C declaration:__ @enum rte_eth_event_macsec_subtype@
 
     __defined at:__ @rte_ethdev.h 4060:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_event_macsec_subtype = Rte_eth_event_macsec_subtype
   { unwrap :: BG.CUInt
@@ -18557,65 +20137,79 @@ instance HasCField.HasCField Rte_eth_event_macsec_subtype "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_UNKNOWN@
+{-| Notifies unknown MACsec subevent.
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_UNKNOWN@
 
     __defined at:__ @rte_ethdev.h 4062:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_UNKNOWN :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_UNKNOWN = Rte_eth_event_macsec_subtype 0
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_V_EQ1@
+{-| Subevent of RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR sectag validation events Validation check: SecTag.TCI.V = 1
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_V_EQ1@
 
     __defined at:__ @rte_ethdev.h 4067:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_V_EQ1 :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_V_EQ1 = Rte_eth_event_macsec_subtype 1
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_E_EQ0_C_EQ1@
+{-| Subevent of RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR sectag validation events Validation check: SecTag.TCI.E = 0 && SecTag.TCI.C = 1
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_E_EQ0_C_EQ1@
 
     __defined at:__ @rte_ethdev.h 4072:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_E_EQ0_C_EQ1 :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_E_EQ0_C_EQ1 = Rte_eth_event_macsec_subtype 2
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SL_GTE48@
+{-| Subevent of RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR sectag validation events Validation check: SecTag.SL >= 'd48
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SL_GTE48@
 
     __defined at:__ @rte_ethdev.h 4077:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SL_GTE48 :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SL_GTE48 = Rte_eth_event_macsec_subtype 3
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_ES_EQ1_SC_EQ1@
+{-| Subevent of RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR sectag validation events Validation check: SecTag.TCI.ES = 1 && SecTag.TCI.SC = 1
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_ES_EQ1_SC_EQ1@
 
     __defined at:__ @rte_ethdev.h 4082:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_ES_EQ1_SC_EQ1 :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_ES_EQ1_SC_EQ1 = Rte_eth_event_macsec_subtype 4
 
-{-| __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SC_EQ1_SCB_EQ1@
+{-| Subevent of RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR sectag validation events Validation check: SecTag.TCI.SC = 1 && SecTag.TCI.SCB = 1
+
+    __C declaration:__ @RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SC_EQ1_SCB_EQ1@
 
     __defined at:__ @rte_ethdev.h 4087:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SC_EQ1_SCB_EQ1 :: Rte_eth_event_macsec_subtype
 pattern RTE_ETH_SUBEVENT_MACSEC_RX_SECTAG_SC_EQ1_SCB_EQ1 = Rte_eth_event_macsec_subtype 5
 
-{-| __C declaration:__ @enum rte_eth_event_macsec_type@
+{-| Event types for MACsec offload event ( @RTE_ETH_EVENT_MACSEC@ ) raised by eth device.
+
+    __C declaration:__ @enum rte_eth_event_macsec_type@
 
     __defined at:__ @rte_ethdev.h 4094:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_event_macsec_type = Rte_eth_event_macsec_type
   { unwrap :: BG.CUInt
@@ -18716,96 +20310,122 @@ instance HasCField.HasCField Rte_eth_event_macsec_type "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_UNKNOWN@
+{-| Notifies unknown MACsec event.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_UNKNOWN@
 
     __defined at:__ @rte_ethdev.h 4096:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_UNKNOWN :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_UNKNOWN = Rte_eth_event_macsec_type 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR@
+{-| Notifies Sectag validation failure events.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR@
 
     __defined at:__ @rte_ethdev.h 4098:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_SECTAG_VAL_ERR = Rte_eth_event_macsec_type 1
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_RX_SA_PN_HARD_EXP@
+{-| Notifies Rx SA hard expiry events.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_RX_SA_PN_HARD_EXP@
 
     __defined at:__ @rte_ethdev.h 4100:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_RX_SA_PN_HARD_EXP :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_RX_SA_PN_HARD_EXP = Rte_eth_event_macsec_type 2
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_RX_SA_PN_SOFT_EXP@
+{-| Notifies Rx SA soft expiry events.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_RX_SA_PN_SOFT_EXP@
 
     __defined at:__ @rte_ethdev.h 4102:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_RX_SA_PN_SOFT_EXP :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_RX_SA_PN_SOFT_EXP = Rte_eth_event_macsec_type 3
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_TX_SA_PN_HARD_EXP@
+{-| Notifies Tx SA hard expiry events.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_TX_SA_PN_HARD_EXP@
 
     __defined at:__ @rte_ethdev.h 4104:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_TX_SA_PN_HARD_EXP :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_TX_SA_PN_HARD_EXP = Rte_eth_event_macsec_type 4
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_TX_SA_PN_SOFT_EXP@
+{-| Notifies Tx SA soft events.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_TX_SA_PN_SOFT_EXP@
 
     __defined at:__ @rte_ethdev.h 4106:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_TX_SA_PN_SOFT_EXP :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_TX_SA_PN_SOFT_EXP = Rte_eth_event_macsec_type 5
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC_SA_NOT_VALID@
+{-| Notifies Invalid SA event.
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC_SA_NOT_VALID@
 
     __defined at:__ @rte_ethdev.h 4108:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC_SA_NOT_VALID :: Rte_eth_event_macsec_type
 pattern RTE_ETH_EVENT_MACSEC_SA_NOT_VALID = Rte_eth_event_macsec_type 6
 
-{-| __C declaration:__ @struct rte_eth_event_macsec_desc@
+{-| Descriptor for @RTE_ETH_EVENT_MACSEC@ event. Used by ethdev to send extra information of the MACsec offload event.
+
+    __C declaration:__ @struct rte_eth_event_macsec_desc@
 
     __defined at:__ @rte_ethdev.h 4115:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_event_macsec_desc = Rte_eth_event_macsec_desc
   { type' :: Rte_eth_event_macsec_type
-    {- ^ __C declaration:__ @type@
+    {- ^ Type of RTE_ETH_EVENT_MACSEC_* event.
+
+         __C declaration:__ @type@
 
          __defined at:__ @rte_ethdev.h 4117:33@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , subtype :: Rte_eth_event_macsec_subtype
-    {- ^ __C declaration:__ @subtype@
+    {- ^ Type of RTE_ETH_SUBEVENT_MACSEC_* subevent.
+
+         __C declaration:__ @subtype@
 
          __defined at:__ @rte_ethdev.h 4119:36@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , metadata :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @metadata@
+    {- ^ Event specific metadata.
+
+         For the following events, /userdata/ registered with the /rte_security_session/ would be returned as metadata.
+
+         __See:__ struct rte_security_session_conf
+
+         __C declaration:__ @metadata@
 
          __defined at:__ @rte_ethdev.h 4129:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -18840,11 +20460,13 @@ deriving via Marshal.EquivStorable Rte_eth_event_macsec_desc instance BG.Storabl
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_event_macsec_desc instance Struct.IsStruct Rte_eth_event_macsec_desc
 
-{-| __C declaration:__ @type@
+{-| Type of RTE_ETH_EVENT_MACSEC_* event.
+
+    __C declaration:__ @type@
 
     __defined at:__ @rte_ethdev.h 4117:33@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_event_macsec_type
          ) => BG.CompatHasField.HasField "type'" Rte_eth_event_macsec_desc ty where
@@ -18871,11 +20493,13 @@ instance HasCField.HasCField Rte_eth_event_macsec_desc "type'" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @subtype@
+{-| Type of RTE_ETH_SUBEVENT_MACSEC_* subevent.
+
+    __C declaration:__ @subtype@
 
     __defined at:__ @rte_ethdev.h 4119:36@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_event_macsec_subtype
          ) => BG.CompatHasField.HasField "subtype" Rte_eth_event_macsec_desc ty where
@@ -18902,11 +20526,17 @@ instance HasCField.HasCField Rte_eth_event_macsec_desc "subtype" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @metadata@
+{-| Event specific metadata.
+
+    For the following events, /userdata/ registered with the /rte_security_session/ would be returned as metadata.
+
+    __See:__ struct rte_security_session_conf
+
+    __C declaration:__ @metadata@
 
     __defined at:__ @rte_ethdev.h 4129:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "metadata" Rte_eth_event_macsec_desc ty where
@@ -18933,11 +20563,13 @@ instance HasCField.HasCField Rte_eth_event_macsec_desc "metadata" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @enum rte_eth_event_ipsec_subtype@
+{-| Subtypes for IPsec offload event( @RTE_ETH_EVENT_IPSEC@ ) raised by eth device.
+
+    __C declaration:__ @enum rte_eth_event_ipsec_subtype@
 
     __defined at:__ @rte_ethdev.h 4136:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_event_ipsec_subtype = Rte_eth_event_ipsec_subtype
   { unwrap :: BG.CInt
@@ -19031,116 +20663,158 @@ instance HasCField.HasCField Rte_eth_event_ipsec_subtype "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_PMD_ERROR_START@
+{-| PMD specific error start
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_PMD_ERROR_START@
 
     __defined at:__ @rte_ethdev.h 4138:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_PMD_ERROR_START :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_PMD_ERROR_START = Rte_eth_event_ipsec_subtype (-256)
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_PMD_ERROR_END@
+{-| PMD specific error end
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_PMD_ERROR_END@
 
     __defined at:__ @rte_ethdev.h 4140:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_PMD_ERROR_END :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_PMD_ERROR_END = Rte_eth_event_ipsec_subtype (-1)
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_UNKNOWN@
+{-| Unknown event type
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_UNKNOWN@
 
     __defined at:__ @rte_ethdev.h 4142:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_UNKNOWN :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_UNKNOWN = Rte_eth_event_ipsec_subtype 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW@
+{-| Sequence number overflow
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW@
 
     __defined at:__ @rte_ethdev.h 4144:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW = Rte_eth_event_ipsec_subtype 1
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY@
+{-| Soft time expiry of SA
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY@
 
     __defined at:__ @rte_ethdev.h 4146:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY = Rte_eth_event_ipsec_subtype 2
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY@
+{-| Soft byte expiry of SA determined by rte_security_ipsec_lifetime::bytes_soft_limit
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY@
 
     __defined at:__ @rte_ethdev.h 4151:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY = Rte_eth_event_ipsec_subtype 3
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY@
+{-| Soft packet expiry of SA determined by rte_security_ipsec_lifetime::packets_soft_limit
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY@
 
     __defined at:__ @rte_ethdev.h 4156:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY = Rte_eth_event_ipsec_subtype 4
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY@
+{-| Hard byte expiry of SA determined by rte_security_ipsec_lifetime::bytes_hard_limit
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY@
 
     __defined at:__ @rte_ethdev.h 4161:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY = Rte_eth_event_ipsec_subtype 5
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY@
+{-| Hard packet expiry of SA determined by rte_security_ipsec_lifetime::packets_hard_limit
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY@
 
     __defined at:__ @rte_ethdev.h 4166:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY = Rte_eth_event_ipsec_subtype 6
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC_MAX@
+{-| Max value of this enum
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC_MAX@
 
     __defined at:__ @rte_ethdev.h 4168:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC_MAX :: Rte_eth_event_ipsec_subtype
 pattern RTE_ETH_EVENT_IPSEC_MAX = Rte_eth_event_ipsec_subtype 7
 
-{-| __C declaration:__ @struct rte_eth_event_ipsec_desc@
+{-| Descriptor for @RTE_ETH_EVENT_IPSEC@ event. Used by eth dev to send extra information of the IPsec offload event.
+
+    __C declaration:__ @struct rte_eth_event_ipsec_desc@
 
     __defined at:__ @rte_ethdev.h 4175:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_event_ipsec_desc = Rte_eth_event_ipsec_desc
   { subtype :: Rte_eth_event_ipsec_subtype
-    {- ^ __C declaration:__ @subtype@
+    {- ^ Type of RTE_ETH_EVENT_IPSEC_* event
+
+         __C declaration:__ @subtype@
 
          __defined at:__ @rte_ethdev.h 4177:35@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , metadata :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @metadata@
+    {- ^ Event specific metadata.
+
+         For the following events, /userdata/ registered with the /rte_security_session/ would be returned as metadata,
+
+         * @RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW@
+
+         * @RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY@
+
+         * @RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY@
+
+         * @RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY@
+
+         * @RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY@
+
+         * @RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY@
+
+         __See:__ struct rte_security_session_conf
+
+         __C declaration:__ @metadata@
 
          __defined at:__ @rte_ethdev.h 4195:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -19173,11 +20847,13 @@ deriving via Marshal.EquivStorable Rte_eth_event_ipsec_desc instance BG.Storable
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_event_ipsec_desc instance Struct.IsStruct Rte_eth_event_ipsec_desc
 
-{-| __C declaration:__ @subtype@
+{-| Type of RTE_ETH_EVENT_IPSEC_* event
+
+    __C declaration:__ @subtype@
 
     __defined at:__ @rte_ethdev.h 4177:35@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_event_ipsec_subtype
          ) => BG.CompatHasField.HasField "subtype" Rte_eth_event_ipsec_desc ty where
@@ -19201,11 +20877,29 @@ instance HasCField.HasCField Rte_eth_event_ipsec_desc "subtype" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @metadata@
+{-| Event specific metadata.
+
+    For the following events, /userdata/ registered with the /rte_security_session/ would be returned as metadata,
+
+    * @RTE_ETH_EVENT_IPSEC_ESN_OVERFLOW@
+
+    * @RTE_ETH_EVENT_IPSEC_SA_TIME_EXPIRY@
+
+    * @RTE_ETH_EVENT_IPSEC_SA_BYTE_EXPIRY@
+
+    * @RTE_ETH_EVENT_IPSEC_SA_PKT_EXPIRY@
+
+    * @RTE_ETH_EVENT_IPSEC_SA_BYTE_HARD_EXPIRY@
+
+    * @RTE_ETH_EVENT_IPSEC_SA_PKT_HARD_EXPIRY@
+
+    __See:__ struct rte_security_session_conf
+
+    __C declaration:__ @metadata@
 
     __defined at:__ @rte_ethdev.h 4195:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "metadata" Rte_eth_event_ipsec_desc ty where
@@ -19229,11 +20923,13 @@ instance HasCField.HasCField Rte_eth_event_ipsec_desc "metadata" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @enum rte_eth_event_type@
+{-| The eth device event type for interrupt, and maybe others in the future.
+
+    __C declaration:__ @enum rte_eth_event_type@
 
     __defined at:__ @rte_ethdev.h 4201:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_event_type = Rte_eth_event_type
   { unwrap :: BG.CUInt
@@ -19343,146 +21039,222 @@ instance HasCField.HasCField Rte_eth_event_type "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_UNKNOWN@
+{-| unknown event type
+
+    __C declaration:__ @RTE_ETH_EVENT_UNKNOWN@
 
     __defined at:__ @rte_ethdev.h 4202:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_UNKNOWN :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_UNKNOWN = Rte_eth_event_type 0
 
-{-| __C declaration:__ @RTE_ETH_EVENT_INTR_LSC@
+{-| lsc interrupt event
+
+    __C declaration:__ @RTE_ETH_EVENT_INTR_LSC@
 
     __defined at:__ @rte_ethdev.h 4203:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_INTR_LSC :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_INTR_LSC = Rte_eth_event_type 1
 
-{-| __C declaration:__ @RTE_ETH_EVENT_QUEUE_STATE@
+{-| queue state event (enabled/disabled)
+
+    __C declaration:__ @RTE_ETH_EVENT_QUEUE_STATE@
 
     __defined at:__ @rte_ethdev.h 4205:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_QUEUE_STATE :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_QUEUE_STATE = Rte_eth_event_type 2
 
-{-| __C declaration:__ @RTE_ETH_EVENT_INTR_RESET@
+{-| reset interrupt event, sent to VF on PF reset
+
+    __C declaration:__ @RTE_ETH_EVENT_INTR_RESET@
 
     __defined at:__ @rte_ethdev.h 4207:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_INTR_RESET :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_INTR_RESET = Rte_eth_event_type 3
 
-{-| __C declaration:__ @RTE_ETH_EVENT_VF_MBOX@
+{-| message from the VF received by PF
+
+    __C declaration:__ @RTE_ETH_EVENT_VF_MBOX@
 
     __defined at:__ @rte_ethdev.h 4208:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_VF_MBOX :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_VF_MBOX = Rte_eth_event_type 4
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MACSEC@
+{-| MACsec offload related event
+
+    __C declaration:__ @RTE_ETH_EVENT_MACSEC@
 
     __defined at:__ @rte_ethdev.h 4209:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MACSEC :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_MACSEC = Rte_eth_event_type 5
 
-{-| __C declaration:__ @RTE_ETH_EVENT_INTR_RMV@
+{-| device removal event
+
+    __C declaration:__ @RTE_ETH_EVENT_INTR_RMV@
 
     __defined at:__ @rte_ethdev.h 4210:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_INTR_RMV :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_INTR_RMV = Rte_eth_event_type 6
 
-{-| __C declaration:__ @RTE_ETH_EVENT_NEW@
+{-| The port is being probed, i.e. allocated and not yet available. It is too early to check validity, query infos, and configure the port. But some functions, like @rte_eth_dev_socket_id()@ and rte_eth_dev_owner_*() are available to the application.
+
+    __C declaration:__ @RTE_ETH_EVENT_NEW@
 
     __defined at:__ @rte_ethdev.h 4217:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_NEW :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_NEW = Rte_eth_event_type 7
 
-{-| __C declaration:__ @RTE_ETH_EVENT_DESTROY@
+{-| port is released
+
+    __C declaration:__ @RTE_ETH_EVENT_DESTROY@
 
     __defined at:__ @rte_ethdev.h 4218:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_DESTROY :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_DESTROY = Rte_eth_event_type 8
 
-{-| __C declaration:__ @RTE_ETH_EVENT_IPSEC@
+{-| IPsec offload related event
+
+    __C declaration:__ @RTE_ETH_EVENT_IPSEC@
 
     __defined at:__ @rte_ethdev.h 4219:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_IPSEC :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_IPSEC = Rte_eth_event_type 9
 
-{-| __C declaration:__ @RTE_ETH_EVENT_FLOW_AGED@
+{-| New aged-out flows is detected
+
+    __C declaration:__ @RTE_ETH_EVENT_FLOW_AGED@
 
     __defined at:__ @rte_ethdev.h 4220:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_FLOW_AGED :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_FLOW_AGED = Rte_eth_event_type 10
 
-{-| __C declaration:__ @RTE_ETH_EVENT_RX_AVAIL_THRESH@
+{-| Number of available Rx descriptors is smaller than the threshold.
+
+    __See:__ @rte_eth_rx_avail_thresh_set()@
+
+    __C declaration:__ @RTE_ETH_EVENT_RX_AVAIL_THRESH@
 
     __defined at:__ @rte_ethdev.h 4225:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_RX_AVAIL_THRESH :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_RX_AVAIL_THRESH = Rte_eth_event_type 11
 
-{-| __C declaration:__ @RTE_ETH_EVENT_ERR_RECOVERING@
+{-| Port recovering from a hardware or firmware error. If PMD supports proactive error recovery, it should trigger this event to notify application that it detected an error and the recovery is being started. Upon receiving the event, the application should not invoke any control path API (such as rte_eth_dev_configure/rte_eth_dev_stop...) until receiving RTE_ETH_EVENT_RECOVERY_SUCCESS or RTE_ETH_EVENT_RECOVERY_FAILED event. The PMD will set the data path pointers to dummy functions, and re-set the data path pointers to non-dummy functions before reporting RTE_ETH_EVENT_RECOVERY_SUCCESS event. It means that the application cannot send or receive any packets during this period.
+
+    __Note:__ Before the PMD reports the recovery result, the PMD may report the RTE_ETH_EVENT_ERR_RECOVERING event again, because a larger error may occur during the recovery.
+
+    __C declaration:__ @RTE_ETH_EVENT_ERR_RECOVERING@
 
     __defined at:__ @rte_ethdev.h 4242:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_ERR_RECOVERING :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_ERR_RECOVERING = Rte_eth_event_type 12
 
-{-| __C declaration:__ @RTE_ETH_EVENT_RECOVERY_SUCCESS@
+{-| Port recovers successfully from the error. The PMD already re-configured the port, and the effect is the same as a restart operation. a) The following operation will be retained: (alphabetically)
+
+    * DCB configuration
+
+    * FEC configuration
+
+    * Flow control configuration
+
+    * LRO configuration
+
+    * LSC configuration
+
+    * MTU
+
+    * MAC address (default and those supplied by MAC address array)
+
+    * Promiscuous and allmulticast mode
+
+    * PTP configuration
+
+    * Queue (Rx/Tx) settings
+
+    * Queue statistics mappings
+
+    * RSS configuration by rte_eth_dev_rss_xxx() family
+
+    * Rx checksum configuration
+
+    * Rx interrupt settings
+
+    * Traffic management configuration
+
+    * VLAN configuration (including filtering, tpid, strip, pvid)
+
+    * VMDq configuration b) The following configuration maybe retained or not depending on the device capabilities:
+
+    * flow rules (
+      __See:__ @RTE_ETH_DEV_CAPA_FLOW_RULE_KEEP@ )
+
+    * shared flow objects (
+      __See:__ @RTE_ETH_DEV_CAPA_FLOW_SHARED_OBJECT_KEEP@ ) c) Any other configuration will not be stored and will need to be re-configured.
+
+    __C declaration:__ @RTE_ETH_EVENT_RECOVERY_SUCCESS@
 
     __defined at:__ @rte_ethdev.h 4273:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_RECOVERY_SUCCESS :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_RECOVERY_SUCCESS = Rte_eth_event_type 13
 
-{-| __C declaration:__ @RTE_ETH_EVENT_RECOVERY_FAILED@
+{-| Port recovery failed. It means that the port should not be usable anymore. The application should close the port.
+
+    __C declaration:__ @RTE_ETH_EVENT_RECOVERY_FAILED@
 
     __defined at:__ @rte_ethdev.h 4278:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_RECOVERY_FAILED :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_RECOVERY_FAILED = Rte_eth_event_type 14
 
-{-| __C declaration:__ @RTE_ETH_EVENT_MAX@
+{-| max value of this enum
+
+    __C declaration:__ @RTE_ETH_EVENT_MAX@
 
     __defined at:__ @rte_ethdev.h 4279:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_EVENT_MAX :: Rte_eth_event_type
 pattern RTE_ETH_EVENT_MAX = Rte_eth_event_type 15
@@ -19493,7 +21265,7 @@ pattern RTE_ETH_EVENT_MAX = Rte_eth_event_type 15
 
     __defined at:__ @rte_ethdev.h 4295:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_dev_cb_fn_Aux = Rte_eth_dev_cb_fn_Aux
   { unwrap :: HsBindgen.Runtime.LibC.Word16 -> Rte_eth_event_type -> BG.Ptr BG.Void -> BG.Ptr BG.Void -> IO BG.CInt
@@ -19562,11 +21334,15 @@ instance HasCField.HasCField Rte_eth_dev_cb_fn_Aux "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rte_eth_dev_cb_fn@
+{-| User application callback to be registered for interrupts.
+
+    Note: there is no guarantee in the DPDK drivers that a callback won't be called in the middle of other parts of the ethdev API. For example, imagine that thread A calls @rte_eth_dev_start()@ and as part of this call, a RTE_ETH_EVENT_INTR_RESET event gets generated and the associated callback is ran on thread A. In that example, if the application protects its internal data using locks before calling @rte_eth_dev_start()@ , and the callback takes a same lock, a deadlock occurs. Because of this, it is highly recommended NOT to take locks in those callbacks.
+
+    __C declaration:__ @rte_eth_dev_cb_fn@
 
     __defined at:__ @rte_ethdev.h 4295:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_dev_cb_fn = Rte_eth_dev_cb_fn
   { unwrap :: BG.FunPtr Rte_eth_dev_cb_fn_Aux
@@ -19604,7 +21380,7 @@ instance HasCField.HasCField Rte_eth_dev_cb_fn "unwrap" where
 
     __defined at:__ @rte_ethdev.h 4960:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_rxtx_callback
 
@@ -19612,7 +21388,7 @@ data Rte_eth_rxtx_callback
 
     __defined at:__ @rte_ethdev.h 5758:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_representor_range_anon'vf = Rte_eth_representor_range_anon'vf
   { unwrap :: BG.ByteArray
@@ -19629,22 +21405,26 @@ deriving via Marshal.EquivStorable Rte_eth_representor_range_anon'vf instance BG
 
 deriving via BG.SizedByteArray 4 4 instance Union.IsUnion Rte_eth_representor_range_anon'vf
 
-{-| __C declaration:__ @vf@
+{-| VF start index
+
+    __C declaration:__ @vf@
 
     __defined at:__ @rte_ethdev.h 5759:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.HasField "vf" Rte_eth_representor_range_anon'vf ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @vf@
+{-| VF start index
+
+    __C declaration:__ @vf@
 
     __defined at:__ @rte_ethdev.h 5759:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "vf" Rte_eth_representor_range_anon'vf ty where
@@ -19666,22 +21446,26 @@ instance HasCField.HasCField Rte_eth_representor_range_anon'vf "vf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @sf@
+{-| SF start index
+
+    __C declaration:__ @sf@
 
     __defined at:__ @rte_ethdev.h 5760:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.HasField "sf" Rte_eth_representor_range_anon'vf ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @sf@
+{-| SF start index
+
+    __C declaration:__ @sf@
 
     __defined at:__ @rte_ethdev.h 5760:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "sf" Rte_eth_representor_range_anon'vf ty where
@@ -19703,61 +21487,77 @@ instance HasCField.HasCField Rte_eth_representor_range_anon'vf "sf" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @struct rte_eth_representor_range@
+{-| Ethernet device representor ID range entry
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @struct rte_eth_representor_range@
 
     __defined at:__ @rte_ethdev.h 5753:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_representor_range = Rte_eth_representor_range
   { type' :: Rte_eth_representor_type
-    {- ^ __C declaration:__ @type@
+    {- ^ Representor type
+
+         __C declaration:__ @type@
 
          __defined at:__ @rte_ethdev.h 5754:32@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , controller :: BG.CInt
-    {- ^ __C declaration:__ @controller@
+    {- ^ Controller index
+
+         __C declaration:__ @controller@
 
          __defined at:__ @rte_ethdev.h 5755:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pf :: BG.CInt
-    {- ^ __C declaration:__ @pf@
+    {- ^ Physical function index
+
+         __C declaration:__ @pf@
 
          __defined at:__ @rte_ethdev.h 5756:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , anon'vf :: Rte_eth_representor_range_anon'vf
     {- ^ __C declaration:__ @anon\'vf@
 
          __defined at:__ @rte_ethdev.h 5758:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , id_base :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @id_base@
+    {- ^ Representor ID start index
+
+         __C declaration:__ @id_base@
 
          __defined at:__ @rte_ethdev.h 5762:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , id_end :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @id_end@
+    {- ^ Representor ID end index
+
+         __C declaration:__ @id_end@
 
          __defined at:__ @rte_ethdev.h 5763:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , name :: CA.ConstantArray 64 BG.CChar
-    {- ^ __C declaration:__ @name@
+    {- ^ Representor name
+
+         __C declaration:__ @name@
 
          __defined at:__ @rte_ethdev.h 5764:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -19807,11 +21607,13 @@ deriving via Marshal.EquivStorable Rte_eth_representor_range instance BG.Storabl
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_representor_range instance Struct.IsStruct Rte_eth_representor_range
 
-{-| __C declaration:__ @type@
+{-| Representor type
+
+    __C declaration:__ @type@
 
     __defined at:__ @rte_ethdev.h 5754:32@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_representor_type
          ) => BG.CompatHasField.HasField "type'" Rte_eth_representor_range ty where
@@ -19842,11 +21644,13 @@ instance HasCField.HasCField Rte_eth_representor_range "type'" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @controller@
+{-| Controller index
+
+    __C declaration:__ @controller@
 
     __defined at:__ @rte_ethdev.h 5755:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "controller" Rte_eth_representor_range ty where
@@ -19877,11 +21681,13 @@ instance HasCField.HasCField Rte_eth_representor_range "controller" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @pf@
+{-| Physical function index
+
+    __C declaration:__ @pf@
 
     __defined at:__ @rte_ethdev.h 5756:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "pf" Rte_eth_representor_range ty where
@@ -19916,7 +21722,7 @@ instance HasCField.HasCField Rte_eth_representor_range "pf" where
 
     __defined at:__ @rte_ethdev.h 5758:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_representor_range_anon'vf
          ) => BG.CompatHasField.HasField "anon'vf" Rte_eth_representor_range ty where
@@ -19947,22 +21753,26 @@ instance HasCField.HasCField Rte_eth_representor_range "anon'vf" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @vf@
+{-| VF start index
+
+    __C declaration:__ @vf@
 
     __defined at:__ @rte_ethdev.h 5759:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance (ty ~ BG.CInt) => BG.HasField "vf" Rte_eth_representor_range ty where
 
   getField =
     \x0 -> BG.getField @"vf" (BG.getField @"anon'vf" x0)
 
-{-| __C declaration:__ @vf@
+{-| VF start index
+
+    __C declaration:__ @vf@
 
     __defined at:__ @rte_ethdev.h 5759:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "vf" Rte_eth_representor_range ty where
@@ -19987,22 +21797,26 @@ instance HasCField.HasCField Rte_eth_representor_range "vf" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @sf@
+{-| SF start index
+
+    __C declaration:__ @sf@
 
     __defined at:__ @rte_ethdev.h 5760:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance (ty ~ BG.CInt) => BG.HasField "sf" Rte_eth_representor_range ty where
 
   getField =
     \x0 -> BG.getField @"sf" (BG.getField @"anon'vf" x0)
 
-{-| __C declaration:__ @sf@
+{-| SF start index
+
+    __C declaration:__ @sf@
 
     __defined at:__ @rte_ethdev.h 5760:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "sf" Rte_eth_representor_range ty where
@@ -20027,11 +21841,13 @@ instance HasCField.HasCField Rte_eth_representor_range "sf" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @id_base@
+{-| Representor ID start index
+
+    __C declaration:__ @id_base@
 
     __defined at:__ @rte_ethdev.h 5762:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "id_base" Rte_eth_representor_range ty where
@@ -20062,11 +21878,13 @@ instance HasCField.HasCField Rte_eth_representor_range "id_base" where
 
   offset# = \_ -> \_ -> 16
 
-{-| __C declaration:__ @id_end@
+{-| Representor ID end index
+
+    __C declaration:__ @id_end@
 
     __defined at:__ @rte_ethdev.h 5763:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "id_end" Rte_eth_representor_range ty where
@@ -20097,11 +21915,13 @@ instance HasCField.HasCField Rte_eth_representor_range "id_end" where
 
   offset# = \_ -> \_ -> 20
 
-{-| __C declaration:__ @name@
+{-| Representor name
+
+    __C declaration:__ @name@
 
     __defined at:__ @rte_ethdev.h 5764:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_eth_representor_range ty where
@@ -20132,40 +21952,52 @@ instance HasCField.HasCField Rte_eth_representor_range "name" where
 
   offset# = \_ -> \_ -> 24
 
-{-| __C declaration:__ @struct rte_eth_representor_info@
+{-| Ethernet device representor information
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @struct rte_eth_representor_info@
 
     __defined at:__ @rte_ethdev.h 5773:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_representor_info_Aux = Rte_eth_representor_info
   { controller :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @controller@
+    {- ^ Controller ID of caller device.
+
+         __C declaration:__ @controller@
 
          __defined at:__ @rte_ethdev.h 5774:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pf :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @pf@
+    {- ^ Physical function ID of caller device.
+
+         __C declaration:__ @pf@
 
          __defined at:__ @rte_ethdev.h 5775:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_ranges_alloc :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @nb_ranges_alloc@
+    {- ^ Size of the ranges array.
+
+         __C declaration:__ @nb_ranges_alloc@
 
          __defined at:__ @rte_ethdev.h 5776:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_ranges :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @nb_ranges@
+    {- ^ Number of initialized ranges.
+
+         __C declaration:__ @nb_ranges@
 
          __defined at:__ @rte_ethdev.h 5777:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -20202,11 +22034,13 @@ deriving via Marshal.EquivStorable Rte_eth_representor_info_Aux instance BG.Stor
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_representor_info_Aux instance Struct.IsStruct Rte_eth_representor_info_Aux
 
-{-| __C declaration:__ @controller@
+{-| Controller ID of caller device.
+
+    __C declaration:__ @controller@
 
     __defined at:__ @rte_ethdev.h 5774:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "controller" Rte_eth_representor_info_Aux ty where
@@ -20234,11 +22068,13 @@ instance HasCField.HasCField Rte_eth_representor_info_Aux "controller" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @pf@
+{-| Physical function ID of caller device.
+
+    __C declaration:__ @pf@
 
     __defined at:__ @rte_ethdev.h 5775:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "pf" Rte_eth_representor_info_Aux ty where
@@ -20266,11 +22102,13 @@ instance HasCField.HasCField Rte_eth_representor_info_Aux "pf" where
 
   offset# = \_ -> \_ -> 2
 
-{-| __C declaration:__ @nb_ranges_alloc@
+{-| Size of the ranges array.
+
+    __C declaration:__ @nb_ranges_alloc@
 
     __defined at:__ @rte_ethdev.h 5776:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "nb_ranges_alloc" Rte_eth_representor_info_Aux ty where
@@ -20299,11 +22137,13 @@ instance HasCField.HasCField Rte_eth_representor_info_Aux "nb_ranges_alloc" wher
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @nb_ranges@
+{-| Number of initialized ranges.
+
+    __C declaration:__ @nb_ranges@
 
     __defined at:__ @rte_ethdev.h 5777:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "nb_ranges" Rte_eth_representor_info_Aux ty where
@@ -20335,42 +22175,56 @@ instance FLAM.Offset Rte_eth_representor_range Rte_eth_representor_info_Aux wher
 
   offset = \_proxy0 -> 12
 
-{-| __C declaration:__ @struct rte_eth_representor_info@
+{-| Ethernet device representor information
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change without prior notice.
+
+    __C declaration:__ @struct rte_eth_representor_info@
 
     __defined at:__ @rte_ethdev.h 5773:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 type Rte_eth_representor_info =
   FLAM.WithFlam Rte_eth_representor_range Rte_eth_representor_info_Aux
 
-{-| __C declaration:__ @struct rte_eth_ip_reassembly_params@
+{-| A structure used to get/set IP reassembly configuration. It is also used to get the maximum capability values that a PMD can support.
+
+    If @rte_eth_ip_reassembly_capability_get()@ returns 0, IP reassembly can be enabled using @rte_eth_ip_reassembly_conf_set()@ and params values lower than capability params can be set in the PMD.
+
+    __C declaration:__ @struct rte_eth_ip_reassembly_params@
 
     __defined at:__ @rte_ethdev.h 5871:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_ip_reassembly_params = Rte_eth_ip_reassembly_params
   { timeout_ms :: HsBindgen.Runtime.LibC.Word32
-    {- ^ __C declaration:__ @timeout_ms@
+    {- ^ Maximum time in ms which PMD can wait for other fragments.
+
+         __C declaration:__ @timeout_ms@
 
          __defined at:__ @rte_ethdev.h 5873:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_frags :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @max_frags@
+    {- ^ Maximum number of fragments that can be reassembled.
+
+         __C declaration:__ @max_frags@
 
          __defined at:__ @rte_ethdev.h 5875:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , flags :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @flags@
+    {- ^ Flags to enable reassembly of packet types - RTE_ETH_DEV_REASSEMBLY_F_xxx.
+
+         __C declaration:__ @flags@
 
          __defined at:__ @rte_ethdev.h 5880:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -20405,11 +22259,13 @@ deriving via Marshal.EquivStorable Rte_eth_ip_reassembly_params instance BG.Stor
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_ip_reassembly_params instance Struct.IsStruct Rte_eth_ip_reassembly_params
 
-{-| __C declaration:__ @timeout_ms@
+{-| Maximum time in ms which PMD can wait for other fragments.
+
+    __C declaration:__ @timeout_ms@
 
     __defined at:__ @rte_ethdev.h 5873:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "timeout_ms" Rte_eth_ip_reassembly_params ty where
@@ -20436,11 +22292,13 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_params "timeout_ms" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @max_frags@
+{-| Maximum number of fragments that can be reassembled.
+
+    __C declaration:__ @max_frags@
 
     __defined at:__ @rte_ethdev.h 5875:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "max_frags" Rte_eth_ip_reassembly_params ty where
@@ -20467,11 +22325,13 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_params "max_frags" where
 
   offset# = \_ -> \_ -> 4
 
-{-| __C declaration:__ @flags@
+{-| Flags to enable reassembly of packet types - RTE_ETH_DEV_REASSEMBLY_F_xxx.
+
+    __C declaration:__ @flags@
 
     __defined at:__ @rte_ethdev.h 5880:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "flags" Rte_eth_ip_reassembly_params ty where
@@ -20498,33 +22358,41 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_params "flags" where
 
   offset# = \_ -> \_ -> 6
 
-{-| __C declaration:__ @struct rte_eth_ip_reassembly_dynfield_t@
+{-| In case of IP reassembly offload failure, packet will be updated with dynamic flag - RTE_MBUF_DYNFLAG_IP_REASSEMBLY_INCOMPLETE_NAME and packets will be returned without alteration. The application can retrieve the attached fragments using mbuf dynamic field RTE_MBUF_DYNFIELD_IP_REASSEMBLY_NAME.
+
+    __C declaration:__ @struct rte_eth_ip_reassembly_dynfield_t@
 
     __defined at:__ @rte_ethdev.h 5972:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_ip_reassembly_dynfield_t = Rte_eth_ip_reassembly_dynfield_t
   { next_frag :: BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf
-    {- ^ __C declaration:__ @next_frag@
+    {- ^ Next fragment packet. Application should fetch dynamic field of each fragment until a NULL is received and nb_frags is 0.
+
+         __C declaration:__ @next_frag@
 
          __defined at:__ @rte_ethdev.h 5977:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , time_spent :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @time_spent@
+    {- ^ Time spent(in ms) by HW in waiting for further fragments.
+
+         __C declaration:__ @time_spent@
 
          __defined at:__ @rte_ethdev.h 5979:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , nb_frags :: HsBindgen.Runtime.LibC.Word16
-    {- ^ __C declaration:__ @nb_frags@
+    {- ^ Number of more fragments attached in mbuf dynamic fields.
+
+         __C declaration:__ @nb_frags@
 
          __defined at:__ @rte_ethdev.h 5981:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -20559,11 +22427,13 @@ deriving via Marshal.EquivStorable Rte_eth_ip_reassembly_dynfield_t instance BG.
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_ip_reassembly_dynfield_t instance Struct.IsStruct Rte_eth_ip_reassembly_dynfield_t
 
-{-| __C declaration:__ @next_frag@
+{-| Next fragment packet. Application should fetch dynamic field of each fragment until a NULL is received and nb_frags is 0.
+
+    __C declaration:__ @next_frag@
 
     __defined at:__ @rte_ethdev.h 5977:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf
          ) => BG.CompatHasField.HasField "next_frag" Rte_eth_ip_reassembly_dynfield_t ty where
@@ -20590,11 +22460,13 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_dynfield_t "next_frag" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @time_spent@
+{-| Time spent(in ms) by HW in waiting for further fragments.
+
+    __C declaration:__ @time_spent@
 
     __defined at:__ @rte_ethdev.h 5979:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "time_spent" Rte_eth_ip_reassembly_dynfield_t ty where
@@ -20621,11 +22493,13 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_dynfield_t "time_spent" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @nb_frags@
+{-| Number of more fragments attached in mbuf dynamic fields.
+
+    __C declaration:__ @nb_frags@
 
     __defined at:__ @rte_ethdev.h 5981:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "nb_frags" Rte_eth_ip_reassembly_dynfield_t ty where
@@ -20652,11 +22526,13 @@ instance HasCField.HasCField Rte_eth_ip_reassembly_dynfield_t "nb_frags" where
 
   offset# = \_ -> \_ -> 10
 
-{-| __C declaration:__ @enum rte_eth_cman_obj@
+{-| Enumerate list of ethdev congestion management objects
+
+    __C declaration:__ @enum rte_eth_cman_obj@
 
     __defined at:__ @rte_ethdev.h 6063:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_cman_obj = Rte_eth_cman_obj
   { unwrap :: BG.CUInt
@@ -20751,51 +22627,71 @@ instance HasCField.HasCField Rte_eth_cman_obj "unwrap" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @RTE_ETH_CMAN_OBJ_RX_QUEUE@
+{-| Congestion management based on Rx queue depth
+
+    __C declaration:__ @RTE_ETH_CMAN_OBJ_RX_QUEUE@
 
     __defined at:__ @rte_ethdev.h 6065:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_CMAN_OBJ_RX_QUEUE :: Rte_eth_cman_obj
 pattern RTE_ETH_CMAN_OBJ_RX_QUEUE = Rte_eth_cman_obj 1
 
-{-| __C declaration:__ @RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL@
+{-| Congestion management based on mempool depth associated with Rx queue
+
+    __See:__ @rte_eth_rx_queue_setup()@
+
+    __C declaration:__ @RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL@
 
     __defined at:__ @rte_ethdev.h 6070:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL :: Rte_eth_cman_obj
 pattern RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL = Rte_eth_cman_obj 2
 
-{-| __C declaration:__ @struct rte_eth_cman_info@
+{-| A structure used to retrieve information of ethdev congestion management.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_cman_info@
 
     __defined at:__ @rte_ethdev.h 6079:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_cman_info = Rte_eth_cman_info
   { modes_supported :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @modes_supported@
+    {- ^ Set of supported congestion management modes
+
+         __See:__ enum rte_cman_mode
+
+         __C declaration:__ @modes_supported@
 
          __defined at:__ @rte_ethdev.h 6084:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , objs_supported :: HsBindgen.Runtime.LibC.Word64
-    {- ^ __C declaration:__ @objs_supported@
+    {- ^ Set of supported congestion management objects
+
+         __See:__ enum @rte_eth_cman_obj@
+
+         __C declaration:__ @objs_supported@
 
          __defined at:__ @rte_ethdev.h 6089:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rsvd :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
-    {- ^ __C declaration:__ @rsvd@
+    {- ^ Reserved for future fields. Always returned as 0 when @rte_eth_cman_info_get()@ is invoked
+
+         __C declaration:__ @rsvd@
 
          __defined at:__ @rte_ethdev.h 6094:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -20830,11 +22726,15 @@ deriving via Marshal.EquivStorable Rte_eth_cman_info instance BG.Storable Rte_et
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_cman_info instance Struct.IsStruct Rte_eth_cman_info
 
-{-| __C declaration:__ @modes_supported@
+{-| Set of supported congestion management modes
+
+    __See:__ enum rte_cman_mode
+
+    __C declaration:__ @modes_supported@
 
     __defined at:__ @rte_ethdev.h 6084:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "modes_supported" Rte_eth_cman_info ty where
@@ -20862,11 +22762,15 @@ instance HasCField.HasCField Rte_eth_cman_info "modes_supported" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @objs_supported@
+{-| Set of supported congestion management objects
+
+    __See:__ enum @rte_eth_cman_obj@
+
+    __C declaration:__ @objs_supported@
 
     __defined at:__ @rte_ethdev.h 6089:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "objs_supported" Rte_eth_cman_info ty where
@@ -20894,11 +22798,13 @@ instance HasCField.HasCField Rte_eth_cman_info "objs_supported" where
 
   offset# = \_ -> \_ -> 8
 
-{-| __C declaration:__ @rsvd@
+{-| Reserved for future fields. Always returned as 0 when @rte_eth_cman_info_get()@ is invoked
+
+    __C declaration:__ @rsvd@
 
     __defined at:__ @rte_ethdev.h 6094:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd" Rte_eth_cman_info ty where
@@ -20929,7 +22835,7 @@ instance HasCField.HasCField Rte_eth_cman_info "rsvd" where
 
     __defined at:__ @rte_ethdev.h 6108:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_cman_config_obj_param = Rte_eth_cman_config_obj_param
   { unwrap :: BG.ByteArray
@@ -20946,22 +22852,30 @@ deriving via Marshal.EquivStorable Rte_eth_cman_config_obj_param instance BG.Sto
 
 deriving via BG.SizedByteArray 4 2 instance Union.IsUnion Rte_eth_cman_config_obj_param
 
-{-| __C declaration:__ @rx_queue@
+{-| Rx queue to configure congestion management.
+
+    Valid when object is RTE_ETH_CMAN_OBJ_RX_QUEUE or RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL.
+
+    __C declaration:__ @rx_queue@
 
     __defined at:__ @rte_ethdev.h 6115:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.HasField "rx_queue" Rte_eth_cman_config_obj_param ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @rx_queue@
+{-| Rx queue to configure congestion management.
+
+    Valid when object is RTE_ETH_CMAN_OBJ_RX_QUEUE or RTE_ETH_CMAN_OBJ_RX_QUEUE_MEMPOOL.
+
+    __C declaration:__ @rx_queue@
 
     __defined at:__ @rte_ethdev.h 6115:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "rx_queue" Rte_eth_cman_config_obj_param ty where
@@ -20983,22 +22897,26 @@ instance HasCField.HasCField Rte_eth_cman_config_obj_param "rx_queue" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rsvd_obj_params@
+{-| Reserved for future fields. It must be set to 0 when @rte_eth_cman_config_set()@ is invoked and will be returned as 0 when @rte_eth_cman_config_get()@ is invoked.
+
+    __C declaration:__ @rsvd_obj_params@
 
     __defined at:__ @rte_ethdev.h 6122:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd_obj_params" Rte_eth_cman_config_obj_param ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @rsvd_obj_params@
+{-| Reserved for future fields. It must be set to 0 when @rte_eth_cman_config_set()@ is invoked and will be returned as 0 when @rte_eth_cman_config_get()@ is invoked.
+
+    __C declaration:__ @rsvd_obj_params@
 
     __defined at:__ @rte_ethdev.h 6122:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd_obj_params" Rte_eth_cman_config_obj_param ty where
@@ -21025,7 +22943,7 @@ instance HasCField.HasCField Rte_eth_cman_config_obj_param "rsvd_obj_params" whe
 
     __defined at:__ @rte_ethdev.h 6124:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_eth_cman_config_mode_param = Rte_eth_cman_config_mode_param
   { unwrap :: BG.ByteArray
@@ -21042,22 +22960,30 @@ deriving via Marshal.EquivStorable Rte_eth_cman_config_mode_param instance BG.St
 
 deriving via BG.SizedByteArray 4 2 instance Union.IsUnion Rte_eth_cman_config_mode_param
 
-{-| __C declaration:__ @red@
+{-| RED configuration parameters.
+
+    Valid when mode is RTE_CMAN_RED.
+
+    __C declaration:__ @red@
 
     __defined at:__ @rte_ethdev.h 6130:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_cman.Rte_cman_red_params
          ) => BG.HasField "red" Rte_eth_cman_config_mode_param ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @red@
+{-| RED configuration parameters.
+
+    Valid when mode is RTE_CMAN_RED.
+
+    __C declaration:__ @red@
 
     __defined at:__ @rte_ethdev.h 6130:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_cman.Rte_cman_red_params
          ) => BG.CompatHasField.HasField "red" Rte_eth_cman_config_mode_param ty where
@@ -21079,22 +23005,26 @@ instance HasCField.HasCField Rte_eth_cman_config_mode_param "red" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @rsvd_mode_params@
+{-| Reserved for future fields. It must be set to 0 when @rte_eth_cman_config_set()@ is invoked and will be returned as 0 when @rte_eth_cman_config_get()@ is invoked.
+
+    __C declaration:__ @rsvd_mode_params@
 
     __defined at:__ @rte_ethdev.h 6137:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "rsvd_mode_params" Rte_eth_cman_config_mode_param ty where
 
   getField = BG.getUnionPayload
 
-{-| __C declaration:__ @rsvd_mode_params@
+{-| Reserved for future fields. It must be set to 0 when @rte_eth_cman_config_set()@ is invoked and will be returned as 0 when @rte_eth_cman_config_get()@ is invoked.
+
+    __C declaration:__ @rsvd_mode_params@
 
     __defined at:__ @rte_ethdev.h 6137:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 4 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rsvd_mode_params" Rte_eth_cman_config_mode_param ty where
@@ -21117,40 +23047,48 @@ instance HasCField.HasCField Rte_eth_cman_config_mode_param "rsvd_mode_params" w
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @struct rte_eth_cman_config@
+{-| A structure used to configure the ethdev congestion management.
+
+    __WARNING:__ __EXPERIMENTAL:__ this structure may change, or be removed, without prior notice
+
+    __C declaration:__ @struct rte_eth_cman_config@
 
     __defined at:__ @rte_ethdev.h 6103:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_eth_cman_config = Rte_eth_cman_config
   { obj :: Rte_eth_cman_obj
-    {- ^ __C declaration:__ @obj@
+    {- ^ Congestion management object
+
+         __C declaration:__ @obj@
 
          __defined at:__ @rte_ethdev.h 6105:24@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mode :: Generated.DPDK.Rte_cman.Rte_cman_mode
-    {- ^ __C declaration:__ @mode@
+    {- ^ Congestion management mode
+
+         __C declaration:__ @mode@
 
          __defined at:__ @rte_ethdev.h 6107:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , obj_param :: Rte_eth_cman_config_obj_param
     {- ^ __C declaration:__ @obj_param@
 
          __defined at:__ @rte_ethdev.h 6123:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , mode_param :: Rte_eth_cman_config_mode_param
     {- ^ __C declaration:__ @mode_param@
 
          __defined at:__ @rte_ethdev.h 6138:4@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -21187,11 +23125,13 @@ deriving via Marshal.EquivStorable Rte_eth_cman_config instance BG.Storable Rte_
 
 deriving via Struct.IsStructViaReadRaw Rte_eth_cman_config instance Struct.IsStruct Rte_eth_cman_config
 
-{-| __C declaration:__ @obj@
+{-| Congestion management object
+
+    __C declaration:__ @obj@
 
     __defined at:__ @rte_ethdev.h 6105:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_cman_obj
          ) => BG.CompatHasField.HasField "obj" Rte_eth_cman_config ty where
@@ -21219,11 +23159,13 @@ instance HasCField.HasCField Rte_eth_cman_config "obj" where
 
   offset# = \_ -> \_ -> 0
 
-{-| __C declaration:__ @mode@
+{-| Congestion management mode
+
+    __C declaration:__ @mode@
 
     __defined at:__ @rte_ethdev.h 6107:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_cman.Rte_cman_mode
          ) => BG.CompatHasField.HasField "mode" Rte_eth_cman_config ty where
@@ -21255,7 +23197,7 @@ instance HasCField.HasCField Rte_eth_cman_config "mode" where
 
     __defined at:__ @rte_ethdev.h 6123:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_cman_config_obj_param
          ) => BG.CompatHasField.HasField "obj_param" Rte_eth_cman_config ty where
@@ -21287,7 +23229,7 @@ instance HasCField.HasCField Rte_eth_cman_config "obj_param" where
 
     __defined at:__ @rte_ethdev.h 6138:4@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_eth_cman_config_mode_param
          ) => BG.CompatHasField.HasField "mode_param" Rte_eth_cman_config ty where
@@ -21315,56 +23257,68 @@ instance HasCField.HasCField Rte_eth_cman_config "mode_param" where
 
   offset# = \_ -> \_ -> 12
 
-{-| __C declaration:__ @macro RTE_ETH_RX_DESC_AVAIL@
+{-| Desc available for hw.
+
+    __C declaration:__ @macro RTE_ETH_RX_DESC_AVAIL@
 
     __defined at:__ @rte_ethdev.h 6457:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RX_DESC_AVAIL :: BG.CInt
 rTE_ETH_RX_DESC_AVAIL = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_RX_DESC_DONE@
+{-| Desc done, filled by hw.
+
+    __C declaration:__ @macro RTE_ETH_RX_DESC_DONE@
 
     __defined at:__ @rte_ethdev.h 6458:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RX_DESC_DONE :: BG.CInt
 rTE_ETH_RX_DESC_DONE = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_RX_DESC_UNAVAIL@
+{-| Desc used by driver or hw.
+
+    __C declaration:__ @macro RTE_ETH_RX_DESC_UNAVAIL@
 
     __defined at:__ @rte_ethdev.h 6459:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_RX_DESC_UNAVAIL :: BG.CInt
 rTE_ETH_RX_DESC_UNAVAIL = (2 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_TX_DESC_FULL@
+{-| Desc filled for hw, waiting xmit.
+
+    __C declaration:__ @macro RTE_ETH_TX_DESC_FULL@
 
     __defined at:__ @rte_ethdev.h 6527:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_TX_DESC_FULL :: BG.CInt
 rTE_ETH_TX_DESC_FULL = (0 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_TX_DESC_DONE@
+{-| Desc done, packet is transmitted.
+
+    __C declaration:__ @macro RTE_ETH_TX_DESC_DONE@
 
     __defined at:__ @rte_ethdev.h 6528:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_TX_DESC_DONE :: BG.CInt
 rTE_ETH_TX_DESC_DONE = (1 :: BG.CInt)
 
-{-| __C declaration:__ @macro RTE_ETH_TX_DESC_UNAVAIL@
+{-| Desc used by driver or hw.
+
+    __C declaration:__ @macro RTE_ETH_TX_DESC_UNAVAIL@
 
     __defined at:__ @rte_ethdev.h 6529:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_ETH_TX_DESC_UNAVAIL :: BG.CInt
 rTE_ETH_TX_DESC_UNAVAIL = (2 :: BG.CInt)

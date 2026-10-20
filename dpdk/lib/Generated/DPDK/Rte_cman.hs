@@ -38,7 +38,7 @@ import Prelude ((<*>), (>>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_cman.h 16:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_cman_mode = Rte_cman_mode
   { unwrap :: BG.CUInt
@@ -135,7 +135,7 @@ instance HasCField.HasCField Rte_cman_mode "unwrap" where
 
     __defined at:__ @rte_cman.h 24:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_CMAN_RED :: Rte_cman_mode
 pattern RTE_CMAN_RED = Rte_cman_mode 1
@@ -144,7 +144,7 @@ pattern RTE_CMAN_RED = Rte_cman_mode 1
 
     __defined at:__ @rte_cman.h 30:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_cman_red_params = Rte_cman_red_params
   { min_th :: HsBindgen.Runtime.LibC.Word8
@@ -152,21 +152,21 @@ data Rte_cman_red_params = Rte_cman_red_params
 
          __defined at:__ @rte_cman.h 36:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , max_th :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @max_th@
 
          __defined at:__ @rte_cman.h 42:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , maxp_inv :: HsBindgen.Runtime.LibC.Word16
     {- ^ __C declaration:__ @maxp_inv@
 
          __defined at:__ @rte_cman.h 44:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -205,7 +205,7 @@ deriving via Struct.IsStructViaReadRaw Rte_cman_red_params instance Struct.IsStr
 
     __defined at:__ @rte_cman.h 36:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "min_th" Rte_cman_red_params ty where
@@ -236,7 +236,7 @@ instance HasCField.HasCField Rte_cman_red_params "min_th" where
 
     __defined at:__ @rte_cman.h 42:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "max_th" Rte_cman_red_params ty where
@@ -267,7 +267,7 @@ instance HasCField.HasCField Rte_cman_red_params "max_th" where
 
     __defined at:__ @rte_cman.h 44:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word16
          ) => BG.CompatHasField.HasField "maxp_inv" Rte_cman_red_params ty where

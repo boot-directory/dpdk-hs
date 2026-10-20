@@ -16,7 +16,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_vect_get_rte_vect_get_max_simd_bitwidth */"
   , "__attribute__ ((const))"
   , "uint16_t (*hs_bindgen_4751f6b82657fbbf (void)) (void)"
@@ -47,7 +49,7 @@ hs_bindgen_4751f6b82657fbbf =
 
     __defined at:__ @generic\/rte_vect.h 222:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_vect_get_max_simd_bitwidth :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word16)
 rte_vect_get_max_simd_bitwidth =
@@ -67,7 +69,7 @@ hs_bindgen_67ad42bf12aa5fda =
 
     __defined at:__ @generic\/rte_vect.h 235:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_vect_set_max_simd_bitwidth :: BG.FunPtr (HsBindgen.Runtime.LibC.Word16 -> IO BG.CInt)
 rte_vect_set_max_simd_bitwidth =

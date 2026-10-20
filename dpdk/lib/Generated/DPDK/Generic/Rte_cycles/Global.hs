@@ -16,7 +16,9 @@ import Generated.DPDK.Generic.Rte_cycles
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_cycles_get_eal_timer_source */"
   , "__attribute__ ((const))"
   , "enum timer_source *hs_bindgen_5845dcc53102deca (void)"
@@ -47,7 +49,7 @@ hs_bindgen_5845dcc53102deca =
 
     __defined at:__ @generic\/rte_cycles.h 31:26@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 eal_timer_source :: BG.Ptr Timer_source
 eal_timer_source =
@@ -67,7 +69,7 @@ hs_bindgen_f99307d9df0f74b8 =
 
     __defined at:__ @generic\/rte_cycles.h 142:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us :: BG.Ptr (BG.FunPtr (BG.CUInt -> IO ()))
 rte_delay_us =

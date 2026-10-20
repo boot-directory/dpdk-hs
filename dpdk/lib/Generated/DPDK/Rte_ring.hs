@@ -31,7 +31,7 @@ import Prelude (Bounded, Enum, Eq, Integral, Num, Ord, Read, Real, Show, type (~
 
     __defined at:__ @bits\/types.h 194:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype C__Ssize_t = C__Ssize_t
   { unwrap :: BG.CLong
@@ -78,7 +78,7 @@ instance HasCField.HasCField C__Ssize_t "unwrap" where
 
     __defined at:__ @stdio.h 78:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Ssize_t = Ssize_t
   { unwrap :: C__Ssize_t

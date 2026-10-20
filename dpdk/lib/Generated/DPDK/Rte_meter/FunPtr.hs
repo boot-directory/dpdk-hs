@@ -27,7 +27,9 @@ import Generated.DPDK.Rte_meter
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_meter_get_rte_meter_srtcm_profile_config */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_fa2abe58acb92e8a (void)) ("
@@ -167,7 +169,7 @@ hs_bindgen_fa2abe58acb92e8a =
 
     __defined at:__ @rte_meter.h 109:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_profile_config :: BG.FunPtr (BG.Ptr Rte_meter_srtcm_profile -> BG.Ptr Rte_meter_srtcm_params -> IO BG.CInt)
 rte_meter_srtcm_profile_config =
@@ -187,7 +189,7 @@ hs_bindgen_312f9c9bbf0adc68 =
 
     __defined at:__ @rte_meter.h 123:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_profile_config :: BG.FunPtr (BG.Ptr Rte_meter_trtcm_profile -> BG.Ptr Rte_meter_trtcm_params -> IO BG.CInt)
 rte_meter_trtcm_profile_config =
@@ -207,7 +209,7 @@ hs_bindgen_4a81784d68c963df =
 
     __defined at:__ @rte_meter.h 136:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_profile_config :: BG.FunPtr (BG.Ptr Rte_meter_trtcm_rfc4115_profile -> BG.Ptr Rte_meter_trtcm_rfc4115_params -> IO BG.CInt)
 rte_meter_trtcm_rfc4115_profile_config =
@@ -227,7 +229,7 @@ hs_bindgen_2e909208b47d69de =
 
     __defined at:__ @rte_meter.h 151:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_config :: BG.FunPtr (BG.Ptr Rte_meter_srtcm -> BG.Ptr Rte_meter_srtcm_profile -> IO BG.CInt)
 rte_meter_srtcm_config =
@@ -247,7 +249,7 @@ hs_bindgen_dea28f7e17f0e64d =
 
     __defined at:__ @rte_meter.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_config :: BG.FunPtr (BG.Ptr Rte_meter_trtcm -> BG.Ptr Rte_meter_trtcm_profile -> IO BG.CInt)
 rte_meter_trtcm_config =
@@ -267,7 +269,7 @@ hs_bindgen_797e3a907fbe8973 =
 
     __defined at:__ @rte_meter.h 179:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_config :: BG.FunPtr (BG.Ptr Rte_meter_trtcm_rfc4115 -> BG.Ptr Rte_meter_trtcm_rfc4115_profile -> IO BG.CInt)
 rte_meter_trtcm_rfc4115_config =
@@ -287,7 +289,7 @@ hs_bindgen_98ec5ff580ffc884 =
 
     __defined at:__ @rte_meter.h 396:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_color_blind_check :: BG.FunPtr (BG.Ptr Rte_meter_srtcm -> BG.Ptr Rte_meter_srtcm_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> IO Rte_color)
 rte_meter_srtcm_color_blind_check =
@@ -307,7 +309,7 @@ hs_bindgen_2a72c8731328e538 =
 
     __defined at:__ @rte_meter.h 437:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_srtcm_color_aware_check :: BG.FunPtr (BG.Ptr Rte_meter_srtcm -> BG.Ptr Rte_meter_srtcm_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> Rte_color -> IO Rte_color)
 rte_meter_srtcm_color_aware_check =
@@ -327,7 +329,7 @@ hs_bindgen_b17acc4d7cf5a941 =
 
     __defined at:__ @rte_meter.h 479:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_color_blind_check :: BG.FunPtr (BG.Ptr Rte_meter_trtcm -> BG.Ptr Rte_meter_trtcm_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> IO Rte_color)
 rte_meter_trtcm_color_blind_check =
@@ -347,7 +349,7 @@ hs_bindgen_4f7e9103f519c05f =
 
     __defined at:__ @rte_meter.h 521:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_color_aware_check :: BG.FunPtr (BG.Ptr Rte_meter_trtcm -> BG.Ptr Rte_meter_trtcm_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> Rte_color -> IO Rte_color)
 rte_meter_trtcm_color_aware_check =
@@ -367,7 +369,7 @@ hs_bindgen_9b5bc53676e37755 =
 
     __defined at:__ @rte_meter.h 564:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_color_blind_check :: BG.FunPtr (BG.Ptr Rte_meter_trtcm_rfc4115 -> BG.Ptr Rte_meter_trtcm_rfc4115_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> IO Rte_color)
 rte_meter_trtcm_rfc4115_color_blind_check =
@@ -387,7 +389,7 @@ hs_bindgen_6e1b52d5d26045ab =
 
     __defined at:__ @rte_meter.h 607:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_meter_trtcm_rfc4115_color_aware_check :: BG.FunPtr (BG.Ptr Rte_meter_trtcm_rfc4115 -> BG.Ptr Rte_meter_trtcm_rfc4115_profile -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word32 -> Rte_color -> IO Rte_color)
 rte_meter_trtcm_rfc4115_color_aware_check =

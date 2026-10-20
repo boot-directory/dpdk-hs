@@ -21,7 +21,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ring_peek_elem_pvt_get___rte_ring_st_get_tail */"
   , "__attribute__ ((const))"
   , "uint32_t (*hs_bindgen_2af877055f749825 (void)) ("
@@ -104,7 +106,7 @@ hs_bindgen_2af877055f749825 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 31:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_st_get_tail :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 __rte_ring_st_get_tail =
@@ -124,7 +126,7 @@ hs_bindgen_2a23f001a9b66033 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_st_set_head_tail :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_st_set_head_tail =
@@ -144,7 +146,7 @@ hs_bindgen_83c6522d0f241ea7 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 75:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_hts_get_tail :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_hts_headtail -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 __rte_ring_hts_get_tail =
@@ -164,7 +166,7 @@ hs_bindgen_14de3295d4c5ea51 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 97:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_hts_set_head_tail :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_hts_headtail -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_hts_set_head_tail =
@@ -184,7 +186,7 @@ hs_bindgen_32925a98f3eb1e99 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 114:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_enqueue_start :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> HsBindgen.Runtime.LibC.Word32 -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 __rte_ring_do_enqueue_start =
@@ -204,7 +206,7 @@ hs_bindgen_907274e447ef5e12 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 147:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_dequeue_start :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 __rte_ring_do_dequeue_start =

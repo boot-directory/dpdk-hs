@@ -15,7 +15,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_spinlock_get_rte_rtm_supported */"
   , "__attribute__ ((const))"
   , "uint8_t *hs_bindgen_256c2a58ceef4a4d (void)"
@@ -38,7 +40,7 @@ hs_bindgen_256c2a58ceef4a4d =
 
     __defined at:__ @rte_spinlock.h 72:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rtm_supported :: BG.Ptr HsBindgen.Runtime.LibC.Word8
 rte_rtm_supported =

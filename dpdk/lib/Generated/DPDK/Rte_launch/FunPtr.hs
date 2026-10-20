@@ -19,7 +19,9 @@ import Generated.DPDK.Rte_launch
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_launch_get_rte_eal_remote_launch */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_2696b6f5c47ddbd7 (void)) ("
@@ -78,7 +80,7 @@ hs_bindgen_2696b6f5c47ddbd7 =
 
     __defined at:__ @rte_launch.h 67:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_remote_launch :: BG.FunPtr (BG.FunPtr Lcore_function_t -> BG.Ptr BG.Void -> BG.CUInt -> IO BG.CInt)
 rte_eal_remote_launch =
@@ -98,7 +100,7 @@ hs_bindgen_b42e2ad317944dc0 =
 
     __defined at:__ @rte_launch.h 99:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_mp_remote_launch :: BG.FunPtr (BG.FunPtr Lcore_function_t -> BG.Ptr BG.Void -> Rte_rmt_call_main_t -> IO BG.CInt)
 rte_eal_mp_remote_launch =
@@ -118,7 +120,7 @@ hs_bindgen_5c82356e37858d04 =
 
     __defined at:__ @rte_launch.h 112:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_get_lcore_state :: BG.FunPtr (BG.CUInt -> IO Rte_lcore_state_t)
 rte_eal_get_lcore_state =
@@ -138,7 +140,7 @@ hs_bindgen_4bd9903026242d34 =
 
     __defined at:__ @rte_launch.h 130:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_wait_lcore :: BG.FunPtr (BG.CUInt -> IO BG.CInt)
 rte_eal_wait_lcore =
@@ -158,7 +160,7 @@ hs_bindgen_bc386e96be43114f =
 
     __defined at:__ @rte_launch.h 142:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_mp_wait_lcore :: BG.FunPtr (IO ())
 rte_eal_mp_wait_lcore =

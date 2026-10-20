@@ -34,7 +34,7 @@ import Prelude (Eq, Show, type (~))
 
     __defined at:__ @rte_uuid.h 24:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_uuid_t = Rte_uuid_t
   { unwrap :: CA.ConstantArray 16 BG.CUChar
@@ -72,7 +72,7 @@ instance HasCField.HasCField Rte_uuid_t "unwrap" where
 
     __defined at:__ @rte_uuid.h 41:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_UUID_STRLEN :: BG.CInt
 rTE_UUID_STRLEN =

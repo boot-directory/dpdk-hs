@@ -15,7 +15,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_bitops.h 1302:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_IS_POWER_OF_2 :: forall a0. C.Expr.HostPlatform.Not (C.Expr.HostPlatform.BitsRes (C.Expr.HostPlatform.SubRes a0 BG.CInt) a0) => C.Expr.HostPlatform.Logical a0 BG.CInt => C.Expr.HostPlatform.Sub a0 BG.CInt => C.Expr.HostPlatform.Bitwise (C.Expr.HostPlatform.SubRes a0 BG.CInt) a0 => a0 -> BG.CInt
 rTE_IS_POWER_OF_2 =

@@ -61,7 +61,9 @@ import Generated.DPDK.Rte_interrupts
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_549d6e420a5235a9 ("
   , "  struct rte_intr_handle const *arg1,"
   , "  rte_intr_callback_fn arg2,"
@@ -378,7 +380,7 @@ hs_bindgen_549d6e420a5235a9 =
 
     __defined at:__ @rte_interrupts.h 90:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_callback_register ::
      PtrConst.PtrConst Rte_intr_handle
@@ -414,7 +416,7 @@ hs_bindgen_84baca11d13ff74d =
 
     __defined at:__ @rte_interrupts.h 108:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_callback_unregister ::
      PtrConst.PtrConst Rte_intr_handle
@@ -453,7 +455,7 @@ hs_bindgen_ac867fbf11de1565 =
 
     __defined at:__ @rte_interrupts.h 131:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_callback_unregister_pending ::
      PtrConst.PtrConst Rte_intr_handle
@@ -491,7 +493,7 @@ hs_bindgen_d7c12d2552715014 =
 
     __defined at:__ @rte_interrupts.h 153:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_callback_unregister_sync ::
      PtrConst.PtrConst Rte_intr_handle
@@ -521,7 +523,7 @@ hs_bindgen_c54316ad0e339b82 =
 
     __defined at:__ @rte_interrupts.h 166:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_enable ::
      PtrConst.PtrConst Rte_intr_handle
@@ -546,7 +548,7 @@ hs_bindgen_3c18e16ce4cb8ac6 =
 
     __defined at:__ @rte_interrupts.h 178:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_disable ::
      PtrConst.PtrConst Rte_intr_handle
@@ -571,7 +573,7 @@ hs_bindgen_c023fa06bb6faa24 =
 
     __defined at:__ @rte_interrupts.h 194:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_ack ::
      PtrConst.PtrConst Rte_intr_handle
@@ -592,7 +594,7 @@ hs_bindgen_c35c889ebea87ca0 =
 
     __defined at:__ @rte_interrupts.h 203:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_thread_is_intr :: IO BG.CInt
 rte_thread_is_intr = hs_bindgen_c35c889ebea87ca0
@@ -610,7 +612,7 @@ hs_bindgen_d946a5478d38b126 =
 
     __defined at:__ @rte_interrupts.h 218:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_active_events_flags :: IO HsBindgen.Runtime.LibC.Word32
 rte_intr_active_events_flags =
@@ -633,7 +635,7 @@ hs_bindgen_3f2a586524b6ec56 =
 
     __defined at:__ @rte_interrupts.h 239:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_instance_alloc ::
      HsBindgen.Runtime.LibC.Word32
@@ -658,7 +660,7 @@ hs_bindgen_f70da920d33e299b =
 
     __defined at:__ @rte_interrupts.h 249:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_instance_free ::
      BG.Ptr Rte_intr_handle
@@ -686,7 +688,7 @@ hs_bindgen_7f4f7531ea53439e =
 
     __defined at:__ @rte_interrupts.h 265:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_fd_set ::
      BG.Ptr Rte_intr_handle
@@ -713,7 +715,7 @@ hs_bindgen_b61196214b3b9aa2 =
 
     __defined at:__ @rte_interrupts.h 278:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_fd_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -741,7 +743,7 @@ hs_bindgen_916090346563e02c =
 
     __defined at:__ @rte_interrupts.h 294:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_type_set ::
      BG.Ptr Rte_intr_handle
@@ -768,7 +770,7 @@ hs_bindgen_1a6ff4d51ceeba18 =
 
     __defined at:__ @rte_interrupts.h 308:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_type_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -789,7 +791,7 @@ hs_bindgen_83533c63b92c81bc =
 
     __defined at:__ @rte_interrupts.h 319:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_tls_epfd :: IO BG.CInt
 rte_intr_tls_epfd = hs_bindgen_83533c63b92c81bc
@@ -823,7 +825,7 @@ hs_bindgen_e74138508188bf2b =
 
     __defined at:__ @rte_interrupts.h 340:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_rx_ctl ::
      BG.Ptr Rte_intr_handle
@@ -856,7 +858,7 @@ hs_bindgen_d93a5440fedc1423 =
 
     __defined at:__ @rte_interrupts.h 352:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_free_epoll_fd ::
      BG.Ptr Rte_intr_handle
@@ -884,7 +886,7 @@ hs_bindgen_cc115fcdcffcd200 =
 
     __defined at:__ @rte_interrupts.h 371:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efd_enable ::
      BG.Ptr Rte_intr_handle
@@ -911,7 +913,7 @@ hs_bindgen_caceae66a6f3c746 =
 
     __defined at:__ @rte_interrupts.h 383:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efd_disable ::
      BG.Ptr Rte_intr_handle
@@ -936,7 +938,7 @@ hs_bindgen_8a27d7884ac49443 =
 
     __defined at:__ @rte_interrupts.h 394:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_dp_is_en ::
      BG.Ptr Rte_intr_handle
@@ -961,7 +963,7 @@ hs_bindgen_86372a06675fb01a =
 
     __defined at:__ @rte_interrupts.h 406:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_allow_others ::
      BG.Ptr Rte_intr_handle
@@ -986,7 +988,7 @@ hs_bindgen_62a7fbc2912bc59e =
 
     __defined at:__ @rte_interrupts.h 418:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_cap_multiple ::
      BG.Ptr Rte_intr_handle
@@ -1011,7 +1013,7 @@ hs_bindgen_1135e3b038a78dc2 =
 
     __defined at:__ @rte_interrupts.h 433:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_instance_dup ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1039,7 +1041,7 @@ hs_bindgen_12a95df12869d455 =
 
     __defined at:__ @rte_interrupts.h 451:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_dev_fd_set ::
      BG.Ptr Rte_intr_handle
@@ -1066,7 +1068,7 @@ hs_bindgen_ab5fee7350b530c9 =
 
     __defined at:__ @rte_interrupts.h 466:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_dev_fd_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1094,7 +1096,7 @@ hs_bindgen_f3783ed3e10c4d9a =
 
     __defined at:__ @rte_interrupts.h 484:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_max_intr_set ::
      BG.Ptr Rte_intr_handle
@@ -1121,7 +1123,7 @@ hs_bindgen_6568794964c79291 =
 
     __defined at:__ @rte_interrupts.h 499:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_max_intr_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1149,7 +1151,7 @@ hs_bindgen_c3c32681020c827e =
 
     __defined at:__ @rte_interrupts.h 517:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_nb_efd_set ::
      BG.Ptr Rte_intr_handle
@@ -1176,7 +1178,7 @@ hs_bindgen_40c1ab6b051147a0 =
 
     __defined at:__ @rte_interrupts.h 533:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_nb_efd_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1201,7 +1203,7 @@ hs_bindgen_a749ab935c357763 =
 
     __defined at:__ @rte_interrupts.h 553:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_nb_intr_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1229,7 +1231,7 @@ hs_bindgen_c320872beafa68e8 =
 
     __defined at:__ @rte_interrupts.h 571:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efd_counter_size_set ::
      BG.Ptr Rte_intr_handle
@@ -1257,7 +1259,7 @@ hs_bindgen_bb41e7cdd13ad8cc =
 
     __defined at:__ @rte_interrupts.h 588:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efd_counter_size_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1289,7 +1291,7 @@ hs_bindgen_7a7e3ab6078f46bc =
 
     __defined at:__ @rte_interrupts.h 607:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efds_index_set ::
      BG.Ptr Rte_intr_handle
@@ -1321,7 +1323,7 @@ hs_bindgen_3e29371d4a1aba61 =
 
     __defined at:__ @rte_interrupts.h 624:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_efds_index_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1354,7 +1356,7 @@ hs_bindgen_1cb98c4fee22477f =
 
     __defined at:__ @rte_interrupts.h 644:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_elist_index_set ::
      BG.Ptr Rte_intr_handle
@@ -1391,7 +1393,7 @@ hs_bindgen_b94ea25543a5d8f4 =
 
     __defined at:__ @rte_interrupts.h 663:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_elist_index_get ::
      BG.Ptr Rte_intr_handle
@@ -1425,7 +1427,7 @@ hs_bindgen_ffa92db511196e34 =
 
     __defined at:__ @rte_interrupts.h 683:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_vec_list_alloc ::
      BG.Ptr Rte_intr_handle
@@ -1460,7 +1462,7 @@ hs_bindgen_d1ccf2ec8f4d7299 =
 
     __defined at:__ @rte_interrupts.h 704:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_vec_list_index_set ::
      BG.Ptr Rte_intr_handle
@@ -1493,7 +1495,7 @@ hs_bindgen_873ef5e8430eed82 =
 
     __defined at:__ @rte_interrupts.h 722:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_vec_list_index_get ::
      PtrConst.PtrConst Rte_intr_handle
@@ -1521,7 +1523,7 @@ hs_bindgen_a626901da019e407 =
 
     __defined at:__ @rte_interrupts.h 738:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_vec_list_free ::
      BG.Ptr Rte_intr_handle
@@ -1549,7 +1551,7 @@ hs_bindgen_d555cad7d827079b =
 
     __defined at:__ @rte_interrupts.h 760:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_event_list_update ::
      BG.Ptr Rte_intr_handle
@@ -1577,7 +1579,7 @@ hs_bindgen_0b5d59590fffa2fc =
 
     __defined at:__ @rte_interrupts.h 775:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_instance_windows_handle_get ::
      BG.Ptr Rte_intr_handle
@@ -1606,7 +1608,7 @@ hs_bindgen_e1f6a7b0994d4640 =
 
     __defined at:__ @rte_interrupts.h 792:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_intr_instance_windows_handle_set ::
      BG.Ptr Rte_intr_handle

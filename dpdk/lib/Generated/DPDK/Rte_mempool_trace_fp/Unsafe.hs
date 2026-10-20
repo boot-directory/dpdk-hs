@@ -25,7 +25,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_7044896da67ab2fe ("
   , "  void *arg1,"
   , "  void **arg2,"
@@ -134,7 +136,7 @@ hs_bindgen_7044896da67ab2fe =
 
     __defined at:__ @rte_mempool_trace_fp.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_dequeue_bulk ::
      BG.Ptr BG.Void
@@ -170,7 +172,7 @@ hs_bindgen_26f580fed109cd7e =
 
     __defined at:__ @rte_mempool_trace_fp.h 29:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_dequeue_contig_blocks ::
      BG.Ptr BG.Void
@@ -206,7 +208,7 @@ hs_bindgen_9881cde446138898 =
 
     __defined at:__ @rte_mempool_trace_fp.h 38:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_ops_enqueue_bulk ::
      BG.Ptr BG.Void
@@ -245,7 +247,7 @@ hs_bindgen_b3024b46f4db54b3 =
 
     __defined at:__ @rte_mempool_trace_fp.h 47:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_generic_put ::
      BG.Ptr BG.Void
@@ -286,7 +288,7 @@ hs_bindgen_f60624de3ca66218 =
 
     __defined at:__ @rte_mempool_trace_fp.h 57:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_put_bulk ::
      BG.Ptr BG.Void
@@ -327,7 +329,7 @@ hs_bindgen_e1d5dd96dfa209dc =
 
     __defined at:__ @rte_mempool_trace_fp.h 67:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_generic_get ::
      BG.Ptr BG.Void
@@ -368,7 +370,7 @@ hs_bindgen_d683ef0b4f2630d6 =
 
     __defined at:__ @rte_mempool_trace_fp.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_get_bulk ::
      BG.Ptr BG.Void
@@ -406,7 +408,7 @@ hs_bindgen_b9be1c4cce71ea93 =
 
     __defined at:__ @rte_mempool_trace_fp.h 87:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_get_contig_blocks ::
      BG.Ptr BG.Void
@@ -442,7 +444,7 @@ hs_bindgen_654bcba5377d2d87 =
 
     __defined at:__ @rte_mempool_trace_fp.h 96:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_default_cache ::
      BG.Ptr BG.Void
@@ -475,7 +477,7 @@ hs_bindgen_ec34442ac41c024b =
 
     __defined at:__ @rte_mempool_trace_fp.h 105:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_trace_cache_flush ::
      BG.Ptr BG.Void

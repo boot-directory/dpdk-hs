@@ -32,7 +32,9 @@ import Generated.DPDK.Generic.Rte_atomic
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_atomic_get_rte_atomic16_init */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_0cc3477e47e4907b (void)) ("
@@ -187,7 +189,7 @@ hs_bindgen_0cc3477e47e4907b =
 
     __defined at:__ @generic\/rte_atomic.h 243:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_init :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> IO ())
 rte_atomic16_init =
@@ -207,7 +209,7 @@ hs_bindgen_884edcb13a749f1d =
 
     __defined at:__ @generic\/rte_atomic.h 257:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_read :: BG.FunPtr (PtrConst.PtrConst Rte_atomic16_t -> IO HsBindgen.Runtime.LibC.Int16)
 rte_atomic16_read =
@@ -227,7 +229,7 @@ hs_bindgen_f9463306652d5c09 =
 
     __defined at:__ @generic\/rte_atomic.h 271:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_set :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> HsBindgen.Runtime.LibC.Int16 -> IO ())
 rte_atomic16_set =
@@ -247,7 +249,7 @@ hs_bindgen_7dbd96fa6e514b17 =
 
     __defined at:__ @generic\/rte_atomic.h 285:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_add :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> HsBindgen.Runtime.LibC.Int16 -> IO ())
 rte_atomic16_add =
@@ -267,7 +269,7 @@ hs_bindgen_88562fac598215f0 =
 
     __defined at:__ @generic\/rte_atomic.h 300:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_sub :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> HsBindgen.Runtime.LibC.Int16 -> IO ())
 rte_atomic16_sub =
@@ -287,7 +289,7 @@ hs_bindgen_20c0f128e80ff0f4 =
 
     __defined at:__ @generic\/rte_atomic.h 354:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_add_return :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> HsBindgen.Runtime.LibC.Int16 -> IO HsBindgen.Runtime.LibC.Int16)
 rte_atomic16_add_return =
@@ -307,7 +309,7 @@ hs_bindgen_54637f018c3fe717 =
 
     __defined at:__ @generic\/rte_atomic.h 375:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_sub_return :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> HsBindgen.Runtime.LibC.Int16 -> IO HsBindgen.Runtime.LibC.Int16)
 rte_atomic16_sub_return =
@@ -327,7 +329,7 @@ hs_bindgen_13bd76db0c27aeb0 =
 
     __defined at:__ @generic\/rte_atomic.h 449:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_clear :: BG.FunPtr (BG.Ptr Rte_atomic16_t -> IO ())
 rte_atomic16_clear =
@@ -347,7 +349,7 @@ hs_bindgen_d5e60b9174368eca =
 
     __defined at:__ @generic\/rte_atomic.h 528:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_init :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> IO ())
 rte_atomic32_init =
@@ -367,7 +369,7 @@ hs_bindgen_05af767d74577ac2 =
 
     __defined at:__ @generic\/rte_atomic.h 542:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_read :: BG.FunPtr (PtrConst.PtrConst Rte_atomic32_t -> IO HsBindgen.Runtime.LibC.Int32)
 rte_atomic32_read =
@@ -387,7 +389,7 @@ hs_bindgen_13837f8935127a54 =
 
     __defined at:__ @generic\/rte_atomic.h 556:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_set :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> HsBindgen.Runtime.LibC.Int32 -> IO ())
 rte_atomic32_set =
@@ -407,7 +409,7 @@ hs_bindgen_f32498dea9cdab19 =
 
     __defined at:__ @generic\/rte_atomic.h 570:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_add :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> HsBindgen.Runtime.LibC.Int32 -> IO ())
 rte_atomic32_add =
@@ -427,7 +429,7 @@ hs_bindgen_38f7a7a79d89d13d =
 
     __defined at:__ @generic\/rte_atomic.h 585:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_sub :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> HsBindgen.Runtime.LibC.Int32 -> IO ())
 rte_atomic32_sub =
@@ -447,7 +449,7 @@ hs_bindgen_1b34cfc8333cac30 =
 
     __defined at:__ @generic\/rte_atomic.h 639:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_add_return :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> HsBindgen.Runtime.LibC.Int32 -> IO HsBindgen.Runtime.LibC.Int32)
 rte_atomic32_add_return =
@@ -467,7 +469,7 @@ hs_bindgen_21cda1013a506ded =
 
     __defined at:__ @generic\/rte_atomic.h 660:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_sub_return :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> HsBindgen.Runtime.LibC.Int32 -> IO HsBindgen.Runtime.LibC.Int32)
 rte_atomic32_sub_return =
@@ -487,7 +489,7 @@ hs_bindgen_207850ca3d0dc230 =
 
     __defined at:__ @generic\/rte_atomic.h 734:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_clear :: BG.FunPtr (BG.Ptr Rte_atomic32_t -> IO ())
 rte_atomic32_clear =

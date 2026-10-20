@@ -15,7 +15,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint64_t hs_bindgen_3825b8787dfa80d9 ("
   , "  uint64_t arg1"
   , ")"
@@ -41,7 +43,7 @@ hs_bindgen_3825b8787dfa80d9 =
 
     __defined at:__ @rte_byteorder_64.h 21:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_arch_bswap64 ::
      HsBindgen.Runtime.LibC.Word64

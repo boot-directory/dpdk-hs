@@ -22,7 +22,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint32_t hs_bindgen_7c69ec900f991ec0 ("
   , "  struct rte_ring_headtail *arg1,"
   , "  uint32_t *arg2,"
@@ -102,7 +104,7 @@ hs_bindgen_7c69ec900f991ec0 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 31:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_st_get_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail
@@ -140,7 +142,7 @@ hs_bindgen_fd852ab91717c8aa =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_st_set_head_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail
@@ -178,7 +180,7 @@ hs_bindgen_6e753fb1ce52ea31 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 75:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_hts_get_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_hts_headtail
@@ -216,7 +218,7 @@ hs_bindgen_c62c23429735d5e4 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 97:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_hts_set_head_tail ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_hts_headtail
@@ -257,7 +259,7 @@ hs_bindgen_5ff26fa8b6d7e7a7 =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 114:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_enqueue_start ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -304,7 +306,7 @@ hs_bindgen_cf1dbe924aa15eee =
 
     __defined at:__ @rte_ring_peek_elem_pvt.h 147:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_dequeue_start ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring

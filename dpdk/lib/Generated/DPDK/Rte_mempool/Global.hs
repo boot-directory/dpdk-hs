@@ -16,7 +16,9 @@ import Generated.DPDK.Rte_mempool
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mempool_get_rte_mempool_logtype */"
   , "__attribute__ ((const))"
   , "signed int *hs_bindgen_ec442176c257dd0b (void)"
@@ -45,7 +47,7 @@ hs_bindgen_ec442176c257dd0b =
 
     __defined at:__ @rte_mempool.h 184:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_logtype :: BG.Ptr BG.CInt
 rte_mempool_logtype =
@@ -65,7 +67,7 @@ hs_bindgen_263cb487af1ff69e =
 
     __defined at:__ @rte_mempool.h 740:37@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mempool_ops_table :: BG.Ptr Rte_mempool_ops_table
 rte_mempool_ops_table =

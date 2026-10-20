@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "struct rte_mbuf *hs_bindgen_5c760df990168027 ("
   , "  struct rte_mempool *arg1,"
   , "  struct rte_ether_addr const *arg2"
@@ -48,7 +50,7 @@ hs_bindgen_5c760df990168027 =
 
     __defined at:__ @rte_arp.h 64:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_net_make_rarp_packet ::
      BG.Ptr Generated.DPDK.Rte_mempool.Rte_mempool

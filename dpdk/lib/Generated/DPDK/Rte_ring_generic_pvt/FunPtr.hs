@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ring_generic_pvt_get___rte_ring_update_tail */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_c1de7c7792b458bf (void)) ("
@@ -63,7 +65,7 @@ hs_bindgen_c1de7c7792b458bf =
 
     __defined at:__ @rte_ring_generic_pvt.h 25:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_update_tail :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_update_tail =
@@ -83,7 +85,7 @@ hs_bindgen_c6f0215274caf522 =
 
     __defined at:__ @rte_ring_generic_pvt.h 71:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_headtail_move_head :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring_headtail -> PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring_headtail -> HsBindgen.Runtime.LibC.Word32 -> BG.CUInt -> BG.CUInt -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 __rte_ring_headtail_move_head =

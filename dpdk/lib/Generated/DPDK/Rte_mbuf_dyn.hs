@@ -48,7 +48,7 @@ import Prelude ((<*>), (>>), Bounded, Enum, Eq, Int, Integral, Num, Ord, Read, R
 
     __defined at:__ @rte_mbuf_dyn.h 81:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYN_NAMESIZE :: BG.CInt
 rTE_MBUF_DYN_NAMESIZE = (64 :: BG.CInt)
@@ -57,7 +57,7 @@ rTE_MBUF_DYN_NAMESIZE = (64 :: BG.CInt)
 
     __defined at:__ @rte_mbuf_dyn.h 86:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_dynfield = Rte_mbuf_dynfield
   { name :: CA.ConstantArray 64 BG.CChar
@@ -65,28 +65,28 @@ data Rte_mbuf_dynfield = Rte_mbuf_dynfield
 
          __defined at:__ @rte_mbuf_dyn.h 87:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , size :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @size@
 
          __defined at:__ @rte_mbuf_dyn.h 88:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , align :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @align@
 
          __defined at:__ @rte_mbuf_dyn.h 89:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: BG.CUInt
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_mbuf_dyn.h 90:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -127,7 +127,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_dynfield instance Struct.IsStruc
 
     __defined at:__ @rte_mbuf_dyn.h 87:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_mbuf_dynfield ty where
@@ -159,7 +159,7 @@ instance HasCField.HasCField Rte_mbuf_dynfield "name" where
 
     __defined at:__ @rte_mbuf_dyn.h 88:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "size" Rte_mbuf_dynfield ty where
@@ -191,7 +191,7 @@ instance HasCField.HasCField Rte_mbuf_dynfield "size" where
 
     __defined at:__ @rte_mbuf_dyn.h 89:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "align" Rte_mbuf_dynfield ty where
@@ -223,7 +223,7 @@ instance HasCField.HasCField Rte_mbuf_dynfield "align" where
 
     __defined at:__ @rte_mbuf_dyn.h 90:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "flags" Rte_mbuf_dynfield ty where
@@ -254,7 +254,7 @@ instance HasCField.HasCField Rte_mbuf_dynfield "flags" where
 
     __defined at:__ @rte_mbuf_dyn.h 96:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_mbuf_dynflag = Rte_mbuf_dynflag
   { name :: CA.ConstantArray 64 BG.CChar
@@ -262,14 +262,14 @@ data Rte_mbuf_dynflag = Rte_mbuf_dynflag
 
          __defined at:__ @rte_mbuf_dyn.h 97:7@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: BG.CUInt
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_mbuf_dyn.h 98:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -306,7 +306,7 @@ deriving via Struct.IsStructViaReadRaw Rte_mbuf_dynflag instance Struct.IsStruct
 
     __defined at:__ @rte_mbuf_dyn.h 97:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ CA.ConstantArray 64 BG.CChar
          ) => BG.CompatHasField.HasField "name" Rte_mbuf_dynflag ty where
@@ -334,7 +334,7 @@ instance HasCField.HasCField Rte_mbuf_dynflag "name" where
 
     __defined at:__ @rte_mbuf_dyn.h 98:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "flags" Rte_mbuf_dynflag ty where
@@ -363,7 +363,7 @@ instance HasCField.HasCField Rte_mbuf_dynflag "flags" where
 
     __defined at:__ @rte_mbuf_dyn.h 249:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFIELD_HISTORY_NAME :: BG.ByteString
 rTE_MBUF_DYNFIELD_HISTORY_NAME =
@@ -373,7 +373,7 @@ rTE_MBUF_DYNFIELD_HISTORY_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 259:30@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_history_t = Rte_mbuf_history_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -423,7 +423,7 @@ instance HasCField.HasCField Rte_mbuf_history_t "unwrap" where
 
     __defined at:__ @rte_mbuf_dyn.h 268:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFIELD_METADATA_NAME :: BG.ByteString
 rTE_MBUF_DYNFIELD_METADATA_NAME =
@@ -435,7 +435,7 @@ rTE_MBUF_DYNFIELD_METADATA_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 269:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFLAG_METADATA_NAME :: BG.ByteString
 rTE_MBUF_DYNFLAG_METADATA_NAME =
@@ -447,7 +447,7 @@ rTE_MBUF_DYNFLAG_METADATA_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 280:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFIELD_TIMESTAMP_NAME :: BG.ByteString
 rTE_MBUF_DYNFIELD_TIMESTAMP_NAME =
@@ -457,7 +457,7 @@ rTE_MBUF_DYNFIELD_TIMESTAMP_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 281:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mbuf_timestamp_t = Rte_mbuf_timestamp_t
   { unwrap :: HsBindgen.Runtime.LibC.Word64
@@ -507,7 +507,7 @@ instance HasCField.HasCField Rte_mbuf_timestamp_t "unwrap" where
 
     __defined at:__ @rte_mbuf_dyn.h 286:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFLAG_RX_TIMESTAMP_NAME :: BG.ByteString
 rTE_MBUF_DYNFLAG_RX_TIMESTAMP_NAME =
@@ -519,7 +519,7 @@ rTE_MBUF_DYNFLAG_RX_TIMESTAMP_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 319:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFLAG_TX_TIMESTAMP_NAME :: BG.ByteString
 rTE_MBUF_DYNFLAG_TX_TIMESTAMP_NAME =
@@ -531,7 +531,7 @@ rTE_MBUF_DYNFLAG_TX_TIMESTAMP_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 345:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFIELD_IP_REASSEMBLY_NAME :: BG.ByteString
 rTE_MBUF_DYNFIELD_IP_REASSEMBLY_NAME =
@@ -543,7 +543,7 @@ rTE_MBUF_DYNFIELD_IP_REASSEMBLY_NAME =
 
     __defined at:__ @rte_mbuf_dyn.h 346:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MBUF_DYNFLAG_IP_REASSEMBLY_INCOMPLETE_NAME :: BG.ByteString
 rTE_MBUF_DYNFLAG_IP_REASSEMBLY_INCOMPLETE_NAME =

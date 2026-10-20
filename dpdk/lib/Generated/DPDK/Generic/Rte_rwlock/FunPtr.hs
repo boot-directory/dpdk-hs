@@ -22,7 +22,9 @@ import Generated.DPDK.Generic.Rte_rwlock
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_rwlock_get_rte_rwlock_init */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_2f5dc60815e7de23 (void)) ("
@@ -103,7 +105,7 @@ hs_bindgen_2f5dc60815e7de23 =
 
     __defined at:__ @generic\/rte_rwlock.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_init :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO ())
 rte_rwlock_init =
@@ -123,7 +125,7 @@ hs_bindgen_5d7195ee8300c1f4 =
 
     __defined at:__ @generic\/rte_rwlock.h 93:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_lock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO ())
 rte_rwlock_read_lock =
@@ -143,7 +145,7 @@ hs_bindgen_9b6ba1cd2e9f8ce6 =
 
     __defined at:__ @generic\/rte_rwlock.h 130:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_trylock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO BG.CInt)
 rte_rwlock_read_trylock =
@@ -163,7 +165,7 @@ hs_bindgen_821709cec081205b =
 
     __defined at:__ @generic\/rte_rwlock.h 163:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_read_unlock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO ())
 rte_rwlock_read_unlock =
@@ -183,7 +185,7 @@ hs_bindgen_86c9bfdb4d40b700 =
 
     __defined at:__ @generic\/rte_rwlock.h 181:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_trylock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO BG.CInt)
 rte_rwlock_write_trylock =
@@ -203,7 +205,7 @@ hs_bindgen_e78e09bc7ef8c661 =
 
     __defined at:__ @generic\/rte_rwlock.h 203:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_lock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO ())
 rte_rwlock_write_lock =
@@ -223,7 +225,7 @@ hs_bindgen_1385d36e1c9b7dc8 =
 
     __defined at:__ @generic\/rte_rwlock.h 241:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_unlock :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO ())
 rte_rwlock_write_unlock =
@@ -243,7 +245,7 @@ hs_bindgen_63856691c4f5d95c =
 
     __defined at:__ @generic\/rte_rwlock.h 257:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rwlock_write_is_locked :: BG.FunPtr (BG.Ptr Rte_rwlock_t -> IO BG.CInt)
 rte_rwlock_write_is_locked =

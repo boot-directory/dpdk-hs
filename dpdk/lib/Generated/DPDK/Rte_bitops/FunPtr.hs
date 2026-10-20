@@ -45,7 +45,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_bitops_get_rte_bit_relaxed_get32 */"
   , "__attribute__ ((const))"
   , "uint32_t (*hs_bindgen_ed9cb8682c6227bd (void)) ("
@@ -322,7 +324,7 @@ hs_bindgen_ed9cb8682c6227bd =
 
     __defined at:__ @rte_bitops.h 674:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_get32 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_bit_relaxed_get32 =
@@ -342,7 +344,7 @@ hs_bindgen_d19a7b7eb2ad89c2 =
 
     __defined at:__ @rte_bitops.h 691:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_set32 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_bit_relaxed_set32 =
@@ -362,7 +364,7 @@ hs_bindgen_874428fc1cfcb794 =
 
     __defined at:__ @rte_bitops.h 708:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_clear32 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO ())
 rte_bit_relaxed_clear32 =
@@ -382,7 +384,7 @@ hs_bindgen_35dc84316350fc61 =
 
     __defined at:__ @rte_bitops.h 728:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_set32 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_bit_relaxed_test_and_set32 =
@@ -402,7 +404,7 @@ hs_bindgen_0d78759a107f917c =
 
     __defined at:__ @rte_bitops.h 750:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_clear32 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_bit_relaxed_test_and_clear32 =
@@ -422,7 +424,7 @@ hs_bindgen_41b0199d0885407f =
 
     __defined at:__ @rte_bitops.h 773:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_get64 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_bit_relaxed_get64 =
@@ -442,7 +444,7 @@ hs_bindgen_006ad7f0276e305d =
 
     __defined at:__ @rte_bitops.h 790:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_set64 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO ())
 rte_bit_relaxed_set64 =
@@ -462,7 +464,7 @@ hs_bindgen_a3a8e415397d0867 =
 
     __defined at:__ @rte_bitops.h 807:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_clear64 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO ())
 rte_bit_relaxed_clear64 =
@@ -482,7 +484,7 @@ hs_bindgen_946b25d8b9d273da =
 
     __defined at:__ @rte_bitops.h 827:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_set64 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_bit_relaxed_test_and_set64 =
@@ -502,7 +504,7 @@ hs_bindgen_c8cac774895d7481 =
 
     __defined at:__ @rte_bitops.h 849:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bit_relaxed_test_and_clear64 :: BG.FunPtr (BG.CUInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_bit_relaxed_test_and_clear64 =
@@ -522,7 +524,7 @@ hs_bindgen_53b61b6a5292ff5c =
 
     __defined at:__ @rte_bitops.h 1020:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_clz32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 rte_clz32 =
@@ -542,7 +544,7 @@ hs_bindgen_54d50292c549d7f6 =
 
     __defined at:__ @rte_bitops.h 1034:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_clz64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO BG.CUInt)
 rte_clz64 =
@@ -562,7 +564,7 @@ hs_bindgen_012319c80cb44336 =
 
     __defined at:__ @rte_bitops.h 1048:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ctz32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 rte_ctz32 =
@@ -582,7 +584,7 @@ hs_bindgen_2eebde2c580c2f8b =
 
     __defined at:__ @rte_bitops.h 1062:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ctz64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO BG.CUInt)
 rte_ctz64 =
@@ -602,7 +604,7 @@ hs_bindgen_12c2e7eed5ba7948 =
 
     __defined at:__ @rte_bitops.h 1076:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_popcount32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 rte_popcount32 =
@@ -622,7 +624,7 @@ hs_bindgen_b8530b8f141c89e2 =
 
     __defined at:__ @rte_bitops.h 1090:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_popcount64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO BG.CUInt)
 rte_popcount64 =
@@ -642,7 +644,7 @@ hs_bindgen_5d9925c067e414e8 =
 
     __defined at:__ @rte_bitops.h 1146:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_combine32ms1b :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_combine32ms1b =
@@ -662,7 +664,7 @@ hs_bindgen_ea7004b9733eb07e =
 
     __defined at:__ @rte_bitops.h 1168:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_combine64ms1b :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_combine64ms1b =
@@ -682,7 +684,7 @@ hs_bindgen_e95455d62be4aed5 =
 
     __defined at:__ @rte_bitops.h 1192:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_bsf32 =
@@ -702,7 +704,7 @@ hs_bindgen_8409641a2121b8fa =
 
     __defined at:__ @rte_bitops.h 1212:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf32_safe :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_bsf32_safe =
@@ -722,7 +724,7 @@ hs_bindgen_4fbbd00d66792c93 =
 
     __defined at:__ @rte_bitops.h 1233:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_bsf64 =
@@ -742,7 +744,7 @@ hs_bindgen_c13f85e678f5ad55 =
 
     __defined at:__ @rte_bitops.h 1253:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_bsf64_safe :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_bsf64_safe =
@@ -762,7 +764,7 @@ hs_bindgen_bcc1b6c6661d04fb =
 
     __defined at:__ @rte_bitops.h 1274:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fls_u32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_fls_u32 =
@@ -782,7 +784,7 @@ hs_bindgen_532d929a14ce6075 =
 
     __defined at:__ @rte_bitops.h 1292:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fls_u64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_fls_u64 =
@@ -802,7 +804,7 @@ hs_bindgen_2c9d18a3c2d6c572 =
 
     __defined at:__ @rte_bitops.h 1311:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_is_power_of_2 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_is_power_of_2 =
@@ -822,7 +824,7 @@ hs_bindgen_9a72ec6e178d6146 =
 
     __defined at:__ @rte_bitops.h 1326:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align32pow2 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_align32pow2 =
@@ -842,7 +844,7 @@ hs_bindgen_93c393b3d7ef2018 =
 
     __defined at:__ @rte_bitops.h 1344:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align32prevpow2 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_align32prevpow2 =
@@ -862,7 +864,7 @@ hs_bindgen_5dbae21b1703040a =
 
     __defined at:__ @rte_bitops.h 1361:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align64pow2 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_align64pow2 =
@@ -882,7 +884,7 @@ hs_bindgen_c8c3a22895ed5eb2 =
 
     __defined at:__ @rte_bitops.h 1379:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_align64prevpow2 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_align64prevpow2 =
@@ -902,7 +904,7 @@ hs_bindgen_0edb7509ea4bccef =
 
     __defined at:__ @rte_bitops.h 1398:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log2_u32 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word32 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_log2_u32 =
@@ -922,7 +924,7 @@ hs_bindgen_408265e5b0c63b3b =
 
     __defined at:__ @rte_bitops.h 1418:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_log2_u64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word32)
 rte_log2_u64 =

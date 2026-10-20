@@ -15,7 +15,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "char const *hs_bindgen_e73a414362f1f097 ("
   , "  signed int arg1"
   , ")"
@@ -41,7 +43,7 @@ hs_bindgen_e73a414362f1f097 =
 
     __defined at:__ @rte_errno.h 42:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_strerror ::
      BG.CInt

@@ -30,7 +30,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_atomic_64_get_rte_atomic64_cmpset */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_cf4dc5ee79bb5698 (void)) ("
@@ -175,7 +177,7 @@ hs_bindgen_cf4dc5ee79bb5698 =
 
     __defined at:__ @rte_atomic_64.h 27:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_cmpset :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_atomic64_cmpset =
@@ -195,7 +197,7 @@ hs_bindgen_5c58ef14cc3f0d9b =
 
     __defined at:__ @rte_atomic_64.h 47:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_exchange :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_atomic64_exchange =
@@ -215,7 +217,7 @@ hs_bindgen_dd6238a6efd5c805 =
 
     __defined at:__ @rte_atomic_64.h 59:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_init :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO ())
 rte_atomic64_init =
@@ -235,7 +237,7 @@ hs_bindgen_6f86cba397a08727 =
 
     __defined at:__ @rte_atomic_64.h 65:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_read :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO HsBindgen.Runtime.LibC.Int64)
 rte_atomic64_read =
@@ -255,7 +257,7 @@ hs_bindgen_801623cba215fb6e =
 
     __defined at:__ @rte_atomic_64.h 71:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_set :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> HsBindgen.Runtime.LibC.Int64 -> IO ())
 rte_atomic64_set =
@@ -275,7 +277,7 @@ hs_bindgen_717b9f3cd455cde5 =
 
     __defined at:__ @rte_atomic_64.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_add :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> HsBindgen.Runtime.LibC.Int64 -> IO ())
 rte_atomic64_add =
@@ -295,7 +297,7 @@ hs_bindgen_27b3ab31610105ea =
 
     __defined at:__ @rte_atomic_64.h 89:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_sub :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> HsBindgen.Runtime.LibC.Int64 -> IO ())
 rte_atomic64_sub =
@@ -315,7 +317,7 @@ hs_bindgen_1ec97f6346cd3ed2 =
 
     __defined at:__ @rte_atomic_64.h 101:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_inc :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO ())
 rte_atomic64_inc =
@@ -335,7 +337,7 @@ hs_bindgen_afa69087b2bff20c =
 
     __defined at:__ @rte_atomic_64.h 112:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_dec :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO ())
 rte_atomic64_dec =
@@ -355,7 +357,7 @@ hs_bindgen_0a286686d081d112 =
 
     __defined at:__ @rte_atomic_64.h 123:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_add_return :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> HsBindgen.Runtime.LibC.Int64 -> IO HsBindgen.Runtime.LibC.Int64)
 rte_atomic64_add_return =
@@ -375,7 +377,7 @@ hs_bindgen_f8de77e6c6b47486 =
 
     __defined at:__ @rte_atomic_64.h 138:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_sub_return :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> HsBindgen.Runtime.LibC.Int64 -> IO HsBindgen.Runtime.LibC.Int64)
 rte_atomic64_sub_return =
@@ -395,7 +397,7 @@ hs_bindgen_c4af9b25ff0c6827 =
 
     __defined at:__ @rte_atomic_64.h 143:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_inc_and_test :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO BG.CInt)
 rte_atomic64_inc_and_test =
@@ -415,7 +417,7 @@ hs_bindgen_c59785dfbda138a0 =
 
     __defined at:__ @rte_atomic_64.h 158:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_dec_and_test :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO BG.CInt)
 rte_atomic64_dec_and_test =
@@ -435,7 +437,7 @@ hs_bindgen_4d4ca1afa984a9bc =
 
     __defined at:__ @rte_atomic_64.h 172:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_test_and_set :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO BG.CInt)
 rte_atomic64_test_and_set =
@@ -455,7 +457,7 @@ hs_bindgen_09489fd965eb1899 =
 
     __defined at:__ @rte_atomic_64.h 177:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic64_clear :: BG.FunPtr (BG.Ptr Generated.DPDK.Generic.Rte_atomic.Rte_atomic64_t -> IO ())
 rte_atomic64_clear =

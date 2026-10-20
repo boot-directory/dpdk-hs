@@ -34,7 +34,7 @@ import Prelude ((<*>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @generic\/rte_atomic.h 227:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_atomic16_t = Rte_atomic16_t
   { cnt :: HsBindgen.Runtime.LibC.Int16
@@ -42,7 +42,7 @@ data Rte_atomic16_t = Rte_atomic16_t
 
          __defined at:__ @generic\/rte_atomic.h 228:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -77,7 +77,7 @@ deriving via Struct.IsStructViaReadRaw Rte_atomic16_t instance Struct.IsStruct R
 
     __defined at:__ @generic\/rte_atomic.h 228:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int16
          ) => BG.CompatHasField.HasField "cnt" Rte_atomic16_t ty where
@@ -103,7 +103,7 @@ instance HasCField.HasCField Rte_atomic16_t "cnt" where
 
     __defined at:__ @generic\/rte_atomic.h 512:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_atomic32_t = Rte_atomic32_t
   { cnt :: HsBindgen.Runtime.LibC.Int32
@@ -111,7 +111,7 @@ data Rte_atomic32_t = Rte_atomic32_t
 
          __defined at:__ @generic\/rte_atomic.h 513:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -146,7 +146,7 @@ deriving via Struct.IsStructViaReadRaw Rte_atomic32_t instance Struct.IsStruct R
 
     __defined at:__ @generic\/rte_atomic.h 513:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int32
          ) => BG.CompatHasField.HasField "cnt" Rte_atomic32_t ty where
@@ -172,7 +172,7 @@ instance HasCField.HasCField Rte_atomic32_t "cnt" where
 
     __defined at:__ @generic\/rte_atomic.h 796:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_atomic64_t = Rte_atomic64_t
   { cnt :: HsBindgen.Runtime.LibC.Int64
@@ -180,7 +180,7 @@ data Rte_atomic64_t = Rte_atomic64_t
 
          __defined at:__ @generic\/rte_atomic.h 797:19@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -215,7 +215,7 @@ deriving via Struct.IsStructViaReadRaw Rte_atomic64_t instance Struct.IsStruct R
 
     __defined at:__ @generic\/rte_atomic.h 797:19@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int64
          ) => BG.CompatHasField.HasField "cnt" Rte_atomic64_t ty where

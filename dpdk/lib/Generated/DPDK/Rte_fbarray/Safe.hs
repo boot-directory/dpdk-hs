@@ -42,7 +42,9 @@ import Generated.DPDK.Rte_fbarray
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_47f00615384c7b5d ("
   , "  struct rte_fbarray *arg1,"
   , "  char const *arg2,"
@@ -256,7 +258,7 @@ hs_bindgen_47f00615384c7b5d =
 
     __defined at:__ @rte_fbarray.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_init ::
      BG.Ptr Rte_fbarray
@@ -287,7 +289,7 @@ hs_bindgen_3e168a9526d2ef30 =
 
     __defined at:__ @rte_fbarray.h 99:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_attach ::
      BG.Ptr Rte_fbarray
@@ -312,7 +314,7 @@ hs_bindgen_dc9e9f20a4209f50 =
 
     __defined at:__ @rte_fbarray.h 120:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_destroy ::
      BG.Ptr Rte_fbarray
@@ -337,7 +339,7 @@ hs_bindgen_a706cb8b6adeaf33 =
 
     __defined at:__ @rte_fbarray.h 138:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_detach ::
      BG.Ptr Rte_fbarray
@@ -365,7 +367,7 @@ hs_bindgen_ca70c5f3407e50a7 =
 
     __defined at:__ @rte_fbarray.h 155:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_get ::
      PtrConst.PtrConst Rte_fbarray
@@ -395,7 +397,7 @@ hs_bindgen_a8b0451ae8323635 =
 
     __defined at:__ @rte_fbarray.h 172:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_idx ::
      PtrConst.PtrConst Rte_fbarray
@@ -425,7 +427,7 @@ hs_bindgen_9ebeb2fb3ec81589 =
 
     __defined at:__ @rte_fbarray.h 189:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_set_used ::
      BG.Ptr Rte_fbarray
@@ -455,7 +457,7 @@ hs_bindgen_0348b85af9afd8fc =
 
     __defined at:__ @rte_fbarray.h 206:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_set_free ::
      BG.Ptr Rte_fbarray
@@ -485,7 +487,7 @@ hs_bindgen_2001afc2d8c86c01 =
 
     __defined at:__ @rte_fbarray.h 224:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_is_used ::
      BG.Ptr Rte_fbarray
@@ -515,7 +517,7 @@ hs_bindgen_17ec6368b22244ee =
 
     __defined at:__ @rte_fbarray.h 241:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_free ::
      BG.Ptr Rte_fbarray
@@ -546,7 +548,7 @@ hs_bindgen_259b18aef0d0607b =
 
     __defined at:__ @rte_fbarray.h 258:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_used ::
      BG.Ptr Rte_fbarray
@@ -580,7 +582,7 @@ hs_bindgen_27dccc509d7a6aa0 =
 
     __defined at:__ @rte_fbarray.h 278:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_n_free ::
      BG.Ptr Rte_fbarray
@@ -616,7 +618,7 @@ hs_bindgen_116fcb55885dcd76 =
 
     __defined at:__ @rte_fbarray.h 299:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_next_n_used ::
      BG.Ptr Rte_fbarray
@@ -649,7 +651,7 @@ hs_bindgen_6f21544cbaddd99f =
 
     __defined at:__ @rte_fbarray.h 317:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_contig_free ::
      BG.Ptr Rte_fbarray
@@ -680,7 +682,7 @@ hs_bindgen_bc1346eee625962f =
 
     __defined at:__ @rte_fbarray.h 335:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_contig_used ::
      BG.Ptr Rte_fbarray
@@ -711,7 +713,7 @@ hs_bindgen_0e74d02b8d9432e0 =
 
     __defined at:__ @rte_fbarray.h 351:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_free ::
      BG.Ptr Rte_fbarray
@@ -742,7 +744,7 @@ hs_bindgen_a81038bda81c46bb =
 
     __defined at:__ @rte_fbarray.h 368:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_used ::
      BG.Ptr Rte_fbarray
@@ -776,7 +778,7 @@ hs_bindgen_b2a51de54493bc7d =
 
     __defined at:__ @rte_fbarray.h 389:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_n_free ::
      BG.Ptr Rte_fbarray
@@ -812,7 +814,7 @@ hs_bindgen_07d9aa8f97d6160f =
 
     __defined at:__ @rte_fbarray.h 411:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_prev_n_used ::
      BG.Ptr Rte_fbarray
@@ -845,7 +847,7 @@ hs_bindgen_1256cf5a3342897c =
 
     __defined at:__ @rte_fbarray.h 430:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_contig_free ::
      BG.Ptr Rte_fbarray
@@ -876,7 +878,7 @@ hs_bindgen_d8e1f67923fafaa9 =
 
     __defined at:__ @rte_fbarray.h 449:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_contig_used ::
      BG.Ptr Rte_fbarray
@@ -907,7 +909,7 @@ hs_bindgen_5469d2f1a6d25aa5 =
 
     __defined at:__ @rte_fbarray.h 466:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_biggest_free ::
      BG.Ptr Rte_fbarray
@@ -938,7 +940,7 @@ hs_bindgen_2800a3c9ea2fb5eb =
 
     __defined at:__ @rte_fbarray.h 483:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_biggest_used ::
      BG.Ptr Rte_fbarray
@@ -969,7 +971,7 @@ hs_bindgen_ff5ef358638336bc =
 
     __defined at:__ @rte_fbarray.h 501:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_biggest_free ::
      BG.Ptr Rte_fbarray
@@ -1000,7 +1002,7 @@ hs_bindgen_71090d817735ff50 =
 
     __defined at:__ @rte_fbarray.h 519:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_find_rev_biggest_used ::
      BG.Ptr Rte_fbarray
@@ -1031,7 +1033,7 @@ hs_bindgen_0d6b40cb0f3b6f9a =
 
     __defined at:__ @rte_fbarray.h 532:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_fbarray_dump_metadata ::
      BG.Ptr Rte_fbarray

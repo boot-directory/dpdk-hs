@@ -33,7 +33,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_ppp.h 20:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_ppp_hdr = Rte_ppp_hdr
   { addr :: HsBindgen.Runtime.LibC.Word8
@@ -41,21 +41,21 @@ data Rte_ppp_hdr = Rte_ppp_hdr
 
          __defined at:__ @rte_ppp.h 21:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ctrl :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @ctrl@
 
          __defined at:__ @rte_ppp.h 22:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , proto_id :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @proto_id@
 
          __defined at:__ @rte_ppp.h 23:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -94,7 +94,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ppp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_ppp.h 21:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "addr" Rte_ppp_hdr ty where
@@ -125,7 +125,7 @@ instance HasCField.HasCField Rte_ppp_hdr "addr" where
 
     __defined at:__ @rte_ppp.h 22:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ctrl" Rte_ppp_hdr ty where
@@ -156,7 +156,7 @@ instance HasCField.HasCField Rte_ppp_hdr "ctrl" where
 
     __defined at:__ @rte_ppp.h 23:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "proto_id" Rte_ppp_hdr ty where

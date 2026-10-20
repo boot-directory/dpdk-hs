@@ -30,7 +30,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ring_elem_pvt_get___rte_ring_enqueue_elems_32 */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_ae08e0f1b85cb4e6 (void)) ("
@@ -225,7 +227,7 @@ hs_bindgen_ae08e0f1b85cb4e6 =
 
     __defined at:__ @rte_ring_elem_pvt.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_enqueue_elems_32 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_enqueue_elems_32 =
@@ -245,7 +247,7 @@ hs_bindgen_b0bc99612a6e8027 =
 
     __defined at:__ @rte_ring_elem_pvt.h 65:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_enqueue_elems_64 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_enqueue_elems_64 =
@@ -265,7 +267,7 @@ hs_bindgen_9dd3d4f6a6563d15 =
 
     __defined at:__ @rte_ring_elem_pvt.h 98:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_enqueue_elems_128 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_enqueue_elems_128 =
@@ -285,7 +287,7 @@ hs_bindgen_8707e2ce6ef0f712 =
 
     __defined at:__ @rte_ring_elem_pvt.h 131:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_enqueue_elems :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_do_enqueue_elems =
@@ -305,7 +307,7 @@ hs_bindgen_a75609d2d935563c =
 
     __defined at:__ @rte_ring_elem_pvt.h 157:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_enqueue_elems :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> HsBindgen.Runtime.LibC.Word32 -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_enqueue_elems =
@@ -325,7 +327,7 @@ hs_bindgen_9c5a3afece0eb249 =
 
     __defined at:__ @rte_ring_elem_pvt.h 165:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_dequeue_elems_32 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_dequeue_elems_32 =
@@ -345,7 +347,7 @@ hs_bindgen_b6dc394cd8f23f60 =
 
     __defined at:__ @rte_ring_elem_pvt.h 209:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_dequeue_elems_64 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_dequeue_elems_64 =
@@ -365,7 +367,7 @@ hs_bindgen_55e9da6028ce285c =
 
     __defined at:__ @rte_ring_elem_pvt.h 241:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_dequeue_elems_128 :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_dequeue_elems_128 =
@@ -385,7 +387,7 @@ hs_bindgen_14b1e527edde55d7 =
 
     __defined at:__ @rte_ring_elem_pvt.h 269:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_dequeue_elems :: BG.FunPtr (BG.Ptr BG.Void -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_do_dequeue_elems =
@@ -405,7 +407,7 @@ hs_bindgen_b7a63d18b59eec21 =
 
     __defined at:__ @rte_ring_elem_pvt.h 295:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_dequeue_elems :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> HsBindgen.Runtime.LibC.Word32 -> BG.Ptr BG.Void -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> IO ())
 __rte_ring_dequeue_elems =
@@ -425,7 +427,7 @@ hs_bindgen_b091c9edad5f0d1a =
 
     __defined at:__ @rte_ring_elem_pvt.h 339:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_move_prod_head :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.CUInt -> BG.CUInt -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 __rte_ring_move_prod_head =
@@ -445,7 +447,7 @@ hs_bindgen_f7fbc14ff65830f0 =
 
     __defined at:__ @rte_ring_elem_pvt.h 372:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_move_cons_head :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.CUInt -> BG.CUInt -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> BG.Ptr HsBindgen.Runtime.LibC.Word32 -> IO BG.CUInt)
 __rte_ring_move_cons_head =
@@ -465,7 +467,7 @@ hs_bindgen_80fbfcdc70ff2283 =
 
     __defined at:__ @rte_ring_elem_pvt.h 406:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_enqueue_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> PtrConst.PtrConst BG.Void -> BG.CUInt -> BG.CUInt -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 __rte_ring_do_enqueue_elem =
@@ -485,7 +487,7 @@ hs_bindgen_9f98003710323ba1 =
 
     __defined at:__ @rte_ring_elem_pvt.h 453:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_ring_do_dequeue_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr BG.Void -> BG.CUInt -> BG.CUInt -> Generated.DPDK.Rte_ring_core.Rte_ring_queue_behavior -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 __rte_ring_do_dequeue_elem =

@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint64_t hs_bindgen_473cb7c6d7f7801f (void)"
   , "{"
   , "  return (rte_rdtsc)();"
@@ -45,7 +47,7 @@ hs_bindgen_473cb7c6d7f7801f =
 
     __defined at:__ @rte_cycles.h 30:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rdtsc :: IO HsBindgen.Runtime.LibC.Word64
 rte_rdtsc = hs_bindgen_473cb7c6d7f7801f
@@ -63,7 +65,7 @@ hs_bindgen_10042bec6f0fc85f =
 
     __defined at:__ @rte_cycles.h 54:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_rdtsc_precise :: IO HsBindgen.Runtime.LibC.Word64
 rte_rdtsc_precise = hs_bindgen_10042bec6f0fc85f
@@ -81,7 +83,7 @@ hs_bindgen_62c8e14ba34d6ff4 =
 
     __defined at:__ @rte_cycles.h 61:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_tsc_cycles :: IO HsBindgen.Runtime.LibC.Word64
 rte_get_tsc_cycles = hs_bindgen_62c8e14ba34d6ff4

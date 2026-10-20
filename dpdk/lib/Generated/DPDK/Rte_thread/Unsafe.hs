@@ -33,7 +33,9 @@ import Generated.DPDK.Rte_thread
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_cad0fafda701340a ("
   , "  rte_thread_t *arg1,"
   , "  rte_thread_attr_t const *arg2,"
@@ -184,7 +186,7 @@ hs_bindgen_cad0fafda701340a =
 
     __defined at:__ @rte_thread.h 99:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_create ::
      BG.Ptr Rte_thread_t
@@ -224,7 +226,7 @@ hs_bindgen_1a1149ae6cbc1951 =
 
     __defined at:__ @rte_thread.h 126:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_create_control ::
      BG.Ptr Rte_thread_t
@@ -265,7 +267,7 @@ hs_bindgen_a37116377095fa6a =
 
     __defined at:__ @rte_thread.h 155:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_create_internal_control ::
      BG.Ptr Rte_thread_t
@@ -300,7 +302,7 @@ hs_bindgen_bbf0e178f8ed3535 =
 
     __defined at:__ @rte_thread.h 171:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_join ::
      Rte_thread_t
@@ -331,7 +333,7 @@ hs_bindgen_932b0f8a16c8102a =
 
     __defined at:__ @rte_thread.h 184:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_detach ::
      Rte_thread_t
@@ -359,7 +361,7 @@ hs_bindgen_c363edbd5b6a03e1 =
 
     __defined at:__ @rte_thread.h 192:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_self :: IO Rte_thread_t
 rte_thread_self =
@@ -386,7 +388,7 @@ hs_bindgen_c2bf4b93f50a2da4 =
 
     __defined at:__ @rte_thread.h 209:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_set_name ::
      Rte_thread_t
@@ -420,7 +422,7 @@ hs_bindgen_f368ae21103d3722 =
 
     __defined at:__ @rte_thread.h 229:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_set_prefixed_name ::
      Rte_thread_t
@@ -454,7 +456,7 @@ hs_bindgen_0b0a500e71dfb275 =
 
     __defined at:__ @rte_thread.h 244:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_equal ::
      Rte_thread_t
@@ -486,7 +488,7 @@ hs_bindgen_eb31675716438f94 =
 
     __defined at:__ @rte_thread.h 258:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_attr_init ::
      BG.Ptr Rte_thread_attr_t
@@ -514,7 +516,7 @@ hs_bindgen_5d7e2fa5db0308ca =
 
     __defined at:__ @rte_thread.h 274:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_attr_set_priority ::
      BG.Ptr Rte_thread_attr_t
@@ -545,7 +547,7 @@ hs_bindgen_6c1ea0e3699c2bb9 =
 
     __defined at:__ @rte_thread.h 382:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_get_priority ::
      Rte_thread_t
@@ -579,7 +581,7 @@ hs_bindgen_a2f978dced09f9d6 =
 
     __defined at:__ @rte_thread.h 398:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_set_priority ::
      Rte_thread_t
@@ -613,7 +615,7 @@ hs_bindgen_5ecb157362f1f438 =
 
     __defined at:__ @rte_thread.h 419:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_key_create ::
      BG.Ptr Rte_thread_key
@@ -640,7 +642,7 @@ hs_bindgen_d94f783da8f7a833 =
 
     __defined at:__ @rte_thread.h 434:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_key_delete ::
      Rte_thread_key
@@ -668,7 +670,7 @@ hs_bindgen_93bed8aac11ed32a =
 
     __defined at:__ @rte_thread.h 450:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_value_set ::
      Rte_thread_key
@@ -695,7 +697,7 @@ hs_bindgen_d61a36c94eb15dbd =
 
     __defined at:__ @rte_thread.h 464:7@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_value_get ::
      Rte_thread_key

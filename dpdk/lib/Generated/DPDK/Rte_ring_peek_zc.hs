@@ -31,7 +31,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_ring_peek_zc.h 82:28@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_ring_zc_data = Rte_ring_zc_data
   { ptr1 :: BG.Ptr BG.Void
@@ -39,21 +39,21 @@ data Rte_ring_zc_data = Rte_ring_zc_data
 
          __defined at:__ @rte_ring_peek_zc.h 84:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , ptr2 :: BG.Ptr BG.Void
     {- ^ __C declaration:__ @ptr2@
 
          __defined at:__ @rte_ring_peek_zc.h 88:8@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , n1 :: BG.CUInt
     {- ^ __C declaration:__ @n1@
 
          __defined at:__ @rte_ring_peek_zc.h 94:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -92,7 +92,7 @@ deriving via Struct.IsStructViaReadRaw Rte_ring_zc_data instance Struct.IsStruct
 
     __defined at:__ @rte_ring_peek_zc.h 84:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "ptr1" Rte_ring_zc_data ty where
@@ -120,7 +120,7 @@ instance HasCField.HasCField Rte_ring_zc_data "ptr1" where
 
     __defined at:__ @rte_ring_peek_zc.h 88:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "ptr2" Rte_ring_zc_data ty where
@@ -148,7 +148,7 @@ instance HasCField.HasCField Rte_ring_zc_data "ptr2" where
 
     __defined at:__ @rte_ring_peek_zc.h 94:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "n1" Rte_ring_zc_data ty where

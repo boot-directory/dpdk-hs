@@ -18,7 +18,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_errno.h 49:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __ELASTERROR :: BG.CInt
 __ELASTERROR = (1000 :: BG.CInt)
@@ -27,7 +27,7 @@ __ELASTERROR = (1000 :: BG.CInt)
 
     __defined at:__ @rte_errno.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern E_RTE_NO_CONFIG :: BG.CUInt
 pattern E_RTE_NO_CONFIG = 1002
@@ -36,7 +36,7 @@ pattern E_RTE_NO_CONFIG = 1002
 
     __defined at:__ @rte_errno.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern E_RTE_SECONDARY :: BG.CUInt
 pattern E_RTE_SECONDARY = 1001
@@ -45,7 +45,7 @@ pattern E_RTE_SECONDARY = 1001
 
     __defined at:__ @rte_errno.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_MAX_ERRNO :: BG.CUInt
 pattern RTE_MAX_ERRNO = 1003
@@ -54,7 +54,7 @@ pattern RTE_MAX_ERRNO = 1003
 
     __defined at:__ @rte_errno.h 53:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_MIN_ERRNO :: BG.CUInt
 pattern RTE_MIN_ERRNO = 1000

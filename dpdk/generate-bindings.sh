@@ -43,7 +43,8 @@ hs-bindgen-cli preprocess \
     "${select_flags[@]}" \
     "${debug_flags[@]}" \
     -I "$LIB_DPDK_DIR" \
-    -I "dpdk/dpdk-c/" \
     --library "$LIB_DPDK_DIR" \
     --module Generated.DPDK \
-    dpdk.h
+    rte_eal.h \
+    rte_mbuf.h \
+    rte_ethdev.h

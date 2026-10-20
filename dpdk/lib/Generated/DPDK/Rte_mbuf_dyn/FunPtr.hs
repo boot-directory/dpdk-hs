@@ -25,7 +25,9 @@ import Generated.DPDK.Rte_mbuf_dyn
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mbuf_dyn_get_rte_mbuf_dynfield_register */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_68e1dc2c1d0fa093 (void)) ("
@@ -120,7 +122,7 @@ hs_bindgen_68e1dc2c1d0fa093 =
 
     __defined at:__ @rte_mbuf_dyn.h 120:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_register :: BG.FunPtr (PtrConst.PtrConst Rte_mbuf_dynfield -> IO BG.CInt)
 rte_mbuf_dynfield_register =
@@ -140,7 +142,7 @@ hs_bindgen_b131be15b5a58d66 =
 
     __defined at:__ @rte_mbuf_dyn.h 144:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_register_offset :: BG.FunPtr (PtrConst.PtrConst Rte_mbuf_dynfield -> HsBindgen.Runtime.LibC.CSize -> IO BG.CInt)
 rte_mbuf_dynfield_register_offset =
@@ -160,7 +162,7 @@ hs_bindgen_90aa030fd0cb7570 =
 
     __defined at:__ @rte_mbuf_dyn.h 160:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_lookup :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> BG.Ptr Rte_mbuf_dynfield -> IO BG.CInt)
 rte_mbuf_dynfield_lookup =
@@ -180,7 +182,7 @@ hs_bindgen_2d5041f8b381ddb7 =
 
     __defined at:__ @rte_mbuf_dyn.h 182:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_register :: BG.FunPtr (PtrConst.PtrConst Rte_mbuf_dynflag -> IO BG.CInt)
 rte_mbuf_dynflag_register =
@@ -200,7 +202,7 @@ hs_bindgen_6ae84e0029127de2 =
 
     __defined at:__ @rte_mbuf_dyn.h 206:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_register_bitnum :: BG.FunPtr (PtrConst.PtrConst Rte_mbuf_dynflag -> BG.CUInt -> IO BG.CInt)
 rte_mbuf_dynflag_register_bitnum =
@@ -220,7 +222,7 @@ hs_bindgen_d0b54ef5778913e9 =
 
     __defined at:__ @rte_mbuf_dyn.h 222:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_lookup :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> BG.Ptr Rte_mbuf_dynflag -> IO BG.CInt)
 rte_mbuf_dynflag_lookup =
@@ -240,7 +242,7 @@ hs_bindgen_8bf00ec63b866944 =
 
     __defined at:__ @rte_mbuf_dyn.h 236:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_mbuf_dyn_dump =
@@ -260,7 +262,7 @@ hs_bindgen_b16a0880418516c2 =
 
     __defined at:__ @rte_mbuf_dyn.h 304:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_rx_timestamp_register :: BG.FunPtr (BG.Ptr BG.CInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_mbuf_dyn_rx_timestamp_register =
@@ -280,7 +282,7 @@ hs_bindgen_69c768beb785e9d6 =
 
     __defined at:__ @rte_mbuf_dyn.h 337:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_tx_timestamp_register :: BG.FunPtr (BG.Ptr BG.CInt -> BG.Ptr HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_mbuf_dyn_tx_timestamp_register =

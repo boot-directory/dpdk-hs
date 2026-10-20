@@ -21,7 +21,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_cycles_get_rte_get_tsc_hz */"
   , "__attribute__ ((const))"
   , "uint64_t (*hs_bindgen_cc89f923e5e33ab9 (void)) (void)"
@@ -90,7 +92,7 @@ hs_bindgen_cc89f923e5e33ab9 =
 
     __defined at:__ @generic\/rte_cycles.h 40:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_tsc_hz :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_get_tsc_hz =
@@ -110,7 +112,7 @@ hs_bindgen_ba5e84aa5a45ca57 =
 
     __defined at:__ @generic\/rte_cycles.h 97:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_timer_cycles :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_get_timer_cycles =
@@ -130,7 +132,7 @@ hs_bindgen_ec6fd0e7b35ea449 =
 
     __defined at:__ @generic\/rte_cycles.h 119:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_timer_hz :: BG.FunPtr (IO HsBindgen.Runtime.LibC.Word64)
 rte_get_timer_hz =
@@ -150,7 +152,7 @@ hs_bindgen_e4e28e95114effc1 =
 
     __defined at:__ @generic\/rte_cycles.h 151:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_ms :: BG.FunPtr (BG.CUInt -> IO ())
 rte_delay_ms =
@@ -170,7 +172,7 @@ hs_bindgen_43b287fa3038889d =
 
     __defined at:__ @generic\/rte_cycles.h 162:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_block :: BG.FunPtr (BG.CUInt -> IO ())
 rte_delay_us_block =
@@ -190,7 +192,7 @@ hs_bindgen_af914eaa62dbbfb5 =
 
     __defined at:__ @generic\/rte_cycles.h 171:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_sleep :: BG.FunPtr (BG.CUInt -> IO ())
 rte_delay_us_sleep =
@@ -210,7 +212,7 @@ hs_bindgen_74e871221adeb912 =
 
     __defined at:__ @generic\/rte_cycles.h 180:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_callback_register :: BG.FunPtr (BG.FunPtr (BG.CUInt -> IO ()) -> IO ())
 rte_delay_us_callback_register =

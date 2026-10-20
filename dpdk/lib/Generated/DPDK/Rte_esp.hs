@@ -34,7 +34,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_esp.h 19:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_esp_hdr = Rte_esp_hdr
   { spi :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
@@ -42,14 +42,14 @@ data Rte_esp_hdr = Rte_esp_hdr
 
          __defined at:__ @rte_esp.h 20:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , seq :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @seq@
 
          __defined at:__ @rte_esp.h 21:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -86,7 +86,7 @@ deriving via Struct.IsStructViaReadRaw Rte_esp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_esp.h 20:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "spi" Rte_esp_hdr ty where
@@ -114,7 +114,7 @@ instance HasCField.HasCField Rte_esp_hdr "spi" where
 
     __defined at:__ @rte_esp.h 21:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "seq" Rte_esp_hdr ty where
@@ -142,7 +142,7 @@ instance HasCField.HasCField Rte_esp_hdr "seq" where
 
     __defined at:__ @rte_esp.h 27:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_esp_tail = Rte_esp_tail
   { pad_len :: HsBindgen.Runtime.LibC.Word8
@@ -150,14 +150,14 @@ data Rte_esp_tail = Rte_esp_tail
 
          __defined at:__ @rte_esp.h 28:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , next_proto :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @next_proto@
 
          __defined at:__ @rte_esp.h 29:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -194,7 +194,7 @@ deriving via Struct.IsStructViaReadRaw Rte_esp_tail instance Struct.IsStruct Rte
 
     __defined at:__ @rte_esp.h 28:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pad_len" Rte_esp_tail ty where
@@ -222,7 +222,7 @@ instance HasCField.HasCField Rte_esp_tail "pad_len" where
 
     __defined at:__ @rte_esp.h 29:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "next_proto" Rte_esp_tail ty where

@@ -24,7 +24,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_mempool_trace_fp_get___rte_mempool_trace_ops_dequeue_bulk */"
   , "__attribute__ ((const))"
   , "rte_trace_point_t *hs_bindgen_53670946a0085a86 (void)"
@@ -101,7 +103,7 @@ hs_bindgen_53670946a0085a86 =
 
     __defined at:__ @rte_mempool_trace_fp.h 20:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_ops_dequeue_bulk :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_ops_dequeue_bulk =
@@ -121,7 +123,7 @@ hs_bindgen_a7b4ea116f5acdce =
 
     __defined at:__ @rte_mempool_trace_fp.h 29:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_ops_dequeue_contig_blocks :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_ops_dequeue_contig_blocks =
@@ -141,7 +143,7 @@ hs_bindgen_21b2daf51c4ee086 =
 
     __defined at:__ @rte_mempool_trace_fp.h 38:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_ops_enqueue_bulk :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_ops_enqueue_bulk =
@@ -161,7 +163,7 @@ hs_bindgen_9526f546669e1200 =
 
     __defined at:__ @rte_mempool_trace_fp.h 47:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_generic_put :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_generic_put =
@@ -181,7 +183,7 @@ hs_bindgen_867654084b4a617b =
 
     __defined at:__ @rte_mempool_trace_fp.h 57:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_put_bulk :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_put_bulk =
@@ -201,7 +203,7 @@ hs_bindgen_b7d3ab84d7eb7096 =
 
     __defined at:__ @rte_mempool_trace_fp.h 67:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_generic_get :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_generic_get =
@@ -221,7 +223,7 @@ hs_bindgen_37b610923046d561 =
 
     __defined at:__ @rte_mempool_trace_fp.h 77:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_get_bulk :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_get_bulk =
@@ -241,7 +243,7 @@ hs_bindgen_906ba13947d56ec2 =
 
     __defined at:__ @rte_mempool_trace_fp.h 87:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_get_contig_blocks :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_get_contig_blocks =
@@ -261,7 +263,7 @@ hs_bindgen_57f81202cd7fff89 =
 
     __defined at:__ @rte_mempool_trace_fp.h 96:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_default_cache :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_default_cache =
@@ -281,7 +283,7 @@ hs_bindgen_1988d9b136e90207 =
 
     __defined at:__ @rte_mempool_trace_fp.h 105:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 __rte_mempool_trace_cache_flush :: BG.Ptr Generated.DPDK.Rte_trace_point.Rte_trace_point_t
 __rte_mempool_trace_cache_flush =

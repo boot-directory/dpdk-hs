@@ -38,7 +38,7 @@ import Prelude ((<*>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_pci_dev_feature_defs.h 9:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_intr_mode = Rte_intr_mode
   { unwrap :: BG.CUInt
@@ -139,7 +139,7 @@ instance HasCField.HasCField Rte_intr_mode "unwrap" where
 
     __defined at:__ @rte_pci_dev_feature_defs.h 10:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_INTR_MODE_NONE :: Rte_intr_mode
 pattern RTE_INTR_MODE_NONE = Rte_intr_mode 0
@@ -148,7 +148,7 @@ pattern RTE_INTR_MODE_NONE = Rte_intr_mode 0
 
     __defined at:__ @rte_pci_dev_feature_defs.h 11:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_INTR_MODE_LEGACY :: Rte_intr_mode
 pattern RTE_INTR_MODE_LEGACY = Rte_intr_mode 1
@@ -157,7 +157,7 @@ pattern RTE_INTR_MODE_LEGACY = Rte_intr_mode 1
 
     __defined at:__ @rte_pci_dev_feature_defs.h 12:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_INTR_MODE_MSI :: Rte_intr_mode
 pattern RTE_INTR_MODE_MSI = Rte_intr_mode 2
@@ -166,7 +166,7 @@ pattern RTE_INTR_MODE_MSI = Rte_intr_mode 2
 
     __defined at:__ @rte_pci_dev_feature_defs.h 13:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_INTR_MODE_MSIX :: Rte_intr_mode
 pattern RTE_INTR_MODE_MSIX = Rte_intr_mode 3

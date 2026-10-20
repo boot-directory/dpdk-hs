@@ -18,7 +18,9 @@ import Generated.DPDK.Rte_mbuf_history
 import Prelude (IO)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_db94a7735e0d65a7 ("
   , "  struct rte_mbuf *arg1,"
   , "  enum rte_mbuf_history_op arg2"
@@ -56,7 +58,7 @@ hs_bindgen_db94a7735e0d65a7 =
 
     __defined at:__ @rte_mbuf_history.h 105:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_history_mark ::
      BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf
@@ -89,7 +91,7 @@ hs_bindgen_d866724254afb8d9 =
 
     __defined at:__ @rte_mbuf_history.h 142:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_history_mark_bulk ::
      PtrConst.PtrConst (BG.Ptr Generated.DPDK.Rte_mbuf_core.Rte_mbuf)

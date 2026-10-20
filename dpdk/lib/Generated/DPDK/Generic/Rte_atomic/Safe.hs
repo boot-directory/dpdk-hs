@@ -32,7 +32,9 @@ import Generated.DPDK.Generic.Rte_atomic
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "void hs_bindgen_e75592e631e50094 ("
   , "  rte_atomic16_t *arg1"
   , ")"
@@ -158,7 +160,7 @@ hs_bindgen_e75592e631e50094 =
 
     __defined at:__ @generic\/rte_atomic.h 243:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_init ::
      BG.Ptr Rte_atomic16_t
@@ -183,7 +185,7 @@ hs_bindgen_bb17ef9ea514f33a =
 
     __defined at:__ @generic\/rte_atomic.h 257:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_read ::
      PtrConst.PtrConst Rte_atomic16_t
@@ -211,7 +213,7 @@ hs_bindgen_db7ea5cc8c731a83 =
 
     __defined at:__ @generic\/rte_atomic.h 271:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_set ::
      BG.Ptr Rte_atomic16_t
@@ -241,7 +243,7 @@ hs_bindgen_62e2f77f7f51f5b7 =
 
     __defined at:__ @generic\/rte_atomic.h 285:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_add ::
      BG.Ptr Rte_atomic16_t
@@ -271,7 +273,7 @@ hs_bindgen_2018c8198473f8e3 =
 
     __defined at:__ @generic\/rte_atomic.h 300:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_sub ::
      BG.Ptr Rte_atomic16_t
@@ -301,7 +303,7 @@ hs_bindgen_66780798b219cfbb =
 
     __defined at:__ @generic\/rte_atomic.h 354:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_add_return ::
      BG.Ptr Rte_atomic16_t
@@ -331,7 +333,7 @@ hs_bindgen_74f3e5d7761b1d3f =
 
     __defined at:__ @generic\/rte_atomic.h 375:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_sub_return ::
      BG.Ptr Rte_atomic16_t
@@ -358,7 +360,7 @@ hs_bindgen_93f60d42fe1fb843 =
 
     __defined at:__ @generic\/rte_atomic.h 449:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic16_clear ::
      BG.Ptr Rte_atomic16_t
@@ -383,7 +385,7 @@ hs_bindgen_1920181d40dc4d8f =
 
     __defined at:__ @generic\/rte_atomic.h 528:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_init ::
      BG.Ptr Rte_atomic32_t
@@ -408,7 +410,7 @@ hs_bindgen_46ee788d6de27bd3 =
 
     __defined at:__ @generic\/rte_atomic.h 542:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_read ::
      PtrConst.PtrConst Rte_atomic32_t
@@ -436,7 +438,7 @@ hs_bindgen_451062b5882e9b7f =
 
     __defined at:__ @generic\/rte_atomic.h 556:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_set ::
      BG.Ptr Rte_atomic32_t
@@ -466,7 +468,7 @@ hs_bindgen_0f12ff02bfadf135 =
 
     __defined at:__ @generic\/rte_atomic.h 570:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_add ::
      BG.Ptr Rte_atomic32_t
@@ -496,7 +498,7 @@ hs_bindgen_7ad18348cb960808 =
 
     __defined at:__ @generic\/rte_atomic.h 585:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_sub ::
      BG.Ptr Rte_atomic32_t
@@ -526,7 +528,7 @@ hs_bindgen_c094fb6e65fd92f5 =
 
     __defined at:__ @generic\/rte_atomic.h 639:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_add_return ::
      BG.Ptr Rte_atomic32_t
@@ -556,7 +558,7 @@ hs_bindgen_62c3cd3646db2cf7 =
 
     __defined at:__ @generic\/rte_atomic.h 660:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_sub_return ::
      BG.Ptr Rte_atomic32_t
@@ -583,7 +585,7 @@ hs_bindgen_6f6b1e269bec138c =
 
     __defined at:__ @generic\/rte_atomic.h 734:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_atomic32_clear ::
      BG.Ptr Rte_atomic32_t

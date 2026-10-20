@@ -46,7 +46,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_macsec.h 16:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_VER_MASK :: BG.CInt
 rTE_MACSEC_TCI_VER_MASK = (128 :: BG.CInt)
@@ -55,7 +55,7 @@ rTE_MACSEC_TCI_VER_MASK = (128 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 17:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_ES :: BG.CInt
 rTE_MACSEC_TCI_ES = (64 :: BG.CInt)
@@ -64,7 +64,7 @@ rTE_MACSEC_TCI_ES = (64 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 18:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_SC :: BG.CInt
 rTE_MACSEC_TCI_SC = (32 :: BG.CInt)
@@ -73,7 +73,7 @@ rTE_MACSEC_TCI_SC = (32 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 19:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_SCB :: BG.CInt
 rTE_MACSEC_TCI_SCB = (16 :: BG.CInt)
@@ -82,7 +82,7 @@ rTE_MACSEC_TCI_SCB = (16 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 20:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_E :: BG.CInt
 rTE_MACSEC_TCI_E = (8 :: BG.CInt)
@@ -91,7 +91,7 @@ rTE_MACSEC_TCI_E = (8 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 21:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_TCI_C :: BG.CInt
 rTE_MACSEC_TCI_C = (4 :: BG.CInt)
@@ -100,7 +100,7 @@ rTE_MACSEC_TCI_C = (4 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 22:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_AN_MASK :: BG.CInt
 rTE_MACSEC_AN_MASK = (3 :: BG.CInt)
@@ -109,7 +109,7 @@ rTE_MACSEC_AN_MASK = (3 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 28:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_macsec_hdr = Rte_macsec_hdr
   { tci_an :: HsBindgen.Runtime.LibC.Word8
@@ -117,28 +117,28 @@ data Rte_macsec_hdr = Rte_macsec_hdr
 
          __defined at:__ @rte_macsec.h 33:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , short_length :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @short_length@
 
          __defined at:__ @rte_macsec.h 35:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , unused :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @unused@
 
          __defined at:__ @rte_macsec.h 36:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , packet_number :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @packet_number@
 
          __defined at:__ @rte_macsec.h 41:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -179,7 +179,7 @@ deriving via Struct.IsStructViaReadRaw Rte_macsec_hdr instance Struct.IsStruct R
 
     __defined at:__ @rte_macsec.h 33:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "tci_an" Rte_macsec_hdr ty where
@@ -211,7 +211,7 @@ instance HasCField.HasCField Rte_macsec_hdr "tci_an" where
 
     __defined at:__ @rte_macsec.h 35:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "short_length" Rte_macsec_hdr ty where
@@ -246,7 +246,7 @@ instance HasCBitfield.HasCBitfield Rte_macsec_hdr "short_length" where
 
     __defined at:__ @rte_macsec.h 36:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "unused" Rte_macsec_hdr ty where
@@ -280,7 +280,7 @@ instance HasCBitfield.HasCBitfield Rte_macsec_hdr "unused" where
 
     __defined at:__ @rte_macsec.h 41:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "packet_number" Rte_macsec_hdr ty where
@@ -313,7 +313,7 @@ instance HasCField.HasCField Rte_macsec_hdr "packet_number" where
 
     __defined at:__ @rte_macsec.h 45:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_MACSEC_SCI_LEN :: BG.CInt
 rTE_MACSEC_SCI_LEN = (8 :: BG.CInt)
@@ -322,7 +322,7 @@ rTE_MACSEC_SCI_LEN = (8 :: BG.CInt)
 
     __defined at:__ @rte_macsec.h 51:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_macsec_sci_hdr = Rte_macsec_sci_hdr
   { sci :: CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
@@ -330,7 +330,7 @@ data Rte_macsec_sci_hdr = Rte_macsec_sci_hdr
 
          __defined at:__ @rte_macsec.h 52:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -365,7 +365,7 @@ deriving via Struct.IsStructViaReadRaw Rte_macsec_sci_hdr instance Struct.IsStru
 
     __defined at:__ @rte_macsec.h 52:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 8 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "sci" Rte_macsec_sci_hdr ty where

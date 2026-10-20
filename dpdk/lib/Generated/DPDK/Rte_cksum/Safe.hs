@@ -20,7 +20,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint32_t hs_bindgen_b35e0cb6e1fc4f5d ("
   , "  void const *arg1,"
   , "  size_t arg2,"
@@ -76,7 +78,7 @@ hs_bindgen_b35e0cb6e1fc4f5d =
 
     __defined at:__ @rte_cksum.h 43:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_raw_cksum ::
      PtrConst.PtrConst BG.Void
@@ -105,7 +107,7 @@ hs_bindgen_abf673f796f064a2 =
 
     __defined at:__ @rte_cksum.h 76:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_raw_cksum_reduce ::
      HsBindgen.Runtime.LibC.Word32
@@ -133,7 +135,7 @@ hs_bindgen_9824d041a5d3e6e9 =
 
     __defined at:__ @rte_cksum.h 94:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_raw_cksum ::
      PtrConst.PtrConst BG.Void
@@ -169,7 +171,7 @@ hs_bindgen_926c0f011e5feaf3 =
 
     __defined at:__ @rte_cksum.h 117:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_raw_cksum_mbuf ::
      PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf

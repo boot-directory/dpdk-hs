@@ -15,7 +15,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_byteorder_64_get_rte_arch_bswap64 */"
   , "__attribute__ ((const))"
   , "uint64_t (*hs_bindgen_f5212f7a1a1ae2c0 (void)) ("
@@ -40,7 +42,7 @@ hs_bindgen_f5212f7a1a1ae2c0 =
 
     __defined at:__ @rte_byteorder_64.h 21:24@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_arch_bswap64 :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word64)
 rte_arch_bswap64 =

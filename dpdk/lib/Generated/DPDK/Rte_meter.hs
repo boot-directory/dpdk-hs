@@ -49,7 +49,7 @@ import Prelude ((<*>), (>>), Eq, Int, Ord, Read, Show, pure, type (~))
 
     __defined at:__ @rte_meter.h 31:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_color = Rte_color
   { unwrap :: BG.CUInt
@@ -150,7 +150,7 @@ instance HasCField.HasCField Rte_color "unwrap" where
 
     __defined at:__ @rte_meter.h 32:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_COLOR_GREEN :: Rte_color
 pattern RTE_COLOR_GREEN = Rte_color 0
@@ -159,7 +159,7 @@ pattern RTE_COLOR_GREEN = Rte_color 0
 
     __defined at:__ @rte_meter.h 33:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_COLOR_YELLOW :: Rte_color
 pattern RTE_COLOR_YELLOW = Rte_color 1
@@ -168,7 +168,7 @@ pattern RTE_COLOR_YELLOW = Rte_color 1
 
     __defined at:__ @rte_meter.h 34:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_COLOR_RED :: Rte_color
 pattern RTE_COLOR_RED = Rte_color 2
@@ -177,7 +177,7 @@ pattern RTE_COLOR_RED = Rte_color 2
 
     __defined at:__ @rte_meter.h 35:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 pattern RTE_COLORS :: Rte_color
 pattern RTE_COLORS = Rte_color 3
@@ -186,7 +186,7 @@ pattern RTE_COLORS = Rte_color 3
 
     __defined at:__ @rte_meter.h 41:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_srtcm_params = Rte_meter_srtcm_params
   { cir :: HsBindgen.Runtime.LibC.Word64
@@ -194,21 +194,21 @@ data Rte_meter_srtcm_params = Rte_meter_srtcm_params
 
          __defined at:__ @rte_meter.h 42:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cbs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cbs@
 
          __defined at:__ @rte_meter.h 43:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ebs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @ebs@
 
          __defined at:__ @rte_meter.h 44:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -247,7 +247,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_srtcm_params instance Struct.Is
 
     __defined at:__ @rte_meter.h 42:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir" Rte_meter_srtcm_params ty where
@@ -275,7 +275,7 @@ instance HasCField.HasCField Rte_meter_srtcm_params "cir" where
 
     __defined at:__ @rte_meter.h 43:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_srtcm_params ty where
@@ -303,7 +303,7 @@ instance HasCField.HasCField Rte_meter_srtcm_params "cbs" where
 
     __defined at:__ @rte_meter.h 44:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ebs" Rte_meter_srtcm_params ty where
@@ -331,7 +331,7 @@ instance HasCField.HasCField Rte_meter_srtcm_params "ebs" where
 
     __defined at:__ @rte_meter.h 50:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm_params = Rte_meter_trtcm_params
   { cir :: HsBindgen.Runtime.LibC.Word64
@@ -339,28 +339,28 @@ data Rte_meter_trtcm_params = Rte_meter_trtcm_params
 
          __defined at:__ @rte_meter.h 51:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pir :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @pir@
 
          __defined at:__ @rte_meter.h 52:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cbs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cbs@
 
          __defined at:__ @rte_meter.h 53:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pbs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @pbs@
 
          __defined at:__ @rte_meter.h 54:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -401,7 +401,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm_params instance Struct.Is
 
     __defined at:__ @rte_meter.h 51:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir" Rte_meter_trtcm_params ty where
@@ -433,7 +433,7 @@ instance HasCField.HasCField Rte_meter_trtcm_params "cir" where
 
     __defined at:__ @rte_meter.h 52:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pir" Rte_meter_trtcm_params ty where
@@ -465,7 +465,7 @@ instance HasCField.HasCField Rte_meter_trtcm_params "pir" where
 
     __defined at:__ @rte_meter.h 53:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_trtcm_params ty where
@@ -497,7 +497,7 @@ instance HasCField.HasCField Rte_meter_trtcm_params "cbs" where
 
     __defined at:__ @rte_meter.h 54:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pbs" Rte_meter_trtcm_params ty where
@@ -529,7 +529,7 @@ instance HasCField.HasCField Rte_meter_trtcm_params "pbs" where
 
     __defined at:__ @rte_meter.h 61:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm_rfc4115_params = Rte_meter_trtcm_rfc4115_params
   { cir :: HsBindgen.Runtime.LibC.Word64
@@ -537,28 +537,28 @@ data Rte_meter_trtcm_rfc4115_params = Rte_meter_trtcm_rfc4115_params
 
          __defined at:__ @rte_meter.h 62:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , eir :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @eir@
 
          __defined at:__ @rte_meter.h 63:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cbs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cbs@
 
          __defined at:__ @rte_meter.h 64:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ebs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @ebs@
 
          __defined at:__ @rte_meter.h 65:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -599,7 +599,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm_rfc4115_params instance S
 
     __defined at:__ @rte_meter.h 62:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir" Rte_meter_trtcm_rfc4115_params ty where
@@ -631,7 +631,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_params "cir" where
 
     __defined at:__ @rte_meter.h 63:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "eir" Rte_meter_trtcm_rfc4115_params ty where
@@ -663,7 +663,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_params "eir" where
 
     __defined at:__ @rte_meter.h 64:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_trtcm_rfc4115_params ty where
@@ -695,7 +695,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_params "cbs" where
 
     __defined at:__ @rte_meter.h 65:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ebs" Rte_meter_trtcm_rfc4115_params ty where
@@ -727,7 +727,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_params "ebs" where
 
     __defined at:__ @rte_meter.h 317:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_srtcm_profile = Rte_meter_srtcm_profile
   { cbs :: HsBindgen.Runtime.LibC.Word64
@@ -735,28 +735,28 @@ data Rte_meter_srtcm_profile = Rte_meter_srtcm_profile
 
          __defined at:__ @rte_meter.h 318:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ebs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @ebs@
 
          __defined at:__ @rte_meter.h 320:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_period@
 
          __defined at:__ @rte_meter.h 322:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_bytes_per_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_bytes_per_period@
 
          __defined at:__ @rte_meter.h 324:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -797,7 +797,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_srtcm_profile instance Struct.I
 
     __defined at:__ @rte_meter.h 318:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_srtcm_profile ty where
@@ -829,7 +829,7 @@ instance HasCField.HasCField Rte_meter_srtcm_profile "cbs" where
 
     __defined at:__ @rte_meter.h 320:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ebs" Rte_meter_srtcm_profile ty where
@@ -861,7 +861,7 @@ instance HasCField.HasCField Rte_meter_srtcm_profile "ebs" where
 
     __defined at:__ @rte_meter.h 322:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_period" Rte_meter_srtcm_profile ty where
@@ -893,7 +893,7 @@ instance HasCField.HasCField Rte_meter_srtcm_profile "cir_period" where
 
     __defined at:__ @rte_meter.h 324:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_bytes_per_period" Rte_meter_srtcm_profile ty where
@@ -926,7 +926,7 @@ instance HasCField.HasCField Rte_meter_srtcm_profile "cir_bytes_per_period" wher
 
     __defined at:__ @rte_meter.h 329:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_srtcm = Rte_meter_srtcm
   { time :: HsBindgen.Runtime.LibC.Word64
@@ -934,21 +934,21 @@ data Rte_meter_srtcm = Rte_meter_srtcm
 
          __defined at:__ @rte_meter.h 330:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @tc@
 
          __defined at:__ @rte_meter.h 331:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , te :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @te@
 
          __defined at:__ @rte_meter.h 332:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -987,7 +987,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_srtcm instance Struct.IsStruct 
 
     __defined at:__ @rte_meter.h 330:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "time" Rte_meter_srtcm ty where
@@ -1015,7 +1015,7 @@ instance HasCField.HasCField Rte_meter_srtcm "time" where
 
     __defined at:__ @rte_meter.h 331:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tc" Rte_meter_srtcm ty where
@@ -1043,7 +1043,7 @@ instance HasCField.HasCField Rte_meter_srtcm "tc" where
 
     __defined at:__ @rte_meter.h 332:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "te" Rte_meter_srtcm ty where
@@ -1071,7 +1071,7 @@ instance HasCField.HasCField Rte_meter_srtcm "te" where
 
     __defined at:__ @rte_meter.h 335:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm_profile = Rte_meter_trtcm_profile
   { cbs :: HsBindgen.Runtime.LibC.Word64
@@ -1079,42 +1079,42 @@ data Rte_meter_trtcm_profile = Rte_meter_trtcm_profile
 
          __defined at:__ @rte_meter.h 336:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pbs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @pbs@
 
          __defined at:__ @rte_meter.h 338:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_period@
 
          __defined at:__ @rte_meter.h 340:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_bytes_per_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_bytes_per_period@
 
          __defined at:__ @rte_meter.h 342:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pir_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @pir_period@
 
          __defined at:__ @rte_meter.h 344:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pir_bytes_per_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @pir_bytes_per_period@
 
          __defined at:__ @rte_meter.h 346:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1165,7 +1165,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm_profile instance Struct.I
 
     __defined at:__ @rte_meter.h 336:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_trtcm_profile ty where
@@ -1199,7 +1199,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "cbs" where
 
     __defined at:__ @rte_meter.h 338:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pbs" Rte_meter_trtcm_profile ty where
@@ -1233,7 +1233,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "pbs" where
 
     __defined at:__ @rte_meter.h 340:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_period" Rte_meter_trtcm_profile ty where
@@ -1267,7 +1267,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "cir_period" where
 
     __defined at:__ @rte_meter.h 342:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_bytes_per_period" Rte_meter_trtcm_profile ty where
@@ -1302,7 +1302,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "cir_bytes_per_period" wher
 
     __defined at:__ @rte_meter.h 344:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pir_period" Rte_meter_trtcm_profile ty where
@@ -1336,7 +1336,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "pir_period" where
 
     __defined at:__ @rte_meter.h 346:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "pir_bytes_per_period" Rte_meter_trtcm_profile ty where
@@ -1371,7 +1371,7 @@ instance HasCField.HasCField Rte_meter_trtcm_profile "pir_bytes_per_period" wher
 
     __defined at:__ @rte_meter.h 354:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm = Rte_meter_trtcm
   { time_tc :: HsBindgen.Runtime.LibC.Word64
@@ -1379,28 +1379,28 @@ data Rte_meter_trtcm = Rte_meter_trtcm
 
          __defined at:__ @rte_meter.h 355:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , time_tp :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @time_tp@
 
          __defined at:__ @rte_meter.h 357:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @tc@
 
          __defined at:__ @rte_meter.h 359:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tp :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @tp@
 
          __defined at:__ @rte_meter.h 361:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1441,7 +1441,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm instance Struct.IsStruct 
 
     __defined at:__ @rte_meter.h 355:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "time_tc" Rte_meter_trtcm ty where
@@ -1473,7 +1473,7 @@ instance HasCField.HasCField Rte_meter_trtcm "time_tc" where
 
     __defined at:__ @rte_meter.h 357:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "time_tp" Rte_meter_trtcm ty where
@@ -1505,7 +1505,7 @@ instance HasCField.HasCField Rte_meter_trtcm "time_tp" where
 
     __defined at:__ @rte_meter.h 359:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tc" Rte_meter_trtcm ty where
@@ -1537,7 +1537,7 @@ instance HasCField.HasCField Rte_meter_trtcm "tc" where
 
     __defined at:__ @rte_meter.h 361:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tp" Rte_meter_trtcm ty where
@@ -1569,7 +1569,7 @@ instance HasCField.HasCField Rte_meter_trtcm "tp" where
 
     __defined at:__ @rte_meter.h 365:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm_rfc4115_profile = Rte_meter_trtcm_rfc4115_profile
   { cbs :: HsBindgen.Runtime.LibC.Word64
@@ -1577,42 +1577,42 @@ data Rte_meter_trtcm_rfc4115_profile = Rte_meter_trtcm_rfc4115_profile
 
          __defined at:__ @rte_meter.h 366:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ebs :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @ebs@
 
          __defined at:__ @rte_meter.h 368:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_period@
 
          __defined at:__ @rte_meter.h 370:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , cir_bytes_per_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @cir_bytes_per_period@
 
          __defined at:__ @rte_meter.h 372:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , eir_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @eir_period@
 
          __defined at:__ @rte_meter.h 374:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , eir_bytes_per_period :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @eir_bytes_per_period@
 
          __defined at:__ @rte_meter.h 376:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1663,7 +1663,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm_rfc4115_profile instance 
 
     __defined at:__ @rte_meter.h 366:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cbs" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1697,7 +1697,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "cbs" where
 
     __defined at:__ @rte_meter.h 368:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "ebs" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1731,7 +1731,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "ebs" where
 
     __defined at:__ @rte_meter.h 370:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_period" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1765,7 +1765,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "cir_period" where
 
     __defined at:__ @rte_meter.h 372:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "cir_bytes_per_period" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1800,7 +1800,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "cir_bytes_per_peri
 
     __defined at:__ @rte_meter.h 374:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "eir_period" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1834,7 +1834,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "eir_period" where
 
     __defined at:__ @rte_meter.h 376:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "eir_bytes_per_period" Rte_meter_trtcm_rfc4115_profile ty where
@@ -1869,7 +1869,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115_profile "eir_bytes_per_peri
 
     __defined at:__ @rte_meter.h 384:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_meter_trtcm_rfc4115 = Rte_meter_trtcm_rfc4115
   { time_tc :: HsBindgen.Runtime.LibC.Word64
@@ -1877,28 +1877,28 @@ data Rte_meter_trtcm_rfc4115 = Rte_meter_trtcm_rfc4115
 
          __defined at:__ @rte_meter.h 385:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , time_te :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @time_te@
 
          __defined at:__ @rte_meter.h 387:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , tc :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @tc@
 
          __defined at:__ @rte_meter.h 389:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , te :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @te@
 
          __defined at:__ @rte_meter.h 391:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1939,7 +1939,7 @@ deriving via Struct.IsStructViaReadRaw Rte_meter_trtcm_rfc4115 instance Struct.I
 
     __defined at:__ @rte_meter.h 385:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "time_tc" Rte_meter_trtcm_rfc4115 ty where
@@ -1971,7 +1971,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115 "time_tc" where
 
     __defined at:__ @rte_meter.h 387:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "time_te" Rte_meter_trtcm_rfc4115 ty where
@@ -2003,7 +2003,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115 "time_te" where
 
     __defined at:__ @rte_meter.h 389:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "tc" Rte_meter_trtcm_rfc4115 ty where
@@ -2035,7 +2035,7 @@ instance HasCField.HasCField Rte_meter_trtcm_rfc4115 "tc" where
 
     __defined at:__ @rte_meter.h 391:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "te" Rte_meter_trtcm_rfc4115 ty where

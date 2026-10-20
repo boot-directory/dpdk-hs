@@ -72,7 +72,7 @@ import Prelude ((<*>), (>>), Eq, IO, Int, Ord, Read, Show, fmap, pure, type (~))
 
     __defined at:__ @rte_memory.h 28:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_4K :: BG.CULLong
 rTE_PGSIZE_4K =
@@ -82,7 +82,7 @@ rTE_PGSIZE_4K =
 
     __defined at:__ @rte_memory.h 29:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_64K :: BG.CULLong
 rTE_PGSIZE_64K =
@@ -92,7 +92,7 @@ rTE_PGSIZE_64K =
 
     __defined at:__ @rte_memory.h 30:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_256K :: BG.CULLong
 rTE_PGSIZE_256K =
@@ -102,7 +102,7 @@ rTE_PGSIZE_256K =
 
     __defined at:__ @rte_memory.h 31:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_2M :: BG.CULLong
 rTE_PGSIZE_2M =
@@ -112,7 +112,7 @@ rTE_PGSIZE_2M =
 
     __defined at:__ @rte_memory.h 32:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_16M :: BG.CULLong
 rTE_PGSIZE_16M =
@@ -122,7 +122,7 @@ rTE_PGSIZE_16M =
 
     __defined at:__ @rte_memory.h 33:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_256M :: BG.CULLong
 rTE_PGSIZE_256M =
@@ -132,7 +132,7 @@ rTE_PGSIZE_256M =
 
     __defined at:__ @rte_memory.h 34:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_512M :: BG.CULLong
 rTE_PGSIZE_512M =
@@ -142,7 +142,7 @@ rTE_PGSIZE_512M =
 
     __defined at:__ @rte_memory.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_1G :: BG.CULLong
 rTE_PGSIZE_1G =
@@ -152,7 +152,7 @@ rTE_PGSIZE_1G =
 
     __defined at:__ @rte_memory.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_4G :: BG.CULLong
 rTE_PGSIZE_4G =
@@ -162,7 +162,7 @@ rTE_PGSIZE_4G =
 
     __defined at:__ @rte_memory.h 37:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_PGSIZE_16G :: BG.CULLong
 rTE_PGSIZE_16G =
@@ -172,7 +172,7 @@ rTE_PGSIZE_16G =
 
     __defined at:__ @rte_memory.h 39:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 sOCKET_ID_ANY :: BG.CInt
 sOCKET_ID_ANY =
@@ -182,7 +182,7 @@ sOCKET_ID_ANY =
 
     __defined at:__ @rte_memory.h 51:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_anon'addr = Rte_memseg_anon'addr
   { unwrap :: BG.ByteArray
@@ -203,7 +203,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_memseg_anon'addr
 
     __defined at:__ @rte_memory.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.HasField "addr" Rte_memseg_anon'addr ty where
@@ -214,7 +214,7 @@ instance ( ty ~ BG.Ptr BG.Void
 
     __defined at:__ @rte_memory.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_memseg_anon'addr ty where
@@ -240,7 +240,7 @@ instance HasCField.HasCField Rte_memseg_anon'addr "addr" where
 
     __defined at:__ @rte_memory.h 53:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memseg_anon'addr ty where
@@ -251,7 +251,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memory.h 53:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memseg_anon'addr ty where
@@ -277,7 +277,7 @@ instance HasCField.HasCField Rte_memseg_anon'addr "addr_64" where
 
     __defined at:__ @rte_memory.h 49:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_memseg = Rte_memseg
   { iova :: Generated.DPDK.Rte_common.Rte_iova_t
@@ -285,56 +285,56 @@ data Rte_memseg = Rte_memseg
 
          __defined at:__ @rte_memory.h 50:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , anon'addr :: Rte_memseg_anon'addr
     {- ^ __C declaration:__ @anon\'addr@
 
          __defined at:__ @rte_memory.h 51:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_memory.h 55:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , hugepage_sz :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @hugepage_sz@
 
          __defined at:__ @rte_memory.h 56:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , socket_id :: HsBindgen.Runtime.LibC.Int32
     {- ^ __C declaration:__ @socket_id@
 
          __defined at:__ @rte_memory.h 57:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , nchannel :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @nchannel@
 
          __defined at:__ @rte_memory.h 58:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , nrank :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @nrank@
 
          __defined at:__ @rte_memory.h 59:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , flags :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @flags@
 
          __defined at:__ @rte_memory.h 60:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -391,7 +391,7 @@ deriving via Struct.IsStructViaReadRaw Rte_memseg instance Struct.IsStruct Rte_m
 
     __defined at:__ @rte_memory.h 50:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_common.Rte_iova_t
          ) => BG.CompatHasField.HasField "iova" Rte_memseg ty where
@@ -427,7 +427,7 @@ instance HasCField.HasCField Rte_memseg "iova" where
 
     __defined at:__ @rte_memory.h 51:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_memseg_anon'addr
          ) => BG.CompatHasField.HasField "anon'addr" Rte_memseg ty where
@@ -463,7 +463,7 @@ instance HasCField.HasCField Rte_memseg "anon'addr" where
 
     __defined at:__ @rte_memory.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ BG.Ptr BG.Void) => BG.HasField "addr" Rte_memseg ty where
 
@@ -475,7 +475,7 @@ instance (ty ~ BG.Ptr BG.Void) => BG.HasField "addr" Rte_memseg ty where
 
     __defined at:__ @rte_memory.h 52:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "addr" Rte_memseg ty where
@@ -503,7 +503,7 @@ instance HasCField.HasCField Rte_memseg "addr" where
 
     __defined at:__ @rte_memory.h 53:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memseg ty where
@@ -516,7 +516,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memory.h 53:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memseg ty where
@@ -545,7 +545,7 @@ instance HasCField.HasCField Rte_memseg "addr_64" where
 
     __defined at:__ @rte_memory.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "len" Rte_memseg ty where
@@ -581,7 +581,7 @@ instance HasCField.HasCField Rte_memseg "len" where
 
     __defined at:__ @rte_memory.h 56:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "hugepage_sz" Rte_memseg ty where
@@ -618,7 +618,7 @@ instance HasCField.HasCField Rte_memseg "hugepage_sz" where
 
     __defined at:__ @rte_memory.h 57:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int32
          ) => BG.CompatHasField.HasField "socket_id" Rte_memseg ty where
@@ -654,7 +654,7 @@ instance HasCField.HasCField Rte_memseg "socket_id" where
 
     __defined at:__ @rte_memory.h 58:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "nchannel" Rte_memseg ty where
@@ -690,7 +690,7 @@ instance HasCField.HasCField Rte_memseg "nchannel" where
 
     __defined at:__ @rte_memory.h 59:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "nrank" Rte_memseg ty where
@@ -726,7 +726,7 @@ instance HasCField.HasCField Rte_memseg "nrank" where
 
     __defined at:__ @rte_memory.h 60:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "flags" Rte_memseg ty where
@@ -762,7 +762,7 @@ instance HasCField.HasCField Rte_memseg "flags" where
 
     __defined at:__ @rte_memory.h 68:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_list_anon'base_va = Rte_memseg_list_anon'base_va
   { unwrap :: BG.ByteArray
@@ -783,7 +783,7 @@ deriving via BG.SizedByteArray 8 8 instance Union.IsUnion Rte_memseg_list_anon'b
 
     __defined at:__ @rte_memory.h 69:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.HasField "base_va" Rte_memseg_list_anon'base_va ty where
@@ -794,7 +794,7 @@ instance ( ty ~ BG.Ptr BG.Void
 
     __defined at:__ @rte_memory.h 69:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "base_va" Rte_memseg_list_anon'base_va ty where
@@ -820,7 +820,7 @@ instance HasCField.HasCField Rte_memseg_list_anon'base_va "base_va" where
 
     __defined at:__ @rte_memory.h 71:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memseg_list_anon'base_va ty where
@@ -831,7 +831,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memory.h 71:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memseg_list_anon'base_va ty where
@@ -857,7 +857,7 @@ instance HasCField.HasCField Rte_memseg_list_anon'base_va "addr_64" where
 
     __defined at:__ @rte_memory.h 67:8@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_memseg_list = Rte_memseg_list
   { anon'base_va :: Rte_memseg_list_anon'base_va
@@ -865,56 +865,56 @@ data Rte_memseg_list = Rte_memseg_list
 
          __defined at:__ @rte_memory.h 68:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , page_sz :: HsBindgen.Runtime.LibC.Word64
     {- ^ __C declaration:__ @page_sz@
 
          __defined at:__ @rte_memory.h 74:11@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , socket_id :: BG.CInt
     {- ^ __C declaration:__ @socket_id@
 
          __defined at:__ @rte_memory.h 75:6@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , version :: HsBindgen.Runtime.LibC.Word32
     {- ^ __C declaration:__ @version@
 
          __defined at:__ @rte_memory.h 76:20@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , len :: HsBindgen.Runtime.LibC.CSize
     {- ^ __C declaration:__ @len@
 
          __defined at:__ @rte_memory.h 77:9@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , external :: BG.CUInt
     {- ^ __C declaration:__ @external@
 
          __defined at:__ @rte_memory.h 78:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , heap :: BG.CUInt
     {- ^ __C declaration:__ @heap@
 
          __defined at:__ @rte_memory.h 79:15@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   , memseg_arr :: Generated.DPDK.Rte_fbarray.Rte_fbarray
     {- ^ __C declaration:__ @memseg_arr@
 
          __defined at:__ @rte_memory.h 80:21@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -971,7 +971,7 @@ deriving via Struct.IsStructViaReadRaw Rte_memseg_list instance Struct.IsStruct 
 
     __defined at:__ @rte_memory.h 68:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Rte_memseg_list_anon'base_va
          ) => BG.CompatHasField.HasField "anon'base_va" Rte_memseg_list ty where
@@ -1008,7 +1008,7 @@ instance HasCField.HasCField Rte_memseg_list "anon'base_va" where
 
     __defined at:__ @rte_memory.h 69:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance (ty ~ BG.Ptr BG.Void) => BG.HasField "base_va" Rte_memseg_list ty where
 
@@ -1020,7 +1020,7 @@ instance (ty ~ BG.Ptr BG.Void) => BG.HasField "base_va" Rte_memseg_list ty where
 
     __defined at:__ @rte_memory.h 69:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.Ptr BG.Void
          ) => BG.CompatHasField.HasField "base_va" Rte_memseg_list ty where
@@ -1049,7 +1049,7 @@ instance HasCField.HasCField Rte_memseg_list "base_va" where
 
     __defined at:__ @rte_memory.h 71:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.HasField "addr_64" Rte_memseg_list ty where
@@ -1062,7 +1062,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word64
 
     __defined at:__ @rte_memory.h 71:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "addr_64" Rte_memseg_list ty where
@@ -1091,7 +1091,7 @@ instance HasCField.HasCField Rte_memseg_list "addr_64" where
 
     __defined at:__ @rte_memory.h 74:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word64
          ) => BG.CompatHasField.HasField "page_sz" Rte_memseg_list ty where
@@ -1127,7 +1127,7 @@ instance HasCField.HasCField Rte_memseg_list "page_sz" where
 
     __defined at:__ @rte_memory.h 75:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CInt
          ) => BG.CompatHasField.HasField "socket_id" Rte_memseg_list ty where
@@ -1162,7 +1162,7 @@ instance HasCField.HasCField Rte_memseg_list "socket_id" where
 
     __defined at:__ @rte_memory.h 76:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word32
          ) => BG.CompatHasField.HasField "version" Rte_memseg_list ty where
@@ -1198,7 +1198,7 @@ instance HasCField.HasCField Rte_memseg_list "version" where
 
     __defined at:__ @rte_memory.h 77:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.CSize
          ) => BG.CompatHasField.HasField "len" Rte_memseg_list ty where
@@ -1234,7 +1234,7 @@ instance HasCField.HasCField Rte_memseg_list "len" where
 
     __defined at:__ @rte_memory.h 78:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "external" Rte_memseg_list ty where
@@ -1269,7 +1269,7 @@ instance HasCField.HasCField Rte_memseg_list "external" where
 
     __defined at:__ @rte_memory.h 79:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ BG.CUInt
          ) => BG.CompatHasField.HasField "heap" Rte_memseg_list ty where
@@ -1304,7 +1304,7 @@ instance HasCField.HasCField Rte_memseg_list "heap" where
 
     __defined at:__ @rte_memory.h 80:21@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ Generated.DPDK.Rte_fbarray.Rte_fbarray
          ) => BG.CompatHasField.HasField "memseg_arr" Rte_memseg_list ty where
@@ -1342,7 +1342,7 @@ instance HasCField.HasCField Rte_memseg_list "memseg_arr" where
 
     __defined at:__ @rte_memory.h 167:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_walk_t_Aux = Rte_memseg_walk_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_memseg_list -> PtrConst.PtrConst Rte_memseg -> BG.Ptr BG.Void -> IO BG.CInt
@@ -1413,7 +1413,7 @@ instance HasCField.HasCField Rte_memseg_walk_t_Aux "unwrap" where
 
     __defined at:__ @rte_memory.h 167:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_walk_t = Rte_memseg_walk_t
   { unwrap :: BG.FunPtr Rte_memseg_walk_t_Aux
@@ -1453,7 +1453,7 @@ instance HasCField.HasCField Rte_memseg_walk_t "unwrap" where
 
     __defined at:__ @rte_memory.h 179:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_contig_walk_t_Aux = Rte_memseg_contig_walk_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_memseg_list -> PtrConst.PtrConst Rte_memseg -> HsBindgen.Runtime.LibC.CSize -> BG.Ptr BG.Void -> IO BG.CInt
@@ -1526,7 +1526,7 @@ instance HasCField.HasCField Rte_memseg_contig_walk_t_Aux "unwrap" where
 
     __defined at:__ @rte_memory.h 179:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_contig_walk_t = Rte_memseg_contig_walk_t
   { unwrap :: BG.FunPtr Rte_memseg_contig_walk_t_Aux
@@ -1566,7 +1566,7 @@ instance HasCField.HasCField Rte_memseg_contig_walk_t "unwrap" where
 
     __defined at:__ @rte_memory.h 190:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_list_walk_t_Aux = Rte_memseg_list_walk_t_Aux
   { unwrap :: PtrConst.PtrConst Rte_memseg_list -> BG.Ptr BG.Void -> IO BG.CInt
@@ -1635,7 +1635,7 @@ instance HasCField.HasCField Rte_memseg_list_walk_t_Aux "unwrap" where
 
     __defined at:__ @rte_memory.h 190:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_memseg_list_walk_t = Rte_memseg_list_walk_t
   { unwrap :: BG.FunPtr Rte_memseg_list_walk_t_Aux
@@ -1673,7 +1673,7 @@ instance HasCField.HasCField Rte_memseg_list_walk_t "unwrap" where
 
     __defined at:__ @rte_memory.h 605:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mem_event = Rte_mem_event
   { unwrap :: BG.CUInt
@@ -1772,7 +1772,7 @@ instance HasCField.HasCField Rte_mem_event "unwrap" where
 
     __defined at:__ @rte_memory.h 606:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MEM_EVENT_ALLOC :: Rte_mem_event
 pattern RTE_MEM_EVENT_ALLOC = Rte_mem_event 0
@@ -1781,7 +1781,7 @@ pattern RTE_MEM_EVENT_ALLOC = Rte_mem_event 0
 
     __defined at:__ @rte_memory.h 607:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 pattern RTE_MEM_EVENT_FREE :: Rte_mem_event
 pattern RTE_MEM_EVENT_FREE = Rte_mem_event 1
@@ -1790,7 +1790,7 @@ pattern RTE_MEM_EVENT_FREE = Rte_mem_event 1
 
     __defined at:__ @rte_memory.h 609:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEM_EVENT_CALLBACK_NAME_LEN :: BG.CInt
 rTE_MEM_EVENT_CALLBACK_NAME_LEN = (64 :: BG.CInt)
@@ -1801,7 +1801,7 @@ rTE_MEM_EVENT_CALLBACK_NAME_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_memory.h 615:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mem_event_callback_t_Aux = Rte_mem_event_callback_t_Aux
   { unwrap :: Rte_mem_event -> PtrConst.PtrConst BG.Void -> HsBindgen.Runtime.LibC.CSize -> BG.Ptr BG.Void -> IO ()
@@ -1874,7 +1874,7 @@ instance HasCField.HasCField Rte_mem_event_callback_t_Aux "unwrap" where
 
     __defined at:__ @rte_memory.h 615:16@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mem_event_callback_t = Rte_mem_event_callback_t
   { unwrap :: BG.FunPtr Rte_mem_event_callback_t_Aux
@@ -1912,7 +1912,7 @@ instance HasCField.HasCField Rte_mem_event_callback_t "unwrap" where
 
     __defined at:__ @rte_memory.h 665:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_MEM_ALLOC_VALIDATOR_NAME_LEN :: BG.CInt
 rTE_MEM_ALLOC_VALIDATOR_NAME_LEN = (64 :: BG.CInt)
@@ -1923,7 +1923,7 @@ rTE_MEM_ALLOC_VALIDATOR_NAME_LEN = (64 :: BG.CInt)
 
     __defined at:__ @rte_memory.h 673:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mem_alloc_validator_t_Aux = Rte_mem_alloc_validator_t_Aux
   { unwrap :: BG.CInt -> HsBindgen.Runtime.LibC.CSize -> HsBindgen.Runtime.LibC.CSize -> IO BG.CInt
@@ -1995,7 +1995,7 @@ instance HasCField.HasCField Rte_mem_alloc_validator_t_Aux "unwrap" where
 
     __defined at:__ @rte_memory.h 673:15@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 newtype Rte_mem_alloc_validator_t = Rte_mem_alloc_validator_t
   { unwrap :: BG.FunPtr Rte_mem_alloc_validator_t_Aux

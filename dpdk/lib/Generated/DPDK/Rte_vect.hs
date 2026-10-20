@@ -15,7 +15,7 @@ import qualified HsBindgen.Runtime.Support as BG
 
     __defined at:__ @rte_vect.h 35:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 xMM_SIZE :: BG.CInt
 xMM_SIZE = (16 :: BG.CInt)
@@ -24,7 +24,7 @@ xMM_SIZE = (16 :: BG.CInt)
 
     __defined at:__ @rte_vect.h 36:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 xMM_MASK :: BG.CInt
 xMM_MASK =

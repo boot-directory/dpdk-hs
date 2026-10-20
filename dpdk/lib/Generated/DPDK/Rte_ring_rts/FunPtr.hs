@@ -28,7 +28,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ring_rts_get_rte_ring_mp_rts_enqueue_bulk_elem */"
   , "__attribute__ ((const))"
   , "unsigned int (*hs_bindgen_06b1b9037fffe5fd (void)) ("
@@ -171,7 +173,7 @@ hs_bindgen_06b1b9037fffe5fd =
 
     __defined at:__ @rte_ring_rts.h 80:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_rts_enqueue_bulk_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> PtrConst.PtrConst BG.Void -> BG.CUInt -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mp_rts_enqueue_bulk_elem =
@@ -191,7 +193,7 @@ hs_bindgen_c5b4e770d42dd259 =
 
     __defined at:__ @rte_ring_rts.h 107:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_rts_dequeue_bulk_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr BG.Void -> BG.CUInt -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mc_rts_dequeue_bulk_elem =
@@ -211,7 +213,7 @@ hs_bindgen_94fd3432d5eb7c6b =
 
     __defined at:__ @rte_ring_rts.h 134:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_rts_enqueue_burst_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> PtrConst.PtrConst BG.Void -> BG.CUInt -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mp_rts_enqueue_burst_elem =
@@ -231,7 +233,7 @@ hs_bindgen_0ca4954d6434ae8b =
 
     __defined at:__ @rte_ring_rts.h 163:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_rts_dequeue_burst_elem :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr BG.Void -> BG.CUInt -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mc_rts_dequeue_burst_elem =
@@ -251,7 +253,7 @@ hs_bindgen_52acedccc1af05c8 =
 
     __defined at:__ @rte_ring_rts.h 186:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_rts_enqueue_bulk :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mp_rts_enqueue_bulk =
@@ -271,7 +273,7 @@ hs_bindgen_eae2146e89ff1276 =
 
     __defined at:__ @rte_ring_rts.h 209:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_rts_dequeue_bulk :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mc_rts_dequeue_bulk =
@@ -291,7 +293,7 @@ hs_bindgen_56cc40462799638c =
 
     __defined at:__ @rte_ring_rts.h 232:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_rts_enqueue_burst :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> PtrConst.PtrConst (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mp_rts_enqueue_burst =
@@ -311,7 +313,7 @@ hs_bindgen_aaff9b61a06392cb =
 
     __defined at:__ @rte_ring_rts.h 257:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_rts_dequeue_burst :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> BG.Ptr (BG.Ptr BG.Void) -> BG.CUInt -> BG.Ptr BG.CUInt -> IO BG.CUInt)
 rte_ring_mc_rts_dequeue_burst =
@@ -331,7 +333,7 @@ hs_bindgen_c6ab7c4ba28fa0bc =
 
     __defined at:__ @rte_ring_rts.h 274:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_prod_htd_max :: BG.FunPtr (PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring -> IO HsBindgen.Runtime.LibC.Word32)
 rte_ring_get_prod_htd_max =
@@ -351,7 +353,7 @@ hs_bindgen_8e5911e53f1294e3 =
 
     __defined at:__ @rte_ring_rts.h 293:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_set_prod_htd_max :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_ring_set_prod_htd_max =
@@ -371,7 +373,7 @@ hs_bindgen_934b2c7fc0906326 =
 
     __defined at:__ @rte_ring_rts.h 312:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_cons_htd_max :: BG.FunPtr (PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring -> IO HsBindgen.Runtime.LibC.Word32)
 rte_ring_get_cons_htd_max =
@@ -391,7 +393,7 @@ hs_bindgen_52b5345bc7ee8083 =
 
     __defined at:__ @rte_ring_rts.h 331:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_set_cons_htd_max :: BG.FunPtr (BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring -> HsBindgen.Runtime.LibC.Word32 -> IO BG.CInt)
 rte_ring_set_cons_htd_max =

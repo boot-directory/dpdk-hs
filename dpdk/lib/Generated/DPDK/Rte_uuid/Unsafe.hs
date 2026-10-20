@@ -22,7 +22,9 @@ import Generated.DPDK.Rte_uuid
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "_Bool hs_bindgen_f7ed3bec38809fd8 ("
   , "  unsigned char const *arg1"
   , ")"
@@ -77,7 +79,7 @@ hs_bindgen_f7ed3bec38809fd8 =
 
     __defined at:__ @rte_uuid.h 51:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_is_null ::
      PtrConst.PtrConst (IsA.Elem Rte_uuid_t)
@@ -105,7 +107,7 @@ hs_bindgen_594488b7f2f35ddb =
 
     __defined at:__ @rte_uuid.h 61:20@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_copy ::
      BG.Ptr (IsA.Elem Rte_uuid_t)
@@ -135,7 +137,7 @@ hs_bindgen_471c5cb197e0ea29 =
 
     __defined at:__ @rte_uuid.h 77:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_compare ::
      PtrConst.PtrConst (IsA.Elem Rte_uuid_t)
@@ -165,7 +167,7 @@ hs_bindgen_9a3a1aa34fcba682 =
 
     __defined at:__ @rte_uuid.h 89:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_parse ::
      PtrConst.PtrConst BG.CChar
@@ -198,7 +200,7 @@ hs_bindgen_348de1b82badfd69 =
 
     __defined at:__ @rte_uuid.h 101:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_eal.h@, @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_uuid_unparse ::
      PtrConst.PtrConst (IsA.Elem Rte_uuid_t)

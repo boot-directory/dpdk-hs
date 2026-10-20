@@ -54,7 +54,9 @@ import Generated.DPDK.Rte_ring
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "ssize_t hs_bindgen_a0e1c29716216c6f ("
   , "  unsigned int arg1"
   , ")"
@@ -339,7 +341,7 @@ hs_bindgen_a0e1c29716216c6f =
 
     __defined at:__ @rte_ring.h 59:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_memsize ::
      BG.CUInt
@@ -373,7 +375,7 @@ hs_bindgen_3330a97e4e2e39db =
 
     __defined at:__ @rte_ring.h 120:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_init ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -404,7 +406,7 @@ hs_bindgen_c81d5a6212b3d1e5 =
 
     __defined at:__ @rte_ring.h 130:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_free ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -438,7 +440,7 @@ hs_bindgen_002d545626785d4f =
 
     __defined at:__ @rte_ring.h 195:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_create ::
      PtrConst.PtrConst BG.CChar
@@ -472,7 +474,7 @@ hs_bindgen_39847adc3286f683 =
 
     __defined at:__ @rte_ring.h 207:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -508,7 +510,7 @@ hs_bindgen_58f5dc8262bd8b1c =
 
     __defined at:__ @rte_ring.h 246:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_enqueue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -549,7 +551,7 @@ hs_bindgen_223ff649fa893021 =
 
     __defined at:__ @rte_ring.h 269:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sp_enqueue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -590,7 +592,7 @@ hs_bindgen_4feb324997cc7f71 =
 
     __defined at:__ @rte_ring.h 296:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_enqueue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -624,7 +626,7 @@ hs_bindgen_0095ad03f9643486 =
 
     __defined at:__ @rte_ring.h 318:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_enqueue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -654,7 +656,7 @@ hs_bindgen_914033cd0548def5 =
 
     __defined at:__ @rte_ring.h 335:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sp_enqueue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -684,7 +686,7 @@ hs_bindgen_e2fef55394094a47 =
 
     __defined at:__ @rte_ring.h 356:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_enqueue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -720,7 +722,7 @@ hs_bindgen_c0bc72d2c6ec89d7 =
 
     __defined at:__ @rte_ring.h 380:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_dequeue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -761,7 +763,7 @@ hs_bindgen_e30d1e69d247075b =
 
     __defined at:__ @rte_ring.h 404:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sc_dequeue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -802,7 +804,7 @@ hs_bindgen_fe3b8a53f9f0ce8d =
 
     __defined at:__ @rte_ring.h 431:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_dequeue_bulk ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -836,7 +838,7 @@ hs_bindgen_9aaa51b2480abd73 =
 
     __defined at:__ @rte_ring.h 454:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_dequeue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -866,7 +868,7 @@ hs_bindgen_36cd100fc899d097 =
 
     __defined at:__ @rte_ring.h 472:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sc_dequeue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -896,7 +898,7 @@ hs_bindgen_09b84afb572816a0 =
 
     __defined at:__ @rte_ring.h 494:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_dequeue ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -923,7 +925,7 @@ hs_bindgen_c4963e0753e8246a =
 
     __defined at:__ @rte_ring.h 511:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_reset ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -948,7 +950,7 @@ hs_bindgen_f318db070e056c72 =
 
     __defined at:__ @rte_ring.h 522:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_count ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -973,7 +975,7 @@ hs_bindgen_f97c620204e1939d =
 
     __defined at:__ @rte_ring.h 539:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_free_count ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -998,7 +1000,7 @@ hs_bindgen_dc1133008ee5b4e0 =
 
     __defined at:__ @rte_ring.h 554:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_full ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1023,7 +1025,7 @@ hs_bindgen_d6d64fb899bf57f7 =
 
     __defined at:__ @rte_ring.h 569:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_empty ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1048,7 +1050,7 @@ hs_bindgen_353b1856e76fe6c1 =
 
     __defined at:__ @rte_ring.h 587:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_size ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1073,7 +1075,7 @@ hs_bindgen_252800118cb61a34 =
 
     __defined at:__ @rte_ring.h 601:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_capacity ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1098,7 +1100,7 @@ hs_bindgen_a4d2610262db5eef =
 
     __defined at:__ @rte_ring.h 615:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_prod_sync_type ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1124,7 +1126,7 @@ hs_bindgen_3c1c37121ca0a6a6 =
 
     __defined at:__ @rte_ring.h 629:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_is_prod_single ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1149,7 +1151,7 @@ hs_bindgen_136572d39ef45ab9 =
 
     __defined at:__ @rte_ring.h 643:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_get_cons_sync_type ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1175,7 +1177,7 @@ hs_bindgen_bcce85fcca0a9fa7 =
 
     __defined at:__ @rte_ring.h 657:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_is_cons_single ::
      PtrConst.PtrConst Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1200,7 +1202,7 @@ hs_bindgen_669bc30c037066e5 =
 
     __defined at:__ @rte_ring.h 668:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_list_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -1225,7 +1227,7 @@ hs_bindgen_1af1ccb101080a88 =
 
     __defined at:__ @rte_ring.h 680:18@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_lookup ::
      PtrConst.PtrConst BG.CChar
@@ -1259,7 +1261,7 @@ hs_bindgen_b49fab168ddf3e4b =
 
     __defined at:__ @rte_ring.h 701:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mp_enqueue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1300,7 +1302,7 @@ hs_bindgen_ecd1f0f201246a8f =
 
     __defined at:__ @rte_ring.h 724:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sp_enqueue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1341,7 +1343,7 @@ hs_bindgen_0418e293a5884bd4 =
 
     __defined at:__ @rte_ring.h 751:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_enqueue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1381,7 +1383,7 @@ hs_bindgen_f507dd2e1f487006 =
 
     __defined at:__ @rte_ring.h 779:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_mc_dequeue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1422,7 +1424,7 @@ hs_bindgen_a51528849f82ab4d =
 
     __defined at:__ @rte_ring.h 804:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_sc_dequeue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring
@@ -1463,7 +1465,7 @@ hs_bindgen_c0efac333b1aea3d =
 
     __defined at:__ @rte_ring.h 831:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_ring_dequeue_burst ::
      BG.Ptr Generated.DPDK.Rte_ring_core.Rte_ring

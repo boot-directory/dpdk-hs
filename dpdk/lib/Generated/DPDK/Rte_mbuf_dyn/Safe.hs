@@ -25,7 +25,9 @@ import Generated.DPDK.Rte_mbuf_dyn
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_696bfcf543b032b6 ("
   , "  struct rte_mbuf_dynfield const *arg1"
   , ")"
@@ -105,7 +107,7 @@ hs_bindgen_696bfcf543b032b6 =
 
     __defined at:__ @rte_mbuf_dyn.h 120:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_register ::
      PtrConst.PtrConst Rte_mbuf_dynfield
@@ -134,7 +136,7 @@ hs_bindgen_0db316cd8caef70a =
 
     __defined at:__ @rte_mbuf_dyn.h 144:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_register_offset ::
      PtrConst.PtrConst Rte_mbuf_dynfield
@@ -165,7 +167,7 @@ hs_bindgen_454ee4cffabeded7 =
 
     __defined at:__ @rte_mbuf_dyn.h 160:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynfield_lookup ::
      PtrConst.PtrConst BG.CChar
@@ -193,7 +195,7 @@ hs_bindgen_3370158f7c6af240 =
 
     __defined at:__ @rte_mbuf_dyn.h 182:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_register ::
      PtrConst.PtrConst Rte_mbuf_dynflag
@@ -222,7 +224,7 @@ hs_bindgen_4c4a389cfb062ac6 =
 
     __defined at:__ @rte_mbuf_dyn.h 206:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_register_bitnum ::
      PtrConst.PtrConst Rte_mbuf_dynflag
@@ -253,7 +255,7 @@ hs_bindgen_a8ddbcbf8e850354 =
 
     __defined at:__ @rte_mbuf_dyn.h 222:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dynflag_lookup ::
      PtrConst.PtrConst BG.CChar
@@ -280,7 +282,7 @@ hs_bindgen_92d1e71ce2702f46 =
 
     __defined at:__ @rte_mbuf_dyn.h 236:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_dump ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -308,7 +310,7 @@ hs_bindgen_6158291cba30eee7 =
 
     __defined at:__ @rte_mbuf_dyn.h 304:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_rx_timestamp_register ::
      BG.Ptr BG.CInt
@@ -339,7 +341,7 @@ hs_bindgen_a70f1951123ceb46 =
 
     __defined at:__ @rte_mbuf_dyn.h 337:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mbuf_dyn_tx_timestamp_register ::
      BG.Ptr BG.CInt

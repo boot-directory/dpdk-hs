@@ -17,7 +17,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint16_t hs_bindgen_61344463fc43acf4 ("
   , "  uint16_t arg1"
   , ")"
@@ -55,7 +57,7 @@ hs_bindgen_61344463fc43acf4 =
 
     __defined at:__ @generic\/rte_byteorder.h 130:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap16 ::
      HsBindgen.Runtime.LibC.Word16
@@ -80,7 +82,7 @@ hs_bindgen_1a6d5e78c6275493 =
 
     __defined at:__ @generic\/rte_byteorder.h 142:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap32 ::
      HsBindgen.Runtime.LibC.Word32
@@ -105,7 +107,7 @@ hs_bindgen_0b1a97cfbd91beb5 =
 
     __defined at:__ @generic\/rte_byteorder.h 154:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_constant_bswap64 ::
      HsBindgen.Runtime.LibC.Word64

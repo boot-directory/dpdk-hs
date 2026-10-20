@@ -21,7 +21,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "uint64_t hs_bindgen_417df3992b030673 (void)"
   , "{"
   , "  return (rte_get_tsc_hz)();"
@@ -75,7 +77,7 @@ hs_bindgen_417df3992b030673 =
 
     __defined at:__ @generic\/rte_cycles.h 40:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_tsc_hz :: IO HsBindgen.Runtime.LibC.Word64
 rte_get_tsc_hz = hs_bindgen_417df3992b030673
@@ -93,7 +95,7 @@ hs_bindgen_d1b955bfcced1e45 =
 
     __defined at:__ @generic\/rte_cycles.h 97:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_timer_cycles :: IO HsBindgen.Runtime.LibC.Word64
 rte_get_timer_cycles = hs_bindgen_d1b955bfcced1e45
@@ -111,7 +113,7 @@ hs_bindgen_b896c99696e8a58a =
 
     __defined at:__ @generic\/rte_cycles.h 119:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_timer_hz :: IO HsBindgen.Runtime.LibC.Word64
 rte_get_timer_hz = hs_bindgen_b896c99696e8a58a
@@ -133,7 +135,7 @@ hs_bindgen_250256292f950c3e =
 
     __defined at:__ @generic\/rte_cycles.h 151:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_ms ::
      BG.CUInt
@@ -158,7 +160,7 @@ hs_bindgen_387a5446c055cfc0 =
 
     __defined at:__ @generic\/rte_cycles.h 162:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_block ::
      BG.CUInt
@@ -183,7 +185,7 @@ hs_bindgen_5cf885cf0b7f13f6 =
 
     __defined at:__ @generic\/rte_cycles.h 171:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_sleep ::
      BG.CUInt
@@ -208,7 +210,7 @@ hs_bindgen_63b344b012930aa9 =
 
     __defined at:__ @generic\/rte_cycles.h 180:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_delay_us_callback_register ::
      BG.FunPtr (BG.CUInt -> IO ())

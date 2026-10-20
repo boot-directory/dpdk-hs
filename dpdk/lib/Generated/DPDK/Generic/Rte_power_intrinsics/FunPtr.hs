@@ -22,7 +22,9 @@ import Generated.DPDK.Generic.Rte_power_intrinsics
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_power_intrinsics_get_rte_power_monitor */"
   , "__attribute__ ((const))"
   , "signed int (*hs_bindgen_3c4c3eef4a556bab (void)) ("
@@ -74,7 +76,7 @@ hs_bindgen_3c4c3eef4a556bab =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 87:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor :: BG.FunPtr (PtrConst.PtrConst Rte_power_monitor_cond -> HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_power_monitor =
@@ -94,7 +96,7 @@ hs_bindgen_ca14b834a1909314 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 103:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor_wakeup :: BG.FunPtr (BG.CUInt -> IO BG.CInt)
 rte_power_monitor_wakeup =
@@ -114,7 +116,7 @@ hs_bindgen_ec177ac8c02da5e6 =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 121:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_pause :: BG.FunPtr (HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_power_pause =
@@ -134,7 +136,7 @@ hs_bindgen_340fcc3b1765bf4b =
 
     __defined at:__ @generic\/rte_power_intrinsics.h 151:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_power_monitor_multi :: BG.FunPtr (PtrConst.PtrConst (IsA.Elem (IA.IncompleteArray Rte_power_monitor_cond)) -> HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word64 -> IO BG.CInt)
 rte_power_monitor_multi =

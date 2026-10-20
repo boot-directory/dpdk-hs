@@ -36,7 +36,9 @@ import Generated.DPDK.Rte_lcore
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_lcore_get_rte_eal_lcore_role */"
   , "__attribute__ ((const))"
   , "enum rte_lcore_role_t (*hs_bindgen_f6ebd832c3cea05e (void)) ("
@@ -206,7 +208,7 @@ hs_bindgen_f6ebd832c3cea05e =
 
     __defined at:__ @rte_lcore.h 48:23@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_lcore_role :: BG.FunPtr (BG.CUInt -> IO Rte_lcore_role_t)
 rte_eal_lcore_role =
@@ -226,7 +228,7 @@ hs_bindgen_7f5bb70fb9dd553f =
 
     __defined at:__ @rte_lcore.h 62:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_has_role :: BG.FunPtr (BG.CUInt -> Rte_lcore_role_t -> IO BG.CInt)
 rte_lcore_has_role =
@@ -246,7 +248,7 @@ hs_bindgen_24bb57d4da87fa5e =
 
     __defined at:__ @rte_lcore.h 78:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_id :: BG.FunPtr (IO BG.CUInt)
 rte_lcore_id =
@@ -266,7 +268,7 @@ hs_bindgen_f2833666f1e8f28c =
 
     __defined at:__ @rte_lcore.h 89:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_main_lcore :: BG.FunPtr (IO BG.CUInt)
 rte_get_main_lcore =
@@ -286,7 +288,7 @@ hs_bindgen_5734f2697fcbb1ef =
 
     __defined at:__ @rte_lcore.h 97:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_count :: BG.FunPtr (IO BG.CUInt)
 rte_lcore_count =
@@ -306,7 +308,7 @@ hs_bindgen_fceabb90b85f67f0 =
 
     __defined at:__ @rte_lcore.h 112:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_index :: BG.FunPtr (BG.CInt -> IO BG.CInt)
 rte_lcore_index =
@@ -326,7 +328,7 @@ hs_bindgen_1fb9ee1691d33279 =
 
     __defined at:__ @rte_lcore.h 119:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_socket_id :: BG.FunPtr (IO BG.CUInt)
 rte_socket_id =
@@ -346,7 +348,7 @@ hs_bindgen_70577fc93353604f =
 
     __defined at:__ @rte_lcore.h 132:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_socket_count :: BG.FunPtr (IO BG.CUInt)
 rte_socket_count =
@@ -366,7 +368,7 @@ hs_bindgen_5be560870a8b1e30 =
 
     __defined at:__ @rte_lcore.h 150:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_socket_id_by_idx :: BG.FunPtr (BG.CUInt -> IO BG.CInt)
 rte_socket_id_by_idx =
@@ -386,7 +388,7 @@ hs_bindgen_eab18eb20f2f67d2 =
 
     __defined at:__ @rte_lcore.h 161:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_to_socket_id :: BG.FunPtr (BG.CUInt -> IO BG.CUInt)
 rte_lcore_to_socket_id =
@@ -406,7 +408,7 @@ hs_bindgen_fa19afe7aa570187 =
 
     __defined at:__ @rte_lcore.h 171:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_to_cpu_id :: BG.FunPtr (BG.CInt -> IO BG.CInt)
 rte_lcore_to_cpu_id =
@@ -426,7 +428,7 @@ hs_bindgen_e4b2a126c159799e =
 
     __defined at:__ @rte_lcore.h 196:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_is_enabled :: BG.FunPtr (BG.CUInt -> IO BG.CInt)
 rte_lcore_is_enabled =
@@ -446,7 +448,7 @@ hs_bindgen_6b3b7fcce45ff37a =
 
     __defined at:__ @rte_lcore.h 211:14@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_get_next_lcore :: BG.FunPtr (BG.CUInt -> BG.CInt -> BG.CInt -> IO BG.CUInt)
 rte_get_next_lcore =
@@ -466,7 +468,7 @@ hs_bindgen_61270a0f03b63308 =
 
     __defined at:__ @rte_lcore.h 281:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_callback_register :: BG.FunPtr (PtrConst.PtrConst BG.CChar -> Rte_lcore_init_cb -> Rte_lcore_uninit_cb -> BG.Ptr BG.Void -> IO (BG.Ptr BG.Void))
 rte_lcore_callback_register =
@@ -486,7 +488,7 @@ hs_bindgen_e494dbb0ac0a68e1 =
 
     __defined at:__ @rte_lcore.h 295:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_callback_unregister :: BG.FunPtr (BG.Ptr BG.Void -> IO ())
 rte_lcore_callback_unregister =
@@ -506,7 +508,7 @@ hs_bindgen_e7e03ce7632adf1b =
 
     __defined at:__ @rte_lcore.h 327:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_iterate :: BG.FunPtr (Rte_lcore_iterate_cb -> BG.Ptr BG.Void -> IO BG.CInt)
 rte_lcore_iterate =
@@ -526,7 +528,7 @@ hs_bindgen_fc055594d1d2982d =
 
     __defined at:__ @rte_lcore.h 372:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_register_usage_cb :: BG.FunPtr (Rte_lcore_usage_cb -> IO ())
 rte_lcore_register_usage_cb =
@@ -546,7 +548,7 @@ hs_bindgen_88a735ae134061b2 =
 
     __defined at:__ @rte_lcore.h 381:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_lcore_dump :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.CFile -> IO ())
 rte_lcore_dump =
@@ -566,7 +568,7 @@ hs_bindgen_877d0ed3514aef90 =
 
     __defined at:__ @rte_lcore.h 397:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_register :: BG.FunPtr (IO BG.CInt)
 rte_thread_register =
@@ -586,7 +588,7 @@ hs_bindgen_29db2880bf5137d2 =
 
     __defined at:__ @rte_lcore.h 403:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_thread_unregister :: BG.FunPtr (IO ())
 rte_thread_unregister =

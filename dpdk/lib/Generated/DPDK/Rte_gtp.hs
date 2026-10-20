@@ -48,7 +48,7 @@ import Prelude ((<*>), (>>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @rte_gtp.h 30:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn = Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn
   { pn :: HsBindgen.Runtime.LibC.Word8
@@ -56,42 +56,42 @@ data Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn = Rte_gtp_hdr_anon'gtp_hdr_info_anon'
 
          __defined at:__ @rte_gtp.h 32:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , s :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @s@
 
          __defined at:__ @rte_gtp.h 33:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , e :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @e@
 
          __defined at:__ @rte_gtp.h 34:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , res1 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @res1@
 
          __defined at:__ @rte_gtp.h 35:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pt :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @pt@
 
          __defined at:__ @rte_gtp.h 36:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ver :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @ver@
 
          __defined at:__ @rte_gtp.h 37:12@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -136,7 +136,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ins
 
     __defined at:__ @rte_gtp.h 32:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pn" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -172,7 +172,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "pn" wh
 
     __defined at:__ @rte_gtp.h 33:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "s" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -208,7 +208,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "s" whe
 
     __defined at:__ @rte_gtp.h 34:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "e" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -244,7 +244,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "e" whe
 
     __defined at:__ @rte_gtp.h 35:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "res1" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -280,7 +280,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "res1" 
 
     __defined at:__ @rte_gtp.h 36:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pt" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -316,7 +316,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "pt" wh
 
     __defined at:__ @rte_gtp.h 37:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ver" Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn ty where
@@ -352,7 +352,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn "ver" w
 
     __defined at:__ @rte_gtp.h 28:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 newtype Rte_gtp_hdr_anon'gtp_hdr_info = Rte_gtp_hdr_anon'gtp_hdr_info
   { unwrap :: BG.ByteArray
@@ -373,7 +373,7 @@ deriving via BG.SizedByteArray 1 1 instance Union.IsUnion Rte_gtp_hdr_anon'gtp_h
 
     __defined at:__ @rte_gtp.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "gtp_hdr_info" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -384,7 +384,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "gtp_hdr_info" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -411,7 +411,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "gtp_hdr_info" where
 
     __defined at:__ @rte_gtp.h 30:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn
          ) => BG.HasField "anon'pn" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -422,7 +422,7 @@ instance ( ty ~ Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn
 
     __defined at:__ @rte_gtp.h 30:3@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_gtp_hdr_anon'gtp_hdr_info_anon'pn
          ) => BG.CompatHasField.HasField "anon'pn" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -448,7 +448,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "anon'pn" where
 
     __defined at:__ @rte_gtp.h 32:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "pn" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -460,7 +460,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 32:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pn" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -489,7 +489,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "pn" where
 
     __defined at:__ @rte_gtp.h 33:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "s" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -501,7 +501,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 33:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "s" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -530,7 +530,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "s" where
 
     __defined at:__ @rte_gtp.h 34:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "e" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -542,7 +542,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 34:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "e" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -571,7 +571,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "e" where
 
     __defined at:__ @rte_gtp.h 35:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "res1" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -584,7 +584,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 35:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "res1" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -613,7 +613,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "res1" where
 
     __defined at:__ @rte_gtp.h 36:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "pt" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -625,7 +625,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 36:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pt" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -654,7 +654,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "pt" where
 
     __defined at:__ @rte_gtp.h 37:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "ver" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -666,7 +666,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 37:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ver" Rte_gtp_hdr_anon'gtp_hdr_info ty where
@@ -695,7 +695,7 @@ instance HasCField.HasCField Rte_gtp_hdr_anon'gtp_hdr_info "ver" where
 
     __defined at:__ @rte_gtp.h 27:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_hdr = Rte_gtp_hdr
   { anon'gtp_hdr_info :: Rte_gtp_hdr_anon'gtp_hdr_info
@@ -703,28 +703,28 @@ data Rte_gtp_hdr = Rte_gtp_hdr
 
          __defined at:__ @rte_gtp.h 28:2@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , msg_type :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @msg_type@
 
          __defined at:__ @rte_gtp.h 48:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , plen :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
     {- ^ __C declaration:__ @plen@
 
          __defined at:__ @rte_gtp.h 49:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , teid :: Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
     {- ^ __C declaration:__ @teid@
 
          __defined at:__ @rte_gtp.h 50:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (BG.Generic)
@@ -765,7 +765,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_hdr instance Struct.IsStruct Rte_
 
     __defined at:__ @rte_gtp.h 28:2@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Rte_gtp_hdr_anon'gtp_hdr_info
          ) => BG.CompatHasField.HasField "anon'gtp_hdr_info" Rte_gtp_hdr ty where
@@ -798,7 +798,7 @@ instance HasCField.HasCField Rte_gtp_hdr "anon'gtp_hdr_info" where
 
     __defined at:__ @rte_gtp.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "gtp_hdr_info" Rte_gtp_hdr ty where
@@ -811,7 +811,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 29:11@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "gtp_hdr_info" Rte_gtp_hdr ty where
@@ -841,7 +841,7 @@ instance HasCField.HasCField Rte_gtp_hdr "gtp_hdr_info" where
 
     __defined at:__ @rte_gtp.h 32:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "pn" Rte_gtp_hdr ty where
@@ -854,7 +854,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 32:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pn" Rte_gtp_hdr ty where
@@ -883,7 +883,7 @@ instance HasCField.HasCField Rte_gtp_hdr "pn" where
 
     __defined at:__ @rte_gtp.h 33:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "s" Rte_gtp_hdr ty where
@@ -896,7 +896,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 33:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "s" Rte_gtp_hdr ty where
@@ -925,7 +925,7 @@ instance HasCField.HasCField Rte_gtp_hdr "s" where
 
     __defined at:__ @rte_gtp.h 34:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "e" Rte_gtp_hdr ty where
@@ -938,7 +938,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 34:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "e" Rte_gtp_hdr ty where
@@ -967,7 +967,7 @@ instance HasCField.HasCField Rte_gtp_hdr "e" where
 
     __defined at:__ @rte_gtp.h 35:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "res1" Rte_gtp_hdr ty where
@@ -980,7 +980,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 35:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "res1" Rte_gtp_hdr ty where
@@ -1009,7 +1009,7 @@ instance HasCField.HasCField Rte_gtp_hdr "res1" where
 
     __defined at:__ @rte_gtp.h 36:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "pt" Rte_gtp_hdr ty where
@@ -1022,7 +1022,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 36:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pt" Rte_gtp_hdr ty where
@@ -1051,7 +1051,7 @@ instance HasCField.HasCField Rte_gtp_hdr "pt" where
 
     __defined at:__ @rte_gtp.h 37:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.HasField "ver" Rte_gtp_hdr ty where
@@ -1064,7 +1064,7 @@ instance ( ty ~ HsBindgen.Runtime.LibC.Word8
 
     __defined at:__ @rte_gtp.h 37:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ver" Rte_gtp_hdr ty where
@@ -1093,7 +1093,7 @@ instance HasCField.HasCField Rte_gtp_hdr "ver" where
 
     __defined at:__ @rte_gtp.h 48:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "msg_type" Rte_gtp_hdr ty where
@@ -1125,7 +1125,7 @@ instance HasCField.HasCField Rte_gtp_hdr "msg_type" where
 
     __defined at:__ @rte_gtp.h 49:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "plen" Rte_gtp_hdr ty where
@@ -1157,7 +1157,7 @@ instance HasCField.HasCField Rte_gtp_hdr "plen" where
 
     __defined at:__ @rte_gtp.h 50:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be32_t
          ) => BG.CompatHasField.HasField "teid" Rte_gtp_hdr ty where
@@ -1189,7 +1189,7 @@ instance HasCField.HasCField Rte_gtp_hdr "teid" where
 
     __defined at:__ @rte_gtp.h 54:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_hdr_ext_word = Rte_gtp_hdr_ext_word
   { sqn :: Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
@@ -1197,21 +1197,21 @@ data Rte_gtp_hdr_ext_word = Rte_gtp_hdr_ext_word
 
          __defined at:__ @rte_gtp.h 55:13@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , npdu :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @npdu@
 
          __defined at:__ @rte_gtp.h 56:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , next_ext :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @next_ext@
 
          __defined at:__ @rte_gtp.h 57:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1250,7 +1250,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_hdr_ext_word instance Struct.IsSt
 
     __defined at:__ @rte_gtp.h 55:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ Generated.DPDK.Generic.Rte_byteorder.Rte_be16_t
          ) => BG.CompatHasField.HasField "sqn" Rte_gtp_hdr_ext_word ty where
@@ -1278,7 +1278,7 @@ instance HasCField.HasCField Rte_gtp_hdr_ext_word "sqn" where
 
     __defined at:__ @rte_gtp.h 56:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "npdu" Rte_gtp_hdr_ext_word ty where
@@ -1306,7 +1306,7 @@ instance HasCField.HasCField Rte_gtp_hdr_ext_word "npdu" where
 
     __defined at:__ @rte_gtp.h 57:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "next_ext" Rte_gtp_hdr_ext_word ty where
@@ -1334,7 +1334,7 @@ instance HasCField.HasCField Rte_gtp_hdr_ext_word "next_ext" where
 
     __defined at:__ @rte_gtp.h 65:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_psc_generic_hdr = Rte_gtp_psc_generic_hdr
   { ext_hdr_len :: HsBindgen.Runtime.LibC.Word8
@@ -1342,49 +1342,49 @@ data Rte_gtp_psc_generic_hdr = Rte_gtp_psc_generic_hdr
 
          __defined at:__ @rte_gtp.h 66:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , pad :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @pad@
 
          __defined at:__ @rte_gtp.h 74:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qmp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qmp@
 
          __defined at:__ @rte_gtp.h 75:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_gtp.h 76:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qfi :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qfi@
 
          __defined at:__ @rte_gtp.h 77:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , spare :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @spare@
 
          __defined at:__ @rte_gtp.h 78:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data' :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_gtp.h 80:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1431,7 +1431,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_psc_generic_hdr instance Struct.I
 
     __defined at:__ @rte_gtp.h 66:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ext_hdr_len" Rte_gtp_psc_generic_hdr ty where
@@ -1467,7 +1467,7 @@ instance HasCField.HasCField Rte_gtp_psc_generic_hdr "ext_hdr_len" where
 
     __defined at:__ @rte_gtp.h 74:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "pad" Rte_gtp_psc_generic_hdr ty where
@@ -1504,7 +1504,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_generic_hdr "pad" where
 
     __defined at:__ @rte_gtp.h 75:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qmp" Rte_gtp_psc_generic_hdr ty where
@@ -1541,7 +1541,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_generic_hdr "qmp" where
 
     __defined at:__ @rte_gtp.h 76:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type'" Rte_gtp_psc_generic_hdr ty where
@@ -1578,7 +1578,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_generic_hdr "type'" where
 
     __defined at:__ @rte_gtp.h 77:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qfi" Rte_gtp_psc_generic_hdr ty where
@@ -1615,7 +1615,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_generic_hdr "qfi" where
 
     __defined at:__ @rte_gtp.h 78:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "spare" Rte_gtp_psc_generic_hdr ty where
@@ -1652,7 +1652,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_generic_hdr "spare" where
 
     __defined at:__ @rte_gtp.h 80:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "data'" Rte_gtp_psc_generic_hdr ty where
@@ -1687,7 +1687,7 @@ instance HasCField.HasCField Rte_gtp_psc_generic_hdr "data'" where
 
     __defined at:__ @rte_gtp.h 88:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_psc_type0_hdr = Rte_gtp_psc_type0_hdr
   { ext_hdr_len :: HsBindgen.Runtime.LibC.Word8
@@ -1695,63 +1695,63 @@ data Rte_gtp_psc_type0_hdr = Rte_gtp_psc_type0_hdr
 
          __defined at:__ @rte_gtp.h 89:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , spare_dl1 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @spare_dl1@
 
          __defined at:__ @rte_gtp.h 99:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , snp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @snp@
 
          __defined at:__ @rte_gtp.h 100:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qmp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qmp@
 
          __defined at:__ @rte_gtp.h 101:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_gtp.h 102:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qfi :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qfi@
 
          __defined at:__ @rte_gtp.h 103:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , rqi :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @rqi@
 
          __defined at:__ @rte_gtp.h 104:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ppp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @ppp@
 
          __defined at:__ @rte_gtp.h 105:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data' :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_gtp.h 107:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -1811,7 +1811,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_psc_type0_hdr instance Struct.IsS
 
     __defined at:__ @rte_gtp.h 89:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ext_hdr_len" Rte_gtp_psc_type0_hdr ty where
@@ -1849,7 +1849,7 @@ instance HasCField.HasCField Rte_gtp_psc_type0_hdr "ext_hdr_len" where
 
     __defined at:__ @rte_gtp.h 99:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "spare_dl1" Rte_gtp_psc_type0_hdr ty where
@@ -1888,7 +1888,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "spare_dl1" where
 
     __defined at:__ @rte_gtp.h 100:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "snp" Rte_gtp_psc_type0_hdr ty where
@@ -1927,7 +1927,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "snp" where
 
     __defined at:__ @rte_gtp.h 101:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qmp" Rte_gtp_psc_type0_hdr ty where
@@ -1966,7 +1966,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "qmp" where
 
     __defined at:__ @rte_gtp.h 102:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type'" Rte_gtp_psc_type0_hdr ty where
@@ -2005,7 +2005,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "type'" where
 
     __defined at:__ @rte_gtp.h 103:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qfi" Rte_gtp_psc_type0_hdr ty where
@@ -2044,7 +2044,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "qfi" where
 
     __defined at:__ @rte_gtp.h 104:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "rqi" Rte_gtp_psc_type0_hdr ty where
@@ -2083,7 +2083,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "rqi" where
 
     __defined at:__ @rte_gtp.h 105:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ppp" Rte_gtp_psc_type0_hdr ty where
@@ -2122,7 +2122,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type0_hdr "ppp" where
 
     __defined at:__ @rte_gtp.h 107:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "data'" Rte_gtp_psc_type0_hdr ty where
@@ -2159,7 +2159,7 @@ instance HasCField.HasCField Rte_gtp_psc_type0_hdr "data'" where
 
     __defined at:__ @rte_gtp.h 115:27@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 data Rte_gtp_psc_type1_hdr = Rte_gtp_psc_type1_hdr
   { ext_hdr_len :: HsBindgen.Runtime.LibC.Word8
@@ -2167,70 +2167,70 @@ data Rte_gtp_psc_type1_hdr = Rte_gtp_psc_type1_hdr
 
          __defined at:__ @rte_gtp.h 116:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , snp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @snp@
 
          __defined at:__ @rte_gtp.h 127:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , ul_delay_ind :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @ul_delay_ind@
 
          __defined at:__ @rte_gtp.h 128:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , dl_delay_ind :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @dl_delay_ind@
 
          __defined at:__ @rte_gtp.h 129:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qmp :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qmp@
 
          __defined at:__ @rte_gtp.h 130:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , type' :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @type@
 
          __defined at:__ @rte_gtp.h 131:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , qfi :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @qfi@
 
          __defined at:__ @rte_gtp.h 132:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , spare_ul2 :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @spare_ul2@
 
          __defined at:__ @rte_gtp.h 133:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , n_delay_ind :: HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @n_delay_ind@
 
          __defined at:__ @rte_gtp.h 134:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   , data' :: CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
     {- ^ __C declaration:__ @data@
 
          __defined at:__ @rte_gtp.h 136:10@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -2293,7 +2293,7 @@ deriving via Struct.IsStructViaReadRaw Rte_gtp_psc_type1_hdr instance Struct.IsS
 
     __defined at:__ @rte_gtp.h 116:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ext_hdr_len" Rte_gtp_psc_type1_hdr ty where
@@ -2332,7 +2332,7 @@ instance HasCField.HasCField Rte_gtp_psc_type1_hdr "ext_hdr_len" where
 
     __defined at:__ @rte_gtp.h 127:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "snp" Rte_gtp_psc_type1_hdr ty where
@@ -2372,7 +2372,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "snp" where
 
     __defined at:__ @rte_gtp.h 128:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "ul_delay_ind" Rte_gtp_psc_type1_hdr ty where
@@ -2413,7 +2413,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "ul_delay_ind" where
 
     __defined at:__ @rte_gtp.h 129:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "dl_delay_ind" Rte_gtp_psc_type1_hdr ty where
@@ -2454,7 +2454,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "dl_delay_ind" where
 
     __defined at:__ @rte_gtp.h 130:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qmp" Rte_gtp_psc_type1_hdr ty where
@@ -2494,7 +2494,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "qmp" where
 
     __defined at:__ @rte_gtp.h 131:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "type'" Rte_gtp_psc_type1_hdr ty where
@@ -2534,7 +2534,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "type'" where
 
     __defined at:__ @rte_gtp.h 132:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "qfi" Rte_gtp_psc_type1_hdr ty where
@@ -2574,7 +2574,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "qfi" where
 
     __defined at:__ @rte_gtp.h 133:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "spare_ul2" Rte_gtp_psc_type1_hdr ty where
@@ -2614,7 +2614,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "spare_ul2" where
 
     __defined at:__ @rte_gtp.h 134:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "n_delay_ind" Rte_gtp_psc_type1_hdr ty where
@@ -2655,7 +2655,7 @@ instance HasCBitfield.HasCBitfield Rte_gtp_psc_type1_hdr "n_delay_ind" where
 
     __defined at:__ @rte_gtp.h 136:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 instance ( ty ~ CA.ConstantArray 0 HsBindgen.Runtime.LibC.Word8
          ) => BG.CompatHasField.HasField "data'" Rte_gtp_psc_type1_hdr ty where
@@ -2693,7 +2693,7 @@ instance HasCField.HasCField Rte_gtp_psc_type1_hdr "data'" where
 
     __defined at:__ @rte_gtp.h 143:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_GTP_TYPE_IPV4 :: BG.CInt
 rTE_GTP_TYPE_IPV4 = (64 :: BG.CInt)
@@ -2702,7 +2702,7 @@ rTE_GTP_TYPE_IPV4 = (64 :: BG.CInt)
 
     __defined at:__ @rte_gtp.h 144:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_GTP_TYPE_IPV6 :: BG.CInt
 rTE_GTP_TYPE_IPV6 = (96 :: BG.CInt)
@@ -2711,7 +2711,7 @@ rTE_GTP_TYPE_IPV6 = (96 :: BG.CInt)
 
     __defined at:__ @rte_gtp.h 146:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_GTPC_UDP_PORT :: BG.CInt
 rTE_GTPC_UDP_PORT = (2123 :: BG.CInt)
@@ -2720,7 +2720,7 @@ rTE_GTPC_UDP_PORT = (2123 :: BG.CInt)
 
     __defined at:__ @rte_gtp.h 147:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rTE_GTPU_UDP_PORT :: BG.CInt
 rTE_GTPU_UDP_PORT = (2152 :: BG.CInt)

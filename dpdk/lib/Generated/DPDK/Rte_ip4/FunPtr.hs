@@ -26,7 +26,9 @@ import Generated.DPDK.Rte_ip4
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Rte_ip4_get_rte_ipv4_hdr_len */"
   , "__attribute__ ((const))"
   , "uint8_t (*hs_bindgen_6d4b95cd2bb509d4 (void)) ("
@@ -125,7 +127,7 @@ hs_bindgen_6d4b95cd2bb509d4 =
 
     __defined at:__ @rte_ip4.h 140:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_hdr_len :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> IO HsBindgen.Runtime.LibC.Word8)
 rte_ipv4_hdr_len =
@@ -145,7 +147,7 @@ hs_bindgen_cf474659f27a41f3 =
 
     __defined at:__ @rte_ip4.h 157:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_cksum :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> IO HsBindgen.Runtime.LibC.Word16)
 rte_ipv4_cksum =
@@ -165,7 +167,7 @@ hs_bindgen_f7131da3ab423897 =
 
     __defined at:__ @rte_ip4.h 218:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_phdr_cksum :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> HsBindgen.Runtime.LibC.Word64 -> IO HsBindgen.Runtime.LibC.Word16)
 rte_ipv4_phdr_cksum =
@@ -185,7 +187,7 @@ hs_bindgen_332b5f5b2db8ebf4 =
 
     __defined at:__ @rte_ip4.h 248:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv4_udptcp_cksum :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> PtrConst.PtrConst BG.Void -> IO HsBindgen.Runtime.LibC.Word16)
 __rte_ipv4_udptcp_cksum =
@@ -205,7 +207,7 @@ hs_bindgen_242513a67f399e75 =
 
     __defined at:__ @rte_ip4.h 282:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> PtrConst.PtrConst BG.Void -> IO HsBindgen.Runtime.LibC.Word16)
 rte_ipv4_udptcp_cksum =
@@ -225,7 +227,7 @@ hs_bindgen_3d21bace508cf803 =
 
     __defined at:__ @rte_ip4.h 303:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 __rte_ipv4_udptcp_cksum_mbuf :: BG.FunPtr (PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf -> PtrConst.PtrConst Rte_ipv4_hdr -> HsBindgen.Runtime.LibC.Word16 -> IO HsBindgen.Runtime.LibC.Word16)
 __rte_ipv4_udptcp_cksum_mbuf =
@@ -245,7 +247,7 @@ hs_bindgen_c84c55424f27e1b2 =
 
     __defined at:__ @rte_ip4.h 339:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_mbuf :: BG.FunPtr (PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf -> PtrConst.PtrConst Rte_ipv4_hdr -> HsBindgen.Runtime.LibC.Word16 -> IO HsBindgen.Runtime.LibC.Word16)
 rte_ipv4_udptcp_cksum_mbuf =
@@ -265,7 +267,7 @@ hs_bindgen_3a63152bfaf5b3f2 =
 
     __defined at:__ @rte_ip4.h 371:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_verify :: BG.FunPtr (PtrConst.PtrConst Rte_ipv4_hdr -> PtrConst.PtrConst BG.Void -> IO BG.CInt)
 rte_ipv4_udptcp_cksum_verify =
@@ -285,7 +287,7 @@ hs_bindgen_2b983720723e44c4 =
 
     __defined at:__ @rte_ip4.h 398:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@
 -}
 rte_ipv4_udptcp_cksum_mbuf_verify :: BG.FunPtr (PtrConst.PtrConst Generated.DPDK.Rte_mbuf_core.Rte_mbuf -> PtrConst.PtrConst Rte_ipv4_hdr -> HsBindgen.Runtime.LibC.Word16 -> IO BG.CInt)
 rte_ipv4_udptcp_cksum_mbuf_verify =

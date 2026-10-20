@@ -18,7 +18,9 @@ import qualified HsBindgen.Runtime.Support.CAPI
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "/* dpdkhs_Generated.DPDK.Generic.Rte_pause_get_rte_wait_until_equal_16 */"
   , "__attribute__ ((const))"
   , "void (*hs_bindgen_95ef2ae40e8015d6 (void)) ("
@@ -65,7 +67,7 @@ hs_bindgen_95ef2ae40e8015d6 =
 
     __defined at:__ @generic\/rte_pause.h 84:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_16 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word16 -> HsBindgen.Runtime.LibC.Word16 -> Generated.DPDK.Rte_stdatomic.Rte_memory_order -> IO ())
 rte_wait_until_equal_16 =
@@ -85,7 +87,7 @@ hs_bindgen_1b079c25d2e6fe4c =
 
     __defined at:__ @generic\/rte_pause.h 95:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_32 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word32 -> HsBindgen.Runtime.LibC.Word32 -> Generated.DPDK.Rte_stdatomic.Rte_memory_order -> IO ())
 rte_wait_until_equal_32 =
@@ -105,7 +107,7 @@ hs_bindgen_040b091017c9f100 =
 
     __defined at:__ @generic\/rte_pause.h 106:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_wait_until_equal_64 :: BG.FunPtr (BG.Ptr HsBindgen.Runtime.LibC.Word64 -> HsBindgen.Runtime.LibC.Word64 -> Generated.DPDK.Rte_stdatomic.Rte_memory_order -> IO ())
 rte_wait_until_equal_64 =

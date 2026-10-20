@@ -38,7 +38,7 @@ import Prelude ((<*>), Eq, Int, Show, pure, type (~))
 
     __defined at:__ @generic\/rte_rwlock.h 55:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RWLOCK_WAIT :: BG.CInt
 rTE_RWLOCK_WAIT = (1 :: BG.CInt)
@@ -47,7 +47,7 @@ rTE_RWLOCK_WAIT = (1 :: BG.CInt)
 
     __defined at:__ @generic\/rte_rwlock.h 56:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RWLOCK_WRITE :: BG.CInt
 rTE_RWLOCK_WRITE = (2 :: BG.CInt)
@@ -56,7 +56,7 @@ rTE_RWLOCK_WRITE = (2 :: BG.CInt)
 
     __defined at:__ @generic\/rte_rwlock.h 57:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RWLOCK_MASK :: BG.CInt
 rTE_RWLOCK_MASK =
@@ -66,7 +66,7 @@ rTE_RWLOCK_MASK =
 
     __defined at:__ @generic\/rte_rwlock.h 59:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rTE_RWLOCK_READ :: BG.CInt
 rTE_RWLOCK_READ = (4 :: BG.CInt)
@@ -75,7 +75,7 @@ rTE_RWLOCK_READ = (4 :: BG.CInt)
 
     __defined at:__ @generic\/rte_rwlock.h 61:9@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 data Rte_rwlock_t = Rte_rwlock_t
   { cnt :: HsBindgen.Runtime.LibC.Int32
@@ -83,7 +83,7 @@ data Rte_rwlock_t = Rte_rwlock_t
 
          __defined at:__ @generic\/rte_rwlock.h 62:22@
 
-         __exported by:__ @dpdk.h@
+         __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
     -}
   }
   deriving stock (Eq, BG.Generic, Show)
@@ -118,7 +118,7 @@ deriving via Struct.IsStructViaReadRaw Rte_rwlock_t instance Struct.IsStruct Rte
 
     __defined at:__ @generic\/rte_rwlock.h 62:22@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 instance ( ty ~ HsBindgen.Runtime.LibC.Int32
          ) => BG.CompatHasField.HasField "cnt" Rte_rwlock_t ty where

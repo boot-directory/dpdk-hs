@@ -51,7 +51,9 @@ import Generated.DPDK.Rte_memory
 import Prelude (IO, fmap)
 
 $(HsBindgen.Runtime.Support.CAPI.addCSource (HsBindgen.Runtime.Support.CAPI.unlines
-  [ "#include <dpdk.h>"
+  [ "#include <rte_eal.h>"
+  , "#include <rte_mbuf.h>"
+  , "#include <rte_ethdev.h>"
   , "signed int hs_bindgen_d59dc4d9cbadc446 ("
   , "  void const *arg1"
   , ")"
@@ -278,7 +280,7 @@ hs_bindgen_d59dc4d9cbadc446 =
 
     __defined at:__ @rte_memory.h 91:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_lock_page ::
      PtrConst.PtrConst BG.Void
@@ -303,7 +305,7 @@ hs_bindgen_15d0d0dea17d9530 =
 
     __defined at:__ @rte_memory.h 103:13@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_virt2phy ::
      PtrConst.PtrConst BG.Void
@@ -328,7 +330,7 @@ hs_bindgen_118db2f400531eb6 =
 
     __defined at:__ @rte_memory.h 118:12@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_virt2iova ::
      PtrConst.PtrConst BG.Void
@@ -353,7 +355,7 @@ hs_bindgen_0f881c81d2f737ac =
 
     __defined at:__ @rte_memory.h 133:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_iova2virt ::
      Generated.DPDK.Rte_common.Rte_iova_t
@@ -381,7 +383,7 @@ hs_bindgen_f83fcd510cd00464 =
 
     __defined at:__ @rte_memory.h 147:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_virt2memseg ::
      PtrConst.PtrConst BG.Void
@@ -408,7 +410,7 @@ hs_bindgen_d3506e570420920f =
 
     __defined at:__ @rte_memory.h 158:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_virt2memseg_list ::
      PtrConst.PtrConst BG.Void
@@ -437,7 +439,7 @@ hs_bindgen_0d1d2092d1f44a5f =
 
     __defined at:__ @rte_memory.h 212:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_walk ::
      Rte_memseg_walk_t
@@ -467,7 +469,7 @@ hs_bindgen_7d8990894d29ac56 =
 
     __defined at:__ @rte_memory.h 233:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_contig_walk ::
      Rte_memseg_contig_walk_t
@@ -497,7 +499,7 @@ hs_bindgen_522dbd65d41d2200 =
 
     __defined at:__ @rte_memory.h 254:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_list_walk ::
      Rte_memseg_list_walk_t
@@ -527,7 +529,7 @@ hs_bindgen_50bee72db7e6624e =
 
     __defined at:__ @rte_memory.h 273:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_walk_thread_unsafe ::
      Rte_memseg_walk_t
@@ -558,7 +560,7 @@ hs_bindgen_9e54529fc3e5974a =
 
     __defined at:__ @rte_memory.h 291:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_contig_walk_thread_unsafe ::
      Rte_memseg_contig_walk_t
@@ -589,7 +591,7 @@ hs_bindgen_883a4a24d9fb1d91 =
 
     __defined at:__ @rte_memory.h 309:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_list_walk_thread_unsafe ::
      Rte_memseg_list_walk_t
@@ -617,7 +619,7 @@ hs_bindgen_045fa98708e3d3e4 =
 
     __defined at:__ @rte_memory.h 333:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_get_fd ::
      PtrConst.PtrConst Rte_memseg
@@ -642,7 +644,7 @@ hs_bindgen_64cdb38e8b27d750 =
 
     __defined at:__ @rte_memory.h 357:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_get_fd_thread_unsafe ::
      PtrConst.PtrConst Rte_memseg
@@ -671,7 +673,7 @@ hs_bindgen_dff59f970daa37e1 =
 
     __defined at:__ @rte_memory.h 381:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_get_fd_offset ::
      PtrConst.PtrConst Rte_memseg
@@ -702,7 +704,7 @@ hs_bindgen_ef653ea74febf52e =
 
     __defined at:__ @rte_memory.h 405:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memseg_get_fd_offset_thread_unsafe ::
      PtrConst.PtrConst Rte_memseg
@@ -742,7 +744,7 @@ hs_bindgen_e835675affb5ff50 =
 
     __defined at:__ @rte_memory.h 443:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_extmem_register ::
      BG.Ptr BG.Void
@@ -778,7 +780,7 @@ hs_bindgen_ce4294db771c9c0f =
 
     __defined at:__ @rte_memory.h 470:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_extmem_unregister ::
      BG.Ptr BG.Void
@@ -808,7 +810,7 @@ hs_bindgen_458825073612785f =
 
     __defined at:__ @rte_memory.h 493:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_extmem_attach ::
      BG.Ptr BG.Void
@@ -838,7 +840,7 @@ hs_bindgen_a0f5c6eff5108844 =
 
     __defined at:__ @rte_memory.h 516:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_extmem_detach ::
      BG.Ptr BG.Void
@@ -865,7 +867,7 @@ hs_bindgen_ee46deae26732114 =
 
     __defined at:__ @rte_memory.h 527:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_dump_physmem_layout ::
      BG.Ptr HsBindgen.Runtime.LibC.CFile
@@ -886,7 +888,7 @@ hs_bindgen_2d17616d50cbc3be =
 
     __defined at:__ @rte_memory.h 538:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_get_physmem_size :: IO HsBindgen.Runtime.LibC.Word64
 rte_eal_get_physmem_size =
@@ -905,7 +907,7 @@ hs_bindgen_fac4d0db4b3c6208 =
 
     __defined at:__ @rte_memory.h 547:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memory_get_nchannel :: IO BG.CUInt
 rte_memory_get_nchannel = hs_bindgen_fac4d0db4b3c6208
@@ -923,7 +925,7 @@ hs_bindgen_16a8de7ab700071f =
 
     __defined at:__ @rte_memory.h 556:10@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_memory_get_nrank :: IO BG.CUInt
 rte_memory_get_nrank = hs_bindgen_16a8de7ab700071f
@@ -945,7 +947,7 @@ hs_bindgen_9c490ea216b070e4 =
 
     __defined at:__ @rte_memory.h 565:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_check_dma_mask ::
      HsBindgen.Runtime.LibC.Word8
@@ -970,7 +972,7 @@ hs_bindgen_ec30145c5a781c44 =
 
     __defined at:__ @rte_memory.h 580:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_check_dma_mask_thread_unsafe ::
      HsBindgen.Runtime.LibC.Word8
@@ -996,7 +998,7 @@ hs_bindgen_849f1a0d74c3cdae =
 
     __defined at:__ @rte_memory.h 587:6@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_set_dma_mask ::
      HsBindgen.Runtime.LibC.Word8
@@ -1017,7 +1019,7 @@ hs_bindgen_d811ae01efc43c51 =
 
     __defined at:__ @rte_memory.h 598:5@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_eal_using_phys_addrs :: IO BG.CInt
 rte_eal_using_phys_addrs =
@@ -1046,7 +1048,7 @@ hs_bindgen_e03a732ca300ae02 =
 
     __defined at:__ @rte_memory.h 644:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_event_callback_register ::
      PtrConst.PtrConst BG.CChar
@@ -1079,7 +1081,7 @@ hs_bindgen_1147c878ec218034 =
 
     __defined at:__ @rte_memory.h 662:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_event_callback_unregister ::
      PtrConst.PtrConst BG.CChar
@@ -1116,7 +1118,7 @@ hs_bindgen_1e134543d075d10e =
 
     __defined at:__ @rte_memory.h 711:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_alloc_validator_register ::
      PtrConst.PtrConst BG.CChar
@@ -1151,7 +1153,7 @@ hs_bindgen_7fd655d3d53811a1 =
 
     __defined at:__ @rte_memory.h 729:1@
 
-    __exported by:__ @dpdk.h@
+    __exported by:__ @rte_ethdev.h@, @rte_mbuf.h@
 -}
 rte_mem_alloc_validator_unregister ::
      PtrConst.PtrConst BG.CChar
