@@ -49,7 +49,8 @@ main = do
             "--no-huge",
             "-m=1024",
             "--vdev=virtio_user0,iface=port-in,queues=2,queue_size=1024,path=/dev/vhost-net",
-            "--vdev=virtio_user1,iface=port-ex,queues=2,queue_size=1024,path=/dev/vhost-net"
+            "--vdev=virtio_user1,iface=port-ex,queues=2,queue_size=1024,path=/dev/vhost-net",
+            "--no-pci"
           ]
         nonEmptyArgs -> nonEmptyArgs
 
